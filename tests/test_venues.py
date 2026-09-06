@@ -123,16 +123,17 @@ class _FakeVenue:
 
 
 def test_mirror_books_at_venue_price_and_fails_soft(tmp_path):
-    lim = RiskLimits(starting_cash=1000, slippage_bps=0, fees_bps={"crypto": 0, "us_stocks": 0})
+    lim = RiskLimits(starting_cash=1000, slippage_bps=50, fees_bps={"crypto": 0, "us_stocks": 0})
     filled = _FakeVenue(VenueFill("filled", 1.0, 101.0, "o1", "ok"))
     b = MirrorBroker(lim, {"crypto": filled}, path=tmp_path / "pf.json")
     fill = b.buy("BTCUSDT", 1.0, 100.0, "crypto", "test")
     assert fill.price == 101.0 and "fake filled" in fill.reason and b.venue_log[0]["status"] == "filled"
+    # a real venue fill is booked as is: no extra ledger slippage on top of 101.0
 
     broken = _FakeVenue(RuntimeError("venue down"))
     b2 = MirrorBroker(lim, {"us_stocks": broken}, path=tmp_path / "pf2.json")
     fill2 = b2.buy("NVDA", 1.0, 200.0, "us_stocks", "test")
-    assert fill2.price == 200.0 and "error" in fill2.reason and b2.positions()["NVDA"]["qty"] == 1.0
+    assert fill2.price == pytest.approx(201.0) and "error" in fill2.reason and b2.positions()["NVDA"]["qty"] == 1.0
 
     strict = MirrorBroker(lim, {"us_stocks": broken}, strict=True, path=tmp_path / "pf3.json")
     with pytest.raises(RuntimeError):
@@ -142,9 +143,9 @@ def test_mirror_books_at_venue_price_and_fails_soft(tmp_path):
     pending = _FakeVenue(VenueFill("pending", 0.0, None, "o9", "fills at open"))
     b3 = MirrorBroker(lim, {"us_stocks": pending}, path=tmp_path / "pf4.json")
     fill3 = b3.buy("MSFT", 1.0, 500.0, "us_stocks", "test")
-    assert fill3.price == 500.0 and "pending" in fill3.reason
+    assert fill3.price == pytest.approx(500.0 * 1.005) and "pending" in fill3.reason   # ledger slippage applies
     sell = b3.sell("MSFT", 1.0, 510.0, "exit")
-    assert sell.price == 510.0 and b3.positions() == {}
+    assert sell.price == pytest.approx(510.0 * 0.995) and b3.positions() == {}
 
 
 def test_alpaca_crypto_symbol_mapping_and_unsupported(monkeypatch):

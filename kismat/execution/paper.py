@@ -71,9 +71,10 @@ class PaperBroker:
     def _cost(self, asset_class: str) -> tuple[float, float]:
         return self.limits.fee_bps(asset_class) / 10_000, self.limits.slippage_bps / 10_000
 
-    def buy(self, symbol: str, qty: float, price: float, asset_class: str, reason: str = "") -> Fill:
+    def buy(self, symbol: str, qty: float, price: float, asset_class: str, reason: str = "",
+            apply_slippage: bool = True) -> Fill:
         fee_r, slip_r = self._cost(asset_class)
-        fill_px = price * (1 + slip_r)
+        fill_px = price * (1 + slip_r) if apply_slippage else price
         gross = fill_px * qty
         fee = gross * fee_r
         if gross + fee > self._cash + 1e-9:
@@ -98,13 +99,14 @@ class PaperBroker:
         self.fills.append(fill)
         return fill
 
-    def sell(self, symbol: str, qty: float, price: float, reason: str = "") -> Fill:
+    def sell(self, symbol: str, qty: float, price: float, reason: str = "",
+             apply_slippage: bool = True) -> Fill:
         pos = self._positions.get(symbol)
         if not pos:
             raise ValueError(f"no position in {symbol}")
         qty = min(qty, pos["qty"])
         fee_r, slip_r = self._cost(pos["asset_class"])
-        fill_px = price * (1 - slip_r)
+        fill_px = price * (1 - slip_r) if apply_slippage else price
         gross = fill_px * qty
         fee = gross * fee_r
         self._cash += gross - fee
