@@ -8,11 +8,17 @@
     "halted": false,
     "journal_marks": {
       "fx": "2026-09-06",
+      "hold:AAPL": "2026-09-04",
       "hold:AMZN": "2026-09-04",
       "hold:ANZ.AX": "2026-09-04",
       "hold:BHP.AX": "2026-09-04",
+      "hold:BNBUSDT": "2026-09-06",
+      "hold:ETHUSDT": "2026-09-06",
+      "hold:LINKUSDT": "2026-09-06",
       "hold:MSFT": "2026-09-04",
       "hold:NVDA": "2026-09-04",
+      "hold:QQQ": "2026-09-04",
+      "hold:SOLUSDT": "2026-09-06",
       "hold:SPY": "2026-09-04",
       "skip:BTCUSDT": "2026-09-06:max positions 12 reached"
     },
@@ -30,6 +36,7 @@
     "AAPL": {
       "asset_class": "us_stocks",
       "avg_price": 320.12998622131346,
+      "below_bars": 0,
       "entry_time": "2026-09-06T07:48:16+00:00",
       "highest_close": 320.12998622131346,
       "last_price": 319.9700012207031,
@@ -40,6 +47,7 @@
     "AMZN": {
       "asset_class": "us_stocks",
       "avg_price": 258.6392647705078,
+      "below_bars": 0,
       "entry_time": "2026-09-06T04:48:08+00:00",
       "highest_close": 258.6392647705078,
       "last_price": 258.510009765625,
@@ -50,6 +58,7 @@
     "ANZ.AX": {
       "asset_class": "au_stocks",
       "avg_price": 27.35714010954663,
+      "below_bars": 0,
       "entry_time": "2026-09-06T04:48:08+00:00",
       "highest_close": 27.35714010954663,
       "last_price": 27.343468375358952,
@@ -60,6 +69,7 @@
     "BHP.AX": {
       "asset_class": "au_stocks",
       "avg_price": 44.87435935659706,
+      "below_bars": 0,
       "entry_time": "2026-09-06T04:48:08+00:00",
       "highest_close": 44.87435935659706,
       "last_price": 44.851933389902115,
@@ -70,56 +80,62 @@
     "BNBUSDT": {
       "asset_class": "crypto",
       "avg_price": 755.2274249999999,
+      "below_bars": 0,
       "entry_time": "2026-09-06T07:48:09+00:00",
-      "highest_close": 755.2274249999999,
-      "last_price": 754.85,
+      "highest_close": 755.56,
+      "last_price": 755.56,
       "qty": 1.3236592225543824,
       "stop_price": 697.4089285714286,
-      "value": 999.1641641451756
+      "value": 1000.1039621931891
     },
     "ETHUSDT": {
       "asset_class": "crypto",
       "avg_price": 2498.2495005,
+      "below_bars": 0,
       "entry_time": "2026-09-06T07:48:07+00:00",
-      "highest_close": 2498.2495005,
-      "last_price": 2493.78,
+      "highest_close": 2498.51,
+      "last_price": 2498.51,
       "qty": 0.39249689,
       "stop_price": 2259.4389285714287,
-      "value": 978.8008943442001
+      "value": 980.6574046339
     },
     "LINKUSDT": {
       "asset_class": "crypto",
       "avg_price": 12.240117,
+      "below_bars": 0,
       "entry_time": "2026-09-06T07:48:05+00:00",
       "highest_close": 12.240117,
-      "last_price": 12.215,
+      "last_price": 12.234,
       "qty": 68.836676125,
       "stop_price": 10.79267857142857,
-      "value": 840.8399988668749
+      "value": 842.1478957132499
     },
     "MSFT": {
       "asset_class": "us_stocks",
       "avg_price": 499.94986221313474,
+      "below_bars": 0,
       "entry_time": "2026-09-06T04:48:08+00:00",
       "highest_close": 499.94986221313474,
-      "last_price": 499.7000122070313,
+      "last_price": 499.70001220703125,
       "qty": 0.3001437892983746,
       "stop_price": 474.4967890349056,
-      "value": 149.98185517626243
+      "value": 149.9818551762624
     },
     "NVDA": {
       "asset_class": "us_stocks",
       "avg_price": 230.47518061065674,
+      "below_bars": 0,
       "entry_time": "2026-09-06T04:48:08+00:00",
       "highest_close": 230.47518061065674,
-      "last_price": 230.3600006103516,
+      "last_price": 230.36000061035156,
       "qty": 0.5249837534687041,
       "stop_price": 211.31179210117884,
-      "value": 120.93525776947534
+      "value": 120.93525776947533
     },
     "QQQ": {
       "asset_class": "us_stocks",
       "avg_price": 719.3195019836426,
+      "below_bars": 0,
       "entry_time": "2026-09-06T07:48:23+00:00",
       "highest_close": 719.3195019836426,
       "last_price": 718.9600219726562,
@@ -130,16 +146,18 @@
     "SOLUSDT": {
       "asset_class": "crypto",
       "avg_price": 105.104526,
+      "below_bars": 0,
       "entry_time": "2026-09-06T07:48:09+00:00",
-      "highest_close": 105.104526,
-      "last_price": 104.94,
+      "highest_close": 105.22,
+      "last_price": 105.22,
       "qty": 6.977141289,
       "stop_price": 90.91499999999999,
-      "value": 732.1812068676601
+      "value": 734.1348064285801
     },
     "SPY": {
       "asset_class": "us_stocks",
       "avg_price": 770.5750974426269,
+      "below_bars": 0,
       "entry_time": "2026-09-06T04:48:08+00:00",
       "highest_close": 770.5750974426269,
       "last_price": 770.1900024414062,
@@ -148,5 +166,5 @@
       "value": 149.84687040434872
     }
   },
-  "saved": "2026-09-06T07:48:23+00:00"
+  "saved": "2026-09-06T08:23:08+00:00"
 }
