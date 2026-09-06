@@ -21,6 +21,11 @@ max_drawdown_pct: 0.10         # lose 10% from peak: kill switch, halt everythin
 entry_score_threshold: 0.35    # combined score needed to open a position
 exit_score_threshold: -0.10    # combined score below this closes a position
 
+# Rotation: when the book is full, replace the weakest holding with a much
+# stronger candidate. 0 disables it.
+rotation_margin: 0.30          # candidate score must beat the weakest holding by this much
+min_hold_days: 1               # never rotate out a position younger than this
+
 # Cost model for paper fills. Conservative on purpose.
 fees_bps:
   crypto: 10                   # 0.10% per side (Binance spot without BNB discount)

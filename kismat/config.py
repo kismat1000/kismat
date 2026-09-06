@@ -37,6 +37,8 @@ class RiskLimits:
     max_drawdown_pct: float = 0.10
     entry_score_threshold: float = 0.35
     exit_score_threshold: float = -0.10
+    rotation_margin: float = 0.0
+    min_hold_days: int = 1
     fees_bps: dict = field(
         default_factory=lambda: {"crypto": 10, "us_stocks": 5, "au_stocks": 15}
     )

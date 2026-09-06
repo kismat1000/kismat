@@ -25,6 +25,8 @@ class BacktestConfig:
     entry_threshold: float = 0.35
     stop_atr_multiple: float = 2.5
     warmup: int = 210
+    rotation_margin: float = 0.0
+    min_hold_days: int = 1
 
 
 @dataclass
@@ -158,17 +160,33 @@ def run_backtest(bars: dict[str, pd.DataFrame], cfg: BacktestConfig | None = Non
             if should:
                 pos["pending_exit"] = True
                 pos["exit_reason"] = why
+        candidates = []
+        for sym, f in feats.items():
+            if sym in positions or day not in f.index:
+                continue
+            s = f.loc[day, "score"]
+            if not pd.isna(s) and s >= cfg.entry_threshold:
+                candidates.append((float(s), sym))
+        candidates.sort(reverse=True)
         open_slots = cfg.max_positions - sum(1 for p in positions.values() if not p.get("pending_exit"))
-        if open_slots > 0:
-            candidates = []
-            for sym, f in feats.items():
-                if sym in positions or day not in f.index:
+        if open_slots <= 0 and cfg.rotation_margin > 0 and candidates:
+            best_score, best_sym = candidates[0]
+            held = []
+            for sym, pos in positions.items():
+                if pos.get("pending_exit") or day not in feats[sym].index:
                     continue
-                s = f.loc[day, "score"]
-                if not pd.isna(s) and s >= cfg.entry_threshold:
-                    candidates.append((float(s), sym))
-            candidates.sort(reverse=True)
-            budget = min(mtm * cfg.max_position_pct, cash / max(open_slots, 1))
+                age = (day - pos["entry_date"]).days
+                sc = feats[sym].loc[day, "score"]
+                if age >= cfg.min_hold_days and not pd.isna(sc):
+                    held.append((float(sc), sym))
+            if held:
+                weak_score, weak_sym = min(held)
+                if best_score - weak_score >= cfg.rotation_margin:
+                    positions[weak_sym]["pending_exit"] = True
+                    positions[weak_sym]["exit_reason"] = f"rotation into {best_sym}"
+                    open_slots = 1
+        if open_slots > 0:
+            budget = min(mtm * cfg.max_position_pct, cash / max(open_slots, 1)) if cash > 0 else mtm * cfg.max_position_pct
             pending_entries = {sym: budget for _, sym in candidates[:open_slots]}
 
     equity = pd.Series([e for _, e in equity_curve], index=[d for d, _ in equity_curve], name="equity")

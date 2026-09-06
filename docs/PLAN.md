@@ -86,4 +86,6 @@ enforced by a schema.
 - Intraday stop checks using live prices between daily bars.
 - Council via the Claude API when a budget exists (`python -m kismat council`).
 - Portfolio-level correlation caps in the risk engine.
+- Rotation (done): when the book is full, the weakest holding is replaced by
+  a candidate that beats it by `rotation_margin`, never before `min_hold_days`.
 - Memo calibration report: conviction buckets versus realised outcomes.

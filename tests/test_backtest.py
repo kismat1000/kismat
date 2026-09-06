@@ -31,3 +31,9 @@ def test_never_exceeds_cash_or_position_limits():
     res = run_backtest(_universe(), cfg)
     # equity can never go negative in a long-only, cash-limited book
     assert (res.equity > 0).all()
+
+
+def test_rotation_backtest_runs_and_rotates():
+    res = run_backtest(_universe(), BacktestConfig(max_positions=1, rotation_margin=0.2, min_hold_days=1))
+    assert res.metrics["trades"] > 0
+    assert any("rotation" in t["reason"] for t in res.trades)

@@ -84,6 +84,14 @@ def _latest_bar_date(df: pd.DataFrame) -> str:
     return str(df.index[-1].date())
 
 
+def _held_days(pos: dict) -> float:
+    try:
+        entered = datetime.fromisoformat(pos["entry_time"])
+    except (KeyError, ValueError):
+        return 0.0
+    return (datetime.now(timezone.utc) - entered).total_seconds() / 86400
+
+
 def _first_time(broker: PaperBroker, key: str, stamp: str) -> bool:
     """True the first time (key, stamp) is seen; used to journal routine
     hold/skip decisions once per bar instead of once per cycle."""
@@ -171,6 +179,8 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
     report.halted = pf.halted
 
     # 4. Exits ------------------------------------------------------------------
+    held_scores: dict[str, float] = {}
+    last_entry_bar = broker.meta.setdefault("last_entry_bar", {})
     if not pf.halted:
         for symbol, pos in list(broker.positions().items()):
             if symbol not in bars:
@@ -191,7 +201,9 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
             record = {"symbol": symbol, "systematic": round(sig.score, 3),
                       "research": round(research, 3) if research is not None else None,
                       "combined": round(combined, 3), "price": price, "held": True}
+            held_scores[symbol] = combined
             if should:
+                last_entry_bar[symbol] = _latest_bar_date(bars[symbol])  # no re-entry on the bar we exit
                 try:
                     fill = broker.sell(symbol, pos["qty"], price, reason)
                 except Exception as exc:
@@ -217,7 +229,6 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
                    day_start_equity=broker.meta.get("day_start_equity", equity),
                    positions=broker.positions(), halted=broker.meta.get("halted", False),
                    halt_reason=broker.meta.get("halt_reason", ""))
-    last_entry_bar = broker.meta.setdefault("last_entry_bar", {})
     candidates = []
     for symbol, sig in signals.items():
         if not sig.ok or symbol in broker.positions():
@@ -228,6 +239,38 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
         if combined >= limits.entry_score_threshold and not vetoed:
             candidates.append((combined, symbol, research))
     candidates.sort(reverse=True)
+
+    # 4b. Rotation: book full, a much stronger candidate is waiting ------------------
+    if (not pf.halted and limits.rotation_margin > 0 and candidates
+            and len(broker.positions()) >= limits.max_positions):
+        best_score, best_symbol, _ = candidates[0]
+        if last_entry_bar.get(best_symbol) != _latest_bar_date(bars[best_symbol]):
+            eligible = [(held_scores.get(s, 0.0), s) for s, p in broker.positions().items()
+                        if _held_days(p) >= limits.min_hold_days and s in latest_price]
+            if eligible:
+                weak_score, weak_symbol = min(eligible)
+                if best_score - weak_score >= limits.rotation_margin:
+                    reason = (f"rotation: {best_symbol} scores {best_score:+.2f} vs {weak_symbol} "
+                              f"{weak_score:+.2f}, margin {limits.rotation_margin:.2f}")
+                    last_entry_bar[weak_symbol] = _latest_bar_date(bars[weak_symbol])
+                    try:
+                        fill = broker.sell(weak_symbol, broker.positions()[weak_symbol]["qty"],
+                                           latest_price[weak_symbol], reason)
+                        journal.fill(fill.to_dict())
+                        report.fills.append(fill.to_dict())
+                        rec = {"symbol": weak_symbol, "systematic": None, "research": None,
+                               "combined": round(weak_score, 3), "price": latest_price[weak_symbol],
+                               "held": True, "action": "sell", "reason": fill.reason}
+                        journal.decision(rec)
+                        report.decisions.append(rec)
+                        equity = broker.mark(latest_price)
+                        pf = Portfolio(cash=broker.cash(), equity=equity, peak_equity=pf.peak_equity,
+                                       day_start_equity=pf.day_start_equity, positions=broker.positions())
+                    except Exception as exc:
+                        msg = f"rotation sell {weak_symbol} failed: {exc}"
+                        journal.event("error", msg)
+                        report.errors.append(msg)
+
     for combined, symbol, research in candidates:
         sig = signals[symbol]
         bar_date = _latest_bar_date(bars[symbol])

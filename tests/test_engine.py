@@ -100,3 +100,36 @@ def test_kill_switch_liquidates_and_halts(settings, tmp_root):
     assert any(e["kind"] == "kill_switch" for e in journal.read("events"))
     status = json.loads((tmp_root / "docs" / "status.json").read_text())
     assert status["halted"] is True
+
+
+def test_rotation_replaces_weakest_when_book_is_full(settings, tmp_root):
+    settings.risk.max_positions = 1
+    settings.risk.rotation_margin = 0.10      # AUUP.AX ~0.75 vs UPUSDT ~0.63 on the synthetic series
+    settings.risk.min_hold_days = 0
+    # first cycle: only the weaker uptrend is available (AUUP.AX ~0.75 is strongest, so hide it)
+    weak_only = {k: v for k, v in BARS.items()}
+
+    def first(symbol, cls):
+        if symbol in ("FLAT", "AUUP.AX"):
+            raise RuntimeError("feed down")
+        return weak_only[symbol].copy()
+
+    broker = PaperBroker(settings.risk, path=tmp_root / "state" / "paper" / "portfolio.json")
+    journal = Journal(tmp_root / "state" / "journal")
+    engine.run_cycle(settings, bars_provider=first, headlines_provider=lambda q: [], fx_provider=lambda: 0.65,
+                     broker=broker, journal=journal, memos_root=tmp_root / "research",
+                     docs_dir=tmp_root / "docs", notify=False)
+    assert list(broker.positions()) == ["UPUSDT"]
+    # second cycle: the stronger AUUP.AX appears; book is full, so it should rotate
+    report = engine.run_cycle(settings, bars_provider=provider, headlines_provider=lambda q: [],
+                              fx_provider=lambda: 0.65, broker=broker, journal=journal,
+                              memos_root=tmp_root / "research", docs_dir=tmp_root / "docs", notify=False)
+    sides = [(f["side"], f["symbol"]) for f in report.fills]
+    assert ("sell", "UPUSDT") in sides and ("buy", "AUUP.AX") in sides
+    assert list(broker.positions()) == ["AUUP.AX"]
+    assert any("rotation" in f["reason"] for f in report.fills if f["side"] == "sell")
+    # the symbol we just sold cannot re-enter on the same bar
+    report3 = engine.run_cycle(settings, bars_provider=provider, headlines_provider=lambda q: [],
+                               fx_provider=lambda: 0.65, broker=broker, journal=journal,
+                               memos_root=tmp_root / "research", docs_dir=tmp_root / "docs", notify=False)
+    assert not report3.fills
