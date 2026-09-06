@@ -2,7 +2,7 @@ name: trading-cycle
 
 on:
   schedule:
-    - cron: "7 */2 * * *"     # every two hours; adjust once you know your Actions budget
+    - cron: "11 */2 * * *"    # every two hours at :11 UTC; off the hour so GitHub does not queue it behind everyone else
   workflow_dispatch:
 
 permissions:
