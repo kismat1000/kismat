@@ -55,6 +55,7 @@ See [docs/RUNBOOK.md](docs/RUNBOOK.md). Short version:
 | Dashboard | GitHub Pages serving `docs/` | free |
 | Alerts | Telegram bot | free |
 | Market data | Binance public API, Yahoo Finance, RSS | free |
+| Broker demo venues | Alpaca paper (US stocks), Binance Spot Testnet (crypto) | free |
 | State | JSON and JSONL files committed to this repo | free |
 
 ## Safety switches

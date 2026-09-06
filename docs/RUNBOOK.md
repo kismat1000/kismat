@@ -86,7 +86,30 @@ Commit `state/` and `docs/` if you want the dashboard on Pages. n8n is not
 needed: it would add a server to host and gives nothing the workflow files do
 not already do.
 
-## 7. Going live (not before the phase gates in docs/PLAN.md)
+## 7. Broker demo environments (mirrored execution)
+
+With `KISMAT_VENUES=us_stocks=alpaca,crypto=binance` (the workflow default)
+every US stock order is also sent to your Alpaca paper account and every
+crypto order to Binance Spot Testnet. The 1,000 USD ledger, the risk engine
+and the journal are unchanged; the venues confirm how the order filled and
+you can see it in their apps. A venue that is closed, rejects, or is down
+never blocks the cycle in paper mode: the ledger still books the trade and
+the venue's answer is written to `state/journal/events.jsonl` as a `venue`
+event. In live mode the opposite holds: no venue fill, no ledger fill.
+
+Secrets: `ALPACA_KEY`, `ALPACA_SECRET` (paper keys start with `PK`),
+`BINANCE_TESTNET_KEY`, `BINANCE_TESTNET_SECRET`. Set the repository variable
+`KISMAT_VENUES` to an empty string to go back to the built-in paper broker.
+
+Checks: Actions -> venue-check -> Run workflow pings both venues. Tick "sync"
+to place venue orders for ledger positions the venues do not hold yet (a
+one-off after switching venues on). Locally: `python -m kismat venue-check`.
+
+Alpaca's paper account starts with 100,000 USD; reset it to 1,000 in the
+Alpaca dashboard if you want its numbers to match the ledger. Binance testnet
+balances are fixed fake coins and cannot be changed.
+
+## 8. Going live (not before the phase gates in docs/PLAN.md)
 
 1. Open the broker account (Interactive Brokers covers US and ASX with a paper
    account and an API; Binance spot for crypto with its testnet first).

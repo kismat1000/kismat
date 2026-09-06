@@ -65,6 +65,11 @@ class Settings:
     telegram_bot_token: str = ""
     telegram_chat_id: str = ""
     anthropic_api_key: str = ""
+    venues: dict = field(default_factory=dict)      # asset_class -> "alpaca" | "binance"
+    alpaca_key: str = ""
+    alpaca_secret: str = ""
+    binance_key: str = ""
+    binance_secret: str = ""
     risk: RiskLimits = field(default_factory=RiskLimits)
     universe: dict = field(default_factory=dict)
 
@@ -85,9 +90,25 @@ class Settings:
             telegram_bot_token=env.get("TELEGRAM_BOT_TOKEN", ""),
             telegram_chat_id=env.get("TELEGRAM_CHAT_ID", ""),
             anthropic_api_key=env.get("ANTHROPIC_API_KEY", ""),
+            venues=parse_venues(env.get("KISMAT_VENUES", "")),
+            alpaca_key=env.get("ALPACA_KEY", ""),
+            alpaca_secret=env.get("ALPACA_SECRET", ""),
+            binance_key=env.get("BINANCE_TESTNET_KEY", "") or env.get("BINANCE_KEY", ""),
+            binance_secret=env.get("BINANCE_TESTNET_SECRET", "") or env.get("BINANCE_SECRET", ""),
             risk=RiskLimits.from_yaml(),
             universe=universe,
         )
+
+
+def parse_venues(spec: str) -> dict[str, str]:
+    """'us_stocks=alpaca,crypto=binance' -> {'us_stocks': 'alpaca', 'crypto': 'binance'}"""
+    out: dict[str, str] = {}
+    for part in spec.split(","):
+        if "=" in part:
+            cls, name = part.split("=", 1)
+            if cls.strip() in ASSET_CLASSES and name.strip():
+                out[cls.strip()] = name.strip().lower()
+    return out
 
 
 def load_universe(path: Path | None = None) -> dict[str, list[str]]:
