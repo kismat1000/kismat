@@ -193,7 +193,8 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
             should, reason = (False, "")
             if sig.ok and not pd.isna(f["atr14"]) and not pd.isna(f["sma50"]):
                 should, reason = exit_rule(pos["avg_price"], pos.get("highest_close", pos["avg_price"]),
-                                           price, float(f["atr14"]), float(f["sma50"]), limits.stop_atr_multiple)
+                                           price, float(f["atr14"]), float(f["sma50"]), limits.stop_atr_multiple,
+                                           limits.trend_break_exit)
             if not should and combined < limits.exit_score_threshold:
                 should, reason = True, f"combined score {combined:+.2f} below exit threshold"
             if not should and symbol in memos and memos[symbol].vetoes_entry():

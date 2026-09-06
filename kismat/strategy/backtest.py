@@ -27,6 +27,7 @@ class BacktestConfig:
     warmup: int = 210
     rotation_margin: float = 0.0
     min_hold_days: int = 1
+    trend_break_exit: bool = True
 
 
 @dataclass
@@ -154,7 +155,8 @@ def run_backtest(bars: dict[str, pd.DataFrame], cfg: BacktestConfig | None = Non
             if pd.isna(row["atr14"]) or pd.isna(row["sma50"]):
                 continue
             should, why = exit_rule(pos["entry"], pos["highest"], float(row["close"]),
-                                    float(row["atr14"]), float(row["sma50"]), cfg.stop_atr_multiple)
+                                    float(row["atr14"]), float(row["sma50"]), cfg.stop_atr_multiple,
+                                    cfg.trend_break_exit)
             if not should and not pd.isna(row["score"]) and row["score"] < -0.10:
                 should, why = True, "score turned negative"
             if should:

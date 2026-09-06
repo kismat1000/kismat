@@ -35,3 +35,9 @@ def test_exit_rule():
     assert not exit_rule(100, 120, 115, atr_val=5, sma50=110)[0]
     assert exit_rule(100, 100, 95, atr_val=10, sma50=98)[0]           # below SMA50 and underwater
     assert not exit_rule(100, 100, 99, atr_val=10, sma50=98)[0]
+
+
+def test_exit_rule_trend_break_switch():
+    assert exit_rule(100, 100, 95, atr_val=10, sma50=98)[0]
+    assert not exit_rule(100, 100, 95, atr_val=10, sma50=98, trend_break=False)[0]
+    assert exit_rule(100, 120, 90, atr_val=5, sma50=98, trend_break=False)[0]   # trailing stop still fires

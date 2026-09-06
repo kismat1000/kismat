@@ -13,6 +13,7 @@ max_asset_class_pct:           # max share of equity per asset class
 
 per_trade_risk_pct: 0.01       # risk 1% of equity per trade (entry to stop distance)
 stop_atr_multiple: 2.5         # initial and trailing stop distance in ATR units
+trend_break_exit: true         # also exit when close < SMA50 while underwater (backtest shows this is the costly exit)
 min_trade_value: 10.0          # skip dust orders below this value
 
 max_daily_loss_pct: 0.03       # lose 3% in a day: no new entries until next day

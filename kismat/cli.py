@@ -42,10 +42,14 @@ def cmd_backtest(args) -> int:
                          fee_bps=max(settings.risk.fees_bps.values()), slippage_bps=settings.risk.slippage_bps,
                          entry_threshold=settings.risk.entry_score_threshold,
                          stop_atr_multiple=settings.risk.stop_atr_multiple,
-                         rotation_margin=0.0 if args.no_rotation else settings.risk.rotation_margin,
-                         min_hold_days=settings.risk.min_hold_days)
+                         rotation_margin=0.0 if args.no_rotation else (
+                             args.rotation_margin if args.rotation_margin is not None else settings.risk.rotation_margin),
+                         min_hold_days=settings.risk.min_hold_days,
+                         trend_break_exit=not args.no_trend_break and settings.risk.trend_break_exit)
     result = run_backtest(bars, cfg)
-    header = f"symbols {len(bars)} | days {result.metrics['days']} | rotation {'off' if args.no_rotation else 'on'}"
+    header = (f"symbols {len(bars)} | days {result.metrics['days']} | rotation "
+              f"{'off' if args.no_rotation else f'margin {cfg.rotation_margin:.2f}'} | trend-break exit "
+              f"{'off' if not cfg.trend_break_exit else 'on'}")
     print(header)
     print(result.summary())
     if args.json:
@@ -217,6 +221,8 @@ def main(argv=None) -> int:
     s.add_argument("--days", type=int, default=400)
     s.add_argument("--synthetic", action="store_true", help="offline: random-walk data")
     s.add_argument("--no-rotation", action="store_true", help="disable the rotation rule for comparison")
+    s.add_argument("--rotation-margin", type=float, default=None, help="override rotation margin")
+    s.add_argument("--no-trend-break", action="store_true", help="exit on trailing stop only")
     s.add_argument("--report", help="append a markdown summary to this file")
     s.add_argument("--json", action="store_true")
     s.set_defaults(fn=cmd_backtest)
