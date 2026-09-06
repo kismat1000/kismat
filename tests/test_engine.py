@@ -143,7 +143,8 @@ def test_rejected_entry_does_not_lock_symbol_for_the_bar(settings, tmp_root):
     skipped = [d for d in report.decisions if d["action"] == "skip"]
     assert skipped and "max positions" in skipped[0]["reason"]
     # free the slot and run again on the same bar: the skipped symbol enters now
-    broker.sell(list(broker.positions())[0], list(broker.positions().values())[0]["qty"], 100.0, "manual")
+    sym, pos = next(iter(broker.positions().items()))
+    broker.sell(sym, pos["qty"], pos["last_price"], "manual")   # flat exit, so the daily-loss guard stays quiet
     broker.reset_entry_guards()
     broker.save()
     report2, broker, _ = run(settings, tmp_root)
