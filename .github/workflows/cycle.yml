@@ -14,14 +14,14 @@ concurrency:
 
 jobs:
   cycle:
-    # Scheduled runs happen on the default branch. Only main may hold state,
-    # so a stray default branch never forks the journal.
-    if: github.event_name == 'workflow_dispatch' || github.ref_name == 'main'
+    # Whatever branch triggers this (cron fires on the default branch), the
+    # cycle always reads and writes state on main. One journal, one history.
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
@@ -49,6 +49,6 @@ jobs:
           if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
           git commit -m "chore(cycle): $(date -u +'%Y-%m-%d %H:%M UTC')"
           for i in 1 2 3; do
-            git pull --rebase origin "${GITHUB_REF_NAME}" && git push && break
+            git pull --rebase origin main && git push origin HEAD:main && break
             sleep 5
           done
