@@ -41,7 +41,7 @@ jobs:
           KISMAT_APPROVAL_MODE: ${{ vars.KISMAT_APPROVAL_MODE || '0' }}
           KISMAT_MODE: paper
           KISMAT_CACHE_TTL_HOURS: "0.4"   # refresh prices every run so stops see current levels
-          KISMAT_VENUES: ${{ vars.KISMAT_VENUES || 'us_stocks=alpaca,crypto=binance' }}
+          KISMAT_VENUES: ${{ vars.KISMAT_VENUES || 'us_stocks=alpaca,crypto=alpaca' }}
           ALPACA_KEY: ${{ secrets.ALPACA_KEY }}
           ALPACA_SECRET: ${{ secrets.ALPACA_SECRET }}
           BINANCE_TESTNET_KEY: ${{ secrets.BINANCE_TESTNET_KEY }}

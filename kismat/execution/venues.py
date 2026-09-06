@@ -46,16 +46,44 @@ class Venue(Protocol):
 
 
 # ---------------------------------------------------------------------------
+ALPACA_CRYPTO = {"BTC", "ETH", "SOL", "LINK", "DOGE", "LTC", "AVAX", "XRP", "AAVE", "BCH", "DOT", "UNI",
+                 "SHIB", "PEPE", "BAT", "CRV", "GRT", "MKR", "SUSHI", "XTZ", "YFI"}
+
+
+def alpaca_crypto_symbol(symbol: str) -> tuple[str, str] | None:
+    """BTCUSDT -> ("BTC/USD" for orders, "BTCUSD" for positions); None if Alpaca does not list it."""
+    base = symbol.replace("/", "")
+    for suffix in ("USDT", "USDC", "USD"):
+        if base.endswith(suffix) and len(base) > len(suffix):
+            base = base[:-len(suffix)]
+            break
+    if base not in ALPACA_CRYPTO:
+        return None
+    return f"{base}/USD", f"{base}USD"
+
+
 class AlpacaPaper:
-    """Alpaca paper trading. Market day orders; notional buys, close-position sells."""
+    """Alpaca paper trading. Market orders; notional buys, close-position sells.
+    With crypto=True the same account trades Alpaca's crypto pairs 24/7."""
     name = "alpaca-paper"
     BASE = "https://paper-api.alpaca.markets"
 
-    def __init__(self, key: str, secret: str, timeout: int = 20, poll_seconds: float = 6.0):
+    def __init__(self, key: str, secret: str, timeout: int = 20, poll_seconds: float = 6.0, crypto: bool = False):
         if not key or not secret:
             raise ValueError("alpaca key and secret required")
         self.h = {"APCA-API-KEY-ID": key, "APCA-API-SECRET-KEY": secret, "Content-Type": "application/json"}
-        self.timeout, self.poll_seconds = timeout, poll_seconds
+        self.timeout, self.poll_seconds, self.crypto = timeout, poll_seconds, crypto
+        self.name = "alpaca-paper-crypto" if crypto else "alpaca-paper"
+
+    def _symbols(self, symbol: str) -> tuple[str, str] | None:
+        """(order symbol, position symbol) or None when unsupported."""
+        if not self.crypto:
+            return symbol, symbol
+        return alpaca_crypto_symbol(symbol)
+
+    @property
+    def _tif(self) -> str:
+        return "gtc" if self.crypto else "day"
 
     def _req(self, method: str, path: str, **kw):
         r = requests.request(method, f"{self.BASE}{path}", headers=self.h, timeout=self.timeout, **kw)
@@ -72,11 +100,17 @@ class AlpacaPaper:
                 "equity": acct.get("equity"), "market_open": clock.get("is_open")}
 
     def holds(self, symbol: str) -> float:
-        pos = self._req("GET", f"/v2/positions/{symbol}")
+        syms = self._symbols(symbol)
+        if not syms:
+            return 0.0
+        pos = self._req("GET", f"/v2/positions/{syms[1]}")
         return float(pos["qty"]) if pos else 0.0
 
     def open_orders(self, symbol: str) -> int:
-        orders = self._req("GET", "/v2/orders", params={"status": "open", "symbols": symbol}) or []
+        syms = self._symbols(symbol)
+        if not syms:
+            return 0
+        orders = self._req("GET", "/v2/orders", params={"status": "open", "symbols": syms[0]}) or []
         return len(orders)
 
     def _wait(self, order: dict) -> dict:
@@ -98,22 +132,28 @@ class AlpacaPaper:
                          f"alpaca order {status}; fills at next market open", order)
 
     def buy(self, symbol: str, qty: float, ref_price: float) -> VenueFill:
+        syms = self._symbols(symbol)
+        if not syms:
+            return VenueFill("skipped", note=f"{symbol} not listed at alpaca; ledger-only")
         notional = round(qty * ref_price, 2)
         if notional < 1.0:
             return VenueFill("rejected", note="alpaca minimum notional is $1")
-        order = self._req("POST", "/v2/orders", json={"symbol": symbol, "notional": str(notional), "side": "buy",
-                                                      "type": "market", "time_in_force": "day"})
+        order = self._req("POST", "/v2/orders", json={"symbol": syms[0], "notional": str(notional), "side": "buy",
+                                                      "type": "market", "time_in_force": self._tif})
         return self._to_fill(self._wait(order), qty)
 
     def sell(self, symbol: str, qty: float, ref_price: float) -> VenueFill:
+        syms = self._symbols(symbol)
+        if not syms:
+            return VenueFill("skipped", note=f"{symbol} not listed at alpaca; ledger-only exit")
         held = self.holds(symbol)
         if held <= 0:
             return VenueFill("skipped", note="not held at alpaca; ledger-only exit")
         if qty >= held * 0.999:
-            order = self._req("DELETE", f"/v2/positions/{symbol}")   # close the whole position
+            order = self._req("DELETE", f"/v2/positions/{syms[1]}")   # close the whole position
         else:
-            order = self._req("POST", "/v2/orders", json={"symbol": symbol, "qty": f"{qty:.9f}".rstrip("0").rstrip("."),
-                                                          "side": "sell", "type": "market", "time_in_force": "day"})
+            order = self._req("POST", "/v2/orders", json={"symbol": syms[0], "qty": f"{qty:.9f}".rstrip("0").rstrip("."),
+                                                          "side": "sell", "type": "market", "time_in_force": self._tif})
         return self._to_fill(self._wait(order or {}), qty)
 
 
@@ -227,7 +267,7 @@ def build_venues(settings) -> dict[str, Venue]:
     for cls, name in settings.venues.items():
         try:
             if name == "alpaca":
-                out[cls] = AlpacaPaper(settings.alpaca_key, settings.alpaca_secret)
+                out[cls] = AlpacaPaper(settings.alpaca_key, settings.alpaca_secret, crypto=(cls == "crypto"))
             elif name == "binance":
                 out[cls] = BinanceSpot(settings.binance_key, settings.binance_secret, testnet=not settings.is_live)
             else:
