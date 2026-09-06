@@ -1,0 +1,43 @@
+# Watchlist. Symbols are grouped by asset class because each class has its own
+# data source, fee model, and risk cap. Keep this list liquid: thin markets eat
+# small accounts alive through spread and slippage.
+
+crypto:            # Binance spot symbols (free public klines, no API key)
+  - BTCUSDT
+  - ETHUSDT
+  - SOLUSDT
+  - BNBUSDT
+  - XRPUSDT
+  - ADAUSDT
+  - AVAXUSDT
+  - LINKUSDT
+  - DOGEUSDT
+  - LTCUSDT
+
+us_stocks:         # Yahoo Finance symbols
+  - SPY
+  - QQQ
+  - AAPL
+  - MSFT
+  - NVDA
+  - AMZN
+  - GOOGL
+  - META
+  - TSLA
+  - AMD
+  - AVGO
+  - COST
+
+au_stocks:         # ASX via Yahoo Finance (".AX" suffix)
+  - BHP.AX
+  - CBA.AX
+  - CSL.AX
+  - NAB.AX
+  - WBC.AX
+  - ANZ.AX
+  - WES.AX
+  - MQG.AX
+  - FMG.AX
+  - RIO.AX
+  - WTC.AX
+  - XRO.AX

@@ -1,0 +1,307 @@
+"""One trading cycle, start to finish.
+
+    data -> signals -> research merge -> risk engine -> paper broker
+         -> journal -> research packet -> alerts -> dashboard
+
+Every dependency with a network behind it is injectable so the whole cycle
+runs offline in tests.
+"""
+from __future__ import annotations
+
+import json
+import logging
+import uuid
+from dataclasses import dataclass, field
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Callable
+
+import pandas as pd
+
+from kismat import config as C
+from kismat.alerts import telegram
+from kismat.dashboard import build as dashboard
+from kismat.data import news, prices as price_data
+from kismat.execution.paper import PaperBroker
+from kismat.journal.store import Journal
+from kismat.research import memos as memo_store
+from kismat.research.packet import build_packet
+from kismat.risk.engine import OrderRequest, Portfolio, RiskEngine
+from kismat.strategy.signals import Signal, compute_features, exit_rule, trend_signal
+
+log = logging.getLogger(__name__)
+
+RESEARCH_WEIGHT = 0.4
+BarsProvider = Callable[[str, str], pd.DataFrame]
+
+
+@dataclass
+class CycleReport:
+    equity: float = 0.0
+    cash: float = 0.0
+    drawdown: float = 0.0
+    halted: bool = False
+    fills: list[dict] = field(default_factory=list)
+    proposals: list[dict] = field(default_factory=list)
+    decisions: list[dict] = field(default_factory=list)
+    errors: list[str] = field(default_factory=list)
+    signals: dict[str, dict] = field(default_factory=dict)
+    packet_path: Path | None = None
+    dashboard_path: Path | None = None
+
+    def summary(self) -> str:
+        lines = [f"Kismat cycle {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
+                 f"equity {self.equity:,.2f} | cash {self.cash:,.2f} | drawdown {self.drawdown:.2%}"
+                 + (" | HALTED" if self.halted else "")]
+        for f in self.fills:
+            lines.append(f"{f['side'].upper()} {f['symbol']} qty {f['qty']:.6g} @ {f['price']:.6g}: {f['reason']}")
+        for p in self.proposals:
+            lines.append(f"PROPOSED buy {p['symbol']} value {p['value']:.2f} @ {p['price']:.6g} (id {p['id']})")
+        if not self.fills and not self.proposals:
+            lines.append("no trades this cycle")
+        if self.errors:
+            lines.append(f"errors: {len(self.errors)} (see state/journal/events.jsonl)")
+        return "\n".join(lines)
+
+
+def combined_score(systematic: float, research: float | None) -> float:
+    if research is None:
+        return systematic
+    return (1 - RESEARCH_WEIGHT) * systematic + RESEARCH_WEIGHT * research
+
+
+def _latest_bar_date(df: pd.DataFrame) -> str:
+    return str(df.index[-1].date())
+
+
+def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider | None = None,
+              headlines_provider: Callable[[dict[str, str]], list[dict]] | None = None,
+              fx_provider: Callable[[], float] | None = None, broker: PaperBroker | None = None,
+              journal: Journal | None = None, memos_root: Path | None = None,
+              docs_dir: Path | None = None, notify: bool = True) -> CycleReport:
+    settings = settings or C.Settings.load()
+    C.ensure_dirs()
+    limits = settings.risk
+    broker = broker or PaperBroker(limits)
+    journal = journal or Journal()
+    risk = RiskEngine(limits)
+    report = CycleReport()
+    classes = C.symbol_classes(settings.universe)
+    bars_provider = bars_provider or (lambda s, cls: price_data.get_daily_bars(
+        s, cls, settings.lookback_days, settings.cache_ttl_hours))
+    fx = None
+
+    if settings.is_live:
+        journal.event("warning", "live mode requested but no live broker adapter is wired yet; running paper")
+
+    # 1. Data and signals ------------------------------------------------------
+    bars: dict[str, pd.DataFrame] = {}
+    signals: dict[str, Signal] = {}
+    latest_price: dict[str, float] = {}
+    for symbol, cls in classes.items():
+        try:
+            df = bars_provider(symbol, cls)
+            if cls == "au_stocks":
+                if fx is None:
+                    fx = (fx_provider or price_data.get_fx_rate)()
+                df = df * 1.0
+                for col in ("open", "high", "low", "close"):
+                    df[col] = df[col] * fx
+            bars[symbol] = df
+            sig = trend_signal(symbol, df, limits.stop_atr_multiple)
+            signals[symbol] = sig
+            latest_price[symbol] = float(df["close"].iloc[-1])
+        except Exception as exc:
+            msg = f"data error {symbol}: {exc}"
+            report.errors.append(msg)
+            journal.event("error", msg)
+            log.warning(msg)
+    report.signals = {s: sig.to_dict() for s, sig in signals.items()}
+
+    # 2. Research memos ----------------------------------------------------------
+    memos = memo_store.load_memos(memos_root)
+    research_scores = {s: m.score() for s, m in memos.items()}
+
+    # 3. Mark to market, kill switch, daily loss --------------------------------
+    equity = broker.mark(latest_price)
+    peak = broker.meta.get("peak_equity", equity)
+    drawdown = equity / peak - 1 if peak else 0.0
+    pf = Portfolio(cash=broker.cash(), equity=equity, peak_equity=peak,
+                   day_start_equity=broker.meta.get("day_start_equity", equity),
+                   positions=broker.positions(), halted=broker.meta.get("halted", False),
+                   halt_reason=broker.meta.get("halt_reason", ""))
+    kill, why = risk.check_kill_switch(pf)
+    if kill and not pf.halted:
+        fills = broker.liquidate_all(latest_price, why)
+        for f in fills:
+            journal.fill(f.to_dict())
+            report.fills.append(f.to_dict())
+        broker.meta["halted"], broker.meta["halt_reason"] = True, why
+        pf.halted, pf.halt_reason = True, why
+        journal.event("kill_switch", why)
+        equity = broker.mark(latest_price)
+    report.halted = pf.halted
+
+    # 4. Exits ------------------------------------------------------------------
+    if not pf.halted:
+        for symbol, pos in list(broker.positions().items()):
+            if symbol not in bars:
+                continue
+            sig = signals[symbol]
+            f = compute_features(bars[symbol]).iloc[-1]
+            price = latest_price[symbol]
+            research = research_scores.get(symbol)
+            combined = combined_score(sig.score, research)
+            should, reason = (False, "")
+            if sig.ok and not pd.isna(f["atr14"]) and not pd.isna(f["sma50"]):
+                should, reason = exit_rule(pos["avg_price"], pos.get("highest_close", pos["avg_price"]),
+                                           price, float(f["atr14"]), float(f["sma50"]), limits.stop_atr_multiple)
+            if not should and combined < limits.exit_score_threshold:
+                should, reason = True, f"combined score {combined:+.2f} below exit threshold"
+            if not should and symbol in memos and memos[symbol].vetoes_entry():
+                should, reason = True, f"research veto: {memos[symbol].data['thesis'][:80]}"
+            record = {"symbol": symbol, "systematic": round(sig.score, 3),
+                      "research": round(research, 3) if research is not None else None,
+                      "combined": round(combined, 3), "price": price, "held": True}
+            if should:
+                fill = broker.sell(symbol, pos["qty"], price, reason)
+                journal.fill(fill.to_dict())
+                report.fills.append(fill.to_dict())
+                record.update(action="sell", reason=reason)
+            else:
+                record.update(action="hold", reason="; ".join(sig.reasons[:2]))
+            journal.decision(record)
+            report.decisions.append(record)
+
+    # 5. Entries ------------------------------------------------------------------
+    equity = broker.mark(latest_price)
+    pf = Portfolio(cash=broker.cash(), equity=equity, peak_equity=broker.meta.get("peak_equity", equity),
+                   day_start_equity=broker.meta.get("day_start_equity", equity),
+                   positions=broker.positions(), halted=broker.meta.get("halted", False),
+                   halt_reason=broker.meta.get("halt_reason", ""))
+    last_entry_bar = broker.meta.setdefault("last_entry_bar", {})
+    candidates = []
+    for symbol, sig in signals.items():
+        if not sig.ok or symbol in broker.positions():
+            continue
+        research = research_scores.get(symbol)
+        combined = combined_score(sig.score, research)
+        vetoed = symbol in memos and memos[symbol].vetoes_entry()
+        if combined >= limits.entry_score_threshold and not vetoed:
+            candidates.append((combined, symbol, research))
+    candidates.sort(reverse=True)
+    for combined, symbol, research in candidates:
+        sig = signals[symbol]
+        bar_date = _latest_bar_date(bars[symbol])
+        record = {"symbol": symbol, "systematic": round(sig.score, 3),
+                  "research": round(research, 3) if research is not None else None,
+                  "combined": round(combined, 3), "price": sig.close, "held": False}
+        if last_entry_bar.get(symbol) == bar_date:
+            continue  # already decided on this bar
+        req = OrderRequest(symbol=symbol, asset_class=classes[symbol], price=sig.close,
+                           stop_distance=sig.stop_distance, score=combined)
+        decision = risk.size_entry(req, pf)
+        last_entry_bar[symbol] = bar_date
+        if not decision.approved:
+            record.update(action="skip", reason=decision.reason)
+            journal.decision(record)
+            report.decisions.append(record)
+            continue
+        reason = "; ".join(sig.reasons[:3]) + (f"; research {research:+.2f}" if research is not None else "")
+        if settings.approval_mode:
+            proposal = {"id": uuid.uuid4().hex[:8], "symbol": symbol, "asset_class": classes[symbol],
+                        "qty": decision.qty, "value": decision.value, "price": sig.close,
+                        "stop_price": decision.stop_price, "reason": reason,
+                        "created": datetime.now(timezone.utc).isoformat(timespec="seconds")}
+            _append_pending(proposal)
+            report.proposals.append(proposal)
+            record.update(action="proposed", reason=reason)
+        else:
+            fill = broker.buy(symbol, decision.qty, sig.close, classes[symbol], reason)
+            broker.positions()[symbol]["stop_price"] = decision.stop_price
+            journal.fill(fill.to_dict())
+            report.fills.append(fill.to_dict())
+            record.update(action="buy", reason=f"{reason} | {decision.reason}")
+            pf = Portfolio(cash=broker.cash(), equity=broker.mark(latest_price), peak_equity=pf.peak_equity,
+                           day_start_equity=pf.day_start_equity, positions=broker.positions())
+        journal.decision(record)
+        report.decisions.append(record)
+
+    # 6. Snapshot, packet, alerts, dashboard ----------------------------------------
+    equity = broker.mark(latest_price)
+    peak = broker.meta.get("peak_equity", equity)
+    drawdown = equity / peak - 1 if peak else 0.0
+    report.equity, report.cash, report.drawdown = equity, broker.cash(), drawdown
+    journal.equity({"equity": round(equity, 2), "cash": round(broker.cash(), 2), "drawdown": round(drawdown, 4),
+                    "peak": round(peak, 2), "positions": len(broker.positions()), "halted": report.halted})
+    broker.save()
+
+    top = sorted(signals.values(), key=lambda s: -s.score)
+    packet_symbols = [s.symbol for s in top[:10] if s.ok] + [s for s in broker.positions() if s in signals]
+    packet_symbols = list(dict.fromkeys(packet_symbols))
+    try:
+        queries = {s: news.default_query_for(s, classes[s]) for s in packet_symbols[:8]}
+        headlines = (headlines_provider(queries) if headlines_provider
+                     else [h.to_dict() for h in news.fetch_headlines(queries)])
+        news_dir = C.RESEARCH_DIR / "news"
+        news_dir.mkdir(parents=True, exist_ok=True)
+        (news_dir / f"{datetime.now(timezone.utc).date().isoformat()}.json").write_text(
+            json.dumps({"count": len(headlines), "items": headlines}, indent=1))
+    except Exception as exc:
+        headlines = []
+        report.errors.append(f"news error: {exc}")
+        journal.event("error", f"news error: {exc}")
+    report.packet_path = build_packet(report.signals, broker.positions(), headlines,
+                                      {s: m.data for s, m in memos.items()}, equity, broker.cash(),
+                                      packet_symbols, memos_root)
+    if notify and (report.fills or report.proposals or report.halted):
+        telegram.send(report.summary(), settings.telegram_bot_token, settings.telegram_chat_id)
+    report.dashboard_path = dashboard.build(journal, broker, memos, report.signals, settings, docs_dir)
+    return report
+
+
+# ---- approval mode helpers ---------------------------------------------------------
+def _pending_path() -> Path:
+    return C.STATE_DIR / "pending_orders.json"
+
+
+def _append_pending(proposal: dict) -> None:
+    items = load_pending()
+    items.append(proposal)
+    _pending_path().write_text(json.dumps(items, indent=2))
+
+
+def load_pending() -> list[dict]:
+    p = _pending_path()
+    return json.loads(p.read_text()) if p.exists() else []
+
+
+def approve(order_id: str, settings: C.Settings | None = None, broker: PaperBroker | None = None,
+            journal: Journal | None = None) -> list[dict]:
+    settings = settings or C.Settings.load()
+    broker = broker or PaperBroker(settings.risk)
+    journal = journal or Journal()
+    items = load_pending()
+    chosen = [i for i in items if order_id == "all" or i["id"] == order_id]
+    done = []
+    for p in chosen:
+        try:
+            fill = broker.buy(p["symbol"], p["qty"], p["price"], p["asset_class"], "approved: " + p["reason"])
+            broker.positions()[p["symbol"]]["stop_price"] = p["stop_price"]
+            journal.fill(fill.to_dict())
+            journal.decision({"symbol": p["symbol"], "action": "buy", "reason": "human approved " + p["id"],
+                              "price": p["price"], "combined": None, "systematic": None, "research": None})
+            done.append(fill.to_dict())
+        except Exception as exc:
+            journal.event("error", f"approve {p['id']} failed: {exc}")
+    remaining = [i for i in items if i not in chosen]
+    _pending_path().write_text(json.dumps(remaining, indent=2))
+    broker.save()
+    return done
+
+
+def reject(order_id: str) -> int:
+    items = load_pending()
+    remaining = [i for i in items if not (order_id == "all" or i["id"] == order_id)]
+    _pending_path().write_text(json.dumps(remaining, indent=2))
+    return len(items) - len(remaining)

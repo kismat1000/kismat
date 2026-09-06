@@ -1,0 +1,29 @@
+# Hard risk limits. Plain code enforces these. No agent, prompt, or memo can
+# override them. Change them here, commit, and the next cycle picks them up.
+
+starting_cash: 1000.0          # paper account size in base currency (USD)
+base_currency: USD
+
+max_position_pct: 0.15         # max 15% of equity in any single position
+max_positions: 6               # max simultaneous open positions
+max_asset_class_pct:           # max share of equity per asset class
+  crypto: 0.50
+  us_stocks: 0.60
+  au_stocks: 0.60
+
+per_trade_risk_pct: 0.01       # risk 1% of equity per trade (entry to stop distance)
+stop_atr_multiple: 2.5         # initial and trailing stop distance in ATR units
+min_trade_value: 10.0          # skip dust orders below this value
+
+max_daily_loss_pct: 0.03       # lose 3% in a day: no new entries until next day
+max_drawdown_pct: 0.10         # lose 10% from peak: kill switch, halt everything
+
+entry_score_threshold: 0.35    # combined score needed to open a position
+exit_score_threshold: -0.10    # combined score below this closes a position
+
+# Cost model for paper fills. Conservative on purpose.
+fees_bps:
+  crypto: 10                   # 0.10% per side (Binance spot without BNB discount)
+  us_stocks: 5                 # commission-free brokers still pay spread
+  au_stocks: 15                # ASX brokers: min commissions hurt small orders
+slippage_bps: 5

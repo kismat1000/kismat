@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ResearchMemo",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["symbol", "asset_class", "date", "direction", "conviction", "thesis",
+               "bull_case", "bear_case", "catalysts", "risks", "invalidation",
+               "horizon_days", "sources", "agent"],
+  "properties": {
+    "symbol": {"type": "string"},
+    "asset_class": {"type": "string", "enum": ["crypto", "us_stocks", "au_stocks"]},
+    "date": {"type": "string", "description": "YYYY-MM-DD (UTC)"},
+    "direction": {"type": "string", "enum": ["long", "flat", "avoid"],
+                  "description": "long = worth owning now, flat = no edge, avoid = do not touch"},
+    "conviction": {"type": "number", "minimum": 0, "maximum": 1},
+    "thesis": {"type": "string", "description": "Two or three sentences. The one idea that matters."},
+    "bull_case": {"type": "string"},
+    "bear_case": {"type": "string"},
+    "catalysts": {"type": "array", "items": {"type": "string"}},
+    "risks": {"type": "array", "items": {"type": "string"}},
+    "invalidation": {"type": "string", "description": "What would prove this wrong, concretely."},
+    "horizon_days": {"type": "integer", "minimum": 1},
+    "sources": {"type": "array", "items": {"type": "string"}, "description": "URLs or document names"},
+    "agent": {"type": "string", "description": "Who wrote it, e.g. council/judge"},
+    "council_votes": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "bull": {"type": "number", "minimum": 0, "maximum": 1},
+        "bear": {"type": "number", "minimum": 0, "maximum": 1},
+        "macro": {"type": "number", "minimum": 0, "maximum": 1},
+        "quant": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    }
+  }
+}
