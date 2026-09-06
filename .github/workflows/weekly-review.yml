@@ -14,6 +14,8 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
@@ -24,4 +26,4 @@ jobs:
           git config user.name "kismat-bot"
           git config user.email "kismat-bot@users.noreply.github.com"
           git add research/reviews
-          git diff --cached --quiet || (git commit -m "chore(review): weekly packet" && git push)
+          git diff --cached --quiet || (git commit -m "chore(review): weekly packet" && git push origin HEAD:main)

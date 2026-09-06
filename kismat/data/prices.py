@@ -22,8 +22,11 @@ from kismat.config import CACHE_DIR
 
 log = logging.getLogger(__name__)
 
-BINANCE_URL = "https://api.binance.com/api/v3/klines"
+# Binance.com answers HTTP 451 from US networks (GitHub Actions runners are
+# US-based). Try the global host, then Binance.US, then Yahoo as a last resort.
+BINANCE_HOSTS = ("https://api.binance.com", "https://api.binance.us")
 COLUMNS = ["open", "high", "low", "close", "volume"]
+QUOTE_SUFFIXES = ("USDT", "USDC", "USD")
 
 
 def _cache_path(symbol: str) -> Path:
@@ -53,22 +56,46 @@ def _write_cache(symbol: str, df: pd.DataFrame) -> None:
     df.to_csv(_cache_path(symbol))
 
 
-def fetch_binance_daily(symbol: str, lookback_days: int) -> pd.DataFrame:
+def fetch_binance_daily(symbol: str, lookback_days: int,
+                        hosts: tuple[str, ...] = BINANCE_HOSTS) -> pd.DataFrame:
     limit = min(1000, lookback_days + 5)
-    resp = requests.get(
-        BINANCE_URL,
-        params={"symbol": symbol, "interval": "1d", "limit": limit},
-        timeout=20,
-    )
-    resp.raise_for_status()
-    rows = resp.json()
-    if not rows:
-        raise ValueError(f"no klines for {symbol}")
-    idx = pd.to_datetime([r[0] for r in rows], unit="ms", utc=True)
-    data = np.array([[r[1], r[2], r[3], r[4], r[5]] for r in rows], dtype=float)
-    df = pd.DataFrame(data, index=idx, columns=COLUMNS)
-    df.index.name = "date"
-    return df
+    last_exc: Exception | None = None
+    for host in hosts:
+        try:
+            resp = requests.get(f"{host}/api/v3/klines",
+                                params={"symbol": symbol, "interval": "1d", "limit": limit},
+                                timeout=20)
+            resp.raise_for_status()
+            rows = resp.json()
+            if not rows:
+                raise ValueError(f"no klines for {symbol} at {host}")
+            idx = pd.to_datetime([r[0] for r in rows], unit="ms", utc=True)
+            data = np.array([[r[1], r[2], r[3], r[4], r[5]] for r in rows], dtype=float)
+            df = pd.DataFrame(data, index=idx, columns=COLUMNS)
+            df.index.name = "date"
+            return df
+        except Exception as exc:
+            last_exc = exc
+            log.warning("binance host %s failed for %s: %s", host, symbol, exc)
+    raise last_exc if last_exc else ValueError(f"no binance host for {symbol}")
+
+
+def crypto_to_yahoo(symbol: str) -> str:
+    """BTCUSDT -> BTC-USD. Yahoo quotes every major coin in USD."""
+    if "-" in symbol:
+        return symbol  # already a Yahoo symbol
+    for suffix in QUOTE_SUFFIXES:
+        if symbol.endswith(suffix) and len(symbol) > len(suffix):
+            return f"{symbol[:-len(suffix)]}-USD"
+    return symbol
+
+
+def fetch_crypto_daily(symbol: str, lookback_days: int) -> pd.DataFrame:
+    try:
+        return fetch_binance_daily(symbol, lookback_days)
+    except Exception as exc:
+        log.warning("binance unavailable for %s (%s); falling back to yahoo", symbol, exc)
+        return fetch_yahoo_daily(crypto_to_yahoo(symbol), lookback_days)
 
 
 def fetch_yahoo_daily(symbol: str, lookback_days: int) -> pd.DataFrame:
@@ -97,7 +124,7 @@ def get_daily_bars(symbol: str, asset_class: str, lookback_days: int = 400,
         return cached
     try:
         if asset_class == "crypto":
-            df = fetch_binance_daily(symbol, lookback_days)
+            df = fetch_crypto_daily(symbol, lookback_days)
         else:
             df = fetch_yahoo_daily(symbol, lookback_days)
         df = df[~df.index.duplicated(keep="last")].sort_index()
