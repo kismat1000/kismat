@@ -1,0 +1,39 @@
+{
+  "symbol": "BHP.AX",
+  "asset_class": "au_stocks",
+  "date": "2026-09-06",
+  "direction": "flat",
+  "conviction": 0.5,
+  "thesis": "BHP's FY2026 result was solid - dividend up to US$1.72, net debt down to US$8.69B - but the commodity mix is turning: iron ore is approaching the US$90/t level that has historically triggered earnings downgrades, and copper strength is what has been carrying the stock. Add a price feed I could not verify and a live RBA hike on 29 Sep, and there is no edge in adding here.",
+  "bull_case": "FY2026 results (18 Aug 2026): annual dividend raised to US$1.72 per share, the highest in four years, with net debt down to US$8.69B, near the bottom of the target range - a balance sheet with room. Copper has been the driver, with the stock reported at a record in mid-June 2026 on the copper rally and up strongly over 12 months; JPMorgan carries a Buy with a A$67 target. The packet trend agrees: close above SMA50 above SMA200, score +0.41, RSI 55, ATR 2.5%. Copper is the one commodity with a genuine multi-year supply deficit story attached to electrification.",
+  "bear_case": "Iron ore is still the profit engine and it is approaching the US$90/t psychological floor, a level that historically triggers significant downward earnings revisions; sell-side work published this cycle argues neither the copper nor the iron ore outlook is supportive. Momentum is already fading - 3m momentum of just +5.9% is the weakest of our holdings bar SPY - and BHP opened flat then fell ~2% on Fri 4 Sep as miners dragged the ASX 200 down to 9,006. China demand is the whole thesis and the trade backdrop is deteriorating: China publicly hit back at the G20 over export reliance on 3 Sep. Broker targets straddle the price (RBC Hold A$60, Macquarie Hold A$55), which is the definition of no edge. Data-integrity flag: the packet prices this at 44.8519, but dated reports through Aug-Sep 2026 put it materially higher (around A$63.5 in mid-Aug 2026, with broker targets between A$55 and A$67). I could not reconcile this from the session - Yahoo Finance egress is blocked here, so the desk's own price source cannot be re-queried independently. Until the ASX feed is reconciled, any level-based call on this symbol (entries, stops, invalidation) is built on a number I could not verify.",
+  "catalysts": [
+    "Iron ore holding or losing the US$90/t level",
+    "China stimulus or further trade escalation after the 3 Sep G20 exchange",
+    "29 Sep 2026 RBA decision and the AUD",
+    "Copper price direction into Q4 2026"
+  ],
+  "risks": [
+    "Unverified price feed: the packet level conflicts with dated market reports",
+    "Iron ore below US$90/t triggering consensus earnings downgrades",
+    "China demand and trade escalation",
+    "Single-commodity concentration despite the copper story",
+    "AUD strength on an RBA hike reducing AUD-translated earnings"
+  ],
+  "invalidation": "Reconcile the ASX price feed first. Thereafter: the bear case confirms on iron ore closing below US$90/t for a week, or a break of the packet's SMA50; constructive again only if copper makes new highs while iron ore holds above US$95/t.",
+  "horizon_days": 30,
+  "sources": [
+    "https://www.tradingview.com/news/reuters.com,2026-08-18:newsml_RSR0375Ra:0",
+    "https://seekingalpha.com/article/4915467-bhp-copper-and-iron-price-outlooks-arent-supportive",
+    "https://www.fool.com.au/2026/08/11/bhp-shares-keep-climbing-is-70-the-next-stop/",
+    "https://www.cnbc.com/2026/09/03/china-g20-exports-trade.html",
+    "https://www.marketindex.com.au/news/asx-200-live-today-friday-4th-september",
+    "research/packets/2026-09-06.md"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.45,
+    "bear": 0.55,
+    "macro": 0.3
+  }
+}

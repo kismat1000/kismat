@@ -1,0 +1,40 @@
+{
+  "symbol": "NVDA",
+  "asset_class": "us_stocks",
+  "date": "2026-09-06",
+  "direction": "long",
+  "conviction": 0.62,
+  "thesis": "Nvidia's 26 Aug 2026 quarter was a fact, not a story: $96.2B revenue with data centre up 117% year on year, and a Q3 guide of $108B that explicitly assumes zero China data centre compute revenue. Price is confirming - a 55-day breakout with RSI only 54, so the move is not yet crowded. The trade is owning the one company whose numbers are already in the bank while the macro argues about rates.",
+  "bull_case": "Q2 FY2027 (reported 26 Aug 2026): revenue $96.22B vs $92.17B consensus, non-GAAP EPS $2.22, data centre $89.0B (+117% y/y, +18% q/q, ~92% of revenue). Q3 guide $108B +/-2% with no China data centre compute assumed, so the China headline risk is already excluded from the number the market is underwriting. Packet has close 230.36 above SMA50 above SMA200, a 55-day high, 3m momentum +12.3%, RSI 54 and ATR 3.3% - a breakout with room, not an exhausted one. Confirmation would be holding above the breakout on any down day in the index.",
+  "bear_case": "This is a levered bet on hyperscaler capex continuing at an unprecedented rate. Customer concentration is extreme and Nvidia is partly financing its own demand through AI-lab investments. Nvidia's 10-Q states it is effectively foreclosed from China's data centre compute market, and CNBC (19 Aug 2026) reports Chinese firms reaching restricted chips via Southeast Asian data centres - an enforcement crackdown would hit reported demand outside China too. AI-linked names are roughly 40-45% of S&P 500 cap, so a rate shock hits this name twice: multiple and sentiment. With the 10-year near 4.8% and a live Fed hike on 16 Sep, the highest-multiple megacap is the wrong place to be if the hike lands hawkish.",
+  "catalysts": [
+    "16 Sep 2026 FOMC: a hold, or a hike framed as one-and-done, removes the rate overhang",
+    "Hyperscaler capex commentary through Sep-Oct conference season",
+    "Q3 FY2027 results due late Nov 2026 against the $108B guide"
+  ],
+  "risks": [
+    "Hyperscaler capex guidance cut for 2027 by any of MSFT, AMZN, GOOGL or META",
+    "US export-control crackdown on Southeast Asian data centre routing",
+    "Rate shock: 16 Sep hike plus 10-year above 5% compresses high-multiple tech",
+    "Customer concentration and vendor-financed demand",
+    "Position is ~12% of a $999 account: single-name risk is real at this size"
+  ],
+  "invalidation": "Two consecutive daily closes below 210 (negates the 55-day breakout and the SMA50 structure), or any top-four hyperscaler guiding 2027 AI capex lower.",
+  "horizon_days": 30,
+  "sources": [
+    "https://www.investing.com/news/company-news/nvidia-q2-fy27-slides-revenue-doubles-to-96b-data-center-surges-93CH-4878041",
+    "https://www.webull.com/blog/304-Nvidia-Q2-FY2027-Earnings-Beats-Revenue-EPS-Estimates-Guides-Q3-to-108B",
+    "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000075/nvda-20260726.htm",
+    "https://www.cnbc.com/2026/08/19/china-ai-nvidia-chips-us-export-controls.html",
+    "https://www.kucoin.com/blog/ai-stocks-now-45-percent-of-sp500-is-a-us-stock-market-crash-coming-in-2026",
+    "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-04-2026",
+    "https://www.cnbc.com/2026/08/31/markets-see-warsh-endorsing-a-rate-hike-in-september-not-everyone-is-convinced.html",
+    "research/packets/2026-09-06.md"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.72,
+    "bear": 0.45,
+    "macro": 0.35
+  }
+}

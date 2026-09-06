@@ -1,0 +1,37 @@
+{
+  "symbol": "ANZ.AX",
+  "asset_class": "au_stocks",
+  "date": "2026-09-06",
+  "direction": "flat",
+  "conviction": 0.45,
+  "thesis": "Two independent reasons not to add: the RBA meets on 29 Sep with a live hike risk after a strong Q2 GDP print, and the packet's price for ANZ does not match any dated market report I could find, which I could not resolve from this session. A bank with no fresh catalyst until November results, priced off a feed I cannot verify, is a hold and nothing more.",
+  "bull_case": "The systematic read is constructive: packet close 27.3435 above SMA50 above SMA200, 3m momentum +10.7%, score +0.46, ATR only 1.7% - a quiet uptrend. Fundamentally the simplification programme is landing: cash profit of $3.78B supported by lower operating costs, return on tangible equity up to 11.6%, CET1 at 12.39%, and a restructuring targeting roughly 3,500 fewer roles by Sep 2026. Analysts have been raising targets (one survey moving from $31.71 to $33.91) on better margins. If the RBA hikes, bank net interest margins are usually the first beneficiary.",
+  "bear_case": "The largest problem is our own data. Data-integrity flag: the packet prices this at 27.3435, but dated reports through Aug-Sep 2026 put it materially higher (around A$33-35 in mid-2026, with broker targets in the low-to-mid A$30s). I could not reconcile this from the session - Yahoo Finance egress is blocked here, so the desk's own price source cannot be re-queried independently. Until the ASX feed is reconciled, any level-based call on this symbol (entries, stops, invalidation) is built on a number I could not verify. Beyond that: ANZ carries the largest penalty ASIC has ever secured against a single entity - $250M ordered by the Federal Court over widespread misconduct including unconscionable conduct on a $14B government bond issuance, 488 unanswered hardship notices, and years of bonus-interest underpayments. That is settled and dated to Sep 2025 rather than fresh, but it is a governance record, not a footnote. ASX 200 banks were sold off into the week ending 4 Sep as rate-hike fears revived. No company catalyst until FY26 results in November.",
+  "catalysts": [
+    "29 Sep 2026 RBA cash rate decision (currently 4.35%)",
+    "FY26 full-year results, early Nov 2026",
+    "Restructuring milestone: ~3,500 role reductions targeted by Sep 2026"
+  ],
+  "risks": [
+    "Unverified price feed: the packet level conflicts with dated market reports",
+    "RBA hike hits credit growth and household arrears even as it helps margins",
+    "Governance record: ASIC's largest-ever penalty against a single entity",
+    "Australian housing and mortgage competition compressing margins"
+  ],
+  "invalidation": "First, reconcile the ASX price feed against an independent source; no level-based call is valid until then. Thereafter: constructive only if it holds above the packet's SMA50 through the 29 Sep RBA decision, negative on a break of the SMA50 with rising arrears in the November result.",
+  "horizon_days": 30,
+  "sources": [
+    "https://www.asic.gov.au/about-asic/news-centre/find-a-media-release/2025-releases/25-314mr-federal-court-orders-250-million-combined-penalties-against-anz",
+    "https://kalkine.com.au/news/financial-stocks/anz-share-price-analysis-earnings-growth-transformation-update-outlook-2026",
+    "https://www.finder.com.au/rba-cash-rate",
+    "https://www.marketindex.com.au/news/asx-200-live-today-friday-4th-september",
+    "https://www.sbs.com.au/news/live-blog/rba-august-2026-interest-rates-decision-live/trlncz8i2",
+    "research/packets/2026-09-06.md"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.45,
+    "bear": 0.5,
+    "macro": 0.3
+  }
+}
