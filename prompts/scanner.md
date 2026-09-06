@@ -1,8 +1,9 @@
 # Scanner
 
-Task: from the research packet, pick at most five symbols that deserve deep
-research today. You are choosing where to spend scarce attention, not making
-calls.
+Task: from the research packet, choose where to spend today's research. Every
+open position is always reviewed (live risk beats new ideas). On top of those,
+pick up to three new candidates that deserve deep research. You are choosing
+where to spend scarce attention, not making calls.
 
 Prefer:
 - strong systematic scores that also have a fresh catalyst in the headlines
