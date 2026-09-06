@@ -14,6 +14,9 @@ concurrency:
 
 jobs:
   cycle:
+    # Scheduled runs happen on the default branch. Only main may hold state,
+    # so a stray default branch never forks the journal.
+    if: github.event_name == 'workflow_dispatch' || github.ref_name == 'main'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
