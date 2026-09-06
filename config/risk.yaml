@@ -23,8 +23,10 @@ entry_score_threshold: 0.35    # combined score needed to open a position
 exit_score_threshold: -0.10    # combined score below this closes a position
 
 # Rotation: when the book is full, replace the weakest holding with a much
-# stronger candidate. 0 disables it.
-rotation_margin: 0.30          # candidate score must beat the weakest holding by this much
+# stronger candidate. 0 disables it. Off since the 2026-09-06 backtest:
+# whole universe, two years, rotation off +18.0% / Sharpe 0.79 / max DD -12.5%
+# against +14.1% / 0.64 / -13.7% at margin 0.30. Re-checked by the weekly backtest.
+rotation_margin: 0.0           # candidate score must beat the weakest holding by this much
 min_hold_days: 1               # never rotate out a position younger than this
 
 # Cost model for paper fills. Conservative on purpose.
