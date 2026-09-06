@@ -113,6 +113,15 @@ class AlpacaPaper:
         orders = self._req("GET", "/v2/orders", params={"status": "open", "symbols": syms[0]}) or []
         return len(orders)
 
+    def cancel_open(self, symbol: str) -> int:
+        syms = self._symbols(symbol)
+        if not syms:
+            return 0
+        orders = self._req("GET", "/v2/orders", params={"status": "open", "symbols": syms[0]}) or []
+        for o in orders:
+            self._req("DELETE", f"/v2/orders/{o['id']}")
+        return len(orders)
+
     def _wait(self, order: dict) -> dict:
         deadline = time.time() + self.poll_seconds
         while order.get("status") not in ("filled", "canceled", "rejected", "expired") and time.time() < deadline:
@@ -148,7 +157,9 @@ class AlpacaPaper:
             return VenueFill("skipped", note=f"{symbol} not listed at alpaca; ledger-only exit")
         held = self.holds(symbol)
         if held <= 0:
-            return VenueFill("skipped", note="not held at alpaca; ledger-only exit")
+            cancelled = self.cancel_open(symbol)
+            note = "not held at alpaca; ledger-only exit" + (f"; cancelled {cancelled} queued order(s)" if cancelled else "")
+            return VenueFill("skipped", note=note)
         if qty >= held * 0.999:
             order = self._req("DELETE", f"/v2/positions/{syms[1]}")   # close the whole position
         else:

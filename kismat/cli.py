@@ -40,7 +40,9 @@ def cmd_backtest(args) -> int:
                          max_position_pct=settings.risk.max_position_pct,
                          fee_bps=max(settings.risk.fees_bps.values()), slippage_bps=settings.risk.slippage_bps,
                          entry_threshold=settings.risk.entry_score_threshold,
-                         stop_atr_multiple=settings.risk.stop_atr_multiple)
+                         stop_atr_multiple=settings.risk.stop_atr_multiple,
+                         rotation_margin=0.0 if args.no_rotation else settings.risk.rotation_margin,
+                         min_hold_days=settings.risk.min_hold_days)
     result = run_backtest(bars, cfg)
     print(f"symbols {len(bars)} | days {result.metrics['days']}")
     print(result.summary())
@@ -173,6 +175,7 @@ def main(argv=None) -> int:
     s.add_argument("--asset-class", choices=list(C.ASSET_CLASSES))
     s.add_argument("--days", type=int, default=400)
     s.add_argument("--synthetic", action="store_true", help="offline: random-walk data")
+    s.add_argument("--no-rotation", action="store_true", help="disable the rotation rule for comparison")
     s.add_argument("--json", action="store_true")
     s.set_defaults(fn=cmd_backtest)
     sub.add_parser("status", help="print paper account state").set_defaults(fn=cmd_status)

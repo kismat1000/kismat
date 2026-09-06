@@ -57,6 +57,10 @@ def test_alpaca_sell_closes_position_and_skips_when_not_held(monkeypatch):
             return _R(200, {"symbol": "NVDA", "qty": "0.5"})
         if method == "GET" and url.endswith("/v2/positions/AAPL"):
             return _R(404)
+        if method == "GET" and url.endswith("/v2/orders"):
+            return _R(200, [{"id": "q1"}])
+        if method == "DELETE" and url.endswith("/v2/orders/q1"):
+            return _R(200, {})
         if method == "DELETE" and url.endswith("/v2/positions/NVDA"):
             return _R(200, {"id": "o2", "status": "filled", "filled_qty": "0.5", "filled_avg_price": "240"})
         raise AssertionError((method, url))
@@ -64,7 +68,8 @@ def test_alpaca_sell_closes_position_and_skips_when_not_held(monkeypatch):
     monkeypatch.setattr(V.requests, "request", fake_request)
     a = V.AlpacaPaper("k", "s", poll_seconds=0)
     assert a.sell("NVDA", 0.5, 239.0).status == "filled"
-    assert a.sell("AAPL", 1.0, 100.0).status == "skipped"
+    skipped = a.sell("AAPL", 1.0, 100.0)
+    assert skipped.status == "skipped" and "cancelled 1" in skipped.note
 
 
 def test_binance_signature_and_quote_qty_buy(monkeypatch):
