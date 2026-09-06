@@ -117,6 +117,11 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
             journal.event("error", msg)
             log.warning(msg)
     report.signals = {s: sig.to_dict() for s, sig in signals.items()}
+    native_prices: dict[str, float] = {}
+    if fx:
+        journal.event("fx", f"AUDUSD {fx:.4f} used to convert ASX prices to USD")
+        native_prices = {s: latest_price[s] / fx for s, cls in classes.items()
+                         if cls == "au_stocks" and s in latest_price}
 
     # 2. Research memos ----------------------------------------------------------
     memos = memo_store.load_memos(memos_root)
@@ -253,7 +258,7 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
         journal.event("error", f"news error: {exc}")
     report.packet_path = build_packet(report.signals, broker.positions(), headlines,
                                       {s: m.data for s, m in memos.items()}, equity, broker.cash(),
-                                      packet_symbols, memos_root)
+                                      packet_symbols, memos_root, fx=fx, native_prices=native_prices)
     if notify and (report.fills or report.proposals or report.halted):
         telegram.send(report.summary(), settings.telegram_bot_token, settings.telegram_chat_id)
     report.dashboard_path = dashboard.build(journal, broker, memos, report.signals, settings, docs_dir)

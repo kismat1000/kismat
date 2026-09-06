@@ -14,7 +14,9 @@ from kismat.config import RESEARCH_DIR, ROOT
 
 def build_packet(signals: dict[str, dict], positions: dict[str, dict], headlines: list[dict],
                  memos: dict[str, dict], equity: float, cash: float,
-                 candidates: list[str], root: Path | None = None) -> Path:
+                 candidates: list[str], root: Path | None = None, fx: float | None = None,
+                 native_prices: dict[str, float] | None = None) -> Path:
+    native_prices = native_prices or {}
     root = root or RESEARCH_DIR
     today = datetime.now(timezone.utc).date().isoformat()
     out_dir = root / "packets"
@@ -27,7 +29,9 @@ def build_packet(signals: dict[str, dict], positions: dict[str, dict], headlines
              "following prompts/memo_schema.json. Do not write memos for symbols you did not research.",
              "",
              f"## Account", f"- equity: {equity:.2f}", f"- cash: {cash:.2f}",
-             f"- open positions: {len(positions)}", ""]
+             f"- open positions: {len(positions)}",
+             (f"- all prices are USD; ASX symbols were converted at AUDUSD {fx:.4f}, native AUD shown in the "
+              f"`native` column" if fx else "- all prices are USD"), ""]
     if positions:
         lines.append("## Open positions (review these first: should we still hold?)")
         for sym, p in positions.items():
@@ -46,12 +50,13 @@ def build_packet(signals: dict[str, dict], positions: dict[str, dict], headlines
         lines.append(f"- {sym}: score {score:+.2f}; " + "; ".join(sig.get("reasons", [])) + memo_note)
     lines.append("")
     lines.append("## Full signal table")
-    lines.append("| symbol | score | close | rsi | 3m | atr% |")
-    lines.append("|---|---|---|---|---|---|")
+    lines.append("| symbol | score | close (USD) | native | rsi | 3m | atr% |")
+    lines.append("|---|---|---|---|---|---|---|")
     for sym in sorted(signals, key=lambda s: -signals[s]["score"]):
         sig = signals[sym]
         f = sig.get("features", {})
-        lines.append(f"| {sym} | {sig['score']:+.2f} | {sig.get('close', float('nan')):.6g} | "
+        native = f"A${native_prices[sym]:.2f}" if sym in native_prices else "-"
+        lines.append(f"| {sym} | {sig['score']:+.2f} | {sig.get('close', float('nan')):.6g} | {native} | "
                      f"{f.get('rsi14', float('nan')):.0f} | {f.get('roc63', 0):+.1%} | {f.get('atr_pct', 0):.1%} |")
     lines.append("")
     lines.append(f"## Headlines ({len(headlines)})")

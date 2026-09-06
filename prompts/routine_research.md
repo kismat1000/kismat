@@ -6,8 +6,8 @@ end to end, then stop.
 1. `git pull` the default branch. Read prompts/00_desk_rules.md.
 2. Open the newest file in research/packets/. If none exists, run
    `python -m kismat cycle --quiet` first (needs `pip install -r requirements.txt`).
-3. Run prompts/scanner.md against the packet to pick up to five symbols. Always
-   include any symbol currently held.
+3. Run prompts/scanner.md against the packet: every currently held position
+   (state/paper/portfolio.json) plus up to three new candidates.
 4. For each pick run the council: prompts/bull_analyst.md, then
    prompts/bear_analyst.md, then prompts/macro_analyst.md once for the day,
    then prompts/judge.md. Use web search for every analyst step. Cite dated

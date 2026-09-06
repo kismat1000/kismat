@@ -39,7 +39,9 @@ def test_cycle_buys_uptrends_skips_downtrends_and_survives_feed_errors(settings,
     assert any("FLAT" in e for e in report.errors)
     assert report.equity > 0 and broker.cash() < settings.risk.starting_cash
     assert (tmp_root / "docs" / "index.html").exists()
-    assert report.packet_path.exists() and "UPUSDT" in report.packet_path.read_text()
+    packet = report.packet_path.read_text()
+    assert report.packet_path.exists() and "UPUSDT" in packet
+    assert "AUDUSD 0.6500" in packet and "A$" in packet
     assert journal.read("equity") and journal.read("fills") and journal.read("decisions")
     for pos in broker.positions().values():
         assert pos["value"] <= settings.risk.max_position_pct * report.equity * 1.01
