@@ -30,3 +30,16 @@ def test_cannot_overspend_and_liquidate(tmp_path):
     assert len(fills) == 1 and b.positions() == {}
     with pytest.raises(ValueError):
         b.sell("ETHUSDT", 1, 60.0)
+
+
+def test_deposit_rebases_peak_and_reset_guards(tmp_path):
+    b = PaperBroker(RiskLimits(starting_cash=100), path=tmp_path / "pf.json")
+    b.buy("BTCUSDT", qty=0.5, price=100.0, asset_class="crypto")
+    b.mark({"BTCUSDT": 120.0})
+    peak_before = b.meta["peak_equity"]
+    eq = b.deposit(900.0, {"BTCUSDT": 120.0})
+    assert eq == pytest.approx(b.equity({"BTCUSDT": 120.0}))
+    assert b.meta["peak_equity"] == pytest.approx(eq) and eq > peak_before
+    b.meta["last_entry_bar"] = {"BTCUSDT": "2026-01-01"}
+    b.reset_entry_guards()
+    assert b.meta["last_entry_bar"] == {}

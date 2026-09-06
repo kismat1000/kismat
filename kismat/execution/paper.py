@@ -115,6 +115,19 @@ class PaperBroker:
         self.fills.append(fill)
         return fill
 
+    def deposit(self, amount: float, prices: dict[str, float] | None = None) -> float:
+        """Add paper cash and rebase peak and day-start equity so drawdown math
+        does not read the deposit as a gain. Returns the new equity."""
+        self._cash += float(amount)
+        eq = self.equity(prices or {})
+        self.meta["peak_equity"] = eq
+        self.meta["day_start_equity"] = eq
+        return eq
+
+    def reset_entry_guards(self) -> None:
+        self.meta["last_entry_bar"] = {}
+        self.meta["journal_marks"] = {}
+
     def liquidate_all(self, prices: dict[str, float], reason: str) -> list[Fill]:
         fills = []
         for sym in list(self._positions):

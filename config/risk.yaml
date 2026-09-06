@@ -1,13 +1,13 @@
 # Hard risk limits. Plain code enforces these. No agent, prompt, or memo can
 # override them. Change them here, commit, and the next cycle picks them up.
 
-starting_cash: 1000.0          # paper account size in base currency (USD)
+starting_cash: 10000.0         # paper account size in base currency (USD); test book
 base_currency: USD
 
-max_position_pct: 0.15         # max 15% of equity in any single position
-max_positions: 6               # max simultaneous open positions
+max_position_pct: 0.10         # max 10% of equity in any single position
+max_positions: 12              # max simultaneous open positions
 max_asset_class_pct:           # max share of equity per asset class
-  crypto: 0.50
+  crypto: 0.60
   us_stocks: 0.60
   au_stocks: 0.60
 
