@@ -50,9 +50,13 @@ def test_cycle_buys_uptrends_skips_downtrends_and_survives_feed_errors(settings,
 
 def test_second_cycle_same_bar_does_not_churn(settings, tmp_root):
     run(settings, tmp_root)
-    report2, broker, _ = run(settings, tmp_root)
+    report2, broker, journal = run(settings, tmp_root)
     assert not [f for f in report2.fills if f["side"] == "buy"]
     assert len(broker.positions()) == 2
+    holds = [d for d in journal.read("decisions") if d["action"] == "hold"]
+    assert len(holds) == len(broker.positions())          # journaled once per bar, not per cycle
+    assert len([d for d in report2.decisions if d["action"] == "hold"]) == len(broker.positions())
+    assert len([e for e in journal.read("events") if e["kind"] == "fx"]) == 1
 
 
 def test_research_veto_and_boost(settings, tmp_root):

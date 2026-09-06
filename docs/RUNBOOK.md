@@ -16,9 +16,10 @@
 6. Run the `trading-cycle` workflow once by hand (Actions -> trading-cycle ->
    Run workflow) and check that a commit "chore(cycle): ..." appears.
 
-Actions minutes: a private repo gets 2000 free minutes a month. A cycle takes
-about 90 seconds, so every two hours is roughly 1100 minutes. A public repo
-has no limit, but your journal would be public.
+Actions minutes: the cycle runs every 30 minutes and takes about a minute, so
+roughly 1500 minutes a month. A public repo has no limit. A private repo gets
+2000 free minutes a month, so on a private repo change the cron in
+`.github/workflows/cycle.yml` to hourly (`11 * * * *`) to stay inside it.
 
 ## 2. Telegram alerts (free, five minutes)
 
