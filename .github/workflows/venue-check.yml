@@ -1,0 +1,40 @@
+name: venue-check
+
+on:
+  workflow_dispatch:
+    inputs:
+      sync:
+        description: "Also place venue orders for ledger positions the venues do not hold yet"
+        type: boolean
+        default: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Ping venues
+        env:
+          KISMAT_VENUES: ${{ vars.KISMAT_VENUES || 'us_stocks=alpaca,crypto=binance' }}
+          ALPACA_KEY: ${{ secrets.ALPACA_KEY }}
+          ALPACA_SECRET: ${{ secrets.ALPACA_SECRET }}
+          BINANCE_TESTNET_KEY: ${{ secrets.BINANCE_TESTNET_KEY }}
+          BINANCE_TESTNET_SECRET: ${{ secrets.BINANCE_TESTNET_SECRET }}
+        run: python -m kismat venue-check
+      - name: Sync ledger positions to venues
+        if: ${{ inputs.sync }}
+        env:
+          KISMAT_VENUES: ${{ vars.KISMAT_VENUES || 'us_stocks=alpaca,crypto=binance' }}
+          ALPACA_KEY: ${{ secrets.ALPACA_KEY }}
+          ALPACA_SECRET: ${{ secrets.ALPACA_SECRET }}
+          BINANCE_TESTNET_KEY: ${{ secrets.BINANCE_TESTNET_KEY }}
+          BINANCE_TESTNET_SECRET: ${{ secrets.BINANCE_TESTNET_SECRET }}
+        run: python -m kismat venue-sync

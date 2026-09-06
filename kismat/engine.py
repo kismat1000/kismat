@@ -22,7 +22,9 @@ from kismat import config as C
 from kismat.alerts import telegram
 from kismat.dashboard import build as dashboard
 from kismat.data import news, prices as price_data
+from kismat.execution.mirror import MirrorBroker
 from kismat.execution.paper import PaperBroker
+from kismat.execution.venues import build_venues
 from kismat.journal.store import Journal
 from kismat.research import memos as memo_store
 from kismat.research.packet import build_packet
@@ -64,6 +66,14 @@ class CycleReport:
         return "\n".join(lines)
 
 
+def make_broker(settings: C.Settings) -> PaperBroker:
+    """Paper ledger, mirrored to real venues when KISMAT_VENUES is set."""
+    venues = build_venues(settings) if settings.venues else {}
+    if venues:
+        return MirrorBroker(settings.risk, venues, strict=settings.is_live)
+    return PaperBroker(settings.risk)
+
+
 def combined_score(systematic: float, research: float | None) -> float:
     if research is None:
         return systematic
@@ -92,8 +102,10 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
     settings = settings or C.Settings.load()
     C.ensure_dirs()
     limits = settings.risk
-    broker = broker or PaperBroker(limits)
+    broker = broker or make_broker(settings)
     journal = journal or Journal()
+    if isinstance(broker, MirrorBroker):
+        broker.venue_log.clear()
     risk = RiskEngine(limits)
     report = CycleReport()
     classes = C.symbol_classes(settings.universe)
@@ -180,10 +192,19 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
                       "research": round(research, 3) if research is not None else None,
                       "combined": round(combined, 3), "price": price, "held": True}
             if should:
-                fill = broker.sell(symbol, pos["qty"], price, reason)
+                try:
+                    fill = broker.sell(symbol, pos["qty"], price, reason)
+                except Exception as exc:
+                    msg = f"sell {symbol} failed: {exc}"
+                    journal.event("error", msg)
+                    report.errors.append(msg)
+                    record.update(action="sell-failed", reason=msg)
+                    journal.decision(record)
+                    report.decisions.append(record)
+                    continue
                 journal.fill(fill.to_dict())
                 report.fills.append(fill.to_dict())
-                record.update(action="sell", reason=reason)
+                record.update(action="sell", reason=fill.reason)
             else:
                 record.update(action="hold", reason="; ".join(sig.reasons[:2]))
             if should or _first_time(broker, f"hold:{symbol}", _latest_bar_date(bars[symbol])):
@@ -215,6 +236,11 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
                   "combined": round(combined, 3), "price": sig.close, "held": False}
         if last_entry_bar.get(symbol) == bar_date:
             continue  # already decided on this bar
+        if isinstance(broker, MirrorBroker) and broker.has_open_order(symbol, classes[symbol]):
+            record.update(action="skip", reason="order already open at venue")
+            journal.decision(record)
+            report.decisions.append(record)
+            continue
         req = OrderRequest(symbol=symbol, asset_class=classes[symbol], price=sig.close,
                            stop_distance=sig.stop_distance, score=combined)
         decision = risk.size_entry(req, pf)
@@ -234,11 +260,21 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
             report.proposals.append(proposal)
             record.update(action="proposed", reason=reason)
         else:
-            fill = broker.buy(symbol, decision.qty, sig.close, classes[symbol], reason)
-            broker.positions()[symbol]["stop_price"] = decision.stop_price
+            try:
+                fill = broker.buy(symbol, decision.qty, sig.close, classes[symbol], reason)
+            except Exception as exc:
+                msg = f"buy {symbol} failed: {exc}"
+                journal.event("error", msg)
+                report.errors.append(msg)
+                record.update(action="buy-failed", reason=msg)
+                journal.decision(record)
+                report.decisions.append(record)
+                continue
+            if symbol in broker.positions():
+                broker.positions()[symbol]["stop_price"] = decision.stop_price
             journal.fill(fill.to_dict())
             report.fills.append(fill.to_dict())
-            record.update(action="buy", reason=f"{reason} | {decision.reason}")
+            record.update(action="buy", reason=f"{fill.reason} | {decision.reason}")
             pf = Portfolio(cash=broker.cash(), equity=broker.mark(latest_price), peak_equity=pf.peak_equity,
                            day_start_equity=pf.day_start_equity, positions=broker.positions())
         journal.decision(record)
@@ -252,6 +288,9 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
     journal.equity({"equity": round(equity, 2), "cash": round(broker.cash(), 2), "drawdown": round(drawdown, 4),
                     "peak": round(peak, 2), "positions": len(broker.positions()), "halted": report.halted})
     broker.save()
+    if isinstance(broker, MirrorBroker):
+        for v in broker.venue_log:
+            journal.event("venue", f"{v['side']} {v['symbol']} at {v['venue']}: {v['status']} {v['note']}", **v)
 
     top = sorted(signals.values(), key=lambda s: -s.score)
     packet_symbols = [s.symbol for s in top[:10] if s.ok] + [s for s in broker.positions() if s in signals]

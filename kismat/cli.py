@@ -128,6 +128,40 @@ def cmd_council(args) -> int:
     return 0
 
 
+def cmd_venue_check(args) -> int:
+    from kismat.execution.venues import build_venues
+    settings = C.Settings.load()
+    if not settings.venues:
+        print("KISMAT_VENUES not set (example: us_stocks=alpaca,crypto=binance)", file=sys.stderr)
+        return 2
+    venues = build_venues(settings)
+    ok = True
+    for cls, venue in venues.items():
+        try:
+            print(cls, "->", json.dumps(venue.ping()))
+        except Exception as exc:
+            ok = False
+            print(cls, "->", venue.name, "FAILED:", exc, file=sys.stderr)
+    missing = set(settings.venues) - set(venues)
+    if missing:
+        ok = False
+        print("not configured (missing keys):", ", ".join(sorted(missing)), file=sys.stderr)
+    return 0 if ok else 1
+
+
+def cmd_venue_sync(args) -> int:
+    from kismat.engine import make_broker
+    from kismat.execution.mirror import MirrorBroker
+    settings = C.Settings.load()
+    broker = make_broker(settings)
+    if not isinstance(broker, MirrorBroker):
+        print("no venues configured", file=sys.stderr)
+        return 2
+    prices = {s: p.get("last_price", p["avg_price"]) for s, p in broker.positions().items()}
+    print(json.dumps(broker.sync_to_venues(prices), indent=2))
+    return 0
+
+
 def main(argv=None) -> int:
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
     p = argparse.ArgumentParser(prog="kismat", description="Research-first, risk-first trading lab")
@@ -152,6 +186,8 @@ def main(argv=None) -> int:
     s.set_defaults(fn=cmd_reject)
     sub.add_parser("reset-halt", help="clear the kill switch (human only)").set_defaults(fn=cmd_reset_halt)
     sub.add_parser("validate-memos", help="check research memos").set_defaults(fn=cmd_validate_memos)
+    sub.add_parser("venue-check", help="ping the configured broker venues").set_defaults(fn=cmd_venue_check)
+    sub.add_parser("venue-sync", help="place venue orders for ledger positions the venues do not hold").set_defaults(fn=cmd_venue_sync)
     s = sub.add_parser("council", help="run the research council via the Claude API (needs a key)")
     s.add_argument("--limit", type=int, default=5)
     s.set_defaults(fn=cmd_council)
