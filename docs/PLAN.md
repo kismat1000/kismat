@@ -86,6 +86,10 @@ enforced by a schema.
 - Intraday stop checks using live prices between daily bars.
 - Council via the Claude API when a budget exists (`python -m kismat council`).
 - Portfolio-level correlation caps in the risk engine.
-- Rotation (done): when the book is full, the weakest holding is replaced by
-  a candidate that beats it by `rotation_margin`, never before `min_hold_days`.
+- Rotation (built, off by default): when the book is full, the weakest holding
+  is replaced by a candidate that beats it by `rotation_margin`. The first
+  two-year backtest favoured no rotation (+18.0% vs +14.1%, better Sharpe and
+  drawdown), so it stays off until the weekly backtest says otherwise.
+- Trend-break exit (kept): turning it off helped US stocks but hurt crypto
+  and ASX, and without rotation it was disastrous (+1.4%), so it stays on.
 - Memo calibration report: conviction buckets versus realised outcomes.
