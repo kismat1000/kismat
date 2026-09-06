@@ -23,7 +23,7 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Ping venues
         env:
-          KISMAT_VENUES: ${{ vars.KISMAT_VENUES || 'us_stocks=alpaca,crypto=binance' }}
+          KISMAT_VENUES: ${{ vars.KISMAT_VENUES || 'us_stocks=alpaca,crypto=alpaca' }}
           ALPACA_KEY: ${{ secrets.ALPACA_KEY }}
           ALPACA_SECRET: ${{ secrets.ALPACA_SECRET }}
           BINANCE_TESTNET_KEY: ${{ secrets.BINANCE_TESTNET_KEY }}
@@ -32,7 +32,7 @@ jobs:
       - name: Sync ledger positions to venues
         if: ${{ inputs.sync }}
         env:
-          KISMAT_VENUES: ${{ vars.KISMAT_VENUES || 'us_stocks=alpaca,crypto=binance' }}
+          KISMAT_VENUES: ${{ vars.KISMAT_VENUES || 'us_stocks=alpaca,crypto=alpaca' }}
           ALPACA_KEY: ${{ secrets.ALPACA_KEY }}
           ALPACA_SECRET: ${{ secrets.ALPACA_SECRET }}
           BINANCE_TESTNET_KEY: ${{ secrets.BINANCE_TESTNET_KEY }}

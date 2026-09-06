@@ -140,3 +140,22 @@ def test_mirror_books_at_venue_price_and_fails_soft(tmp_path):
     assert fill3.price == 500.0 and "pending" in fill3.reason
     sell = b3.sell("MSFT", 1.0, 510.0, "exit")
     assert sell.price == 510.0 and b3.positions() == {}
+
+
+def test_alpaca_crypto_symbol_mapping_and_unsupported(monkeypatch):
+    assert V.alpaca_crypto_symbol("BTCUSDT") == ("BTC/USD", "BTCUSD")
+    assert V.alpaca_crypto_symbol("SOLUSD") == ("SOL/USD", "SOLUSD")
+    assert V.alpaca_crypto_symbol("BNBUSDT") is None
+    calls = []
+
+    def fake_request(method, url, headers=None, timeout=None, **kw):
+        calls.append((method, url, kw.get("json")))
+        return _R(200, {"id": "c1", "status": "filled", "filled_qty": "0.001", "filled_avg_price": "80000"})
+
+    monkeypatch.setattr(V.requests, "request", fake_request)
+    a = V.AlpacaPaper("k", "s", poll_seconds=0, crypto=True)
+    assert a.name == "alpaca-paper-crypto"
+    vf = a.buy("BTCUSDT", 0.001, 80000.0)
+    assert vf.status == "filled"
+    assert calls[0][2]["symbol"] == "BTC/USD" and calls[0][2]["time_in_force"] == "gtc"
+    assert a.buy("BNBUSDT", 1.0, 700.0).status == "skipped" and len(calls) == 1

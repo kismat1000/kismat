@@ -88,9 +88,12 @@ not already do.
 
 ## 7. Broker demo environments (mirrored execution)
 
-With `KISMAT_VENUES=us_stocks=alpaca,crypto=binance` (the workflow default)
-every US stock order is also sent to your Alpaca paper account and every
-crypto order to Binance Spot Testnet. The 1,000 USD ledger, the risk engine
+With `KISMAT_VENUES=us_stocks=alpaca,crypto=alpaca` (the workflow default)
+every US stock and crypto order is also sent to your Alpaca paper account,
+which trades the major coins 24/7. Coins Alpaca does not list (BNB, ADA)
+stay ledger-only and are journaled as such. `crypto=binance` routes crypto to
+Binance Spot Testnet instead, but Binance answers HTTP 451 from GitHub's US
+runners, so use it only when the cycle runs from a machine outside the US. The 1,000 USD ledger, the risk engine
 and the journal are unchanged; the venues confirm how the order filled and
 you can see it in their apps. A venue that is closed, rejects, or is down
 never blocks the cycle in paper mode: the ledger still books the trade and
