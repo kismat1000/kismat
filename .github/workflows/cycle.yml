@@ -2,7 +2,7 @@ name: trading-cycle
 
 on:
   schedule:
-    - cron: "11 */2 * * *"    # every two hours at :11 UTC; off the hour so GitHub does not queue it behind everyone else
+    - cron: "11,41 * * * *"   # every 30 minutes, off the hour so GitHub does not queue it behind everyone else
   workflow_dispatch:
 
 permissions:
@@ -40,6 +40,7 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           KISMAT_APPROVAL_MODE: ${{ vars.KISMAT_APPROVAL_MODE || '0' }}
           KISMAT_MODE: paper
+          KISMAT_CACHE_TTL_HOURS: "0.4"   # refresh prices every run so stops see current levels
         run: python -m kismat cycle
       - name: Commit state, packet, and dashboard
         run: |

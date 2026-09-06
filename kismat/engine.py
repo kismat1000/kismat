@@ -74,6 +74,16 @@ def _latest_bar_date(df: pd.DataFrame) -> str:
     return str(df.index[-1].date())
 
 
+def _first_time(broker: PaperBroker, key: str, stamp: str) -> bool:
+    """True the first time (key, stamp) is seen; used to journal routine
+    hold/skip decisions once per bar instead of once per cycle."""
+    marks = broker.meta.setdefault("journal_marks", {})
+    if marks.get(key) == stamp:
+        return False
+    marks[key] = stamp
+    return True
+
+
 def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider | None = None,
               headlines_provider: Callable[[dict[str, str]], list[dict]] | None = None,
               fx_provider: Callable[[], float] | None = None, broker: PaperBroker | None = None,
@@ -119,7 +129,8 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
     report.signals = {s: sig.to_dict() for s, sig in signals.items()}
     native_prices: dict[str, float] = {}
     if fx:
-        journal.event("fx", f"AUDUSD {fx:.4f} used to convert ASX prices to USD")
+        if _first_time(broker, "fx", datetime.now(timezone.utc).date().isoformat()):
+            journal.event("fx", f"AUDUSD {fx:.4f} used to convert ASX prices to USD")
         native_prices = {s: latest_price[s] / fx for s, cls in classes.items()
                          if cls == "au_stocks" and s in latest_price}
 
@@ -175,7 +186,8 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
                 record.update(action="sell", reason=reason)
             else:
                 record.update(action="hold", reason="; ".join(sig.reasons[:2]))
-            journal.decision(record)
+            if should or _first_time(broker, f"hold:{symbol}", _latest_bar_date(bars[symbol])):
+                journal.decision(record)
             report.decisions.append(record)
 
     # 5. Entries ------------------------------------------------------------------
@@ -209,7 +221,7 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
         last_entry_bar[symbol] = bar_date
         if not decision.approved:
             record.update(action="skip", reason=decision.reason)
-            journal.decision(record)
+            journal.decision(record)  # once per bar: last_entry_bar guards re-entry above
             report.decisions.append(record)
             continue
         reason = "; ".join(sig.reasons[:3]) + (f"; research {research:+.2f}" if research is not None else "")
