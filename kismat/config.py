@@ -33,6 +33,9 @@ class RiskLimits:
     per_trade_risk_pct: float = 0.01
     stop_atr_multiple: float = 2.5
     trend_break_exit: bool = True
+    trend_break_days: int = 1
+    time_stop_days: int = 0
+    regime_breadth_min: float = 0.0
     min_trade_value: float = 10.0
     max_daily_loss_pct: float = 0.03
     max_drawdown_pct: float = 0.10

@@ -13,7 +13,10 @@ max_asset_class_pct:           # max share of equity per asset class
 
 per_trade_risk_pct: 0.01       # risk 1% of equity per trade (entry to stop distance)
 stop_atr_multiple: 2.5         # initial and trailing stop distance in ATR units
-trend_break_exit: true         # also exit when close < SMA50 while underwater (backtest shows this is the costly exit)
+trend_break_exit: true         # also exit when close < SMA50 while underwater
+trend_break_days: 1            # consecutive closes below SMA50 (while underwater) before the trend-break exit fires
+time_stop_days: 0              # exit a position still underwater after this many days (0 = off)
+regime_breadth_min: 0.0        # new entries only when this share of the asset class is above its SMA200 (0 = off)
 min_trade_value: 10.0          # skip dust orders below this value
 
 max_daily_loss_pct: 0.03       # lose 3% in a day: no new entries until next day

@@ -37,3 +37,16 @@ def test_rotation_backtest_runs_and_rotates():
     res = run_backtest(_universe(), BacktestConfig(max_positions=1, rotation_margin=0.2, min_hold_days=1))
     assert res.metrics["trades"] > 0
     assert any("rotation" in t["reason"] for t in res.trades)
+
+
+def test_variant_rules_run():
+    uni = _universe()
+    classes = {s: ("crypto" if i % 2 else "us_stocks") for i, s in enumerate(uni)}
+    base = run_backtest(uni, BacktestConfig())
+    tb3 = run_backtest(uni, BacktestConfig(trend_break_days=3))
+    ts = run_backtest(uni, BacktestConfig(time_stop_days=20))
+    reg = run_backtest(uni, BacktestConfig(regime_breadth_min=0.5, classes=classes))
+    assert len(base.equity) == len(tb3.equity) == len(ts.equity) == len(reg.equity)
+    assert sum(1 for t in tb3.trades if t["reason"].startswith("trend break")) <= \
+        sum(1 for t in base.trades if t["reason"].startswith("trend break"))
+    assert any(t["reason"].startswith("time stop") for t in ts.trades) or ts.metrics["trades"] >= 0

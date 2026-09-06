@@ -45,11 +45,16 @@ def cmd_backtest(args) -> int:
                          rotation_margin=0.0 if args.no_rotation else (
                              args.rotation_margin if args.rotation_margin is not None else settings.risk.rotation_margin),
                          min_hold_days=settings.risk.min_hold_days,
-                         trend_break_exit=not args.no_trend_break and settings.risk.trend_break_exit)
+                         trend_break_exit=not args.no_trend_break and settings.risk.trend_break_exit,
+                         trend_break_days=args.trend_break_days if args.trend_break_days is not None else settings.risk.trend_break_days,
+                         time_stop_days=args.time_stop if args.time_stop is not None else settings.risk.time_stop_days,
+                         regime_breadth_min=args.regime if args.regime is not None else settings.risk.regime_breadth_min,
+                         classes=C.symbol_classes(universe))
     result = run_backtest(bars, cfg)
     header = (f"symbols {len(bars)} | days {result.metrics['days']} | rotation "
-              f"{'off' if args.no_rotation else f'margin {cfg.rotation_margin:.2f}'} | trend-break exit "
-              f"{'off' if not cfg.trend_break_exit else 'on'}")
+              f"{'off' if cfg.rotation_margin <= 0 else f'margin {cfg.rotation_margin:.2f}'} | trend-break "
+              f"{'off' if not cfg.trend_break_exit else f'{cfg.trend_break_days}d'} | time stop {cfg.time_stop_days or 'off'}"
+              f" | regime {cfg.regime_breadth_min or 'off'}")
     print(header)
     print(result.summary())
     if args.json:
@@ -223,6 +228,9 @@ def main(argv=None) -> int:
     s.add_argument("--no-rotation", action="store_true", help="disable the rotation rule for comparison")
     s.add_argument("--rotation-margin", type=float, default=None, help="override rotation margin")
     s.add_argument("--no-trend-break", action="store_true", help="exit on trailing stop only")
+    s.add_argument("--trend-break-days", type=int, default=None, help="closes below SMA50 needed before the trend-break exit")
+    s.add_argument("--time-stop", type=int, default=None, help="exit if still underwater after N days")
+    s.add_argument("--regime", type=float, default=None, help="min share of the class above SMA200 for new entries")
     s.add_argument("--report", help="append a markdown summary to this file")
     s.add_argument("--json", action="store_true")
     s.set_defaults(fn=cmd_backtest)

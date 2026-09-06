@@ -28,6 +28,10 @@ class BacktestConfig:
     rotation_margin: float = 0.0
     min_hold_days: int = 1
     trend_break_exit: bool = True
+    trend_break_days: int = 1
+    time_stop_days: int = 0
+    regime_breadth_min: float = 0.0
+    classes: dict | None = None        # symbol -> asset class, for the breadth regime filter
 
 
 @dataclass
@@ -103,9 +107,19 @@ def metrics_from(equity: pd.Series, trades: list[dict]) -> dict:
     }
 
 
+def breadth_by_class(feats: dict[str, pd.DataFrame], classes: dict | None) -> dict[str, pd.Series]:
+    """Share of each class's symbols closing above their SMA200, per day."""
+    groups: dict[str, list[pd.Series]] = {}
+    for sym, f in feats.items():
+        cls = (classes or {}).get(sym, "all")
+        groups.setdefault(cls, []).append((f["close"] > f["sma200"]).astype(float).where(f["sma200"].notna()))
+    return {cls: pd.concat(series, axis=1).mean(axis=1) for cls, series in groups.items()}
+
+
 def run_backtest(bars: dict[str, pd.DataFrame], cfg: BacktestConfig | None = None) -> BacktestResult:
     cfg = cfg or BacktestConfig()
     feats = precompute(bars)
+    breadth = breadth_by_class(feats, cfg.classes) if cfg.regime_breadth_min > 0 else {}
     dates = sorted(set().union(*[set(f.index) for f in feats.values()]))
     dates = dates[cfg.warmup:] if len(dates) > cfg.warmup else dates
     cash = cfg.initial_cash
@@ -157,6 +171,15 @@ def run_backtest(bars: dict[str, pd.DataFrame], cfg: BacktestConfig | None = Non
             should, why = exit_rule(pos["entry"], pos["highest"], float(row["close"]),
                                     float(row["atr14"]), float(row["sma50"]), cfg.stop_atr_multiple,
                                     cfg.trend_break_exit)
+            if should and why.startswith("trend break"):
+                pos["below"] = pos.get("below", 0) + 1
+                if pos["below"] < cfg.trend_break_days:
+                    should, why = False, ""
+            elif not should:
+                pos["below"] = 0
+            if not should and cfg.time_stop_days > 0 and (day - pos["entry_date"]).days >= cfg.time_stop_days \
+                    and float(row["close"]) < pos["entry"]:
+                should, why = True, f"time stop: underwater after {cfg.time_stop_days} days"
             if not should and not pd.isna(row["score"]) and row["score"] < -0.10:
                 should, why = True, "score turned negative"
             if should:
@@ -167,8 +190,14 @@ def run_backtest(bars: dict[str, pd.DataFrame], cfg: BacktestConfig | None = Non
             if sym in positions or day not in f.index:
                 continue
             s = f.loc[day, "score"]
-            if not pd.isna(s) and s >= cfg.entry_threshold:
-                candidates.append((float(s), sym))
+            if pd.isna(s) or s < cfg.entry_threshold:
+                continue
+            if breadth:
+                cls = (cfg.classes or {}).get(sym, "all")
+                b = breadth.get(cls)
+                if b is not None and day in b.index and not pd.isna(b.loc[day]) and b.loc[day] < cfg.regime_breadth_min:
+                    continue
+            candidates.append((float(s), sym))
         candidates.sort(reverse=True)
         open_slots = cfg.max_positions - sum(1 for p in positions.values() if not p.get("pending_exit"))
         if open_slots <= 0 and cfg.rotation_margin > 0 and candidates:
