@@ -37,10 +37,15 @@ jobs:
           echo "" >> "$OUT"
           for cls in crypto us_stocks au_stocks; do
             python -m kismat backtest --asset-class $cls --days "$DAYS" --report "$OUT"
-            python -m kismat backtest --asset-class $cls --days "$DAYS" --no-rotation --report "$OUT"
+            python -m kismat backtest --asset-class $cls --days "$DAYS" --no-trend-break --report "$OUT"
           done
+          echo "" >> "$OUT"; echo "# Whole universe, variants" >> "$OUT"; echo "" >> "$OUT"
           python -m kismat backtest --days "$DAYS" --report "$OUT"
           python -m kismat backtest --days "$DAYS" --no-rotation --report "$OUT"
+          python -m kismat backtest --days "$DAYS" --rotation-margin 0.45 --report "$OUT"
+          python -m kismat backtest --days "$DAYS" --no-trend-break --report "$OUT"
+          python -m kismat backtest --days "$DAYS" --no-trend-break --no-rotation --report "$OUT"
+          python -m kismat backtest --days "$DAYS" --no-trend-break --rotation-margin 0.45 --report "$OUT"
           cat "$OUT"
       - name: Commit report
         run: |

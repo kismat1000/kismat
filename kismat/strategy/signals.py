@@ -112,11 +112,11 @@ def trend_signal(symbol: str, df: pd.DataFrame, stop_atr_multiple: float = 2.5) 
 
 
 def exit_rule(entry_price: float, highest_close: float, close: float, atr_val: float,
-              sma50: float, stop_atr_multiple: float = 2.5) -> tuple[bool, str]:
-    """Trailing ATR stop or trend break. Returns (should_exit, reason)."""
+              sma50: float, stop_atr_multiple: float = 2.5, trend_break: bool = True) -> tuple[bool, str]:
+    """Trailing ATR stop, optionally a trend break. Returns (should_exit, reason)."""
     trail = highest_close - stop_atr_multiple * atr_val
     if close <= trail:
         return True, f"trailing stop hit ({close:.4g} <= {trail:.4g})"
-    if close < sma50 and close < entry_price:
+    if trend_break and close < sma50 and close < entry_price:
         return True, "trend break: below SMA50 and underwater"
     return False, ""
