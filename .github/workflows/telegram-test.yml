@@ -1,0 +1,32 @@
+name: telegram-test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests
+      - name: Send a test alert
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python - <<'PY'
+          import os, sys
+          from kismat.alerts.telegram import send
+          token = os.environ.get("TELEGRAM_BOT_TOKEN", "")
+          chat = os.environ.get("TELEGRAM_CHAT_ID", "")
+          if not token or not chat:
+              print("::error::TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID is not set as a repository secret")
+              sys.exit(1)
+          ok = send("Kismat test alert: Telegram is connected. You will now get a message for every fill, proposal, and halt.", token, chat)
+          print("sent" if ok else "::error::send failed; check the token and that you messaged the bot first")
+          sys.exit(0 if ok else 1)
+          PY
