@@ -154,6 +154,15 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
         native_prices = {s: latest_price[s] / fx for s, cls in classes.items()
                          if cls == "au_stocks" and s in latest_price}
 
+    # 1b. Regime breadth per asset class (share of symbols above SMA200) -----------
+    breadth: dict[str, float] = {}
+    if limits.regime_breadth_min > 0:
+        counts: dict[str, list[float]] = {}
+        for symbol, sig in signals.items():
+            if sig.ok and sig.features.get("sma200"):
+                counts.setdefault(classes[symbol], []).append(1.0 if sig.close > sig.features["sma200"] else 0.0)
+        breadth = {cls: sum(v) / len(v) for cls, v in counts.items() if v}
+
     # 2. Research memos ----------------------------------------------------------
     memos = memo_store.load_memos(memos_root)
     research_scores = {s: m.score() for s, m in memos.items()}
@@ -195,6 +204,18 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
                 should, reason = exit_rule(pos["avg_price"], pos.get("highest_close", pos["avg_price"]),
                                            price, float(f["atr14"]), float(f["sma50"]), limits.stop_atr_multiple,
                                            limits.trend_break_exit)
+                bar_date = _latest_bar_date(bars[symbol])
+                if should and reason.startswith("trend break"):
+                    if pos.get("below_bar") != bar_date:          # count once per bar
+                        pos["below_bar"] = bar_date
+                        pos["below_bars"] = pos.get("below_bars", 0) + 1
+                    if pos["below_bars"] < limits.trend_break_days:
+                        should, reason = False, ""
+                elif not should:
+                    pos["below_bars"] = 0
+                if (not should and limits.time_stop_days > 0 and _held_days(pos) >= limits.time_stop_days
+                        and price < pos["avg_price"]):
+                    should, reason = True, f"time stop: underwater after {limits.time_stop_days} days"
             if not should and combined < limits.exit_score_threshold:
                 should, reason = True, f"combined score {combined:+.2f} below exit threshold"
             if not should and symbol in memos and memos[symbol].vetoes_entry():
@@ -237,6 +258,8 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
         research = research_scores.get(symbol)
         combined = combined_score(sig.score, research)
         vetoed = symbol in memos and memos[symbol].vetoes_entry()
+        if breadth and breadth.get(classes[symbol], 1.0) < limits.regime_breadth_min:
+            continue  # asset class is in a downtrend regime
         if combined >= limits.entry_score_threshold and not vetoed:
             candidates.append((combined, symbol, research))
     candidates.sort(reverse=True)
