@@ -57,7 +57,8 @@ class MirrorBroker(PaperBroker):
             vf = VenueFill("error", note=f"{venue.name}: {exc}")
         self._record(symbol, "buy", vf, venue.name)
         if vf.status == "filled" and vf.avg_price:
-            fill = super().buy(symbol, vf.filled_qty or qty, vf.avg_price, asset_class, reason)
+            # a real fill already contains the slippage; book it as is
+            fill = super().buy(symbol, vf.filled_qty or qty, vf.avg_price, asset_class, reason, apply_slippage=False)
             fill.reason = f"{reason} | {venue.name} filled {vf.filled_qty:.6g} @ {vf.avg_price:.6g}"
             return fill
         if self.strict:
@@ -77,7 +78,7 @@ class MirrorBroker(PaperBroker):
             vf = VenueFill("error", note=f"{venue.name}: {exc}")
         self._record(symbol, "sell", vf, venue.name)
         if vf.status == "filled" and vf.avg_price:
-            fill = super().sell(symbol, qty, vf.avg_price, reason)
+            fill = super().sell(symbol, qty, vf.avg_price, reason, apply_slippage=False)
             fill.reason = f"{reason} | {venue.name} filled @ {vf.avg_price:.6g}"
             return fill
         if self.strict and vf.status not in ("skipped",):
