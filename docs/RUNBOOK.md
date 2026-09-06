@@ -2,7 +2,8 @@
 
 ## 1. One-time setup on GitHub
 
-1. Merge this branch into the default branch.
+1. Make `main` the default branch: Settings -> General -> Default branch.
+   Scheduled workflows only run from the default branch.
 2. **Actions**: Settings -> Actions -> General -> allow workflows, and under
    "Workflow permissions" choose "Read and write". The cycle commits state.
 3. **Pages**: Settings -> Pages -> Source "Deploy from a branch", branch =
@@ -31,16 +32,15 @@ You get a message whenever there is a fill, a proposal, or a halt.
 ## 3. The research council on your Claude plan (no API cost)
 
 The cycle writes `research/packets/<date>.md`. A Claude Code routine turns it
-into memos. Create the routine once:
+into memos. One is already set up: "Kismat daily research council", daily at
+22:30 UTC (08:30 Sydney, after the US close and before the ASX open). Manage
+it from the Routines page in Claude Code on the web. If you ever recreate it,
+start a fresh session daily with this prompt:
 
-1. Open Claude Code on the web, pick this repository.
-2. Create a routine (scheduled task) that starts a fresh session daily, for
-   example at 22:30 UTC (08:30 Sydney), with this prompt:
+> Check out main in kismat1000/kismat, then follow prompts/routine_research.md exactly.
 
-   > Follow prompts/routine_research.md exactly.
-
-3. The routine commits memos to `research/memos/<date>/` and pushes. The next
-   cycle picks them up automatically. Memos older than five days are ignored.
+The routine commits memos to `research/memos/<date>/` and pushes to main. The
+next cycle picks them up automatically. Memos older than five days are ignored.
 
 Once a week, on Sunday, the same routine also writes the weekly review. Once a
 month, run a session with the prompt "Follow prompts/tooling_scout.md" if you
