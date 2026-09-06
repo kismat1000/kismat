@@ -133,3 +133,18 @@ def test_rotation_replaces_weakest_when_book_is_full(settings, tmp_root):
                                fx_provider=lambda: 0.65, broker=broker, journal=journal,
                                memos_root=tmp_root / "research", docs_dir=tmp_root / "docs", notify=False)
     assert not report3.fills
+
+
+def test_rejected_entry_does_not_lock_symbol_for_the_bar(settings, tmp_root):
+    settings.risk.max_positions = 1
+    settings.risk.rotation_margin = 0.0
+    report, broker, journal = run(settings, tmp_root)
+    assert len(broker.positions()) == 1
+    skipped = [d for d in report.decisions if d["action"] == "skip"]
+    assert skipped and "max positions" in skipped[0]["reason"]
+    # free the slot and run again on the same bar: the skipped symbol enters now
+    broker.sell(list(broker.positions())[0], list(broker.positions().values())[0]["qty"], 100.0, "manual")
+    broker.reset_entry_guards()
+    broker.save()
+    report2, broker, _ = run(settings, tmp_root)
+    assert [f for f in report2.fills if f["side"] == "buy"]

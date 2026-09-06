@@ -102,6 +102,30 @@ def cmd_reset_halt(args) -> int:
     return 0
 
 
+def cmd_deposit(args) -> int:
+    from kismat.engine import make_broker
+    from kismat.journal.store import Journal
+    settings = C.Settings.load()
+    broker = make_broker(settings)
+    eq = broker.deposit(args.amount)
+    broker.save()
+    Journal().event("deposit", f"paper deposit {args.amount:.2f}; equity now {eq:.2f}; peak rebased")
+    print(f"deposited {args.amount:.2f}; cash {broker.cash():.2f}; equity {eq:.2f}")
+    return 0
+
+
+def cmd_reset_guards(args) -> int:
+    from kismat.engine import make_broker
+    from kismat.journal.store import Journal
+    settings = C.Settings.load()
+    broker = make_broker(settings)
+    broker.reset_entry_guards()
+    broker.save()
+    Journal().event("reset_guards", "entry guards cleared; every symbol may be considered again this bar")
+    print("entry guards cleared")
+    return 0
+
+
 def cmd_validate_memos(args) -> int:
     from kismat.research.memos import load_memos
     memos = load_memos(max_age_days=3650)
@@ -188,6 +212,10 @@ def main(argv=None) -> int:
     s.add_argument("order_id")
     s.set_defaults(fn=cmd_reject)
     sub.add_parser("reset-halt", help="clear the kill switch (human only)").set_defaults(fn=cmd_reset_halt)
+    s = sub.add_parser("deposit", help="add paper cash (test book only)")
+    s.add_argument("amount", type=float)
+    s.set_defaults(fn=cmd_deposit)
+    sub.add_parser("reset-guards", help="clear once-per-bar entry guards").set_defaults(fn=cmd_reset_guards)
     sub.add_parser("validate-memos", help="check research memos").set_defaults(fn=cmd_validate_memos)
     sub.add_parser("venue-check", help="ping the configured broker venues").set_defaults(fn=cmd_venue_check)
     sub.add_parser("venue-sync", help="place venue orders for ledger positions the venues do not hold").set_defaults(fn=cmd_venue_sync)

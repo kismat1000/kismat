@@ -287,12 +287,13 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
         req = OrderRequest(symbol=symbol, asset_class=classes[symbol], price=sig.close,
                            stop_distance=sig.stop_distance, score=combined)
         decision = risk.size_entry(req, pf)
-        last_entry_bar[symbol] = bar_date
         if not decision.approved:
             record.update(action="skip", reason=decision.reason)
-            journal.decision(record)  # once per bar: last_entry_bar guards re-entry above
+            if _first_time(broker, f"skip:{symbol}", f"{bar_date}:{decision.reason[:24]}"):
+                journal.decision(record)   # journal each distinct reason once per bar
             report.decisions.append(record)
-            continue
+            continue                       # not stamped: a freed slot lets it enter this bar
+        last_entry_bar[symbol] = bar_date
         reason = "; ".join(sig.reasons[:3]) + (f"; research {research:+.2f}" if research is not None else "")
         if settings.approval_mode:
             proposal = {"id": uuid.uuid4().hex[:8], "symbol": symbol, "asset_class": classes[symbol],
