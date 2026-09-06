@@ -5,6 +5,7 @@ import argparse
 import json
 import logging
 import sys
+from pathlib import Path
 
 from kismat import config as C
 
@@ -44,10 +45,26 @@ def cmd_backtest(args) -> int:
                          rotation_margin=0.0 if args.no_rotation else settings.risk.rotation_margin,
                          min_hold_days=settings.risk.min_hold_days)
     result = run_backtest(bars, cfg)
-    print(f"symbols {len(bars)} | days {result.metrics['days']}")
+    header = f"symbols {len(bars)} | days {result.metrics['days']} | rotation {'off' if args.no_rotation else 'on'}"
+    print(header)
     print(result.summary())
     if args.json:
         print(json.dumps(result.metrics, indent=2))
+    if args.report:
+        from datetime import datetime, timezone
+        out = Path(args.report)
+        out.parent.mkdir(parents=True, exist_ok=True)
+        classes_label = args.asset_class or "all"
+        by_reason = {}
+        for t in result.trades:
+            r = by_reason.setdefault(t["reason"].split(" (")[0].split(":")[0], {"n": 0, "pnl": 0.0})
+            r["n"] += 1
+            r["pnl"] += t["pnl"]
+        lines = [f"## {classes_label} ({header})", "", f"- {result.summary()}",
+                 f"- exits by reason: " + ", ".join(f"{k}: n={v['n']} pnl={v['pnl']:+.2f}" for k, v in by_reason.items()),
+                 f"- generated {datetime.now(timezone.utc).isoformat(timespec='minutes')}", ""]
+        with out.open("a") as fh:
+            fh.write("\n".join(lines) + "\n")
     return 0
 
 
@@ -200,6 +217,7 @@ def main(argv=None) -> int:
     s.add_argument("--days", type=int, default=400)
     s.add_argument("--synthetic", action="store_true", help="offline: random-walk data")
     s.add_argument("--no-rotation", action="store_true", help="disable the rotation rule for comparison")
+    s.add_argument("--report", help="append a markdown summary to this file")
     s.add_argument("--json", action="store_true")
     s.set_defaults(fn=cmd_backtest)
     sub.add_parser("status", help="print paper account state").set_defaults(fn=cmd_status)
