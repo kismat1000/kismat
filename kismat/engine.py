@@ -138,7 +138,7 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
                 for col in ("open", "high", "low", "close"):
                     df[col] = df[col] * fx
             bars[symbol] = df
-            sig = trend_signal(symbol, df, limits.stop_atr_multiple)
+            sig = trend_signal(symbol, df, limits.stop_atr_multiple, settings.strategy)
             signals[symbol] = sig
             latest_price[symbol] = float(df["close"].iloc[-1])
         except Exception as exc:
@@ -159,8 +159,8 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
     if limits.regime_breadth_min > 0:
         counts: dict[str, list[float]] = {}
         for symbol, sig in signals.items():
-            if sig.ok and sig.features.get("sma200"):
-                counts.setdefault(classes[symbol], []).append(1.0 if sig.close > sig.features["sma200"] else 0.0)
+            if sig.ok and sig.features.get("sma_slow"):
+                counts.setdefault(classes[symbol], []).append(1.0 if sig.close > sig.features["sma_slow"] else 0.0)
         breadth = {cls: sum(v) / len(v) for cls, v in counts.items() if v}
 
     # 2. Research memos ----------------------------------------------------------
@@ -195,14 +195,14 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
             if symbol not in bars:
                 continue
             sig = signals[symbol]
-            f = compute_features(bars[symbol]).iloc[-1]
+            f = compute_features(bars[symbol], settings.strategy).iloc[-1]
             price = latest_price[symbol]
             research = research_scores.get(symbol)
             combined = combined_score(sig.score, research)
             should, reason = (False, "")
-            if sig.ok and not pd.isna(f["atr14"]) and not pd.isna(f["sma50"]):
+            if sig.ok and not pd.isna(f["atr"]) and not pd.isna(f["sma_fast"]):
                 should, reason = exit_rule(pos["avg_price"], pos.get("highest_close", pos["avg_price"]),
-                                           price, float(f["atr14"]), float(f["sma50"]), limits.stop_atr_multiple,
+                                           price, float(f["atr"]), float(f["sma_fast"]), limits.stop_atr_multiple,
                                            limits.trend_break_exit)
                 bar_date = _latest_bar_date(bars[symbol])
                 if should and reason.startswith("trend break"):

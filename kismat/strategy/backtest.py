@@ -11,7 +11,7 @@ from dataclasses import dataclass, field
 import numpy as np
 import pandas as pd
 
-from kismat.strategy.signals import compute_features, exit_rule
+from kismat.strategy.signals import DEFAULT_PARAMS, StrategyParams, compute_features, exit_rule, score_frame
 from kismat.strategy import indicators as ind
 
 
@@ -32,6 +32,7 @@ class BacktestConfig:
     time_stop_days: int = 0
     regime_breadth_min: float = 0.0
     classes: dict | None = None        # symbol -> asset class, for the breadth regime filter
+    params: StrategyParams = field(default_factory=StrategyParams)
 
 
 @dataclass
@@ -48,38 +49,11 @@ class BacktestResult:
                 f"IS {m['in_sample_return']:+.1%} / OOS {m['out_of_sample_return']:+.1%}")
 
 
-def _score_row(row: pd.Series) -> float:
-    """Same logic as signals.trend_signal, vectorised over a feature row."""
-    if row[["sma50", "sma200", "atr14", "rsi14", "roc63", "hi55"]].isna().any():
-        return np.nan
-    close, sma50, sma200 = row["close"], row["sma50"], row["sma200"]
-    score = 0.0
-    if close > sma50 > sma200:
-        score += 0.35
-    elif close < sma50 < sma200:
-        score -= 0.35
-    elif close > sma200:
-        score += 0.10
-    else:
-        score -= 0.10
-    score += float(np.clip(row["roc63"] / 0.30, -1, 1)) * 0.30
-    if close >= row["hi55"]:
-        score += 0.20
-    if row["rsi14"] > 80:
-        score -= 0.20
-    elif row["rsi14"] < 30 and close > sma200:
-        score += 0.10
-    if row["atr_pct"] > 0.08:
-        score *= 0.5
-    return float(np.clip(score, -1, 1))
-
-
-def precompute(bars: dict[str, pd.DataFrame]) -> dict[str, pd.DataFrame]:
+def precompute(bars: dict[str, pd.DataFrame], p: StrategyParams = DEFAULT_PARAMS) -> dict[str, pd.DataFrame]:
     out = {}
     for sym, df in bars.items():
-        f = compute_features(df)
-        f["score"] = f.apply(_score_row, axis=1)
-        f["open"] = df["open"]
+        f = compute_features(df, p)
+        f["score"] = score_frame(f, p)
         out[sym] = f
     return out
 
@@ -112,16 +86,17 @@ def breadth_by_class(feats: dict[str, pd.DataFrame], classes: dict | None) -> di
     groups: dict[str, list[pd.Series]] = {}
     for sym, f in feats.items():
         cls = (classes or {}).get(sym, "all")
-        groups.setdefault(cls, []).append((f["close"] > f["sma200"]).astype(float).where(f["sma200"].notna()))
+        groups.setdefault(cls, []).append((f["close"] > f["sma_slow"]).astype(float).where(f["sma_slow"].notna()))
     return {cls: pd.concat(series, axis=1).mean(axis=1) for cls, series in groups.items()}
 
 
 def run_backtest(bars: dict[str, pd.DataFrame], cfg: BacktestConfig | None = None) -> BacktestResult:
     cfg = cfg or BacktestConfig()
-    feats = precompute(bars)
+    feats = precompute(bars, cfg.params)
     breadth = breadth_by_class(feats, cfg.classes) if cfg.regime_breadth_min > 0 else {}
+    warmup = max(cfg.warmup, cfg.params.min_bars)
     dates = sorted(set().union(*[set(f.index) for f in feats.values()]))
-    dates = dates[cfg.warmup:] if len(dates) > cfg.warmup else dates
+    dates = dates[warmup:] if len(dates) > warmup else dates
     cash = cfg.initial_cash
     positions: dict[str, dict] = {}
     trades: list[dict] = []
@@ -166,10 +141,10 @@ def run_backtest(bars: dict[str, pd.DataFrame], cfg: BacktestConfig | None = Non
             if day not in feats[sym].index:
                 continue
             row = feats[sym].loc[day]
-            if pd.isna(row["atr14"]) or pd.isna(row["sma50"]):
+            if pd.isna(row["atr"]) or pd.isna(row["sma_fast"]):
                 continue
             should, why = exit_rule(pos["entry"], pos["highest"], float(row["close"]),
-                                    float(row["atr14"]), float(row["sma50"]), cfg.stop_atr_multiple,
+                                    float(row["atr"]), float(row["sma_fast"]), cfg.stop_atr_multiple,
                                     cfg.trend_break_exit)
             if should and why.startswith("trend break"):
                 pos["below"] = pos.get("below", 0) + 1

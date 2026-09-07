@@ -58,15 +58,24 @@ def _write_cache(symbol: str, df: pd.DataFrame) -> None:
 
 def fetch_binance_daily(symbol: str, lookback_days: int,
                         hosts: tuple[str, ...] = BINANCE_HOSTS) -> pd.DataFrame:
-    limit = min(1000, lookback_days + 5)
+    """Daily klines, paginated so any lookback works (Binance caps one call at 1000)."""
     last_exc: Exception | None = None
     for host in hosts:
         try:
-            resp = requests.get(f"{host}/api/v3/klines",
-                                params={"symbol": symbol, "interval": "1d", "limit": limit},
-                                timeout=20)
-            resp.raise_for_status()
-            rows = resp.json()
+            rows: list = []
+            start = int((time.time() - (lookback_days + 5) * 86400) * 1000)
+            for _ in range(20):
+                resp = requests.get(f"{host}/api/v3/klines",
+                                    params={"symbol": symbol, "interval": "1d", "startTime": start, "limit": 1000},
+                                    timeout=20)
+                resp.raise_for_status()
+                batch = resp.json()
+                if not batch:
+                    break
+                rows.extend(batch)
+                if len(batch) < 1000:
+                    break
+                start = int(batch[-1][0]) + 86_400_000
             if not rows:
                 raise ValueError(f"no klines for {symbol} at {host}")
             idx = pd.to_datetime([r[0] for r in rows], unit="ms", utc=True)
@@ -120,7 +129,7 @@ def get_daily_bars(symbol: str, asset_class: str, lookback_days: int = 400,
     """Daily OHLCV bars, newest last. Uses cache first, network second,
     stale cache as the last resort."""
     cached = _read_cache(symbol, cache_ttl_hours)
-    if cached is not None and len(cached) >= min(lookback_days, 200):
+    if cached is not None and len(cached) >= min(int(lookback_days * 0.6), 200):
         return cached
     try:
         if asset_class == "crypto":

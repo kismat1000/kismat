@@ -9,6 +9,7 @@ max_positions: 12              # max simultaneous open positions
 max_asset_class_pct:           # max share of equity per asset class
   crypto: 0.60
   us_stocks: 0.60
+  us_etfs: 0.60
   au_stocks: 0.60
 
 per_trade_risk_pct: 0.01       # risk 1% of equity per trade (entry to stop distance)
@@ -36,5 +37,6 @@ min_hold_days: 1               # never rotate out a position younger than this
 fees_bps:
   crypto: 10                   # 0.10% per side (Binance spot without BNB discount)
   us_stocks: 5                 # commission-free brokers still pay spread
+  us_etfs: 5
   au_stocks: 15                # ASX brokers: min commissions hurt small orders
 slippage_bps: 5

@@ -28,6 +28,24 @@ us_stocks:         # Yahoo Finance symbols
   - AVGO
   - COST
 
+us_etfs:           # broad, liquid ETFs: diversification the stock list cannot give
+  - IWM             # US small caps
+  - DIA             # Dow
+  - EFA             # developed markets ex US
+  - EEM             # emerging markets
+  - VNQ             # US real estate
+  - GLD             # gold
+  - SLV             # silver
+  - TLT             # long US treasuries
+  - IEF             # 7-10y treasuries
+  - DBC             # commodities basket
+  - XLE             # energy
+  - XLF             # financials
+  - XLK             # technology
+  - XLV             # health care
+  - XLU             # utilities
+  - XLI             # industrials
+
 au_stocks:         # ASX via Yahoo Finance (".AX" suffix)
   - BHP.AX
   - CBA.AX

@@ -1,0 +1,20 @@
+# Signal windows and weights. The same values drive the live engine, the
+# backtester, and the walk-forward research. Change them only with a
+# research/backtests report that shows the new set survived out of sample.
+
+sma_fast: 50
+sma_slow: 200
+mom_days: 63           # momentum lookback in trading days
+mom_scale: 0.30        # this much momentum earns the full momentum weight
+breakout_days: 55
+atr_days: 14
+rsi_days: 14
+rsi_hot: 80
+rsi_cold: 30
+chaos_atr_pct: 0.08    # above this ATR/price the score is halved
+w_trend: 0.35
+w_misaligned: 0.10
+w_mom: 0.30
+w_breakout: 0.20
+w_hot: 0.20
+w_pullback: 0.10

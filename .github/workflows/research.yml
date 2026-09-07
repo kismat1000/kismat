@@ -1,0 +1,46 @@
+name: research
+
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "History in days"
+        default: "1825"
+  schedule:
+    - cron: "37 21 * * 6"     # Saturday, after the backtest grid
+
+permissions:
+  contents: write
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Walk-forward research on real data
+        env:
+          KISMAT_CACHE_TTL_HOURS: "24"
+        run: |
+          DAYS="${{ inputs.days || '1825' }}"
+          python -m kismat research --days "$DAYS" --report "research/backtests/wf-$(date -u +%Y-%m-%d).md"
+          cat "research/backtests/wf-$(date -u +%Y-%m-%d).md"
+      - name: Commit report
+        run: |
+          git config user.name "kismat-bot"
+          git config user.email "kismat-bot@users.noreply.github.com"
+          git add research/backtests
+          if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
+          git commit -m "research: walk-forward $(date -u +'%Y-%m-%d')"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && break
+            sleep 5
+          done
