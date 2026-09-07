@@ -380,7 +380,8 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
                                       packet_symbols, memos_root, fx=fx, native_prices=native_prices)
     if notify and (report.fills or report.proposals or report.halted):
         telegram.send(report.summary(), settings.telegram_bot_token, settings.telegram_chat_id)
-    report.dashboard_path = dashboard.build(journal, broker, memos, report.signals, settings, docs_dir)
+    report.dashboard_path = dashboard.build(journal, broker, memos, report.signals, settings, docs_dir,
+                                            research_dir=memos_root)
     return report
 
 

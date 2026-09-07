@@ -149,3 +149,17 @@ def test_rejected_entry_does_not_lock_symbol_for_the_bar(settings, tmp_root):
     broker.save()
     report2, broker, _ = run(settings, tmp_root)
     assert [f for f in report2.fills if f["side"] == "buy"]
+
+
+def test_dashboard_renders_research_sections(settings, tmp_root):
+    rd = tmp_root / "research"
+    (rd / "reviews").mkdir(parents=True, exist_ok=True)
+    (rd / "backtests").mkdir(parents=True, exist_ok=True)
+    (rd / "desk_log.md").write_text("# Desk log\n\n## 2026-09-06 - access check\n\n- ok\n\n## 2026-09-07 - council run\n\n**Scanner picks.** Eight symbols.\n\n| symbol | direction |\n|---|---|\n| NVDA | long |\n")
+    (rd / "reviews" / "2026-09-06-review.md").write_text("# Weekly review\n\n## 1. What worked\nNothing yet.\n")
+    (rd / "backtests" / "wf-2026-09-07.md").write_text("# Walk-forward research\n\n| rank | variant |\n|---|---|\n| 1 | sma20/100 |\n")
+    report, broker, journal = run(settings, tmp_root)
+    page = (tmp_root / "docs" / "index.html").read_text()
+    assert "Research desk, latest entry" in page and "council run" in page and "access check" not in page.split("Research desk")[1].split("Weekly review")[0]
+    assert "Weekly review (2026-09-06)" in page and "Walk-forward research (2026-09-07)" in page
+    assert "<table>" in page.split("Research desk")[1]

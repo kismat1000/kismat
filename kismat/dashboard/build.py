@@ -32,7 +32,104 @@ td{padding:6px 8px;border-bottom:1px solid var(--line);white-space:nowrap}td.num
 .badge.halt{border-color:var(--critical);color:var(--critical)}.badge.ok{border-color:var(--good);color:var(--good)}
 svg text{fill:var(--ink2);font-size:11px}.grid{stroke:var(--line);stroke-width:1}.series{stroke:var(--series);stroke-width:2;fill:none}
 .muted{color:var(--ink2)}
+.prose{line-height:1.55;max-width:960px}.prose h2,.prose h3,.prose h4{margin:12px 0 6px;color:var(--ink);font-size:14px}
+.prose p{margin:6px 0}.prose ul{margin:4px 0 8px 18px;padding:0}.prose li{margin:2px 0}.prose code{font-size:12px}
+.prose table{margin:8px 0}.prose td{white-space:normal}
 """
+
+
+def _md(text: str) -> str:
+    """Tiny markdown to HTML: headings, bullets, tables, bold, code, paragraphs."""
+    import re
+    out, para, in_list, in_table = [], [], False, False
+
+    def flush():
+        nonlocal para
+        if para:
+            out.append("<p>" + " ".join(para) + "</p>")
+            para = []
+
+    def inline(t):
+        t = html.escape(t)
+        t = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", t)
+        t = re.sub(r"`(.+?)`", r"<code>\1</code>", t)
+        return t
+
+    for raw in text.splitlines():
+        line = raw.rstrip()
+        if line.startswith("|"):
+            cells = [c.strip() for c in line.strip("|").split("|")]
+            if all(set(c) <= set("-: ") for c in cells):
+                continue
+            if not in_table:
+                flush(); out.append("<table>"); in_table = True
+                out.append("<tr>" + "".join(f"<th>{inline(c)}</th>" for c in cells) + "</tr>")
+            else:
+                out.append("<tr>" + "".join(f"<td>{inline(c)}</td>" for c in cells) + "</tr>")
+            continue
+        if in_table:
+            out.append("</table>"); in_table = False
+        if line.startswith("#"):
+            flush()
+            if in_list:
+                out.append("</ul>"); in_list = False
+            level = min(len(line) - len(line.lstrip("#")), 4)
+            out.append(f"<h{level + 1}>{inline(line.lstrip('#').strip())}</h{level + 1}>")
+        elif line.startswith("- ") or line.startswith("* "):
+            flush()
+            if not in_list:
+                out.append("<ul>"); in_list = True
+            out.append(f"<li>{inline(line[2:])}</li>")
+        elif not line:
+            flush()
+            if in_list:
+                out.append("</ul>"); in_list = False
+        else:
+            if in_list and line.startswith("  "):
+                out[-1] = out[-1][:-5] + " " + inline(line.strip()) + "</li>"
+            else:
+                if in_list:
+                    out.append("</ul>"); in_list = False
+                para.append(inline(line))
+    flush()
+    if in_list:
+        out.append("</ul>")
+    if in_table:
+        out.append("</table>")
+    return "\n".join(out)
+
+
+def _latest(pattern_dir: Path, glob: str) -> Path | None:
+    if not pattern_dir.exists():
+        return None
+    files = sorted(pattern_dir.glob(glob))
+    return files[-1] if files else None
+
+
+def _last_section(text: str, marker: str = "## ") -> str:
+    parts = text.split("\n" + marker)
+    return (marker + parts[-1]) if len(parts) > 1 else text
+
+
+def research_sections(research_dir: Path) -> str:
+    blocks = []
+    log = research_dir / "desk_log.md"
+    if log.exists():
+        blocks.append("<h2>Research desk, latest entry</h2><div class='panel prose'>"
+                      + _md(_last_section(log.read_text())) + "</div>")
+    review = _latest(research_dir / "reviews", "*-review.md")
+    if review:
+        blocks.append(f"<h2>Weekly review ({html.escape(review.stem.replace('-review', ''))})</h2><div class='panel prose'>"
+                      + _md(review.read_text()) + "</div>")
+    wf = _latest(research_dir / "backtests", "wf-*.md")
+    bt = _latest(research_dir / "backtests", "[0-9]*.md")
+    if wf:
+        blocks.append(f"<h2>Walk-forward research ({html.escape(wf.stem[3:])})</h2><div class='panel prose'>"
+                      + _md("\n".join(wf.read_text().splitlines()[:24])) + "</div>")
+    if bt:
+        blocks.append(f"<h2>Backtest ({html.escape(bt.stem)})</h2><div class='panel prose'>"
+                      + _md(bt.read_text()) + "</div>")
+    return "\n".join(blocks)
 
 
 def _score(d, key):
@@ -71,8 +168,11 @@ def equity_svg(points: list[tuple[str, float]], width: int = 900, height: int = 
             + "".join(grid) + f'<path class="series" d="{path}"/>' + labels + "</svg>")
 
 
-def build(journal, broker, memos: dict, signals: dict, settings, out_dir: Path | None = None) -> Path:
+def build(journal, broker, memos: dict, signals: dict, settings, out_dir: Path | None = None,
+          research_dir: Path | None = None) -> Path:
     out_dir = out_dir or DOCS_DIR
+    from kismat import config as C
+    research_dir = research_dir or C.RESEARCH_DIR
     out_dir.mkdir(parents=True, exist_ok=True)
     eq = journal.read("equity")
     fills = journal.read("fills", limit=25)
@@ -140,6 +240,7 @@ def build(journal, broker, memos: dict, signals: dict, settings, out_dir: Path |
 <h2>Research memos in force</h2><div class="panel"><table><tr><th>Symbol</th><th>View</th><th>Conviction</th><th>Date</th><th>Thesis</th></tr>{memo_rows}</table></div>
 <h2>Top systematic signals</h2><div class="panel"><table><tr><th>Symbol</th><th>Score</th><th>Reasons</th></tr>{sig_rows}</table></div>
 <h2>Events</h2><div class="panel"><ul>{ev_rows}</ul></div>
+{research_sections(research_dir)}
 """
     path = out_dir / "index.html"
     path.write_text("<!doctype html><html><head><meta charset='utf-8'>"
