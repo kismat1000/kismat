@@ -2,25 +2,26 @@
   "symbol": "LINKUSDT",
   "asset_class": "crypto",
   "date": "2026-09-07",
-  "direction": "long",
+  "direction": "flat",
   "conviction": 0.55,
-  "thesis": "Chainlink is the one crypto holding with an institutional adoption story made of signed integrations rather than narrative: Bottomline putting CCIP in front of 600+ banks, Schwab listing LINK, Circle using Chainlink Proof of Reserve for its wrapped bitcoin. Price confirms with a 55-day high. The problem is entry, not thesis - it is up ~80% in under two months with RSI 69, so this is a hold-and-trail on an existing +9.9% position, not a level to add at.",
-  "bull_case": "Dated integrations, not promises: Bottomline is bringing CCIP and CRE to a network of 600+ banks whose platforms handle over $16T in annual payments (4 Sep 2026); Circle launched wrapped bitcoin with Chainlink Proof of Reserve (6 Sep 2026); Chainlink Data Feeds went live on Tempo (4 Sep 2026); Wyoming's stablecoin migrated to CCIP; Schwab is rolling LINK out to its crypto clients. LINK-linked spot ETF products logged four straight weeks of net inflows through 24 Aug 2026, cumulative net inflows past $145M. Packet: close 13.455, 55-day high, close > SMA50 > SMA200, 3m momentum +67.6%. The position is already +9.9%, so the thesis is being paid, not hoped for.",
-  "bear_case": "The tape is where this dies. A whale sent $7.6M of LINK to Coinbase on 7 Sep - exchange inflows of that size are distribution, not accumulation. RSI 69 after +80% in two months means every buyer here is paying for other people's gains. Sector flows are turning against alts specifically: inflows into Ethereum, Solana, XRP and Hyperliquid products fell 73-96% in the week ending 4 Sep while bitcoin funds took $986.9M, so money is consolidating into BTC and away from exactly this cohort. ATR 4.8% means a sane stop is wide, and a wide stop on a $10k account is a large dollar risk for one token. Base rate from our own backtest (research/backtests/2026-09-06.md, 730 days, generated 2026-09-06): the crypto sleeve returned -6.4% with Sharpe -0.15, a 17% win rate over 75 trades and a -19.2% max drawdown, while us_stocks returned +7.6% (Sharpe 0.63) and au_stocks +3.7% (Sharpe 0.57) on the same rules. Trend-break exits alone lost 1,028 in crypto across 39 trades. This system has no demonstrated edge trading crypto momentum, and out-of-sample being +5.3% on a short window is not proof that it does. Every crypto conviction below is capped by that.",
+  "thesis": "Revised this evening, against this morning's long call. The adoption story got better during the day - DTCC's collateral platform is targeting a Q4 commercial launch and Chainlink prices tokenised stocks on Coinbase - but the positioning data got worse: the whale I flagged has now sent 2.41M LINK (~$26.04M) to Coinbase over three weeks, not the single $7.6M transfer, and every wallet cohort has moved into net distribution for the first time since early June. Daily RSI14 near 76 with price above the upper Bollinger band is not a level to own more at. Hold the position and let the trailing stop work; adding here has no edge.",
+  "bull_case": "The integration list keeps lengthening with named, dated counterparties: Bottomline bringing CCIP and CRE to 600+ banks handling over $16T in annual payments (4 Sep 2026); Circle's wrapped bitcoin using Chainlink Proof of Reserve (6 Sep 2026); Chainlink Data Feeds live on Tempo (4 Sep 2026); DTCC's collateral platform targeting a Q4 2026 commercial launch; Chainlink pricing tokenised stocks on Coinbase; Schwab adding LINK in coming months. LINK-linked spot ETF products logged four straight weeks of net inflows through 24 Aug 2026, cumulative past $145M. External quotes have LINK around $13.07-13.32 and up ~7.1% on the session, and the daily trend is unambiguously up. The position is well in profit from 12.24.",
+  "bear_case": "The distribution is bigger and broader than this morning's memo assumed. The whale has sent 2.41M LINK (~$26.04M) to Coinbase over three weeks - sustained, not a one-off - and on-chain work reports every wallet cohort shifting into net distribution for the first time since early June. That is the supply side of a rally being handed to late buyers. Momentum is stretched past the packet's reading: external daily RSI14 near 76 against the packet's 69, with price above the upper Bollinger band at $12.96, a configuration that historically invites a pause at best. Sector flows still favour bitcoin over alts - inflows into ETH, SOL, XRP and Hyperliquid products fell 73-96% in the week ending 4 Sep while bitcoin funds took $986.9M - and the whole crypto market was down 0.73% on Monday with the weekend's altcoin gains stalling. Base rate from our own backtest (research/backtests/2026-09-06.md): the crypto sleeve returned -6.4% with Sharpe -0.15 and a 17% win rate over 75 trades. Nothing in this asset's fundamentals fixes a 17% win rate on entries taken at RSI 76.",
   "catalysts": [
+    "DTCC collateral platform commercial launch targeted for Q4 2026",
+    "Schwab adding LINK trading to its crypto platform",
     "Bottomline/CCIP bank rollout milestones after the 4 Sep 2026 announcement",
-    "Continued CLNK/LINK ETF net inflows (cumulative past $145M as of 24 Aug 2026)",
-    "Schwab crypto platform adding LINK to retail flow",
-    "15-16 Sep 2026 FOMC: a hawkish hike hits the long end of the risk curve first"
+    "Continued CLNK/LINK ETF net inflows (cumulative past $145M as of 24 Aug 2026)"
   ],
   "risks": [
-    "Whale distribution into exchanges (7 Sep, $7.6M to Coinbase)",
-    "Alt ETF inflows collapsing 73-96% in the week to 4 Sep while BTC funds absorb the flow",
-    "RSI 69 entry after +80% in under two months",
-    "Own backtest shows negative expectancy for crypto momentum in this system",
-    "ATR 4.8%: stop distance is large relative to a $10k account"
+    "Sustained whale distribution: 2.41M LINK (~$26.04M) to Coinbase over three weeks",
+    "All wallet cohorts in net distribution for the first time since early June",
+    "Daily RSI14 near 76 with price above the upper Bollinger band",
+    "Alt product inflows down 73-96% in the week to 4 Sep while BTC absorbs the flow",
+    "Own backtest: crypto sleeve -6.4%, Sharpe -0.15, 17% win rate",
+    "Feed discrepancy: our mark is 12.764 against external quotes of $13.07-13.32 today"
   ],
-  "invalidation": "A daily close below 12.00 - the level the rally has been defending and the base of the current breakout - voids the structure. A second whale transfer of comparable size into exchanges, or CLNK net outflows for two consecutive weeks, kills the flow leg of the thesis independent of price.",
+  "invalidation": "Flips long again on a daily close above 14.00 - a clean new high made after this distribution, not into it - with exchange inflows from the tracked whale stopping. The bear case confirms on a daily close below 12.00, the base of the breakout, which would also put price back inside the pre-rally range; the trailing stop sits at 10.79.",
   "horizon_days": 21,
   "sources": [
     "https://coinmarketcap.com/top-stories/6a867cd9e9294340172a9f71/",
@@ -28,12 +29,16 @@
     "https://beincrypto.com/bitcoin-etf-inflows-altcoin-funds-slump/",
     "research/packets/2026-09-07.md (headlines: 'Bottomline Taps Chainlink to Bring 600 Banks On-Chain', PYMNTS, 4 Sep 2026; 'Chainlink whale sends $7.6m in LINK to Coinbase', Crypto News, 7 Sep 2026)",
     "research/backtests/2026-09-06.md",
-    "https://www.cnbc.com/2026/08/31/markets-see-warsh-endorsing-a-rate-hike-in-september-not-everyone-is-convinced.html"
+    "https://www.cnbc.com/2026/08/31/markets-see-warsh-endorsing-a-rate-hike-in-september-not-everyone-is-convinced.html",
+    "https://crypto.news/chainlink-whale-sends-7-6m-in-link-to-coinbase/",
+    "https://coingape.com/chainlink-whales-dump-heavily-sparking-concerns-is-link-at-risk/",
+    "https://blockonomi.com/chainlink-link-price-analyst-eyes-20-target-after-breakout-above-12",
+    "https://finance.yahoo.com/news/why-crypto-market-down-today-035710630.html"
   ],
   "agent": "council/judge",
   "council_votes": {
     "bull": 0.7,
-    "bear": 0.5,
+    "bear": 0.6,
     "macro": 0.35
   }
 }

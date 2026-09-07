@@ -123,3 +123,44 @@ consolidating into BTC and out of exactly the alts we hold. macro_conviction lon
   candidate over the pick cap; the engine bought it anyway and it is +9.9%. That is twice now
   that entries were made before the desk had an opinion, which is the gap
   `research/proposals/2026-09-06-memo-gated-entries.md` is about.
+
+### 2026-09-07 — evening re-check (second trigger, same day)
+
+The daily trigger fired again at 22:33 UTC on a day the council had already run at 09:39.
+No new packet (still `2026-09-07.md`), and all 12 holdings had memos under a day old, so
+re-running the full council would have been repeating fresh research. Checked what actually
+changed in the intervening 13 hours instead.
+
+**US markets were closed** — Labor Day. NYSE, Nasdaq, bonds and CME futures shut for the
+session, so every US mark is identical to this morning and no US memo could have new
+evidence behind it. AAPL, AMZN, MSFT, NVDA, QQQ, SPY, ANZ.AX, BHP.AX, ETHUSDT, SOLUSDT and
+BNBUSDT all deferred on this morning's memos.
+
+**One memo revised: LINKUSDT, long 0.55 → flat 0.55.** This morning's memo called it long
+while flagging a whale sending $7.6m to Coinbase. The whale turns out to have sent
+**2.41M LINK (~$26.04M) over three weeks**, and on-chain reporting has every wallet cohort
+in net distribution for the first time since early June. External daily RSI14 is ~76 against
+the packet's 69, with price above the upper Bollinger band. The adoption story improved on
+the same day — DTCC's collateral platform targets a Q4 commercial launch, Chainlink prices
+tokenised stocks on Coinbase — so the thesis is intact; the entry is not. Holding is fine,
+adding is not. This morning's call was too generous on timing and the evening evidence says
+so plainly.
+
+**Price discrepancy, minor and unresolved:** our mark for LINKUSDT is 12.764 (down from the
+packet's 13.455) while external quotes put it at $13.07–13.32 and *up* ~7.1% on the session.
+Direction of travel disagrees, not just level. Probably snapshot timing or venue, but it is
+the second data-labelling surprise in two days, so it is on the record.
+
+**New walk-forward backtest** (`research/backtests/wf-2026-09-07.md`, 50 symbols, 96 variants,
+21 windows). Verdict is **keep** the live parameters, and that is well earned: re-picking the
+best set each window returned +57.8% against +102.0% for holding the live set — parameter
+chasing lost. But the setting-level averages are lopsided and worth recording: slots n8 scores
+0.62 robustness against n12 at **0.20**, and a 4.0 ATR stop scores 0.58 against 2.5 at **0.24**.
+Live runs the least robust option on both axes, ranks 31 of 96, and carries the table's worst
+drawdown at −23.6% — earned back through the best return, +86.0% with +21.5% out of sample.
+Filed as `research/proposals/2026-09-07-slots-and-stops.md`, with the argument against it.
+The 12-slot cap is currently binding: today it skipped AVAXUSDT, BTCUSDT, CSL.AX, LTCUSDT
+and RIO.AX.
+
+Equity 10,073 → 9,998 across the day, a −0.75% drawdown from peak, all of it crypto marks.
+No `avoid` memo on any held position. `validate-memos`: 12 valid.
