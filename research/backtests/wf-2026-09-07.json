@@ -1,10 +1,11 @@
 {
-  "generated": "2026-09-07T10:26+00:00",
-  "name": "sma50/200 mom126 stop4.0 n12",
+  "generated": "2026-09-07T10:40+00:00",
+  "window": 63,
+  "name": "sma20/100 mom252 stop4.0 n8",
   "params": {
-    "sma_fast": 50,
-    "sma_slow": 200,
-    "mom_days": 126,
+    "sma_fast": 20,
+    "sma_slow": 100,
+    "mom_days": 252,
     "mom_scale": 0.3,
     "breakout_days": 55,
     "atr_days": 14,
@@ -21,22 +22,44 @@
   },
   "overrides": {
     "stop_atr_multiple": 4.0,
-    "max_positions": 12,
-    "regime_breadth_min": 0.0
+    "max_positions": 8,
+    "regime_breadth_min": 0.0,
+    "regime_index": null
   },
   "metrics": {
-    "total_return": 0.6952010381282092,
-    "cagr": 0.12586575654196053,
-    "sharpe": 0.7452468572839515,
-    "max_drawdown": -0.2532633459765449,
-    "trades": 506,
-    "win_rate": 0.28063241106719367,
-    "avg_win": 0.16697716251714737,
-    "avg_loss": -0.0394294467449379,
-    "in_sample_return": 0.4794945349887252,
-    "out_of_sample_return": 0.14579743151341074,
-    "days": 1625
+    "total_return": 0.5726427870881432,
+    "cagr": 0.11077521452855454,
+    "sharpe": 0.7100143051241131,
+    "max_drawdown": -0.2175633973934833,
+    "trades": 423,
+    "win_rate": 0.2364066193853428,
+    "avg_win": 0.14734735804196028,
+    "avg_loss": -0.028081838025440103,
+    "in_sample_return": 0.555206816390279,
+    "out_of_sample_return": 0.011211351772707712,
+    "days": 1573
   },
-  "robustness": 1.030785486182966,
-  "walk_forward_chain_return": -0.17380638866349796
+  "robustness": 1.068317811434533,
+  "walk_forward_chain_return": 0.3399341958944164,
+  "live_chain_return": 0.9950870889245216,
+  "recommendation": "keep",
+  "reason": "the top set beats the live parameters by only 0.76 robustness (a change needs 0.25, a better out-of-sample return, and no fewer positive windows); re-picking parameters each window lost to holding the live set",
+  "live": {
+    "name": "sma50/200 mom63 stop2.5 n12",
+    "rank": 36,
+    "robustness": 0.3126210360869355,
+    "metrics": {
+      "total_return": 0.8046344465730948,
+      "cagr": 0.1468133395425213,
+      "sharpe": 0.8267472165520238,
+      "max_drawdown": -0.27027899626578356,
+      "trades": 658,
+      "win_rate": 0.3191489361702128,
+      "avg_win": 0.12866351981904897,
+      "avg_loss": -0.04117146604910075,
+      "in_sample_return": 0.48759069716723835,
+      "out_of_sample_return": 0.21312566017627743,
+      "days": 1573
+    }
+  }
 }
