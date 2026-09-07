@@ -5,7 +5,9 @@ starting_cash: 10000.0         # paper account size in base currency (USD); test
 base_currency: USD
 
 max_position_pct: 0.10         # max 10% of equity in any single position
-max_positions: 12              # max simultaneous open positions
+max_positions: 12              # max simultaneous open positions. 2026-09-07 walk-forward: 8 slots are more
+                               # robust on average (0.62 vs 0.20) with a smaller drawdown (-19% vs -21%) but
+                               # return less (+46% vs +51% on average; +66% vs +86% on the live set). Kept at 12.
 max_asset_class_pct:           # max share of equity per asset class
   crypto: 0.60
   us_stocks: 0.60
@@ -13,7 +15,9 @@ max_asset_class_pct:           # max share of equity per asset class
   au_stocks: 0.60
 
 per_trade_risk_pct: 0.01       # risk 1% of equity per trade (entry to stop distance)
-stop_atr_multiple: 2.5         # initial and trailing stop distance in ATR units
+stop_atr_multiple: 2.5         # initial and trailing stop distance in ATR units. 2026-09-07 walk-forward: 4.0 is
+                               # more robust on average (0.58 vs 0.24, drawdown -18% vs -22%) but with 1% risk
+                               # sizing it returns less (+42% vs +55% on average; +74% vs +86% on the live set).
 trend_break_exit: true         # also exit when close < SMA50 while underwater
 trend_break_days: 1            # consecutive closes below SMA50 (while underwater) before the trend-break exit fires
 time_stop_days: 0              # exit a position still underwater after this many days (0 = off)
@@ -21,13 +25,18 @@ regime_breadth_min: 0.0        # new entries only when this share of the asset c
 regime_index: {}               # asset class -> index symbol (from the universe) that must close above its SMA200
                                # before the class may open new positions, e.g. {us_stocks: SPY, crypto: BTCUSDT}.
                                # Tested every week by the walk-forward research ("mkt" variants); empty = off.
+                               # 2026-09-07: on average it adds return (+53% vs +44%) and trims drawdown (-19% vs
+                               # -21%), but on the live set it left return flat (+85.6% vs +86.0%), cut the second
+                               # half (+15% vs +22%) and made quarters choppier (robustness 0.07 vs 0.63). Off.
 min_trade_value: 10.0          # skip dust orders below this value
 
 max_daily_loss_pct: 0.03       # lose 3% in a day: no new entries until next day
-max_drawdown_pct: 0.20         # lose 20% from peak: kill switch, liquidate and halt everything.
-                               # Paper-test setting: the 5-year walk-forward (2026-09-07) shows the live
-                               # parameters drawing down 26% in 2022 and 22% in early 2025, so a 10% switch
-                               # would have halted the test book twice. Tighten to 0.05-0.10 before live.
+max_drawdown_pct: 0.25         # lose 25% from peak: kill switch, liquidate and halt everything.
+                               # Paper-test setting: the 5-year walk-forward (2026-09-07, live sizing rules)
+                               # shows the live parameters' worst drawdown at 23.6% (2022 bear market), so a
+                               # halt here means something outside five years of history is happening. A 10%
+                               # switch would have halted the test book several times. Tighten to 0.05-0.10
+                               # before live, when the account is small enough that a halt costs nothing.
 
 entry_score_threshold: 0.35    # combined score needed to open a position
 exit_score_threshold: -0.10    # combined score below this closes a position

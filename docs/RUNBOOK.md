@@ -71,7 +71,7 @@ want upgrade proposals.
   ```
 
 - **Journal**: `state/journal/*.jsonl`. `grep` works. Every line has a reason.
-- **Kill switch**: after a drawdown of `max_drawdown_pct` from peak (20% for the
+- **Kill switch**: after a drawdown of `max_drawdown_pct` from peak (25% for the
   paper test, 5-10% for live) the account liquidates and halts. Nothing trades
   until you run `python -m kismat reset-halt` and push.
   Before you do, read the weekly review and decide what changes.
