@@ -16,14 +16,20 @@
 6. Run the `trading-cycle` workflow once by hand (Actions -> trading-cycle ->
    Run workflow) and check that a commit "chore(cycle): ..." appears.
 
-Actions minutes: the schedule asks for a cycle every 10 minutes because
-GitHub drops many scheduled slots under load; in practice it lands a run every
-10 to 60 minutes. Each run takes about a minute. A public repo has no minutes
-limit. A private repo gets 2000 free minutes a month, so on a private repo
-change the cron in `.github/workflows/cycle.yml` to hourly (`11 * * * *`).
-For an exact 30-minute cadence regardless of GitHub's load, point a free
-external timer (cron-job.org) at the workflow_dispatch API with a fine-grained
-personal access token limited to this repository with Actions read/write.
+How often the cycle runs: the workflow asks GitHub for a cycle every 10
+minutes, but GitHub drops scheduled slots freely (on 2026-09-07 it delivered
+nothing for hours). So there is a second timer that does not depend on it: a
+small Claude Code session called "Kismat heartbeat timer" with a routine
+("Kismat heartbeat: dispatch trading cycle", hourly). Each hour it looks at
+the latest cycle runs and, if none started in the last 20 minutes, dispatches
+one. That is the guaranteed floor: at least one cycle an hour, plus whatever
+GitHub's cron adds. It costs nothing beyond a few seconds of your Claude plan
+per hour. You can see, pause, or delete it under Routines on claude.ai/code.
+Each cycle takes about a minute of Actions time. A public repo has no minutes
+limit; a private repo gets 2000 free minutes a month, enough for hourly
+cycles. For an exact 30-minute cadence, point a free external timer
+(cron-job.org) at the workflow_dispatch API with a fine-grained personal
+access token limited to this repository with Actions read/write.
 
 ## 2. Telegram alerts (free, five minutes)
 
