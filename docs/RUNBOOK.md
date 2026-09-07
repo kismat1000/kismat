@@ -16,10 +16,14 @@
 6. Run the `trading-cycle` workflow once by hand (Actions -> trading-cycle ->
    Run workflow) and check that a commit "chore(cycle): ..." appears.
 
-Actions minutes: the cycle runs every 30 minutes and takes about a minute, so
-roughly 1500 minutes a month. A public repo has no limit. A private repo gets
-2000 free minutes a month, so on a private repo change the cron in
-`.github/workflows/cycle.yml` to hourly (`11 * * * *`) to stay inside it.
+Actions minutes: the schedule asks for a cycle every 10 minutes because
+GitHub drops many scheduled slots under load; in practice it lands a run every
+10 to 60 minutes. Each run takes about a minute. A public repo has no minutes
+limit. A private repo gets 2000 free minutes a month, so on a private repo
+change the cron in `.github/workflows/cycle.yml` to hourly (`11 * * * *`).
+For an exact 30-minute cadence regardless of GitHub's load, point a free
+external timer (cron-job.org) at the workflow_dispatch API with a fine-grained
+personal access token limited to this repository with Actions read/write.
 
 ## 2. Telegram alerts (free, five minutes)
 
