@@ -83,6 +83,8 @@ def default_query_for(symbol: str, asset_class: str) -> str:
         return names.get(base, f"{base} crypto")
     if asset_class == "au_stocks":
         return f"{symbol.replace('.AX', '')} ASX shares"
+    if asset_class == "us_etfs":
+        return f"{symbol} ETF"
     return f"{symbol} stock"
 
 

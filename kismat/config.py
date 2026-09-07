@@ -18,7 +18,7 @@ RESEARCH_DIR = ROOT / "research"
 DOCS_DIR = ROOT / "docs"
 CACHE_DIR = ROOT / "data_cache"
 
-ASSET_CLASSES = ("crypto", "us_stocks", "au_stocks")
+ASSET_CLASSES = ("crypto", "us_stocks", "us_etfs", "au_stocks")
 
 
 @dataclass
@@ -28,7 +28,7 @@ class RiskLimits:
     max_position_pct: float = 0.15
     max_positions: int = 6
     max_asset_class_pct: dict = field(
-        default_factory=lambda: {"crypto": 0.5, "us_stocks": 0.6, "au_stocks": 0.6}
+        default_factory=lambda: {"crypto": 0.5, "us_stocks": 0.6, "us_etfs": 0.6, "au_stocks": 0.6}
     )
     per_trade_risk_pct: float = 0.01
     stop_atr_multiple: float = 2.5
@@ -44,7 +44,7 @@ class RiskLimits:
     rotation_margin: float = 0.0
     min_hold_days: int = 1
     fees_bps: dict = field(
-        default_factory=lambda: {"crypto": 10, "us_stocks": 5, "au_stocks": 15}
+        default_factory=lambda: {"crypto": 10, "us_stocks": 5, "us_etfs": 5, "au_stocks": 15}
     )
     slippage_bps: float = 5.0
 
@@ -77,7 +77,13 @@ class Settings:
     binance_key: str = ""
     binance_secret: str = ""
     risk: RiskLimits = field(default_factory=RiskLimits)
+    strategy: "StrategyParams" = None  # type: ignore[assignment]
     universe: dict = field(default_factory=dict)
+
+    def __post_init__(self):
+        if self.strategy is None:
+            from kismat.strategy.signals import StrategyParams
+            self.strategy = StrategyParams()
 
     @property
     def is_live(self) -> bool:
@@ -102,8 +108,14 @@ class Settings:
             binance_key=env.get("BINANCE_TESTNET_KEY", "") or env.get("BINANCE_KEY", ""),
             binance_secret=env.get("BINANCE_TESTNET_SECRET", "") or env.get("BINANCE_SECRET", ""),
             risk=RiskLimits.from_yaml(),
+            strategy=_load_strategy(),
             universe=universe,
         )
+
+
+def _load_strategy():
+    from kismat.strategy.signals import StrategyParams
+    return StrategyParams.from_yaml()
 
 
 def parse_venues(spec: str) -> dict[str, str]:

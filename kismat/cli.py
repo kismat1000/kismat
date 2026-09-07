@@ -49,9 +49,9 @@ def cmd_backtest(args) -> int:
                          trend_break_days=args.trend_break_days if args.trend_break_days is not None else settings.risk.trend_break_days,
                          time_stop_days=args.time_stop if args.time_stop is not None else settings.risk.time_stop_days,
                          regime_breadth_min=args.regime if args.regime is not None else settings.risk.regime_breadth_min,
-                         classes=C.symbol_classes(universe))
+                         classes=C.symbol_classes(universe), params=settings.strategy)
     result = run_backtest(bars, cfg)
-    header = (f"symbols {len(bars)} | days {result.metrics['days']} | rotation "
+    header = (f"symbols {len(bars)} | days {result.metrics['days']} | {cfg.params.label()} | rotation "
               f"{'off' if cfg.rotation_margin <= 0 else f'margin {cfg.rotation_margin:.2f}'} | trend-break "
               f"{'off' if not cfg.trend_break_exit else f'{cfg.trend_break_days}d'} | time stop {cfg.time_stop_days or 'off'}"
               f" | regime {cfg.regime_breadth_min or 'off'}")
@@ -74,6 +74,41 @@ def cmd_backtest(args) -> int:
                  f"- generated {datetime.now(timezone.utc).isoformat(timespec='minutes')}", ""]
         with out.open("a") as fh:
             fh.write("\n".join(lines) + "\n")
+    return 0
+
+
+def cmd_research(args) -> int:
+    from kismat.data.prices import get_daily_bars, synthetic_bars
+    from kismat.strategy.backtest import BacktestConfig
+    from kismat.strategy.research import default_grid, report, run_grid, walk_forward
+    settings = C.Settings.load()
+    universe = settings.universe
+    bars = {}
+    for cls in universe:
+        for sym in universe.get(cls, []):
+            try:
+                bars[sym] = (synthetic_bars(args.days, seed=hash(sym) % 1000) if args.synthetic
+                             else get_daily_bars(sym, cls, args.days, settings.cache_ttl_hours))
+            except Exception as exc:
+                print(f"skip {sym}: {exc}", file=sys.stderr)
+    if not bars:
+        print("no data", file=sys.stderr)
+        return 1
+    base = BacktestConfig(initial_cash=settings.risk.starting_cash, max_positions=settings.risk.max_positions,
+                          max_position_pct=settings.risk.max_position_pct,
+                          fee_bps=max(settings.risk.fees_bps.values()), slippage_bps=settings.risk.slippage_bps,
+                          entry_threshold=settings.risk.entry_score_threshold,
+                          stop_atr_multiple=settings.risk.stop_atr_multiple,
+                          trend_break_exit=settings.risk.trend_break_exit,
+                          classes=C.symbol_classes(universe), params=settings.strategy)
+    grid = default_grid(quick=args.quick)
+    rows = run_grid(bars, base, grid)
+    wf = walk_forward(rows)
+    out = Path(args.report) if args.report else Path("research/backtests") / f"wf-{__import__('datetime').date.today().isoformat()}.md"
+    best = report(rows, wf, out, args.days, len(bars), settings.strategy, base)
+    print(f"variants {len(rows)} | best: {best['name']} | robustness {best['robustness']:.2f} | "
+          f"walk-forward chain {best['walk_forward_chain_return']:+.1%}")
+    print(f"report: {out}")
     return 0
 
 
@@ -234,6 +269,12 @@ def main(argv=None) -> int:
     s.add_argument("--report", help="append a markdown summary to this file")
     s.add_argument("--json", action="store_true")
     s.set_defaults(fn=cmd_backtest)
+    s = sub.add_parser("research", help="walk-forward parameter research on the universe")
+    s.add_argument("--days", type=int, default=1825)
+    s.add_argument("--synthetic", action="store_true")
+    s.add_argument("--quick", action="store_true", help="small grid")
+    s.add_argument("--report", help="markdown output path")
+    s.set_defaults(fn=cmd_research)
     sub.add_parser("status", help="print paper account state").set_defaults(fn=cmd_status)
     sub.add_parser("review", help="build the weekly review packet").set_defaults(fn=cmd_review)
     sub.add_parser("pending", help="list proposals awaiting approval").set_defaults(fn=cmd_pending)

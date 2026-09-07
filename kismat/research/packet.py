@@ -57,7 +57,7 @@ def build_packet(signals: dict[str, dict], positions: dict[str, dict], headlines
         f = sig.get("features", {})
         native = f"A${native_prices[sym]:.2f}" if sym in native_prices else "-"
         lines.append(f"| {sym} | {sig['score']:+.2f} | {sig.get('close', float('nan')):.6g} | {native} | "
-                     f"{f.get('rsi14', float('nan')):.0f} | {f.get('roc63', 0):+.1%} | {f.get('atr_pct', 0):.1%} |")
+                     f"{f.get('rsi', float('nan')):.0f} | {f.get('roc_mom', 0):+.1%} | {f.get('atr_pct', 0):.1%} |")
     lines.append("")
     lines.append(f"## Headlines ({len(headlines)})")
     for h in headlines[:80]:
