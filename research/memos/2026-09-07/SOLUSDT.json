@@ -1,0 +1,37 @@
+{
+  "symbol": "SOLUSDT",
+  "asset_class": "crypto",
+  "date": "2026-09-07",
+  "direction": "flat",
+  "conviction": 0.55,
+  "thesis": "Solana has the best fresh regulatory catalyst in the book - the SEC formally recognised SOL alongside bitcoin and ether for commodity-based trusts on 5 Sep 2026 - and the network data is genuinely strong. But the two flow sources I found flatly contradict each other, and price is sitting on its breakout level rather than above it. Catalyst without confirming structure is a watch, not a buy.",
+  "bull_case": "The SEC formally recognised Solana alongside BTC and ETH for commodity-based trusts on 5 Sep 2026 - a regulatory category change, not a headline. Bitwise's Solana staking ETF (BSOL) passed $1B cumulative inflows as of 25 Aug 2026. Network data supports the story: ~9.5M new addresses per day, exchange supply down 4.91%, and Solana led all chains with $229M of 30-day real-world-asset net inflows. The Alpenglow consensus upgrade targets ~150ms finality. Packet: close 105.13, close > SMA50 > SMA200, 3m momentum +28.3%, RSI 58 - room above, not overbought.",
+  "bear_case": "The evidence conflicts and I could not resolve it: one source reports SOL ETF inflows extending a 10-11 day streak with $153.87M, the strongest week since October 2025, while another reports Solana product inflows falling 73-96% in the week ending 4 Sep. Both are dated within days of each other. When the central pillar of a bull case cannot be verified, size accordingly. Price is the tiebreaker and it is unhelpful: 105.13 against a cited breakout level of 103.35 is sitting on support, not breaking out, and the packet flags no 55-day high. ATR 5.1% is the widest of our holdings. Base rate from our own backtest (research/backtests/2026-09-06.md, 730 days, generated 2026-09-06): the crypto sleeve returned -6.4% with Sharpe -0.15, a 17% win rate over 75 trades and a -19.2% max drawdown, while us_stocks returned +7.6% (Sharpe 0.63) and au_stocks +3.7% (Sharpe 0.57) on the same rules. Trend-break exits alone lost 1,028 in crypto across 39 trades. This system has no demonstrated edge trading crypto momentum, and out-of-sample being +5.3% on a short window is not proof that it does. Every crypto conviction below is capped by that.",
+  "catalysts": [
+    "Follow-through from the 5 Sep 2026 SEC commodity-trust recognition",
+    "Alpenglow upgrade phase one (~150ms finality)",
+    "Weekly SOL ETF flow prints, which would settle the contradiction above",
+    "15-16 Sep 2026 FOMC"
+  ],
+  "risks": [
+    "Contradictory ETF flow reporting: unresolved as of today",
+    "Price sitting on the breakout level rather than above it",
+    "ATR 5.1%, the widest stop distance in the book",
+    "Own backtest: negative expectancy for crypto momentum in this system"
+  ],
+  "invalidation": "Flips long on a daily close above 123 (the level sources name as the gate to $150) with one clean week of positive SOL ETF flows; the bear case confirms on a close below 94.40, which breaks the late-August breakout structure.",
+  "horizon_days": 21,
+  "sources": [
+    "https://cryptorank.io/news/feed/7ea7a-solana-price-prediction-september-2026-network-growth-puts-150-in-focus",
+    "https://coingape.com/markets/solana-price-forecast-as-etf-inflows-extend-to-11-straight-days/",
+    "https://beincrypto.com/bitcoin-etf-inflows-altcoin-funds-slump/",
+    "research/backtests/2026-09-06.md",
+    "research/packets/2026-09-07.md"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.55,
+    "bear": 0.5,
+    "macro": 0.35
+  }
+}

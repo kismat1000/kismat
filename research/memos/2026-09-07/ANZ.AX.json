@@ -1,0 +1,38 @@
+{
+  "symbol": "ANZ.AX",
+  "asset_class": "au_stocks",
+  "date": "2026-09-07",
+  "direction": "flat",
+  "conviction": 0.5,
+  "thesis": "With the price question settled - ANZ is A$37.85 native, not the USD 27.30 that looked wrong yesterday - this is now a clean call, and the clean call is still no. The RBA meets on 29 September with a live hike risk, ANZ has no company catalyst until FY26 results in November, and a hike cuts both ways for a bank: better margins, worse credit. Nothing to underwrite in a two-to-eight week window.",
+  "bull_case": "Yesterday's memo on this symbol flagged that the packet price could not be reconciled with dated market reports and said no level-based call was trustworthy until it was. That is now resolved and the flag was a false alarm about the feed: today's packet states all prices are USD, converted at AUDUSD 0.7211, and shows the native column. ANZ at A$37.85 is above the broker targets I found from mid-2026 (one survey moving from A$31.71 to A$33.91), so the market has already re-rated the simplification story rather than ignored it. That story is delivering: cash profit A$3.78B on lower operating costs, return on tangible equity up to 11.6%, CET1 at 12.39%, and a restructuring targeting ~3,500 fewer roles by September 2026. Trend and volatility are both friendly - close > SMA50 > SMA200, 3m momentum +9.5%, ATR 1.6%, the second-tamest holding we have - and our au_stocks backtest returned +3.7% with Sharpe 0.57, the only sleeve besides US equities with positive expectancy. The ASX 200 closed up 0.06% on Mon 7 Sep with resources leading.",
+  "bear_case": "Trading above the broker targets is the bear case as much as the bull one: the re-rating has happened and there is no catalyst to extend it before FY26 results in November, which is outside this horizon. The RBA decision on 29 Sep is genuinely two-sided for a bank - NAB expects a September hike to 4.60%, ANZ and CBA expect November, Westpac expects a hold - and a hike that helps net interest margin also raises arrears and slows credit growth. ASX 200 banks were sold off into the week ending 4 Sep on exactly this fear. Governance remains a matter of record: the Federal Court ordered A$250M in penalties, ASIC's largest ever against a single entity, over unconscionable conduct on a A$14B government bond issuance, 488 unanswered hardship notices and years of bonus-interest underpayments. Dated Sep 2025 and settled, so not a fresh catalyst - but it is the reason to demand a discount, not pay a premium.",
+  "catalysts": [
+    "29 Sep 2026 RBA cash rate decision (currently 4.35%)",
+    "FY26 full-year results, early Nov 2026",
+    "Restructuring milestone: ~3,500 role reductions targeted by Sep 2026"
+  ],
+  "risks": [
+    "No company catalyst inside the horizon",
+    "RBA hike raising arrears and slowing credit even as it helps margins",
+    "Trading above the broker targets I could find",
+    "Governance record: ASIC's largest-ever penalty against a single entity"
+  ],
+  "invalidation": "Flips long on a close above A$40.00 native (a clean new high) or on the RBA holding on 29 Sep with bank credit metrics intact; the bear case confirms on a close below A$35.50 native, which breaks the SMA50, or on rising arrears in the November result.",
+  "horizon_days": 30,
+  "sources": [
+    "https://www.finder.com.au/rba-cash-rate",
+    "https://www.asic.gov.au/about-asic/news-centre/find-a-media-release/2025-releases/25-314mr-federal-court-orders-250-million-combined-penalties-against-anz",
+    "https://kalkine.com.au/news/financial-stocks/anz-share-price-analysis-earnings-growth-transformation-update-outlook-2026",
+    "https://www.investing.com/news/stock-market-news/australia-stocks-higher-at-close-of-trade-spasx-200-up-006-4890408",
+    "research/backtests/2026-09-06.md",
+    "research/packets/2026-09-07.md",
+    "research/memos/2026-09-06/ANZ.AX.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.45,
+    "bear": 0.5,
+    "macro": 0.3
+  }
+}

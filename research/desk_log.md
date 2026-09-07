@@ -64,3 +64,62 @@ the written review is `research/reviews/2026-09-06-review.md`. The account was s
 no memo has ever changed a decision. Proposal filed at
 `research/proposals/2026-09-06-memo-gated-entries.md` to gate new entries on a fresh
 `long` memo, with the test that would decide it and the argument against it.
+
+## 2026-09-07 — council run
+
+Packet: `research/packets/2026-09-07.md`. Monday, so no weekly review. Account is now
+$10,073 equity across 12 positions — the owner added capital and the engine bought crypto
+and two more US names overnight.
+
+**Yesterday's open question is closed.** The ASX price discrepancy was not a feed fault. The
+packet now states it plainly: all prices are USD, converted at AUDUSD 0.7211, with native
+AUD in its own column. BHP.AX is A$63.16, which matches the ~A$63.5 reported in mid-August,
+and ANZ.AX is A$37.85. The desk's data was right and yesterday's suspicion was wrong — the
+packet just wasn't labelling its units. Both ASX memos are re-run today as real calls with
+native-AUD levels.
+
+**Picks: 8.** Six holdings with no memo (AAPL, BNBUSDT, ETHUSDT, LINKUSDT, QQQ, SOLUSDT),
+plus ANZ.AX and BHP.AX re-run because the flag that made yesterday's memos non-actionable
+cleared. No new candidates taken — CSL.AX (+68.3% 3m but RSI 74 and SMA50 not aligned) and
+RIO.AX were available and both looked like chases.
+
+**Deferred holdings** (fresh memo from 2026-09-06, nothing material changed): NVDA (long
+0.62), MSFT (long 0.55), AMZN (flat 0.55), SPY (flat 0.60). One day old, too early to score.
+
+| symbol | direction | conviction | note |
+|---|---|---|---|
+| LINKUSDT | long | 0.55 | Bottomline/600 banks, Schwab, Circle PoR; but +80% in 2 months, RSI 69, whale sent $7.6m to Coinbase 7 Sep |
+| AAPL | flat | 0.60 | 9 Sep event in two days; sell-the-news base rate, China and Siri unresolved |
+| QQQ | flat | 0.62 | RSI 42, +2.1% 3m; duplicates the AI exposure we already hold directly |
+| ETHUSDT | flat | 0.60 | ETH product inflows −73–96% w/e 4 Sep; L2 fee leakage; SOL taking share |
+| BNBUSDT | flat | 0.60 | No catalyst until the ~mid-Oct burn; mid-range vs every forecast; exchange-token risk |
+| SOLUSDT | flat | 0.55 | SEC commodity-trust recognition 5 Sep is real, but flow sources contradict and price sits on support |
+| ANZ.AX | flat | 0.50 | A$37.85 above the broker targets found; RBA 29 Sep two-sided; no catalyst until Nov |
+| BHP.AX | flat | 0.50 | A$63.16 above RBC A$60 and Macquarie A$55; iron ore near the US$90/t downgrade level |
+
+No `avoid` memo on any held position. `validate-memos`: 12 valid (8 new plus 4 carried).
+
+**Backtest cited** (`research/backtests/2026-09-06.md`, 730 days, generated 08:20 yesterday).
+This changed the crypto calls materially and is quoted in all four crypto memos: the crypto
+sleeve returned **−6.4%, Sharpe −0.15, 17% win rate over 75 trades, −19.2% max drawdown**,
+against us_stocks +7.6% (Sharpe 0.63) and au_stocks +3.7% (Sharpe 0.57) on the same rules.
+Trend-break exits alone lost 1,028 across 39 crypto trades. The system has no demonstrated
+edge trading crypto momentum, so every crypto conviction today is capped by that — including
+LINKUSDT, which has the best fundamental story on the desk and still only gets 0.55.
+
+**Macro (once for the day).** Unchanged in direction, sharper in detail. Fed 15–16 Sep with
+futures at 58–66% for a *hike*, though Waller said on 3 Sep he leans to holding at 3.5–3.75%;
+2-year at its highest since Jan 2025 and the 10-year ~4.8% after the +162k payrolls print;
+oil near $100 and European gas at a three-year high on renewed Iran fighting; RBA 29 Sep with
+NAB expecting a hike. New and specific to crypto: bitcoin ETFs took **$986.9M** in the week to
+4 Sep while ETH, SOL, XRP and Hyperliquid product inflows fell **73–96%** — money is
+consolidating into BTC and out of exactly the alts we hold. macro_conviction long: 0.35.
+
+**Things that failed or need checking.**
+- Contradictory evidence on SOL ETF flows: one source reports a 10–11 day inflow streak and
+  $153.87M (strongest week since Oct 2025), another reports Solana product inflows down 73–96%
+  in the week to 4 Sep. Both dated within days. Unresolved; the memo says so and sizes for it.
+- The research layer is still behind the engine. Yesterday LINKUSDT was deferred as the one
+  candidate over the pick cap; the engine bought it anyway and it is +9.9%. That is twice now
+  that entries were made before the desk had an opinion, which is the gap
+  `research/proposals/2026-09-06-memo-gated-entries.md` is about.

@@ -1,0 +1,38 @@
+{
+  "symbol": "BNBUSDT",
+  "asset_class": "crypto",
+  "date": "2026-09-07",
+  "direction": "flat",
+  "conviction": 0.6,
+  "thesis": "BNB at 748.78 sits in the dead centre of every forecast band I could find for 2026 ($700-950, average target ~$820; another at ~$742). The last supply catalyst was the 15 Jul burn and the next is not due until mid-October, outside a useful horizon. No catalyst, price in the middle of the range, position slightly underwater: there is nothing to underwrite here.",
+  "bull_case": "The quarterly burn mechanism is a real, scheduled supply reduction: the 36th burn on 15 Jul 2026 removed ~1.62M BNB (~$932M), taking supply to ~133.2M. Regulatory overhang has genuinely eased - CZ received a presidential pardon in October 2025 - and institutional access arrived with VanEck's US spot BNB ETF (VBNB) listing on Nasdaq on 28 May 2026. Packet trend is intact: close > SMA50 > SMA200, 3m momentum +27.8%, ATR 3.1%, the tamest of our crypto holdings.",
+  "bear_case": "There is no catalyst inside the horizon. The July burn is spent and the next quarterly burn lands around mid-October, past the useful window. Spot is mid-range against every published forecast, which means no asymmetry in either direction. The position is -0.9%, so the trend that justified the entry is not paying. BNB is also an exchange token: its value is a claim on one company's continued regulatory good standing in the US and EU, which is a concentrated, non-diversifiable risk that no amount of chart structure prices. Alt product inflows fell 73-96% in the week to 4 Sep. Base rate from our own backtest (research/backtests/2026-09-06.md, 730 days, generated 2026-09-06): the crypto sleeve returned -6.4% with Sharpe -0.15, a 17% win rate over 75 trades and a -19.2% max drawdown, while us_stocks returned +7.6% (Sharpe 0.63) and au_stocks +3.7% (Sharpe 0.57) on the same rules. Trend-break exits alone lost 1,028 in crypto across 39 trades. This system has no demonstrated edge trading crypto momentum, and out-of-sample being +5.3% on a short window is not proof that it does. Every crypto conviction below is capped by that.",
+  "catalysts": [
+    "37th quarterly BNB burn, expected around mid-October 2026 (outside this horizon)",
+    "VBNB ETF flow accumulation",
+    "15-16 Sep 2026 FOMC"
+  ],
+  "risks": [
+    "No catalyst inside the 2-8 week window",
+    "Exchange-token risk: concentrated exposure to one company's regulatory standing",
+    "US and EU regulatory headwinds remain live",
+    "Alt fund inflows collapsing while BTC absorbs the flow",
+    "Own backtest: negative expectancy for crypto momentum in this system"
+  ],
+  "invalidation": "Flips long on a daily close above 800 (clears the mid-range chop and the forecast average) ahead of the October burn; the bear case confirms on a close below 700, the bottom of the 2026 forecast band, which would also break the SMA50.",
+  "horizon_days": 21,
+  "sources": [
+    "https://www.tradingkey.com/analysis/cryptocurrencies/bnb/261790577-crypto-binance-exchange-bnb-burn-bitcoin-btc-tradingkey",
+    "https://primexbt.com/market-research/bnb-price-prediction/",
+    "https://cryptorank.io/news/feed/a5dbc-binance-coin-price-prediction-2030-9",
+    "https://beincrypto.com/bitcoin-etf-inflows-altcoin-funds-slump/",
+    "research/backtests/2026-09-06.md",
+    "research/packets/2026-09-07.md"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.35,
+    "bear": 0.55,
+    "macro": 0.35
+  }
+}

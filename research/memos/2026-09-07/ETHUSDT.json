@@ -1,0 +1,38 @@
+{
+  "symbol": "ETHUSDT",
+  "asset_class": "crypto",
+  "date": "2026-09-07",
+  "direction": "flat",
+  "conviction": 0.6,
+  "thesis": "Ethereum is the asset the flows are leaving. ETH product inflows fell 73-96% in the week to 4 Sep while bitcoin funds took $986.9M, and ETH is still under $3,000 with a structural argument - L2s capturing the fee revenue that used to accrue to L1 - that price action is agreeing with. Momentum of +39.3% over three months is real, but RSI 52 and no breakout say the move has stalled. Hold, do not add.",
+  "bull_case": "The three-month trend is intact and substantial: packet close 2,505.07 with close > SMA50 > SMA200 and 3m momentum +39.3%, and our position is marginally green. Institutional demand exists in size when it shows up - Tom Lee's Bitmine bought $131M of ETH on 31 Aug, the largest single purchase since June - and Bitwise's Matt Hougan named Ethereum in his tokenization basket (5 Sep). Analyst September targets cluster around $2,800 with a range of $2,334-$2,950, so the consensus band sits above spot.",
+  "bear_case": "Three independent problems. Flows: ETH product inflows fell 73-96% in the week to 4 Sep, and Ethereum ETFs ended their winning streak on 3 Sep while bitcoin's continued. Structure: scaling moves activity to L2s, which cuts L1 fee revenue and the ETH burn, so adoption no longer mechanically accrues to the token - this is the argument that has kept ETH under $3,000 all year. Competition: Solana is taking developer and trading share, and Japan's Remixpoint dumped its ETH and XRP for a bitcoin-only treasury on 2 Sep. RSI 52 with no breakout is a stalled trend, not a base. Base rate from our own backtest (research/backtests/2026-09-06.md, 730 days, generated 2026-09-06): the crypto sleeve returned -6.4% with Sharpe -0.15, a 17% win rate over 75 trades and a -19.2% max drawdown, while us_stocks returned +7.6% (Sharpe 0.63) and au_stocks +3.7% (Sharpe 0.57) on the same rules. Trend-break exits alone lost 1,028 in crypto across 39 trades. This system has no demonstrated edge trading crypto momentum, and out-of-sample being +5.3% on a short window is not proof that it does. Every crypto conviction below is capped by that.",
+  "catalysts": [
+    "Weekly ETH ETF flow prints - a return to positive would change the flow leg",
+    "15-16 Sep 2026 FOMC",
+    "Any L1 fee-capture change that reverses the L2 value-leakage argument"
+  ],
+  "risks": [
+    "ETH product inflows down 73-96% in the week to 4 Sep",
+    "L2 scaling structurally reducing L1 fee revenue and burn",
+    "Solana taking developer, RWA and trading share",
+    "Treasury holders rotating ETH into bitcoin-only mandates",
+    "Own backtest: negative expectancy for crypto momentum in this system"
+  ],
+  "invalidation": "Flips long on a daily close above 2,700 with two consecutive weeks of positive ETH ETF net inflows; the bear case confirms on a close below 2,334, the bottom of the analyst September range, which would also break the SMA50 structure.",
+  "horizon_days": 21,
+  "sources": [
+    "https://fortune.com/article/price-of-ethereum-09-04-2026/",
+    "https://beincrypto.com/ethereum-price-september-outlook-2026/",
+    "https://beincrypto.com/bitcoin-etf-inflows-altcoin-funds-slump/",
+    "https://cryptorank.io/news/feed/bf7c2-ethereum-price-september-outlook-2026",
+    "research/backtests/2026-09-06.md",
+    "research/packets/2026-09-07.md"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.45,
+    "bear": 0.6,
+    "macro": 0.35
+  }
+}

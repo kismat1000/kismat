@@ -1,0 +1,41 @@
+{
+  "symbol": "BHP.AX",
+  "asset_class": "au_stocks",
+  "date": "2026-09-07",
+  "direction": "flat",
+  "conviction": 0.5,
+  "thesis": "The price question is settled and it settles against adding: BHP is A$63.16 native, which matches the ~A$63.5 reported in mid-August and sits above two of the three broker targets I found (RBC A$60 hold, Macquarie A$55 hold, JPMorgan A$67 buy). Copper is carrying the stock while iron ore, still the profit engine, approaches the US$90/t level that historically triggers earnings downgrades. Hold the +1.5%; do not pay up.",
+  "bull_case": "Yesterday's memo on this symbol flagged that the packet price could not be reconciled with dated market reports and said no level-based call was trustworthy until it was. That is now resolved and the flag was a false alarm about the feed: today's packet states all prices are USD, converted at AUDUSD 0.7211, and shows the native column. BHP at A$63.16 reconciles cleanly with dated reporting, so the position is marked correctly and is +1.5%. FY2026 results (18 Aug 2026) were strong: dividend raised to US$1.72, the highest in four years, and net debt down to US$8.69B, near the bottom of the target range. Copper is the driver and has genuine multi-year supply-deficit support; JPMorgan carries a buy with an A$67 target. Momentum improved this week - 3m momentum rose from +5.9% to +7.2% - and the ASX 200 closed up 0.06% on Mon 7 Sep with energy, resources and materials leading.",
+  "bear_case": "Iron ore is approaching US$90/t, the level that has historically triggered significant downward revisions to BHP earnings forecasts, and sell-side work published this cycle argues neither the copper nor the iron ore outlook is supportive. Spot above the RBC (A$60) and Macquarie (A$55) targets means the market is already paying for the copper story, leaving asymmetry to the downside if iron ore breaks. China demand is the whole thesis and the trade backdrop is deteriorating - China publicly hit back at the G20 over export reliance on 3 Sep. An RBA hike on 29 Sep would lift the AUD and cut AUD-translated USD earnings. RSI 52 with no breakout is a trend that is not accelerating.",
+  "catalysts": [
+    "Iron ore holding or losing US$90/t",
+    "Copper price direction into Q4 2026",
+    "29 Sep 2026 RBA decision and the AUD",
+    "China stimulus or further trade escalation after the 3 Sep G20 exchange"
+  ],
+  "risks": [
+    "Iron ore below US$90/t triggering consensus earnings downgrades",
+    "Spot above two of three broker targets",
+    "China demand and trade escalation",
+    "AUD strength on an RBA hike reducing translated earnings",
+    "Single-commodity concentration despite the copper story"
+  ],
+  "invalidation": "Flips long on a close above A$67.00 native (through the highest broker target) with iron ore holding above US$95/t; the bear case confirms on iron ore closing below US$90/t for a week, or a close below A$58.00 native, which breaks the SMA50.",
+  "horizon_days": 30,
+  "sources": [
+    "https://seekingalpha.com/article/4915467-bhp-copper-and-iron-price-outlooks-arent-supportive",
+    "https://www.fool.com.au/2026/08/11/bhp-shares-keep-climbing-is-70-the-next-stop/",
+    "https://www.tradingview.com/news/reuters.com,2026-08-18:newsml_RSR0375Ra:0",
+    "https://www.cnbc.com/2026/09/03/china-g20-exports-trade.html",
+    "https://www.investing.com/news/stock-market-news/australia-stocks-higher-at-close-of-trade-spasx-200-up-006-4890408",
+    "research/backtests/2026-09-06.md",
+    "research/packets/2026-09-07.md",
+    "research/memos/2026-09-06/BHP.AX.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.45,
+    "bear": 0.55,
+    "macro": 0.3
+  }
+}

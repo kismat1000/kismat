@@ -1,0 +1,39 @@
+{
+  "symbol": "LINKUSDT",
+  "asset_class": "crypto",
+  "date": "2026-09-07",
+  "direction": "long",
+  "conviction": 0.55,
+  "thesis": "Chainlink is the one crypto holding with an institutional adoption story made of signed integrations rather than narrative: Bottomline putting CCIP in front of 600+ banks, Schwab listing LINK, Circle using Chainlink Proof of Reserve for its wrapped bitcoin. Price confirms with a 55-day high. The problem is entry, not thesis - it is up ~80% in under two months with RSI 69, so this is a hold-and-trail on an existing +9.9% position, not a level to add at.",
+  "bull_case": "Dated integrations, not promises: Bottomline is bringing CCIP and CRE to a network of 600+ banks whose platforms handle over $16T in annual payments (4 Sep 2026); Circle launched wrapped bitcoin with Chainlink Proof of Reserve (6 Sep 2026); Chainlink Data Feeds went live on Tempo (4 Sep 2026); Wyoming's stablecoin migrated to CCIP; Schwab is rolling LINK out to its crypto clients. LINK-linked spot ETF products logged four straight weeks of net inflows through 24 Aug 2026, cumulative net inflows past $145M. Packet: close 13.455, 55-day high, close > SMA50 > SMA200, 3m momentum +67.6%. The position is already +9.9%, so the thesis is being paid, not hoped for.",
+  "bear_case": "The tape is where this dies. A whale sent $7.6M of LINK to Coinbase on 7 Sep - exchange inflows of that size are distribution, not accumulation. RSI 69 after +80% in two months means every buyer here is paying for other people's gains. Sector flows are turning against alts specifically: inflows into Ethereum, Solana, XRP and Hyperliquid products fell 73-96% in the week ending 4 Sep while bitcoin funds took $986.9M, so money is consolidating into BTC and away from exactly this cohort. ATR 4.8% means a sane stop is wide, and a wide stop on a $10k account is a large dollar risk for one token. Base rate from our own backtest (research/backtests/2026-09-06.md, 730 days, generated 2026-09-06): the crypto sleeve returned -6.4% with Sharpe -0.15, a 17% win rate over 75 trades and a -19.2% max drawdown, while us_stocks returned +7.6% (Sharpe 0.63) and au_stocks +3.7% (Sharpe 0.57) on the same rules. Trend-break exits alone lost 1,028 in crypto across 39 trades. This system has no demonstrated edge trading crypto momentum, and out-of-sample being +5.3% on a short window is not proof that it does. Every crypto conviction below is capped by that.",
+  "catalysts": [
+    "Bottomline/CCIP bank rollout milestones after the 4 Sep 2026 announcement",
+    "Continued CLNK/LINK ETF net inflows (cumulative past $145M as of 24 Aug 2026)",
+    "Schwab crypto platform adding LINK to retail flow",
+    "15-16 Sep 2026 FOMC: a hawkish hike hits the long end of the risk curve first"
+  ],
+  "risks": [
+    "Whale distribution into exchanges (7 Sep, $7.6M to Coinbase)",
+    "Alt ETF inflows collapsing 73-96% in the week to 4 Sep while BTC funds absorb the flow",
+    "RSI 69 entry after +80% in under two months",
+    "Own backtest shows negative expectancy for crypto momentum in this system",
+    "ATR 4.8%: stop distance is large relative to a $10k account"
+  ],
+  "invalidation": "A daily close below 12.00 - the level the rally has been defending and the base of the current breakout - voids the structure. A second whale transfer of comparable size into exchanges, or CLNK net outflows for two consecutive weeks, kills the flow leg of the thesis independent of price.",
+  "horizon_days": 21,
+  "sources": [
+    "https://coinmarketcap.com/top-stories/6a867cd9e9294340172a9f71/",
+    "https://coinpedia.org/price-analysis/chainlink-price-analysis-can-link-hold-12-as-institutional-demand-rises/",
+    "https://beincrypto.com/bitcoin-etf-inflows-altcoin-funds-slump/",
+    "research/packets/2026-09-07.md (headlines: 'Bottomline Taps Chainlink to Bring 600 Banks On-Chain', PYMNTS, 4 Sep 2026; 'Chainlink whale sends $7.6m in LINK to Coinbase', Crypto News, 7 Sep 2026)",
+    "research/backtests/2026-09-06.md",
+    "https://www.cnbc.com/2026/08/31/markets-see-warsh-endorsing-a-rate-hike-in-september-not-everyone-is-convinced.html"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.7,
+    "bear": 0.5,
+    "macro": 0.35
+  }
+}
