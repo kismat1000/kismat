@@ -1,0 +1,42 @@
+{
+  "generated": "2026-09-07T10:26+00:00",
+  "name": "sma50/200 mom126 stop4.0 n12",
+  "params": {
+    "sma_fast": 50,
+    "sma_slow": 200,
+    "mom_days": 126,
+    "mom_scale": 0.3,
+    "breakout_days": 55,
+    "atr_days": 14,
+    "rsi_days": 14,
+    "rsi_hot": 80.0,
+    "rsi_cold": 30.0,
+    "chaos_atr_pct": 0.08,
+    "w_trend": 0.35,
+    "w_misaligned": 0.1,
+    "w_mom": 0.3,
+    "w_breakout": 0.2,
+    "w_hot": 0.2,
+    "w_pullback": 0.1
+  },
+  "overrides": {
+    "stop_atr_multiple": 4.0,
+    "max_positions": 12,
+    "regime_breadth_min": 0.0
+  },
+  "metrics": {
+    "total_return": 0.6952010381282092,
+    "cagr": 0.12586575654196053,
+    "sharpe": 0.7452468572839515,
+    "max_drawdown": -0.2532633459765449,
+    "trades": 506,
+    "win_rate": 0.28063241106719367,
+    "avg_win": 0.16697716251714737,
+    "avg_loss": -0.0394294467449379,
+    "in_sample_return": 0.4794945349887252,
+    "out_of_sample_return": 0.14579743151341074,
+    "days": 1625
+  },
+  "robustness": 1.030785486182966,
+  "walk_forward_chain_return": -0.17380638866349796
+}
