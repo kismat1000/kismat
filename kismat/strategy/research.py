@@ -132,27 +132,69 @@ def find_current(rows: list[dict], params: StrategyParams, cfg: BacktestConfig) 
     return next((r for r in rows if r["variant"].matches(params, cfg)), None)
 
 
+def clears_the_bar(candidate: dict, current: dict) -> bool:
+    """A set may replace the live one only if it is clearly more robust AND did no
+    worse on the two things a robustness score can hide: the second half of the
+    history (out of sample) and the share of positive windows."""
+    return (robustness_score(candidate) - robustness_score(current) >= SWITCH_MARGIN
+            and candidate["metrics"]["out_of_sample_return"] > current["metrics"]["out_of_sample_return"]
+            and candidate["positive_windows"] >= current["positive_windows"])
+
+
 def verdict(ranked: list[dict], current: dict | None, wf: dict) -> dict:
-    """Keep the live set unless the top set is clearly better on every axis that matters."""
-    top = ranked[0]
+    """Keep the live set unless a more robust set is clearly better on every axis that matters."""
     if current is None:
-        return {"recommendation": "keep", "rank": None, "reason": "the live parameters were not in the grid"}
+        return {"recommendation": "keep", "rank": None, "candidate": None,
+                "reason": "the live parameters were not in the grid"}
     rank = ranked.index(current) + 1
+    top = ranked[0]
     edge = robustness_score(top) - robustness_score(current)
+    candidate = next((r for r in ranked if r is not current and clears_the_bar(r, current)), None)
     if current is top:
         rec, why = "keep", "the live parameters are the most robust set in the grid"
-    elif (edge >= SWITCH_MARGIN
-          and top["metrics"]["out_of_sample_return"] > current["metrics"]["out_of_sample_return"]
-          and top["positive_windows"] >= current["positive_windows"]):
-        rec, why = "consider", (f"{top['name']} beats the live set by {edge:.2f} robustness with a better "
-                                f"out-of-sample return and no fewer positive windows")
+    elif candidate is not None:
+        c_edge = robustness_score(candidate) - robustness_score(current)
+        rec, why = "consider", (f"{candidate['name']} (rank {ranked.index(candidate) + 1}) beats the live set by "
+                                f"{c_edge:.2f} robustness with a better out-of-sample return "
+                                f"({candidate['metrics']['out_of_sample_return']:+.1%} vs "
+                                f"{current['metrics']['out_of_sample_return']:+.1%}) and no fewer positive windows")
     else:
-        rec, why = "keep", (f"the top set beats the live parameters by only {edge:.2f} robustness "
-                            f"(a change needs {SWITCH_MARGIN:.2f}, a better out-of-sample return, "
-                            f"and no fewer positive windows)")
+        rec, why = "keep", (f"no set beats the live parameters by {SWITCH_MARGIN:.2f} robustness while also "
+                            f"doing better out of sample with no fewer positive windows (top set edge {edge:.2f}, "
+                            f"out of sample {top['metrics']['out_of_sample_return']:+.1%} vs "
+                            f"{current['metrics']['out_of_sample_return']:+.1%})")
     if wf.get("baseline_return") is not None and wf["chain_return"] < wf["baseline_return"]:
         why += "; re-picking parameters each window lost to holding the live set"
-    return {"recommendation": rec, "rank": rank, "edge": edge, "reason": why}
+    return {"recommendation": rec, "rank": rank, "edge": edge, "reason": why,
+            "candidate": candidate["name"] if candidate else None}
+
+
+def component_effects(rows: list[dict]) -> list[tuple[str, list[tuple[str, int, float, float, float, float]]]]:
+    """Average robustness, return, out-of-sample return and drawdown for each value of
+    each grid dimension. A setting that helps only in one corner of the grid is noise;
+    one that helps on average across the others is worth adopting."""
+    def keyf(r):
+        v = r["variant"]
+        return {"trend": f"sma{v.params.sma_fast}/{v.params.sma_slow}", "momentum": f"mom{v.params.mom_days}",
+                "stop": f"stop{v.overrides.get('stop_atr_multiple')}", "slots": f"n{v.overrides.get('max_positions')}",
+                "breadth": f"regime{v.overrides.get('regime_breadth_min') or 0}",
+                "index filter": "on" if v.overrides.get("regime_index") else "off"}
+    grouped: dict[str, dict[str, list[dict]]] = {}
+    for r in rows:
+        for dim, val in keyf(r).items():
+            grouped.setdefault(dim, {}).setdefault(val, []).append(r)
+    out = []
+    for dim, vals in grouped.items():
+        if len(vals) < 2:
+            continue
+        rows_out = []
+        for val, rs in vals.items():
+            rows_out.append((val, len(rs), float(np.mean([robustness_score(r) for r in rs])),
+                             float(np.mean([r["metrics"]["total_return"] for r in rs])),
+                             float(np.mean([r["metrics"]["out_of_sample_return"] for r in rs])),
+                             float(np.mean([r["metrics"]["max_drawdown"] for r in rs]))))
+        out.append((dim, sorted(rows_out, key=lambda t: t[2], reverse=True)))
+    return out
 
 
 def report(rows: list[dict], wf: dict, path: Path, days: int, symbols: int, current: StrategyParams,
@@ -193,6 +235,13 @@ def report(rows: list[dict], wf: dict, path: Path, days: int, symbols: int, curr
                      f"{m['sharpe']:.2f} | {m['max_drawdown']:.1%} | {m['out_of_sample_return']:+.1%} | "
                      f"{m['trades']} | {cur['positive_windows']:.0%} | {cur['median_window_sharpe']:.2f} | "
                      f"{cur['worst_window']:+.1%} | {robustness_score(cur):.2f} |")
+    effects = component_effects(rows)
+    if effects:
+        lines += ["", "## What each setting does on average (across every other setting)", "",
+                  "| setting | value | variants | robustness | return | OOS | max DD |", "|---|---|---|---|---|---|---|"]
+        for dim, vals in effects:
+            for val, n, rob, ret, oos, dd in vals:
+                lines.append(f"| {dim} | {val} | {n} | {rob:.2f} | {ret:+.1%} | {oos:+.1%} | {dd:.1%} |")
     lines += ["", f"## Walk-forward chain ({wf['windows']} windows)", ""]
     for pick in wf["picks"]:
         lines.append(f"- {pick['window']}: {pick['variant']} -> {pick['ret']:+.1%}")
@@ -204,13 +253,21 @@ def report(rows: list[dict], wf: dict, path: Path, days: int, symbols: int, curr
         for w in row["windows"]:
             lines.append(f"- {w['start']}..{w['end']}: {w['ret']:+.1%} (Sharpe {w['sharpe']:.2f}, DD {w['max_dd']:.1%})")
     path.parent.mkdir(parents=True, exist_ok=True)
+    lines += ["", f"Every variant: `{path.with_suffix('.csv').name}`."]
     path.write_text("\n".join(lines) + "\n")
+    csv_lines = ["rank,variant,live,return,cagr,sharpe,max_dd,oos,trades,positive_windows,median_window_sharpe,worst_window,robustness"]
+    for i, r in enumerate(ranked, 1):
+        m = r["metrics"]
+        csv_lines.append(f"{i},\"{r['name']}\",{int(r is cur)},{m['total_return']:.4f},{m['cagr']:.4f},{m['sharpe']:.3f},"
+                         f"{m['max_drawdown']:.4f},{m['out_of_sample_return']:.4f},{m['trades']},{r['positive_windows']:.3f},"
+                         f"{r['median_window_sharpe']:.3f},{r['worst_window']:.4f},{robustness_score(r):.3f}")
+    path.with_suffix(".csv").write_text("\n".join(csv_lines) + "\n")
     best_json = {"generated": now.isoformat(timespec="minutes"), "window": window, "name": best["name"],
                  "params": best["variant"].params.to_dict(), "overrides": best["variant"].overrides,
                  "metrics": best["metrics"], "robustness": robustness_score(best),
                  "walk_forward_chain_return": wf["chain_return"],
                  "live_chain_return": wf.get("baseline_return"),
-                 "recommendation": v["recommendation"], "reason": v["reason"],
+                 "recommendation": v["recommendation"], "reason": v["reason"], "candidate": v["candidate"],
                  "live": {"name": cur["name"], "rank": v["rank"], "robustness": robustness_score(cur),
                           "metrics": cur["metrics"]} if cur else None}
     path.with_suffix(".json").write_text(json.dumps(best_json, indent=2))
