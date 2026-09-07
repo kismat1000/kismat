@@ -63,3 +63,19 @@ def test_index_regime_filter_blocks_entries_while_index_is_below_trend():
     assert gated.metrics["trades"] == 0
     other = run_backtest(uni, BacktestConfig(classes=classes, regime_index={"crypto": "IDX"}))
     assert other.metrics["trades"] == free.metrics["trades"]
+
+
+def test_risk_sizing_and_class_caps_match_the_live_rules():
+    uni = _universe()
+    fixed = run_backtest(uni, BacktestConfig(max_position_pct=0.2, max_positions=5))
+    sized = run_backtest(uni, BacktestConfig(max_position_pct=0.2, max_positions=5, risk_per_trade=0.002))
+    assert sized.metrics["trades"] > 0
+    assert max(t["entry"] * t["qty"] for t in sized.trades) < max(t["entry"] * t["qty"] for t in fixed.trades)
+    # a class with no room never trades; a tight class cap trades less than none
+    classes = {s: "us_stocks" for s in uni}
+    shut = run_backtest(uni, BacktestConfig(max_positions=5, classes=classes, class_caps={"us_stocks": 0.0}))
+    assert shut.metrics["trades"] == 0
+    tight = run_backtest(uni, BacktestConfig(max_position_pct=0.2, max_positions=5, classes=classes,
+                                             class_caps={"us_stocks": 0.25}))
+    assert 0 < tight.metrics["trades"] and max(t["entry"] * t["qty"] for t in tight.trades) <= 0.25 * tight.equity.max() * 1.01
+    assert tight.metrics["total_return"] != fixed.metrics["total_return"]

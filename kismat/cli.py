@@ -49,6 +49,8 @@ def cmd_backtest(args) -> int:
                          trend_break_days=args.trend_break_days if args.trend_break_days is not None else settings.risk.trend_break_days,
                          time_stop_days=args.time_stop if args.time_stop is not None else settings.risk.time_stop_days,
                          regime_breadth_min=args.regime if args.regime is not None else settings.risk.regime_breadth_min,
+                         regime_index=settings.risk.regime_index or None,
+                         risk_per_trade=settings.risk.per_trade_risk_pct, class_caps=settings.risk.max_asset_class_pct,
                          classes=C.symbol_classes(universe), params=settings.strategy)
     result = run_backtest(bars, cfg)
     header = (f"symbols {len(bars)} | days {result.metrics['days']} | {cfg.params.label()} | rotation "
@@ -102,6 +104,7 @@ def cmd_research(args) -> int:
                           trend_break_exit=settings.risk.trend_break_exit,
                           regime_breadth_min=settings.risk.regime_breadth_min,
                           regime_index=settings.risk.regime_index or None,
+                          risk_per_trade=settings.risk.per_trade_risk_pct, class_caps=settings.risk.max_asset_class_pct,
                           classes=C.symbol_classes(universe), params=settings.strategy)
     grid = with_current(default_grid(quick=args.quick), settings.strategy, base)
     rows = run_grid(bars, base, grid, window=args.window)

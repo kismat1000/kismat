@@ -209,7 +209,9 @@ def report(rows: list[dict], wf: dict, path: Path, days: int, symbols: int, curr
              f"all starting on the same day.",
              f"Current live parameters: {current.label()} stop {current_cfg.stop_atr_multiple} "
              f"n{current_cfg.max_positions} regime {current_cfg.regime_breadth_min or 'off'} "
-             f"index filter {'on' if current_cfg.regime_index else 'off'}.", "",
+             f"index filter {'on' if current_cfg.regime_index else 'off'}; positions sized "
+             f"{'by the ' + format(current_cfg.risk_per_trade, '.1%') + ' risk rule' if current_cfg.risk_per_trade else 'as a fixed fraction'}"
+             f" and capped at {current_cfg.max_position_pct:.0%} of equity.", "",
              "## Verdict", "",
              f"- Recommendation: **{v['recommendation']}** ({v['reason']}).",
              f"- Live parameters rank {v['rank']} of {len(rows)} by robustness"

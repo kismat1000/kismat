@@ -20,6 +20,8 @@ class BacktestConfig:
     initial_cash: float = 1000.0
     max_positions: int = 5
     max_position_pct: float = 0.20
+    risk_per_trade: float = 0.0        # size so a stop-out loses this share of equity (0 = fixed fraction only)
+    class_caps: dict | None = None     # asset class -> max share of equity, as the live risk engine enforces
     fee_bps: float = 10.0
     slippage_bps: float = 5.0
     entry_threshold: float = 0.35
@@ -209,7 +211,28 @@ def run_backtest(bars: dict[str, pd.DataFrame], cfg: BacktestConfig | None = Non
                     open_slots = 1
         if open_slots > 0:
             budget = min(mtm * cfg.max_position_pct, cash / max(open_slots, 1)) if cash > 0 else mtm * cfg.max_position_pct
-            pending_entries = {sym: budget for _, sym in candidates[:open_slots]}
+            exposure: dict[str, float] = {}
+            for sym, pos in positions.items():
+                if not pos.get("pending_exit"):
+                    cls = (cfg.classes or {}).get(sym, "all")
+                    exposure[cls] = exposure.get(cls, 0.0) + pos.get("last_close", pos["entry"]) * pos["qty"]
+            for _, sym in candidates:
+                if len(pending_entries) >= open_slots:
+                    break
+                value = budget
+                row = feats[sym].loc[day]
+                if cfg.risk_per_trade > 0 and not pd.isna(row["atr"]) and row["close"] > 0:
+                    # Same rule as the live risk engine: qty = equity * risk / stop distance.
+                    stop_pct = cfg.stop_atr_multiple * float(row["atr"]) / float(row["close"])
+                    if stop_pct > 0:
+                        value = min(value, mtm * cfg.risk_per_trade / stop_pct)
+                cls = (cfg.classes or {}).get(sym, "all")
+                if cfg.class_caps and cls in cfg.class_caps:
+                    value = min(value, cfg.class_caps[cls] * mtm - exposure.get(cls, 0.0))
+                if value < 1.0:
+                    continue
+                pending_entries[sym] = value
+                exposure[cls] = exposure.get(cls, 0.0) + value
 
     equity = pd.Series([e for _, e in equity_curve], index=[d for d, _ in equity_curve], name="equity")
     return BacktestResult(equity=equity, trades=trades, metrics=metrics_from(equity, trades))
