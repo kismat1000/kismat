@@ -50,3 +50,16 @@ def test_variant_rules_run():
     assert sum(1 for t in tb3.trades if t["reason"].startswith("trend break")) <= \
         sum(1 for t in base.trades if t["reason"].startswith("trend break"))
     assert any(t["reason"].startswith("time stop") for t in ts.trades) or ts.metrics["trades"] >= 0
+
+
+def test_index_regime_filter_blocks_entries_while_index_is_below_trend():
+    uni = {"A": synthetic_bars(500, drift=0.002, vol=0.015, seed=10),
+           "B": synthetic_bars(500, drift=0.0015, vol=0.015, seed=11),
+           "IDX": synthetic_bars(500, drift=-0.003, vol=0.01, seed=12)}
+    classes = {"A": "us_stocks", "B": "us_stocks", "IDX": "us_stocks"}
+    free = run_backtest(uni, BacktestConfig(classes=classes))
+    gated = run_backtest(uni, BacktestConfig(classes=classes, regime_index={"us_stocks": "IDX"}))
+    assert free.metrics["trades"] > 0
+    assert gated.metrics["trades"] == 0
+    other = run_backtest(uni, BacktestConfig(classes=classes, regime_index={"crypto": "IDX"}))
+    assert other.metrics["trades"] == free.metrics["trades"]

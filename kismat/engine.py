@@ -163,6 +163,13 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
                 counts.setdefault(classes[symbol], []).append(1.0 if sig.close > sig.features["sma_slow"] else 0.0)
         breadth = {cls: sum(v) / len(v) for cls, v in counts.items() if v}
 
+    # 1c. Index regime per asset class (the class's index above its slow SMA) ---------
+    index_ok: dict[str, bool] = {}
+    for cls, idx in (limits.regime_index or {}).items():
+        isig = signals.get(idx)
+        if isig is not None and isig.ok and isig.features.get("sma_slow"):
+            index_ok[cls] = isig.close > isig.features["sma_slow"]
+
     # 2. Research memos ----------------------------------------------------------
     memos = memo_store.load_memos(memos_root)
     research_scores = {s: m.score() for s, m in memos.items()}
@@ -260,6 +267,8 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
         vetoed = symbol in memos and memos[symbol].vetoes_entry()
         if breadth and breadth.get(classes[symbol], 1.0) < limits.regime_breadth_min:
             continue  # asset class is in a downtrend regime
+        if index_ok and not index_ok.get(classes[symbol], True):
+            continue  # the class's index is below its slow SMA
         if combined >= limits.entry_score_threshold and not vetoed:
             candidates.append((combined, symbol, research))
     candidates.sort(reverse=True)

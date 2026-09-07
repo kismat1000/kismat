@@ -80,7 +80,7 @@ def cmd_backtest(args) -> int:
 def cmd_research(args) -> int:
     from kismat.data.prices import get_daily_bars, synthetic_bars
     from kismat.strategy.backtest import BacktestConfig
-    from kismat.strategy.research import default_grid, report, run_grid, walk_forward
+    from kismat.strategy.research import default_grid, find_current, report, run_grid, walk_forward, with_current
     settings = C.Settings.load()
     universe = settings.universe
     bars = {}
@@ -100,14 +100,16 @@ def cmd_research(args) -> int:
                           entry_threshold=settings.risk.entry_score_threshold,
                           stop_atr_multiple=settings.risk.stop_atr_multiple,
                           trend_break_exit=settings.risk.trend_break_exit,
+                          regime_breadth_min=settings.risk.regime_breadth_min,
+                          regime_index=settings.risk.regime_index or None,
                           classes=C.symbol_classes(universe), params=settings.strategy)
-    grid = default_grid(quick=args.quick)
-    rows = run_grid(bars, base, grid)
-    wf = walk_forward(rows)
+    grid = with_current(default_grid(quick=args.quick), settings.strategy, base)
+    rows = run_grid(bars, base, grid, window=args.window)
+    wf = walk_forward(rows, baseline=find_current(rows, settings.strategy, base))
     out = Path(args.report) if args.report else Path("research/backtests") / f"wf-{__import__('datetime').date.today().isoformat()}.md"
-    best = report(rows, wf, out, args.days, len(bars), settings.strategy, base)
+    best = report(rows, wf, out, args.days, len(bars), settings.strategy, base, window=args.window)
     print(f"variants {len(rows)} | best: {best['name']} | robustness {best['robustness']:.2f} | "
-          f"walk-forward chain {best['walk_forward_chain_return']:+.1%}")
+          f"walk-forward chain {best['walk_forward_chain_return']:+.1%} | recommendation: {best['recommendation']}")
     print(f"report: {out}")
     return 0
 
@@ -273,6 +275,7 @@ def main(argv=None) -> int:
     s.add_argument("--days", type=int, default=1825)
     s.add_argument("--synthetic", action="store_true")
     s.add_argument("--quick", action="store_true", help="small grid")
+    s.add_argument("--window", type=int, default=63, help="bars per evaluation window")
     s.add_argument("--report", help="markdown output path")
     s.set_defaults(fn=cmd_research)
     sub.add_parser("status", help="print paper account state").set_defaults(fn=cmd_status)

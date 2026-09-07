@@ -31,7 +31,8 @@ class BacktestConfig:
     trend_break_days: int = 1
     time_stop_days: int = 0
     regime_breadth_min: float = 0.0
-    classes: dict | None = None        # symbol -> asset class, for the breadth regime filter
+    regime_index: dict | None = None   # asset class -> index symbol; entries only while it closes above its slow SMA
+    classes: dict | None = None        # symbol -> asset class, for the regime filters
     params: StrategyParams = field(default_factory=StrategyParams)
 
 
@@ -90,10 +91,21 @@ def breadth_by_class(feats: dict[str, pd.DataFrame], classes: dict | None) -> di
     return {cls: pd.concat(series, axis=1).mean(axis=1) for cls, series in groups.items()}
 
 
+def index_regime(feats: dict[str, pd.DataFrame], regime_index: dict | None) -> dict[str, pd.Series]:
+    """Per asset class: 1.0 on days its index closed above its slow SMA, 0.0 below, NaN before warm-up."""
+    out = {}
+    for cls, idx in (regime_index or {}).items():
+        if idx in feats:
+            f = feats[idx]
+            out[cls] = (f["close"] > f["sma_slow"]).astype(float).where(f["sma_slow"].notna())
+    return out
+
+
 def run_backtest(bars: dict[str, pd.DataFrame], cfg: BacktestConfig | None = None) -> BacktestResult:
     cfg = cfg or BacktestConfig()
     feats = precompute(bars, cfg.params)
     breadth = breadth_by_class(feats, cfg.classes) if cfg.regime_breadth_min > 0 else {}
+    index_ok = index_regime(feats, cfg.regime_index)
     warmup = max(cfg.warmup, cfg.params.min_bars)
     dates = sorted(set().union(*[set(f.index) for f in feats.values()]))
     dates = dates[warmup:] if len(dates) > warmup else dates
@@ -171,6 +183,10 @@ def run_backtest(bars: dict[str, pd.DataFrame], cfg: BacktestConfig | None = Non
                 cls = (cfg.classes or {}).get(sym, "all")
                 b = breadth.get(cls)
                 if b is not None and day in b.index and not pd.isna(b.loc[day]) and b.loc[day] < cfg.regime_breadth_min:
+                    continue
+            if index_ok:
+                ok = index_ok.get((cfg.classes or {}).get(sym, "all"))
+                if ok is not None and day in ok.index and not pd.isna(ok.loc[day]) and ok.loc[day] < 0.5:
                     continue
             candidates.append((float(s), sym))
         candidates.sort(reverse=True)

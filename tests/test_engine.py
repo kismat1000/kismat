@@ -163,3 +163,10 @@ def test_dashboard_renders_research_sections(settings, tmp_root):
     assert "Research desk, latest entry" in page and "council run" in page and "access check" not in page.split("Research desk")[1].split("Weekly review")[0]
     assert "Weekly review (2026-09-06)" in page and "Walk-forward research (2026-09-07)" in page
     assert "<table>" in page.split("Research desk")[1]
+
+
+def test_index_regime_filter_blocks_a_class_when_its_index_is_below_trend(settings, tmp_root):
+    settings.risk.regime_index = {"crypto": "DOWNUSDT"}
+    report, broker, _ = run(settings, tmp_root)
+    bought = {f["symbol"] for f in report.fills if f["side"] == "buy"}
+    assert "UPUSDT" not in bought and "AUUP.AX" in bought
