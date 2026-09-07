@@ -65,7 +65,7 @@ See [docs/RUNBOOK.md](docs/RUNBOOK.md). Short version:
 - `KISMAT_APPROVAL_MODE=1` turns entries into proposals you approve from the CLI.
 - `config/risk.yaml` holds every limit. The risk engine is plain code; no
   prompt or memo can override it.
-- The kill switch liquidates and halts at `max_drawdown_pct` from peak (20% for
+- The kill switch liquidates and halts at `max_drawdown_pct` from peak (25% for
   the paper test, tighten to 5-10% for live). Only a human can clear it:
   `python -m kismat reset-halt`.
 
