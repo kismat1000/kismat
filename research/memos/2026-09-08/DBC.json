@@ -1,0 +1,37 @@
+{
+  "symbol": "DBC",
+  "asset_class": "us_etfs",
+  "date": "2026-09-08",
+  "direction": "flat",
+  "conviction": 0.6,
+  "thesis": "DBC is the one holding that pays when the rest of the book hurts - it is long the energy-led inflation that is driving the Fed hike risk. That is genuinely useful. But it broke out to a 55-day high at RSI 75 on a war premium that both the EIA and J.P. Morgan forecast will unwind, and this year has already shown that premium can vanish in weeks. Hold it as the hedge it is; do not chase it.",
+  "bull_case": "This is the portfolio's only genuine diversifier. Every other position - US megacap tech, an index ETF, four crypto tokens, a miner - loses if the Fed hikes into an energy shock; DBC gains. And the shock is live: renewed fighting has European gas futures at a three-year high and oil near $100, with the EIA raising its estimate of shut-in Middle East production on continued severe constraints to Strait of Hormuz transits, which it does not expect to normalise until early 2027. Packet: score +0.65, a 55-day high, close > SMA50 > SMA200, 63d momentum +9.9%, and ATR of just 1.3% - the lowest-volatility position we own, so the hedge is cheap to carry.",
+  "bear_case": "Consensus forecasts point down from here, and they are the informed kind. The EIA has Brent averaging about $85/b in 3Q26; J.P. Morgan has $86 in Q3, $80 in Q4 and $78 at year end - all well below a spot near $100. So buying DBC at a 55-day high is paying above the level that the people who model this market expect. The premium is geopolitical, not structural, and 2026 has already demonstrated how fast it reverses: after the June US-Iran memorandum of understanding, Brent fell to $69 on 2 July, then spiked to $105 on 23 July on tanker attacks. That is a two-way risk of 50% in three weeks, driven by headlines nobody at this desk can forecast. RSI 75 means the entry is at the top of that range. A ceasefire headline is a single-day gap risk that no stop protects against.",
+  "catalysts": [
+    "Strait of Hormuz transit volumes and any further tanker attacks",
+    "Any US-Iran ceasefire or renewed memorandum of understanding",
+    "EIA Short-Term Energy Outlook revisions",
+    "August CPI and the 15-16 Sep FOMC, which the energy impulse is feeding"
+  ],
+  "risks": [
+    "RSI 75 entry at a 55-day high on a geopolitical premium",
+    "EIA (~$85/b 3Q26) and J.P. Morgan ($86/$80/$78) both forecast Brent below spot",
+    "Ceasefire headline risk: gap-down that a stop cannot protect against",
+    "Precedent this year: Brent $69 on 2 Jul to $105 on 23 Jul on headlines alone"
+  ],
+  "invalidation": "The hedge thesis fails on a daily close below 31.20, which breaks the SMA50 and would signal the energy premium unwinding; it would be worth adding only on a pullback toward that level that holds, not at the high. A confirmed US-Iran ceasefire is an immediate invalidation regardless of price.",
+  "horizon_days": 30,
+  "sources": [
+    "https://www.eia.gov/outlooks/steo/report/global_oil.php",
+    "https://www.jpmorgan.com/insights/global-research/commodities/oil-prices",
+    "https://www.bloomberg.com/news/articles/2026-09-02/energy-prices-surge-as-politicians-sound-alarm-ahead-of-winter",
+    "https://tradingeconomics.com/commodity/brent-crude-oil/news/539242",
+    "research/packets/2026-09-08.md"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.5,
+    "bear": 0.6,
+    "macro": 0.5
+  }
+}

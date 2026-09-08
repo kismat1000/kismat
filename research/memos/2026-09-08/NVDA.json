@@ -1,0 +1,41 @@
+{
+  "symbol": "NVDA",
+  "asset_class": "us_stocks",
+  "date": "2026-09-08",
+  "direction": "flat",
+  "conviction": 0.55,
+  "thesis": "Downgrade from long 0.62 on 6 Sep. Nothing about the company got worse - the 26 Aug quarter is still in the bank and management still points to ~70% revenue growth into fiscal 2028. What changed is the specific thing that memo leaned on: it said 'price is confirming - a 55-day breakout'. That breakout flag is gone from today's packet and the systematic score has fallen from +0.67 to +0.43 in two days. The judge's own rule is that long needs confirming price structure; without it the answer is flat.",
+  "bull_case": "The fundamentals are unchanged and excellent. Q2 FY2027 (26 Aug 2026): revenue $96.22B against $92.17B consensus, up 106% year over year, data centre $89.0B (+117% y/y), and a Q3 guide of $108B that assumes no China data centre compute revenue at all. Management has indicated roughly 70% revenue growth could continue into fiscal 2028. Tuesday's 2% fall to $225.73 came with no company-specific news - it was a broad chip and tech move on higher yields, with Asia-Pacific and European indices lower too. The long-term trend is intact: close > SMA50 > SMA200, 63d momentum still +8.2%. Our stop sits at 211.31 and price is well above it.",
+  "bear_case": "The confirming structure is gone. On 6 Sep the packet flagged a 55-day high and scored NVDA +0.67 with 63d momentum +12.3%; today there is no breakout flag, the score is +0.43 and momentum is +8.2%. A breakout that fails within two sessions is weaker evidence than no breakout at all, because it means the buyers above the range did not follow through. The financing concern now has a number: Nvidia reportedly entered a $500B AI financing deal and lost $130B of market value on 10 Aug - vendor-financed demand is exactly the mechanism that turns a capex cycle into a credit cycle. Macro is against high-multiple tech: the 10-year at 4.796% and the 2-year at 4.394% on 8 Sep, with a hike priced at 58-66% for 15-16 Sep. This is a withdrawal of the 'worth adding now' claim, not a call that the company is impaired.",
+  "catalysts": [
+    "15-16 Sep 2026 FOMC decision and dot plot",
+    "Hyperscaler capex commentary through the autumn conference season",
+    "Q3 FY2027 results in late Nov 2026 against the $108B guide",
+    "Any detail on the reported $500B AI financing arrangement"
+  ],
+  "risks": [
+    "Failed 55-day breakout: score +0.67 to +0.43 in two sessions",
+    "Vendor-financed demand: reported $500B AI financing deal, $130B of value lost on 10 Aug",
+    "Rate shock into the 16 Sep FOMC on the highest-multiple megacap",
+    "Customer concentration among a handful of hyperscalers",
+    "Export controls still exclude China data centre compute"
+  ],
+  "invalidation": "Flips back to long on a daily close above 236 that holds two sessions, restoring the 55-day high the 6 Sep memo relied on. The bear case confirms on two consecutive daily closes below 210, unchanged from that memo, or on any top-four hyperscaler guiding 2027 AI capex lower; the trailing stop is at 211.31.",
+  "horizon_days": 30,
+  "sources": [
+    "https://www.dailypolitical.com/2026/09/08/nvidia-nasdaqnvda-shares-down-2-should-you-sell.html",
+    "https://www.forbes.com/sites/antoniopequenoiv/2026/08/10/nvidia-stock-loses-130-billion-in-market-value-as-firm-reportedly-enters-500-billion-ai-financing-deal/",
+    "https://www.investing.com/news/company-news/nvidia-q2-fy27-slides-revenue-doubles-to-96b-data-center-surges-93CH-4878041",
+    "https://www.cnbc.com/2026/09/07/stock-market-tuesday-live-updates.html",
+    "https://www.cnbc.com/2026/08/31/markets-see-warsh-endorsing-a-rate-hike-in-september-not-everyone-is-convinced.html",
+    "research/backtests/wf-2026-09-07.md",
+    "research/packets/2026-09-08.md",
+    "research/memos/2026-09-06/NVDA.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.6,
+    "bear": 0.55,
+    "macro": 0.3
+  }
+}

@@ -164,3 +164,63 @@ and RIO.AX.
 
 Equity 10,073 → 9,998 across the day, a −0.75% drawdown from peak, all of it crypto marks.
 No `avoid` memo on any held position. `validate-memos`: 12 valid.
+
+## 2026-09-08 — council run
+
+Packet: `research/packets/2026-09-08.md`. Tuesday. Equity 9,958.65, 12 positions, cash 2,717.88.
+
+**Two prior calls resolved, both the right way.** The engine exited both names the desk had
+called flat, on trend breaks, before either thesis needed defending:
+- **ANZ.AX** sold 05:47 at 26.54 on "trend break: below fast SMA and underwater" (entry 27.36,
+  about −3.0%). The 7 Sep memo was flat 0.50 on no catalyst before November.
+- **AAPL** sold 18:47 at 315.50 on the same rule (entry 320.13, about −1.4%) — the day *before*
+  the 9 September iPhone event. The 7 Sep memo was flat 0.60 arguing precisely that owning
+  Apple into its own event is the least favourable setup in large-cap tech. The event has not
+  happened yet, so this is the exit being right, not the thesis being proven; the sell-the-news
+  claim is still untested.
+
+Also new: fills now carry `alpaca-paper` tags ("alpaca-paper filled @ 315"), so orders are
+routing to a broker paper account rather than the internal simulator.
+
+**Picks: 3.** Holdings with no memo in the last three days: **BTCUSDT** and **DBC**, both bought
+in the last 24 hours. Plus **NVDA** re-run on a material change. No new candidates researched:
+XLE (+0.47), XLF (+0.46) and XLV (+0.45) are all fresh ETF candidates, but the book is at its
+12-position cap and the engine is already skipping entries for that reason, so memos on them
+could not change a decision this week.
+
+| symbol | direction | conviction | note |
+|---|---|---|---|
+| NVDA | flat | 0.55 | **Downgrade from long 0.62.** The 55-day breakout the 6 Sep memo relied on is gone; score +0.67 → +0.43 in two sessions |
+| DBC | flat | 0.60 | Real hedge value, but RSI 75 at a 55-day high on a war premium the EIA and JPM both forecast lower |
+| BTCUSDT | flat | 0.55 | Flows consolidating into BTC and away from alts, but range-bound $77–82k, RSI 53, no breakout |
+
+**Deferred holdings** (memo under three days, nothing material): MSFT (long 0.55, 6 Sep — now
+the *only* long memo on the desk), AMZN (flat 0.55), SPY (flat 0.60), QQQ (flat 0.62), ETHUSDT
+(flat 0.60), BNBUSDT (flat 0.60), SOLUSDT (flat 0.55), LINKUSDT (flat 0.55), BHP.AX (flat 0.50).
+
+No `avoid` memo on any held position. `validate-memos`: 14 valid.
+
+**On downgrading NVDA.** This is the second long→flat downgrade in two days after LINKUSDT
+last night, and two flips in two days deserves scepticism rather than a shrug. Both were
+triggered by a condition the original memo named itself: LINKUSDT's memo flagged whale
+distribution and the distribution turned out to be $26M over three weeks; NVDA's memo said
+"price is confirming — a 55-day breakout" and the breakout flag is now absent with the score
+nearly halved. Neither was a reaction to the price alone. Still worth watching: if this desk
+downgrades every position the moment its score dips, it is a lagging indicator with extra
+steps, and the calibration table in the Sunday review is where that will show up.
+
+**Macro (once for the day).** Broadly unchanged, still hostile to duration. US index 7,707 on
+8 Sep (−0.15%), Asia-Pacific closed red, Stoxx 600 −0.3%. The 10-year at 4.796% and the 2-year
+at 4.394%, both higher again. FOMC is eight days out with a hike priced at 58–66%. Oil remains
+near $100 on Hormuz constraints — but note both the EIA (~$85/b in 3Q26) and J.P. Morgan
+($86 Q3, $80 Q4, $78 year-end) forecast Brent *below* spot, which is the single most useful
+number found today and is what turned the DBC call flat. macro_conviction long: 0.35.
+
+**Defect found: the memo schema cannot express our own universe.**
+`config/universe.yaml` has four asset classes; `prompts/memo_schema.json` allows three, missing
+`us_etfs`. DBC is an `us_etfs` symbol, so today's DBC memo is schema-invalid by the letter — and
+`validate-memos` passed it anyway, because `kismat/research/memos.py: validate()` never checks
+`asset_class` against the enum. The validator and the documented schema disagree. I used the
+truthful value (`us_etfs`) rather than mislabelling a commodity-futures ETF as `us_stocks` to
+pass a check. Filed as `research/proposals/2026-09-08-memo-schema-us-etfs.md`; not fixed here,
+since `prompts/` changes belong in their own pull request.

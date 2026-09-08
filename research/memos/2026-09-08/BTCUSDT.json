@@ -1,0 +1,39 @@
+{
+  "symbol": "BTCUSDT",
+  "asset_class": "crypto",
+  "date": "2026-09-08",
+  "direction": "flat",
+  "conviction": 0.55,
+  "thesis": "Bitcoin is the right horse in the crypto book - it is where the flows are consolidating while altcoin funds bleed - but it is chopping in a $77-82k range with no breakout, RSI 53, and a live Fed hike eight days out. Owning it is defensible; adding to it here is paying the spread for a coin flip.",
+  "bull_case": "Flows are unambiguous and dated: US spot bitcoin ETFs took $3.52B in August, their strongest month of 2026, and extended the positive-flow streak to three consecutive weeks with $986.9M in the week ended 4 Sep. The contrast with the rest of our crypto book is the point - inflows into ETH, SOL, XRP and Hyperliquid products fell 73-96% over the same week. Combined US bitcoin ETF net assets are $103.34B, about 6.32% of market cap, so this is structural allocation rather than a trading flow. Packet: close 78,525.9, close > SMA50 > SMA200, 63d momentum +24.0%, ATR 2.9% - the calmest crypto we hold.",
+  "bear_case": "Price is going nowhere. Bitcoin ran from below $63k to above $81k on a short squeeze and has since slipped toward $77-78k, roughly flat over seven days - we are marked -0.2% on an entry made yesterday. The packet flags no breakout, and RSI 53 is the middle of the range, which is the worst place to add. The macro is actively against it: fed funds futures put a hike at 58-66% for 15-16 Sep, the 10-year sat at 4.796% and the 2-year at 4.394% on 8 Sep, and rising oil keeps the inflation impulse alive. ETF flows are also more two-sided than the headline: $731M in on 3 Sep followed $236M out on 1 Sep, and one report on the August record still opened September with a warning. Base rate from our own backtest (research/backtests/2026-09-06.md): the crypto sleeve returned -6.4% with Sharpe -0.15, a 17% win rate over 75 trades and a -19.2% max drawdown. This system has not shown an edge trading crypto momentum, and that caps conviction here.",
+  "catalysts": [
+    "15-16 Sep 2026 FOMC decision and dot plot",
+    "Weekly US spot bitcoin ETF flow prints",
+    "August CPI ahead of the FOMC",
+    "Any Strait of Hormuz de-escalation easing the inflation impulse"
+  ],
+  "risks": [
+    "Range-bound $77-82k with no breakout and RSI 53",
+    "Hawkish Fed hike on 16 Sep with the 10-year near 4.8%",
+    "ETF flows are volatile week to week, not a one-way street",
+    "Own backtest: crypto sleeve -6.4%, Sharpe -0.15, 17% win rate"
+  ],
+  "invalidation": "Flips long on a daily close above 82,000 - a clean break of the range high made after the FOMC rather than before it - with ETF flows still positive. The bear case confirms on a close below 74,000, which breaks the range low and the SMA50 structure.",
+  "horizon_days": 21,
+  "sources": [
+    "https://finance.yahoo.com/markets/crypto/articles/bitcoin-price-prediction-september-2026-080209568.html",
+    "https://support.coincall.com/hc/en-us/articles/61821073094937-September-2-2026-Bitcoin-Holds-78K-as-ETF-Flows-Reverse-and-Fed-Hike-Bets-Rise",
+    "https://cryptorank.io/news/feed/4b12b-bitcoin-etfs-just-had-their-best-month-of-2026-but-september-starts-with-a-warning",
+    "https://beincrypto.com/bitcoin-etf-inflows-altcoin-funds-slump/",
+    "https://www.cnbc.com/2026/09/07/stock-market-tuesday-live-updates.html",
+    "research/backtests/2026-09-06.md",
+    "research/packets/2026-09-08.md"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.55,
+    "bear": 0.5,
+    "macro": 0.35
+  }
+}
