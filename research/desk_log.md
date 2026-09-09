@@ -224,3 +224,66 @@ number found today and is what turned the DBC call flat. macro_conviction long: 
 truthful value (`us_etfs`) rather than mislabelling a commodity-futures ETF as `us_stocks` to
 pass a check. Filed as `research/proposals/2026-09-08-memo-schema-us-etfs.md`; not fixed here,
 since `prompts/` changes belong in their own pull request.
+
+## 2026-09-09 — council run
+
+Packet: `research/packets/2026-09-09.md`. Wednesday. Equity 9,835.72, 12 positions, cash 1,685.53.
+Equity has fallen four sessions running (10,073 → 9,836, −2.4% from peak).
+
+**Two more calls resolved, and one of them matters.**
+- **LINKUSDT stopped out** at 11.72 on a trailing stop (21:47). Entry 12.2401, so about −4.3%.
+  This is the first real test of a same-day revision and it passed: the 7 Sep *morning* memo
+  called LINK long 0.55; the 7 Sep *evening* memo cut it to flat on whale distribution and an
+  RSI near 76. LINK went 13.455 → 12.764 → 12.47 → 11.706 and then through the stop. Had the
+  long stood, it would have been wrong. The evening revision was the right call for the reason
+  it gave.
+- **AMZN sold** at 251.842 on a trend break (13:48), entry 258.639, about −2.6%. The 6 Sep memo
+  was flat 0.55 on no catalyst before late October.
+
+That makes four exits this week — ANZ.AX, AAPL, AMZN, LINKUSDT — every one a name the desk had
+called flat. **The honest caveat: the desk has called flat on almost everything, and in a tape
+that has fallen four days straight, flat is right by construction.** The claim worth testing is
+not "flat calls were right" but "flats underperformed longs", and on that the record is bad so
+far: both long calls are underwater. NVDA (long 0.62 on 6 Sep) is −3.0% and MSFT (long 0.55 on
+6 Sep) is −1.7%. The desk's two directional bets have both lost money. That belongs in Sunday's
+calibration table, not buried.
+
+**Picks: 4.** Holdings with no memo: **XLE** and **XLV**, both bought today. Plus **MSFT** and
+**SPY**, whose memos dated 6 Sep are exactly three days old and both of which now sit in front
+of a dated binary. No new candidates: the book is at its 12-position cap, and AMD (+0.45) and
+XLF (+0.44) could not be entered anyway.
+
+| symbol | direction | conviction | note |
+|---|---|---|---|
+| XLE | **long** | 0.55 | Top score +0.70, 55-day high at RSI 62; crude +5% to $90 on Hormuz strikes; XOM+CVX 42.5% of fund |
+| MSFT | long | 0.55 | Reaffirmed. Both 6 Sep invalidations intact; Azure guided +44–45% cc; score +0.55 → +0.57 |
+| XLV | flat | 0.55 | RSI 28 pullback in an uptrend, but I could not find what caused it |
+| SPY | flat | 0.62 | FOMC now literally a coin flip; August CPI lands 11 Sep, 48 hours out |
+
+**Deferred holdings** (fresh memo, nothing material): NVDA (flat 0.55, 8 Sep), DBC (flat 0.60,
+8 Sep), BTCUSDT (flat 0.55, 8 Sep), QQQ (flat 0.62, 7 Sep), ETHUSDT (flat 0.60), BNBUSDT
+(flat 0.60), SOLUSDT (flat 0.55), BHP.AX (flat 0.50, +3.9% and the best performer we hold, but
+the flat thesis — spot above two of three broker targets — is unchanged).
+
+No `avoid` memo on any held position. `validate-memos`: 16 valid.
+
+**Why XLE is a long when DBC is a flat.** Same macro view, different vehicle and different
+entry. DBC is the futures strip at RSI 76; XLE is the majors' cash flow at RSI 62, with Exxon
+and Chevron 42.5% of the fund and Chevron committing $7B in September to double Venezuelan
+output. XLE also carries the highest systematic score in the book and led on Tuesday, +1.1%
+while the indices fell. Both memos carry the same bear case and it is a real one: the EIA has
+Brent averaging ~$85/b in 3Q26 and J.P. Morgan $86/$80/$78 through year end, all below spot,
+and energy ETF outflows are reported as the largest since 2024 even as price leads. If that
+premium unwinds, both calls are wrong together — which is a concentration this desk should
+watch, not admire.
+
+**Macro (once for the day).** The picture sharpened into a dated binary. Hike odds have fallen
+from 57% to roughly 49–51%, so the 15–16 Sep FOMC is now a true coin flip between a 25bp hike
+and a hold, and **August CPI on the morning of 11 September is the print that resolves it**.
+The 10-year at 4.796% and the 2-year at 4.394%, the latter its highest since January 2025.
+Crude spiked 5% to $90 on renewed Hormuz strikes, keeping the supply-side inflation impulse
+alive. macro_conviction long: 0.35.
+
+**Nothing failed today.** Last night's push race did not recur; the schema defect filed
+yesterday (`us_etfs` missing from the memo enum) is still open and today added two more
+`us_etfs` memos — XLE and XLV — that validate but violate the documented schema.

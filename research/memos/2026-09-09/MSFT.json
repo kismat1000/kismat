@@ -1,0 +1,37 @@
+{
+  "symbol": "MSFT",
+  "asset_class": "us_stocks",
+  "date": "2026-09-09",
+  "direction": "long",
+  "conviction": 0.55,
+  "thesis": "Reaffirming the 6 September long at the same conviction. Both invalidation conditions that memo named are intact - price is 491.65 against a 470 line, and Azure is guided to +44-45% constant currency against a 40% floor - and the systematic score has improved from +0.55 to +0.57 while the price drifted. The drift is the market's, not Microsoft's. This is now the only long equity call on the desk.",
+  "bull_case": "The guidance improved, not deteriorated: Azure is guided to +44-45% constant currency for the current quarter after accelerating to +43%, and commercial backlog is reported at $627-678B, up 84% on one measure, with roughly $250B of it tied to OpenAI. AI revenue is at an annualised run rate near $37B. The 29 July FY26 Q4 print remains the anchor - revenue $90.01B (+18%), EPS $4.74 against $4.24 expected, Azure past $100B for the year - and it produced the largest single-day market-value gain in history off a stock that had been down 19% year to date, so positioning was washed out rather than crowded. Packet: score +0.57, 63d momentum +22.1%, close > SMA50 > SMA200, RSI 55, ATR 2.0%.",
+  "bear_case": "The capital intensity is now the story: AI-related capex is running at roughly $175-190B for 2026, and Microsoft reached the lower figure partly by lengthening the assumed useful life of data-centre assets - an accounting lever, not a cash one, and the kind of change that deserves scepticism. The OpenAI relationship also got worse on the margin: the partnership was revised to a non-exclusive structure through 2032 with OpenAI revenue-share payments to Microsoft reportedly capped at about $38B through 2030, which puts a ceiling on the single most valuable piece of the AI story. There is no company catalyst until FY27 Q1 results in late October, outside the near end of this horizon, and the stock is -1.7% against our entry. The 15-16 Sep FOMC is now a genuine coin flip - market-implied odds have moved to roughly 49-51% between a 25bp hike and a hold, down from 57% for a hike a week ago - and August CPI lands on the morning of 11 Sep, two days out, as the print that decides it.",
+  "catalysts": [
+    "FY27 Q1 results in late Oct 2026 against the +44-45% cc Azure guide",
+    "August CPI on 11 Sep 2026 and the 15-16 Sep FOMC",
+    "Commercial backlog disclosure and OpenAI capacity commentary"
+  ],
+  "risks": [
+    "AI capex of roughly $175-190B for 2026, partly flattered by longer assumed asset lives",
+    "OpenAI revenue share capped at ~$38B through 2030 under the non-exclusive structure",
+    "No company catalyst before late October",
+    "Rate shock on a high-multiple megacap into a coin-flip FOMC"
+  ],
+  "invalidation": "Unchanged from 6 Sep: a daily close below 470 gives back the post-earnings gap and the SMA50 zone. Azure guided or reported below 40% constant currency kills the thesis outright, independent of price.",
+  "horizon_days": 45,
+  "sources": [
+    "https://finance.yahoo.com/markets/stocks/articles/msft-gone-nowhere-2026-azure-135000652.html",
+    "https://news.microsoft.com/source/2026/07/29/microsoft-cloud-and-ai-strength-fuels-fourth-quarter-results-4/",
+    "https://www.cnbc.com/2026/07/29/microsoft-msft-q4-earnings-report-2026.html",
+    "https://www.cnbc.com/2026/08/28/-september-fed-decision-now-a-coin-flip-as-rate-hike-odds-increase.html",
+    "research/packets/2026-09-09.md",
+    "research/memos/2026-09-06/MSFT.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.65,
+    "bear": 0.45,
+    "macro": 0.35
+  }
+}
