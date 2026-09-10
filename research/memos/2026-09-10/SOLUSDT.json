@@ -1,0 +1,39 @@
+{
+  "symbol": "SOLUSDT",
+  "asset_class": "crypto",
+  "date": "2026-09-10",
+  "direction": "flat",
+  "conviction": 0.6,
+  "thesis": "The 5 September SEC recognition of Solana for commodity-based trusts was the best fresh catalyst in the crypto book and the price has fallen through it - from $105 to $99.92, with the position now -4.9%. A market that will not rally on its best news is telling you what it thinks. RSI 35 and selling concentrated in the speculative end keeps this flat.",
+  "bull_case": "The regulatory and flow story is real and did not go away: the SEC formally recognised Solana alongside bitcoin and ether for commodity-based trusts on 5 September, Bitwise's staking ETF passed $1B cumulative inflows on 25 August, and Solana led all chains with $229M of 30-day real-world-asset net inflows. The Alpenglow upgrade targets ~150ms finality. The long trend is intact with 63d momentum +28.0%, and RSI at 35 is the most oversold crypto reading in the book, which is where bounces start if the trend holds.",
+  "bear_case": "Price rejected its own catalyst. SOL was $105.13 when the SEC news landed and it is $99.92 now, breaking the $103.35 breakout level that the 7 September memo named as the line to hold. It fell 2.5% on 10 September with selling concentrated most heavily in smaller and more speculative names - and for flow purposes SOL is in that cohort, not with bitcoin. The contradictory ETF flow reporting flagged on 7 September was never resolved. ATR 4.5% keeps stop distance wide. Macro turned hawkish again today: CME FedWatch has the odds of a hike next week back to 62.2%, up from roughly 49-51% yesterday, with PPI out today and August CPI tomorrow morning as the last inflation reads before the 15-16 Sep FOMC. Brent is $101.25 after US forces destroyed five Iranian tankers and Houthi strikes hit Saudi energy facilities. Base rate from our own backtest (research/backtests/2026-09-06.md): the crypto sleeve returned -6.4% with Sharpe -0.15 and a 17% win rate over 75 trades. No demonstrated edge trading crypto momentum in this system; conviction is capped accordingly.",
+  "catalysts": [
+    "Whether $94.40 support holds on any further crypto weakness",
+    "Weekly SOL ETF flow prints",
+    "Alpenglow upgrade phase one",
+    "August CPI on 11 Sep and the 15-16 Sep FOMC"
+  ],
+  "risks": [
+    "Price fell through its own bullish catalyst and the named 103.35 level",
+    "Selling concentrated in the speculative cohort SOL belongs to",
+    "ETF flow reporting still contradictory and unresolved",
+    "ATR 4.5%: wide stops on a shrinking account",
+    "Own backtest: no demonstrated edge in crypto momentum"
+  ],
+  "invalidation": "Flips long on a daily close back above 110 that reclaims the broken breakout with positive ETF flows. The bear case confirms on a close below 94.40, which breaks the late-August structure; the trailing stop sits near 90.92.",
+  "horizon_days": 21,
+  "sources": [
+    "https://finance.yahoo.com/markets/crypto/articles/bitcoin-xrp-ethereum-solana-drop-214547270.html",
+    "https://nexo.com/blog/markets-today-september-10",
+    "https://cryptorank.io/news/feed/7ea7a-solana-price-prediction-september-2026-network-growth-puts-150-in-focus",
+    "research/backtests/2026-09-06.md",
+    "research/packets/2026-09-10.md",
+    "research/memos/2026-09-07/SOLUSDT.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.4,
+    "bear": 0.6,
+    "macro": 0.3
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "symbol": "BNBUSDT",
+  "asset_class": "crypto",
+  "date": "2026-09-10",
+  "direction": "flat",
+  "conviction": 0.6,
+  "thesis": "Unchanged from 7 September and now with a loss attached: BNB fell sharply to about $714-718 and the position is -5.4%, the worst in the book. The reasoning has not moved - the July burn is spent, the next quarterly burn is not due until around mid-October, outside this horizon, and there is nothing else scheduled to move it.",
+  "bull_case": "The supply mechanism is real and dated: the 36th burn on 15 July 2026 removed about 1.62M BNB, roughly $932M, taking supply to ~133.2M, and the next quarterly burn lands around mid-October. Regulatory overhang eased materially with CZ's October 2025 pardon, and VanEck's US spot BNB ETF (VBNB) has given regulated money a direct route since 28 May 2026. The trend structure survives - close > SMA50 > SMA200, 63d momentum +25.5% - and at $714 BNB is now at the bottom of the $700-950 forecast band rather than mid-range, which is at least a better price than a week ago.",
+  "bear_case": "Nothing has changed except the price, and it changed against us. There is still no catalyst inside the horizon; the October burn is outside it. The token dropped sharply on 10 September as bitcoin dragged the complex down, confirming it has no independent bid. The exchange-token objection is structural and unpriceable by chart: BNB's value is a claim on one company's continued regulatory standing in the US and EU, which no amount of trend structure hedges. At -5.4% this is the worst position in the book, and the trailing stop near 697 is close. Macro turned hawkish again today: CME FedWatch has the odds of a hike next week back to 62.2%, up from roughly 49-51% yesterday, with PPI out today and August CPI tomorrow morning as the last inflation reads before the 15-16 Sep FOMC. Brent is $101.25 after US forces destroyed five Iranian tankers and Houthi strikes hit Saudi energy facilities. Base rate from our own backtest (research/backtests/2026-09-06.md): the crypto sleeve returned -6.4% with Sharpe -0.15 and a 17% win rate over 75 trades. No demonstrated edge trading crypto momentum in this system; conviction is capped accordingly.",
+  "catalysts": [
+    "37th quarterly BNB burn around mid-October 2026, outside this horizon",
+    "VBNB ETF flow accumulation",
+    "August CPI on 11 Sep and the 15-16 Sep FOMC"
+  ],
+  "risks": [
+    "No catalyst inside the horizon",
+    "No independent bid: follows bitcoin lower",
+    "Exchange-token risk concentrated in one company's regulatory standing",
+    "Worst position in the book at -5.4%, with the stop near 697",
+    "Own backtest: no demonstrated edge in crypto momentum"
+  ],
+  "invalidation": "Flips long on a daily close above 800 ahead of the October burn. The bear case confirms on a close below 700, the bottom of the 2026 forecast band, which is also where the trailing stop sits.",
+  "horizon_days": 21,
+  "sources": [
+    "https://nexo.com/blog/markets-today-september-10",
+    "https://www.tradingkey.com/analysis/cryptocurrencies/bnb/261790577-crypto-binance-exchange-bnb-burn-bitcoin-btc-tradingkey",
+    "https://primexbt.com/market-research/bnb-price-prediction/",
+    "research/backtests/2026-09-06.md",
+    "research/packets/2026-09-10.md",
+    "research/memos/2026-09-07/BNBUSDT.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.35,
+    "bear": 0.6,
+    "macro": 0.3
+  }
+}

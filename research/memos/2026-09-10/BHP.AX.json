@@ -1,0 +1,39 @@
+{
+  "symbol": "BHP.AX",
+  "asset_class": "au_stocks",
+  "date": "2026-09-10",
+  "direction": "flat",
+  "conviction": 0.55,
+  "thesis": "Iron ore is holding up better than feared - $100.02/t on 8 September, six-week highs on pre-holiday Chinese restocking - but the customer is sick underneath the price. Only about 30% of Chinese steelmakers were profitable as of 4 September, down from 61% a year ago, and BHP's own 63-day momentum has now turned negative. A firm spot price resting on restocking by loss-making mills is not something to add exposure against.",
+  "bull_case": "The US$90/t downgrade trigger I worried about on 7 September has not arrived: iron ore rose to $100.02/t on 8 September and futures hit six-week highs around CNY 740/t on elevated freight costs and pre-holiday restocking. BHP kept FY2026 production guidance unchanged at 258-269Mt, so there is no operational problem. The FY2026 result on 18 August still stands - dividend raised to US$1.72, the highest in four years, net debt down to US$8.69B near the bottom of the target range - and copper remains the structural story. The position is +1.2% and the packet still shows close > SMA50 > SMA200 at A$63.44 native.",
+  "bear_case": "The demand side is deteriorating in a way the spot price has not caught up with. Only ~30% of Chinese steelmakers were profitable as of 4 September, against 32.5% a week earlier and 61% a year ago; the blast-furnace operating rate has fallen to 89.08% with daily pig iron output declining. Mills that lose money on every tonne do not restock twice. Forecasters see iron ore averaging $95/t in 2026 with rising seaborne supply, persistent Chinese property weakness and elevated inventories all pointing lower. BHP is also in a pricing standoff with China's state-backed CMRG, part of a deliberate push to shift pricing power and settle contracts in yuan - a structural negative for the seller. Momentum has rolled over: 63d momentum -0.5%, score down to +0.34 from +0.40, RSI 49.",
+  "catalysts": [
+    "Chinese steel mill profitability and blast-furnace rates after the holiday restock",
+    "BHP/CMRG pricing standoff resolution",
+    "29 Sep 2026 RBA decision and the AUD",
+    "Copper price direction into Q4 2026"
+  ],
+  "risks": [
+    "Only ~30% of Chinese steelmakers profitable, down from 61% a year ago",
+    "Iron ore forecast to average $95/t in 2026 against ~$100 spot",
+    "CMRG pricing standoff shifting pricing power to the buyer",
+    "63d momentum now negative at -0.5%; score falling",
+    "AUD strength on an RBA hike reducing translated earnings"
+  ],
+  "invalidation": "Flips long on a close above A$67.00 native with iron ore holding above $100/t and Chinese mill profitability recovering above 50%. The bear case confirms on iron ore closing below US$90/t for a week or a close below A$58.00 native, which breaks the SMA50.",
+  "horizon_days": 30,
+  "sources": [
+    "https://tradingeconomics.com/commodity/iron-ore",
+    "https://think.ing.com/articles/iron-ore-heads-for-a-softer-year",
+    "https://www.steelorbis.com/steel-market/iron-ore.htm",
+    "https://investingnews.com/iron-forecast/",
+    "research/packets/2026-09-10.md",
+    "research/memos/2026-09-07/BHP.AX.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.4,
+    "bear": 0.6,
+    "macro": 0.35
+  }
+}

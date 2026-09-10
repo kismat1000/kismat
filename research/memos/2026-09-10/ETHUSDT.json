@@ -1,0 +1,37 @@
+{
+  "symbol": "ETHUSDT",
+  "asset_class": "crypto",
+  "date": "2026-09-10",
+  "direction": "flat",
+  "conviction": 0.55,
+  "thesis": "Slightly less negative than the 7 September memo, still no edge. The one genuinely new fact is a divergence in ETH's favour: spot Ether ETFs took $34M of inflows on a day bitcoin funds saw outflows, the first time in this pullback that institutional demand for ETH held up better than for BTC. That is worth noticing, not worth buying, with RSI 45, price under $2,500 and a 62.2% hike probability eight days out.",
+  "bull_case": "Spot Ether ETFs recorded $34M of inflows while bitcoin had an outflow day - a reversal of the pattern that drove the 7 September flat call, when ETH product inflows had fallen 73-96% while BTC absorbed everything. ETH also fell less than the speculative end of the market on 10 September: it slipped 0.8% to about $2,463 while XRP fell 3.1% and Solana 2.5%. The long trend is intact and large - packet shows close > SMA50 > SMA200 with 63d momentum +41.0%, the second highest in the book - and the position is only -1.5%.",
+  "bear_case": "A single $34M print is a data point, not a trend, and the structural argument that has kept ETH under $3,000 all year is untouched: L2 scaling moves activity off the base layer, cutting L1 fee revenue and the burn, so adoption stops accruing to the token. Solana continues taking developer, RWA and trading share. RSI 45 with price at $2,461 is a stalled trend, not a base, and bitcoin dragging the complex lower means ETH has no independent bid. Macro turned hawkish again today: CME FedWatch has the odds of a hike next week back to 62.2%, up from roughly 49-51% yesterday, with PPI out today and August CPI tomorrow morning as the last inflation reads before the 15-16 Sep FOMC. Brent is $101.25 after US forces destroyed five Iranian tankers and Houthi strikes hit Saudi energy facilities. Base rate from our own backtest (research/backtests/2026-09-06.md): the crypto sleeve returned -6.4% with Sharpe -0.15 and a 17% win rate over 75 trades. No demonstrated edge trading crypto momentum in this system; conviction is capped accordingly.",
+  "catalysts": [
+    "Weekly spot Ether ETF flows - whether the $34M divergence extends",
+    "August CPI on 11 Sep and the 15-16 Sep FOMC",
+    "Any L1 fee-capture change reversing the L2 leakage argument"
+  ],
+  "risks": [
+    "L2 scaling structurally reducing L1 fee revenue and burn",
+    "Solana taking developer, RWA and trading share",
+    "No independent bid: ETH follows bitcoin lower",
+    "Hike odds back at 62.2%",
+    "Own backtest: no demonstrated edge in crypto momentum"
+  ],
+  "invalidation": "Flips long on a daily close above 2,700 with two consecutive weeks of positive spot Ether ETF inflows - the divergence becoming a trend. The bear case confirms on a close below 2,334, the bottom of the analyst September range, which also breaks the SMA50.",
+  "horizon_days": 21,
+  "sources": [
+    "https://finance.yahoo.com/personal-finance/investing/article/bitcoin-and-ethereum-prices-today-thursday-september-10-2026-crypto-prices-slide-back-with-inflation-data-on-tap-113018195.html",
+    "https://nexo.com/blog/markets-today-september-10",
+    "https://beincrypto.com/ethereum-price-september-outlook-2026/",
+    "research/backtests/2026-09-06.md",
+    "research/packets/2026-09-10.md"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.45,
+    "bear": 0.55,
+    "macro": 0.3
+  }
+}

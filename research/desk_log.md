@@ -287,3 +287,71 @@ alive. macro_conviction long: 0.35.
 **Nothing failed today.** Last night's push race did not recur; the schema defect filed
 yesterday (`us_etfs` missing from the memo enum) is still open and today added two more
 `us_etfs` memos — XLE and XLV — that validate but violate the documented schema.
+
+## 2026-09-10 — council run
+
+Packet: `research/packets/2026-09-10.md`. Thursday. Equity 9,780.75 (fifth down session,
+−2.9% from the 10,073 peak), 12 positions, cash down to 860.08.
+
+**A thesis of mine looks wrong, and it is the one I was most confident about.**
+The 7 Sep AAPL memo called flat 0.60 on the argument that "the base rate for owning Apple into
+its own September event is the least favourable setup in large-cap tech". Day one supported it —
+Apple dipped 1% on 9 Sep, against a five-year average of −0.72% on announcement day. The rest
+does not: AAPL is 326.57 today, up from 315.34 on 9 Sep, and Bank of America's Wamsi Mohan finds
+the stock has *gained* in the 60 days after an iPhone reveal in 17 separate instances going back
+to 2007. I asserted a base rate without looking up the actual post-event statistics, and the
+statistics point the other way. The desk rules say base rates first; I wrote the sentence and
+skipped the work. Recording it as a research failure, not a market surprise.
+
+**XLV: a one-day round trip, and the flat call was right.** Bought 9 Sep 21:48 at 166.66, sold
+10 Sep 14:47 at 165.76 on a trend break. Yesterday's memo said flat because I could not identify
+what caused the RSI-28 selloff and that it flips long only on "a reclaim, not a falling knife".
+It kept falling — RSI 31, score +0.53 → +0.19.
+
+Also exited: QQQ at 708.66 and SPY at 757.652, both trend breaks, both called flat by the desk.
+
+**Picks: 8 (the cap).** Holdings with no memo: **AMD**, **CSL.AX**, **XLK**, all bought today.
+Holdings whose memo turned three days old: **BHP.AX**, **ETHUSDT**, **SOLUSDT**, **BNBUSDT**.
+Plus **XLE**, re-run because my own long deteriorated materially.
+
+| symbol | direction | conviction | note |
+|---|---|---|---|
+| XLE | long | 0.50 | Held deliberately (was 0.55). Brent $101.25 and escalating, but score +0.70 → +0.47 |
+| CSL.AX | flat | 0.65 | ~20% above the A$139.20 average target after +62.7%; FY26 underlying −2%, FY27 guides ~5% |
+| XLK | flat | 0.60 | ~16% NVDA, ~45% top five — duplicates NVDA, AMD and MSFT; September is its weakest month |
+| SOLUSDT | flat | 0.60 | Fell *through* its own SEC catalyst, $105 → $99.92, breaking the 103.35 level |
+| BNBUSDT | flat | 0.60 | Worst position at −5.4%; no catalyst until the mid-Oct burn |
+| AMD | flat | 0.55 | Real MI400 cycle but forecast revenue, +190% in a year, fourth overlapping AI bet |
+| BHP.AX | flat | 0.55 | Iron ore firm at $100/t, but only ~30% of Chinese mills profitable vs 61% a year ago |
+| ETHUSDT | flat | 0.55 | Slightly better: spot ETH ETFs +$34M on a day BTC saw outflows |
+
+**Deferred** (fresh memo, direction unchanged): NVDA (flat 0.55, 8 Sep — now −5.3%, the worst US
+position, but the call does not change), DBC (flat 0.60, 8 Sep — now +4.1% and top score +0.70),
+BTCUSDT (flat 0.55, 8 Sep), MSFT (long 0.55, 9 Sep).
+
+No `avoid` memo on any held position. `validate-memos`: 19 valid.
+
+**Why XLE stayed long when NVDA and LINKUSDT were cut.** This is the third day running where a
+long call came under pressure, and I want the rule to be legible rather than mood-driven. The
+XLE memo named a concrete invalidation — a close below 62.00 — and price is 64.93, so the thesis
+has not been falsified; meanwhile the *catalyst strengthened* (Brent $101.25, five Iranian
+tankers destroyed, Houthi strikes on Saudi facilities). Cutting it today would mean my
+invalidation levels are decoration and the memos are just a lagging echo of the systematic score.
+So conviction came down 0.55 → 0.50 and the position stands.
+
+The honest counter-argument is in the memo: yesterday I claimed XLE was a better vehicle than
+DBC for this view, and in 24 hours DBC is +4.1% while XLE is −1.2%, with the scores swapping
+places. Oil went up and the oil equities went down. I have written into the XLE invalidation
+that if that divergence persists another week, the vehicle choice was wrong and it goes flat on
+its own evidence rather than on a score wobble.
+
+**Macro (once for the day).** Reversed hawkish inside 24 hours. CME FedWatch has a hike back at
+**62.2%**, up from roughly 49–51% yesterday. PPI printed today and August CPI lands tomorrow
+morning — the last inflation reads before the 15–16 Sep FOMC. Brent $101.25 after US forces
+destroyed five Iranian tankers and Houthi militants struck Saudi energy facilities; Qatar and
+China are trying to revive Hormuz diplomacy against that. Iron ore $100.02/t at six-week highs
+on pre-holiday Chinese restocking, though only ~30% of Chinese steelmakers are profitable.
+macro_conviction long: 0.30, down from 0.35.
+
+**Nothing failed operationally.** The `us_etfs` schema defect filed on 8 Sep is still open and
+today added two more memos against it (XLK, XLE).

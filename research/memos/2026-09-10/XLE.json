@@ -1,0 +1,40 @@
+{
+  "symbol": "XLE",
+  "asset_class": "us_etfs",
+  "date": "2026-09-10",
+  "direction": "long",
+  "conviction": 0.5,
+  "thesis": "Holding yesterday's long, at lower conviction, and doing so deliberately. The catalyst got stronger - Brent is $101.25 after US forces destroyed five Iranian tankers and Houthi strikes hit Saudi energy facilities - but the structure I cited yesterday weakened: the score fell from +0.70 to +0.47 and the 55-day breakout flag is gone. My named invalidation was a close below 62.00 and price is 64.93, so the thesis has not been falsified. If this desk re-rates every position the moment its score wobbles, its invalidation levels are decoration.",
+  "bull_case": "The supply disruption is escalating, not resolving. Brent rose to $101.25 on 10 September; US forces destroyed five Iranian tankers after an attempted ballistic-missile strike on a Navy warship, and Iran-backed Houthi militants hit Saudi energy facilities, forcing temporary suspensions. Qatar and China are attempting to revive Hormuz diplomacy but those talks are running into renewed military action. The vehicle argument stands on fundamentals: Exxon and Chevron are 42.5% of the fund, Chevron has committed over $7B to double Venezuelan output to ~600,000 b/d, and XLE is +48% year to date on cash-flow resilience. The trend structure survives: close > SMA50 > SMA200, 63d momentum +12.3%, RSI 58 with room.",
+  "bear_case": "The tape contradicted the specific claim I made yesterday. I argued XLE was the better vehicle than DBC for this view; in the 24 hours since, DBC is +4.1% and XLE is -1.2%, and XLE's score has fallen from the top of the book to +0.47 while DBC's rose to +0.70. Oil went up and the oil equities went down - the sector is not translating the commodity move, which is what you would expect if the market is treating $101 Brent as a spike to be sold rather than a level to be capitalised. The forecast problem is unchanged and now starker against a higher spot: the EIA has Brent averaging about $85/b in 3Q26 and J.P. Morgan $86/$80/$78 through year end. Energy ETF outflows have been reported as the largest since 2024 even as price leads. A ceasefire headline remains an overnight gap that no stop covers.",
+  "catalysts": [
+    "Hormuz transit volumes; further tanker or Saudi facility strikes",
+    "Qatar/China-brokered talks on reopening the Strait",
+    "August CPI on 11 Sep and the 15-16 Sep FOMC",
+    "Q3 oil-major earnings in late October"
+  ],
+  "risks": [
+    "Equity/commodity divergence: Brent up, XLE down, score +0.70 to +0.47 in a day",
+    "EIA (~$85/b 3Q26) and J.P. Morgan ($86/$80/$78) forecast Brent well below spot",
+    "Energy ETF outflows reported as the largest since 2024",
+    "Ceasefire gap risk that no stop protects against",
+    "A hawkish Fed that kills demand takes oil with it"
+  ],
+  "invalidation": "Unchanged from 9 Sep and held to deliberately: a daily close below 62.00 breaks the structure and voids this. A confirmed US-Iran ceasefire or reopening of Hormuz transits invalidates it immediately regardless of price, as does Brent settling below $80 for a week. If the DBC/XLE divergence persists another week with XLE still lagging a rising Brent, that is evidence the vehicle choice was wrong and this should go flat on its own.",
+  "horizon_days": 30,
+  "sources": [
+    "https://tradingeconomics.com/commodity/brent-crude-oil",
+    "https://www.cbsnews.com/live-updates/iran-war-us-strait-of-hormuz-oil-gas-price-strikes/",
+    "https://www.aljazeera.com/economy/2026/8/12/oil-prices-rise-as-attacks-dent-hopes-for-strait-of-hormuz-reopening",
+    "https://www.eia.gov/outlooks/steo/report/global_oil.php",
+    "https://www.jpmorgan.com/insights/global-research/commodities/oil-prices",
+    "research/packets/2026-09-10.md",
+    "research/memos/2026-09-09/XLE.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.55,
+    "bear": 0.55,
+    "macro": 0.6
+  }
+}
