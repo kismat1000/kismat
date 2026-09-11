@@ -1,0 +1,37 @@
+{
+  "symbol": "BTCUSDT",
+  "asset_class": "crypto",
+  "date": "2026-09-11",
+  "direction": "flat",
+  "conviction": 0.6,
+  "thesis": "Unchanged from 8 September, with the macro now decided against it. Bitcoin is still range-bound at $77,353 with RSI 48 and no breakout, and the Fed is priced to hike after a 3.4% CPI print. The one thing that changed this week is that the flows story rotated to Ether - ETH ETFs took $189.15M in a day while bitcoin had an outflow day - which removes the argument that made BTC the best horse in this sleeve.",
+  "bull_case": "The structural bid is still there. US spot bitcoin ETFs took $3.52B in August, their strongest month of 2026, and $986.9M in the week ended 4 September, with combined net assets of $103.34B, about 6.32% of market cap. The long-term trend holds: close > SMA50 > SMA200, 63d momentum +20.5%, ATR 2.9% - still the calmest crypto we own. The position is only -1.7% and the $77k area has absorbed repeated tests without breaking.",
+  "bear_case": "The reason to prefer BTC over the alts was that flows were consolidating into it. That has reversed: spot Ether ETFs saw their largest daily inflow since October 2025 at $189.15M on a day bitcoin funds saw outflows, and ETH is up 27% in seven days while bitcoin slipped from $81k to $77.4k. Price is going nowhere - RSI 48, no breakout flag, a $77-82k range it has failed to clear - and it dragged the whole complex lower on 10 September. August CPI landed this morning and settled the argument: headline +0.4% m/m and 3.4% year on year, core +0.3% m/m against a 0.2% estimate, with gasoline up 3.9% and accounting for over a third of the monthly increase. Hike odds for 15-16 Sep jumped on the print - sources put them anywhere from ~69% to 85-90%, but every one of them agrees the direction is a hike being priced. The fed funds rate has sat at 3.5-3.75% all year. Base rate from our own backtest (research/backtests/2026-09-06.md): the crypto sleeve returned -6.4% with Sharpe -0.15 and a 17% win rate over 75 trades. No demonstrated edge in crypto momentum in this system.",
+  "catalysts": [
+    "15-16 Sep 2026 FOMC decision and dot plot",
+    "Weekly US spot bitcoin ETF flow prints and whether the ETH rotation persists",
+    "Whether $77k support holds"
+  ],
+  "risks": [
+    "Flows rotating from BTC to ETH",
+    "Range-bound $77-82k with RSI 48 and no breakout",
+    "Hike priced for 16 Sep after a 3.4% CPI print",
+    "Own backtest: no demonstrated edge in crypto momentum"
+  ],
+  "invalidation": "Unchanged from 8 Sep: flips long on a daily close above 82,000 made after the FOMC with ETF flows positive. The bear case confirms on a close below 74,000, which breaks the range low and the SMA50.",
+  "horizon_days": 21,
+  "sources": [
+    "https://finance.yahoo.com/markets/crypto/articles/ethereum-price-breakout-targets-2-163439380.html",
+    "https://cryptorank.io/news/feed/4b12b-bitcoin-etfs-just-had-their-best-month-of-2026-but-september-starts-with-a-warning",
+    "https://www.cnbc.com/2026/09/11/cpi-inflation-report-august-2026.html",
+    "research/backtests/2026-09-06.md",
+    "research/packets/2026-09-11.md",
+    "research/memos/2026-09-08/BTCUSDT.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.4,
+    "bear": 0.6,
+    "macro": 0.25
+  }
+}

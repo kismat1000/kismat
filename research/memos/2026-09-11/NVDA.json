@@ -1,0 +1,38 @@
+{
+  "symbol": "NVDA",
+  "asset_class": "us_stocks",
+  "date": "2026-09-11",
+  "direction": "flat",
+  "conviction": 0.6,
+  "thesis": "Unchanged from 8 September and a little more confident in it. NVDA is -5.3%, the worst position in the book, momentum has decayed from +12.3% on 6 September to +6.7%, and the stock fell another 2% on Thursday. The company is fine; the trade is not working, and a confirmed hike next week is not the environment in which the highest-multiple megacap re-rates upward.",
+  "bull_case": "Nothing in the business has deteriorated. The 26 August quarter delivered revenue of $96.22B against $92.17B consensus, data centre $89.0B up 117% year on year, and a Q3 guide of $108B that assumes no China data centre compute at all. Management points to roughly 70% revenue growth continuing into fiscal 2028. NVIDIA trades around 23x its current-year outlook, which is not a bubble multiple for that growth rate, and it remains the largest holding in XLK at about 16%. The packet still shows close > SMA50 > SMA200 with RSI 53, and our trailing stop at 211.31 has not been threatened - price is 218.29.",
+  "bear_case": "Five sessions of decay with no bounce. Score has gone +0.67 (6 Sep) to +0.43 (8 Sep) to +0.42 today, momentum +12.3% to +6.7%, and the position is -5.3%. Semiconductors were muted on Friday even as the Dow and Nasdaq rose 0.9% - rising yields and a lead researcher at Anthropic warning publicly about AI dangers kept the group offered, which is a reminder that this sector now carries headline risk from the AI debate itself, not just from demand. The vendor-financing concern stands: a reported $500B AI financing arrangement cost $130B of market value on 10 August. August CPI landed this morning and settled the argument: headline +0.4% m/m and 3.4% year on year, core +0.3% m/m against a 0.2% estimate, with gasoline up 3.9% and accounting for over a third of the monthly increase. Hike odds for 15-16 Sep jumped on the print - sources put them anywhere from ~69% to 85-90%, but every one of them agrees the direction is a hike being priced. The fed funds rate has sat at 3.5-3.75% all year. A stock that cannot rally on a 0.9% Nasdaq day is not being accumulated.",
+  "catalysts": [
+    "15-16 Sep 2026 FOMC decision and dot plot",
+    "Hyperscaler capex commentary through the autumn conference season",
+    "Q3 FY2027 results in late Nov 2026 against the $108B guide"
+  ],
+  "risks": [
+    "Five sessions of score and momentum decay with no bounce",
+    "Semis muted on an up day for the indices",
+    "AI-safety headline risk now moving the sector independently of demand",
+    "Vendor-financed demand: $500B arrangement, $130B of value lost on 10 Aug",
+    "Hike priced after a 3.4% CPI print, on the highest-multiple megacap"
+  ],
+  "invalidation": "Unchanged from 8 Sep: flips back to long on a daily close above 236 held two sessions, restoring the 55-day high. The bear case confirms on two consecutive closes below 210 or any top-four hyperscaler guiding 2027 AI capex lower; the trailing stop is 211.31.",
+  "horizon_days": 30,
+  "sources": [
+    "https://www.cnbc.com/2026/09/10/stock-market-today-live-updates.html",
+    "https://finance.yahoo.com/markets/live/stock-market-today-friday-september-11-dow-sp-500-nasdaq-cpi-inflation-082201751.html",
+    "https://www.forbes.com/sites/antoniopequenoiv/2026/08/10/nvidia-stock-loses-130-billion-in-market-value-as-firm-reportedly-enters-500-billion-ai-financing-deal/",
+    "https://www.cnbc.com/2026/09/11/cpi-inflation-report-august-2026.html",
+    "research/packets/2026-09-11.md",
+    "research/memos/2026-09-08/NVDA.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.5,
+    "bear": 0.6,
+    "macro": 0.25
+  }
+}

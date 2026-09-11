@@ -1,0 +1,39 @@
+{
+  "symbol": "ETHUSDT",
+  "asset_class": "crypto",
+  "date": "2026-09-11",
+  "direction": "flat",
+  "conviction": 0.5,
+  "thesis": "The flow half of yesterday's long trigger has been met decisively - spot Ether ETFs took $1.85B last month and $189.15M in a single day, the largest since October 2025 - and the packet now scores ETH +0.85 with a 55-day breakout, the top of the book. The price half has not: I named 2,700 and spot is 2,535 on our feed, with external desks reporting ETH still rejected at $2,550. Flat, and I am not moving the trigger to meet the price.",
+  "bull_case": "The flow reversal is unambiguous and dated. US spot Ether ETFs saw their largest daily inflow since October 2025 at $189.15M; September net inflows are running +$106M after $1.85B last month. That is the exact condition the 10 September memo named - and it has gone from $34M in a day to over a billion a month. Price has followed: ETH is up about 27% in seven days after clearing $2,000 triggered heavy short liquidations, and our packet now shows a 55-day high with score +0.85, the highest in the book, 63d momentum +41.0% and RSI 58. The position has turned from -1.5% to +1.5%. Analysts see $2,800 and a path to $2,920 if the breakout holds.",
+  "bear_case": "My own trigger is not met and the level that matters is contested. External reporting on 11 September has ETH consolidating at $2,441 and repeatedly rejected at the $2,550 resistance - a different number from our feed's 2,534.99, which is itself a reason for caution about the breakout flag. Overbought conditions could force a retest of $2,200 before $2,800, and support sits at $2,320-2,438, which is below spot. The structural argument is untouched: L2s keep capturing fee revenue that used to accrue to the base layer. And the macro just turned against risk - August CPI landed this morning and settled the argument: headline +0.4% m/m and 3.4% year on year, core +0.3% m/m against a 0.2% estimate, with gasoline up 3.9% and accounting for over a third of the monthly increase. Hike odds for 15-16 Sep jumped on the print - sources put them anywhere from ~69% to 85-90%, but every one of them agrees the direction is a hike being priced. The fed funds rate has sat at 3.5-3.75% all year. Base rate from our own backtest (research/backtests/2026-09-06.md): the crypto sleeve returned -6.4% with Sharpe -0.15 and a 17% win rate over 75 trades. No demonstrated edge in crypto momentum in this system.",
+  "catalysts": [
+    "Whether ETH clears and holds $2,550, the level rejecting it",
+    "Continued spot Ether ETF inflows after the $189.15M day",
+    "15-16 Sep 2026 FOMC"
+  ],
+  "risks": [
+    "Feed disagreement: our 2,534.99 against external reports of $2,441",
+    "$2,550 resistance has rejected multiple attempts",
+    "Overbought after +27% in seven days; a $2,200 retest is the named downside",
+    "Hike priced for 16 Sep after a 3.4% CPI print",
+    "L2 fee leakage unchanged"
+  ],
+  "invalidation": "Unchanged and deliberately so: flips long on a daily close above 2,700 with ETF inflows still positive. $2,550 is the level the market is actually fighting over, and a sustained break there is the early signal - but I am not lowering a trigger toward spot after the fact, because that is how an invalidation level becomes decoration. The bear case confirms on a close below 2,320, the base of the current structure.",
+  "horizon_days": 21,
+  "sources": [
+    "https://finance.yahoo.com/markets/crypto/articles/ethereum-price-breakout-targets-2-163439380.html",
+    "https://crypto.news/ethereum-price-must-break-2530-to-extend-recovery/",
+    "https://dmarketforces.com/ethereum-extends-rally-on-us-treasury-buyback-bets-etf-inflows/",
+    "https://www.cnbc.com/2026/09/11/cpi-inflation-report-august-2026.html",
+    "research/backtests/2026-09-06.md",
+    "research/packets/2026-09-11.md",
+    "research/memos/2026-09-10/ETHUSDT.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.6,
+    "bear": 0.45,
+    "macro": 0.25
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "symbol": "EEM",
+  "asset_class": "us_etfs",
+  "date": "2026-09-11",
+  "direction": "flat",
+  "conviction": 0.6,
+  "thesis": "Every published bull case for emerging markets rests on a weaker dollar, and the Fed is about to hike into a 3.4% inflation print. That is the single cleanest contradiction in the book: we bought the dollar-down trade in the week the dollar-up catalyst got confirmed. 63-day momentum of +1.0% says the market has already noticed.",
+  "bull_case": "The structural case is well supported. EM ETFs are effectively a short-dollar position, and after the dollar's sharpest annual decline in eight years in 2025, Morgan Stanley expected further weakness into mid-2026 - a dual tailwind of local-currency gains and price appreciation for US holders. China is about 25% of EEM and analysts forecast 15% earnings growth for MSCI China companies in 2026. JPMorgan projects up to $50B into emerging debt funds this year, and both Morgan Stanley and Bank of America have upgraded the asset class. The revival has breadth rather than one story behind it: a weaker dollar, resilient semiconductor demand lifting Taiwan and Korea, and renewed foreign flows into China and India. Packet: close > SMA50 > SMA200, ATR 1.3%, and the position is +1.2%.",
+  "bear_case": "The central assumption is being falsified in real time. Those dollar forecasts were written expecting Fed easing; instead August CPI came in at 3.4% with core above estimate, and the Fed is priced to hike on 16 September. A hiking Fed with US 2-year yields at their highest since January 2025 is a dollar-positive setup, which removes the main support under EM. The China leg needs Beijing to deliver effective stimulus, and the same Chinese economy is showing only ~30% of steelmakers profitable and a public trade fight with the G20 over export reliance. Momentum is the tell: +1.0% over 63 days and a score of +0.36, the weakest in the book - this entered on the trend filter, not on strength. August CPI landed this morning and settled the argument: headline +0.4% m/m and 3.4% year on year, core +0.3% m/m against a 0.2% estimate, with gasoline up 3.9% and accounting for over a third of the monthly increase. Hike odds for 15-16 Sep jumped on the print - sources put them anywhere from ~69% to 85-90%, but every one of them agrees the direction is a hike being priced. The fed funds rate has sat at 3.5-3.75% all year.",
+  "catalysts": [
+    "15-16 Sep 2026 FOMC and the dollar's reaction",
+    "Chinese stimulus measures and Q3 data",
+    "MSCI China earnings delivery against the 15% forecast",
+    "Taiwan and Korea semiconductor demand"
+  ],
+  "risks": [
+    "A hiking Fed is dollar-positive, removing EM's main tailwind",
+    "The bull case rests on dollar forecasts written for an easing Fed",
+    "~25% China weight dependent on stimulus execution",
+    "63d momentum +1.0%, the weakest score in the book at +0.36"
+  ],
+  "invalidation": "Flips long on a close above 71 with the dollar index falling *after* the 16 September FOMC - dollar weakness through a hike would be genuine evidence. The bear case confirms on a close below 64.50, which breaks the SMA50 and the summer range.",
+  "horizon_days": 30,
+  "sources": [
+    "https://finance.yahoo.com/news/eem-every-investor-know-betting-165506104.html",
+    "https://finance.yahoo.com/markets/stocks/articles/2026-pick-emerging-market-etf-124302426.html",
+    "https://www.lazardassetmanagement.com/li/en_gb/research-insights/investment-insights/investment-research/emerging-markets-outlook-2026",
+    "https://www.cnbc.com/2026/09/11/cpi-inflation-report-august-2026.html",
+    "https://www.benzinga.com/markets/economic-data/26/09/61736703/august-inflation-report-2026",
+    "research/packets/2026-09-11.md"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.4,
+    "bear": 0.6,
+    "macro": 0.25
+  }
+}

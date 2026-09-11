@@ -355,3 +355,69 @@ macro_conviction long: 0.30, down from 0.35.
 
 **Nothing failed operationally.** The `us_etfs` schema defect filed on 8 Sep is still open and
 today added two more memos against it (XLK, XLE).
+
+## 2026-09-11 — council run
+
+Packet: `research/packets/2026-09-11.md`. Friday. Equity 9,861.75, up 81 on the day after five
+down sessions; 12 positions; **cash down to 25.42 — the book is fully invested.**
+
+**August CPI decided the week.** Headline +0.4% m/m and 3.4% y/y, core +0.3% against a 0.2%
+estimate, and gasoline up 3.9% accounting for over a third of the monthly increase. The
+energy → inflation → Fed chain this desk has been describing since 6 September is now in the
+data rather than in the argument. Hike odds for 15–16 Sep jumped: sources put them between ~69%
+and 85–90%, and the spread between those two figures is itself worth noting — every source
+agrees on direction, none agrees on magnitude. Equities rose anyway, Dow and Nasdaq +0.9%,
+S&P +0.8%, ending a four-day losing streak but still down on the week. Oil fell on Friday.
+macro_conviction long: 0.25, the lowest yet.
+
+**Prior calls.** BHP.AX stopped out at 43.406 (entry 44.8744, about −3.3%); yesterday's memo was
+flat 0.55 on Chinese mill profitability. That is a fifth exit on a name the desk had called flat.
+
+**The AAPL miss got worse.** AAPL is 332.27 today with RSI 71, against 315.34 on event day —
+about +5.4% since the exit. My 7 Sep sell-the-news thesis is now clearly wrong on every horizon
+except day one, and the BofA 60-day base rate I failed to look up is the one that is playing out.
+
+**Churn worth flagging: XLF was bought at 00:47 and sold at 02:47**, a two-hour round trip
+(−0.25%), and the buy leg is marked `alpaca-paper skipped`, so the broker may not have filled
+what the simulator recorded. Two hours is not a trend-following holding period. Worth the
+owner's attention as an execution question, not a research one.
+
+**Picks: 5.** Holding with no memo: **EEM**, bought at 02:47. Memos turned three days old:
+**BTCUSDT**, **DBC**, **NVDA**. Plus **ETHUSDT**, re-run because its score jumped to +0.85 with a
+55-day breakout — the largest single-day change in the book and the one name where my own long
+trigger is now in play.
+
+| symbol | direction | conviction | note |
+|---|---|---|---|
+| EEM | flat | 0.60 | Every EM bull case rests on a weaker dollar; we bought it the week the hike got priced |
+| NVDA | flat | 0.60 | Five sessions of decay, −5.3%, muted on a +0.9% Nasdaq day |
+| DBC | flat | 0.60 | Hedge vindicated by the CPI gasoline line, but score +0.70 → +0.50 |
+| BTCUSDT | flat | 0.60 | Flows rotated to ETH; that was the reason to prefer BTC in this sleeve |
+| ETHUSDT | flat | 0.50 | Flow trigger met decisively; price trigger not. See below |
+
+**Deferred** (fresh memo, direction unchanged): MSFT (long 0.55, 9 Sep — the only long equity
+call, score up to +0.62), XLE (long 0.50, 10 Sep), AMD, CSL.AX, XLK, SOLUSDT, BNBUSDT (all flat,
+10 Sep).
+
+No `avoid` memo on any held position. `validate-memos`: 20 valid.
+
+**ETHUSDT and the discipline of not moving a trigger.** Yesterday's memo said ETH flips long on
+"a daily close above 2,700 with two consecutive weeks of positive spot Ether ETF inflows". The
+flow condition is now met emphatically — US spot Ether ETFs took their largest daily inflow since
+October 2025 at $189.15M, $1.85B last month and +$106M so far in September — and the packet has
+ETH at the top of the book, score +0.85 with a 55-day breakout. The price condition is not:
+2,534.99 on our feed against a 2,700 trigger, and external desks report ETH consolidating at
+$2,441 and repeatedly rejected at $2,550.
+
+The tempting move is to lower the trigger to just above $2,550 and call it long. I have not,
+and the memo says why: moving an invalidation toward spot after the evidence improves is how a
+named level becomes decoration. $2,550 is flagged as the level the market is actually fighting
+over and the early signal to watch, but the trigger stays at 2,700. Conviction came down 0.55 →
+0.50 to reflect that I am closer to changing my mind, which is the honest way to express it.
+
+Also worth recording: our feed says 2,534.99 and external reporting says $2,441 on the same day.
+That is a wider gap than a timing difference explains, and it is the second time this week a
+crypto mark has disagreed with outside quotes.
+
+**Still open:** the `us_etfs` schema defect from 8 Sep. Today added two more memos against it
+(EEM, DBC).
