@@ -1,0 +1,922 @@
+{
+ "generated": "2026-09-12T10:06+00:00",
+ "summary": {
+  "closed_trades": 9,
+  "wins": 0,
+  "losses": 9,
+  "win_rate": 0.0,
+  "realized_pnl": -97.24564721842567,
+  "avg_win_pct": null,
+  "avg_loss_pct": -0.02077692882421937,
+  "expectancy_pct": -0.02077692882421937,
+  "avg_hold_days": 2.4444444444444446,
+  "by_exit_reason": {
+   "trend break": {
+    "n": 7,
+    "pnl": -54.443089030782204,
+    "wins": 0
+   },
+   "trailing stop hit": {
+    "n": 2,
+    "pnl": -42.80255818764348,
+    "wins": 0
+   }
+  },
+  "by_memo_at_entry": {
+   "flat": {
+    "n": 5,
+    "pnl": -23.33429623891966,
+    "wins": 0
+   },
+   "no memo": {
+    "n": 4,
+    "pnl": -73.91135097950603,
+    "wins": 0
+   }
+  },
+  "decisions": {
+   "buy": {
+    "n": 5,
+    "judged": 5,
+    "good": 4,
+    "hit_rate": 0.8
+   },
+   "skip": {
+    "n": 14,
+    "judged": 9,
+    "good": 4,
+    "hit_rate": 0.4444444444444444
+   },
+   "sell": {
+    "n": 5,
+    "judged": 4,
+    "good": 0,
+    "hit_rate": 0.0
+   },
+   "proposed": {
+    "n": 0,
+    "judged": 0,
+    "good": 0,
+    "hit_rate": null
+   }
+  },
+  "gates": {
+   "n": 0,
+   "judged": 0,
+   "good": 0,
+   "hit_rate": null
+  },
+  "memos": {
+   "by_direction": {
+    "long": {
+     "n": 5,
+     "judged": 4,
+     "good": 2,
+     "hit_rate": 0.5
+    },
+    "avoid": {
+     "n": 0,
+     "judged": 0,
+     "good": 0,
+     "hit_rate": null
+    }
+   },
+   "by_conviction": {
+    "high (>=0.7)": {
+     "n": 0,
+     "judged": 0,
+     "good": 0,
+     "hit_rate": null
+    },
+    "mid (0.5-0.7)": {
+     "n": 5,
+     "judged": 4,
+     "good": 2,
+     "hit_rate": 0.5
+    },
+    "low (<0.5)": {
+     "n": 0,
+     "judged": 0,
+     "good": 0,
+     "hit_rate": null
+    }
+   },
+   "all": {
+    "n": 5,
+    "judged": 4,
+    "good": 2,
+    "hit_rate": 0.5
+   }
+  }
+ },
+ "trades": [
+  {
+   "symbol": "ANZ.AX",
+   "qty": 5.484284225215735,
+   "entry": 27.35714010954663,
+   "exit": 26.544594303608108,
+   "pnl": -4.8996501457738475,
+   "pnl_pct": -0.029701416254945934,
+   "entry_ts": "2026-09-06T04:48:08+00:00",
+   "exit_ts": "2026-09-08T05:47:20+00:00",
+   "entry_reason": "uptrend: close > SMA50 > SMA200; 3m momentum +10.7%",
+   "exit_reason": "trend break: below fast SMA and underwater",
+   "hold_days": 2,
+   "memo_direction": "flat",
+   "memo_conviction": 0.45,
+   "verdict": "bad",
+   "lesson": "Trend broke within 2 day(s) of entry (-3.0%): the move reversed right after the entry. Check the RSI and the distance from the 55-day high at entry; a cluster of these in one week usually means the whole market turned, not that each pick was wrong. Research was flat at entry: the systematic score alone carried this one.",
+   "key": "ANZ.AX@2026-09-08T05:47:20"
+  },
+  {
+   "symbol": "AAPL",
+   "qty": 3.1222121941152343,
+   "entry": 320.12998622131346,
+   "exit": 315.5,
+   "pnl": -15.448085438770397,
+   "pnl_pct": -0.014462832038835138,
+   "entry_ts": "2026-09-06T07:48:16+00:00",
+   "exit_ts": "2026-09-08T18:47:25+00:00",
+   "entry_reason": "uptrend: close > SMA50 > SMA200; 3m momentum +4.2% | alpaca-paper pending: alpaca order accepted; fills at next market open",
+   "exit_reason": "trend break: below fast SMA and underwater | alpaca-paper filled @ 315.5",
+   "hold_days": 2,
+   "memo_direction": null,
+   "memo_conviction": null,
+   "verdict": "bad",
+   "lesson": "Trend broke within 2 day(s) of entry (-1.4%): the move reversed right after the entry. Check the RSI and the distance from the 55-day high at entry; a cluster of these in one week usually means the whole market turned, not that each pick was wrong.",
+   "key": "AAPL@2026-09-08T18:47:25"
+  },
+  {
+   "symbol": "AMZN",
+   "qty": 0.579742952947126,
+   "entry": 258.6392647705078,
+   "exit": 251.842,
+   "pnl": -4.088640350017649,
+   "pnl_pct": -0.026280869521257855,
+   "entry_ts": "2026-09-06T04:48:08+00:00",
+   "exit_ts": "2026-09-09T13:48:07+00:00",
+   "entry_reason": "uptrend: close > SMA50 > SMA200; 3m momentum +5.1%",
+   "exit_reason": "trend break: below fast SMA and underwater | alpaca-paper filled @ 251.842",
+   "hold_days": 3,
+   "memo_direction": "flat",
+   "memo_conviction": 0.55,
+   "verdict": "bad",
+   "lesson": "Trend broke within 3 day(s) of entry (-2.6%): the move reversed right after the entry. Check the RSI and the distance from the 55-day high at entry; a cluster of these in one week usually means the whole market turned, not that each pick was wrong. Research was flat at entry: the systematic score alone carried this one.",
+   "key": "AMZN@2026-09-09T13:48:07"
+  },
+  {
+   "symbol": "LINKUSDT",
+   "qty": 68.836676125,
+   "entry": 12.240117,
+   "exit": 11.72,
+   "pnl": -37.45246047610656,
+   "pnl_pct": -0.042492812772949695,
+   "entry_ts": "2026-09-06T07:48:05+00:00",
+   "exit_ts": "2026-09-09T21:47:54+00:00",
+   "entry_reason": "uptrend: close > SMA50 > SMA200; 3m momentum +51.4%; breakout: 55 day high | alpaca-paper-crypto filled 68.8367 @ 12.234",
+   "exit_reason": "trailing stop hit (11.75 <= 11.77) | alpaca-paper-crypto filled @ 11.72",
+   "hold_days": 3,
+   "memo_direction": null,
+   "memo_conviction": null,
+   "verdict": "bad",
+   "lesson": "Trailing stop hit below entry after 3 days (-4.2%): the move never got going; the ATR stop did its job and capped the loss.",
+   "key": "LINKUSDT@2026-09-09T21:47:54"
+  },
+  {
+   "symbol": "QQQ",
+   "qty": 1.3893878416525147,
+   "entry": 719.3195019836426,
+   "exit": 708.66,
+   "pnl": -15.802191454143891,
+   "pnl_pct": -0.014818869715400806,
+   "entry_ts": "2026-09-06T07:48:23+00:00",
+   "exit_ts": "2026-09-10T13:36:37+00:00",
+   "entry_reason": "uptrend: close > SMA50 > SMA200; 3m momentum +2.1% | alpaca-paper pending: alpaca order accepted; fills at next market open",
+   "exit_reason": "trend break: below fast SMA and underwater | alpaca-paper filled @ 708.66",
+   "hold_days": 4,
+   "memo_direction": null,
+   "memo_conviction": null,
+   "verdict": "bad",
+   "lesson": "Trend broke while underwater after 4 days (-1.5%): momentum did not follow through.",
+   "key": "QQQ@2026-09-10T13:36:37"
+  },
+  {
+   "symbol": "XLV",
+   "qty": 5.921389696508174,
+   "entry": 166.6632918319702,
+   "exit": 165.76,
+   "pnl": -6.332946946768465,
+   "pnl_pct": -0.00541986073862577,
+   "entry_ts": "2026-09-09T21:48:01+00:00",
+   "exit_ts": "2026-09-10T14:47:52+00:00",
+   "entry_reason": "uptrend: close > SMA50 > SMA200; 63d momentum +8.2%; pullback in uptrend RSI 28 | alpaca-paper pending: alpaca order accepted; fills at next market open",
+   "exit_reason": "trend break: below fast SMA and underwater | alpaca-paper filled @ 165.76",
+   "hold_days": 0,
+   "memo_direction": "flat",
+   "memo_conviction": 0.55,
+   "verdict": "bad",
+   "lesson": "Trend broke within 0 day(s) of entry (-0.5%): the move reversed right after the entry. Check the RSI and the distance from the 55-day high at entry; a cluster of these in one week usually means the whole market turned, not that each pick was wrong. Research was flat at entry: the systematic score alone carried this one.",
+   "key": "XLV@2026-09-10T14:47:52"
+  },
+  {
+   "symbol": "SPY",
+   "qty": 0.19455831668724968,
+   "entry": 770.5750974426269,
+   "exit": 757.652,
+   "pnl": -2.6629610848227796,
+   "pnl_pct": -0.016770717721758532,
+   "entry_ts": "2026-09-06T04:48:08+00:00",
+   "exit_ts": "2026-09-10T18:47:48+00:00",
+   "entry_reason": "uptrend: close > SMA50 > SMA200; 3m momentum +4.7%",
+   "exit_reason": "trend break: below fast SMA and underwater | alpaca-paper filled @ 757.652",
+   "hold_days": 4,
+   "memo_direction": "flat",
+   "memo_conviction": 0.6,
+   "verdict": "bad",
+   "lesson": "Trend broke while underwater after 4 days (-1.7%): momentum did not follow through. Research was flat at entry: the systematic score alone carried this one.",
+   "key": "SPY@2026-09-10T18:47:48"
+  },
+  {
+   "symbol": "BHP.AX",
+   "qty": 3.342427767702621,
+   "entry": 44.87435935659706,
+   "exit": 43.4061179905585,
+   "pnl": -5.350097711536917,
+   "pnl_pct": -0.03271893765370748,
+   "entry_ts": "2026-09-06T04:48:08+00:00",
+   "exit_ts": "2026-09-11T00:47:23+00:00",
+   "entry_reason": "uptrend: close > SMA50 > SMA200; 3m momentum +5.9%",
+   "exit_reason": "trailing stop hit (43.43 <= 43.86)",
+   "hold_days": 4,
+   "memo_direction": "flat",
+   "memo_conviction": 0.5,
+   "verdict": "bad",
+   "lesson": "Trailing stop hit below entry after 4 days (-3.3%): the move never got going; the ATR stop did its job and capped the loss. Research was flat at entry: the systematic score alone carried this one.",
+   "key": "BHP.AX@2026-09-11T00:47:23"
+  },
+  {
+   "symbol": "XLF",
+   "qty": 17.137403148248477,
+   "entry": 57.08853137397766,
+   "exit": 56.84156393241883,
+   "pnl": -5.208613610485167,
+   "pnl_pct": -0.004326043000493107,
+   "entry_ts": "2026-09-11T00:47:30+00:00",
+   "exit_ts": "2026-09-11T02:47:39+00:00",
+   "entry_reason": "uptrend: close > SMA50 > SMA200; 63d momentum +9.1% | alpaca-paper pending: alpaca order accepted; fills at next market open",
+   "exit_reason": "trend break: below fast SMA and underwater | alpaca-paper skipped: not held at alpaca; ledger-only exit; cancelled 1 queued order(s)",
+   "hold_days": 0,
+   "memo_direction": null,
+   "memo_conviction": null,
+   "verdict": "bad",
+   "lesson": "Trend broke within 0 day(s) of entry (-0.4%): the move reversed right after the entry. Check the RSI and the distance from the 55-day high at entry; a cluster of these in one week usually means the whole market turned, not that each pick was wrong.",
+   "key": "XLF@2026-09-11T02:47:39"
+  }
+ ],
+ "decisions": [
+  {
+   "action": "skip",
+   "combined": 0.446,
+   "held": false,
+   "price": 521.0999755859375,
+   "reason": "max positions 12 reached",
+   "research": null,
+   "symbol": "AMD",
+   "systematic": 0.446,
+   "ts": "2026-09-10T01:47:49+00:00",
+   "since": -0.009537461017027793,
+   "horizon": null,
+   "verdict": "good"
+  },
+  {
+   "action": "skip",
+   "combined": 0.441,
+   "held": false,
+   "price": 57.060001373291016,
+   "reason": "max positions 12 reached",
+   "research": null,
+   "symbol": "XLF",
+   "systematic": 0.441,
+   "ts": "2026-09-10T01:47:49+00:00",
+   "since": 0.003329804103333167,
+   "horizon": null,
+   "verdict": "bad"
+  },
+  {
+   "action": "skip",
+   "combined": 0.402,
+   "held": false,
+   "price": 106.55999755859375,
+   "reason": "max positions 12 reached",
+   "research": null,
+   "symbol": "EFA",
+   "systematic": 0.402,
+   "ts": "2026-09-10T01:47:49+00:00",
+   "since": 0.0013138081161410131,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "action": "skip",
+   "combined": 0.396,
+   "held": false,
+   "price": 68.4800033569336,
+   "reason": "max positions 12 reached",
+   "research": null,
+   "symbol": "EEM",
+   "systematic": 0.396,
+   "ts": "2026-09-10T01:47:49+00:00",
+   "since": -0.009345896432088385,
+   "horizon": null,
+   "verdict": "good"
+  },
+  {
+   "action": "skip",
+   "combined": 0.391,
+   "held": false,
+   "price": 187.8699951171875,
+   "reason": "max positions 12 reached",
+   "research": null,
+   "symbol": "XLK",
+   "systematic": 0.391,
+   "ts": "2026-09-10T01:47:49+00:00",
+   "since": -0.0010645497069259324,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "action": "sell",
+   "combined": 0.073,
+   "held": true,
+   "price": 708.3400268554688,
+   "reason": "trend break: below fast SMA and underwater | alpaca-paper filled @ 708.66",
+   "research": 0.0,
+   "symbol": "QQQ",
+   "systematic": 0.122,
+   "ts": "2026-09-10T13:36:37+00:00",
+   "since": 0.009232822909043703,
+   "horizon": null,
+   "verdict": "bad"
+  },
+  {
+   "action": "buy",
+   "combined": 0.476,
+   "held": false,
+   "price": 509.59991455078125,
+   "reason": "uptrend: close > SMA50 > SMA200; 63d momentum +12.6% | alpaca-paper filled 1.91774 @ 509.828 | capped by position cap",
+   "research": null,
+   "symbol": "AMD",
+   "systematic": 0.476,
+   "ts": "2026-09-10T13:36:39+00:00",
+   "since": 0.012814151151865127,
+   "horizon": null,
+   "verdict": "good"
+  },
+  {
+   "action": "skip",
+   "combined": 0.4,
+   "held": false,
+   "price": 185.22999572753906,
+   "reason": "max positions 12 reached",
+   "research": null,
+   "symbol": "XLK",
+   "systematic": 0.4,
+   "ts": "2026-09-10T13:36:39+00:00",
+   "since": 0.013172825663697152,
+   "horizon": null,
+   "verdict": "bad"
+  },
+  {
+   "action": "skip",
+   "combined": 0.396,
+   "held": false,
+   "price": 67.30500030517578,
+   "reason": "max positions 12 reached",
+   "research": null,
+   "symbol": "EEM",
+   "systematic": 0.396,
+   "ts": "2026-09-10T13:36:39+00:00",
+   "since": 0.007948830403224916,
+   "horizon": null,
+   "verdict": "bad"
+  },
+  {
+   "action": "sell",
+   "combined": 0.114,
+   "held": true,
+   "price": 165.7624969482422,
+   "reason": "trend break: below fast SMA and underwater | alpaca-paper filled @ 165.76",
+   "research": 0.0,
+   "symbol": "XLV",
+   "systematic": 0.189,
+   "ts": "2026-09-10T14:47:52+00:00",
+   "since": -0.0024281507898393784,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "action": "buy",
+   "combined": 0.404,
+   "held": false,
+   "price": 185.88999938964844,
+   "reason": "uptrend: close > SMA50 > SMA200; 63d momentum +5.4% | alpaca-paper filled 5.26555 @ 185.846 | capped by position cap",
+   "research": null,
+   "symbol": "XLK",
+   "systematic": 0.404,
+   "ts": "2026-09-10T14:47:54+00:00",
+   "since": 0.009575548900647268,
+   "horizon": null,
+   "verdict": "good"
+  },
+  {
+   "action": "sell",
+   "combined": 0.088,
+   "held": true,
+   "price": 757.6300048828125,
+   "reason": "trend break: below fast SMA and underwater | alpaca-paper filled @ 757.652",
+   "research": 0.0,
+   "symbol": "SPY",
+   "systematic": 0.147,
+   "ts": "2026-09-10T18:47:48+00:00",
+   "since": 0.008790535091810936,
+   "horizon": null,
+   "verdict": "bad"
+  },
+  {
+   "action": "buy",
+   "combined": 0.4,
+   "held": false,
+   "price": 122.29436776041985,
+   "reason": "above SMA200 but SMA50 not aligned; 63d momentum +62.7% | capped by position cap",
+   "research": null,
+   "symbol": "CSL.AX",
+   "systematic": 0.4,
+   "ts": "2026-09-10T18:47:48+00:00",
+   "since": -0.01995746024940659,
+   "horizon": null,
+   "verdict": "bad"
+  },
+  {
+   "action": "sell",
+   "combined": 0.03,
+   "held": true,
+   "price": 43.427831906511756,
+   "reason": "trailing stop hit (43.43 <= 43.86)",
+   "research": 0.0,
+   "symbol": "BHP.AX",
+   "systematic": 0.051,
+   "ts": "2026-09-11T00:47:23+00:00",
+   "since": 0.0053332893436590645,
+   "horizon": null,
+   "verdict": "bad"
+  },
+  {
+   "action": "buy",
+   "combined": 0.441,
+   "held": false,
+   "price": 57.060001373291016,
+   "reason": "uptrend: close > SMA50 > SMA200; 63d momentum +9.1% | alpaca-paper pending: alpaca order accepted; fills at next market open | capped by position cap",
+   "research": null,
+   "symbol": "XLF",
+   "systematic": 0.441,
+   "ts": "2026-09-11T00:47:30+00:00",
+   "since": 0.003329804103333167,
+   "horizon": null,
+   "verdict": "good"
+  },
+  {
+   "action": "skip",
+   "combined": 0.396,
+   "held": false,
+   "price": 68.4800033569336,
+   "reason": "max positions 12 reached",
+   "research": null,
+   "symbol": "EEM",
+   "systematic": 0.396,
+   "ts": "2026-09-11T00:47:30+00:00",
+   "since": -0.009345896432088385,
+   "horizon": null,
+   "verdict": "good"
+  },
+  {
+   "action": "skip",
+   "combined": 0.39,
+   "held": false,
+   "price": 11.483,
+   "reason": "max positions 12 reached",
+   "research": 0.0,
+   "symbol": "LINKUSDT",
+   "systematic": 0.65,
+   "ts": "2026-09-11T00:47:30+00:00",
+   "since": 0.00679265000435425,
+   "horizon": null,
+   "verdict": "bad"
+  },
+  {
+   "action": "sell",
+   "combined": 0.193,
+   "held": true,
+   "price": 56.869998931884766,
+   "reason": "trend break: below fast SMA and underwater | alpaca-paper skipped: not held at alpaca; ledger-only exit; cancelled 1 queued order(s)",
+   "research": null,
+   "symbol": "XLF",
+   "systematic": 0.193,
+   "ts": "2026-09-11T02:47:39+00:00",
+   "since": 0.006681925008832357,
+   "horizon": null,
+   "verdict": "bad"
+  },
+  {
+   "action": "buy",
+   "combined": 0.392,
+   "held": false,
+   "price": 67.0,
+   "reason": "uptrend: close > SMA50 > SMA200; 63d momentum +4.2% | alpaca-paper pending: alpaca order accepted; fills at next market open | capped by position cap",
+   "research": null,
+   "symbol": "EEM",
+   "systematic": 0.392,
+   "ts": "2026-09-11T02:47:45+00:00",
+   "since": 0.01253725877448697,
+   "horizon": null,
+   "verdict": "good"
+  },
+  {
+   "action": "skip",
+   "combined": 0.387,
+   "held": false,
+   "price": 106.94499969482422,
+   "reason": "max positions 12 reached",
+   "research": null,
+   "symbol": "EFA",
+   "systematic": 0.387,
+   "ts": "2026-09-11T13:47:48+00:00",
+   "since": -0.002290922878873891,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "action": "skip",
+   "combined": 0.363,
+   "held": false,
+   "price": 1.3949,
+   "reason": "max positions 12 reached",
+   "research": null,
+   "symbol": "XRPUSDT",
+   "systematic": 0.363,
+   "ts": "2026-09-11T14:47:52+00:00",
+   "since": -0.017779052261810868,
+   "horizon": null,
+   "verdict": "good"
+  },
+  {
+   "action": "skip",
+   "combined": 0.441,
+   "held": false,
+   "price": 57.21229934692383,
+   "reason": "max positions 12 reached",
+   "research": null,
+   "symbol": "XLF",
+   "systematic": 0.441,
+   "ts": "2026-09-11T15:47:38+00:00",
+   "since": 0.0006589606344531429,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "action": "skip",
+   "combined": 0.39,
+   "held": false,
+   "price": 11.517,
+   "reason": "max positions 12 reached",
+   "research": 0.0,
+   "symbol": "LINKUSDT",
+   "systematic": 0.65,
+   "ts": "2026-09-12T00:47:12+00:00",
+   "since": 0.003820439350525451,
+   "horizon": null,
+   "verdict": "bad"
+  },
+  {
+   "action": "skip",
+   "combined": 0.413,
+   "held": false,
+   "price": 256.7799987792969,
+   "reason": "max positions 12 reached",
+   "research": null,
+   "symbol": "AMZN",
+   "systematic": 0.413,
+   "ts": "2026-09-12T02:47:23+00:00",
+   "since": 0.0,
+   "horizon": null,
+   "verdict": "flat"
+  }
+ ],
+ "memos": [
+  {
+   "symbol": "AMZN",
+   "date": "2026-09-06",
+   "direction": "flat",
+   "conviction": 0.55,
+   "since": -0.006692239839751757,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "ANZ.AX",
+   "date": "2026-09-06",
+   "direction": "flat",
+   "conviction": 0.45,
+   "since": -0.01791832125178361,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "BHP.AX",
+   "date": "2026-09-06",
+   "direction": "flat",
+   "conviction": 0.5,
+   "since": -0.022168691857272882,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "MSFT",
+   "date": "2026-09-06",
+   "direction": "long",
+   "conviction": 0.55,
+   "since": -0.008144901390421566,
+   "horizon": null,
+   "verdict": "bad"
+  },
+  {
+   "symbol": "NVDA",
+   "date": "2026-09-06",
+   "direction": "long",
+   "conviction": 0.62,
+   "since": -0.05133594504880268,
+   "horizon": null,
+   "verdict": "bad"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-09-06",
+   "direction": "flat",
+   "conviction": 0.6,
+   "since": -0.007660479096534778,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "AAPL",
+   "date": "2026-09-07",
+   "direction": "flat",
+   "conviction": 0.6,
+   "since": 0.03844106555628213,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "ANZ.AX",
+   "date": "2026-09-07",
+   "direction": "flat",
+   "conviction": 0.5,
+   "since": -0.01740047039551562,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "BHP.AX",
+   "date": "2026-09-07",
+   "direction": "flat",
+   "conviction": 0.5,
+   "since": -0.03273480634516357,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "BNBUSDT",
+   "date": "2026-09-07",
+   "direction": "flat",
+   "conviction": 0.6,
+   "since": -0.00615039403073836,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "ETHUSDT",
+   "date": "2026-09-07",
+   "direction": "flat",
+   "conviction": 0.6,
+   "since": 0.015947241243668087,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "LINKUSDT",
+   "date": "2026-09-07",
+   "direction": "flat",
+   "conviction": 0.55,
+   "since": -0.09183032207384134,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "QQQ",
+   "date": "2026-09-07",
+   "direction": "flat",
+   "conviction": 0.62,
+   "since": -0.005674887288794062,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "SOLUSDT",
+   "date": "2026-09-07",
+   "direction": "flat",
+   "conviction": 0.55,
+   "since": -0.016175621028307274,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "BTCUSDT",
+   "date": "2026-09-08",
+   "direction": "flat",
+   "conviction": 0.55,
+   "since": -0.013543883058421136,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "DBC",
+   "date": "2026-09-08",
+   "direction": "flat",
+   "conviction": 0.6,
+   "since": 0.02345673721423025,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "NVDA",
+   "date": "2026-09-08",
+   "direction": "flat",
+   "conviction": 0.55,
+   "since": -0.03187764745881172,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "MSFT",
+   "date": "2026-09-09",
+   "direction": "long",
+   "conviction": 0.55,
+   "since": 0.00809521211377473,
+   "horizon": null,
+   "verdict": "good"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-09-09",
+   "direction": "flat",
+   "conviction": 0.62,
+   "since": 0.0024789527187303317,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "XLE",
+   "date": "2026-09-09",
+   "direction": "long",
+   "conviction": 0.55,
+   "since": -0.002602942509572048,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "XLV",
+   "date": "2026-09-09",
+   "direction": "flat",
+   "conviction": 0.55,
+   "since": -0.007323815627883423,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "AMD",
+   "date": "2026-09-10",
+   "direction": "flat",
+   "conviction": 0.55,
+   "since": 0.024880855098165622,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "BHP.AX",
+   "date": "2026-09-10",
+   "direction": "flat",
+   "conviction": 0.55,
+   "since": -0.04051071485588298,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "BNBUSDT",
+   "date": "2026-09-10",
+   "direction": "flat",
+   "conviction": 0.6,
+   "since": 0.035811895973627106,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "CSL.AX",
+   "date": "2026-09-10",
+   "direction": "flat",
+   "conviction": 0.65,
+   "since": -0.014159256026456513,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "ETHUSDT",
+   "date": "2026-09-10",
+   "direction": "flat",
+   "conviction": 0.55,
+   "since": 0.037349279080633124,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "SOLUSDT",
+   "date": "2026-09-10",
+   "direction": "flat",
+   "conviction": 0.6,
+   "since": 0.03546817997567886,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "XLE",
+   "date": "2026-09-10",
+   "direction": "long",
+   "conviction": 0.5,
+   "since": 0.0032342381562551203,
+   "horizon": null,
+   "verdict": "good"
+  },
+  {
+   "symbol": "XLK",
+   "date": "2026-09-10",
+   "direction": "flat",
+   "conviction": 0.6,
+   "since": 0.013227496663942073,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "BTCUSDT",
+   "date": "2026-09-11",
+   "direction": "flat",
+   "conviction": 0.6,
+   "since": 0.0019979275953629916,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "DBC",
+   "date": "2026-09-11",
+   "direction": "flat",
+   "conviction": 0.6,
+   "since": 0.0,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "EEM",
+   "date": "2026-09-11",
+   "direction": "flat",
+   "conviction": 0.6,
+   "since": 0.0,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "ETHUSDT",
+   "date": "2026-09-11",
+   "direction": "flat",
+   "conviction": 0.5,
+   "since": 0.005693873820895368,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "symbol": "NVDA",
+   "date": "2026-09-11",
+   "direction": "flat",
+   "conviction": 0.6,
+   "since": 0.0,
+   "horizon": null,
+   "verdict": "flat"
+  }
+ ]
+}
