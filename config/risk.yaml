@@ -28,9 +28,17 @@ regime_index: {}               # asset class -> index symbol (from the universe)
                                # 2026-09-07: on average it adds return (+53% vs +44%) and trims drawdown (-19% vs
                                # -21%), but on the live set it left return flat (+85.6% vs +86.0%), cut the second
                                # half (+15% vs +22%) and made quarters choppier (robustness 0.07 vs 0.63). Off.
-earnings_blackout_days: 0      # no new US/ASX stock entries within this many days before an earnings date
-                               # (0 = off). Dates come free from Yahoo; unknown dates never block. The
-                               # research feature study tests this rule against history.
+earnings_blackout_days: 7      # no new US/ASX stock entries within this many days before an earnings date
+                               # (0 = off). Dates come free from Yahoo; unknown dates never block.
+                               # Evidence (research/backtests/study-2026-09-12.md, 5 years, live sizing):
+                               # 7 days beat the live set on every measure: +91.2% vs +81.2% return, Sharpe
+                               # 0.95 vs 0.88, out of sample +27.6% vs +19.1%, drawdown -22.8% vs -23.6%,
+                               # worst quarter -8.5% vs -8.7%, same share of positive quarters. It did NOT
+                               # clear the 0.25 robustness margin (0.76 vs 0.74), so this is adopted as a
+                               # risk rule with an economic reason (earnings gaps are the one-day risk a
+                               # trailing stop cannot cap), not as an optimisation. 3 days was worse than
+                               # off on return, so the Saturday study keeps re-testing it; revert if it
+                               # falls behind the live set.
 min_trade_value: 10.0          # skip dust orders below this value
 
 max_daily_loss_pct: 0.03       # lose 3% in a day: no new entries until next day
