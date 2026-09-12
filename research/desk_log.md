@@ -421,3 +421,72 @@ crypto mark has disagreed with outside quotes.
 
 **Still open:** the `us_etfs` schema defect from 8 Sep. Today added two more memos against it
 (EEM, DBC).
+
+## 2026-09-12 — council run
+
+Packet: `research/packets/2026-09-12.md`. **Saturday** — US and ASX did not trade, so every
+equity mark is Friday's close and only crypto moved. Equity 9,848.99, 12 positions unchanged,
+cash 25.42. No exits, no entries.
+
+**The record, in one line:** nine closed trades, nine losses, −$97.25 realised, expectancy −2.08%
+per trade, and the desk's own long memos are 2 good out of 4 judged — a coin flip, so conviction
+on both longs today is set below where the evidence alone would put it.
+
+Reading further into `research/outcomes.json`: exits are the weak link, not entries. Buy
+decisions score 4 good out of 5 judged (0.80); **sell decisions score 0 out of 4 (0.00)**. Trades
+entered with a flat memo lost −$23.33 across 5; trades with no memo at all lost −$73.91 across 4,
+so having an opinion has been worth something even when the opinion was "no". Average hold is
+2.4 days, which for a 55-day-breakout system is a mismatch worth the owner's attention.
+
+**Picks: 2.** Only **MSFT** was strictly due (memo 9 Sep, three days). I added **XLE** because the
+record instruction says be stingier when longs have been wrong, and these two are the only longs
+on the desk — re-examining them is where that instruction bites. Everything else has a memo one
+or two days old and, on a day the equity market was shut, nothing material changed.
+
+| symbol | direction | conviction | note |
+|---|---|---|---|
+| MSFT | long | 0.50 (was 0.55) | Squeeze 0.69, 7.8% below the 52w high, score 0.55 → 0.62 on the week |
+| XLE | long | 0.45 (was 0.50) | Brent +9% on the week to ~$104, but Gulf–Iran Hormuz talks land Monday |
+
+**Deferred** (fresh memo, nothing material, market shut): AMD, CSL.AX, XLK, SOLUSDT, BNBUSDT
+(all 10 Sep), BTCUSDT, DBC, NVDA, EEM, ETHUSDT (all 11 Sep).
+
+No `avoid` memo on any held position. `validate-memos`: 20 valid.
+
+**The lesson that changed a call today:** the outcomes summary. Both longs kept their direction —
+MSFT's own evidence improved all week and XLE's named invalidations have not fired — but both had
+conviction cut a notch purely on the 2-for-4 long record. That is the record changing the number
+rather than the verdict, which is the honest use of it.
+
+**A correction to my own framing.** On 10 September I wrote that if the DBC/XLE divergence
+persisted "another week" with XLE lagging a rising Brent, the vehicle choice was wrong. Brent rose
+9% this week while XLE fell 0.9%, and my first instinct today was to call that condition met. It
+is not: I said a week, and it has been two days. The date that test falls due is **17 September**
+and it is written into today's XLE invalidation. Acting early on a condition I set myself would be
+exactly the goalpost-moving I refused on ETHUSDT yesterday, in the other direction.
+
+Worth noting honestly on the same point: the packet's `rs` column is empty, but relative strength
+is derivable from the table, and it does not support the "XLE is lagging" story on a quarter view —
+XLE's 63d momentum of +14.9% leads SPY's +3.9% by about 11 points, and DBC's 63d momentum is also
++14.9%, identical. The divergence is real over three sessions and absent over three months.
+
+**Macro (once for the day).** The FOMC on 15–16 September is close to decided: prediction markets
+price a 25bp hike at 79.5%, one tracker reached ~90% after CPI, up from 70% on Thursday.
+EY-Parthenon moved from hold to a 25bp hike taking the range to 3.75–4.00%; Capital Economics
+projects a second hike in December and a third in March 2027. Brent settled near $104, up 9% on
+the week, then paused as Iran agreed to meet Gulf states in Oman; GCC diplomats meet their Iranian
+counterpart **Monday** on a temporary Hormuz shipping arrangement. Against that, the IEA sharply
+cut its demand outlook to a 2.5 mb/d contraction in 2026 and the EIA raised 2027 US production to
+14.3 mb/d. macro_conviction long: 0.25.
+
+**Things that failed or need checking.**
+- The routine says the packet has "a section listing the event and news gates in force". Today's
+  packet has no such section — its headings are Account, Open positions, Candidates, Full signal
+  table, Headlines, Memo schema. Either the gates did not render or the routine is ahead of the
+  generator.
+- The `rs` column exists in the signal table header and is `-` for all 49 symbols. The pattern
+  analyst prompt names rs as an input it should use, so it is currently working blind on relative
+  strength unless it derives the number itself, which I did by hand today.
+- Minor: our MSFT mark is 495.63 against an external report of $493.87 for Friday's close.
+- Still open since 8 Sep: `us_etfs` missing from the memo schema enum. Today's XLE memo is the
+  seventh written against it.

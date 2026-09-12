@@ -1,0 +1,41 @@
+{
+  "symbol": "MSFT",
+  "asset_class": "us_stocks",
+  "date": "2026-09-12",
+  "direction": "long",
+  "conviction": 0.5,
+  "thesis": "Still the best long on the desk and still only barely worth calling one. Microsoft's own evidence has improved every day this week - the systematic score has climbed 0.55 to 0.62, Azure is guided to ~45% constant currency, and the packet shows a volatility squeeze at 0.69 with price 7.8% below its 52-week high, which is a coiled pullback rather than a chase. Conviction comes down from 0.55 to 0.50 anyway, because this desk's long memos are 2-for-4 and nine of nine closed trades have lost money.",
+  "bull_case": "Pattern analyst: setup is a **pullback to a rising trend** - close > SMA50 > SMA200, 7.8% below the 252-day high, RSI 57, 63d momentum +27.2%; it fails every leg of the extended test (needs RSI above 70, momentum above 25% AND within 2% of the high - it has only the momentum). Volatility is the interesting part: squeeze at 0.69, below the 0.75 line, so a move is being wound up, and ATR of 2.0% means the stop is tight and the size can be real. Relative strength cannot be read - the packet's rs column is empty for every symbol today - but momentum of +27.2% against SPY's +3.9% is derivable from the same table and says MSFT leads its benchmark by roughly 23 points. Verdict: pattern supports entry now.\n\nFundamentals keep confirming. Azure crossed $100B annual revenue growing 43% and is guided to ~45% cc; Microsoft 365 Copilot passed 30 million paid seats; and the most telling datapoint - Microsoft plans to more than triple data-centre capacity to fix a compute shortage that has forced it to turn away AI and cloud business. Demand exceeding supply is a better signal than any guidance number. Bank of America raised its target from $500 to $600, consensus is Strong Buy with an average target of $572.92, about 16% above Friday's close.",
+  "bear_case": "The capital intensity is the whole risk and it is getting larger, not smaller: tripling data-centre capacity on top of AI capex already running at roughly $175-190B for 2026, a figure Microsoft reached partly by lengthening the assumed useful life of its data-centre assets. The OpenAI relationship is capped - non-exclusive through 2032 with revenue share to Microsoft limited to about $38B through 2030. There is no company catalyst until FY27 Q1 results in late October. The FOMC on 15-16 September is now close to decided: prediction markets price a 25bp hike at 79.5%, and one tracker had it near 90% after Thursday's CPI, up from 70%. EY-Parthenon switched from hold to a 25bp hike taking the target range to 3.75-4.00%; Capital Economics sees a second hike in December and a third in March 2027. A hike lands on a stock whose entire appeal is long-duration cash flows, and the position is already -0.9%. Desk record check (research/outcomes.json): 9 closed trades, 0 wins, -$97.25 realised, expectancy -2.08% per trade; long memos are 2 good out of 4 judged, a coin flip. Conviction here is set stingier than the evidence alone would suggest, because the evidence alone has not yet earned better.",
+  "catalysts": [
+    "15-16 Sep 2026 FOMC decision and dot plot",
+    "FY27 Q1 results in late Oct 2026 against the ~45% cc Azure guide",
+    "Data-centre capacity expansion easing the compute shortage",
+    "Copilot seat growth beyond 30 million"
+  ],
+  "risks": [
+    "AI capex of roughly $175-190B for 2026, now with a capacity tripling on top",
+    "Useful-life extension flattering the capex figure",
+    "OpenAI revenue share capped at ~$38B through 2030",
+    "A 79.5-90% priced hike landing on a long-duration asset",
+    "Desk record: long memos 2-for-4, nine of nine closed trades lost"
+  ],
+  "invalidation": "The pattern analyst's level is **474.50**, the trailing stop carried in the packet, and it binds before my thesis level of 470 from the 6 September memo. A daily close below 474.50 ends this. Azure guided or reported below 40% constant currency kills it outright regardless of price.",
+  "horizon_days": 45,
+  "sources": [
+    "https://www.ad-hoc-news.de/boerse/news/corporate-news/microsoft-stock-gains-as-analysts-raise-targets/70087325",
+    "https://www.ad-hoc-news.de/boerse/news/corporate-news/microsoft-stock-gains-as-ai-driven-growth-and-heavy-capex-reshape-outlook/70092981",
+    "https://247wallst.com/investing/2026/09/11/expect-microsoft-to-be-anything-but-slow-for-the-rest-of-september/",
+    "https://defirate.com/prediction-markets/fed-decision-odds/",
+    "https://www.cbsnews.com/news/fed-rate-hike-september-likelihood-cpi/",
+    "research/packets/2026-09-12.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-09/MSFT.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.65,
+    "bear": 0.5,
+    "macro": 0.25
+  }
+}
