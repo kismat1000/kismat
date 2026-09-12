@@ -12,6 +12,14 @@
 # sma20/100 (robustness 0.50 vs 0.32) and 63-day momentum beat 126 and 252
 # (0.49 vs 0.34 and 0.41; return +58% vs +51% and +37%). Kept. The weekly
 # research workflow re-tests this and prints a verdict at the top of its report.
+#
+# Pattern features (research/backtests/study-2026-09-12.md, 5 years, live
+# sizing): relative strength against the class benchmark, distance from the
+# 52-week high, and a volatility squeeze were each tried alone and together.
+# None beat the live set: rs 0.15 same robustness with less return (+62% vs
+# +81%), 52-week high 0.15 worse (robustness 0.37 vs 0.74), squeeze 0.10
+# neutral (0.46). They stay at weight 0 and remain in the packet for the
+# desk's pattern analyst to read; the Saturday study keeps re-testing them.
 
 sma_fast: 50
 sma_slow: 200
@@ -29,3 +37,12 @@ w_mom: 0.30
 w_breakout: 0.20
 w_hot: 0.20
 w_pullback: 0.10
+
+# Pattern features, off until the feature study says otherwise (see above).
+w_rs: 0.0              # relative strength: momentum minus the class benchmark's
+w_high: 0.0            # nearness to the 252-day high
+w_squeeze: 0.0         # volatility squeeze inside an uptrend
+benchmarks:            # asset class -> benchmark symbol for relative strength (must be in the universe)
+  us_stocks: SPY
+  us_etfs: SPY
+  crypto: BTCUSDT
