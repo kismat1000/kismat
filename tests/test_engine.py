@@ -24,7 +24,8 @@ def provider(symbol, cls):
 def run(settings, tmp_root, **kw):
     broker = PaperBroker(settings.risk, path=tmp_root / "state" / "paper" / "portfolio.json")
     journal = Journal(tmp_root / "state" / "journal")
-    report = engine.run_cycle(settings, bars_provider=provider, headlines_provider=lambda q: [],
+    kw.setdefault("headlines_provider", lambda q: [])
+    report = engine.run_cycle(settings, bars_provider=provider,
                               fx_provider=lambda: 0.65, broker=broker, journal=journal,
                               memos_root=tmp_root / "research", docs_dir=tmp_root / "docs",
                               notify=False, **kw)
@@ -170,3 +171,51 @@ def test_index_regime_filter_blocks_a_class_when_its_index_is_below_trend(settin
     report, broker, _ = run(settings, tmp_root)
     bought = {f["symbol"] for f in report.fills if f["side"] == "buy"}
     assert "UPUSDT" not in bought and "AUUP.AX" in bought
+
+
+def test_engine_uses_the_class_benchmark_for_relative_strength(settings, tmp_root):
+    settings.strategy.w_rs = 0.2
+    settings.strategy.benchmarks = {"crypto": "DOWNUSDT"}
+    report, broker, _ = run(settings, tmp_root)
+    up = report.signals["UPUSDT"]
+    assert up["features"]["rs"] > 0 and any("relative strength" in r for r in up["reasons"])
+    assert "UPUSDT" in {f["symbol"] for f in report.fills if f["side"] == "buy"}
+
+
+def test_earnings_blackout_blocks_stock_entries_only(settings, tmp_root):
+    from datetime import date, timedelta
+    settings.risk.earnings_blackout_days = 3
+    tomorrow = date.today() + timedelta(days=1)
+    report, broker, journal = run(settings, tmp_root, events_provider=lambda s, cls: [tomorrow])
+    bought = {f["symbol"] for f in report.fills if f["side"] == "buy"}
+    assert "UPUSDT" in bought and "AUUP.AX" not in bought      # crypto has no earnings; the ASX stock is gated
+    assert any("earnings on" in d.get("reason", "") for d in journal.read("decisions"))
+
+
+def test_hard_negative_headline_vetoes_the_entry_and_shows_in_the_packet(settings, tmp_root):
+    def headlines(queries):
+        return [{"source": "gnews:UPUSDT", "title": "UP token hacked, exchange halts withdrawals",
+                 "link": "", "published": "", "query": queries["UPUSDT"]}]
+    report, broker, journal = run(settings, tmp_root, headlines_provider=headlines)
+    bought = {f["symbol"] for f in report.fills if f["side"] == "buy"}
+    assert "UPUSDT" not in bought and "AUUP.AX" in bought
+    assert report.news["UPUSDT"]["flags"]
+    assert any("news veto" in d.get("reason", "") for d in journal.read("decisions"))
+    packet = report.packet_path.read_text()
+    assert "Event and news gates" in packet and "hacked" in packet and "| 52w |" in packet
+
+
+def test_outcomes_colour_the_dashboard_and_write_lessons(settings, tmp_root):
+    report, broker, journal = run(settings, tmp_root)
+    buy = next(f for f in journal.read("fills") if f["symbol"] == "UPUSDT" and f["side"] == "buy")
+    sold_at = buy["price"] * 1.10
+    journal.fill({**buy, "side": "sell", "price": sold_at, "fee": 0.01, "reason": "trailing stop hit (test)",
+                  "timestamp": "2026-12-01T00:00:00+00:00", "ts": "2026-12-01T00:00:00+00:00"})
+    report2, broker2, journal2 = run(settings, tmp_root)
+    assert report2.outcomes["summary"]["closed_trades"] == 1 and report2.outcomes["summary"]["wins"] == 1
+    lessons = (tmp_root / "research" / "lessons.md").read_text()
+    assert "UPUSDT" in lessons and "WIN" in lessons and "Winner ran" in lessons
+    page = (tmp_root / "docs" / "index.html").read_text()
+    assert "What is working" in page and "class='win'" in page and "Realized P&amp;L" in page
+    assert any(d.get("verdict") for d in report2.outcomes["decisions"])
+    assert (tmp_root / "research" / "outcomes.json").exists()

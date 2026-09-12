@@ -80,9 +80,11 @@ def cmd_backtest(args) -> int:
 
 
 def cmd_research(args) -> int:
+    from dataclasses import replace
     from kismat.data.prices import get_daily_bars, synthetic_bars
     from kismat.strategy.backtest import BacktestConfig
-    from kismat.strategy.research import default_grid, find_current, report, run_grid, walk_forward, with_current
+    from kismat.strategy.research import (default_grid, feature_grid, find_current, report, run_grid, walk_forward,
+                                          with_current)
     settings = C.Settings.load()
     universe = settings.universe
     bars = {}
@@ -105,11 +107,27 @@ def cmd_research(args) -> int:
                           regime_breadth_min=settings.risk.regime_breadth_min,
                           regime_index=settings.risk.regime_index or None,
                           risk_per_trade=settings.risk.per_trade_risk_pct, class_caps=settings.risk.max_asset_class_pct,
+                          earnings_blackout_days=settings.risk.earnings_blackout_days,
                           classes=C.symbol_classes(universe), params=settings.strategy)
-    grid = with_current(default_grid(quick=args.quick), settings.strategy, base)
+    if args.study:
+        grid = feature_grid(settings.strategy, base)
+    else:
+        grid = with_current(default_grid(quick=args.quick), settings.strategy, base)
+    if any(v.overrides.get("earnings_blackout_days") for v in grid) and not args.synthetic:
+        from kismat.data.events import EARNINGS_CLASSES, earnings_dates
+        earnings = {}
+        for cls in universe:
+            if cls in EARNINGS_CLASSES:
+                for sym in universe.get(cls, []):
+                    dates = earnings_dates(sym, cls, settings.cache_ttl_hours)
+                    if dates:
+                        earnings[sym] = dates
+        print(f"earnings dates for {len(earnings)} symbols", file=sys.stderr)
+        base = replace(base, earnings=earnings)
     rows = run_grid(bars, base, grid, window=args.window)
     wf = walk_forward(rows, baseline=find_current(rows, settings.strategy, base))
-    out = Path(args.report) if args.report else Path("research/backtests") / f"wf-{__import__('datetime').date.today().isoformat()}.md"
+    stem = "study" if args.study else "wf"
+    out = Path(args.report) if args.report else Path("research/backtests") / f"{stem}-{__import__('datetime').date.today().isoformat()}.md"
     best = report(rows, wf, out, args.days, len(bars), settings.strategy, base, window=args.window)
     print(f"variants {len(rows)} | best: {best['name']} | robustness {best['robustness']:.2f} | "
           f"walk-forward chain {best['walk_forward_chain_return']:+.1%} | recommendation: {best['recommendation']}")
@@ -279,6 +297,8 @@ def main(argv=None) -> int:
     s.add_argument("--synthetic", action="store_true")
     s.add_argument("--quick", action="store_true", help="small grid")
     s.add_argument("--window", type=int, default=63, help="bars per evaluation window")
+    s.add_argument("--study", action="store_true",
+                   help="feature study: the live set plus relative strength, 52-week high, squeeze, earnings blackout")
     s.add_argument("--report", help="markdown output path")
     s.set_defaults(fn=cmd_research)
     sub.add_parser("status", help="print paper account state").set_defaults(fn=cmd_status)

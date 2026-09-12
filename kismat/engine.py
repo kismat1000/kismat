@@ -21,12 +21,14 @@ import pandas as pd
 from kismat import config as C
 from kismat.alerts import telegram
 from kismat.dashboard import build as dashboard
-from kismat.data import news, prices as price_data
+from kismat.data import events as event_data, news, prices as price_data
 from kismat.execution.mirror import MirrorBroker
 from kismat.execution.paper import PaperBroker
 from kismat.execution.venues import build_venues
 from kismat.journal.store import Journal
 from kismat.research import memos as memo_store
+from kismat.journal import outcomes as outcome_data
+from kismat.research import sentiment
 from kismat.research.packet import build_packet
 from kismat.risk.engine import OrderRequest, Portfolio, RiskEngine
 from kismat.strategy.signals import Signal, compute_features, exit_rule, trend_signal
@@ -49,6 +51,8 @@ class CycleReport:
     errors: list[str] = field(default_factory=list)
     signals: dict[str, dict] = field(default_factory=dict)
     packet_path: Path | None = None
+    news: dict = field(default_factory=dict)      # symbol -> headline tone (score, counts, hard flags)
+    outcomes: dict = field(default_factory=dict)  # green/red verdicts on trades, decisions, memos
     dashboard_path: Path | None = None
 
     def summary(self) -> str:
@@ -104,6 +108,7 @@ def _first_time(broker: PaperBroker, key: str, stamp: str) -> bool:
 
 def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider | None = None,
               headlines_provider: Callable[[dict[str, str]], list[dict]] | None = None,
+              events_provider: Callable[[str, str], list] | None = None,
               fx_provider: Callable[[], float] | None = None, broker: PaperBroker | None = None,
               journal: Journal | None = None, memos_root: Path | None = None,
               docs_dir: Path | None = None, notify: bool = True) -> CycleReport:
@@ -138,14 +143,15 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
                 for col in ("open", "high", "low", "close"):
                     df[col] = df[col] * fx
             bars[symbol] = df
-            sig = trend_signal(symbol, df, limits.stop_atr_multiple, settings.strategy)
-            signals[symbol] = sig
             latest_price[symbol] = float(df["close"].iloc[-1])
         except Exception as exc:
             msg = f"data error {symbol}: {exc}"
             report.errors.append(msg)
             journal.event("error", msg)
             log.warning(msg)
+    for symbol, df in bars.items():
+        bench = bars.get(settings.strategy.benchmarks.get(classes[symbol], ""))
+        signals[symbol] = trend_signal(symbol, df, limits.stop_atr_multiple, settings.strategy, benchmark=bench)
     report.signals = {s: sig.to_dict() for s, sig in signals.items()}
     native_prices: dict[str, float] = {}
     if fx:
@@ -169,6 +175,42 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
         isig = signals.get(idx)
         if isig is not None and isig.ok and isig.features.get("sma_slow"):
             index_ok[cls] = isig.close > isig.features["sma_slow"]
+
+    # 1d. Earnings blackout: which stocks report within the window ------------------
+    blackout: dict[str, str] = {}
+    if limits.earnings_blackout_days > 0:
+        today = datetime.now(timezone.utc).date()
+        fetch_events = events_provider or (lambda s, cls: event_data.earnings_dates(s, cls, settings.cache_ttl_hours))
+        for symbol, cls in classes.items():
+            if cls not in event_data.EARNINGS_CLASSES or symbol not in signals:
+                continue
+            try:
+                hit = event_data.in_blackout(fetch_events(symbol, cls), today, limits.earnings_blackout_days)
+            except Exception as exc:
+                log.warning("earnings lookup %s failed: %s", symbol, exc)
+                hit = None
+            if hit:
+                blackout[symbol] = hit.isoformat()
+
+    # 1e. Headlines for the strongest candidates and every holding, scored for tone ------
+    top = sorted((s for s in signals.values() if s.ok), key=lambda s: -s.score)
+    packet_symbols = list(dict.fromkeys([s.symbol for s in top[:10]] + [s for s in broker.positions() if s in signals]))
+    news_queries = {s: news.default_query_for(s, classes[s]) for s in packet_symbols[:12]}
+    headlines: list[dict] = []
+    tones: dict[str, sentiment.Tone] = {}
+    try:
+        headlines = (headlines_provider(news_queries) if headlines_provider
+                     else [h.to_dict() for h in news.fetch_headlines(news_queries)])
+        tones = sentiment.tone_by_symbol(headlines, news_queries)
+        news_dir = C.RESEARCH_DIR / "news"
+        news_dir.mkdir(parents=True, exist_ok=True)
+        (news_dir / f"{datetime.now(timezone.utc).date().isoformat()}.json").write_text(
+            json.dumps({"count": len(headlines), "tone": {s: t.to_dict() for s, t in tones.items()},
+                        "items": headlines}, indent=1))
+    except Exception as exc:
+        report.errors.append(f"news error: {exc}")
+        journal.event("error", f"news error: {exc}")
+    report.news = {s: t.to_dict() for s, t in tones.items()}
 
     # 2. Research memos ----------------------------------------------------------
     memos = memo_store.load_memos(memos_root)
@@ -269,6 +311,19 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
             continue  # asset class is in a downtrend regime
         if index_ok and not index_ok.get(classes[symbol], True):
             continue  # the class's index is below its slow SMA
+        tone = tones.get(symbol)
+        if tone is not None and tone.vetoed:
+            if combined >= limits.entry_score_threshold and _first_time(broker, f"news:{symbol}", tone.flags[0][:48]):
+                journal.decision({"symbol": symbol, "systematic": round(sig.score, 3), "combined": round(combined, 3),
+                                  "price": sig.close, "held": False, "action": "skip",
+                                  "reason": f"news veto: {tone.flags[0][:100]}"})
+            continue
+        if symbol in blackout:
+            if combined >= limits.entry_score_threshold and _first_time(broker, f"earnings:{symbol}", blackout[symbol]):
+                journal.decision({"symbol": symbol, "systematic": round(sig.score, 3), "combined": round(combined, 3),
+                                  "price": sig.close, "held": False, "action": "skip",
+                                  "reason": f"earnings on {blackout[symbol]} within {limits.earnings_blackout_days} days"})
+            continue
         if combined >= limits.entry_score_threshold and not vetoed:
             candidates.append((combined, symbol, research))
     candidates.sort(reverse=True)
@@ -369,28 +424,20 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
         for v in broker.venue_log:
             journal.event("venue", f"{v['side']} {v['symbol']} at {v['venue']}: {v['status']} {v['note']}", **v)
 
-    top = sorted(signals.values(), key=lambda s: -s.score)
-    packet_symbols = [s.symbol for s in top[:10] if s.ok] + [s for s in broker.positions() if s in signals]
-    packet_symbols = list(dict.fromkeys(packet_symbols))
-    try:
-        queries = {s: news.default_query_for(s, classes[s]) for s in packet_symbols[:8]}
-        headlines = (headlines_provider(queries) if headlines_provider
-                     else [h.to_dict() for h in news.fetch_headlines(queries)])
-        news_dir = C.RESEARCH_DIR / "news"
-        news_dir.mkdir(parents=True, exist_ok=True)
-        (news_dir / f"{datetime.now(timezone.utc).date().isoformat()}.json").write_text(
-            json.dumps({"count": len(headlines), "items": headlines}, indent=1))
-    except Exception as exc:
-        headlines = []
-        report.errors.append(f"news error: {exc}")
-        journal.event("error", f"news error: {exc}")
+    packet_symbols = list(dict.fromkeys(packet_symbols + [s for s in broker.positions() if s in signals]))
     report.packet_path = build_packet(report.signals, broker.positions(), headlines,
                                       {s: m.data for s, m in memos.items()}, equity, broker.cash(),
-                                      packet_symbols, memos_root, fx=fx, native_prices=native_prices)
+                                      packet_symbols, memos_root, fx=fx, native_prices=native_prices,
+                                      tones=report.news, blackout=blackout)
     if notify and (report.fills or report.proposals or report.halted):
         telegram.send(report.summary(), settings.telegram_bot_token, settings.telegram_chat_id)
+    try:
+        report.outcomes = outcome_data.build(journal, bars, memos_root or C.RESEARCH_DIR)
+    except Exception as exc:
+        report.errors.append(f"outcomes error: {exc}")
+        journal.event("error", f"outcomes error: {exc}")
     report.dashboard_path = dashboard.build(journal, broker, memos, report.signals, settings, docs_dir,
-                                            research_dir=memos_root)
+                                            research_dir=memos_root, outcomes=report.outcomes)
     return report
 
 

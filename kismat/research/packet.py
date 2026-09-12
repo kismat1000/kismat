@@ -15,8 +15,11 @@ from kismat.config import RESEARCH_DIR, ROOT
 def build_packet(signals: dict[str, dict], positions: dict[str, dict], headlines: list[dict],
                  memos: dict[str, dict], equity: float, cash: float,
                  candidates: list[str], root: Path | None = None, fx: float | None = None,
-                 native_prices: dict[str, float] | None = None) -> Path:
+                 native_prices: dict[str, float] | None = None, tones: dict[str, dict] | None = None,
+                 blackout: dict[str, str] | None = None) -> Path:
     native_prices = native_prices or {}
+    tones = tones or {}
+    blackout = blackout or {}
     root = root or RESEARCH_DIR
     today = datetime.now(timezone.utc).date().isoformat()
     out_dir = root / "packets"
@@ -50,15 +53,33 @@ def build_packet(signals: dict[str, dict], positions: dict[str, dict], headlines
         lines.append(f"- {sym}: score {score:+.2f}; " + "; ".join(sig.get("reasons", [])) + memo_note)
     lines.append("")
     lines.append("## Full signal table")
-    lines.append("| symbol | score | close (USD) | native | rsi | 3m | atr% |")
-    lines.append("|---|---|---|---|---|---|---|")
+    lines.append("52w = distance below the 252-day high; rs = momentum minus the class benchmark's; "
+                 "squeeze = ATR% against its 100-day median (below 0.75 is a squeeze); "
+                 "news = headline tone -1..+1 from today's symbol headlines, ! = hard-negative headline.")
+    lines.append("| symbol | score | close (USD) | native | rsi | 3m | atr% | 52w | rs | squeeze | news |")
+    lines.append("|---|---|---|---|---|---|---|---|---|---|---|")
     for sym in sorted(signals, key=lambda s: -signals[s]["score"]):
         sig = signals[sym]
         f = sig.get("features", {})
         native = f"A${native_prices[sym]:.2f}" if sym in native_prices else "-"
+        nh, rs, ar = f.get("near_high"), f.get("rs"), f.get("atr_ratio")
+        col_52w = f"{1 - nh:.1%}" if isinstance(nh, (int, float)) and nh == nh else "-"
+        col_rs = f"{rs:+.1%}" if isinstance(rs, (int, float)) and rs == rs else "-"
+        col_sq = f"{ar:.2f}" if isinstance(ar, (int, float)) and ar == ar else "-"
+        t = tones.get(sym)
+        col_news = (f"{t['score']:+.2f}" + ("!" if t.get("flags") else "")) if t and t.get("headlines") else "-"
         lines.append(f"| {sym} | {sig['score']:+.2f} | {sig.get('close', float('nan')):.6g} | {native} | "
-                     f"{f.get('rsi', float('nan')):.0f} | {f.get('roc_mom', 0):+.1%} | {f.get('atr_pct', 0):.1%} |")
+                     f"{f.get('rsi', float('nan')):.0f} | {f.get('roc_mom', 0):+.1%} | {f.get('atr_pct', 0):.1%} | "
+                     f"{col_52w} | {col_rs} | {col_sq} | {col_news} |")
     lines.append("")
+    flagged = {s: t for s, t in tones.items() if t.get("flags")}
+    if flagged or blackout:
+        lines.append("## Event and news gates in force today")
+        for s, t in flagged.items():
+            lines.append(f"- {s}: no new entry, hard-negative headline: {t['flags'][0]}")
+        for s, d in blackout.items():
+            lines.append(f"- {s}: no new entry, earnings on {d}")
+        lines.append("")
     lines.append(f"## Headlines ({len(headlines)})")
     for h in headlines[:80]:
         lines.append(f"- [{h.get('source','')}] {h.get('title','')} ({h.get('published','')}) {h.get('link','')}")

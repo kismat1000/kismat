@@ -37,6 +37,7 @@ class RiskLimits:
     time_stop_days: int = 0
     regime_breadth_min: float = 0.0
     regime_index: dict = field(default_factory=dict)   # asset class -> index symbol that must be above its slow SMA
+    earnings_blackout_days: int = 0                    # no new stock entries this many days before earnings (0 = off)
     min_trade_value: float = 10.0
     max_daily_loss_pct: float = 0.03
     max_drawdown_pct: float = 0.10

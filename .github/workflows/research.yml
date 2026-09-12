@@ -33,6 +33,13 @@ jobs:
           DAYS="${{ inputs.days || '1825' }}"
           python -m kismat research --days "$DAYS" --report "research/backtests/wf-$(date -u +%Y-%m-%d).md"
           cat "research/backtests/wf-$(date -u +%Y-%m-%d).md"
+      - name: Feature study (patterns, earnings blackout) on real data
+        env:
+          KISMAT_CACHE_TTL_HOURS: "24"
+        run: |
+          DAYS="${{ inputs.days || '1825' }}"
+          python -m kismat research --study --days "$DAYS" --report "research/backtests/study-$(date -u +%Y-%m-%d).md"
+          sed -n 1,40p "research/backtests/study-$(date -u +%Y-%m-%d).md"
       - name: Commit report
         run: |
           git config user.name "kismat-bot"

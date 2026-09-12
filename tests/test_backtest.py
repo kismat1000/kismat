@@ -79,3 +79,15 @@ def test_risk_sizing_and_class_caps_match_the_live_rules():
                                              class_caps={"us_stocks": 0.25}))
     assert 0 < tight.metrics["trades"] and max(t["entry"] * t["qty"] for t in tight.trades) <= 0.25 * tight.equity.max() * 1.01
     assert tight.metrics["total_return"] != fixed.metrics["total_return"]
+
+
+def test_earnings_blackout_skips_entries_before_the_date():
+    uni = _universe()
+    classes = {s: "us_stocks" for s in uni}
+    free = run_backtest(uni, BacktestConfig(classes=classes))
+    # an earnings date every day: nothing may ever enter
+    every_day = {s: [d.date() for d in uni[s].index] for s in uni}
+    shut = run_backtest(uni, BacktestConfig(classes=classes, earnings=every_day, earnings_blackout_days=1))
+    assert free.metrics["trades"] > 0 and shut.metrics["trades"] == 0
+    off = run_backtest(uni, BacktestConfig(classes=classes, earnings=every_day, earnings_blackout_days=0))
+    assert off.metrics["trades"] == free.metrics["trades"]
