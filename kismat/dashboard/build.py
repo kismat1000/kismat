@@ -32,6 +32,10 @@ td{padding:6px 8px;border-bottom:1px solid var(--line);white-space:nowrap}td.num
 .badge.halt{border-color:var(--critical);color:var(--critical)}.badge.ok{border-color:var(--good);color:var(--good)}
 svg text{fill:var(--ink2);font-size:11px}.grid{stroke:var(--line);stroke-width:1}.series{stroke:var(--series);stroke-width:2;fill:none}
 .muted{color:var(--ink2)}
+.pos{color:var(--good)}.neg{color:var(--critical)}.flat{color:var(--ink2)}
+tr.win td{background:rgba(12,163,12,.08)}tr.loss td{background:rgba(208,59,59,.08)}
+td.lesson{white-space:normal;min-width:260px}
+.legend{color:var(--ink2);font-size:12px;margin:-4px 0 8px}
 .prose{line-height:1.55;max-width:960px}.prose h2,.prose h3,.prose h4{margin:12px 0 6px;color:var(--ink);font-size:14px}
 .prose p{margin:6px 0}.prose ul{margin:4px 0 8px 18px;padding:0}.prose li{margin:2px 0}.prose code{font-size:12px}
 .prose table{margin:8px 0}.prose td{white-space:normal}
@@ -168,15 +172,41 @@ def equity_svg(points: list[tuple[str, float]], width: int = 900, height: int = 
             + "".join(grid) + f'<path class="series" d="{path}"/>' + labels + "</svg>")
 
 
+def _pct(x, digits=2) -> str:
+    """A signed percentage coloured green or red, or a dash."""
+    if not isinstance(x, (int, float)) or x != x:
+        return "<span class='flat'>-</span>"
+    cls = "pos" if x > 0.003 else "neg" if x < -0.003 else "flat"
+    return f"<span class='{cls}'>{x:+.{digits}%}</span>"
+
+
+def _mark(verdict: str) -> str:
+    return {"good": "<span class='pos'>&#10003; good</span>", "bad": "<span class='neg'>&#10007; bad</span>",
+            "flat": "<span class='flat'>flat</span>"}.get(verdict or "", "<span class='flat'>-</span>")
+
+
+def _row_cls(verdict_or_pnl) -> str:
+    if verdict_or_pnl in ("good", "bad"):
+        return "win" if verdict_or_pnl == "good" else "loss"
+    if isinstance(verdict_or_pnl, (int, float)):
+        return "win" if verdict_or_pnl > 0 else "loss" if verdict_or_pnl < 0 else ""
+    return ""
+
+
 def build(journal, broker, memos: dict, signals: dict, settings, out_dir: Path | None = None,
-          research_dir: Path | None = None) -> Path:
+          research_dir: Path | None = None, outcomes: dict | None = None) -> Path:
     out_dir = out_dir or DOCS_DIR
     from kismat import config as C
     research_dir = research_dir or C.RESEARCH_DIR
     out_dir.mkdir(parents=True, exist_ok=True)
+    outcomes = outcomes or {}
+    summ = outcomes.get("summary", {})
+    trades = outcomes.get("trades", [])
+    dec_out = outcomes.get("decisions") or [d for d in journal.read("decisions", limit=40)
+                                             if d.get("action") not in (None, "hold")]
+    memo_out = {(m["symbol"], m["date"]): m for m in outcomes.get("memos", [])}
     eq = journal.read("equity")
-    fills = journal.read("fills", limit=25)
-    decisions = journal.read("decisions", limit=40)
+    fills = journal.read("fills", limit=12)
     events = journal.read("events", limit=15)
     start = settings.risk.starting_cash
     last_eq = eq[-1]["equity"] if eq else start
@@ -184,6 +214,10 @@ def build(journal, broker, memos: dict, signals: dict, settings, out_dir: Path |
     dd = eq[-1].get("drawdown", 0.0) if eq else 0.0
     halted = broker.meta.get("halted", False)
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    positions = broker.positions()
+    unrealized = sum((p.get("last_price", p["avg_price"]) - p["avg_price"]) * p["qty"] for p in positions.values())
+    realized = summ.get("realized_pnl")
+    win_rate = summ.get("win_rate")
 
     def tile(k, v, cls=""):
         return f'<div class="tile"><div class="k">{k}</div><div class="v {cls}">{v}</div></div>'
@@ -192,35 +226,91 @@ def build(journal, broker, memos: dict, signals: dict, settings, out_dir: Path |
         tile("Equity", _fmt(last_eq)),
         tile("Return since start", f"{ret:+.2%}", "pos" if ret >= 0 else "neg"),
         tile("Drawdown from peak", f"{dd:.2%}", "neg" if dd < -0.03 else ""),
+        tile("Realized P&amp;L (closed trades)", f"{realized:+,.2f}" if isinstance(realized, (int, float)) else "-",
+             "" if not isinstance(realized, (int, float)) else "pos" if realized > 0 else "neg" if realized < 0 else ""),
+        tile("Unrealized P&amp;L (open)", f"{unrealized:+,.2f}", "pos" if unrealized > 0 else "neg" if unrealized < 0 else ""),
+        tile("Closed trades", (f"{summ.get('closed_trades', 0)} · {win_rate:.0%} wins" if isinstance(win_rate, (int, float))
+                               else str(summ.get("closed_trades", 0)))),
         tile("Cash", _fmt(broker.cash())),
-        tile("Open positions", str(len(broker.positions()))),
+        tile("Open positions", str(len(positions))),
         tile("Mode", html.escape(settings.mode.upper()) + (" · approval" if settings.approval_mode else "")),
     ])
     status = ('<span class="badge halt">HALTED: ' + html.escape(broker.meta.get("halt_reason", "")) + "</span>"
               if halted else '<span class="badge ok">risk engine active</span>')
 
     pos_rows = "".join(
-        f"<tr><td>{html.escape(s)}</td><td>{html.escape(p['asset_class'])}</td><td class='num'>{p['qty']:.6g}</td>"
+        f"<tr class='{_row_cls((p.get('last_price', p['avg_price']) - p['avg_price']) * p['qty'])}'><td>{html.escape(s)}</td>"
+        f"<td>{html.escape(p['asset_class'])}</td><td class='num'>{p['qty']:.6g}</td>"
         f"<td class='num'>{p['avg_price']:.6g}</td><td class='num'>{p.get('last_price', p['avg_price']):.6g}</td>"
-        f"<td class='num'>{(p.get('last_price', p['avg_price']) / p['avg_price'] - 1):+.2%}</td>"
+        f"<td class='num'>{_pct(p.get('last_price', p['avg_price']) / p['avg_price'] - 1)}</td>"
+        f"<td class='num'>{((p.get('last_price', p['avg_price']) - p['avg_price']) * p['qty']):+,.2f}</td>"
         f"<td class='num'>{(p.get('stop_price') or 0):.6g}</td></tr>"
-        for s, p in sorted(broker.positions().items())) or "<tr><td colspan='7' class='muted'>No open positions</td></tr>"
+        for s, p in sorted(positions.items())) or "<tr><td colspan='8' class='muted'>No open positions</td></tr>"
+
+    trade_rows = "".join(
+        f"<tr class='{_row_cls(t['pnl'])}'><td>{html.escape(t['exit_ts'][:10])}</td><td>{html.escape(t['symbol'])}</td>"
+        f"<td class='num'>{t.get('hold_days', 0)}d</td><td class='num'>{_pct(t['pnl_pct'])}</td>"
+        f"<td class='num'>{t['pnl']:+,.2f}</td><td>{html.escape(t.get('memo_direction') or '-')}</td>"
+        f"<td>{html.escape(str(t.get('exit_reason', '')))[:60]}</td><td class='lesson'>{html.escape(t.get('lesson', ''))}</td></tr>"
+        for t in reversed(trades[-20:])) or "<tr><td colspan='8' class='muted'>No closed trades yet</td></tr>"
 
     fill_rows = "".join(
         f"<tr><td>{html.escape(f['ts'][:16])}</td><td>{html.escape(f['symbol'])}</td><td>{f['side']}</td>"
-        f"<td class='num'>{f['qty']:.6g}</td><td class='num'>{f['price']:.6g}</td><td>{html.escape(str(f.get('reason', '')))}</td></tr>"
+        f"<td class='num'>{f['qty']:.6g}</td><td class='num'>{f['price']:.6g}</td><td>{html.escape(str(f.get('reason', '')))[:110]}</td></tr>"
         for f in reversed(fills)) or "<tr><td colspan='6' class='muted'>No fills yet</td></tr>"
 
     dec_rows = "".join(
-        f"<tr><td>{html.escape(d['ts'][:16])}</td><td>{html.escape(d['symbol'])}</td><td class='num'>{_score(d, 'systematic')}</td>"
-        f"<td class='num'>{_score(d, 'research')}</td><td class='num'>{_score(d, 'combined')}</td>"
-        f"<td>{html.escape(d.get('action', ''))}</td><td>{html.escape(str(d.get('reason', '')))[:120]}</td></tr>"
-        for d in [x for x in reversed(decisions) if x.get("action") not in (None, "hold")][:20]) or "<tr><td colspan='7' class='muted'>No buy, sell, skip, or proposal decisions yet</td></tr>"
+        f"<tr class='{_row_cls(d.get('verdict'))}'><td>{html.escape(d['ts'][:16])}</td><td>{html.escape(d['symbol'])}</td>"
+        f"<td class='num'>{_score(d, 'systematic')}</td><td class='num'>{_score(d, 'research')}</td>"
+        f"<td class='num'>{_score(d, 'combined')}</td><td>{html.escape(d.get('action', ''))}</td>"
+        f"<td>{html.escape(str(d.get('reason', '')))[:110]}</td><td class='num'>{_pct(d.get('since'))}</td>"
+        f"<td>{_mark(d.get('verdict'))}</td></tr>"
+        for d in list(reversed(dec_out))[:25]) or "<tr><td colspan='9' class='muted'>No buy, sell, skip, or proposal decisions yet</td></tr>"
+
+    def memo_cells(s, m):
+        o = memo_out.get((s, m.data["date"]), {})
+        return f"<td class='num'>{_pct(o.get('since'))}</td><td>{_mark(o.get('verdict'))}</td>"
 
     memo_rows = "".join(
-        f"<tr><td>{html.escape(s)}</td><td>{html.escape(m.data['direction'])}</td><td class='num'>{m.conviction:.2f}</td>"
-        f"<td>{html.escape(m.data['date'])}</td><td>{html.escape(m.data['thesis'])[:160]}</td></tr>"
-        for s, m in sorted(memos.items())) or "<tr><td colspan='5' class='muted'>No research memos in the last few days</td></tr>"
+        f"<tr class='{_row_cls(memo_out.get((s, m.data['date']), {}).get('verdict'))}'><td>{html.escape(s)}</td>"
+        f"<td>{html.escape(m.data['direction'])}</td><td class='num'>{m.conviction:.2f}</td>"
+        f"<td>{html.escape(m.data['date'])}</td>{memo_cells(s, m)}<td class='lesson'>{html.escape(m.data['thesis'])[:160]}</td></tr>"
+        for s, m in sorted(memos.items())) or "<tr><td colspan='7' class='muted'>No research memos in the last few days</td></tr>"
+
+    def rate_line(label, r):
+        hr = r.get("hit_rate")
+        return (f"<li>{html.escape(label)}: {r.get('judged', 0)} judged, "
+                + (f"<b class='{'pos' if hr >= 0.5 else 'neg'}'>{hr:.0%} right</b>" if isinstance(hr, (int, float)) else "no verdicts yet")
+                + "</li>")
+
+    working = []
+    for key, g in sorted((summ.get("by_exit_reason") or {}).items(), key=lambda kv: kv[1]["pnl"], reverse=True):
+        working.append(f"<li>exit <b>{html.escape(key)}</b>: {g['n']} trades, {g['wins']} won, "
+                       f"<b class='{'pos' if g['pnl'] > 0 else 'neg'}'>{g['pnl']:+,.2f}</b></li>")
+    for key, g in sorted((summ.get("by_memo_at_entry") or {}).items(), key=lambda kv: kv[1]["pnl"], reverse=True):
+        working.append(f"<li>research <b>{html.escape(key)}</b> at entry: {g['n']} trades, {g['wins']} won, "
+                       f"<b class='{'pos' if g['pnl'] > 0 else 'neg'}'>{g['pnl']:+,.2f}</b></li>")
+    memo_stats = summ.get("memos") or {}
+    for d, r in (memo_stats.get("by_direction") or {}).items():
+        working.append(rate_line(f"memos saying {d}", r))
+    for d, r in (memo_stats.get("by_conviction") or {}).items():
+        working.append(rate_line(f"memo conviction {d}", r))
+    for a, r in (summ.get("decisions") or {}).items():
+        if r.get("n"):
+            working.append(rate_line(f"decisions to {a}", r))
+    if (summ.get("gates") or {}).get("n"):
+        working.append(rate_line("news and event gates (a gate is right when the price then fell)", summ["gates"]))
+    exp = summ.get("expectancy_pct")
+    head = (f"<p>Closed trades {summ.get('closed_trades', 0)}: win rate "
+            + (f"{win_rate:.0%}" if isinstance(win_rate, (int, float)) else "-")
+            + f", average win {_pct(summ.get('avg_win_pct'))}, average loss {_pct(summ.get('avg_loss_pct'))}, "
+            f"expectancy per trade {_pct(exp)}, average hold "
+            + (f"{summ['avg_hold_days']:.0f} days" if isinstance(summ.get("avg_hold_days"), (int, float)) else "-") + ".</p>")
+    lesson_items = "".join(f"<li><span class='{'pos' if t['pnl'] > 0 else 'neg'}'>{html.escape(t['symbol'])} {t['pnl_pct']:+.1%}</span> "
+                           f"{html.escape(t.get('lesson', ''))}</li>" for t in reversed(trades[-8:]))
+    lessons_html = (head + "<ul>" + "".join(working) + "</ul>"
+                    + ("<h3>Latest lessons</h3><ul>" + lesson_items + "</ul>" if lesson_items else
+                       "<p class='muted'>Lessons appear as trades close. Every closed trade gets one line in research/lessons.md.</p>"))
 
     sig_rows = "".join(
         f"<tr><td>{html.escape(s)}</td><td class='num'>{v['score']:+.2f}</td><td>{html.escape('; '.join(v.get('reasons', []))[:140])}</td></tr>"
@@ -233,11 +323,13 @@ def build(journal, broker, memos: dict, signals: dict, settings, out_dir: Path |
 <h1>Kismat Trading Lab {status}</h1>
 <div class="sub">Updated {now}. Paper account in {html.escape(settings.risk.base_currency)}. Every number here comes from state/journal.</div>
 <div class="tiles">{tiles}</div>
-<h2>Equity</h2><div class="panel">{equity_svg([(e['ts'], e['equity']) for e in eq])}</div>
-<h2>Open positions</h2><div class="panel"><table><tr><th>Symbol</th><th>Class</th><th>Qty</th><th>Avg</th><th>Last</th><th>P&amp;L</th><th>Stop</th></tr>{pos_rows}</table></div>
-<h2>Latest decisions</h2><div class="panel"><table><tr><th>Time</th><th>Symbol</th><th>Systematic</th><th>Research</th><th>Combined</th><th>Action</th><th>Why</th></tr>{dec_rows}</table></div>
+<h2>Equity</h2><div class="panel">{equity_svg([(e['ts'], e['equity']) for e in eq if e['equity'] >= 0.5 * start])}</div>
+<h2>What is working, what is not</h2><div class="panel prose">{lessons_html}</div>
+<h2>Open positions</h2><div class="legend">Green rows are in profit, red rows are under water.</div><div class="panel"><table><tr><th>Symbol</th><th>Class</th><th>Qty</th><th>Avg</th><th>Last</th><th>P&amp;L %</th><th>P&amp;L</th><th>Stop</th></tr>{pos_rows}</table></div>
+<h2>Closed trades</h2><div class="legend">After fees and slippage. "Memo" is what research said at entry. The lesson is written by rule from the exit.</div><div class="panel"><table><tr><th>Closed</th><th>Symbol</th><th>Held</th><th>P&amp;L %</th><th>P&amp;L</th><th>Memo</th><th>Exit</th><th>Lesson</th></tr>{trade_rows}</table></div>
+<h2>Latest decisions</h2><div class="legend">"Since" is the price move after the decision. A buy is good when the price rose; a skip, a sell, or a gate is good when it fell (the decision avoided a loss). Judged after {5} days when available, else to now.</div><div class="panel"><table><tr><th>Time</th><th>Symbol</th><th>Systematic</th><th>Research</th><th>Combined</th><th>Action</th><th>Why</th><th>Since</th><th>Verdict</th></tr>{dec_rows}</table></div>
 <h2>Recent fills</h2><div class="panel"><table><tr><th>Time</th><th>Symbol</th><th>Side</th><th>Qty</th><th>Price</th><th>Reason</th></tr>{fill_rows}</table></div>
-<h2>Research memos in force</h2><div class="panel"><table><tr><th>Symbol</th><th>View</th><th>Conviction</th><th>Date</th><th>Thesis</th></tr>{memo_rows}</table></div>
+<h2>Research memos in force</h2><div class="legend">"Since" is the price move after the memo; a long memo is good when the price rose, an avoid memo when it fell, a flat memo is not judged.</div><div class="panel"><table><tr><th>Symbol</th><th>View</th><th>Conviction</th><th>Date</th><th>Since</th><th>Verdict</th><th>Thesis</th></tr>{memo_rows}</table></div>
 <h2>Top systematic signals</h2><div class="panel"><table><tr><th>Symbol</th><th>Score</th><th>Reasons</th></tr>{sig_rows}</table></div>
 <h2>Events</h2><div class="panel"><ul>{ev_rows}</ul></div>
 {research_sections(research_dir)}
@@ -249,5 +341,7 @@ def build(journal, broker, memos: dict, signals: dict, settings, out_dir: Path |
                     + body + "</body></html>")
     (out_dir / "status.json").write_text(json.dumps({"updated": now, "equity": last_eq, "return": ret,
                                                      "drawdown": dd, "halted": halted,
-                                                     "positions": len(broker.positions())}, indent=2))
+                                                     "positions": len(positions), "realized_pnl": realized,
+                                                     "unrealized_pnl": unrealized, "win_rate": win_rate,
+                                                     "closed_trades": summ.get("closed_trades", 0)}, indent=2))
     return path

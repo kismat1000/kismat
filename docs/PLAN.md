@@ -67,6 +67,21 @@ after the desk has proven itself on liquid assets.
   requests.
 - **Memo decay.** A memo's influence fades to zero over five days so stale
   research cannot steer trades.
+- **Outcomes and lessons** (`kismat/journal/outcomes.py`). After every cycle
+  each closed trade, each decision (buy, skip, sell, gate), and each memo is
+  joined with what the price did next and marked green or red: a buy is good
+  if the price rose, a skip or a gate is good if it fell, a long memo is good
+  if it rose, an avoid memo if it fell. Every closed trade gets a one-line
+  lesson written by rule (stopped out within days, trend never followed
+  through, winner ran, research was wrong) in `research/lessons.md`. The desk
+  reads the newest lessons and its own hit rates before writing memos; the
+  weekly review groups the lessons by cause. The dashboard shows all of it.
+- **Feature study** (`python -m kismat research --study`, weekly on Saturday).
+  Candidate features ship at weight zero: relative strength against the class
+  benchmark, distance from the 52-week high, a volatility squeeze, and an
+  earnings blackout. The study runs the live set against each feature alone
+  and together over five years and prints a verdict; a feature earns a weight
+  only when it clears the same bar as any other parameter change.
 
 What it deliberately does not do: continuously refit parameters to the last
 few weeks of data. That is the fastest way to overfit noise and blow up.

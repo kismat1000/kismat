@@ -33,10 +33,24 @@ class StrategyParams:
     w_breakout: float = 0.20
     w_hot: float = 0.20
     w_pullback: float = 0.10
+    # Pattern features. Off at weight 0; the research feature study decides whether they earn a weight.
+    high_days: int = 252         # the "52-week high" window
+    high_band: float = 0.10      # full credit at the high, none this far below it
+    squeeze_days: int = 100      # ATR% is compared with its median over this window
+    squeeze_ratio: float = 0.75  # ATR% below this share of its median is a squeeze
+    w_rs: float = 0.0            # relative strength: momentum minus the class benchmark's
+    w_high: float = 0.0          # nearness to the 52-week high
+    w_squeeze: float = 0.0       # volatility squeeze inside an uptrend
+    benchmarks: dict = field(default_factory=dict)   # asset class -> benchmark symbol for relative strength
 
     @property
     def min_bars(self) -> int:
-        return max(self.sma_slow, self.mom_days, self.breakout_days) + 10
+        n = max(self.sma_slow, self.mom_days, self.breakout_days)
+        if self.w_high:
+            n = max(n, self.high_days)
+        if self.w_squeeze:
+            n = max(n, self.squeeze_days + self.atr_days)
+        return n + 10
 
     @classmethod
     def from_yaml(cls, path: Path | None = None) -> "StrategyParams":
@@ -90,7 +104,20 @@ def compute_features(df: pd.DataFrame, p: StrategyParams = DEFAULT_PARAMS) -> pd
     f["roc_mom"] = ind.rate_of_change(close, p.mom_days)
     f["hi_break"] = ind.rolling_max(close, p.breakout_days).shift(1)
     f["vol20"] = ind.realized_vol(close, 20)
+    f["near_high"] = close / ind.rolling_max(close, p.high_days)
+    f["atr_ratio"] = f["atr_pct"] / f["atr_pct"].rolling(p.squeeze_days).median()
+    f["rs"] = np.nan   # relative strength needs the benchmark: see add_relative_strength
     return f
+
+
+def add_relative_strength(feats: dict[str, pd.DataFrame], classes: dict[str, str] | None,
+                          p: StrategyParams = DEFAULT_PARAMS) -> None:
+    """Momentum minus the class benchmark's momentum, in place. Symbols without a
+    benchmark in `feats` keep NaN, which scores as zero."""
+    for sym, f in feats.items():
+        bench = p.benchmarks.get((classes or {}).get(sym, ""))
+        if bench and bench in feats and bench != sym:
+            f["rs"] = f["roc_mom"] - feats[bench]["roc_mom"].reindex(f.index)
 
 
 REQUIRED = ["sma_fast", "sma_slow", "atr", "rsi", "roc_mom", "hi_break"]
@@ -109,6 +136,15 @@ def score_frame(f: pd.DataFrame, p: StrategyParams = DEFAULT_PARAMS) -> pd.Serie
     rsi = f["rsi"].to_numpy()
     score = score - np.where(rsi > p.rsi_hot, p.w_hot, 0.0)
     score = score + np.where((rsi < p.rsi_cold) & above_slow.to_numpy(), p.w_pullback, 0.0)
+    if p.w_rs and "rs" in f:
+        rs = np.nan_to_num(f["rs"].to_numpy(dtype=float), nan=0.0)
+        score = score + np.clip(rs / p.mom_scale, -1, 1) * p.w_rs
+    if p.w_high and "near_high" in f:
+        nh = np.nan_to_num(f["near_high"].to_numpy(dtype=float), nan=0.0)
+        score = score + np.clip((nh - (1 - p.high_band)) / p.high_band, 0, 1) * p.w_high
+    if p.w_squeeze and "atr_ratio" in f:
+        ar = np.nan_to_num(f["atr_ratio"].to_numpy(dtype=float), nan=9.0)
+        score = score + np.where(up.to_numpy() & (ar < p.squeeze_ratio), p.w_squeeze, 0.0)
     score = np.where(f["atr_pct"].to_numpy() > p.chaos_atr_pct, score * 0.5, score)
     score = np.clip(score, -1, 1)
     ready = f[REQUIRED].notna().all(axis=1).to_numpy()
@@ -135,17 +171,27 @@ def explain(row: pd.Series, p: StrategyParams = DEFAULT_PARAMS) -> list[str]:
         reasons.append(f"overbought RSI {rsi:.0f}")
     elif rsi < p.rsi_cold and close > slow:
         reasons.append(f"pullback in uptrend RSI {rsi:.0f}")
+    if p.w_rs and not pd.isna(row.get("rs", np.nan)):
+        reasons.append(f"relative strength vs benchmark {float(row['rs']):+.1%}")
+    if p.w_high and not pd.isna(row.get("near_high", np.nan)):
+        reasons.append(f"{1 - float(row['near_high']):.1%} below the {p.high_days}-day high")
+    if p.w_squeeze and not pd.isna(row.get("atr_ratio", np.nan)) and float(row["atr_ratio"]) < p.squeeze_ratio \
+            and close > fast > slow:
+        reasons.append(f"volatility squeeze: ATR at {float(row['atr_ratio']):.0%} of its median")
     if float(row["atr_pct"]) > p.chaos_atr_pct:
         reasons.append(f"volatility filter ATR {float(row['atr_pct']):.1%} of price")
     return reasons
 
 
 def trend_signal(symbol: str, df: pd.DataFrame, stop_atr_multiple: float = 2.5,
-                 p: StrategyParams = DEFAULT_PARAMS) -> Signal:
-    """Trend + momentum + breakout, penalised by over-extension and chaos."""
+                 p: StrategyParams = DEFAULT_PARAMS, benchmark: pd.DataFrame | None = None) -> Signal:
+    """Trend + momentum + breakout, penalised by over-extension and chaos.
+    `benchmark` is the class benchmark's bars, for relative strength."""
     if df is None or len(df) < p.min_bars:
         return Signal(symbol=symbol, ok=False, reasons=[f"not enough bars ({0 if df is None else len(df)})"])
     feats = compute_features(df, p)
+    if p.w_rs and benchmark is not None and len(benchmark) >= p.mom_days + 1:
+        feats["rs"] = feats["roc_mom"] - ind.rate_of_change(benchmark["close"], p.mom_days).reindex(feats.index)
     row = feats.iloc[-1]
     if row[REQUIRED].isna().any():
         return Signal(symbol=symbol, ok=False, reasons=["indicators not ready"])
@@ -155,7 +201,9 @@ def trend_signal(symbol: str, df: pd.DataFrame, stop_atr_multiple: float = 2.5,
                   stop_distance=stop_atr_multiple * atr_val,
                   features={"sma_fast": float(row["sma_fast"]), "sma_slow": float(row["sma_slow"]),
                             "rsi": float(row["rsi"]), "roc20": float(row["roc20"]), "roc_mom": float(row["roc_mom"]),
-                            "atr_pct": float(row["atr_pct"]), "vol20": float(row["vol20"])})
+                            "atr_pct": float(row["atr_pct"]), "vol20": float(row["vol20"]),
+                            "near_high": float(row["near_high"]), "atr_ratio": float(row["atr_ratio"]),
+                            "rs": float(row["rs"])})
 
 
 def exit_rule(entry_price: float, highest_close: float, close: float, atr_val: float,

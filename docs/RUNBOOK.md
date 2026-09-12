@@ -60,6 +60,27 @@ want upgrade proposals.
 ## 4. Daily operation
 
 - **Dashboard**: the Pages URL, or `docs/index.html` after a local cycle.
+  Green means profit or a right call, red means loss or a wrong call, on every
+  section: the tiles (realized and unrealized P&L, closed trades and win
+  rate), open positions, closed trades (with the lesson from each), latest
+  decisions ("Since" is the price move after the decision; a buy is right if
+  the price rose, a skip, a sell, or a gate is right if it fell), and research
+  memos in force (a long memo is right if the price rose, an avoid memo if it
+  fell). "What is working, what is not" totals P&L by exit reason and by what
+  research said at entry, and shows how often memos, decisions, and gates were
+  right. The same numbers are in `research/outcomes.json`; the lessons are in
+  `research/lessons.md`, one line per closed trade.
+- **News and events**: each cycle scores the day's headlines for the top
+  candidates and every holding. A hard-negative headline (fraud, SEC charges,
+  hack, bankruptcy, delisting, trading halt) blocks a new entry for that day
+  and is journaled as a decision. `earnings_blackout_days` in `config/risk.yaml`
+  blocks new US and ASX stock entries that many days before an earnings date
+  (dates come free from Yahoo; unknown dates never block). Both show in the
+  packet under "Event and news gates in force today".
+- **Pattern features**: `config/strategy.yaml` has `w_rs`, `w_high`, and
+  `w_squeeze` at 0. `python -m kismat research --study` tests them (and the
+  earnings blackout) against five years of data; the Saturday research run
+  does this automatically and writes `research/backtests/study-<date>.md`.
 - **Approval mode**: proposals arrive on Telegram with an id. Approve or
   reject from any machine with the repo:
 

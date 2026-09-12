@@ -28,6 +28,9 @@ regime_index: {}               # asset class -> index symbol (from the universe)
                                # 2026-09-07: on average it adds return (+53% vs +44%) and trims drawdown (-19% vs
                                # -21%), but on the live set it left return flat (+85.6% vs +86.0%), cut the second
                                # half (+15% vs +22%) and made quarters choppier (robustness 0.07 vs 0.63). Off.
+earnings_blackout_days: 0      # no new US/ASX stock entries within this many days before an earnings date
+                               # (0 = off). Dates come free from Yahoo; unknown dates never block. The
+                               # research feature study tests this rule against history.
 min_trade_value: 10.0          # skip dust orders below this value
 
 max_daily_loss_pct: 0.03       # lose 3% in a day: no new entries until next day

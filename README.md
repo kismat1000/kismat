@@ -8,20 +8,25 @@ default. Real money only after it has earned a track record.
 Every two hours a cycle runs:
 
 ```
-free data (Binance, Yahoo, RSS)
-   -> systematic signals (trend, momentum, breakout, volatility filter)
-   -> research memos from the agent council (bull, bear, macro, judge)
+free data (Binance, Yahoo, RSS, earnings dates)
+   -> systematic signals (trend, momentum, breakout, volatility filter;
+      pattern features: relative strength, 52-week high, volatility squeeze)
+   -> research memos from the agent council (pattern, bull, bear, macro, judge)
+   -> gates: hard-negative headlines, earnings blackout, index regime
    -> risk engine (1% risk per trade, position caps, daily loss stop, kill switch)
-   -> paper broker
+   -> paper broker (mirrored to broker demo accounts)
    -> journal (every decision, fill, and equity snapshot as JSONL)
+   -> outcomes: green or red on every trade, decision, and memo; a lesson per trade
    -> Telegram alert + static dashboard
 ```
 
 Once a day a Claude Code routine reads the research packet the cycle produced,
-runs the council prompts in `prompts/` with web search, and commits memos back
-into `research/memos/`. The next cycle merges those memos into its decisions.
-Once a week a review packet is built from the journal so the desk learns from
-its own mistakes.
+reads the lessons from every closed trade and the desk's own hit rates, runs
+the council prompts in `prompts/` with web search, and commits memos back into
+`research/memos/`. The next cycle merges those memos into its decisions. Once
+a week a review packet is built from the journal so the desk learns from its
+own mistakes, and a walk-forward research run plus a feature study on five
+years of data print a verdict on whether any setting should change.
 
 ## Honest expectations
 

@@ -25,7 +25,7 @@ from kismat.strategy.signals import StrategyParams
 
 # Index that must be above its slow SMA before a class may open new positions.
 MARKET_INDEX = {"us_stocks": "SPY", "us_etfs": "SPY", "crypto": "BTCUSDT"}
-VARIED = ("stop_atr_multiple", "max_positions", "regime_breadth_min", "regime_index")
+VARIED = ("stop_atr_multiple", "max_positions", "regime_breadth_min", "regime_index", "earnings_blackout_days")
 SWITCH_MARGIN = 0.25   # robustness edge the top set needs before the report suggests a change
 
 
@@ -62,6 +62,31 @@ def default_grid(quick: bool = False) -> list[Variant]:
                            {"stop_atr_multiple": st, "max_positions": n, "regime_breadth_min": rg,
                             "regime_index": dict(MARKET_INDEX) if mk else None}))
     return out
+
+
+def feature_grid(params: StrategyParams, cfg: BacktestConfig) -> list[Variant]:
+    """The live set against itself plus one feature at a time, then together:
+    relative strength, 52-week-high proximity, volatility squeeze, earnings blackout."""
+    base_over = {k: getattr(cfg, k) for k in VARIED}
+    bench = dict(params.benchmarks) or dict(MARKET_INDEX)
+
+    def v(name: str, **changes) -> Variant:
+        over = dict(base_over)
+        over["earnings_blackout_days"] = changes.pop("earnings_blackout_days", cfg.earnings_blackout_days)
+        return Variant(name, replace(params, **changes), over)
+
+    return [
+        v("live"),
+        v("+rs 0.15", w_rs=0.15, benchmarks=bench),
+        v("+rs 0.30", w_rs=0.30, benchmarks=bench),
+        v("+52w 0.15", w_high=0.15),
+        v("+52w 0.30", w_high=0.30),
+        v("+squeeze 0.10", w_squeeze=0.10),
+        v("+patterns", w_rs=0.15, w_high=0.15, w_squeeze=0.10, benchmarks=bench),
+        v("+earnings 3d", earnings_blackout_days=3),
+        v("+earnings 7d", earnings_blackout_days=7),
+        v("+patterns +earnings 3d", w_rs=0.15, w_high=0.15, w_squeeze=0.10, benchmarks=bench, earnings_blackout_days=3),
+    ]
 
 
 def with_current(grid: list[Variant], params: StrategyParams, cfg: BacktestConfig) -> list[Variant]:
@@ -178,7 +203,10 @@ def component_effects(rows: list[dict]) -> list[tuple[str, list[tuple[str, int, 
         return {"trend": f"sma{v.params.sma_fast}/{v.params.sma_slow}", "momentum": f"mom{v.params.mom_days}",
                 "stop": f"stop{v.overrides.get('stop_atr_multiple')}", "slots": f"n{v.overrides.get('max_positions')}",
                 "breadth": f"regime{v.overrides.get('regime_breadth_min') or 0}",
-                "index filter": "on" if v.overrides.get("regime_index") else "off"}
+                "index filter": "on" if v.overrides.get("regime_index") else "off",
+                "relative strength": f"w_rs {v.params.w_rs}", "52-week high": f"w_high {v.params.w_high}",
+                "squeeze": f"w_squeeze {v.params.w_squeeze}",
+                "earnings blackout": f"{v.overrides.get('earnings_blackout_days') or 0}d"}
     grouped: dict[str, dict[str, list[dict]]] = {}
     for r in rows:
         for dim, val in keyf(r).items():

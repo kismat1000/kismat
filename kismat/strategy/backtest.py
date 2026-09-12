@@ -11,8 +11,10 @@ from dataclasses import dataclass, field
 import numpy as np
 import pandas as pd
 
-from kismat.strategy.signals import DEFAULT_PARAMS, StrategyParams, compute_features, exit_rule, score_frame
+from kismat.strategy.signals import (DEFAULT_PARAMS, StrategyParams, add_relative_strength, compute_features,
+                                     exit_rule, score_frame)
 from kismat.strategy import indicators as ind
+from kismat.data.events import in_blackout
 
 
 @dataclass
@@ -34,6 +36,8 @@ class BacktestConfig:
     time_stop_days: int = 0
     regime_breadth_min: float = 0.0
     regime_index: dict | None = None   # asset class -> index symbol; entries only while it closes above its slow SMA
+    earnings: dict | None = None       # symbol -> list of earnings dates (datetime.date)
+    earnings_blackout_days: int = 0    # no entry this many calendar days before an earnings date
     classes: dict | None = None        # symbol -> asset class, for the regime filters
     params: StrategyParams = field(default_factory=StrategyParams)
 
@@ -52,12 +56,12 @@ class BacktestResult:
                 f"IS {m['in_sample_return']:+.1%} / OOS {m['out_of_sample_return']:+.1%}")
 
 
-def precompute(bars: dict[str, pd.DataFrame], p: StrategyParams = DEFAULT_PARAMS) -> dict[str, pd.DataFrame]:
-    out = {}
-    for sym, df in bars.items():
-        f = compute_features(df, p)
+def precompute(bars: dict[str, pd.DataFrame], p: StrategyParams = DEFAULT_PARAMS,
+               classes: dict | None = None) -> dict[str, pd.DataFrame]:
+    out = {sym: compute_features(df, p) for sym, df in bars.items()}
+    add_relative_strength(out, classes, p)
+    for f in out.values():
         f["score"] = score_frame(f, p)
-        out[sym] = f
     return out
 
 
@@ -105,7 +109,7 @@ def index_regime(feats: dict[str, pd.DataFrame], regime_index: dict | None) -> d
 
 def run_backtest(bars: dict[str, pd.DataFrame], cfg: BacktestConfig | None = None) -> BacktestResult:
     cfg = cfg or BacktestConfig()
-    feats = precompute(bars, cfg.params)
+    feats = precompute(bars, cfg.params, cfg.classes)
     breadth = breadth_by_class(feats, cfg.classes) if cfg.regime_breadth_min > 0 else {}
     index_ok = index_regime(feats, cfg.regime_index)
     warmup = max(cfg.warmup, cfg.params.min_bars)
@@ -189,6 +193,10 @@ def run_backtest(bars: dict[str, pd.DataFrame], cfg: BacktestConfig | None = Non
             if index_ok:
                 ok = index_ok.get((cfg.classes or {}).get(sym, "all"))
                 if ok is not None and day in ok.index and not pd.isna(ok.loc[day]) and ok.loc[day] < 0.5:
+                    continue
+            if cfg.earnings_blackout_days > 0 and cfg.earnings and sym in cfg.earnings:
+                # the fill is at tomorrow's open, so the blackout is measured from tomorrow
+                if in_blackout(cfg.earnings[sym], day.date(), cfg.earnings_blackout_days + 1):
                     continue
             candidates.append((float(s), sym))
         candidates.sort(reverse=True)
