@@ -1,0 +1,40 @@
+{
+  "symbol": "CSL.AX",
+  "asset_class": "au_stocks",
+  "date": "2026-09-13",
+  "direction": "flat",
+  "conviction": 0.5,
+  "thesis": "Still flat, but at lower conviction and with a correction: the 10 September memo said CSL was trading about 20% above an A$139.20 average analyst target. Today's sources put broker targets at A$188 (Macquarie, cut from A$275) and a fair value of A$210.90 (trimmed from A$228.58), which would make A$167.10 a discount, not a premium. I cannot reconcile the two and will not lean on either. What survives is the business record: four major guidance cuts in two years, one of which took the stock down 20%.",
+  "bull_case": "Pattern analyst: setup is a **recovery attempt** - close A$167.10 native, 22.3% below the 252-day high, RSI 50, 63d momentum +59.4%, the highest in the book. Squeeze 0.68, below the 0.75 line, so volatility is coiling; ATR 2.0% is low, which means a tight stop and meaningful size. rs is empty in the packet; derived against the au_stocks field, +59.4% is far ahead of anything else Australian in the table. Verdict: pattern supports entry now, with the caveat that 22.3% below the 52-week high is a recovery, not a breakout.\n\nIf the trimmed targets are right, the stock is 12-26% below fair value rather than above it. The August result beat a reset bar, and the transformation plan targets US$500-550M of annual cost savings by FY28, having already delivered about US$176M against an initial target it exceeded. Greater clarity on US pharmaceutical pricing and the Illinois manufacturing expansion are real changes, and today's packet gives it a +0.50 news tone.",
+  "bear_case": "The record is the case. CSL has cut guidance materially four times in two years - described in the Australian press as a candidate for the ASX's biggest blue-chip disaster - and one downgrade took the shares down a further 20%. FY26 underlying earnings fell 2% with US$7.1B of impairments driving a statutory loss, and FY27 guidance is flat revenue with about 5% underlying profit growth. That does not support a 59% quarter on any multiple; this is sentiment repair off a reset, and repairs finish. Macquarie downgraded to neutral. Plasma recovery pace and margin pressure remain unresolved, and nothing is scheduled before the AGM. The honest problem is that my own valuation anchor was wrong last week, so I am treating the valuation leg as unknown rather than as support for either side. Desk record (research/outcomes.json): 9 closed trades, 0 wins, -$97.25 realised, expectancy -2.08% per trade, average hold 2.4 days; long memos 2 good of 4 judged. Conviction is held below what the standalone evidence would justify until that record improves.",
+  "catalysts": [
+    "Broker target revisions, in either direction, now that mine are contested",
+    "US pharmaceutical pricing policy developments",
+    "Transformation savings against the US$500-550M FY28 target",
+    "AGM, outside this horizon"
+  ],
+  "risks": [
+    "Four major guidance cuts in two years; one took the stock down 20%",
+    "FY26 underlying earnings fell 2%; US$7.1B impairments drove a statutory loss",
+    "FY27 guides flat revenue and ~5% profit growth against +59% quarterly momentum",
+    "My valuation anchor is contested: A$139.20 last week against A$188-211 today",
+    "Plasma recovery pace and margin pressure unresolved"
+  ],
+  "invalidation": "The pattern analyst's level is **A$116.23 native** (US$116.225 in packet terms), the trailing stop carried in the packet. A daily close below it ends this. It flips long on a close above A$175 native with at least one broker raising rather than trimming.",
+  "horizon_days": 30,
+  "sources": [
+    "https://kalkine.com.au/news/premium/why-csl-asxcsl-shares-under-pressure-what-brokers-think",
+    "https://www.marketindex.com.au/news/is-csl-the-asxs-biggest-ever-blue-chip-disaster-how-the-model-is-broken",
+    "https://finance.yahoo.com/news/analysts-trimming-csl-limited-asx-200433248.html",
+    "https://simplywall.st/stocks/au/pharmaceuticals-biotech/asx-csl/csl-shares/future",
+    "research/packets/2026-09-13.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-10/CSL.AX.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.45,
+    "bear": 0.55,
+    "macro": 0.3
+  }
+}

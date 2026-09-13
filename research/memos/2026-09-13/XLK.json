@@ -1,0 +1,37 @@
+{
+  "symbol": "XLK",
+  "asset_class": "us_etfs",
+  "date": "2026-09-13",
+  "direction": "flat",
+  "conviction": 0.6,
+  "thesis": "Unchanged. XLK is NVDA at about 16% and roughly 45% in its top five, and we own NVDA, AMD and MSFT outright - this is the same bet wearing a sector label. 63-day momentum of +2.6% and the second-lowest score among our holdings say the wrapper is adding nothing, and a hike priced near 90% lands on Wednesday.",
+  "bull_case": "Pattern analyst: setup is a **pullback to a rising trend** - close 187.67, only 5.2% below the 252-day high, RSI 58, close > SMA50 > SMA200. Squeeze 0.67 is well below the 0.75 line, so volatility is coiling, and ATR of 1.6% makes it cheap to hold. rs is empty; derived, 63d momentum +2.6% against SPY's +3.9% means XLK is **lagging** its own benchmark by about 1.3 points, which is the pattern analyst's own warning case - a laggard is not a buy because the sector is strong. Verdict: pattern is against entry.\n\nThe constructive case is the holdings: three of the top five, about 45% of the fund, have traded at historically low P/E multiples, with NVIDIA near 23x current-year earnings, and sell-side work sees XLK advancing about 25% over twelve months. Azure guided ~45% cc and Nvidia guided $108B, so the earnings underneath are real.",
+  "bear_case": "A technology fund lagging the S&P while holding the largest technology companies is the clearest statement available that the AI trade has stopped leading. September is also XLK's weakest month on record at 46.15% positive against 81.82% for November. The concentration is a portfolio problem, not a diversification benefit: NVDA is -5.3% for us directly and is simultaneously our largest indirect exposure through this fund. Macro, once for the day: the FOMC decides on 16 September with a hike priced at roughly 87-90% after August CPI at 3.4%; the CLARITY Act vote lands 15 September. Brent is near $104 after a 9% week, and Iranian and Gulf officials meet in Muscat on Monday to sign an Iran-Oman shipping-route framework for the Strait of Hormuz - though a vessel was struck in the Strait on 13 September and shipping remains severely disrupted under a US naval blockade. A hike lands on the longest-duration equities in the book. Desk record (research/outcomes.json): 9 closed trades, 0 wins, -$97.25 realised, expectancy -2.08% per trade, average hold 2.4 days; long memos 2 good of 4 judged. Conviction is held below what the standalone evidence would justify until that record improves.",
+  "catalysts": [
+    "16 Sep 2026 FOMC decision and dot plot",
+    "Q3 earnings from the megacap holdings in late Oct",
+    "Hyperscaler capex guidance for 2027"
+  ],
+  "risks": [
+    "Lagging SPY by ~1.3 points while holding the largest tech names",
+    "~16% NVDA and ~45% top-five overlap with positions already held",
+    "September is XLK's weakest month at 46.15% positive",
+    "Hike priced near 90% landing on long-duration equities"
+  ],
+  "invalidation": "The pattern analyst's level is **178.45**, the trailing stop carried in the packet. A daily close below it ends this. It flips long on a close above 195 made after the 16 September FOMC - strength through the event, not into it.",
+  "horizon_days": 30,
+  "sources": [
+    "https://finance.yahoo.com/markets/stocks/articles/xlk-rebound-mode-reach-fresh-134500739.html",
+    "https://stockanalysis.com/etf/xlk/",
+    "https://defirate.com/prediction-markets/fed-decision-odds/",
+    "research/packets/2026-09-13.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-10/XLK.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.35,
+    "bear": 0.6,
+    "macro": 0.25
+  }
+}

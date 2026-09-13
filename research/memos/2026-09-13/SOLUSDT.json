@@ -1,0 +1,39 @@
+{
+  "symbol": "SOLUSDT",
+  "asset_class": "crypto",
+  "date": "2026-09-13",
+  "direction": "flat",
+  "conviction": 0.6,
+  "thesis": "Unchanged. SOL is $101.40 on our feed and $99.31 externally, still below the $103.35 breakout level the 7 September memo named, and still below where it sat when the SEC recognised it for commodity trusts on 5 September. Two binaries land this week - the CLARITY Act vote on the 15th and the FOMC on the 16th - and bitcoin is expected to move 5-10% within hours of the decision. Nothing here is worth adding in front of that.",
+  "bull_case": "Pattern analyst: setup is a **range** - close 101.40, 31.0% below the 252-day high, RSI 49 dead centre, 63d momentum +31.8%, no breakout flag. Squeeze 0.86, no coil; ATR 4.1% is wide, so stops are far and size is small. rs is empty and no crypto benchmark is derivable from the table, so relative strength is unavailable for this sleeve. Verdict: pattern says wait for a close above 103.35.\n\nThe fundamentals have not gone away: the SEC formally recognised Solana alongside bitcoin and ether for commodity-based trusts on 5 September, Bitwise's staking ETF passed $1B cumulative inflows, Solana led all chains with $229M of 30-day real-world-asset net inflows, and the Alpenglow upgrade targets ~150ms finality. Today's packet gives it a +0.50 news tone, and the CLARITY Act, if it passes on 15 September, would be the first comprehensive US framework.",
+  "bear_case": "Price rejected its own best catalyst - SOL was $105.13 when the SEC news landed and is $101.40 now - and it has been in the speculative cohort that has been sold hardest all week. The CLARITY Act vote is two-sided: the same report notes it could equally kill the legislation for 2026. Macro, once for the day: the FOMC decides on 16 September with a hike priced at roughly 87-90% after August CPI at 3.4%; the CLARITY Act vote lands 15 September. Brent is near $104 after a 9% week, and Iranian and Gulf officials meet in Muscat on Monday to sign an Iran-Oman shipping-route framework for the Strait of Hormuz - though a vessel was struck in the Strait on 13 September and shipping remains severely disrupted under a US naval blockade. A hike into a 3.4% CPI print is the wrong backdrop for the highest-beta corner of the book, and our position is already -3.5%. Own backtest (research/backtests/2026-09-06.md): the crypto sleeve returned -6.4% with Sharpe -0.15 and a 17% win rate over 75 trades. No demonstrated edge in crypto momentum here. Desk record (research/outcomes.json): 9 closed trades, 0 wins, -$97.25 realised, expectancy -2.08% per trade, average hold 2.4 days; long memos 2 good of 4 judged. Conviction is held below what the standalone evidence would justify until that record improves.",
+  "catalysts": [
+    "CLARITY Act vote on 15 Sep 2026",
+    "16 Sep 2026 FOMC",
+    "Whether $94.40 support holds",
+    "Alpenglow upgrade phase one"
+  ],
+  "risks": [
+    "Still below the 103.35 level and below its pre-catalyst price",
+    "CLARITY Act vote could kill the bill for 2026 rather than pass it",
+    "Highest-beta sleeve into a near-certain hike",
+    "ATR 4.1%: wide stops on a fully invested account",
+    "Own backtest: no demonstrated edge in crypto momentum"
+  ],
+  "invalidation": "The pattern analyst's level is **90.92**, the trailing stop carried in the packet. A close below it ends this. It flips long on a daily close above 110 that reclaims the broken breakout with ETF flows positive.",
+  "horizon_days": 21,
+  "sources": [
+    "https://usethebitcoin.com/bitcoin/bitcoin-price-september-13-2026/",
+    "https://memeburn.com/crypto-market-september-2026-key-events/",
+    "https://cryptorank.io/news/feed/7ea7a-solana-price-prediction-september-2026-network-growth-puts-150-in-focus",
+    "research/backtests/2026-09-06.md",
+    "research/packets/2026-09-13.md",
+    "research/outcomes.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.4,
+    "bear": 0.6,
+    "macro": 0.25
+  }
+}

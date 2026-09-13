@@ -490,3 +490,77 @@ cut its demand outlook to a 2.5 mb/d contraction in 2026 and the EIA raised 2027
 - Minor: our MSFT mark is 495.63 against an external report of $493.87 for Friday's close.
 - Still open since 8 Sep: `us_etfs` missing from the memo schema enum. Today's XLE memo is the
   seventh written against it.
+
+## 2026-09-13 — council run + weekly review
+
+Packet: `research/packets/2026-09-13.md`. **Sunday** — equity marks are Friday's close again, only
+crypto moved. Equity 9,838.79, same 12 positions, cash 25.42, no exits and no entries all weekend.
+
+**The record, in one line:** nine closed trades, nine losses, −$97.25 realised, expectancy −2.08%
+per trade, long memos 2 good of 4 judged — so conviction stays capped and nothing today is above
+0.6.
+
+**Picks: 6.** Memos turned three days old for **AMD**, **BNBUSDT**, **CSL.AX**, **SOLUSDT** and
+**XLK**. Plus **XLE**, re-run one day early on a material change.
+
+| symbol | direction | conviction | note |
+|---|---|---|---|
+| XLE | flat | 0.55 | **Cut from long 0.45.** Muscat signing on a Hormuz shipping route is tomorrow |
+| XLK | flat | 0.60 | Derived rs shows it *lagging* SPY by 1.3pts while holding the biggest tech names |
+| SOLUSDT | flat | 0.60 | Still below 103.35; CLARITY Act vote 15th, FOMC 16th |
+| BNBUSDT | flat | 0.60 | Worst position at −4.3%; squeeze 1.14, volatility expanding on a falling price |
+| AMD | flat | 0.55 | Targets raised to $600–635 while score fell 0.46 → 0.41 and momentum halved |
+| CSL.AX | flat | 0.50 | Conviction cut — my own valuation anchor turned out to be contested |
+
+**Deferred** (memo one or two days old, nothing material): MSFT (long 0.50, 12 Sep — now the only
+long on the desk), BTCUSDT, DBC, NVDA, EEM, ETHUSDT (all 11 Sep).
+
+No `avoid` memo on any held position. `validate-memos`: 20 valid.
+
+**The statistic that changed a call today:** `by_memo_at_entry` in `research/outcomes.json`.
+Trades entered with a flat memo lost **−$4.67 each**; trades entered with no memo lost **−$18.48
+each**. That is the first sign the research layer carries information, and it is why I did not
+treat today's run as busywork on a weekend when nothing traded.
+
+**Cutting XLE, and why this is not the whipsaw it looks like.** Yesterday I held XLE long and
+argued that re-rating before a named condition fires makes invalidation levels decoration. Today I
+cut it to flat. The difference is the fact, not my mood: yesterday the report was that Gulf and
+Iranian officials would *meet* about Hormuz; today CNN reports they meet in Muscat on Monday **to
+sign** an agreement establishing an Iran-Oman shipping route. Both prior XLE memos named a
+reopening of Hormuz transits as an immediate invalidation. A signing is still not a reopening —
+a vessel was struck in the Strait today, the US is excluded from the talks and the naval blockade
+stands — so the thesis is not dead and the position is not sold; the stop at 62.85 governs. But
+"long" means worth owning now, and that cannot be defended into a binary I called fatal, with
+£0 of spare cash to react.
+
+**Two corrections to my own earlier memos.**
+1. **CSL.AX valuation anchor.** On 10 September I wrote that CSL was ~20% above an A$139.20 average
+   analyst target, and that claim carried the whole flat 0.65 call. Today's sources put Macquarie
+   at A$188 (cut from A$275) and a fair value of A$210.90 (trimmed from A$228.58) — which would
+   make A$167.10 a *discount*. I cannot reconcile the two secondary summaries, so today's memo
+   treats valuation as unknown and rests on the business record instead: four major guidance cuts
+   in two years. Conviction 0.65 → 0.50.
+2. **AAPL**, recorded again for the calibration trail: now ~332 against the 315.50 exit, so the
+   sell-the-news thesis is wrong on every horizon except day one.
+
+**Weekly review** written to `research/reviews/2026-09-13-review.md`, citing this week's
+`study-2026-09-12.md` and `wf-2026-09-12.md`. Both say keep the live parameters and both deserve
+belief on that: re-picking each window returned +84.2% against +112.6% for holding. Three findings
+worth carrying forward:
+- **Exits are the broken part, not entries.** Buy decisions score 4 good of 5 (0.80); **sell
+  decisions score 0 of 4 (0.00)**. Seven trend-break exits cost −$54.44.
+- **Hold period and signal are mismatched**: a 55-day-breakout system with a 2.4-day average hold,
+  including two same-day round trips (XLV, XLF).
+- **No memo above 0.7 conviction has been written in eight days**, so the high band is untested.
+
+New proposal filed: `research/proposals/2026-09-13-populate-rs.md`. The `rs` column has been empty
+for three straight days while this week's study ranks `+rs 0.15` **first of ten variants** by
+robustness (0.79 against live 0.53). The desk cannot see the one signal its own research ranks
+highest. Also noted: `n8` tops the 97-variant report again, the second week running, which is the
+subject of the still-untested 7 September proposal.
+
+**Things that failed or need checking.**
+- Third day with no event/news gates section in the packet, though the routine describes one.
+- Third day with `rs` empty for all 49 symbols.
+- `us_etfs` still missing from the memo schema enum (open since 8 Sep; two more memos today).
+- Feed drift again: our SOL 101.40 against $99.31 externally, BNB 722.38 against $710–714.

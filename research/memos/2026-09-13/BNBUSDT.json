@@ -1,0 +1,39 @@
+{
+  "symbol": "BNBUSDT",
+  "asset_class": "crypto",
+  "date": "2026-09-13",
+  "direction": "flat",
+  "conviction": 0.6,
+  "thesis": "Unchanged and now the worst position in the book at -4.3%. BNB is $722 on our feed and $710-714 externally, the July burn is spent, the next quarterly burn is not due until around mid-October - outside this horizon - and the trailing stop at 697 is roughly 3.5% away. Two macro binaries land this week. There is nothing to add to.",
+  "bull_case": "Pattern analyst: setup is a **downtrend within a longer uptrend** - close 722.38, 24.0% below the 252-day high, RSI 59, 63d momentum +25.8%, close > SMA50 > SMA200 but no breakout and four straight sessions lower. Squeeze 1.14 means volatility is *expanding*, not coiling, which is the wrong direction for a base. ATR 3.5%. Verdict: pattern is against entry.\n\nThe supply mechanism remains real: the 36th burn on 15 July removed about 1.62M BNB, roughly $932M, taking supply to ~133.2M, with the next burn around mid-October. CZ's October 2025 pardon removed the acute legal overhang and VanEck's spot BNB ETF has listed since 28 May 2026. At $722 the token is near the bottom of the $700-950 forecast band, which is a better entry than mid-range, and today's news tone is mildly positive at +0.25.",
+  "bear_case": "Expanding volatility on a falling price with no catalyst inside the horizon is the definition of no edge. The stop at 697.41 is about 3.5% below spot, so the position is close to being resolved by the risk engine rather than by research. BNB has no independent bid - it follows bitcoin, and bitcoin is expected to move 5-10% within hours of Wednesday's decision. The structural objection is unhedgeable: BNB's value is a claim on one company's continued regulatory standing in the US and EU. Macro, once for the day: the FOMC decides on 16 September with a hike priced at roughly 87-90% after August CPI at 3.4%; the CLARITY Act vote lands 15 September. Brent is near $104 after a 9% week, and Iranian and Gulf officials meet in Muscat on Monday to sign an Iran-Oman shipping-route framework for the Strait of Hormuz - though a vessel was struck in the Strait on 13 September and shipping remains severely disrupted under a US naval blockade. Own backtest (research/backtests/2026-09-06.md): the crypto sleeve returned -6.4% with Sharpe -0.15 and a 17% win rate over 75 trades. No demonstrated edge in crypto momentum here. Desk record (research/outcomes.json): 9 closed trades, 0 wins, -$97.25 realised, expectancy -2.08% per trade, average hold 2.4 days; long memos 2 good of 4 judged. Conviction is held below what the standalone evidence would justify until that record improves.",
+  "catalysts": [
+    "37th quarterly BNB burn around mid-October, outside this horizon",
+    "CLARITY Act vote on 15 Sep 2026",
+    "16 Sep 2026 FOMC",
+    "VBNB ETF flow accumulation"
+  ],
+  "risks": [
+    "No catalyst inside the horizon; stop 3.5% away",
+    "Squeeze 1.14: volatility expanding on a falling price",
+    "No independent bid - follows bitcoin into a 5-10% event move",
+    "Exchange-token risk concentrated in one company's regulatory standing",
+    "Own backtest: no demonstrated edge in crypto momentum"
+  ],
+  "invalidation": "The pattern analyst's level is **697.41**, the trailing stop carried in the packet, about 3.5% below spot. A close below it ends this. It flips long on a daily close above 800 ahead of the October burn.",
+  "horizon_days": 21,
+  "sources": [
+    "https://usethebitcoin.com/bitcoin/bitcoin-price-september-13-2026/",
+    "https://www.tradingkey.com/analysis/cryptocurrencies/bnb/261790577-crypto-binance-exchange-bnb-burn-bitcoin-btc-tradingkey",
+    "https://memeburn.com/crypto-market-september-2026-key-events/",
+    "research/backtests/2026-09-06.md",
+    "research/packets/2026-09-13.md",
+    "research/outcomes.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.3,
+    "bear": 0.65,
+    "macro": 0.25
+  }
+}

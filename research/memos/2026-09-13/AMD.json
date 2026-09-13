@@ -1,0 +1,40 @@
+{
+  "symbol": "AMD",
+  "asset_class": "us_stocks",
+  "date": "2026-09-13",
+  "direction": "flat",
+  "conviction": 0.55,
+  "thesis": "The sell-side got louder and the tape got quieter. Piper Sandler and Stifel initiated or reiterated buys at $600 and $635, and the CFO put AMD's addressable market at $2 trillion by 2030 - while the systematic score fell from +0.46 to +0.41 and 63-day momentum halved from +11.3% to +5.7%. Unchanged verdict: this is a fourth claim on AI capex in a book that already owns NVDA, MSFT and XLK, and target-price enthusiasm is not an edge.",
+  "bull_case": "Pattern analyst: setup is a **pullback to a rising trend** - close 516.13, 11.2% below the 252-day high, RSI 63, 63d momentum +5.7%, close > SMA50 > SMA200. Not extended. The notable number is squeeze at **0.56**, the tightest in the entire signal table: ATR has compressed to just over half its 100-day median, which is a move being wound up. Against that, ATR of 3.7% is among the widest in the book, so the stop is far and the position small. rs is empty; derived, +5.7% against SPY's +3.9% is only about 2 points of lead - AMD is barely beating its benchmark. Verdict: pattern says wait for a close above 521.10, the position's own high.\n\nFundamentally the story keeps building: Helios rack-scale units ship this autumn, MI400 lands in 2H 2026 at an estimated $7.2B of 2026 revenue, data-centre GPU revenue is forecast up 114% to $15B, and analysts are raising rather than trimming - Piper Sandler Buy at $600, Stifel Buy at $635, roughly 16-23% above spot. The packet's news tone is +0.40.",
+  "bear_case": "Momentum is decaying while the story improves, which is the least attractive combination: score +0.46 to +0.41 and 63d momentum +11.3% to +5.7% in three sessions, leaving AMD barely ahead of SPY. Every revenue number in the bull case is still a forecast - MI400 has not shipped in volume and Helios units are only now arriving - while the stock has already run 190% over 52 weeks. The TAM figure itself is reported inconsistently across sources, one headline saying $3 trillion and the body $2 trillion by 2030, which is a reason to discount it rather than quote it. And the concentration objection stands: NVDA, MSFT and XLK are already held, with XLK holding NVDA at about 16%. Macro, once for the day: the FOMC decides on 16 September with a hike priced at roughly 87-90% after August CPI at 3.4%; the CLARITY Act vote lands 15 September. Brent is near $104 after a 9% week, and Iranian and Gulf officials meet in Muscat on Monday to sign an Iran-Oman shipping-route framework for the Strait of Hormuz - though a vessel was struck in the Strait on 13 September and shipping remains severely disrupted under a US naval blockade. Desk record (research/outcomes.json): 9 closed trades, 0 wins, -$97.25 realised, expectancy -2.08% per trade, average hold 2.4 days; long memos 2 good of 4 judged. Conviction is held below what the standalone evidence would justify until that record improves.",
+  "catalysts": [
+    "Helios rack-scale first units shipping this autumn",
+    "MI400/MI450 volume shipments in 2H 2026",
+    "16 Sep 2026 FOMC",
+    "Q3 2026 results and data-centre GPU revenue against the $15B path"
+  ],
+  "risks": [
+    "Score and momentum decaying while targets rise",
+    "Only ~2 points of momentum lead over SPY",
+    "Revenue thesis still entirely forecast",
+    "Fourth overlapping AI position alongside NVDA, MSFT and XLK",
+    "ATR 3.7%: wide stop, small position, poor capital efficiency"
+  ],
+  "invalidation": "The pattern analyst's level is **463.67**, the trailing stop carried in the packet. A daily close below it ends this. It flips long on a close above 521.10 - the position's own high - which would resolve the 0.56 squeeze upward rather than down.",
+  "horizon_days": 30,
+  "sources": [
+    "https://finance.yahoo.com/technology/ai/articles/amd-rises-3-cfo-lifts-ai-chip-market-forecast-144521803.html",
+    "https://www.ad-hoc-news.de/boerse/news/corporate-news/amd-stock-gains-as-analysts-lift-ai-expectations-and-price-targets/70095473",
+    "https://www.benzinga.com/markets/tech/26/09/61746203/whats-going-on-with-amd-stock-friday-7",
+    "https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/03/amd-s-next-generation-ai-chips-set-to-power-2026-data-center-growth",
+    "research/packets/2026-09-13.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-10/AMD.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.55,
+    "bear": 0.55,
+    "macro": 0.25
+  }
+}
