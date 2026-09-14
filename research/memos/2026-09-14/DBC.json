@@ -1,0 +1,39 @@
+{
+  "symbol": "DBC",
+  "asset_class": "us_etfs",
+  "date": "2026-09-14",
+  "direction": "flat",
+  "conviction": 0.6,
+  "thesis": "The hedge is still earning its place - +2.6% while the book fell - but the case for adding got worse today, not better. Iran and Oman have agreed a temporary Hormuz shipping route running two to four months, which is exactly the kind of partial easing that bleeds a scarcity premium, and DBC is at RSI 75 within 1.4% of its 52-week high.",
+  "bull_case": "Pattern analyst: setup is a **breakout from base now at the top of its range** - close 33.15, just 1.4% below the 252-day high, RSI 75, 63d momentum +16.1%. It misses the formal extended test only because momentum is under 25%; on the other two legs it qualifies. Squeeze 0.88, no coil. ATR 1.5% is among the lowest in the book, so the hedge is cheap to carry. Verdict: pattern says wait for a pullback - do not add at RSI 75.\n\nThe macro case is intact. The temporary route is explicitly *not* a full reopening of the Strait, shipping stays disrupted, and August CPI showed gasoline up 3.9% driving over a third of the monthly increase - this is the one position that gains from the inflation that is forcing the Fed's hand. Goldman warns Brent could exceed $120 in 2027 if Gulf output stays 4 mb/d below prewar levels.",
+  "bear_case": "A two-to-four-month route agreement is the first concrete de-escalation since the crisis began, and the market does not need a full reopening to reprice the premium - it needs only to believe one is coming. The forecast gap is unchanged and wide: the EIA sees Brent averaging about $90/b in 2H26 and Goldman $85 in December, both well below a spot near $104. The IEA cut global demand to a 2.5 mb/d contraction in 2026 and the EIA raised 2027 US production to 14.3 mb/d. RSI 75 within 1.4% of the high is the wrong place to add, and a hiking Fed that kills demand unwinds the hedge itself. Desk record (research/outcomes.json): 11 closed trades, 0 wins, -$148.09 realised, expectancy -2.84% per trade; long memos are now 3 good of 7 judged, a 0.43 hit rate - below a coin flip. The one long memo the engine acted on, NVDA on 6 September, was stopped out at -8.5%. Conviction is capped accordingly and nothing today is written above 0.65.",
+  "catalysts": [
+    "Whether the Iran-Oman temporary route extends or lapses after two to four months",
+    "16 Sep 2026 FOMC and the demand outlook",
+    "EIA Short-Term Energy Outlook revisions"
+  ],
+  "risks": [
+    "Temporary Hormuz route agreed: first concrete de-escalation",
+    "EIA ~$90/b 2H26 and Goldman $85 December, both below spot",
+    "IEA sees a 2.5 mb/d demand contraction in 2026",
+    "RSI 75 within 1.4% of the 52-week high",
+    "A hiking Fed killing demand unwinds the hedge"
+  ],
+  "invalidation": "The pattern analyst's level is **31.25**, the trailing stop carried in the packet. A close below it ends this, and a full reopening of Hormuz transits invalidates it immediately regardless of price. Worth adding only on a pullback toward 31.25 that holds.",
+  "horizon_days": 30,
+  "sources": [
+    "https://fortune.com/2026/08/07/iran-agreement-oman-strait-of-hormuz-shipping/",
+    "https://www.aljazeera.com/news/2026/8/6/hormuz-deal-close-whats-the-latest-on-each-sides-positions",
+    "https://www.eia.gov/outlooks/steo/report/global_oil.php",
+    "https://www.cnbc.com/2026/09/11/cpi-inflation-breakdown-august-2026.html",
+    "research/packets/2026-09-14.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-11/DBC.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.45,
+    "bear": 0.6,
+    "macro": 0.5
+  }
+}

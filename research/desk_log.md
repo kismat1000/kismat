@@ -564,3 +564,72 @@ subject of the still-untested 7 September proposal.
 - Third day with `rs` empty for all 49 symbols.
 - `us_etfs` still missing from the memo schema enum (open since 8 Sep; two more memos today).
 - Feed drift again: our SOL 101.40 against $99.31 externally, BNB 722.38 against $710–714.
+
+## 2026-09-14 — council run
+
+Packet: `research/packets/2026-09-14.md`. Monday. Equity 9,806.30, 12 positions, **cash 0.00**.
+
+**The record, in one line:** eleven closed trades, eleven losses, −$148.09 realised, expectancy
+−2.84% per trade, and long memos are now **3 good of 7 judged (0.43)** — below a coin flip — so
+nothing today is written above 0.65.
+
+**My first long memo the engine acted on has been stopped out.** NVDA exited at −8.48% (−$10.37),
+eight days held. I called it long 0.62 on 6 September on a 55-day breakout, downgraded to flat on
+8 September when that breakout failed, and the position ran to the stop anyway. The `long` row now
+appears in `by_memo_at_entry` for the first time: n=1, −$10.37. **AMD** also exited, −4.04%
+(−$40.48) — the second-largest single loss on the book — on a name the desk called flat twice.
+Flat was right in the sense of "do not add" and still cost $40 because the engine held it.
+
+**Picks: 6.** Memos turned three days old for **BTCUSDT**, **DBC**, **EEM** and **ETHUSDT**. Plus
+**AAPL** and **LINKUSDT**, both re-entered by the engine today and both carrying memos a week old.
+
+| symbol | direction | conviction | note |
+|---|---|---|---|
+| EEM | flat | 0.65 | Momentum flipped +1.0% → −2.3%, lowest score in the book, stop 1.7% away |
+| AAPL | flat | 0.60 | BofA ship times *shorter* than last year — 14d vs 18d Pro, 18d vs 25d Pro Max |
+| BTCUSDT | flat | 0.60 | Funds bled $463M last week while ether took $197M |
+| DBC | flat | 0.60 | Iran-Oman agreed a temporary route; RSI 75 within 1.4% of the high |
+| LINKUSDT | flat | 0.55 | Re-bought five days after costing $37.45; squeeze 1.31, ATR 5.9% |
+| ETHUSDT | flat | 0.45 | Nearly persuaded — see below |
+
+**Deferred** (memo one or two days old, nothing material): MSFT (long 0.50, 12 Sep — the only long
+on the desk, now +1.1% and score up to +0.65), XLE, CSL.AX, XLK, SOLUSDT, BNBUSDT (all 13 Sep).
+
+No `avoid` memo on any held position. `validate-memos`: 20 valid.
+
+**The statistic that changed a call today:** long memos falling to 3-of-7. That is what kept
+ETHUSDT flat. Ether took **$197M of ETF inflows last week while bitcoin funds bled $463M**, it
+holds the top score in the book at +0.85 with a 55-day breakout, RSI 57 and 24.2% of headroom below
+its 52-week high — the cleanest structure I have seen since this desk started. My trigger was a
+close above 2,700 and price is 2,548, sitting on the $2,550 ceiling that has rejected it
+repeatedly. Conviction goes to **0.45** to record that I am nearly persuaded. The trigger stays at
+2,700 for the third day running. If it breaks 2,700 and I then call it long, that call will have
+been earned rather than chased.
+
+**A correction I owe the record: my AAPL thesis was wrong on direction.** The 7 September memo
+called flat 0.60 arguing sell-the-news; AAPL went from a 315.50 exit to 333 and now sits 2.0%
+below its 52-week high. The engine has just re-bought it at 332.49. Today's memo is still flat but
+on entirely different evidence — Bank of America's ship-time tracking, the first hard demand data
+of this cycle, shows iPhone 18 Pro waits at 14 days against 18 for the 17 Pro a year ago and Pro
+Max at 18 against 25. Shorter queues mean a thinner order book. Being right for a new reason is
+not the same as having been right.
+
+**Hormuz: my named invalidation did not fire, precisely.** Iran and Oman agreed a shipping route,
+but it is a **temporary** route running two to four months and explicitly not a full reopening of
+the Strait. Yesterday's XLE memo cut to flat ahead of this and that call stands; the thesis is not
+dead and XLE keeps its 62.85 stop. Recorded because the distinction between "a route agreed" and
+"the Strait reopened" is exactly the kind of thing a desk talks itself out of after the fact.
+
+**Macro (once for the day).** The FOMC decides Wednesday and the odds are genuinely contested —
+Kalshi showed 48% for a 25bp hike while another tracker had 83%, so the week's most consequential
+number is one nobody agrees on. The CLARITY Act reaches a Senate vote tomorrow on a revised bill
+with White House-backed ethics concessions; analysts describe it as simultaneously dead and alive
+until the vote. macro_conviction long: 0.25.
+
+**Things that failed or need checking.**
+- Fourth day with no event/news gates section in the packet, though the routine describes one.
+- Fourth day with `rs` empty for all symbols — proposal filed yesterday.
+- `us_etfs` still missing from the memo schema enum (open since 8 Sep).
+- **Cash is 0.00 and the book is at its 12-position cap.** Every call this desk makes is now
+  advisory only: there is no capital to act on a "long" and no slot to take a new idea. Worth the
+  owner's attention — it is the context for every conviction number above.

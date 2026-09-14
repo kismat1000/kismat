@@ -1,0 +1,37 @@
+{
+  "symbol": "BTCUSDT",
+  "asset_class": "crypto",
+  "date": "2026-09-14",
+  "direction": "flat",
+  "conviction": 0.6,
+  "thesis": "The rotation call from 11 September is confirmed and larger than I thought: bitcoin funds bled **$463M** last week while ether took $197M. Bitcoin is back to flat on our entry at 78,755 and still range-bound with RSI 51, and today's packet gives it the only negative news tone in the book at -0.67. The reason to prefer BTC within this sleeve has now clearly gone to ETH.",
+  "bull_case": "Pattern analyst: setup is a **range** - close 78,755.38, RSI 51 dead centre, 18.8% below the 252-day high, 63d momentum +26.3%, no breakout flag, squeeze 0.91. ATR 2.8% is the tamest crypto we own, so it is the cheapest of the sleeve to hold. Verdict: pattern says wait for a close above 79,661, the position's own high.\n\nThe structural bid has not disappeared: US spot bitcoin ETFs took $3.52B in August, the strongest month of 2026, with combined net assets of $103.34B, about 6.32% of market cap. The score has improved to +0.61 from +0.56, the position is back to +0.1% from -1.8%, and the $77k area has now absorbed repeated tests without breaking.",
+  "bear_case": "Flows reversed hard: $463M out of bitcoin funds last week against $197M into ether. That is the single fact that made BTC the preferred horse in this sleeve, and it is now pointing the other way. The packet's headline tone of -0.67 is the most negative of any symbol in the book. Price is going nowhere - RSI 51, no breakout, a $77-82k range unbroken for two weeks. Macro, once for the day: the FOMC decides Wednesday 16 September and the odds are genuinely contested - Kalshi showed 48% for a 25bp hike while another tracker had the market-implied probability at 83%, so the single most consequential number this week is one nobody agrees on. The CLARITY Act reaches a Senate vote tomorrow, 15 September, on a revised bill with White House-backed ethics concessions. On energy, Iran and Oman have agreed a **temporary** shipping route lasting two to four months that explicitly does not constitute a full reopening of the Strait of Hormuz. Bitcoin is expected to move 5-10% within hours of Wednesday's decision, which is volatility, not edge. Own backtest (research/backtests/2026-09-06.md): the crypto sleeve returned -6.4%, Sharpe -0.15, 17% win rate over 75 trades. Desk record (research/outcomes.json): 11 closed trades, 0 wins, -$148.09 realised, expectancy -2.84% per trade; long memos are now 3 good of 7 judged, a 0.43 hit rate - below a coin flip. The one long memo the engine acted on, NVDA on 6 September, was stopped out at -8.5%. Conviction is capped accordingly and nothing today is written above 0.65.",
+  "catalysts": [
+    "16 Sep 2026 FOMC",
+    "CLARITY Act Senate vote 15 Sep 2026",
+    "Weekly ETF flow prints and whether the ETH rotation persists"
+  ],
+  "risks": [
+    "$463M of outflows last week while ether took $197M",
+    "Most negative news tone in the book at -0.67",
+    "Range-bound with RSI 51 and no breakout",
+    "Own backtest: 17% win rate in the crypto sleeve"
+  ],
+  "invalidation": "The pattern analyst's level is **73,231.29**, the trailing stop carried in the packet. A close below it ends this. It flips long on a daily close above 82,000 made after the FOMC with ETF flows turned positive again.",
+  "horizon_days": 21,
+  "sources": [
+    "https://paragraph.com/@cryptobuyingtips/crypto-market-overview-leveraged-bets-surge-amid-mixed-etf-flows-and-pending-legislation-september-14-2026",
+    "https://usethebitcoin.com/bitcoin/bitcoin-price-september-13-2026/",
+    "https://cryptorank.io/news/feed/4b12b-bitcoin-etfs-just-had-their-best-month-of-2026-but-september-starts-with-a-warning",
+    "research/backtests/2026-09-06.md",
+    "research/packets/2026-09-14.md",
+    "research/outcomes.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.4,
+    "bear": 0.6,
+    "macro": 0.3
+  }
+}

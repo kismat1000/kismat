@@ -1,0 +1,40 @@
+{
+  "symbol": "AAPL",
+  "asset_class": "us_stocks",
+  "date": "2026-09-14",
+  "direction": "flat",
+  "conviction": 0.6,
+  "thesis": "The engine has re-bought Apple at 332.49, and I owe the record a correction: my 7 September sell-the-news call was wrong on direction - AAPL went from a 315.50 exit to 333 and is now 2.0% off its 52-week high. But the first hard demand data has arrived and it is soft: Bank of America's ship-time tracking shows iPhone 18 Pro at 14 days against 18 for the 17 Pro a year ago, and Pro Max at 18 against 25. Shorter waits mean less backlog. Buying near the high on thinner queues is not an edge.",
+  "bull_case": "Pattern analyst: setup is a **breakout from base** - close 333.08 has cleared the pre-event range, sitting just 2.0% below the 252-day high with RSI 71 and 63d momentum +14.5%. It does *not* meet the extended test, which needs RSI above 70 **and** momentum above 25% **and** within 2% of the high: momentum is only +14.5%, so two of three. Squeeze is 1.00, dead neutral - no coil either way. ATR 2.4%. rs is empty again; derived, +14.5% against SPY's +2.8% is a lead of roughly 12 points, so Apple is genuinely leading its benchmark. Verdict: pattern says wait for a close above 334.87, the position's own high.\n\nThe cycle is real: pre-orders opened 12 September with devices on sale 18 September in 65+ markets, the 18 Pro at $1,199 and Pro Max at $1,299, each $100 above last year - price rises that stick are the cleanest margin story Apple has. The iPhone Duo foldable is a genuine new category at $1,999. Today's packet gives AAPL a +0.50 news tone and the score has climbed to +0.50.",
+  "bear_case": "The demand signal is negative and it is the first real one. BofA's global average ship times are *shorter* than last year across both Pro models - 14 days versus 18, and 18 versus 25 - which is what a thinner order book looks like, not a stronger one. The foldable does not help inside this horizon: pre-orders open 16 October and shipping starts 23 October, past the near end of it, and competitors moved first - Huawei unveiled the Mate XT2 and Xiaomi the 18 Fold in the same week. Price is 2.0% below the 52-week high with RSI 71, which is the worst combination of entry conditions available. Macro, once for the day: the FOMC decides Wednesday 16 September and the odds are genuinely contested - Kalshi showed 48% for a 25bp hike while another tracker had the market-implied probability at 83%, so the single most consequential number this week is one nobody agrees on. The CLARITY Act reaches a Senate vote tomorrow, 15 September, on a revised bill with White House-backed ethics concessions. On energy, Iran and Oman have agreed a **temporary** shipping route lasting two to four months that explicitly does not constitute a full reopening of the Strait of Hormuz. Desk record (research/outcomes.json): 11 closed trades, 0 wins, -$148.09 realised, expectancy -2.84% per trade; long memos are now 3 good of 7 judged, a 0.43 hit rate - below a coin flip. The one long memo the engine acted on, NVDA on 6 September, was stopped out at -8.5%. Conviction is capped accordingly and nothing today is written above 0.65.",
+  "catalysts": [
+    "iPhone 18 on sale 18 Sep 2026 in 65+ markets; first-weekend sales data",
+    "iPhone Duo pre-orders 16 Oct, shipping 23 Oct - outside this horizon",
+    "16 Sep 2026 FOMC",
+    "September-quarter results in late Oct 2026"
+  ],
+  "risks": [
+    "BofA ship times shorter than last year: thinner backlog, weaker demand",
+    "RSI 71 and 2.0% below the 52-week high",
+    "Foldable revenue lands outside this horizon",
+    "Huawei Mate XT2 and Xiaomi 18 Fold launched the same week",
+    "Desk record: long memos 3 of 7; conviction capped"
+  ],
+  "invalidation": "The pattern analyst's level is **313.76**, the trailing stop carried in the packet. A daily close below it ends this. It flips long on a close above 334.87 with ship times *lengthening* in the next BofA tracker - demand confirming rather than price alone.",
+  "horizon_days": 30,
+  "sources": [
+    "https://www.benzinga.com/markets/tech/26/09/61769496/apple-stock-trades-near-52-week-high-as-analyst-tracks-iphone-18-demand-signals",
+    "https://www.macrumors.com/2026/09/04/iphone-18-pro-release-date-preorders/",
+    "https://www.benzinga.com/trading-ideas/movers/26/09/61762523/apple-stock-trending-up-with-spotlight-on-foldable-iphone-duo",
+    "https://www.cnbc.com/2026/09/09/apple-event-today-live-updates.html",
+    "research/packets/2026-09-14.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-07/AAPL.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.5,
+    "bear": 0.6,
+    "macro": 0.3
+  }
+}

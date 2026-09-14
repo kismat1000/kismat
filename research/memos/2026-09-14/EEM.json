@@ -1,0 +1,39 @@
+{
+  "symbol": "EEM",
+  "asset_class": "us_etfs",
+  "date": "2026-09-14",
+  "direction": "flat",
+  "conviction": 0.65,
+  "thesis": "The call from 11 September is playing out: we bought the dollar-down trade in the week the dollar-up catalyst got confirmed, and EEM has gone from +1.2% to -1.6% with 63-day momentum flipping from +1.0% to **-2.3%**. It now carries the lowest score in the book at +0.33 and the trailing stop is only 1.7% below spot. The Fed decides Wednesday.",
+  "bull_case": "Pattern analyst: setup is a **pullback to a rising trend**, though a deteriorating one - close 65.99 is 7.3% below the 252-day high with RSI 49 and 63d momentum now negative at -2.3%, while the packet still shows close > SMA50 > SMA200. The interesting number is squeeze at **0.64**, well under the 0.75 line and the tightest among our ETFs: volatility is coiling, so a move is being wound up in one direction or the other. ATR 1.4% is low. Derived rs: -2.3% against SPY's +2.8% means EEM lags its benchmark by about 5 points. Verdict: pattern is against entry - a laggard in a coiling range is not a buy until the coil resolves upward.\n\nThe structural case still has good sponsors: sell-side work continues to argue the dollar outlook is bearish on fiscal deficits and reduced Fed visibility, which is the main tailwind for EM; EM equities entered 2026 with macro tailwinds, improving structural profitability and strengthening sentiment; and today's packet gives EEM a +0.50 news tone.",
+  "bear_case": "Those dollar forecasts were written for an easing Fed. Instead August CPI printed 3.4% with core above estimate and the Fed decides on a hike on Wednesday - a hiking Fed is dollar-positive, which removes the load-bearing assumption under every EM bull case cited above. The price has already agreed: momentum has flipped negative, the score is the lowest in the book, and the position has swung 2.8 points against us in three sessions. The stop at 64.86 is 1.7% away, so this is close to being resolved by the risk engine rather than by research. China is roughly 25% of the fund and needs stimulus to deliver. Macro, once for the day: the FOMC decides Wednesday 16 September and the odds are genuinely contested - Kalshi showed 48% for a 25bp hike while another tracker had the market-implied probability at 83%, so the single most consequential number this week is one nobody agrees on. The CLARITY Act reaches a Senate vote tomorrow, 15 September, on a revised bill with White House-backed ethics concessions. On energy, Iran and Oman have agreed a **temporary** shipping route lasting two to four months that explicitly does not constitute a full reopening of the Strait of Hormuz. Desk record (research/outcomes.json): 11 closed trades, 0 wins, -$148.09 realised, expectancy -2.84% per trade; long memos are now 3 good of 7 judged, a 0.43 hit rate - below a coin flip. The one long memo the engine acted on, NVDA on 6 September, was stopped out at -8.5%. Conviction is capped accordingly and nothing today is written above 0.65.",
+  "catalysts": [
+    "16 Sep 2026 FOMC and the dollar's reaction",
+    "Chinese stimulus measures and Q3 data",
+    "Whether the 0.64 squeeze resolves up or down"
+  ],
+  "risks": [
+    "63d momentum flipped from +1.0% to -2.3%; lowest score in the book",
+    "Stop 1.7% below spot",
+    "A hiking Fed is dollar-positive, against the core thesis",
+    "Lags SPY by about 5 points",
+    "~25% China weight dependent on stimulus"
+  ],
+  "invalidation": "The pattern analyst's level is **64.86**, the trailing stop carried in the packet and only 1.7% below spot. A close below it ends this. It flips long on a close above 68 with the dollar falling *after* Wednesday's decision - dollar weakness through a hike would be real evidence rather than a forecast.",
+  "horizon_days": 30,
+  "sources": [
+    "https://wealthmanagement.bnpparibas/en/insights/market-strategy/currencies-focus-september-2026.html",
+    "https://www.lazardassetmanagement.com/li/en_gb/research-insights/investment-insights/investment-research/emerging-markets-outlook-2026",
+    "https://www.cnbc.com/2026/09/11/cpi-inflation-report-august-2026.html",
+    "https://defirate.com/prediction-markets/fed-decision-odds/",
+    "research/packets/2026-09-14.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-11/EEM.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.35,
+    "bear": 0.65,
+    "macro": 0.25
+  }
+}
