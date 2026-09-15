@@ -1,0 +1,38 @@
+{
+  "symbol": "ETHUSDT",
+  "asset_class": "crypto",
+  "date": "2026-09-15",
+  "direction": "flat",
+  "conviction": 0.55,
+  "thesis": "Holding the 2,700 trigger was right. Yesterday ETH carried the top score in the book at +0.85 on a 55-day breakout with the best ETF flows in crypto, and I wrote that I was nearly persuaded but would not lower the trigger toward spot. Today it is 2,401 - down 5.8% - the score has fallen to +0.62 and the squeeze has flipped to 1.04, volatility expanding. The $2,550 ceiling held, exactly as the memo said it might.",
+  "bull_case": "Pattern analyst: setup is a **failed breakout** - yesterday's 55-day high is gone, close 2,401.45 with RSI 49 and 63d momentum +27.0%, still 28.5% below the 252-day high so there is no valuation ceiling in the structure itself. Squeeze 1.04 means volatility is expanding. Verdict: pattern says wait for a reclaim of 2,550.\n\nThe flow case has not been disproved by one bad session: ether took $197M of ETF inflows last week while bitcoin funds bled $463M, after a $189.15M single day - the largest since October 2025 - and $1.85B the prior month. Falling 3.9% on a day the whole complex fell 4-8% is market beta, not an ether-specific problem.",
+  "bear_case": "The breakout failed within 24 hours of printing, which is worse evidence than never having broken out: it means the buyers above $2,550 did not follow through. Expanding volatility on a falling price is the wrong structure. The CLARITY Act vote today was only cloture - a 60-vote threshold merely to begin debate, which even if cleared does not pass the bill - so the regulatory catalyst the whole sleeve was leaning on was always smaller than the headlines implied, and the Fed decides tomorrow. Own backtest (research/backtests/2026-09-06.md): crypto sleeve -6.4%, Sharpe -0.15, 17% win rate over 75 trades. Desk record (research/outcomes.json): 12 closed trades, 0 wins, -$168.00 realised, expectancy -2.76% per trade. Long memos now read 6 good of 7 judged (0.86) - but that figure was 3 of 7 (0.43) yesterday, so a metric that halves and doubles overnight on seven judged memos is noise, not a licence to get bolder. Skip decisions are 20 of 20.",
+  "catalysts": [
+    "16 Sep 2026 FOMC",
+    "Whether ETH reclaims $2,550",
+    "Weekly spot Ether ETF flow prints"
+  ],
+  "risks": [
+    "Breakout failed within a day; squeeze 1.04 with volatility expanding",
+    "CLARITY cloture does not pass the bill even if it clears",
+    "L2 fee leakage unchanged",
+    "Own backtest: 17% win rate in the crypto sleeve"
+  ],
+  "invalidation": "The pattern analyst's level is **2,259.44**, the trailing stop carried in the packet. A close below it ends this. The long trigger stays at a daily close above 2,700 with ETF inflows positive - unchanged for a fourth day, and today is the argument for why.",
+  "horizon_days": 21,
+  "sources": [
+    "https://247wallst.com/investing/cryptocurrency/2026/09/15/what-is-the-crypto-clarity-act-what-tuesdays-senate-vote-decides-for-xrp-bitcoin-ethereum-and-solana/",
+    "https://www.bitget.com/academy/clarity-act-vote-september-2026-senate-cloture-what-to-know",
+    "https://paragraph.com/@cryptobuyingtips/crypto-market-overview-leveraged-bets-surge-amid-mixed-etf-flows-and-pending-legislation-september-14-2026",
+    "research/backtests/2026-09-06.md",
+    "research/packets/2026-09-15.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-14/ETHUSDT.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.5,
+    "bear": 0.55,
+    "macro": 0.25
+  }
+}

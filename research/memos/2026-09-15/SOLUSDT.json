@@ -1,0 +1,39 @@
+{
+  "symbol": "SOLUSDT",
+  "asset_class": "crypto",
+  "date": "2026-09-15",
+  "direction": "flat",
+  "conviction": 0.6,
+  "thesis": "The worst position in the book at -7.8%, and the stop at 90.92 is now only 6% below spot. SOL has fallen from $105 when the SEC recognised it for commodity trusts on 5 September to $96.88 today - it has given back everything its best catalyst bought and then some. Two macro events land inside 24 hours.",
+  "bull_case": "Pattern analyst: setup is a **downtrend within a longer uptrend** - close 96.88, 34.1% below the 252-day high, RSI 45, 63d momentum +24.4%, no breakout, and price now below the 103.35 level the 7 September memo named as the line to hold. Squeeze 0.98, neutral; ATR 4.5% is wide. Verdict: pattern is against entry.\n\nThe fundamentals are unchanged and genuinely good: SEC recognition alongside bitcoin and ether for commodity-based trusts, Bitwise's staking ETF past $1B cumulative inflows, Solana leading all chains with $229M of 30-day real-world-asset net inflows, and the Alpenglow upgrade targeting ~150ms finality. Today's news tone is +0.50 and 34% below the 52-week high leaves room if sentiment turns.",
+  "bear_case": "A token that cannot hold its gains through its own best regulatory news is telling you who is selling. SOL is below both the 103.35 breakout level and its pre-catalyst price, down 7.8% for us, and it sits in the speculative cohort that has been sold hardest all week. The stop is 6% away with ATR at 4.5%, so a single bad session can resolve this. Macro, once for the day: the FOMC decides tomorrow, 16 September. The CLARITY Act faced a **cloture** vote today at 2:15pm ET - a 60-vote threshold merely to begin debate, which even if cleared does not pass the bill - and crypto fell 4-8% across the board today. Brent reached about $107.5, a four-month high, after attacks left Saudi Arabia's East-West pipeline offline with repairs possibly taking weeks, while Riyadh seeks to push more volume through Hormuz; Iran says it will not negotiate with Washington until its conditions are met. Own backtest (research/backtests/2026-09-06.md): crypto sleeve -6.4%, Sharpe -0.15, 17% win rate over 75 trades. Desk record (research/outcomes.json): 12 closed trades, 0 wins, -$168.00 realised, expectancy -2.76% per trade. Long memos now read 6 good of 7 judged (0.86) - but that figure was 3 of 7 (0.43) yesterday, so a metric that halves and doubles overnight on seven judged memos is noise, not a licence to get bolder. Skip decisions are 20 of 20.",
+  "catalysts": [
+    "16 Sep 2026 FOMC",
+    "Whether $94.40 support holds",
+    "Weekly SOL ETF flow prints",
+    "Alpenglow upgrade phase one"
+  ],
+  "risks": [
+    "Below both the 103.35 level and its pre-catalyst price",
+    "Stop 6% away with ATR 4.5%",
+    "Speculative cohort sold hardest all week",
+    "Own backtest: 17% win rate in the crypto sleeve"
+  ],
+  "invalidation": "The pattern analyst's level is **90.92**, the trailing stop carried in the packet, about 6% below spot. A close below it ends this. It flips long on a daily close above 110 that reclaims the broken breakout with ETF flows positive.",
+  "horizon_days": 21,
+  "sources": [
+    "https://247wallst.com/investing/cryptocurrency/2026/09/15/what-is-the-crypto-clarity-act-what-tuesdays-senate-vote-decides-for-xrp-bitcoin-ethereum-and-solana/",
+    "https://cryptorank.io/news/feed/7ea7a-solana-price-prediction-september-2026-network-growth-puts-150-in-focus",
+    "https://finance.yahoo.com/markets/crypto/articles/bitcoin-xrp-ethereum-solana-drop-214547270.html",
+    "research/backtests/2026-09-06.md",
+    "research/packets/2026-09-15.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-13/SOLUSDT.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.35,
+    "bear": 0.65,
+    "macro": 0.25
+  }
+}

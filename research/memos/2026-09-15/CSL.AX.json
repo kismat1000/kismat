@@ -1,0 +1,39 @@
+{
+  "symbol": "CSL.AX",
+  "asset_class": "au_stocks",
+  "date": "2026-09-15",
+  "direction": "flat",
+  "conviction": 0.5,
+  "thesis": "Both legs of my own long trigger are unmet, and only just. I said CSL flips long on a close above A$175 native **with at least one broker raising rather than trimming**; it closed A$174.26 and I found no broker raising. It now carries the top score in the book at +0.85 on a fresh 55-day high with a squeeze at 0.65. This is the closest thing to a long on the desk and it stays flat by 74 cents and a missing upgrade.",
+  "bull_case": "Pattern analyst: setup is a **breakout from base** and the best structure in the book - a fresh 55-day high, close A$174.26 native, **19.0% below the 252-day high** so there is real headroom, RSI only 58, and 63d momentum +63.3%, the highest anywhere in the table. Squeeze **0.65**, well under the 0.75 line, so volatility is coiling into the breakout rather than expanding out of it. ATR 1.9% keeps the stop tight. Unlike XLE and DBC, none of the extended tests are close to firing. Verdict: pattern supports entry now.\n\nToday's news tone is +0.75. The transformation programme targets US$500-550M of annual savings by FY28, having already beaten its first milestone at about US$176M, and the August result beat a reset bar with better clarity on US pharmaceutical pricing and an Illinois manufacturing expansion.",
+  "bear_case": "The valuation dispersion I could not resolve on 13 September turns out to be the story rather than a research failure: broker targets on CSL now run from **A$131.49 to A$206.76**, and the trade press headline is that brokers cannot agree what happens next after a 90% run off the June low. A 57% spread between the most bearish and most bullish target means nobody knows what this is worth, and the price is inside that range - so valuation supports neither side, which is precisely why I will not lean on it. The business record is unchanged and poor: four major guidance cuts in two years, FY26 underlying earnings down 2% with US$7.1B of impairments producing a statutory loss, and FY27 guided to flat revenue with ~5% profit growth against +63% quarterly momentum. Desk record (research/outcomes.json): 12 closed trades, 0 wins, -$168.00 realised, expectancy -2.76% per trade. Long memos now read 6 good of 7 judged (0.86) - but that figure was 3 of 7 (0.43) yesterday, so a metric that halves and doubles overnight on seven judged memos is noise, not a licence to get bolder. Skip decisions are 20 of 20.",
+  "catalysts": [
+    "A broker raising rather than trimming - the missing leg of the long trigger",
+    "A close above A$175 native",
+    "US pharmaceutical pricing policy developments",
+    "Transformation savings against the US$500-550M FY28 target"
+  ],
+  "risks": [
+    "Broker targets span A$131.49 to A$206.76: nobody knows what this is worth",
+    "Four major guidance cuts in two years",
+    "FY27 guides flat revenue and ~5% profit growth",
+    "Up 90% from the June low",
+    "No cash to act on any call"
+  ],
+  "invalidation": "The pattern analyst's level is **A$116.22 native** (US$116.2249 in packet terms), the trailing stop carried in the packet. A close below it ends this. The long trigger is unchanged: a close above A$175 native **and** at least one broker raising.",
+  "horizon_days": 30,
+  "sources": [
+    "https://www.fool.com.au/2026/09/10/csl-shares-are-up-90-brokers-cant-agree-what-happens-next/",
+    "https://www.marketindex.com.au/news/is-csl-the-asxs-biggest-ever-blue-chip-disaster-how-the-model-is-broken",
+    "https://www.investing.com/equities/csl-limited-consensus-estimates",
+    "research/packets/2026-09-15.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-13/CSL.AX.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.6,
+    "bear": 0.5,
+    "macro": 0.35
+  }
+}

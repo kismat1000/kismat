@@ -1,0 +1,38 @@
+{
+  "symbol": "MSFT",
+  "asset_class": "us_stocks",
+  "date": "2026-09-15",
+  "direction": "long",
+  "conviction": 0.5,
+  "thesis": "Held at 0.50, unchanged for the fourth run. Both named invalidations remain intact - price 497.12 against a 474.50 stop, Azure guided to ~45% constant currency against a 40% floor - and the squeeze has tightened again to 0.73. The score eased from +0.65 to +0.60 with the market, not with the company. This is the only long on the desk and the only one the evidence keeps supporting.",
+  "bull_case": "Pattern analyst: setup is a **pullback to a rising trend** - close 497.12, 7.5% below the 252-day high, RSI 53 mid-range, 63d momentum +24.6%, close > SMA50 > SMA200. Nowhere near extended. Squeeze **0.73**, under the 0.75 line, so volatility is coiling. ATR 2.1% means a tight stop and real size. Derived rs: +24.6% against SPY's +0.6% is a lead of about 24 points, the widest in the book. Verdict: pattern supports entry now.\n\nNothing in the business has changed for the worse: Azure past $100B growing 43% and guided to ~45% cc, Microsoft 365 Copilot beyond 30 million paid seats, a compute shortage severe enough that Microsoft is turning away AI and cloud business and plans to more than triple data-centre capacity. Bank of America raised its target from $500 to $600; consensus is Strong Buy around $572.92. Today's packet gives MSFT a +0.75 news tone.",
+  "bear_case": "The capital intensity keeps growing - AI capex around $175-190B for 2026, reached partly by lengthening assumed useful lives of data-centre assets, now with a capacity tripling on top. The OpenAI revenue share is capped at about $38B through 2030 under the non-exclusive structure. There is no company catalyst until FY27 Q1 results in late October, and the Fed decides tomorrow on a stock whose whole appeal is long-duration cash flow. Macro, once for the day: the FOMC decides tomorrow, 16 September. The CLARITY Act faced a **cloture** vote today at 2:15pm ET - a 60-vote threshold merely to begin debate, which even if cleared does not pass the bill - and crypto fell 4-8% across the board today. Brent reached about $107.5, a four-month high, after attacks left Saudi Arabia's East-West pipeline offline with repairs possibly taking weeks, while Riyadh seeks to push more volume through Hormuz; Iran says it will not negotiate with Washington until its conditions are met. Desk record (research/outcomes.json): 12 closed trades, 0 wins, -$168.00 realised, expectancy -2.76% per trade. Long memos now read 6 good of 7 judged (0.86) - but that figure was 3 of 7 (0.43) yesterday, so a metric that halves and doubles overnight on seven judged memos is noise, not a licence to get bolder. Skip decisions are 20 of 20.",
+  "catalysts": [
+    "16 Sep 2026 FOMC decision and dot plot",
+    "FY27 Q1 results in late Oct against the ~45% cc Azure guide",
+    "Data-centre capacity expansion easing the compute shortage"
+  ],
+  "risks": [
+    "AI capex $175-190B plus a capacity tripling",
+    "Useful-life extension flattering the capex figure",
+    "OpenAI revenue share capped at ~$38B through 2030",
+    "No catalyst before late October",
+    "Rate decision tomorrow on a long-duration asset"
+  ],
+  "invalidation": "The pattern analyst's level is **474.50**, the trailing stop carried in the packet, which binds before my 470 thesis level. A daily close below it ends this. Azure guided or reported below 40% constant currency kills it outright regardless of price.",
+  "horizon_days": 45,
+  "sources": [
+    "https://www.ad-hoc-news.de/boerse/news/corporate-news/microsoft-stock-gains-as-analysts-raise-targets/70087325",
+    "https://news.microsoft.com/source/2026/07/29/microsoft-cloud-and-ai-strength-fuels-fourth-quarter-results-4/",
+    "https://defirate.com/prediction-markets/fed-decision-odds/",
+    "research/packets/2026-09-15.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-12/MSFT.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.65,
+    "bear": 0.45,
+    "macro": 0.25
+  }
+}

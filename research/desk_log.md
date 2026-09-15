@@ -633,3 +633,78 @@ until the vote. macro_conviction long: 0.25.
 - **Cash is 0.00 and the book is at its 12-position cap.** Every call this desk makes is now
   advisory only: there is no capital to act on a "long" and no slot to take a new idea. Worth the
   owner's attention — it is the context for every conviction number above.
+
+## 2026-09-15 — council run
+
+Packet: `research/packets/2026-09-15.md`. Tuesday. Equity 9,656.55, 12 positions, cash 0.00.
+Crypto fell 4–8% across the sleeve: SOL −7.8%, BNB −5.5%, BTC −3.9%, ETH −3.9%, LINK −4.4%.
+
+**The record, in one line:** twelve closed trades, twelve losses, −$168.00 realised — and long
+memos now read 6 good of 7 judged (0.86), against 3 of 7 (0.43) yesterday. **A hit rate that
+halves and doubles overnight on seven judged memos is noise, and I am not treating it as licence
+to get bolder.** Skip decisions are 20 of 20.
+
+**EEM stopped out at −1.94% (−$19.90).** Yesterday's memo was flat 0.65 and said in terms that the
+stop sat 1.7% below spot and this was close to being resolved by the risk engine rather than by
+research. It was, within a day.
+
+**Picks: 7.** Due: **MSFT** (memo three days old) and **XLV** (re-entered today, memo a week old).
+Re-run on material change: **XLE** and **CSL.AX** (both printed fresh 55-day highs, scores to +0.75
+and +0.85), **DBC** (packet now flags it overbought at RSI 87), **ETHUSDT** (score +0.85 → +0.62
+after a failed breakout) and **SOLUSDT** (−7.8%, the worst position on the book).
+
+| symbol | direction | conviction | note |
+|---|---|---|---|
+| MSFT | long | 0.50 | Unchanged fourth run; squeeze 0.73, leads SPY by ~24 points, both invalidations intact |
+| DBC | flat | 0.65 | RSI **87** — above the engine's own 80 entry-refusal line |
+| SOLUSDT | flat | 0.60 | Below both the 103.35 level and its pre-catalyst price; stop 6% away |
+| XLV | flat | 0.60 | Re-bought at RSI 29, five days after the same trade lost money at RSI 28 |
+| ETHUSDT | flat | 0.55 | Failed breakout; the 2,700 trigger held and today is why |
+| XLE | flat | 0.50 | Fresh 55-day high but RSI 74 at the literal 52-week high |
+| CSL.AX | flat | 0.50 | Top score +0.85, best structure in the book — flat by 74 cents |
+
+**Deferred** (fresh memo, direction unchanged): AAPL, LINKUSDT, BTCUSDT (14 Sep), XLK, BNBUSDT
+(13 Sep).
+
+No `avoid` memo on any held position. `validate-memos`: 20 valid.
+
+**The statistic that changed a call today: none.** The long-memo hit rate moved violently in my
+favour and I deliberately ignored it — with seven judged memos, that number is not yet information.
+What decided today's calls was price structure.
+
+**Holding the ETH trigger was right, and this is the cleanest evidence the desk has produced.**
+Yesterday ETH had the top score in the book at +0.85, a 55-day breakout, RSI 57, 24% of headroom,
+and the best flows in crypto — $197M of ETF inflows while bitcoin bled $463M. I wrote that I was
+nearly persuaded, cut conviction to 0.45 to say so, and refused to lower the 2,700 trigger toward a
+spot price of 2,548 sitting on the $2,550 ceiling. Today ETH is 2,401, the breakout has failed, the
+score is +0.62 and the squeeze has flipped to 1.04. Not lowering a trigger to meet a price is worth
+roughly 6% on this one occasion.
+
+**An admission on XLE.** Cutting it from long to flat on 13 September was premature in outcome. The
+Muscat signing produced only a temporary two-to-four-month route, the disruption never eased, and
+XLE has since gone 64.53 → 65.93 to sit at its 52-week high with the second-highest score in the
+book. Brent is ~$107.5, a four-month high, with Saudi Arabia's East-West pipeline offline after
+attacks and repairs possibly taking weeks. Had the long stood, it would have been right. It is
+still flat today, because RSI 74 at the literal 52-week high is not an entry and I applied exactly
+that rule to DBC at RSI 75 yesterday — applying it to one energy holding and not the other would be
+arbitrary. Recording both halves: the call was wrong, and the rule that produced it is still right.
+
+**CSL.AX resolves last week's confusion.** On 13 September I could not reconcile an A$139.20 target
+with A$188–211 figures and flagged it as a research failure. It was not: broker targets on CSL
+genuinely run from **A$131.49 to A$206.76**, a 57% spread, and the trade press headline is that
+brokers cannot agree what happens next after a 90% run off the June low. The dispersion *is* the
+finding. Valuation supports neither side, so the memo rests on the business record instead. It
+stays flat by the narrowest margin yet: my trigger was a close above A$175 native **and** a broker
+raising; it closed A$174.26 and I found no upgrade.
+
+**Macro (once for the day).** The FOMC decides tomorrow. Today's CLARITY Act vote was **cloture
+only** — a 60-vote threshold merely to begin debate, which even if cleared does not pass the bill;
+the crypto sleeve appears to have been positioned for more than the vote could deliver. Brent
+~$107.5, a four-month high, on the Saudi pipeline outage, with Iran refusing to negotiate until
+its conditions are met. macro_conviction long: 0.25.
+
+**Things that failed or need checking.**
+- Fifth day with no event/news gates section in the packet, though the routine describes one.
+- Fifth day with `rs` empty for all symbols — derived by hand again today.
+- `us_etfs` still missing from the memo schema enum (open since 8 Sep; four more memos today).
+- Cash 0.00 for a second day with the book at its 12-position cap: every call remains advisory.

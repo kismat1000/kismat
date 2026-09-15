@@ -1,0 +1,39 @@
+{
+  "symbol": "XLV",
+  "asset_class": "us_etfs",
+  "date": "2026-09-15",
+  "direction": "flat",
+  "conviction": 0.6,
+  "thesis": "The engine has bought XLV at RSI 29, five days after buying it at RSI 28 and exiting the next day for a 0.5% loss. Same fund, same setup, same unanswered question: I still cannot identify what is driving the selling. An oversold reading whose cause you cannot name is not a discount, and doing it twice does not make it one.",
+  "bull_case": "Pattern analyst: setup is a **pullback to a rising trend** - close 167.66, only 4.6% below the 252-day high, 63d momentum +10.1%, close > SMA50 > SMA200, and RSI **29**, the most oversold reading in the entire signal table. Squeeze 0.86, no coil. ATR 1.4% is among the lowest in the book, so it is cheap to hold. Derived rs: +10.1% against SPY's +0.6% is a lead of about 9.5 points - healthcare is beating the index on a quarter view even while it sells off. Verdict: pattern says wait for a close back above 170 with RSI over 40.\n\nPolicy clarity is improving rather than degrading: Morningstar's sector work points to increased clarity on drug pricing and tariffs with solid 2026 performance expected, drugmakers are raising US prices on at least 350 branded medicines at a 4% median increase, and the first ten IRA-negotiated prices taking effect in 2026 removes an unknown. Today's news tone is +0.50, the score has recovered to +0.55, and if the Fed hikes tomorrow defensives are where money historically hides.",
+  "bear_case": "This exact trade was taken on 9 September and closed on 10 September for -0.54%, and the memo then said flat for the reason that still applies: nobody at this desk can say why XLV is being sold. RSI has gone 28 to 31 to 29 without resolving, which is not a bounce - it is a sector grinding lower. Healthcare is down about 3% year to date while the index rose, so the defensive premise has already been tested this year and failed. The fund is a few megacaps - Eli Lilly and its GLP-1 franchise dominate - so one regulatory headline moves the whole thing, and fifteen more drugs have been selected for IRA negotiation in 2027. Desk record (research/outcomes.json): 12 closed trades, 0 wins, -$168.00 realised, expectancy -2.76% per trade. Long memos now read 6 good of 7 judged (0.86) - but that figure was 3 of 7 (0.43) yesterday, so a metric that halves and doubles overnight on seven judged memos is noise, not a licence to get bolder. Skip decisions are 20 of 20.",
+  "catalysts": [
+    "16 Sep 2026 FOMC - the test of the defensive-rotation thesis",
+    "CMS announcements on the 2027 IRA negotiation list",
+    "Eli Lilly GLP-1 pricing updates",
+    "Q3 results from the megacap holdings in late October"
+  ],
+  "risks": [
+    "Same setup lost money five days ago",
+    "RSI 28 → 31 → 29 without resolving: grinding, not bouncing",
+    "XLV down ~3% YTD: the defensive premise already failed once this year",
+    "Concentrated in a few megacaps, Lilly especially",
+    "15 more drugs selected for 2027 IRA negotiation"
+  ],
+  "invalidation": "The pattern analyst's level is **161.46**, the trailing stop carried in the packet. A close below it ends this. It flips long on a close above 170 with RSI back over 40 - a reclaim, not a falling knife, which is the same condition the 9 September memo set and which was never met.",
+  "horizon_days": 30,
+  "sources": [
+    "https://global.morningstar.com/en-gb/stocks/us-healthcare-increased-clarity-drug-pricing-tariffs-solid-performance-expected-2026",
+    "https://www.biospace.com/business/pfizer-leads-industry-wide-surge-in-drug-prices-for-2026-despite-political-pressure",
+    "https://finance.yahoo.com/sectors/healthcare/articles/healthcare-defensive-promise-crumbles-xlv-112330789.html",
+    "research/packets/2026-09-15.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-09/XLV.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.45,
+    "bear": 0.6,
+    "macro": 0.4
+  }
+}

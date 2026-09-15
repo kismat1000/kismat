@@ -1,0 +1,39 @@
+{
+  "symbol": "DBC",
+  "asset_class": "us_etfs",
+  "date": "2026-09-15",
+  "direction": "flat",
+  "conviction": 0.65,
+  "thesis": "The packet itself now flags DBC **overbought at RSI 87**, at a fresh 55-day high and 0.0% below its 52-week high. The engine refuses entries above RSI 80, so the systematic layer would not buy this today either. The hedge is working - +4.3%, the best position in the book - and that is exactly why nothing more should be put into it here.",
+  "bull_case": "Pattern analyst: setup is **extended after a long run** - RSI 87, at the 52-week high, 63d momentum +19.4%; it fails the formal extended test only on the momentum leg, and RSI 87 makes that quibbling. Squeeze 0.89, ATR 1.5%, still the cheapest volatility in the book. Verdict: pattern is against entry.\n\nThe macro case is stronger than a week ago, not weaker: Brent at a four-month high near $107.5, Saudi Arabia's East-West pipeline offline with repairs possibly taking weeks, Iran refusing to negotiate. August CPI showed gasoline up 3.9% driving over a third of the monthly increase, so this is the one holding that profits from the inflation forcing the Fed's hand, and it has done exactly that while the rest of the book fell.",
+  "bear_case": "RSI 87 is the highest reading this desk has seen on any holding. Commodity indices do not hold that level; they mean-revert or consolidate, and the entire gain is a geopolitical premium sitting on a repair timeline measured in weeks. The forecast gap is now extreme: the EIA sees Brent averaging about $90/b in 2H26 and Goldman $85 in December against $107.5 spot - roughly 20% of downside if the consensus is merely right. The IEA still projects a 2.5 mb/d demand contraction in 2026, and tomorrow's Fed decision could tighten into that. Desk record (research/outcomes.json): 12 closed trades, 0 wins, -$168.00 realised, expectancy -2.76% per trade. Long memos now read 6 good of 7 judged (0.86) - but that figure was 3 of 7 (0.43) yesterday, so a metric that halves and doubles overnight on seven judged memos is noise, not a licence to get bolder. Skip decisions are 20 of 20.",
+  "catalysts": [
+    "Saudi East-West pipeline repair timeline",
+    "16 Sep 2026 FOMC and the demand outlook",
+    "Whether the Iran-Oman temporary route extends or lapses",
+    "EIA Short-Term Energy Outlook revisions"
+  ],
+  "risks": [
+    "RSI 87 - above the engine's own 80 entry refusal threshold",
+    "EIA ~$90/b and Goldman $85 against $107.5 spot: ~20% below consensus",
+    "Entire gain is a reversible geopolitical premium",
+    "IEA sees a 2.5 mb/d demand contraction in 2026"
+  ],
+  "invalidation": "The pattern analyst's level is **31.25**, the trailing stop carried in the packet. A close below it ends this, and a full reopening of Hormuz transits invalidates it immediately regardless of price. Worth adding only on a pullback toward 31.25 that holds.",
+  "horizon_days": 30,
+  "sources": [
+    "https://tradingeconomics.com/commodity/brent-crude-oil",
+    "https://www.bloomberg.com/news/articles/2026-09-14/latest-oil-market-news-and-analysis-for-sept-15",
+    "https://www.eia.gov/outlooks/steo/report/global_oil.php",
+    "https://www.cnbc.com/2026/09/11/cpi-inflation-breakdown-august-2026.html",
+    "research/packets/2026-09-15.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-14/DBC.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.4,
+    "bear": 0.7,
+    "macro": 0.55
+  }
+}
