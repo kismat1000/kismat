@@ -25,14 +25,6 @@
    "headlines": 6,
    "flags": []
   },
-  "MSFT": {
-   "symbol": "MSFT",
-   "score": 0.75,
-   "positive": 3,
-   "negative": 0,
-   "headlines": 6,
-   "flags": []
-  },
   "SOLUSDT": {
    "symbol": "SOLUSDT",
    "score": 0.0,
@@ -41,10 +33,18 @@
    "headlines": 6,
    "flags": []
   },
+  "MSFT": {
+   "symbol": "MSFT",
+   "score": 0.75,
+   "positive": 3,
+   "negative": 0,
+   "headlines": 6,
+   "flags": []
+  },
   "BNBUSDT": {
    "symbol": "BNBUSDT",
-   "score": 0.667,
-   "positive": 2,
+   "score": 0.0,
+   "positive": 0,
    "negative": 0,
    "headlines": 6,
    "flags": []
@@ -101,6 +101,13 @@
  "items": [
   {
    "source": "coindesk",
+   "title": "To ensure permanent economic innovation, we must pass the Clarity Act now",
+   "link": "https://www.coindesk.com/opinion/2026/09/15/to-ensure-permanent-economic-innovation-we-must-pass-the-clarity-act-now",
+   "published": "Tue, 15 Sep 2026 12:00:06 +0000",
+   "query": ""
+  },
+  {
+   "source": "coindesk",
    "title": "Ether, solana, XRP likely to gain if Clarity Act progresses",
    "link": "https://www.coindesk.com/daybook-us/2026/09/15/ether-solana-xrp-likely-to-gain-if-clarity-act-progresses",
    "published": "Tue, 15 Sep 2026 11:15:44 +0000",
@@ -150,7 +157,7 @@
   },
   {
    "source": "coindesk",
-   "title": "Live updates: Bitcoin slides to $77,000 as Senate votes on Clarity Act",
+   "title": "Live updates: Bitcoin slides to $77,000 ahead of Senate vote on Clarity Act",
    "link": "https://www.coindesk.com/business/2026/09/15/live-updates-bitcoin-slides-from-nearly-usd80-000-as-senate-votes-on-clarity-act",
    "published": "Tue, 15 Sep 2026 06:37:24 +0000",
    "query": ""
@@ -174,13 +181,6 @@
    "title": "Solana transactions just got more than 3 times bigger, narrowing the gap with Ethereum",
    "link": "https://www.coindesk.com/tech/2026/09/15/solana-transactions-just-got-more-than-3-times-bigger-giving-an-edge-over-ethereum",
    "published": "Tue, 15 Sep 2026 04:34:10 +0000",
-   "query": ""
-  },
-  {
-   "source": "coindesk",
-   "title": "Democrats send counteroffer to Republicans over Clarity Act provisions",
-   "link": "https://www.coindesk.com/policy/2026/09/15/democrats-send-counteroffer-to-republicans-over-clarity-act-provisions",
-   "published": "Tue, 15 Sep 2026 04:09:01 +0000",
    "query": ""
   },
   {
@@ -563,23 +563,9 @@
   },
   {
    "source": "gnews:ETHUSDT",
-   "title": "Bitcoin and ethereum prices today, Tuesday, September 15, 2026: Crypto prices sliding this morning ahead of Fed meeting - Yahoo Finance",
+   "title": "Bitcoin and ethereum prices today, Tuesday, September 15, 2026: Crypto prices sliding this morning ahead of Fed meeting - finance.yahoo.com",
    "link": "https://news.google.com/rss/articles/CBMimwJBVV95cUxQemx0X2VjNUNVTzg4bW9rRE9tRkFHVkhVazNMVnVBcDNGSzdvN3FxZ3doZlhoUE5pWXNHeXZGSW1qQ29faTIyaDdyancyeFZNYmJudWx3ckZZTWY4ckFEU2lEb2VuZm1iQ1lfXzJ2blNvYnM4dVVWVE5FLWtrNlNpdTNvVnNrOWJyRW1lNHI0SFk4aWZaOVppcU5xdGI4bFNSUHFpMnlvdTdNVHo4TkxvVHd1c2IwbDJta3l5MldLT3NIb2stNjFZNjhNZ0ZhcjB2MjNPVDJ5Y0NYSTNsZjhoMEVMMWhmTXhneWpHSTR6NzAyd1liTHR5XzVTZXFJb182TDlEMmVRclZ3b0ljanY0Y0NPVUtZdGhhTllj?oc=5",
    "published": "Tue, 15 Sep 2026 11:37:32 GMT",
-   "query": "ethereum"
-  },
-  {
-   "source": "gnews:ETHUSDT",
-   "title": "Current price of Ethereum for Sept. 11, 2026 - Fortune",
-   "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE0zWnFhS2JFclROTWQ1NUFOTTdyVUlxb1IxbUFoRHE1WFNuVjhGMmtDb0FheHQ2SUJxSkhSenlBX051R1FfSVZxaXR2YUxwOC1aRlBIRE03NFdxTnZRZDg4ZktpZ3NkMkRV?oc=5",
-   "published": "Fri, 11 Sep 2026 13:30:00 GMT",
-   "query": "ethereum"
-  },
-  {
-   "source": "gnews:ETHUSDT",
-   "title": "Tonkeeper rebrands as Keeper with support for 7 networks, including Bitcoin and Ethereum - theblock.co",
-   "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQWGFMMk5ndlEyTnp0SXBpMFlUYURkanlCdEJTT096WFRVa0c3b1d3RE96b1BIajgtQUZyYWc2TURlR0prWnF0T2NUTmtLTHBfclFvR25PNlNsdHcyVkd1RWk4WmdZT2ZmMkVPT3pROTk2dlduTkpTQWc2TVRkclJHYVhSLVBMX2FwakNCRUNDTXZhcElfTTRMQWh3ZjRaUTA0WmpjUTZ4cHFGYmpHY2V5eVBtY2Uwa3BQd2x2ZUVCaFBlNXRLcEhmVG9rY0J6YnJ1Um8tSncyaUdUbFU?oc=5",
-   "published": "Tue, 15 Sep 2026 09:35:02 GMT",
    "query": "ethereum"
   },
   {
@@ -591,24 +577,31 @@
   },
   {
    "source": "gnews:ETHUSDT",
-   "title": "Ethereum hits record 203.9 million transactions in Q2 as active users slide - investinglive.com",
-   "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNdFhLRzJ1bGtZZVQtTFJIOW1zQjlXWDNRQkRFaVB6NjhNNnAzNFg3aXZSSW9VMjc5T0tMLVJGYUF5YlRuLXNrNGl1RDVha2pTS3NDU1BvdEo1RDgzQVJvRDVTbUUwODN0NzlTNjAwQ1hOU2VSZHJzZUtjTzR2T1JXZGZERG42QWxFUmY1Tlc3OGxvanhsdU5YU1czeWFma2thNHIxb01qcWNFOGhTS3ZjWTRHNXRsYzRK?oc=5",
-   "published": "Mon, 14 Sep 2026 21:31:48 GMT",
+   "title": "Current price of Ethereum for Sept. 11, 2026 - Fortune",
+   "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE0zWnFhS2JFclROTWQ1NUFOTTdyVUlxb1IxbUFoRHE1WFNuVjhGMmtDb0FheHQ2SUJxSkhSenlBX051R1FfSVZxaXR2YUxwOC1aRlBIRE03NFdxTnZRZDg4ZktpZ3NkMkRV?oc=5",
+   "published": "Fri, 11 Sep 2026 13:30:00 GMT",
    "query": "ethereum"
   },
   {
    "source": "gnews:ETHUSDT",
-   "title": "Why is Bitcoin, Ethereum and XRP uptrend stalling? - FXStreet",
+   "title": "Tonkeeper rebrands as Keeper with support for 7 networks, including Bitcoin and Ethereum - The Block",
+   "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQWGFMMk5ndlEyTnp0SXBpMFlUYURkanlCdEJTT096WFRVa0c3b1d3RE96b1BIajgtQUZyYWc2TURlR0prWnF0T2NUTmtLTHBfclFvR25PNlNsdHcyVkd1RWk4WmdZT2ZmMkVPT3pROTk2dlduTkpTQWc2TVRkclJHYVhSLVBMX2FwakNCRUNDTXZhcElfTTRMQWh3ZjRaUTA0WmpjUTZ4cHFGYmpHY2V5eVBtY2Uwa3BQd2x2ZUVCaFBlNXRLcEhmVG9rY0J6YnJ1Um8tSncyaUdUbFU?oc=5",
+   "published": "Tue, 15 Sep 2026 09:35:02 GMT",
+   "query": "ethereum"
+  },
+  {
+   "source": "gnews:ETHUSDT",
+   "title": "Why is Bitcoin, Ethereum and XRP uptrend stalling? - fxstreet.com",
    "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPRzFsWmlMdWlxSWlIVExTWWhfbHZrdnFNUVB1eng0M3h5WHJxX2x1dWQyRlFESDRnQ1lKN2tvUVJReW5jWHEwblJaeWNZUEZhZTdhQlE3bDBlNFc1dWl3VjVUUk1jTXkzV2c2NXhDQUJ5MWFVd2c0aktMMGNXSExoeElrdE5rNGlkaksycGZ5Slh2b05EZGVOcVdETmU4bjl6eVp6X19mT24xczBoOW9pOFdaUjJGRHdyS3lrMnI2UGpyem5GOWlaX1FUeUZyZw?oc=5",
    "published": "Tue, 15 Sep 2026 10:00:00 GMT",
    "query": "ethereum"
   },
   {
-   "source": "gnews:LINKUSDT",
-   "title": "Chainlink Price Prediction: LINK Eyes $13.75 if the CLARITY Vote Passes - Cryptonews.net",
-   "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5naGdxRC1NcENMdjRxLWM0RWUwT2N6dWhqbEROUHNxUkt2TklrZTVWZWRvZHc1dng3YnJGSXlCM05xeWRCNHRFUE5mSE8yNEIyb25RYWtxd1duNDA?oc=5",
-   "published": "Tue, 15 Sep 2026 11:34:15 GMT",
-   "query": "chainlink"
+   "source": "gnews:ETHUSDT",
+   "title": "Ethereum hits record 203.9 million transactions in Q2 as active users slide - investingLive",
+   "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNdFhLRzJ1bGtZZVQtTFJIOW1zQjlXWDNRQkRFaVB6NjhNNnAzNFg3aXZSSW9VMjc5T0tMLVJGYUF5YlRuLXNrNGl1RDVha2pTS3NDU1BvdEo1RDgzQVJvRDVTbUUwODN0NzlTNjAwQ1hOU2VSZHJzZUtjTzR2T1JXZGZERG42QWxFUmY1Tlc3OGxvanhsdU5YU1czeWFma2thNHIxb01qcWNFOGhTS3ZjWTRHNXRsYzRK?oc=5",
+   "published": "Mon, 14 Sep 2026 21:31:48 GMT",
+   "query": "ethereum"
   },
   {
    "source": "gnews:LINKUSDT",
@@ -626,13 +619,6 @@
   },
   {
    "source": "gnews:LINKUSDT",
-   "title": "Stablecoin News: Wyoming Moves FRNT Stablecoin to Chainlink\u2019s Cross-Chain Network - CryptoRank",
-   "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNRk8tVnhwaE5vaV9pMHVOTWYxOVFJQXVwbzZjdm1KOEgyR1dnT2ttSF9uSmNLNXpjMUw0ZDBiWkNZMmRacVVWN3ZDMXNybGxZYzg4N2VFTlZ6MzJnRDdKM0gxUWEzM0wtLTh6RjMtMDl2bzdhUW9Yb0pnalhmVTJqSmhuMjlFeHVNajlydHE0S2JYWDRreXZKMks5NDhMcS12U1QxMS1RMWtuaEQ4aE5EVUcxVlEwX2xf?oc=5",
-   "published": "Tue, 15 Sep 2026 10:32:51 GMT",
-   "query": "chainlink"
-  },
-  {
-   "source": "gnews:LINKUSDT",
    "title": "Chainlink (LINK) Volume Jumps 65% in 24 Hours: Can It Break $12? - Altcoin Buzz",
    "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9vUXpZSVdHdHBXb1VpdHdIU3RIYWw5MXQ3R2kyWkhjSm9hZkxvTUtRNzhhaTNsWVVpMlV4TkVidjh3RktURTBtMjV0YWxWUG5WcEl6STYxUFA3MGhWNkdVYy0xVzUzWGZJTnZyTllaNlZnZlJ3NWow?oc=5",
    "published": "Mon, 14 Sep 2026 11:21:07 GMT",
@@ -646,46 +632,18 @@
    "query": "chainlink"
   },
   {
-   "source": "gnews:MSFT",
-   "title": "Microsoft: Cheap After A 27% Rally As The AI Bear Case Cracks - Seeking Alpha",
-   "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxORWRWY1N0OGRNei1ibnBaS2JmXy03dEtMVmNCNHd4ekwzUV9pOFc0NWlvREZ1TTEzQlZRbFoxcTNJM2UwSkFNMEhfaVZUWHpPWXVXVWZNdHNIS1pNaG1xNkZRRGk3UF91VDVFQXRQb1kxQjRYM0tuT21STlY0QzlvcjlGOW1MWTdaR2xPUVUzQng4MHk3WUFQUmlFZVVLS3BEOENKVWh2VXFIWjZabEdz?oc=5",
-   "published": "Tue, 15 Sep 2026 08:17:54 GMT",
-   "query": "MSFT stock"
+   "source": "gnews:LINKUSDT",
+   "title": "BlackRock, Ripple, Chainlink, Hedera, and Canton Shape UK Tokenization Roadmap as Bank of England and FCA Move From Pilots to Production - genfinity.io",
+   "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQWW1pRnk5WVJxUWl6cUZqRDhEZVlqaVZkTHJiRUxFQ3diU1h6OTlDZU1WR2diUWI2WnAwLTJ1TDhpSlNtd19oYW9rYzBQV3FHejVZVDFqeVNCZ29NeWdhNzk1THh1QzUwRXMwWElQQmd0OE55bFZWMnRqV01zQzI5QlhlbXJYS3BIc055MDZHM1dyTEQ4dDRrTUJRM0htVkNUWlhlRnZ4MFMwbEotS0IwWTZHdnlpcWpl?oc=5",
+   "published": "Mon, 14 Sep 2026 19:46:43 GMT",
+   "query": "chainlink"
   },
   {
-   "source": "gnews:MSFT",
-   "title": "Why the Market Dipped But Microsoft (MSFT) Gained Today - Yahoo Finance",
-   "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNMlJwNTFNeFNiNUJJQXlucHdabXJFU05xQ2xTd1ktdm10MVNfOWVCUFRHZ2I1eGdWU08xdzFxUmFJUUFaZ0xrM0gxM1Y0cmhWVm5sV1ZSQmFvNVVHWDA3MEJ4OXF0THhqUU9hUFQyQTR5WXdfYXpPOTJmcGIxMUNKSmhxS3J0TFNXTUdEZGNVR05nRHFNeGJTSmtSZEFlZw?oc=5",
-   "published": "Mon, 14 Sep 2026 21:45:04 GMT",
-   "query": "MSFT stock"
-  },
-  {
-   "source": "gnews:MSFT",
-   "title": "Microsoft Stock (MSFT) Opinions on Bank of America Price Target Upgrade - Quiver Quantitative",
-   "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOWGtXNnZKamhtd0YxSG5lYzVNbDFMVXRuYjJ4TUlFU2w3emstYWtZRTVRQjA4QlJydmhHaEM3dzhudHcyUWIwSHVKTU9nMWZJTDZRMkZ5eHV4UUYtNW1fYWk2Mzd4MXFfQTVIbHllMXBwVTBkcXBJRTNCOURNdjJmQjBaRHloSzU2VWtFdGFNX1VrVWw2T25KbDFvdlo1bXlFZlRsNTF4UlUzem5Y?oc=5",
-   "published": "Mon, 14 Sep 2026 14:05:00 GMT",
-   "query": "MSFT stock"
-  },
-  {
-   "source": "gnews:MSFT",
-   "title": "Going into earnings, is Microsoft stock a buy, a sell, or fairly valued? - Morningstar Australia",
-   "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQUnZIc1QzOE1raV94TGlnYm1Ub0lXMEkxVlh5cGwtanBybUp5WkQ2dEdjc2hIeWw5bDdSb3NYZFRPamYwVTRHTnFlU0FfX01xbXlmZUlPVjlWM1B1VjFDVVp0RzBkcThhWFhFdl9wUTIzTi1MVnNCV0kxVk1YZXp3WV9MZlZzY0F4LVZuZGw3THBMLVBvQVhUc0haZlI2cm13QXNLSmlKNA?oc=5",
-   "published": "Wed, 22 Jul 2026 07:00:00 GMT",
-   "query": "MSFT stock"
-  },
-  {
-   "source": "gnews:MSFT",
-   "title": "What It Means for MSFT Stock Investors as Microsoft Switches to 2 Business Segments - Barchart.com",
-   "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNaVB6OEpUSUFyRXJUTVJfUzJyd3hsSk1GYWVIZEFhY2txdTFPQUpPSmtVWWlwRE5ESjdCZTNjNzBUTnNiZHhDdnpVQUtnY2ZmUHlTUnJiZExQYWNBVEJ6bjNFckJMXzM0LVFUa1V5TFYyN19vSW5xTDFwQUtGUEo0aG9wRGtzZS1DWTRhcHUtNlJkNHpSYjhJdENCSUI4dFNQc2hvTG5NUW9CLUFlWm5RMENwekZhRmJGWHl5ZGVFRzZmRDVtZHc?oc=5",
-   "published": "Wed, 09 Sep 2026 14:00:02 GMT",
-   "query": "MSFT stock"
-  },
-  {
-   "source": "gnews:MSFT",
-   "title": "Data Center Expansion Might Change The Case For Investing In Microsoft Stock (MSFT) - simplywall.st",
-   "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPbjdtRU1wWWxDVGVaWHNuRl96OFpKYjB6enFNX2JrOHNHRHZIY0t3U3NiZllueXljeFJLYnpkZGtKdlhSbTZ1YWJvdTctRVJjV3lyUkFtYm5XQV9UakJ1RFg0elhrODY2NmZxc2Q4Y3dzYXdJeEdMMmtJcWhvWUZScE1POUdDaWtaUWRWMVd2WXdHRUotVTNYMnREd3lMcUQ0blN5NW0tek4zNVRPampCWjZ2Mzhrd0VXMGYtS2JLR01FTVFlNWdR0gHMAUFVX3lxTE9XV09KRjQ5eXdwNGNQVWh4OXBMQzdEdzNGWVlnakFJVlUwNk9FZDc0ek9sV0o4b04tdVV0NkxIOTVKdm5OUHNlRE90YThNXzRPZHlUOHYzZks0eUVqSFhBTEFTVDl4d0ZZc3hXY0hxZjlZRFVELWFiLXNMZTlRVVJrV2hwWDl6alZ6OXlzY0FSQ1k2Z1ltZ1I5a2ZfZWxMb3VzNXViR0lTU2RuUi1nRkFmWFlWZ0loQmNEMXFFMnpCMVA1cVZnZVpGNUlObw?oc=5",
-   "published": "Sun, 13 Sep 2026 22:27:45 GMT",
-   "query": "MSFT stock"
+   "source": "gnews:LINKUSDT",
+   "title": "Chainlink: World prediction market launch on Solana uses Chainlink resolution - 09 Sep 2026 - TradingView",
+   "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPRXZsdEx5QWJxRkFrd29EN1VxSXoxMXI2elkzdDBWWDFZSlFBYWFpeUpkVEd4N2wtd296U01HVGxON0txYk00VjJKWWNnMDd1UlcwWDJMdnNqQkFVTUhWMmg5UXVWbUd2RTVTZVpPRGhGREtWTFJZT1hOWTB3UmR6bGxraUo1UEUzOW9xV3hFc2hwcVh2aUxvN3JQdDVtMDE5UGFpX0RqRFVmdDFnaUpjbTZvOGJkeHhjeTM0NU5NRlF2ekFUN3Rxd3lNejJwTTFGTkdXbklCWEFoSDFiUFBFUVk2MFk4MjA?oc=5",
+   "published": "Wed, 09 Sep 2026 14:00:13 GMT",
+   "query": "chainlink"
   },
   {
    "source": "gnews:SOLUSDT",
@@ -696,7 +654,7 @@
   },
   {
    "source": "gnews:SOLUSDT",
-   "title": "Where is Solana price heading now? - FXStreet",
+   "title": "Where is Solana price heading now? - fxstreet.com",
    "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOVDI5bHFEQjB0X1NMaHVBQVhGVHdtd3BTN2pvSDF0MlVYSm5UZG9IcVpNNFFyZjRRa0U0dWpBMjh3YmdaOE5mOGhVWTNkQ0JjVHJYZFRveTB3SG9UckZ3Qnk0ODk4ZW9qR01BMVpZLXFxSFNDVEJCV2RVdXB6UGtHWHFKMklSemlGWDBMT1JjVTVpZGFuaW1oeFVxT2RTN2pZZ291bXlhc3c4NV9YSUkzV0RIMzZKVlZuUVJ1VDJLNmJmeWIzVFVxa2x6YVNLRkRhck1jZFlfaw?oc=5",
    "published": "Tue, 15 Sep 2026 05:55:33 GMT",
    "query": "solana"
@@ -730,17 +688,52 @@
    "query": "solana"
   },
   {
+   "source": "gnews:MSFT",
+   "title": "Why the Market Dipped But Microsoft (MSFT) Gained Today - finance.yahoo.com",
+   "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNMlJwNTFNeFNiNUJJQXlucHdabXJFU05xQ2xTd1ktdm10MVNfOWVCUFRHZ2I1eGdWU08xdzFxUmFJUUFaZ0xrM0gxM1Y0cmhWVm5sV1ZSQmFvNVVHWDA3MEJ4OXF0THhqUU9hUFQyQTR5WXdfYXpPOTJmcGIxMUNKSmhxS3J0TFNXTUdEZGNVR05nRHFNeGJTSmtSZEFlZw?oc=5",
+   "published": "Mon, 14 Sep 2026 21:45:04 GMT",
+   "query": "MSFT stock"
+  },
+  {
+   "source": "gnews:MSFT",
+   "title": "Microsoft: Cheap After A 27% Rally As The AI Bear Case Cracks - Seeking Alpha",
+   "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxORWRWY1N0OGRNei1ibnBaS2JmXy03dEtMVmNCNHd4ekwzUV9pOFc0NWlvREZ1TTEzQlZRbFoxcTNJM2UwSkFNMEhfaVZUWHpPWXVXVWZNdHNIS1pNaG1xNkZRRGk3UF91VDVFQXRQb1kxQjRYM0tuT21STlY0QzlvcjlGOW1MWTdaR2xPUVUzQng4MHk3WUFQUmlFZVVLS3BEOENKVWh2VXFIWjZabEdz?oc=5",
+   "published": "Tue, 15 Sep 2026 08:17:54 GMT",
+   "query": "MSFT stock"
+  },
+  {
+   "source": "gnews:MSFT",
+   "title": "Microsoft Stock (MSFT) Opinions on Bank of America Price Target Upgrade - Quiver Quantitative",
+   "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOWGtXNnZKamhtd0YxSG5lYzVNbDFMVXRuYjJ4TUlFU2w3emstYWtZRTVRQjA4QlJydmhHaEM3dzhudHcyUWIwSHVKTU9nMWZJTDZRMkZ5eHV4UUYtNW1fYWk2Mzd4MXFfQTVIbHllMXBwVTBkcXBJRTNCOURNdjJmQjBaRHloSzU2VWtFdGFNX1VrVWw2T25KbDFvdlo1bXlFZlRsNTF4UlUzem5Y?oc=5",
+   "published": "Mon, 14 Sep 2026 14:05:00 GMT",
+   "query": "MSFT stock"
+  },
+  {
+   "source": "gnews:MSFT",
+   "title": "Data Center Expansion Might Change The Case For Investing In Microsoft Stock (MSFT) - simplywall.st",
+   "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPbjdtRU1wWWxDVGVaWHNuRl96OFpKYjB6enFNX2JrOHNHRHZIY0t3U3NiZllueXljeFJLYnpkZGtKdlhSbTZ1YWJvdTctRVJjV3lyUkFtYm5XQV9UakJ1RFg0elhrODY2NmZxc2Q4Y3dzYXdJeEdMMmtJcWhvWUZScE1POUdDaWtaUWRWMVd2WXdHRUotVTNYMnREd3lMcUQ0blN5NW0tek4zNVRPampCWjZ2Mzhrd0VXMGYtS2JLR01FTVFlNWdR0gHMAUFVX3lxTE9XV09KRjQ5eXdwNGNQVWh4OXBMQzdEdzNGWVlnakFJVlUwNk9FZDc0ek9sV0o4b04tdVV0NkxIOTVKdm5OUHNlRE90YThNXzRPZHlUOHYzZks0eUVqSFhBTEFTVDl4d0ZZc3hXY0hxZjlZRFVELWFiLXNMZTlRVVJrV2hwWDl6alZ6OXlzY0FSQ1k2Z1ltZ1I5a2ZfZWxMb3VzNXViR0lTU2RuUi1nRkFmWFlWZ0loQmNEMXFFMnpCMVA1cVZnZVpGNUlObw?oc=5",
+   "published": "Sun, 13 Sep 2026 22:27:45 GMT",
+   "query": "MSFT stock"
+  },
+  {
+   "source": "gnews:MSFT",
+   "title": "Going into earnings, is Microsoft stock a buy, a sell, or fairly valued? - Morningstar Australia",
+   "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQUnZIc1QzOE1raV94TGlnYm1Ub0lXMEkxVlh5cGwtanBybUp5WkQ2dEdjc2hIeWw5bDdSb3NYZFRPamYwVTRHTnFlU0FfX01xbXlmZUlPVjlWM1B1VjFDVVp0RzBkcThhWFhFdl9wUTIzTi1MVnNCV0kxVk1YZXp3WV9MZlZzY0F4LVZuZGw3THBMLVBvQVhUc0haZlI2cm13QXNLSmlKNA?oc=5",
+   "published": "Wed, 22 Jul 2026 07:00:00 GMT",
+   "query": "MSFT stock"
+  },
+  {
+   "source": "gnews:MSFT",
+   "title": "What It Means for MSFT Stock Investors as Microsoft Switches to 2 Business Segments - Barchart.com",
+   "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNaVB6OEpUSUFyRXJUTVJfUzJyd3hsSk1GYWVIZEFhY2txdTFPQUpPSmtVWWlwRE5ESjdCZTNjNzBUTnNiZHhDdnpVQUtnY2ZmUHlTUnJiZExQYWNBVEJ6bjNFckJMXzM0LVFUa1V5TFYyN19vSW5xTDFwQUtGUEo0aG9wRGtzZS1DWTRhcHUtNlJkNHpSYjhJdENCSUI4dFNQc2hvTG5NUW9CLUFlWm5RMENwekZhRmJGWHl5ZGVFRzZmRDVtZHc?oc=5",
+   "published": "Wed, 09 Sep 2026 14:00:02 GMT",
+   "query": "MSFT stock"
+  },
+  {
    "source": "gnews:BNBUSDT",
    "title": "Binance Starter Carnival: Kicking Off with the Button Game and 30 BNB Token Voucher Rewards! - Binance",
    "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQeXRtQWxmcmhtd2NudXlTOXpOeUFIcTMwOF9FZEhSQk5YMlVlY3EwQXJXVDJxZkVELW1oT3VxV1JJcE9NcDdjbk9uU0FuRjVrTVFfRE5HUmlFZEZ5T3k2WUY3Sm40R3lUYVVndFJ0MHFtSUUwZkRJdUVZUkYtcVFOVmpaWm42Ri1nRlB4T2V5UUs?oc=5",
    "published": "Thu, 10 Sep 2026 10:14:36 GMT",
-   "query": "bnb binance coin"
-  },
-  {
-   "source": "gnews:BNBUSDT",
-   "title": "BNB Hits $955 All-Time High, Market Cap Surges Past $133 Billion - yellow.com",
-   "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPT2p0YVI1N3Ayd0YzT0IwQm83SUd2b0NJendELUxvVjBFcUZDZWJTSklCblh0QmUxRUdBaVVzbnBSM1lBUTFsUG5HbEhPekRFZHMwZWg2SEtwclUybjFGR1FweFowY21nUDlHSFVtMFVvR0MzZE1VRUlEZHdXVDNQOU43V0hKWG5xaU5fSVZKMnNsZHMzWXpXdUFfR1RaaC1aVXJjQ2d2aVVRQQ?oc=5",
-   "published": "Mon, 14 Sep 2026 22:01:37 GMT",
    "query": "bnb binance coin"
   },
   {
@@ -772,8 +765,15 @@
    "query": "bnb binance coin"
   },
   {
+   "source": "gnews:BNBUSDT",
+   "title": "BNB Is Up Nearly 4% This Week, but Its $100 Billion Market Cap Hasn't Held. What's Going On? - 24/7 Wall St.",
+   "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOOE5qYjFVczVPM2pFemVWek41cVhzRnZMOWtQcVJNM3AwaGN3TGxyMFBEeW13SVU5X2NRNXNVaTJOQnVsUU5rZHNhU2FIcGltTk5reWoyaC1IbnZjR1BhMXRhUE9KR004UmFYMnYyR3VGVjZMX2xNaVpKY1hnLUtHdm50U1Z0UGVWbzFuV1RnWExfYmMwaG91Q2VvMEkzSWw3YnBTVFloZ0g4Mjd3Uk9nOHExeEl2N3NLdXJ3ZWtveDlQTGlhRF85SVNkWklxaXJOYWcxMGVtaEM5dXhY?oc=5",
+   "published": "Thu, 10 Sep 2026 21:53:00 GMT",
+   "query": "bnb binance coin"
+  },
+  {
    "source": "gnews:BTCUSDT",
-   "title": "The daily grind: Now buy your coffee with crypto - theaustralian.com.au",
+   "title": "The daily grind: Now buy your coffee with crypto - The Australian",
    "link": "https://news.google.com/rss/articles/CBMigwJBVV95cUxPWU05LV9PdDhaZzhLSE1JZnJzcW9NdTl4UGt0bXpjbHBkdFJRczR0Q3ZWVDdDZ3d5UnQzODRtN2duNVRfeEE5N0RxS2ozMXRsa0RwZ1BtZDJRb0NoWlVzMUdiYnhKRlM4YlFhX1Fxd3NjNzZ1bG9BUFFqUGRpcUZDc3JxNGlyd3JxT2dIQzlUYmxmeDlwb0Joa1dDendYWG1MNVIyNlV0M05VcGxCQTExbjZhRFQtQUZPT1NpUXlVZG9zeGF3TlplMmg1OEdRMjBxNlhoZGl3R1hQcXJleE9jMEdaUzVzczBiZFpVLW1lcUVXNUVkY2FtUElQT0MxaUVsMkYw0gGIAkFVX3lxTE4zU1Y4TlhOd3NiNWZyV19na1A2X1JmZ3BkWWdoUWhXZlg4QVlfbUFaUDlOeDVjc3c0ekVoYzl0bk5yMHhjdUQ3WFluMzBwOGwzSkdNenZBdlNqbzZaZDFxQU9sY0plNkNhRW1LNllOdzBwMnJ1ZExxN3MxTmI2SlZLdXlPVkxIa1FmY2JGVkNZOGJwV0htbi1mUUlZQ0lCWXk5bFVjci0wMkZOeVVqVk1mQlB2T0tqWndUdXczcDA2d0xnNV9rMzU1Y2lJR1paNXBsUEZyVGFPQXJfa3BlOGVLSFRqeDFJY0gwUWpvcVJUcUlqWElfNzhENGJpaUVtV1ZjUFQ0Umx0SA?oc=5",
    "published": "Tue, 15 Sep 2026 04:14:49 GMT",
    "query": "bitcoin"
@@ -794,21 +794,21 @@
   },
   {
    "source": "gnews:BTCUSDT",
-   "title": "\u2018Buckle Up\u2019\u2014Bitcoin Is Suddenly Braced For An \u2018Extraordinary\u2019 Fed Price Earthquake - Forbes",
+   "title": "\u2018Buckle Up\u2019\u2014Bitcoin Is Suddenly Braced For An \u2018Extraordinary\u2019 Fed Price Earthquake - forbes.com",
    "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOR3RROEdvZnMwYmcyZjJvTUM3X1pEcl9kYmFHOThjRjl1Rk1zUXZVZWRTVDBIVkJfYnBNQi1iRFRzb3Q5QzVUbHF4ZXpuR0xsekg5NFJzSUozdmc2NDhtZ3IwWG04VjFkdnJSdktSd3RTVEVHMGYwaXAzN1U5Nkl5S3hudGRmOTlRcEl5b3JaM2JpS1FEVlpXcEF6Q09DQldKY2g1Y1d4aFhnZExNTEJYcU5XNWQyWmVSbUE?oc=5",
-   "published": "Mon, 14 Sep 2026 14:09:00 GMT",
+   "published": "Sun, 13 Sep 2026 11:39:46 GMT",
    "query": "bitcoin"
   },
   {
    "source": "gnews:BTCUSDT",
-   "title": "Crypto Overview: Bitcoin remains volatile amid CLARITY Act vote \u2013 Zcash, Stellar rally - FXStreet",
+   "title": "Crypto Overview: Bitcoin remains volatile amid CLARITY Act vote \u2013 Zcash, Stellar rally - fxstreet.com",
    "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPUUZQZGxKQm0yRU0yMUpraENpWGhIWEVrUjFsbUMyX2x4RUM0N3BaUXpsY1BfN2FycGNrVzlQeEt3UFVROFM2SEMyQ0tYT1dlZ1pjTkR1eDJsM2pQdV9NenJTVV9HU2w5dHItbUZNTkxlN3pQV0FYZ2k0VUh1bDZDa1JvRm55WjY5OFJVX0VZdC1QS210QWpNdkpiZk9PcE11RmNYS1gwTnE2aTJoVlpubEtzNWZaMkZ6Rnd0RFdsV0w3Nmc3ek1PVkhnVy1NYnpleWFtc2xSa3l4QQ?oc=5",
    "published": "Tue, 15 Sep 2026 03:29:28 GMT",
    "query": "bitcoin"
   },
   {
    "source": "gnews:DBC",
-   "title": "Commodity ETF (DBC) Hits New 52-Week High - Yahoo Finance",
+   "title": "Commodity ETF (DBC) Hits New 52-Week High - finance.yahoo.com",
    "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQWVN1Z2huRGJUbU85dURCTlhRY1BCck53UVFpZXpWeC1TNjItYVNpZVBDV2d0WGdTY05wX3UyVElWNFcwa3ppZ1ZJRXVQOFYxQTM3N09DVVpueXlaeG90THZhTS1wNDhaakNiUUdIT1FKX2w5RjFPMERYdENWbGtHZ2p2OTk5ZFJ2TGZlN0lIek9MUEE3M1dwVzVPVQ?oc=5",
    "published": "Wed, 29 Apr 2026 07:00:00 GMT",
    "query": "DBC ETF"
@@ -836,7 +836,7 @@
   },
   {
    "source": "gnews:DBC",
-   "title": "U.S. Dollar to Slip Ahead? ETFs in Focus - Yahoo Finance",
+   "title": "U.S. Dollar to Slip Ahead? ETFs in Focus - finance.yahoo.com",
    "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPTHVSWEFTMDR1NkRESkxxdEN5Q1FpOFdmQWtjSWdIQm1YWkFXblpBbUE0MFNBQ1VzZUlyUFFzZXhnZjlkdElfcGc3QUdfWFZiM1RsaU1VZnZHUU9mMkN6YXpJRm5QeFVmakVDNWVNSXA4WDJ1RUJKWFlNajlrOGtJbEVfcnp6ZlNmMEtFU1pwXzgzZy12WDRwaQ?oc=5",
    "published": "Fri, 14 Aug 2026 07:00:00 GMT",
    "query": "DBC ETF"
@@ -864,14 +864,14 @@
   },
   {
    "source": "gnews:AAPL",
-   "title": "Apple (NASDAQ:AAPL) Unveils Its First Foldable iPhone, the Duo, at $1,999. So Why Did the Stock Slip? - Stocks Down Under",
+   "title": "Apple (NASDAQ:AAPL) Unveils Its First Foldable iPhone, the Duo, at $1,999. So Why Did the Stock Slip? - stocksdownunder.com",
    "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFAxWXNhNVNsNVdfXzhSUnh2cE1KVHRqa3BEcWNldF9QSlVUM2huYWNVS0RrejZuMjE2YnNkME9Uelc1aGg2RlBhaDFmSEpFeDBhejJzbGJNOHhZY0JEUW53LUhwYnBTX0tNbVZ4aU9QMnVKQUNVTDUyYUVR?oc=5",
    "published": "Wed, 09 Sep 2026 21:05:36 GMT",
    "query": "AAPL stock"
   },
   {
    "source": "gnews:AAPL",
-   "title": "How Apple stock usually reacts to big iPhone reveal events - Yahoo Finance",
+   "title": "How Apple stock usually reacts to big iPhone reveal events - finance.yahoo.com",
    "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOSXhuTmJUZ2JRZlpfVVVBWWMzM1o3OXpDdHN6dEp3Y2Nhb2pPZ21VS1VFeEpNT1dwdHVXM05MVUM3dFZLSUJxdWstcGt0TWV1LVdIQkFCOURneVFyRUI3c2MyMVFaZ3JCMXVWQUJwV212VFNPQU1sLXFISU1Bd0xlakVKaEgxWHJyZW9KNWhrWGI5TW1iTXU2bjN6VDh0TmgwVVNEenRCd2FhdjNHX01IdUhKVzdaMVhzb3c?oc=5",
    "published": "Wed, 09 Sep 2026 09:08:43 GMT",
    "query": "AAPL stock"
@@ -899,7 +899,7 @@
   },
   {
    "source": "gnews:XLE",
-   "title": "Should You Invest in the State Street Energy Select Sector SPDR ETF (XLE)? - Yahoo Finance",
+   "title": "Should You Invest in the State Street Energy Select Sector SPDR ETF (XLE)? - finance.yahoo.com",
    "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPYTBWMkcyYjNuNExmRy1OTGFrZmZOdDhvckMzZlplN29tUUVkeHFienRBaGdDMU1xQWtYMDE1WHNUQ3YtZW50ZF8tOGpDMGxyREpBYWszOEoyLV9FNjFsUUxURG1Ka1JuODdnZjFwWEh2dDNJQ1FwUGVSYVk1c1k3LXRUdlF5aTNNZ3hnOVlvYnhMUGcy?oc=5",
    "published": "Tue, 25 Aug 2026 07:00:00 GMT",
    "query": "XLE ETF"
@@ -920,16 +920,16 @@
   },
   {
    "source": "gnews:XLE",
-   "title": "Leading And Lagging Sectors For September 14, 2026 - Benzinga",
-   "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNd2d4NEVMWHN4dFdrQmxFQlprYkwtWUVGNThNM2lzNndjWXlFdlhuNGVUZmhYQ2NuWndIYnFnaHJRVk1QVDlVY0xBN3VSSzdlUGJzbTBjMWl4OXFPd05aOTYtbDlfM0RUb2lmYmstbDlfNmtrMElId050d2VsTVBaeU1HQ1FtX3dKZ0Y2QUFRRzktU1o2a2E0cXFNT2h2bW9TdHdwcw?oc=5",
-   "published": "Mon, 14 Sep 2026 13:10:08 GMT",
+   "title": "XLE Tops August Sector Rankings as Energy Stocks Surge - ETF Database",
+   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOV1lTSm0ydWJJRDNRSlhDMDUwNmFVblJOZkJ6MG9zRW5KeWs1cDJ4RFVldkIwd1NZU25Wd0kyU2NSdDFVMlVLbXVQYUhmT24zaEFaNlNndVkxNnYwdlRMTG1ROW5nd2plRkxCaHI4Y3BqdFpzZklRbVlLSVJJdFJxTkpKdzZFUQ?oc=5",
+   "published": "Wed, 02 Sep 2026 14:15:08 GMT",
    "query": "XLE ETF"
   },
   {
    "source": "gnews:XLE",
-   "title": "XLE Tops August Sector Rankings as Energy Stocks Surge - ETF Database",
-   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOV1lTSm0ydWJJRDNRSlhDMDUwNmFVblJOZkJ6MG9zRW5KeWs1cDJ4RFVldkIwd1NZU25Wd0kyU2NSdDFVMlVLbXVQYUhmT24zaEFaNlNndVkxNnYwdlRMTG1ROW5nd2plRkxCaHI4Y3BqdFpzZklRbVlLSVJJdFJxTkpKdzZFUQ?oc=5",
-   "published": "Wed, 02 Sep 2026 14:15:08 GMT",
+   "title": "State Street Energy Select Sector SPDR ETF (Derivatives) Price (XLE/USD) Today | Live Price, Market Cap & Chart - Binance",
+   "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQNXhUMGdudDJIb2czVFB4Wk5naUxjOWw1T2VGSmYwUHNTVjRWQXFWb0pVSE1SVEdkeWNpRjZWbktoemZVRGpZek4zVEV2SnFQU0lia0NyejllT3lEazBlS1Iza1ZCeWZBXzluUE05WlBiUVZlUjMzS2tvMmtOWmZBZnlyT29oNHd6VGlYWi1xQlQ?oc=5",
+   "published": "Thu, 03 Sep 2026 07:00:00 GMT",
    "query": "XLE ETF"
   },
   {
@@ -941,7 +941,7 @@
   },
   {
    "source": "gnews:EEM",
-   "title": "Which International ETF is the Better Buy: VEA or EEM? - Yahoo Finance",
+   "title": "Which International ETF is the Better Buy: VEA or EEM? - finance.yahoo.com",
    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOVHJ4YjVkTEl5YW1JU2JfU0RtZU4ydnZhb2FsSEx6bGNaN1oxVTBsczE0TGs5SjhFOUhqVUxNTFVhSGdXN2JXU0pNSTJyUDNuUS1RcWdaZHNNVUJPdzFGOVd1cUV5cVcxVTNXTVVsMEMwa2U1Y2U5NF9KUHhYQlBtN1pzbFZCSlpMeURiMUx3M0JFbG9ySklTZVV4Y0NxQQ?oc=5",
    "published": "Mon, 17 Aug 2026 07:00:00 GMT",
    "query": "EEM ETF"
@@ -983,13 +983,6 @@
   },
   {
    "source": "gnews:XLK",
-   "title": "Better Artificial Intelligence ETF: Roundhill's CHAT vs. State Street's XLK - The Motley Fool",
-   "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOSnJvcldQS05vMklfNFhBdEdrNmdqUFNNdE14a1NKYmg1T2tsTVl1WTVkZ1Y4STZuTWkxaWN4dmh1VUFMRG5taWVpNDJOR2FGaDUtMFByRkRfVWRvN0h5Q25sS19GYVk4X2I0M0J2ZlBVU2JMMG1Ja09nN2x0RG13c01HVWZBUTQ1dll0ZVNTbEFnbm9LX0NEZFllS2J5MmJRXzlLYUVFd3JJWlRzVnZYMndNQjh2SklwRl9ScA?oc=5",
-   "published": "Sun, 13 Sep 2026 07:17:00 GMT",
-   "query": "XLK ETF"
-  },
-  {
-   "source": "gnews:XLK",
    "title": "State Street SPDR NYSE Technology ETF rated Buy for balanced growth and better risk-adjusted returns than XLK. - Pluang",
    "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNeDZoZFdWdXpCeDZaVkVfcmlwZUozNDJjampnajRRV3pVX3F2TjEzVlBXaHNWeE9jNXlmMmdMWFNOLTYtaHhKSHBOWDBrSzNMX3pnRVlwVlptY1Z0OFJNbTFaS2V5bmgtcDNFWmF1VzRKdjhWWGQ4SFFKbW9jMFNkekVOQnBsVUlUQ21rN3JJbFh1QjN5Y1BsaFAzdXkycThNaVdaaGh3ZWl5MFk?oc=5",
    "published": "Fri, 11 Sep 2026 08:23:34 GMT",
@@ -997,9 +990,9 @@
   },
   {
    "source": "gnews:XLK",
-   "title": "Convert 1 XLK (State Street Technology Select Sector SPDR ETF \u2022 Robinhood Token) to IDR (Indonesian Rupiah) - Bybit",
-   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5HYWtOaHlqX2pZMnZ2dlFESUYyUF9BVnhfb28xZjRpRS1KWmQ2UU85RE9IRzVNbEZ0SHAzRXpoanRzcVNJMnhhT0M4WlBYbmx2aXN6LUVHWQ?oc=5",
-   "published": "Fri, 11 Sep 2026 00:00:00 GMT",
+   "title": "Better Artificial Intelligence ETF: Roundhill's CHAT vs. State Street's XLK - The Motley Fool",
+   "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOSnJvcldQS05vMklfNFhBdEdrNmdqUFNNdE14a1NKYmg1T2tsTVl1WTVkZ1Y4STZuTWkxaWN4dmh1VUFMRG5taWVpNDJOR2FGaDUtMFByRkRfVWRvN0h5Q25sS19GYVk4X2I0M0J2ZlBVU2JMMG1Ja09nN2x0RG13c01HVWZBUTQ1dll0ZVNTbEFnbm9LX0NEZFllS2J5MmJRXzlLYUVFd3JJWlRzVnZYMndNQjh2SklwRl9ScA?oc=5",
+   "published": "Sun, 13 Sep 2026 07:17:00 GMT",
    "query": "XLK ETF"
   },
   {
@@ -1007,6 +1000,13 @@
    "title": "XLK ETF Falls 1.1% - Moomoo",
    "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFAydjZHVlRDNmxmSkhEZnZCd1FmOGdqRkN5VmdWYVE2WlI3bHR3TGJPSk5QNGkyZVRFems0Rm1ES3ItUXFVa1BycjF5ZW82MkNGZ0p6bXFod3RsZDV4d3ZKd3o1bzNvc3VNUW1F?oc=5",
    "published": "Wed, 15 Jul 2026 07:00:00 GMT",
+   "query": "XLK ETF"
+  },
+  {
+   "source": "gnews:XLK",
+   "title": "Convert 1 XLK (State Street Technology Select Sector SPDR ETF \u2022 Robinhood Token) to IDR (Indonesian Rupiah) - Bybit",
+   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5HYWtOaHlqX2pZMnZ2dlFESUYyUF9BVnhfb28xZjRpRS1KWmQ2UU85RE9IRzVNbEZ0SHAzRXpoanRzcVNJMnhhT0M4WlBYbmx2aXN6LUVHWQ?oc=5",
+   "published": "Fri, 11 Sep 2026 00:00:00 GMT",
    "query": "XLK ETF"
   },
   {
