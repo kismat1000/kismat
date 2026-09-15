@@ -1,8 +1,24 @@
 {
- "count": 131,
+ "count": 132,
  "tone": {
+  "CSL.AX": {
+   "symbol": "CSL.AX",
+   "score": 0.5,
+   "positive": 1,
+   "negative": 0,
+   "headlines": 6,
+   "flags": []
+  },
   "ETHUSDT": {
    "symbol": "ETHUSDT",
+   "score": 0.667,
+   "positive": 2,
+   "negative": 0,
+   "headlines": 6,
+   "flags": []
+  },
+  "LINKUSDT": {
+   "symbol": "LINKUSDT",
    "score": 0.667,
    "positive": 2,
    "negative": 0,
@@ -14,29 +30,13 @@
    "score": 0.833,
    "positive": 5,
    "negative": 0,
-   "headlines": 5,
-   "flags": []
-  },
-  "LINKUSDT": {
-   "symbol": "LINKUSDT",
-   "score": 0.667,
-   "positive": 2,
-   "negative": 0,
-   "headlines": 6,
-   "flags": []
-  },
-  "CSL.AX": {
-   "symbol": "CSL.AX",
-   "score": 0.5,
-   "positive": 1,
-   "negative": 0,
    "headlines": 6,
    "flags": []
   },
   "MSFT": {
    "symbol": "MSFT",
-   "score": 0.667,
-   "positive": 2,
+   "score": 0.75,
+   "positive": 3,
    "negative": 0,
    "headlines": 6,
    "flags": []
@@ -353,6 +353,20 @@
   },
   {
    "source": "abc_au_business",
+   "title": "Tasmania falls to last in latest CommBank economic report",
+   "link": "https://www.abc.net.au/news/2026-09-15/tasmania-last-in-latest-commbank-economic-report/107154598",
+   "published": "Tue, 15 Sep 2026 04:54:59 +0000",
+   "query": ""
+  },
+  {
+   "source": "abc_au_business",
+   "title": "Breaking: Embattled caravan manufacturer collapses into administration",
+   "link": "https://www.abc.net.au/news/2026-09-15/australian-off-road-collapse-administration/107154226",
+   "published": "Tue, 15 Sep 2026 04:49:47 +0000",
+   "query": ""
+  },
+  {
+   "source": "abc_au_business",
    "title": "Emmys 2026 key moments: Widow's Bay takes six awards and Hacks star makes history",
    "link": "https://www.abc.net.au/news/2026-09-15/emmys-2026-key-moments/107138048",
    "published": "Tue, 15 Sep 2026 03:47:30 +0000",
@@ -419,20 +433,6 @@
    "title": "Major private hospital operator to be divided up following financial collapse",
    "link": "https://www.abc.net.au/news/2026-09-14/healthscope-split-receivers-calvary-healthe-consortium/107151964",
    "published": "Mon, 14 Sep 2026 07:32:54 +0000",
-   "query": ""
-  },
-  {
-   "source": "abc_au_business",
-   "title": "Major caravan manufacturer shuts leaving customers in the dark",
-   "link": "https://www.abc.net.au/news/2026-09-14/australian-off-road-caravan-company-shuts-its-gates/107150896",
-   "published": "Mon, 14 Sep 2026 06:44:01 +0000",
-   "query": ""
-  },
-  {
-   "source": "abc_au_business",
-   "title": "New report lays bare public housing 'failures' in WA's far north",
-   "link": "https://www.abc.net.au/news/2026-09-14/kimberley-housing-maintenance-report-chronic-delays/107143672",
-   "published": "Mon, 14 Sep 2026 04:52:44 +0000",
    "query": ""
   },
   {
@@ -520,10 +520,59 @@
    "query": ""
   },
   {
+   "source": "gnews:CSL.AX",
+   "title": "CSL shares have surged over 25%. Do brokers see more upside? - The Motley Fool Australia",
+   "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPNmR4MU9mdHNDTldqc1pFZEpzSUxKSTZ1bkdpLTgtU3ItcnhzajZFR3hSQmd1eFdZOU5uRkRfLTdhVjA1V1R1S3RrYzVQVnp5N2pPeGFEWmRCcXJoTi13LTM0MGJ5YjZZWUhwYk9ubE8tcW9remZLSVBsQ1daU3Z0SnQwRkVGck1aakhWV0F6VjVTd09HbGI0cw?oc=5",
+   "published": "Mon, 14 Sep 2026 22:45:00 GMT",
+   "query": "CSL ASX shares"
+  },
+  {
+   "source": "gnews:CSL.AX",
+   "title": "ASX Healthcare Stocks on Investor\u2019s Radar: CSL (ASX:CSL), Pro Medicus (ASX:PME) and Telix Pharmaceuticals (ASX:TLX) Report Key Business Developments - Kalkine",
+   "link": "https://news.google.com/rss/articles/CBMihgJBVV95cUxOdDZsclA1NWNwQklkWllwNF9PMGxlN2tpUDdZNUVDTzVYSFZYMWJUODJOVGowXzlRZHlEX2ZqX1JiZWYybGwwMVl5WTlEaHg4WVZULXV6eS1UUE5ydHdnYXl6X2tySWVHWXo2SFVWU3g5SHVzRUtqaTk0TGoybG9oN004NkRlTlNJNkk3a3lYbi15ZXJVRFZfSDRaY1NUbWpTYUV3NG1abDdyZWl5TXI1SkpFbWhfWS0wdUJpMDlfbVBGa0RIejJha3VlT3Y5MGp2Z3VQeU5wRVVqN0sxVXNuT3QyNDdsTE55bEJZLVRPT0QyUjZWd3pVWUxEVUZCenV1V21LOHR3?oc=5",
+   "published": "Mon, 14 Sep 2026 10:39:00 GMT",
+   "query": "CSL ASX shares"
+  },
+  {
+   "source": "gnews:CSL.AX",
+   "title": "CSL\u2019s latest result suggests the worst may be over - Morningstar Australia",
+   "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPUVBaOFNaQ1c3ZlNyTW9KMkJkRjh6clh5X3pmNTgzQm9mcm5Sb0duWVluRDluMXI1cEFWMnJXWlFxd1lGajBhNTI1bENESHdPemUxdzRjdUZMcnUyQU5taFBndExUQ0h1OF9zWW50Zlhiblhfb0E2UWgzNV9zZ2ZLSkZ2d1VqWm1Cb0ow?oc=5",
+   "published": "Mon, 31 Aug 2026 07:00:00 GMT",
+   "query": "CSL ASX shares"
+  },
+  {
+   "source": "gnews:CSL.AX",
+   "title": "Evening Wrap: ASX 200 flat as rising crude oil drags on mining and tech stocks \u2013 CSL and STO provide defensive support - Market Index",
+   "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQN0ZiTXVfMzlxbHhEV29CSXBwZVJ1RjZEdDhfM1RiNWhoemFZZ25JUXZGeUpTZEdReS1GeTExdy15VjJTNGtfQ2diaEFwaGt3VHRpYnl5VWF4VkFnZHJianRkMGlTZFVwQXpsMnY1Q2lJanpma0E1dDhLU3J4dzdRSmNXQ2FxcThBZEVENWtJT0l3eHNUX0xLMjRKZEpYZUx6SWE0U3N4b1ZWQQ?oc=5",
+   "published": "Mon, 14 Sep 2026 07:43:59 GMT",
+   "query": "CSL ASX shares"
+  },
+  {
+   "source": "gnews:CSL.AX",
+   "title": "\"It just got too damn cheap\": Henry Jennings on CSL\u2019s 70% rally and one stock he's backing to go higher - Livewire Markets",
+   "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPSGQtYVRRNkVGamFpYlFwd2k0WElGQ3JhRVU0U2xlZDRPRWJ3SVVTNjdmX0RJNTFlWm5oZ1I0MUVRUGl4cVl5eUx1TzJfSGVyYUZXU2xpdFJSdll3ZXBaY09mZ3JOWmdfVlBIOVhvelBhQmRXSjl5MTBJZzBkbWFWNi02UTIwU0tGc01lcXQ0MDFjQ05GUGpWTWY4bWZhNUZmWFJQeHcwemxLaFNGT2NWODdXVVJjUEVPcy1CZXlJSFE0YkpzaEJnX29xeU1fbDY5RFZN?oc=5",
+   "published": "Thu, 20 Aug 2026 07:00:00 GMT",
+   "query": "CSL ASX shares"
+  },
+  {
+   "source": "gnews:CSL.AX",
+   "title": "Written off a year ago, this is now the ASX\u2019s hottest sector - The Australian",
+   "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQdUxxNUExNHEzSG50azJkdUI5a0RveGIycE9IeHQ5d29aYWppRUQ3WXlkeVVHZk5FVzhaV2VaR1V3a1ZqNWw4N1g0VVlKRzhGQmhkQTlBQXFTOXZCWkhQRjJLLVRNdlRrQnZkT0ZTZHBBZGdRby1HVDBKUFRkbGRoZ3F5bFVOZ2hTNXROZldINXNMZ2pFbEVlWVZuSUV4SE00Wm5KTW9iaXJ4V0daM0FRbExJUzdtSVFFa2lnOVZKLTVXZlBMdnZka1FYdkhVU3lJVHpoeVBTdkI2anB1RjVzREpaVGxTMjR2b3gtdNIB8gFBVV95cUxNeGE3N2VQUm1QZEhFZUVNWjBrZENUN1F0WHVCcWpZQzF6UG5tVjBRSm04OElsZ2Z1VmJJVjFmNDlRNHBqMXlQWGhVVEh6S0FwLTVYQ04wT2tEZ1VsQmNrZHhWRkdOd3VnT2U0ZGNlOFZ1aUlOYmZRNDV4MHFocUlNT1NoY0JvaXRnaU5za0MyQVJ6SHh3VGN4ZWdqb1h2Njl2S01Ea0VFSXhuS0tsb2JhV1RkY04wUkd2a3I0VnhsNnREakZPTzh5TXVEV0Q3U1FEMXhNMmNQbmh4eWlUOUtIOHB4Ry1tNDZOblZTR240OXB3QQ?oc=5",
+   "published": "Fri, 28 Aug 2026 07:00:00 GMT",
+   "query": "CSL ASX shares"
+  },
+  {
    "source": "gnews:ETHUSDT",
    "title": "Ethereum Price Forecast: ETH recovers $2,500 amid BitMine accumulation and ETF outperformance - FXStreet",
    "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQdllVcVQ3UzRITGxKcmxGcVE0MXlKTUd0ZHZtNGc1M1B6YzA0UGpPbWZlTUFaQVJHQmR6d3RCcnAwbk1FODA4Smx5TkxIZ3JLT0RLbDVFblNHUnc0XzhBSlg1dDk5ZHpwcVVzMktMa1UzdktBUFdPSkVoeVg2SUZ6Y0tTbmhZNVY4OXZLNGdVQmhucFdGNV9MUHNYUmEwTHZrNEltNzhGdnp0Mi13Nkk0Z0R3YnNzdDJLZnZ2S1cyYlh3Mi14c0VmTlJvZUk1ZDF4dzhTTG9BVHBYWmNZVXN0NEJQWFcwdw?oc=5",
    "published": "Mon, 14 Sep 2026 20:00:57 GMT",
+   "query": "ethereum"
+  },
+  {
+   "source": "gnews:ETHUSDT",
+   "title": "Ethereum Price Prediction: ETH Breakout Puts $3K in Focus - Yahoo Finance Australia",
+   "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxObDE3eXdHU0xrVlQxOW50Tm5KYkllank2YzBOSmVkUEp2a1pEanRwYWdMdURUVDJVU29uSXJDUTBEVjhVSmM1RkxXNHBBNW5VVFh6RFV2QlB1cWFyZ2h5Wk04d3Q3cnhGVks2MFVEREhINVU5NkpSLXhUV2ZraUJsY2ZFLXJKMnNVRkp0akZHZHY?oc=5",
+   "published": "Fri, 11 Sep 2026 16:34:29 GMT",
    "query": "ethereum"
   },
   {
@@ -535,9 +584,9 @@
   },
   {
    "source": "gnews:ETHUSDT",
-   "title": "Ethereum Price Prediction: ETH Breakout Puts $3K in Focus - Yahoo Finance Australia",
-   "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxObDE3eXdHU0xrVlQxOW50Tm5KYkllank2YzBOSmVkUEp2a1pEanRwYWdMdURUVDJVU29uSXJDUTBEVjhVSmM1RkxXNHBBNW5VVFh6RFV2QlB1cWFyZ2h5Wk04d3Q3cnhGVks2MFVEREhINVU5NkpSLXhUV2ZraUJsY2ZFLXJKMnNVRkp0akZHZHY?oc=5",
-   "published": "Fri, 11 Sep 2026 16:34:29 GMT",
+   "title": "Bitcoin Is Holding Firm, Ethereum Is Pulling In Money: Here\u2019s What Crypto Positioning Shows - CryptoRank",
+   "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNTjhNMHlkdnZKeFZMNmJ5dmg4UW11YVFpYUFjWnhTcnVpWlB0b3BrejVUQWx6T3R3dHU2UlpReVlmcXV5T3ZxQXFyejl2Zmp6OWxiZElwTUo3MGxGMV9OVDQxNy1tX0tjcjRTVzRYU1lZRDJ0SVU2ZDZGZWtwTW5weEFHY3hUNDBfMGF1SUhFVzlxMlJ3VjgtN1NoRTNOem00OWdRNFhSMG1DdTJ3RlBfd25FSTZRX3p5cVU4TDl3R1FibnMt?oc=5",
+   "published": "Tue, 15 Sep 2026 04:40:16 GMT",
    "query": "ethereum"
   },
   {
@@ -553,48 +602,6 @@
    "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNdFhLRzJ1bGtZZVQtTFJIOW1zQjlXWDNRQkRFaVB6NjhNNnAzNFg3aXZSSW9VMjc5T0tMLVJGYUF5YlRuLXNrNGl1RDVha2pTS3NDU1BvdEo1RDgzQVJvRDVTbUUwODN0NzlTNjAwQ1hOU2VSZHJzZUtjTzR2T1JXZGZERG42QWxFUmY1Tlc3OGxvanhsdU5YU1czeWFma2thNHIxb01qcWNFOGhTS3ZjWTRHNXRsYzRK?oc=5",
    "published": "Mon, 14 Sep 2026 21:31:48 GMT",
    "query": "ethereum"
-  },
-  {
-   "source": "gnews:ETHUSDT",
-   "title": "SOL news: Solana transactions just got more than 3 times bigger, giving an edge over Ethereum - coindesk.com",
-   "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQdmY0WE94VW82c3NBN1EzSjhWWmxzS1BocDlaSnVRV2FCcW9xbTB0YVFvUlQwVzg5SHdET0dMdkt4cXNnS3loa3dmMFd3dWtTNUplRTYtT3ZCa0VBT2k2Vm1KMjZYbFZoVnNsOHF5V3BqSlF0VkJrZ21SLTVDbEdvcWtIODU5TnU1SzJkNzlsUGJEV3lFTXgzXy1kT3RMa0JaZVhoY290LVhVbURJM01tOTN0bW94aTJSdEVLQUxmZnA?oc=5",
-   "published": "Tue, 15 Sep 2026 04:34:10 GMT",
-   "query": "ethereum"
-  },
-  {
-   "source": "gnews:SOLUSDT",
-   "title": "We Asked Grok Whether XRP or Solana Reaches a New All-Time High First - Yahoo Finance",
-   "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQZGlvN2VwUzFaWF8yY25IWS1IeEM4NzhQTHJTQzZPSzktZ2NzeWNmY1NmRWd2TnoyT1pQM0ctdmlvUVdsblVqbF8xNW1ROVd2MWx4WjR5RWFMbTgtSjQ1RjQxS0JyNW9YUEZhWnZaUG5na2JGdzZfZWxvWVdGRllkclM0aDQ1VkhGSjEwdTJlRnYwb096dk1KZUZR?oc=5",
-   "published": "Fri, 11 Sep 2026 12:42:36 GMT",
-   "query": "solana"
-  },
-  {
-   "source": "gnews:SOLUSDT",
-   "title": "Solana price holds $100 as it nears symmetrical triangle breakout - Crypto News",
-   "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQMGJOc2VYYmRDSHFfWHdDd2x3LTVHQXktWkFQeWdqMWZrXzIzbFNTak1LNklySDVfcnptRXdsaHI1X3VwaGVvX292OG1jcXhkVDMzNkZyUFNlN0JnU2JfRnJxakJLZERaZzQ0VjQzXzZ1VklrNmFndTZ2UEhNOWU1Rw?oc=5",
-   "published": "Mon, 14 Sep 2026 13:00:00 GMT",
-   "query": "solana"
-  },
-  {
-   "source": "gnews:SOLUSDT",
-   "title": "Solana Surges 3.4% on Strong Adoption and Institutional Flows - CoinMarketCap",
-   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBEV3dQNHMwemxoOTVQZGdsRWVHQ1hZb0ZqVk94eWpoeUpGcmdIRlRJbC15ejRvT0paRXQzWlV0enRVZV9vYy0wVE5iZXZNZnRkZklmeFI2UVRwbmZNUGdlOU9EaHVjZFpoTVdUMU1iRm4?oc=5",
-   "published": "Mon, 14 Sep 2026 21:08:00 GMT",
-   "query": "solana"
-  },
-  {
-   "source": "gnews:SOLUSDT",
-   "title": "Crypto News: New Crypto Pepeto Announces $10.99M While the Solana Price Prediction Points to $750 - markets.businessinsider.com",
-   "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQdVB4NmMwVk80aGZUaElHdDNOUjU2RHcwWFFjNFNaNnQxUG5FVl9RVHFKRnpTd0t1SGM5M3dYajQwQ3lONGNVUE1WcU1jR3EyTWtyQWpmdWVpNGcxOWNoMzFQMW9GcFJob0xzdVNDN0p1VnNuTnZjcnNEbE92LTBFY2lPR0RBajd0UFI4bFNwT25LUFF2eVBYejlvZEZielc1TUk4ejdfQ3llb0F4Rnd6YjY3bjlDOHNNcFVTSmE4MmFuY29hVGFQUGExZFBCVDNPd1RZUFBua3d0RmlKLWpKVEdFd3pRMEtT?oc=5",
-   "published": "Mon, 14 Sep 2026 19:12:11 GMT",
-   "query": "solana"
-  },
-  {
-   "source": "gnews:SOLUSDT",
-   "title": "Micro SOL Futures - CME Group",
-   "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9JSnh6cmltTVB1eGpLQVRmWDBERkhpU0NJVXJnSFdaTzVOUzFTRTFHS3ZFVGR2OG9WWHU0TlFleXN6aVNSQ1llZG9tZWhiNU9jdlE2TE5CNFJWSlBZSTR1el9kd2poMmNIMmpXNE1Ic0JnRFpjM3g2LQ?oc=5",
-   "published": "Thu, 10 Sep 2026 00:56:36 GMT",
-   "query": "solana"
   },
   {
    "source": "gnews:LINKUSDT",
@@ -639,46 +646,46 @@
    "query": "chainlink"
   },
   {
-   "source": "gnews:CSL.AX",
-   "title": "CSL shares have surged over 25%. Do brokers see more upside? - The Motley Fool Australia",
-   "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPNmR4MU9mdHNDTldqc1pFZEpzSUxKSTZ1bkdpLTgtU3ItcnhzajZFR3hSQmd1eFdZOU5uRkRfLTdhVjA1V1R1S3RrYzVQVnp5N2pPeGFEWmRCcXJoTi13LTM0MGJ5YjZZWUhwYk9ubE8tcW9remZLSVBsQ1daU3Z0SnQwRkVGck1aakhWV0F6VjVTd09HbGI0cw?oc=5",
-   "published": "Mon, 14 Sep 2026 22:45:00 GMT",
-   "query": "CSL ASX shares"
+   "source": "gnews:SOLUSDT",
+   "title": "SOL news: Solana transactions just got more than 3 times bigger, giving an edge over Ethereum - CoinDesk",
+   "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQdmY0WE94VW82c3NBN1EzSjhWWmxzS1BocDlaSnVRV2FCcW9xbTB0YVFvUlQwVzg5SHdET0dMdkt4cXNnS3loa3dmMFd3dWtTNUplRTYtT3ZCa0VBT2k2Vm1KMjZYbFZoVnNsOHF5V3BqSlF0VkJrZ21SLTVDbEdvcWtIODU5TnU1SzJkNzlsUGJEV3lFTXgzXy1kT3RMa0JaZVhoY290LVhVbURJM01tOTN0bW94aTJSdEVLQUxmZnA?oc=5",
+   "published": "Tue, 15 Sep 2026 04:34:10 GMT",
+   "query": "solana"
   },
   {
-   "source": "gnews:CSL.AX",
-   "title": "ASX Healthcare Stocks on Investor\u2019s Radar: CSL (ASX:CSL), Pro Medicus (ASX:PME) and Telix Pharmaceuticals (ASX:TLX) Report Key Business Developments - Kalkine",
-   "link": "https://news.google.com/rss/articles/CBMihgJBVV95cUxOdDZsclA1NWNwQklkWllwNF9PMGxlN2tpUDdZNUVDTzVYSFZYMWJUODJOVGowXzlRZHlEX2ZqX1JiZWYybGwwMVl5WTlEaHg4WVZULXV6eS1UUE5ydHdnYXl6X2tySWVHWXo2SFVWU3g5SHVzRUtqaTk0TGoybG9oN004NkRlTlNJNkk3a3lYbi15ZXJVRFZfSDRaY1NUbWpTYUV3NG1abDdyZWl5TXI1SkpFbWhfWS0wdUJpMDlfbVBGa0RIejJha3VlT3Y5MGp2Z3VQeU5wRVVqN0sxVXNuT3QyNDdsTE55bEJZLVRPT0QyUjZWd3pVWUxEVUZCenV1V21LOHR3?oc=5",
-   "published": "Mon, 14 Sep 2026 10:39:00 GMT",
-   "query": "CSL ASX shares"
+   "source": "gnews:SOLUSDT",
+   "title": "We Asked Grok Whether XRP or Solana Reaches a New All-Time High First - Yahoo Finance",
+   "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQZGlvN2VwUzFaWF8yY25IWS1IeEM4NzhQTHJTQzZPSzktZ2NzeWNmY1NmRWd2TnoyT1pQM0ctdmlvUVdsblVqbF8xNW1ROVd2MWx4WjR5RWFMbTgtSjQ1RjQxS0JyNW9YUEZhWnZaUG5na2JGdzZfZWxvWVdGRllkclM0aDQ1VkhGSjEwdTJlRnYwb096dk1KZUZR?oc=5",
+   "published": "Fri, 11 Sep 2026 12:42:36 GMT",
+   "query": "solana"
   },
   {
-   "source": "gnews:CSL.AX",
-   "title": "CSL\u2019s latest result suggests the worst may be over - Morningstar Australia",
-   "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPUVBaOFNaQ1c3ZlNyTW9KMkJkRjh6clh5X3pmNTgzQm9mcm5Sb0duWVluRDluMXI1cEFWMnJXWlFxd1lGajBhNTI1bENESHdPemUxdzRjdUZMcnUyQU5taFBndExUQ0h1OF9zWW50Zlhiblhfb0E2UWgzNV9zZ2ZLSkZ2d1VqWm1Cb0ow?oc=5",
-   "published": "Mon, 31 Aug 2026 07:00:00 GMT",
-   "query": "CSL ASX shares"
+   "source": "gnews:SOLUSDT",
+   "title": "Solana price holds $100 as it nears symmetrical triangle breakout - Crypto News",
+   "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQMGJOc2VYYmRDSHFfWHdDd2x3LTVHQXktWkFQeWdqMWZrXzIzbFNTak1LNklySDVfcnptRXdsaHI1X3VwaGVvX292OG1jcXhkVDMzNkZyUFNlN0JnU2JfRnJxakJLZERaZzQ0VjQzXzZ1VklrNmFndTZ2UEhNOWU1Rw?oc=5",
+   "published": "Mon, 14 Sep 2026 13:00:00 GMT",
+   "query": "solana"
   },
   {
-   "source": "gnews:CSL.AX",
-   "title": "Evening Wrap: ASX 200 flat as rising crude oil drags on mining and tech stocks \u2013 CSL and STO provide defensive support - Market Index",
-   "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQN0ZiTXVfMzlxbHhEV29CSXBwZVJ1RjZEdDhfM1RiNWhoemFZZ25JUXZGeUpTZEdReS1GeTExdy15VjJTNGtfQ2diaEFwaGt3VHRpYnl5VWF4VkFnZHJianRkMGlTZFVwQXpsMnY1Q2lJanpma0E1dDhLU3J4dzdRSmNXQ2FxcThBZEVENWtJT0l3eHNUX0xLMjRKZEpYZUx6SWE0U3N4b1ZWQQ?oc=5",
-   "published": "Mon, 14 Sep 2026 07:43:59 GMT",
-   "query": "CSL ASX shares"
+   "source": "gnews:SOLUSDT",
+   "title": "Solana Surges 3.4% on Strong Adoption and Institutional Flows - CoinMarketCap",
+   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBEV3dQNHMwemxoOTVQZGdsRWVHQ1hZb0ZqVk94eWpoeUpGcmdIRlRJbC15ejRvT0paRXQzWlV0enRVZV9vYy0wVE5iZXZNZnRkZklmeFI2UVRwbmZNUGdlOU9EaHVjZFpoTVdUMU1iRm4?oc=5",
+   "published": "Mon, 14 Sep 2026 21:08:00 GMT",
+   "query": "solana"
   },
   {
-   "source": "gnews:CSL.AX",
-   "title": "\"It just got too damn cheap\": Henry Jennings on CSL\u2019s 70% rally and one stock he's backing to go higher - Livewire Markets",
-   "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPSGQtYVRRNkVGamFpYlFwd2k0WElGQ3JhRVU0U2xlZDRPRWJ3SVVTNjdmX0RJNTFlWm5oZ1I0MUVRUGl4cVl5eUx1TzJfSGVyYUZXU2xpdFJSdll3ZXBaY09mZ3JOWmdfVlBIOVhvelBhQmRXSjl5MTBJZzBkbWFWNi02UTIwU0tGc01lcXQ0MDFjQ05GUGpWTWY4bWZhNUZmWFJQeHcwemxLaFNGT2NWODdXVVJjUEVPcy1CZXlJSFE0YkpzaEJnX29xeU1fbDY5RFZN?oc=5",
-   "published": "Thu, 20 Aug 2026 07:00:00 GMT",
-   "query": "CSL ASX shares"
+   "source": "gnews:SOLUSDT",
+   "title": "Crypto News: New Crypto Pepeto Announces $10.99M While the Solana Price Prediction Points to $750 - markets.businessinsider.com",
+   "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQdVB4NmMwVk80aGZUaElHdDNOUjU2RHcwWFFjNFNaNnQxUG5FVl9RVHFKRnpTd0t1SGM5M3dYajQwQ3lONGNVUE1WcU1jR3EyTWtyQWpmdWVpNGcxOWNoMzFQMW9GcFJob0xzdVNDN0p1VnNuTnZjcnNEbE92LTBFY2lPR0RBajd0UFI4bFNwT25LUFF2eVBYejlvZEZielc1TUk4ejdfQ3llb0F4Rnd6YjY3bjlDOHNNcFVTSmE4MmFuY29hVGFQUGExZFBCVDNPd1RZUFBua3d0RmlKLWpKVEdFd3pRMEtT?oc=5",
+   "published": "Mon, 14 Sep 2026 19:12:11 GMT",
+   "query": "solana"
   },
   {
-   "source": "gnews:CSL.AX",
-   "title": "Written off a year ago, this is now the ASX\u2019s hottest sector - The Australian",
-   "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQdUxxNUExNHEzSG50azJkdUI5a0RveGIycE9IeHQ5d29aYWppRUQ3WXlkeVVHZk5FVzhaV2VaR1V3a1ZqNWw4N1g0VVlKRzhGQmhkQTlBQXFTOXZCWkhQRjJLLVRNdlRrQnZkT0ZTZHBBZGdRby1HVDBKUFRkbGRoZ3F5bFVOZ2hTNXROZldINXNMZ2pFbEVlWVZuSUV4SE00Wm5KTW9iaXJ4V0daM0FRbExJUzdtSVFFa2lnOVZKLTVXZlBMdnZka1FYdkhVU3lJVHpoeVBTdkI2anB1RjVzREpaVGxTMjR2b3gtdNIB8gFBVV95cUxNeGE3N2VQUm1QZEhFZUVNWjBrZENUN1F0WHVCcWpZQzF6UG5tVjBRSm04OElsZ2Z1VmJJVjFmNDlRNHBqMXlQWGhVVEh6S0FwLTVYQ04wT2tEZ1VsQmNrZHhWRkdOd3VnT2U0ZGNlOFZ1aUlOYmZRNDV4MHFocUlNT1NoY0JvaXRnaU5za0MyQVJ6SHh3VGN4ZWdqb1h2Njl2S01Ea0VFSXhuS0tsb2JhV1RkY04wUkd2a3I0VnhsNnREakZPTzh5TXVEV0Q3U1FEMXhNMmNQbmh4eWlUOUtIOHB4Ry1tNDZOblZTR240OXB3QQ?oc=5",
-   "published": "Fri, 28 Aug 2026 07:00:00 GMT",
-   "query": "CSL ASX shares"
+   "source": "gnews:SOLUSDT",
+   "title": "Micro SOL Futures - CME Group",
+   "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9JSnh6cmltTVB1eGpLQVRmWDBERkhpU0NJVXJnSFdaTzVOUzFTRTFHS3ZFVGR2OG9WWHU0TlFleXN6aVNSQ1llZG9tZWhiNU9jdlE2TE5CNFJWSlBZSTR1el9kd2poMmNIMmpXNE1Ic0JnRFpjM3g2LQ?oc=5",
+   "published": "Thu, 10 Sep 2026 00:56:36 GMT",
+   "query": "solana"
   },
   {
    "source": "gnews:MSFT",
@@ -692,13 +699,6 @@
    "title": "Microsoft Stock (MSFT) Opinions on Bank of America Price Target Upgrade - Quiver Quantitative",
    "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOWGtXNnZKamhtd0YxSG5lYzVNbDFMVXRuYjJ4TUlFU2w3emstYWtZRTVRQjA4QlJydmhHaEM3dzhudHcyUWIwSHVKTU9nMWZJTDZRMkZ5eHV4UUYtNW1fYWk2Mzd4MXFfQTVIbHllMXBwVTBkcXBJRTNCOURNdjJmQjBaRHloSzU2VWtFdGFNX1VrVWw2T25KbDFvdlo1bXlFZlRsNTF4UlUzem5Y?oc=5",
    "published": "Mon, 14 Sep 2026 14:05:00 GMT",
-   "query": "MSFT stock"
-  },
-  {
-   "source": "gnews:MSFT",
-   "title": "CRWD, BAC, MSFT, ZS, GLW: 5 Trending Stocks Today - CrowdStrike Holdings (NASDAQ:CRWD) - Benzinga",
-   "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQd3dhYS1sZDVzNWhYWU41LVVyM016YmpEV3gtUml2ZDhUcy1JZUdtLVhoTEVmV1R1TEZ2Smh0X2VOWFhFNHV6dUNiT2FwdW5nb205LUdYTlI4dW8tenBLOFB3YTZZaVI4cXByelZKeVJObHBoeU85U1gtdlVSaGNaQ0lqUkdwWDNjRXZfaVF2cFN3bjFuaDZwRjRpNmRUVDAxX2Fjc1QtR2R5Z1I4MDAxaDFFVWRFallsbFJsMG5ORHlOSWFFWHdpU2ViMjBTQnhlWGhseE5vS3M4cFNSMFZKN2ZvbW1jR19kZGF1SHpRSDdNRHFmalE?oc=5",
-   "published": "Tue, 15 Sep 2026 01:12:30 GMT",
    "query": "MSFT stock"
   },
   {
@@ -723,10 +723,24 @@
    "query": "MSFT stock"
   },
   {
+   "source": "gnews:MSFT",
+   "title": "MSFT Stock Gains 2% \u2014 Microsoft Unveils \u2018Humanist AI\u2019 Code Of Conduct To Curb Autonomous AI Risks - Stocktwits",
+   "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPTDZwbzRYbGpsY1NZelY3bmUzWW5nbDVkTGhKSEFKTEhjbG1mZzM1a29XTk9uUEM0Y2FkUUlCTWU1TTdNSmtjU2pxb0tWdEY4aUpWRW9feXJVcXFhZEt0M3ZTWE54YnZDTlZVS3RZYkxtTDdlc3Ixc19oV2g4aUdXMUVlbDhZY2FoQTJaeUVfYjlQMkJvVEhTdDVtdE1ueGJqaF9SbE1VU3RxODRsOVE?oc=5",
+   "published": "Mon, 14 Sep 2026 20:35:47 GMT",
+   "query": "MSFT stock"
+  },
+  {
    "source": "gnews:BNBUSDT",
    "title": "Aish Crypto Traders(@Square-Creator-71c3cd013cb38)'s insights - Binance",
    "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBzMHNiRGZJbzREMkZuMFRtT2hBQ3g4NUd5QkNYTTFMTVA2ekhiNXlkVG5wcXlEMzZBQTE3cWI2bS1ORVBGeGdtUEZSQzBxTE9DSW5ybFNOQXVXcEdISlpXSzFSR040eXhZ?oc=5",
    "published": "Sun, 13 Sep 2026 14:23:56 GMT",
+   "query": "bnb binance coin"
+  },
+  {
+   "source": "gnews:BNBUSDT",
+   "title": "Convert 1000 ARS (ARS) to BNB (Binance Coin) - Bybit",
+   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE55UWNYOEUzMzVNa1YyajdIWjFUWG1aQ3BCZnlpWk9pQWE1dG5WX2ZubjF5bkpzcDZUaGFjcXBQZXdObnlGbW9nSDNNTV81Qzd4LXdUbHk0cXN1UkNmc0E?oc=5",
+   "published": "Mon, 14 Sep 2026 00:00:00 GMT",
    "query": "bnb binance coin"
   },
   {
@@ -748,13 +762,6 @@
    "title": "XRP nears Binance Coin with only $10B gap, needing a price boost to surpass BNB market cap. - Pluang",
    "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPcDZYTlNjWEZkc0JZTDdMNmtadmM5RnZGUDBOWHN4OTA0SGtsTlRsTGY3M0k5SDhscHhfRGdmWnJJdlNTRlNMbXpDVnJpWklUT3B4Uk5udlBoZ1hDTVo3RllhYl8zTG4yWUlXRTVBSk10SnNEQjZFNERhc0hBOWRBa2FvS0h0T2ZlMmZQbTlyUE44eTY1dEM5R1Bn?oc=5",
    "published": "Fri, 11 Sep 2026 13:26:58 GMT",
-   "query": "bnb binance coin"
-  },
-  {
-   "source": "gnews:BNBUSDT",
-   "title": "Convert 500 MXN (Mexican Peso) to BNB (Binance Coin) - Bybit",
-   "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE54WXdNN192YWFRZFY2YjNMdVdFd1dMbjZLbFpUaHowQzhZaEFkcmNmR2YyNC1qLVdkV3VZNFFWM0xreTF1czU5RDdSdnlmcUNodXI3SDZzRG1aU21O?oc=5",
-   "published": "Sun, 13 Sep 2026 00:00:00 GMT",
    "query": "bnb binance coin"
   },
   {
