@@ -1,0 +1,39 @@
+{
+  "symbol": "MSFT",
+  "asset_class": "us_stocks",
+  "date": "2026-09-16",
+  "direction": "long",
+  "conviction": 0.45,
+  "thesis": "Still the only long on the desk, still held to its named level, but conviction comes down from 0.50 to 0.45 because the rate path got worse than what was priced. The hike itself was expected; 16 of 18 officials signalling another one was not. Microsoft's own evidence is unchanged and good, and price at 490.30 is well clear of the 474.50 stop.",
+  "bull_case": "Pattern analyst: setup is a **pullback to a rising trend** - close 490.30, 8.8% below the 252-day high, RSI **47** and now the least extended it has been, 63d momentum +24.7%, close > SMA50 > SMA200. Squeeze **0.74**, under the 0.75 line, so volatility is still coiling. ATR 2.2%. Derived rs: +24.7% against SPY's +0.8% is a lead of about 24 points, the widest in the book by a distance. Verdict: pattern supports entry now.\n\nNothing in the business changed today. Azure is past $100B growing 43% and guided to ~45% constant currency, Microsoft 365 Copilot is beyond 30 million paid seats, and the compute shortage is severe enough that Microsoft is turning away AI and cloud business while planning to more than triple data-centre capacity. Bank of America carries a $600 target against consensus near $572.92. The 10-year yield actually *fell* about 5bp on the decision to 4.947%, which is the opposite of what a long-duration equity had to fear.",
+  "bear_case": "**The Fed hiked.** The FOMC voted 12-0 to raise the target range 25bp to 3.75-4.00%, its first increase since July 2023, and Chair Warsh vowed a 'timelier return' to 2% inflation. The dot plot is the part that matters: 16 of 18 participants expect another increase and four see two more. The Dow fell 631 points (-1.21%) to 51,461.90 and the S&P 500 -0.45% to 7,551.81, while the Nasdaq finished flat and the 10-year yield eased about 5bp to 4.947%. Sixteen of eighteen officials expecting another hike is a materially worse rate path than the market was underwriting, and this is the longest-duration asset in the book. The capital intensity keeps climbing - AI capex around $175-190B for 2026, reached partly by lengthening assumed useful lives of data-centre assets, now with a capacity tripling on top - and the OpenAI revenue share is capped near $38B through 2030. There is no company catalyst until FY27 Q1 results in late October, the position is -1.9%, and the score has drifted from +0.65 to +0.60. Desk record (research/outcomes.json): 12 closed trades, 0 wins, -$168.00 realised. Long memos read 3 good of 8 judged (0.375) today, after 6 of 7 (0.86) yesterday and 3 of 7 (0.43) the day before - three different answers in three days on a sample this small, which is why I am treating the number as noise in both directions rather than as a steer. Skip decisions are 17 of 17.",
+  "catalysts": [
+    "FY27 Q1 results in late Oct against the ~45% cc Azure guide",
+    "The next FOMC, with 16 of 18 signalling another hike",
+    "Data-centre capacity expansion easing the compute shortage"
+  ],
+  "risks": [
+    "Dot plot signals another hike: worse rate path than priced",
+    "AI capex $175-190B plus a capacity tripling",
+    "Useful-life extension flattering the capex figure",
+    "OpenAI revenue share capped at ~$38B through 2030",
+    "No catalyst before late October"
+  ],
+  "invalidation": "The pattern analyst's level is **474.50**, the trailing stop carried in the packet, which binds before my 470 thesis level. A daily close below it ends this. Azure guided or reported below 40% constant currency kills it outright regardless of price.",
+  "horizon_days": 45,
+  "sources": [
+    "https://www.cnbc.com/2026/09/16/fed-rate-decision-september-2026.html",
+    "https://finance.yahoo.com/economy/policy/live/federal-reserve-meeting-live-updates-chairman-kevin-warsh-143452661.html",
+    "https://news.microsoft.com/source/2026/07/29/microsoft-cloud-and-ai-strength-fuels-fourth-quarter-results-4/",
+    "https://www.ad-hoc-news.de/boerse/news/corporate-news/microsoft-stock-gains-as-analysts-raise-targets/70087325",
+    "research/packets/2026-09-16.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-15/MSFT.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.6,
+    "bear": 0.5,
+    "macro": 0.2
+  }
+}

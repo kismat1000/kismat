@@ -1,0 +1,38 @@
+{
+  "symbol": "XLK",
+  "asset_class": "us_etfs",
+  "date": "2026-09-16",
+  "direction": "flat",
+  "conviction": 0.6,
+  "thesis": "63-day momentum has gone negative at **-1.2%** and the score is +0.34, the lowest in the book. A technology fund whose quarter-return is now below zero while it holds the largest technology companies is the market telling you the AI trade has stopped leading - and we own MSFT directly, so this is overlap without benefit. The Fed hiked with more signalled.",
+  "bull_case": "Pattern analyst: setup is a **range, rolling over** - close 183.93, 7.1% below the 252-day high, RSI 52, 63d momentum now negative, close > SMA50 > SMA200 for now. The one constructive number is squeeze at **0.69**, under the 0.75 line, so volatility is coiling and a move is being wound up in one direction or the other. ATR 1.7% makes it cheap to hold. Derived rs: -1.2% against SPY's +0.8% means XLK **lags** its own benchmark by 2 points. Verdict: pattern is against entry - a laggard in a coiling range is not a buy until the coil resolves up.\n\nThe earnings underneath are still real: Azure guided ~45% cc, and three of the top five holdings, about 45% of the fund, have traded at historically low multiples with NVIDIA near 23x current-year earnings. The Nasdaq finished flat on the Fed day while the Dow fell 631 points, so large-cap technology absorbed the hike better than the rest of the market.",
+  "bear_case": "Momentum below zero over a quarter is the cleanest possible statement that this is not working, and it has deteriorated every run: +2.6%, then -0.2%, now -1.2%. **The Fed hiked.** The FOMC voted 12-0 to raise the target range 25bp to 3.75-4.00%, its first increase since July 2023, and Chair Warsh vowed a 'timelier return' to 2% inflation. The dot plot is the part that matters: 16 of 18 participants expect another increase and four see two more. The Dow fell 631 points (-1.21%) to 51,461.90 and the S&P 500 -0.45% to 7,551.81, while the Nasdaq finished flat and the 10-year yield eased about 5bp to 4.947%. This is the longest-duration equity exposure available and the dot plot just got worse. The concentration remains a portfolio problem rather than diversification - roughly 16% NVIDIA and 45% in the top five, overlapping MSFT which we hold outright. September is also XLK's weakest month on record at 46.15% positive. Desk record (research/outcomes.json): 12 closed trades, 0 wins, -$168.00 realised. Long memos read 3 good of 8 judged (0.375) today, after 6 of 7 (0.86) yesterday and 3 of 7 (0.43) the day before - three different answers in three days on a sample this small, which is why I am treating the number as noise in both directions rather than as a steer. Skip decisions are 17 of 17.",
+  "catalysts": [
+    "Whether the 0.69 squeeze resolves up or down",
+    "Q3 earnings from the megacap holdings in late October",
+    "Hyperscaler capex guidance for 2027",
+    "The Fed's next meeting"
+  ],
+  "risks": [
+    "63d momentum negative at -1.2%; lowest score in the book",
+    "Lags SPY by 2 points while holding the largest tech names",
+    "~45% top-five concentration overlapping MSFT",
+    "Dot plot signals another hike on the longest-duration exposure"
+  ],
+  "invalidation": "The pattern analyst's level is **178.45**, the trailing stop carried in the packet. A close below it ends this. It flips long on a close above 190 with 63-day momentum back above SPY's - the coil resolving upward and the lag closing together.",
+  "horizon_days": 30,
+  "sources": [
+    "https://www.cnbc.com/2026/09/16/fed-rate-decision-september-2026.html",
+    "https://stockanalysis.com/etf/xlk/",
+    "https://finance.yahoo.com/markets/stocks/articles/xlk-rebound-mode-reach-fresh-134500739.html",
+    "research/packets/2026-09-16.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-13/XLK.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.3,
+    "bear": 0.65,
+    "macro": 0.2
+  }
+}

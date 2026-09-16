@@ -708,3 +708,66 @@ its conditions are met. macro_conviction long: 0.25.
 - Fifth day with `rs` empty for all symbols — derived by hand again today.
 - `us_etfs` still missing from the memo schema enum (open since 8 Sep; four more memos today).
 - Cash 0.00 for a second day with the book at its 12-position cap: every call remains advisory.
+
+## 2026-09-16 — council run
+
+Packet: `research/packets/2026-09-16.md`. Wednesday. Equity 9,628.71, same 12 positions, cash 0.00.
+
+**The Fed hiked.** 12-0 for 25bp to 3.75–4.00%, the first increase since July 2023, with Warsh
+promising a "timelier return" to 2%. The dot plot is the part that matters: **16 of 18 participants
+expect another increase and four see two more**. Dow −631 (−1.21%) to 51,461.90, S&P 500 −0.45% to
+7,551.81, Nasdaq flat, and the 10-year yield eased about 5bp to 4.947%. The macro overhang this
+desk has cited since 6 September is now resolved, hawkishly, with more signalled.
+
+**The record, in one line:** twelve closed trades, twelve losses, −$168.00 — and long memos read
+3 good of 8 (0.375) today after 6 of 7 (0.86) yesterday and 3 of 7 (0.43) on Monday. Three
+different answers in three days; I said yesterday that number was noise and today confirms it in
+the other direction, so it is steering nothing. Skip decisions are 17 of 17.
+
+**Picks: 5.** Due: **BNBUSDT** and **XLK** (memos three days old). Re-run on material change:
+**XLE** (−2.6%, score +0.75 → +0.52, RSI 74 → 58), **MSFT** (the only long, −1.9% into the hike)
+and **DBC** (RSI 87 → 77).
+
+| symbol | direction | conviction | note |
+|---|---|---|---|
+| MSFT | long | 0.45 | Cut from 0.50 — the hike was priced, another one was not |
+| DBC | flat | 0.60 | RSI unwound 87 → 77 without giving back the gain |
+| XLK | flat | 0.60 | 63-day momentum now **negative** at −1.2%, lowest score in the book |
+| BNBUSDT | flat | 0.60 | Stop 3% away; squeeze 1.19, volatility expanding on a falling price |
+| XLE | flat | 0.50 | **My own long trigger is met and I am declining it** — see below |
+
+**Deferred** (fresh memo, direction unchanged): CSL.AX, SOLUSDT, ETHUSDT, XLV (15 Sep), AAPL,
+LINKUSDT, BTCUSDT (14 Sep).
+
+No `avoid` memo on any held position. `validate-memos`: 20 valid.
+
+**The statistic that changed a call today:** none from the record. The Fed's dot plot changed two
+calls — MSFT down a notch and XLE held flat.
+
+**XLE: declining a trigger I wrote, and saying so.** Yesterday's memo said XLE flips long on "a
+pullback that holds above 63.50 with Brent still above $100". The pullback arrived inside 24 hours:
+price 64.03, RSI down from 74 to 58, Brent about $108. As written, the condition is met. I am not
+taking it, because today produced evidence the trigger was never drafted to capture — a 25bp hike
+with 16 of 18 officials wanting more, aimed squarely at the demand side of an energy trade, plus a
+US industry report showing stockpiles rising and the supply rally judged overdone after a 4%
+two-session run.
+
+Two things follow, and both belong on the record. First, this is the mirror image of Monday's ETH
+decision: there I refused to *lower* a trigger toward price, here I am refusing to *act* on one
+that price reached. The common rule is that the trigger is a floor for acting, not a substitute for
+judgment when new facts arrive — but I want that stated plainly rather than discovered later.
+Second, "a pullback that holds" was sloppy drafting: it has no session count, so it turned a test
+into an argument. Today's XLE memo replaces it with **three consecutive closes above 63.50**.
+
+**Yesterday's XLE call was right for the reason given.** I held it flat at RSI 74 on the 52-week
+high, said the entry was poor and to wait for a pullback, and it fell 2.6% the next session. That
+is the second consecutive day a refusal to chase an extended reading has paid — ETH on Monday,
+XLE today.
+
+**Things that failed or need checking.**
+- Sixth day with no event/news gates section in the packet, though the routine describes one.
+- Sixth day with `rs` empty for all symbols; derived by hand again (XLE +16 points over SPY, MSFT
+  +24, XLK −2).
+- `us_etfs` still missing from the memo schema enum (open since 8 Sep; three more memos today).
+- Cash 0.00 for a third day at the 12-position cap: every call remains advisory, including the XLE
+  trigger debated above, which could not have been acted on either way.

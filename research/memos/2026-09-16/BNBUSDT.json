@@ -1,0 +1,39 @@
+{
+  "symbol": "BNBUSDT",
+  "asset_class": "crypto",
+  "date": "2026-09-16",
+  "direction": "flat",
+  "conviction": 0.6,
+  "thesis": "Unchanged for a fourth run and now -4.8% with the stop at 697.41 only 3% below spot. The July burn is spent, the next is not due until around mid-October, and the two events the whole crypto sleeve was positioned for have now passed: the CLARITY vote was cloture only and the Fed hiked with more signalled. There is nothing left inside this horizon to own it for.",
+  "bull_case": "Pattern analyst: setup is a **downtrend within a longer uptrend** - close 719.12, 24.3% below the 252-day high, RSI 57, 63d momentum +23.8%, close > SMA50 > SMA200 but no breakout. Squeeze **1.19** means volatility is expanding, the wrong direction for a base. ATR 3.7%. No crypto benchmark exists in the table, so rs is unavailable rather than merely empty. Verdict: pattern is against entry.\n\nThe supply mechanism is genuine: the 36th burn on 15 July removed about 1.62M BNB, roughly $932M, taking supply to ~133.2M, with the next quarterly burn around mid-October. CZ's October 2025 pardon removed the acute legal overhang and VanEck's spot BNB ETF has listed since 28 May 2026. At $719 the token sits near the bottom of the $700-950 forecast band, and today's news tone is a respectable +0.67.",
+  "bear_case": "Expanding volatility on a falling price with no catalyst inside the horizon, and a stop 3% away, means this is likely to be resolved by the risk engine rather than by research. **The Fed hiked.** The FOMC voted 12-0 to raise the target range 25bp to 3.75-4.00%, its first increase since July 2023, and Chair Warsh vowed a 'timelier return' to 2% inflation. The dot plot is the part that matters: 16 of 18 participants expect another increase and four see two more. The Dow fell 631 points (-1.21%) to 51,461.90 and the S&P 500 -0.45% to 7,551.81, while the Nasdaq finished flat and the 10-year yield eased about 5bp to 4.947%. BNB has no independent bid - it follows bitcoin, which is -3.6% for us - and the structural objection is unhedgeable: its value is a claim on one company's continued regulatory standing in the US and EU. Own backtest (research/backtests/2026-09-06.md): crypto sleeve -6.4%, Sharpe -0.15, 17% win rate over 75 trades. Desk record (research/outcomes.json): 12 closed trades, 0 wins, -$168.00 realised. Long memos read 3 good of 8 judged (0.375) today, after 6 of 7 (0.86) yesterday and 3 of 7 (0.43) the day before - three different answers in three days on a sample this small, which is why I am treating the number as noise in both directions rather than as a steer. Skip decisions are 17 of 17.",
+  "catalysts": [
+    "37th quarterly BNB burn around mid-October, outside this horizon",
+    "VBNB ETF flow accumulation",
+    "The Fed's next meeting"
+  ],
+  "risks": [
+    "No catalyst inside the horizon; stop 3% away",
+    "Squeeze 1.19: volatility expanding on a falling price",
+    "No independent bid - follows bitcoin",
+    "Exchange-token risk concentrated in one company's regulatory standing",
+    "Own backtest: 17% win rate in the crypto sleeve"
+  ],
+  "invalidation": "The pattern analyst's level is **697.41**, the trailing stop carried in the packet, about 3% below spot. A close below it ends this. It flips long on a daily close above 800 ahead of the October burn.",
+  "horizon_days": 21,
+  "sources": [
+    "https://www.cnbc.com/2026/09/16/fed-rate-decision-september-2026.html",
+    "https://www.tradingkey.com/analysis/cryptocurrencies/bnb/261790577-crypto-binance-exchange-bnb-burn-bitcoin-btc-tradingkey",
+    "https://www.bitget.com/academy/clarity-act-vote-september-2026-senate-cloture-what-to-know",
+    "research/backtests/2026-09-06.md",
+    "research/packets/2026-09-16.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-13/BNBUSDT.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.3,
+    "bear": 0.65,
+    "macro": 0.2
+  }
+}

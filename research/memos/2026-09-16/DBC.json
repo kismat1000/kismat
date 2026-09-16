@@ -1,0 +1,39 @@
+{
+  "symbol": "DBC",
+  "asset_class": "us_etfs",
+  "date": "2026-09-16",
+  "direction": "flat",
+  "conviction": 0.6,
+  "thesis": "The RSI 87 reading has unwound to 77 without the price giving much back - DBC is 33.16 against 33.68 yesterday and still +2.7% for us. Yesterday's memo said the engine itself would refuse this above RSI 80 and that nothing more should go into it; that was right, and at 77 it is still not an entry. A hiking Fed with another hike signalled is a demand headwind the hedge cannot ignore.",
+  "bull_case": "Pattern analyst: setup is **extended, now cooling** - RSI has come off 87 to 77, close 33.16 is 1.5% below the 252-day high, 63d momentum +18.9%. Squeeze 0.92, ATR 1.6%, still the cheapest volatility in the book, so the hedge costs almost nothing to carry. Verdict: pattern says wait - RSI 77 is cooling, not cheap.\n\nThe macro case is undamaged. Strikes have suspended infrastructure carrying 7 million barrels a day of Saudi crude to the Red Sea, the alternative to Gulf shipments already halted by the Iranian blockade, and Brent is about $108 after reaching $109.21 on 15 September. August CPI put gasoline up 3.9%, over a third of the monthly increase - this remains the one holding that profits from the inflation the Fed is now openly fighting, and it has held its gain on a day the Dow fell 631 points.",
+  "bear_case": "**The Fed hiked.** The FOMC voted 12-0 to raise the target range 25bp to 3.75-4.00%, its first increase since July 2023, and Chair Warsh vowed a 'timelier return' to 2% inflation. The dot plot is the part that matters: 16 of 18 participants expect another increase and four see two more. The Dow fell 631 points (-1.21%) to 51,461.90 and the S&P 500 -0.45% to 7,551.81, while the Nasdaq finished flat and the 10-year yield eased about 5bp to 4.947%. A central bank tightening explicitly to bring inflation down faster, with 16 of 18 officials wanting more, is aiming directly at commodity demand - the hedge works until the Fed succeeds, and today it said it intends to. A US industry report showed stockpiles rising and the supply-driven rally was judged overdone. The forecast gap is still roughly 20%: the EIA sees Brent averaging about $90/b in 2H26 and Goldman $85 in December against ~$108 spot. RSI 77 within 1.5% of the 52-week high is not where you add. Desk record (research/outcomes.json): 12 closed trades, 0 wins, -$168.00 realised. Long memos read 3 good of 8 judged (0.375) today, after 6 of 7 (0.86) yesterday and 3 of 7 (0.43) the day before - three different answers in three days on a sample this small, which is why I am treating the number as noise in both directions rather than as a steer. Skip decisions are 17 of 17.",
+  "catalysts": [
+    "Saudi Red Sea infrastructure repair timeline",
+    "Weekly US crude inventory builds",
+    "The Fed's next meeting",
+    "EIA Short-Term Energy Outlook revisions"
+  ],
+  "risks": [
+    "Fed tightening explicitly at inflation, with more signalled",
+    "US stockpiles rising; supply rally judged overdone",
+    "EIA ~$90/b and Goldman $85 against ~$108 spot",
+    "RSI 77 within 1.5% of the 52-week high"
+  ],
+  "invalidation": "The pattern analyst's level is **31.25**, the trailing stop carried in the packet. A close below it ends this, and a full reopening of Hormuz transits invalidates it immediately regardless of price. Worth adding only on a pullback toward 31.25 that holds.",
+  "horizon_days": 30,
+  "sources": [
+    "https://www.cnbc.com/2026/09/16/fed-rate-decision-september-2026.html",
+    "https://fortune.com/article/price-of-oil-09-16-2026/",
+    "https://www.eia.gov/outlooks/steo/report/global_oil.php",
+    "https://www.cnbc.com/2026/09/11/cpi-inflation-breakdown-august-2026.html",
+    "research/packets/2026-09-16.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-15/DBC.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.45,
+    "bear": 0.6,
+    "macro": 0.45
+  }
+}

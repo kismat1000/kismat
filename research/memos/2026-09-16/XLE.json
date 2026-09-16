@@ -1,0 +1,41 @@
+{
+  "symbol": "XLE",
+  "asset_class": "us_etfs",
+  "date": "2026-09-16",
+  "direction": "flat",
+  "conviction": 0.5,
+  "thesis": "My own long trigger is met and I am declining it - and saying so rather than pretending otherwise. Yesterday's memo said XLE flips long on 'a pullback that holds above 63.50 with Brent still above $100'. The pullback arrived within a day, price is 64.03 and Brent is about $108. But the reason I wanted a pullback was a poor entry, and today brought new evidence against the demand side that the trigger was never written to capture: a 25bp hike with 16 of 18 officials expecting another, and a US industry report showing stockpiles rising.",
+  "bull_case": "Pattern analyst: setup is a **pullback to a rising trend** - close 64.03, 2.9% below the 252-day high after touching it yesterday, RSI down from 74 to **58**, 63d momentum +16.5%, close > SMA50 > SMA200. This is materially the better entry I asked for: the extended readings are gone. Squeeze 0.95, ATR 2.1%. Derived rs: +16.5% against SPY's +0.8% is a lead of about 16 points, still the strongest relative strength in the book. Verdict: pattern supports entry now.\n\nThe supply catalyst is intact and severe. Strikes suspended infrastructure carrying 7 million barrels a day of Saudi crude to the Red Sea - the alternative route to Gulf shipments already halted by the Iranian tanker blockade - and Brent reached $109.21 on 15 September before easing to about $108. XLE is up roughly 46% year to date and today's news tone is +0.50.",
+  "bear_case": "Two new facts, neither in yesterday's trigger. First, **The Fed hiked.** The FOMC voted 12-0 to raise the target range 25bp to 3.75-4.00%, its first increase since July 2023, and Chair Warsh vowed a 'timelier return' to 2% inflation. The dot plot is the part that matters: 16 of 18 participants expect another increase and four see two more. The Dow fell 631 points (-1.21%) to 51,461.90 and the S&P 500 -0.45% to 7,551.81, while the Nasdaq finished flat and the 10-year yield eased about 5bp to 4.947%. A central bank explicitly tightening into an energy shock is attacking the demand side of this trade, and 16 of 18 officials signalling more of it compounds that. Second, oil fell today because a US industry report pointed to rising stockpiles and the supply-driven rally was judged overdone after a 4% two-session run. The forecast gap remains enormous - the EIA sees Brent averaging about $90/b in 2H26 and Goldman $85 in December against $108 spot - and the IEA still projects a 2.5 mb/d demand contraction in 2026, which a hiking Fed makes more likely rather than less. The position is -2.6% and there is no cash to act on any call anyway. Desk record (research/outcomes.json): 12 closed trades, 0 wins, -$168.00 realised. Long memos read 3 good of 8 judged (0.375) today, after 6 of 7 (0.86) yesterday and 3 of 7 (0.43) the day before - three different answers in three days on a sample this small, which is why I am treating the number as noise in both directions rather than as a steer. Skip decisions are 17 of 17.",
+  "catalysts": [
+    "Saudi Red Sea infrastructure repair timeline",
+    "Weekly US crude inventory builds",
+    "The Fed's next meeting, with 16 of 18 signalling another hike",
+    "Q3 oil-major earnings in late October"
+  ],
+  "risks": [
+    "Fed hiked with more signalled: direct attack on the demand side",
+    "US stockpiles rising; the supply rally judged overdone",
+    "EIA ~$90/b 2H26 and Goldman $85 December against ~$108 spot",
+    "IEA sees a 2.5 mb/d demand contraction in 2026",
+    "No cash to act on any call"
+  ],
+  "invalidation": "The pattern analyst's level is **62.85**, the trailing stop carried in the packet. A close below it ends this. Replacing yesterday's loosely worded trigger: it flips long on **three consecutive closes above 63.50** with Brent above $100 and no further inventory build - 'a pullback that holds' should have specified a number of sessions, and writing it vaguely is what let today become an argument instead of an answer.",
+  "horizon_days": 30,
+  "sources": [
+    "https://www.cnbc.com/2026/09/16/fed-rate-decision-september-2026.html",
+    "https://fortune.com/article/price-of-oil-09-16-2026/",
+    "https://www.bloomberg.com/news/articles/2026-09-15/latest-oil-market-news-and-analysis-for-sept-16",
+    "https://www.eia.gov/outlooks/steo/report/global_oil.php",
+    "https://stockanalysis.com/etf/xle/",
+    "research/packets/2026-09-16.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-15/XLE.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.6,
+    "bear": 0.55,
+    "macro": 0.4
+  }
+}
