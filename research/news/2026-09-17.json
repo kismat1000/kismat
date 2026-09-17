@@ -3,8 +3,8 @@
  "tone": {
   "CSL.AX": {
    "symbol": "CSL.AX",
-   "score": 0.667,
-   "positive": 2,
+   "score": 0.5,
+   "positive": 1,
    "negative": 0,
    "headlines": 6,
    "flags": []
@@ -33,6 +33,14 @@
    "headlines": 6,
    "flags": []
   },
+  "BTCUSDT": {
+   "symbol": "BTCUSDT",
+   "score": -0.75,
+   "positive": 0,
+   "negative": 3,
+   "headlines": 6,
+   "flags": []
+  },
   "BNBUSDT": {
    "symbol": "BNBUSDT",
    "score": 0.667,
@@ -46,14 +54,6 @@
    "score": 0.5,
    "positive": 1,
    "negative": 0,
-   "headlines": 6,
-   "flags": []
-  },
-  "BTCUSDT": {
-   "symbol": "BTCUSDT",
-   "score": -0.75,
-   "positive": 0,
-   "negative": 3,
    "headlines": 6,
    "flags": []
   },
@@ -99,6 +99,13 @@
   }
  },
  "items": [
+  {
+   "source": "coindesk",
+   "title": "U.S. diesel prices hit record high as bitcoin and gold struggle",
+   "link": "https://www.coindesk.com/markets/2026/09/17/u-s-diesel-prices-hit-record-high-as-bitcoin-and-gold-struggle",
+   "published": "Thu, 17 Sep 2026 07:27:07 +0000",
+   "query": ""
+  },
   {
    "source": "coindesk",
    "title": "Zcash jumps 23% as bitcoin and major tokens rise despite Fed\u2019s first hike since 2023",
@@ -174,13 +181,6 @@
    "title": "A LatAm telecom operator is putting part of its finances on Avalanche",
    "link": "https://www.coindesk.com/business/2026/09/15/a-latam-telecom-operator-is-putting-part-of-its-finances-on-avalanche",
    "published": "Wed, 16 Sep 2026 14:00:00 +0000",
-   "query": ""
-  },
-  {
-   "source": "coindesk",
-   "title": "A stolen coin can be returned. A leaked identity cannot.",
-   "link": "https://www.coindesk.com/opinion/2026/09/16/a-stolen-coin-can-be-returned-a-leaked-identity-cannot",
-   "published": "Wed, 16 Sep 2026 13:00:00 +0000",
    "query": ""
   },
   {
@@ -353,6 +353,13 @@
   },
   {
    "source": "abc_au_business",
+   "title": "ACT schools grappling with class 'splitting', as union flags more industrial action",
+   "link": "https://www.abc.net.au/news/2026-09-17/class-splitting-collapsing-teacher-shortage-education-union/107161270",
+   "published": "Thu, 17 Sep 2026 07:26:46 +0000",
+   "query": ""
+  },
+  {
+   "source": "abc_au_business",
    "title": "Coal-fired power needed to bolster $32bn Qld data centre, Nationals MP says",
    "link": "https://www.abc.net.au/news/2026-09-17/queensland-data-centre-politicians-responses/107164154",
    "published": "Thu, 17 Sep 2026 06:03:40 +0000",
@@ -388,7 +395,7 @@
   },
   {
    "source": "abc_au_business",
-   "title": "Live: RBA more likely to raise rates as US Federal Reserve lifts to 4pc",
+   "title": "RBA more likely to raise rates as US Federal Reserve lifts to 4pc",
    "link": "https://www.abc.net.au/news/2026-09-17/asx-markets-business-live-news-september-19-2026/107162296",
    "published": "Wed, 16 Sep 2026 21:41:37 +0000",
    "query": ""
@@ -426,13 +433,6 @@
    "title": "$42b fund manager Cathie Wood sees interest rates topping 7pc on AI boom",
    "link": "https://www.abc.net.au/news/2026-09-16/ai-investment-interest-rates-ark-cathie-wood-michael-every/107156362",
    "published": "Wed, 16 Sep 2026 08:01:12 +0000",
-   "query": ""
-  },
-  {
-   "source": "abc_au_business",
-   "title": "Victoria's construction sector royal commission to open next week",
-   "link": "https://www.abc.net.au/news/2026-09-16/royal-commission-victoria-construction-sector-corruption-opening/107160886",
-   "published": "Wed, 16 Sep 2026 07:17:46 +0000",
    "query": ""
   },
   {
@@ -549,16 +549,16 @@
   },
   {
    "source": "gnews:CSL.AX",
-   "title": "CSL (ASX:CSL) A Major Leadership Reset Is Taking Shape - stocksdownunder.com",
+   "title": "CSL (ASX:CSL) A Major Leadership Reset Is Taking Shape - Stocks Down Under",
    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1rRmRzVXhwU1h6VFJzejV3c0VBc0hJeGsyazZUblRnTmJyZ1RhTWQ4UnJlS1dHR1BMYjBrZUlwUUw2enRIME8ycDh1UHpGcmx1N1llcFE1bW5JRnM2cDhKaC16c0hoN0U?oc=5",
    "published": "Thu, 17 Sep 2026 00:15:51 GMT",
    "query": "CSL ASX shares"
   },
   {
    "source": "gnews:CSL.AX",
-   "title": "What Does CSL's (ASX:CSL) Lower FY26 Dividend Mean for Shareholders? - Kalkine Media",
-   "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPclZpZ19leGhwcHIxVWo0aDZEYTdWLWMtVGJaNkpaQ1F2TTdDTXJ5Ri1Pcmp0R2hNcGw4VlpnN2dzUHpNaVlPX3F2bFlBUTZPcVBXRzBnc2RnYnl4bVdVWm5ndU1fMjBQdHYwRExRd2szZ2MyeC1lUUxQZWljcXFsWjZtTVg2UXpVQmtraE94OVV0QzFaWEp5US1qbVJJN21BTlRtM0JhY3kxOGs?oc=5",
-   "published": "Thu, 17 Sep 2026 02:53:00 GMT",
+   "title": "CSL\u2019s latest result suggests the worst may be over - Morningstar Australia",
+   "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPUVBaOFNaQ1c3ZlNyTW9KMkJkRjh6clh5X3pmNTgzQm9mcm5Sb0duWVluRDluMXI1cEFWMnJXWlFxd1lGajBhNTI1bENESHdPemUxdzRjdUZMcnUyQU5taFBndExUQ0h1OF9zWW50Zlhiblhfb0E2UWgzNV9zZ2ZLSkZ2d1VqWm1Cb0ow?oc=5",
+   "published": "Mon, 31 Aug 2026 07:00:00 GMT",
    "query": "CSL ASX shares"
   },
   {
@@ -570,14 +570,14 @@
   },
   {
    "source": "gnews:ETHUSDT",
-   "title": "Bitcoin, Ethereum And More Tumble As CLARITY Act Fails In Senate - Forbes",
+   "title": "Bitcoin, Ethereum And More Tumble As CLARITY Act Fails In Senate - forbes.com",
    "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQZDdJdTRJaUhEUWRNQllra1pzeDlwN2RLMGNJYXJtS09NeDlNWkFySGQtaElHbUdYV0p6b0RkbzZwNkFZaUJYbzdjYnBLU2tkWmR2R3ZvbjBPYlJ0Yzdmb3VaSmZZOEdrVVRZdnFDZGxQRlVRWnlJRWlCN0hUZ2hIRTVscWxGVHNNNzAtNUZyaUdCX2M3RTMtck1NN05mR1h1MU9UeHlZeHZXUHZuT054QXQ4eVFVS29SbFB5NFd4ME02U3c2Q2g5YTBYSW9qSS01?oc=5",
    "published": "Tue, 15 Sep 2026 19:14:45 GMT",
    "query": "ethereum"
   },
   {
    "source": "gnews:ETHUSDT",
-   "title": "Tonkeeper rebrands as Keeper with support for 7 networks, including Bitcoin and Ethereum - theblock.co",
+   "title": "Tonkeeper rebrands as Keeper with support for 7 networks, including Bitcoin and Ethereum - The Block",
    "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQWGFMMk5ndlEyTnp0SXBpMFlUYURkanlCdEJTT096WFRVa0c3b1d3RE96b1BIajgtQUZyYWc2TURlR0prWnF0T2NUTmtLTHBfclFvR25PNlNsdHcyVkd1RWk4WmdZT2ZmMkVPT3pROTk2dlduTkpTQWc2TVRkclJHYVhSLVBMX2FwakNCRUNDTXZhcElfTTRMQWh3ZjRaUTA0WmpjUTZ4cHFGYmpHY2V5eVBtY2Uwa3BQd2x2ZUVCaFBlNXRLcEhmVG9rY0J6YnJ1Um8tSncyaUdUbFU?oc=5",
    "published": "Tue, 15 Sep 2026 09:35:02 GMT",
    "query": "ethereum"
@@ -612,16 +612,16 @@
   },
   {
    "source": "gnews:SOLUSDT",
-   "title": "Solana Drops 3.5% to $97 After the CLARITY Vote Falls Short. Is $94 the Floor? - Yahoo Finance",
-   "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQeEpxQWxIMTJNemJYWUs2anI3M0hPc1lOb2J6OXkydllMYjJGSTJwRjQxOHROZVJCdnYwSWtQUWt0SG1pQzBOQ3gwS29XdVE2X0hhY2hZX3ZIbmk2RmlDOXI5ekRoRVFjZzc2czM3ZTdyZ1NzZkdwaUpiS1cyWWJkUFlEWGcxUmZKWk9RRg?oc=5",
-   "published": "Wed, 16 Sep 2026 22:06:41 GMT",
+   "title": "Micro SOL Futures - CME Group",
+   "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9JSnh6cmltTVB1eGpLQVRmWDBERkhpU0NJVXJnSFdaTzVOUzFTRTFHS3ZFVGR2OG9WWHU0TlFleXN6aVNSQ1llZG9tZWhiNU9jdlE2TE5CNFJWSlBZSTR1el9kd2poMmNIMmpXNE1Ic0JnRFpjM3g2LQ?oc=5",
+   "published": "Mon, 14 Sep 2026 04:08:35 GMT",
    "query": "solana"
   },
   {
    "source": "gnews:SOLUSDT",
-   "title": "Micro SOL Futures - CME Group",
-   "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9JSnh6cmltTVB1eGpLQVRmWDBERkhpU0NJVXJnSFdaTzVOUzFTRTFHS3ZFVGR2OG9WWHU0TlFleXN6aVNSQ1llZG9tZWhiNU9jdlE2TE5CNFJWSlBZSTR1el9kd2poMmNIMmpXNE1Ic0JnRFpjM3g2LQ?oc=5",
-   "published": "Mon, 14 Sep 2026 04:08:35 GMT",
+   "title": "Solana Drops 3.5% to $97 After the CLARITY Vote Falls Short. Is $94 the Floor? - Yahoo Finance",
+   "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQeEpxQWxIMTJNemJYWUs2anI3M0hPc1lOb2J6OXkydllMYjJGSTJwRjQxOHROZVJCdnYwSWtQUWt0SG1pQzBOQ3gwS29XdVE2X0hhY2hZX3ZIbmk2RmlDOXI5ekRoRVFjZzc2czM3ZTdyZ1NzZkdwaUpiS1cyWWJkUFlEWGcxUmZKWk9RRg?oc=5",
+   "published": "Wed, 16 Sep 2026 22:06:41 GMT",
    "query": "solana"
   },
   {
@@ -647,7 +647,7 @@
   },
   {
    "source": "gnews:LINKUSDT",
-   "title": "Chainlink price nears breakout as Bollinger Bands narrow - crypto.news",
+   "title": "Chainlink price nears breakout as Bollinger Bands narrow - Crypto News",
    "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBER09VX3FPbmxaMTdYczhFcEhIeGxKNUtGSEN0NHdCd0dfRm4tV240QjRGd2ZZWC1pdncxQjlMa3duOGJCd0NKRktzWUVhU012azlXRVVaTk5oTFZOa2xlajhDTzgyVjdTaG4zeGQ3UzhMbm1sRVpLVzNCUHJNM00?oc=5",
    "published": "Tue, 15 Sep 2026 14:00:00 GMT",
    "query": "chainlink"
@@ -688,11 +688,46 @@
    "query": "chainlink"
   },
   {
-   "source": "gnews:BNBUSDT",
-   "title": "What Is BNB (BNB)? - Binance",
-   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBHZndFdGkwQ3huLTVyRmh0WjU3NjVpQVpSbEt3TU9xbXZhbW84ZmFTbGNBNGEyLVBydjBrWlFrVjh6RjhTSnFhbWotM0Y1dzVYSlJNX21JamdwTnphQU1GRFRPNExpUQ?oc=5",
-   "published": "Mon, 20 Jul 2026 07:00:00 GMT",
-   "query": "bnb binance coin"
+   "source": "gnews:BTCUSDT",
+   "title": "Bitcoin ETFs Had Their Worst Day Since June Following Failed Clarity Act Vote - Decrypt",
+   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBNRVFiaTVTUGliVlp3UWhJSW1hcC1zX3NtNlMza3hpV3g1REpISTJWX1d0ODVyV3pTQ1J2UU4tVUFXQXN3bTdhbDVmVFJsZWdncFNnWFNMTUIxRTVqTi1HSXgzT21ld9IBbkFVX3lxTFBuQ3hxLXRpbVpvWVVHSGZiT3lWSEg3ZC10X3h1ZEd5bUlmTmJscFN6VVhIYTlDNkdSME13bFNQdVNjZjctNU9URXY4ZVdrRWY4dFk4eTJGZVMzSWJqcXA3YnhkX0tTVnNlcmQzZjVB?oc=5",
+   "published": "Wed, 16 Sep 2026 15:50:07 GMT",
+   "query": "bitcoin"
+  },
+  {
+   "source": "gnews:BTCUSDT",
+   "title": "Bitcoin drops after US Senate blocks landmark crypto bill - Yahoo Finance Australia",
+   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPMlk3NTVIZERSUTR4dUx5UVYzYjBoVGplRm5SVnhGVG9nYlNlVWZERm9jVDZoNWZCdFdCN1FmZGdvRF9rSUVGdXJHRnhmcy0yV0lELWdBTmRrZE5wX3BwR3dGT3VrR1VkQnZvYnVORzZxNFJuLVFLNWM3ajM2bWpaQkp3Uy1XZw?oc=5",
+   "published": "Wed, 16 Sep 2026 09:03:39 GMT",
+   "query": "bitcoin"
+  },
+  {
+   "source": "gnews:BTCUSDT",
+   "title": "Why did the Bitcoin price just plunge 6%? - The Motley Fool Australia",
+   "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPY0NXNjlmRkM2TzFHREdwU2dob3FEYjN3TGtPemVzOGVQbWRHUDVLV25xT2pKRmRaSE82RDNEX2lIdmNqekF3ZDdNS2NrRjZtLXlaOGJPVU5vYU16X2cyTlkyTGg1cVEtSUk1N2ZEa0s3aFhGSWFabWt1Q2owY2ZEVw?oc=5",
+   "published": "Wed, 16 Sep 2026 01:45:11 GMT",
+   "query": "bitcoin"
+  },
+  {
+   "source": "gnews:BTCUSDT",
+   "title": "Bitcoin, Ethereum And Other Major Cryptocurrencies Tumble As CLARITY Act Fails - forbes.com",
+   "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQZDdJdTRJaUhEUWRNQllra1pzeDlwN2RLMGNJYXJtS09NeDlNWkFySGQtaElHbUdYV0p6b0RkbzZwNkFZaUJYbzdjYnBLU2tkWmR2R3ZvbjBPYlJ0Yzdmb3VaSmZZOEdrVVRZdnFDZGxQRlVRWnlJRWlCN0hUZ2hIRTVscWxGVHNNNzAtNUZyaUdCX2M3RTMtck1NN05mR1h1MU9UeHlZeHZXUHZuT054QXQ4eVFVS29SbFB5NFd4ME02U3c2Q2g5YTBYSW9qSS01?oc=5",
+   "published": "Tue, 15 Sep 2026 19:14:45 GMT",
+   "query": "bitcoin"
+  },
+  {
+   "source": "gnews:BTCUSDT",
+   "title": "It\u2019s no longer a debate: Hold both gold and Bitcoin as global sovereign debt drives demand for alternatives - 3iQ\u2019s Mancuso - KITCO",
+   "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxON0pOOXQ1SmozQmpGYnNIM3M0V3ZFWmJxbW1iQlNYaVFFT3JwOXpqUTAyelBqZTlTWWZKSk9wZGxiSlZFV2ZJekdkd1hFaFZVaVMyeUhManc0Skl5NzV4MHV3dVgxM2RYZ2F0S1RsSjcxVlFHXzg0eTFVcmhibTNOVUEtdzlncHZjQWhYbENoMUpfRkFHckFJeElLdlJhTDZzTUtGOWp0SzgzMkdwNG1LRW5ZWTljUQ?oc=5",
+   "published": "Wed, 16 Sep 2026 18:18:05 GMT",
+   "query": "bitcoin"
+  },
+  {
+   "source": "gnews:BTCUSDT",
+   "title": "Bitcoin loses touch with the Dollar Index, U.S. stocks ahead of the Fed: Crypto Daily - CoinDesk",
+   "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQTjhzQ21LVjdrcnQ4bl9TYVgyUEl1NFo3NkJFRkpVY2dpWV9idUNWOWc1RDI0QWp6ZHVXSFlTX21YSlFjMDc4eDNQTzVLdUtSVlVoZ0Z6ZWxiTTk1SVV4bGVkRXM3X09tVDVSZ0sySGRHUnUwSFp1V0pWSVVPaDM1cGN2SkZIQmx2LXNsM2tDLVk1eHZ6a3RyaU44eUlINWJuUWt2OC1uUWNYN1BLZnQydjVpOV92MW8?oc=5",
+   "published": "Wed, 16 Sep 2026 11:16:51 GMT",
+   "query": "bitcoin"
   },
   {
    "source": "gnews:BNBUSDT",
@@ -703,16 +738,16 @@
   },
   {
    "source": "gnews:BNBUSDT",
-   "title": "Convert 10000 PEN (Sol) to BNB (Binance Coin) - bybit.com",
-   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5KT3J0SE85cjZnWGlObUV1a2VTamhiRGxMNEExUnMtelYzVXRBc1AtXzA5bDl4NV9TSkpvaFp0dVdOa3l2U3lnSFFMcTVidHJsMlJQMDlrTnUtRGwwZF9Z?oc=5",
-   "published": "Wed, 16 Sep 2026 00:00:00 GMT",
+   "title": "Binance Coin Price News Today: BNB Breaks $779 as Pepeto Draws Early Buyers - techbullion.com",
+   "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOMVhRRUw5MUg2R0JMNmQ0eWQ0OXBFY3k3SVFUaTRHT3NUZllBVVhxckUzaTVmM1AxQkhwblVQTlgxTjAxdnZwRWlXazNTcHcxSEtFRGU3UXItT2M1a2s2aDgzeEh2U1gxZktIMWJXbmp3S05uUTdjd293Z2pkUXRNWmdpUjR3dU9RVVdtNk4zOFlvRC00Zl9oSUdseHJYUlk?oc=5",
+   "published": "Sun, 13 Sep 2026 16:28:45 GMT",
    "query": "bnb binance coin"
   },
   {
    "source": "gnews:BNBUSDT",
-   "title": "Binance Coin Price News Today: BNB Breaks $779 as Pepeto Draws Early Buyers - TechBullion",
-   "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOMVhRRUw5MUg2R0JMNmQ0eWQ0OXBFY3k3SVFUaTRHT3NUZllBVVhxckUzaTVmM1AxQkhwblVQTlgxTjAxdnZwRWlXazNTcHcxSEtFRGU3UXItT2M1a2s2aDgzeEh2U1gxZktIMWJXbmp3S05uUTdjd293Z2pkUXRNWmdpUjR3dU9RVVdtNk4zOFlvRC00Zl9oSUdseHJYUlk?oc=5",
-   "published": "Sun, 13 Sep 2026 16:28:45 GMT",
+   "title": "Convert 100 HKD (Hong Kong Dollar) to BNB (Binance Coin) - Bybit",
+   "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1pYlZpY0JEbjZsYWRNOFdWRFVManM5OUR1V3FBcDE0S0NOemFHQXhJcl9VdVhKS2Q0cGt2R1A1SDIxYWZIWEpjSWRGeDBOU3U5VDRhLWluVjhvX2l1?oc=5",
+   "published": "Mon, 14 Sep 2026 00:24:28 GMT",
    "query": "bnb binance coin"
   },
   {
@@ -720,6 +755,13 @@
    "title": "Crypto Binance Coin / US Dollar BNB/USD Chart 1 Minute - Finviz",
    "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1JTTkxQUxQOTVTb0lVZDZTbFY1Ym5lYkt0Y0tJWVFhYnpVZXpYOGlvbDA4c0NjLXZpcWhnckRQZHk5YkV2OFJ5a1pJWWlYdFRW?oc=5",
    "published": "Sat, 12 Sep 2026 15:07:48 GMT",
+   "query": "bnb binance coin"
+  },
+  {
+   "source": "gnews:BNBUSDT",
+   "title": "Can Binance Coin (BNB) Repeat Solana\u2019s Run? AI Sees Massive Upside by the End of 2026 - Binance",
+   "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFAycGNQMzBhb0Q4NDhUNjZRQmtiZlV1RlRsazdUNDIzUEVwaWNlVjVWLWJTaDc4SjZCQmVfUTZuV042cEF2Q1dCWXpLRnNTX2dUQTA5clVXcEZ2RnVmV0Q1MkRGV00?oc=5",
+   "published": "Thu, 14 May 2026 07:00:00 GMT",
    "query": "bnb binance coin"
   },
   {
@@ -745,7 +787,7 @@
   },
   {
    "source": "gnews:MSFT",
-   "title": "MSFT Stock Dips Below 490 as Microsoft 365 Users Look to Google Workspace - FXLeaders",
+   "title": "MSFT Stock Dips Below 490 as Microsoft 365 Users Look to Google Workspace - fxleaders.com",
    "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNTTU0WHE0Vk1xMzRDa3NVRGZ4Vmd2alEtT2ZDRXY5YmNSWE1jUUYxRW5xUUxyUUQ5VFlEMGV4MTNBaVJEVnJCaGFtUVZPWlhzOW14dEN6ZkFMRDJXcm90YWMxaGZGZTk0LV9WVGtOaTFwdDBVTHVnNkp2VmJ2NXFfdEw5LXRpemR5bzJQdTBKZXE5Uncwdm1YTENKVk9oQkhWdGpnZ1RqdGlSQ2M3YTFWbF9PbjN5SzQ?oc=5",
    "published": "Wed, 16 Sep 2026 20:40:24 GMT",
    "query": "MSFT stock"
@@ -770,48 +812,6 @@
    "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQUnZIc1QzOE1raV94TGlnYm1Ub0lXMEkxVlh5cGwtanBybUp5WkQ2dEdjc2hIeWw5bDdSb3NYZFRPamYwVTRHTnFlU0FfX01xbXlmZUlPVjlWM1B1VjFDVVp0RzBkcThhWFhFdl9wUTIzTi1MVnNCV0kxVk1YZXp3WV9MZlZzY0F4LVZuZGw3THBMLVBvQVhUc0haZlI2cm13QXNLSmlKNA?oc=5",
    "published": "Wed, 22 Jul 2026 07:00:00 GMT",
    "query": "MSFT stock"
-  },
-  {
-   "source": "gnews:BTCUSDT",
-   "title": "Bitcoin drops after US Senate blocks landmark crypto bill - Yahoo Finance Australia",
-   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPMlk3NTVIZERSUTR4dUx5UVYzYjBoVGplRm5SVnhGVG9nYlNlVWZERm9jVDZoNWZCdFdCN1FmZGdvRF9rSUVGdXJHRnhmcy0yV0lELWdBTmRrZE5wX3BwR3dGT3VrR1VkQnZvYnVORzZxNFJuLVFLNWM3ajM2bWpaQkp3Uy1XZw?oc=5",
-   "published": "Wed, 16 Sep 2026 09:03:39 GMT",
-   "query": "bitcoin"
-  },
-  {
-   "source": "gnews:BTCUSDT",
-   "title": "Why did the Bitcoin price just plunge 6%? - The Motley Fool Australia",
-   "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPY0NXNjlmRkM2TzFHREdwU2dob3FEYjN3TGtPemVzOGVQbWRHUDVLV25xT2pKRmRaSE82RDNEX2lIdmNqekF3ZDdNS2NrRjZtLXlaOGJPVU5vYU16X2cyTlkyTGg1cVEtSUk1N2ZEa0s3aFhGSWFabWt1Q2owY2ZEVw?oc=5",
-   "published": "Wed, 16 Sep 2026 01:45:11 GMT",
-   "query": "bitcoin"
-  },
-  {
-   "source": "gnews:BTCUSDT",
-   "title": "Bitcoin, Ethereum And Other Major Cryptocurrencies Tumble As CLARITY Act Fails - Forbes",
-   "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQZDdJdTRJaUhEUWRNQllra1pzeDlwN2RLMGNJYXJtS09NeDlNWkFySGQtaElHbUdYV0p6b0RkbzZwNkFZaUJYbzdjYnBLU2tkWmR2R3ZvbjBPYlJ0Yzdmb3VaSmZZOEdrVVRZdnFDZGxQRlVRWnlJRWlCN0hUZ2hIRTVscWxGVHNNNzAtNUZyaUdCX2M3RTMtck1NN05mR1h1MU9UeHlZeHZXUHZuT054QXQ4eVFVS29SbFB5NFd4ME02U3c2Q2g5YTBYSW9qSS01?oc=5",
-   "published": "Tue, 15 Sep 2026 19:14:45 GMT",
-   "query": "bitcoin"
-  },
-  {
-   "source": "gnews:BTCUSDT",
-   "title": "It\u2019s no longer a debate: Hold both gold and Bitcoin as global sovereign debt drives demand for alternatives - 3iQ\u2019s Mancuso - kitco.com",
-   "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxON0pOOXQ1SmozQmpGYnNIM3M0V3ZFWmJxbW1iQlNYaVFFT3JwOXpqUTAyelBqZTlTWWZKSk9wZGxiSlZFV2ZJekdkd1hFaFZVaVMyeUhManc0Skl5NzV4MHV3dVgxM2RYZ2F0S1RsSjcxVlFHXzg0eTFVcmhibTNOVUEtdzlncHZjQWhYbENoMUpfRkFHckFJeElLdlJhTDZzTUtGOWp0SzgzMkdwNG1LRW5ZWTljUQ?oc=5",
-   "published": "Wed, 16 Sep 2026 18:18:05 GMT",
-   "query": "bitcoin"
-  },
-  {
-   "source": "gnews:BTCUSDT",
-   "title": "Bitcoin loses touch with the Dollar Index, U.S. stocks ahead of the Fed: Crypto Daily - CoinDesk",
-   "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQTjhzQ21LVjdrcnQ4bl9TYVgyUEl1NFo3NkJFRkpVY2dpWV9idUNWOWc1RDI0QWp6ZHVXSFlTX21YSlFjMDc4eDNQTzVLdUtSVlVoZ0Z6ZWxiTTk1SVV4bGVkRXM3X09tVDVSZ0sySGRHUnUwSFp1V0pWSVVPaDM1cGN2SkZIQmx2LXNsM2tDLVk1eHZ6a3RyaU44eUlINWJuUWt2OC1uUWNYN1BLZnQydjVpOV92MW8?oc=5",
-   "published": "Wed, 16 Sep 2026 11:16:51 GMT",
-   "query": "bitcoin"
-  },
-  {
-   "source": "gnews:BTCUSDT",
-   "title": "Bitcoin awaits Fed rate decision below $76K as analysis discounts \u2018dovish surprise\u2019 odds - TradingView",
-   "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNeGVrOXNRYU5wZ3A2anF3MTRZc21JQWV4Z1JQdVRtWDNlSzdwamtOSzJGdVAzc2x3N3dEQVhtRU9DckxxR2hWdnZYX0hKZFd1RVNHSk1OckNhYkJMZDZDbElkSDFaa0N0d2dHZF91d2VHWk9vd093QjBsRG5ZM3hoMG1QRTlGZHRleURHd1B3WExQdXJsNEdaZU40Qkkza2hpcmNrTVUzWm5lNkt4UGNFbXVVZkcyM2Nab0xZQUFyUUxNVGN1RzFicm1IblhjUHdJdXlvUXVqWGtxZXdTV2psVjdyQQ?oc=5",
-   "published": "Wed, 16 Sep 2026 15:30:49 GMT",
-   "query": "bitcoin"
   },
   {
    "source": "gnews:DBC",
@@ -899,7 +899,7 @@
   },
   {
    "source": "gnews:AAPL",
-   "title": "Apple shares are doing something they haven't done in 20 years. Here\u2019s what\u2019s happening - cnbc.com",
+   "title": "Apple shares are doing something they haven't done in 20 years. Here\u2019s what\u2019s happening - CNBC",
    "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNVGVkZkNuYVFsVEo1T2NXLXlBbkhVTWlDVmdUNFdWQmwwemtEZWdxZmNxa3hhY3dfUzFNdHZKalFIbmg1M3gxMjIzLXBRSlJTRkRacUNSbWdkWk5YLWFvcVhzeVM1eVhVQkFFSnlGd2d4N1ZIX1ZBdDc2c3hBbUxteWdDRjNsd3BIQnBRZ044cDlwdFJDT1ozUW50dTNtX3RpR0RmRTV6Nk5TcmVwUm93ekp0RHVudW00RURoUdIBwgFBVV95cUxNdGE3eXFqSUNlNUpHZi1WSlEzOGNybW44aTg2TEQ2V3MwVGEtOFFEeHlxZzBIX3NaZ2VqeWQxQldPSkNMMDhaaEl6aDlXNDZqZWdlZVlpelY2QzhnZVlGWVRfR2VTWHlacUtYU1FmaDVHTVpuMzF4VnFrWkRkRlJtVExsWWhWZ0NwQXozWXR0WVp0dkNuWlM5TVZtRlE0ZWJZZXJ6eWE0cG9Sb0tmZS0xcEZlSXBvRXBMSDJfbllYUlBhZw?oc=5",
    "published": "Wed, 02 Sep 2026 07:00:00 GMT",
    "query": "AAPL stock"
@@ -983,7 +983,7 @@
   },
   {
    "source": "gnews:XLV",
-   "title": "6 Best Healthcare Funds and ETFs to Buy Now | Investing - money.usnews.com",
+   "title": "6 Best Healthcare Funds and ETFs to Buy Now | Investing - U.S. News Money",
    "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQaUQtYXVkbkVieE56U2Q0bFlqS3JtWW4wd1l5ZEZZZm4wOWZNSEw2eC01Q0hYamFZUGpPVUtSeDRkVzZhTjQtUVZDbUpNNzlfTWUxUVF1SllVR0h4dUxLNjZsRUotTGxzVU9mLWQ1anRsM3VFYzFiQzFLTzZBNkVKZzNB?oc=5",
    "published": "Mon, 14 Sep 2026 20:06:00 GMT",
    "query": "XLV ETF"
