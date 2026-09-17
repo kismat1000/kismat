@@ -1,0 +1,39 @@
+{
+  "symbol": "BTCUSDT",
+  "asset_class": "crypto",
+  "date": "2026-09-17",
+  "direction": "flat",
+  "conviction": 0.6,
+  "thesis": "RSI 30 and the packet's own 'pullback in uptrend' flag make this the most oversold holding we have, and the score has jumped to +0.65. But the reason it is oversold is money leaving: spot bitcoin ETFs shed about **$746M across the two sessions around the Fed decision**, the largest daily outflow in over two months, with zero inflow days this week. Oversold on outflows is not a discount, it is a queue.",
+  "bull_case": "Pattern analyst: setup is a **pullback to a rising trend** - close 76,499.40, 21.2% below the 252-day high, **RSI 30**, the most oversold reading in the book, 63d momentum +19.8%, close > SMA50 > SMA200. Squeeze 0.84, ATR 2.5%, the tamest crypto we own. Verdict: pattern says wait for a close back above 79,661, the position's own high - oversold in an uptrend is where bounces start, but only after the selling stops.\n\nBitcoin has absorbed a lot: it held above $75,000 through the first Fed hike since July 2023 and is down only about 4% on the week despite three-quarters of a billion dollars of redemptions - falling 1.5% on a $746M outflow is resilience, not weakness. The structural base remains: US spot ETFs took $3.52B in August with combined net assets of $103.34B, about 6.32% of market cap.",
+  "bear_case": "The flows are unambiguous and they are one-directional: $450.33M out on Tuesday and $295.98M on Wednesday, led by BlackRock's IBIT at $144.11M, with **zero inflow days this week** - the highest daily outflow in over two months and, per one read, a repricing for the rate path rather than a one-off. The Fed raised 25bp to 3.75-4.00% on 16 September, 12-0, with 16 of 18 officials expecting another increase and four seeing two more. A hiking cycle with more signalled is the worst backdrop available for an asset with no cash flow. Today's packet gives BTC a news tone of **-0.67**, the most negative in the book for a second run. Own backtest (research/backtests/2026-09-06.md): crypto sleeve -6.4%, Sharpe -0.15, 17% win rate over 75 trades. Desk record (research/outcomes.json): 12 closed trades, 0 wins, -$168.00 realised. The long-memo hit rate has now printed 0.43, 0.86, 0.375 and 0.625 on four consecutive days as past memos are re-judged - four different answers in four days - so it is carrying no signal yet and is steering nothing here. Conviction is set from the evidence in front of me and kept modest because twelve of twelve closed trades have lost money.",
+  "catalysts": [
+    "Whether ETF flows turn positive after the Fed repricing",
+    "The Fed's next meeting, with 16 of 18 signalling another hike",
+    "Whether $75,000 holds"
+  ],
+  "risks": [
+    "$746M of ETF outflows in two sessions with zero inflow days",
+    "Most negative news tone in the book at -0.67",
+    "Hiking cycle with more signalled",
+    "Own backtest: 17% win rate in the crypto sleeve"
+  ],
+  "invalidation": "The pattern analyst's level is **73,231.29**, the trailing stop carried in the packet. A close below it ends this. It flips long on a daily close above 79,661 with at least one week of positive ETF net flows - the bounce needs buyers, not just an absence of sellers.",
+  "horizon_days": 21,
+  "sources": [
+    "https://www.cryptotimes.io/2026/09/17/spot-bitcoin-etfs-see-746m-outflow-during-clarity-act-and-fomc-pressure/",
+    "https://www.thecoinrepublic.com/2026/09/17/bitcoin-etfs-register-the-highest-daily-outflows-in-over-2-months-in-potential-rate-hike-repricing/",
+    "https://www.fxstreet.com/cryptocurrencies/news/bitcoin-price-forecast-btc-extends-cautious-rebound-as-etf-outflows-hawkish-fed-risks-cap-upside-potential-202609170943",
+    "https://usethebitcoin.com/bitcoin/bitcoin-price-september-17-2026/",
+    "research/backtests/2026-09-06.md",
+    "research/packets/2026-09-17.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-14/BTCUSDT.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.45,
+    "bear": 0.6,
+    "macro": 0.2
+  }
+}

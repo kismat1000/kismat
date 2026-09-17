@@ -771,3 +771,71 @@ XLE today.
 - `us_etfs` still missing from the memo schema enum (open since 8 Sep; three more memos today).
 - Cash 0.00 for a third day at the 12-position cap: every call remains advisory, including the XLE
   trigger debated above, which could not have been acted on either way.
+
+## 2026-09-17 — council run
+
+Packet: `research/packets/2026-09-17.md`. Thursday. Equity 9,782.26, up $153 on the day; same 12
+positions; cash 0.00.
+
+**The record, in one line:** twelve closed trades, twelve losses, −$168.00 — and the long-memo hit
+rate has now printed **0.43, 0.86, 0.375, 0.625 on four consecutive days** as past memos get
+re-judged. Four different answers in four days is not a signal, so it steered nothing today; the
+skip hit rate did the same thing, 1.00 yesterday and 0.33 today.
+
+**Picks: 4.** Due (memos three days old): **AAPL**, **BTCUSDT**, **LINKUSDT**. Plus **CSL.AX**,
+re-run because its trigger fired.
+
+| symbol | direction | conviction | note |
+|---|---|---|---|
+| CSL.AX | **long** | 0.55 | **Both legs of the 15 Sep trigger fired** — see below |
+| AAPL | flat | 0.65 | A second bank, JPMorgan, now confirms shorter ship times than last year |
+| BTCUSDT | flat | 0.60 | RSI 30, but $746M of ETF outflows in two sessions with zero inflow days |
+| LINKUSDT | flat | 0.55 | My whale bear case was half the picture — see below |
+
+**Deferred** (fresh memo, direction unchanged): MSFT (long 0.45, 16 Sep — now +0.65 score and
+−0.4%), XLE, DBC, XLK, BNBUSDT (16 Sep), SOLUSDT, ETHUSDT, XLV (15 Sep).
+
+No `avoid` memo on any held position. `validate-memos`: 20 valid.
+
+**The first trigger this desk wrote in advance has fired on both legs.** On 15 September I said
+CSL.AX flips long on a close above A$175 native **and** at least one broker raising rather than
+trimming. Today it closed **A$177.56** and **RBC Capital Markets upgraded CSL to buy, lifting its
+12-month target from A$148 to A$213**. RBC's reasoning answers the objection I have carried since
+10 September — that flat FY27 revenue and ~5% profit growth cannot support a 59% quarter — by
+putting a mechanism under it: Behring growth offsetting weak Seqirus and Vifor, mid-single-digit
+EPS growth for three years, A$1.5B of annual buybacks to FY31. The structure is the best in the
+book: fresh 55-day high, 17.4% of headroom below the 52-week high, RSI 65, squeeze 0.67.
+
+Conviction is 0.55 rather than higher for a reason worth stating: RBC was at A$148 until this
+morning. A house that moves its target A$65 in one step was recently badly wrong by its own
+admission, and its A$213 widens the broker range to A$131–213 rather than settling it. One
+upgrade adds a voice; it does not create a consensus.
+
+**A bear case of mine was half the picture, and I want that on the record.** Since 7 September I
+have cited a whale sending 2.41M LINK (~$26M) to Coinbase as evidence of distribution — it was in
+five memos. That is real, but whales also **accumulated roughly 10.36M LINK (~$120M) after the 17%
+correction**, about five times larger in the opposite direction. I was quoting one side of a
+two-sided flow because the sell side was the side I found first. LINK stays flat on volatility
+grounds — squeeze 1.33, the highest in the book, ATR 6.0% putting the stop 14% below spot — not on
+the whale argument, which no longer supports the weight I put on it.
+
+**AAPL: the evidence hardened.** On 14 September I flagged Bank of America's ship-time tracking as
+the first hard demand data. JPMorgan now reports the same thing independently — seven days for the
+Pro against 15 last year, 19 for the Pro Max against 24 — and GF Securities calls the preorders
+lukewarm on limited upgrades against a $100 price rise. Two banks tracking separately is what turns
+a datapoint into evidence, and conviction goes to 0.65. Retail availability starts tomorrow.
+
+**Macro (once for the day).** The hike is done — 25bp to 3.75–4.00% on 16 September, 12-0, with 16
+of 18 officials expecting another. The clearest transmission is in crypto: spot bitcoin ETFs shed
+about $746M across the two sessions around the decision ($450.33M Tuesday, $295.98M Wednesday), the
+largest daily outflow in over two months, led by IBIT at $144.11M, with zero inflow days this week.
+Equities took it better — the book gained $153 on the day. macro_conviction long: 0.30.
+
+**Things that failed or need checking.**
+- Seventh day with no event/news gates section in the packet, though the routine describes one.
+- Seventh day with `rs` empty for all symbols; derived by hand again (CSL not derivable — no ASX
+  benchmark in the table; AAPL +11 points over SPY).
+- `us_etfs` still missing from the memo schema enum (open since 8 Sep).
+- Cash 0.00 for a fourth day at the 12-position cap. Today's CSL long is the sharpest illustration
+  yet: a trigger fired exactly as designed and there is no capital to act on it — the call can only
+  discourage the engine from selling, never add.

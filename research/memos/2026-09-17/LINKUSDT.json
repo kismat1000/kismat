@@ -1,0 +1,41 @@
+{
+  "symbol": "LINKUSDT",
+  "asset_class": "crypto",
+  "date": "2026-09-17",
+  "direction": "flat",
+  "conviction": 0.55,
+  "thesis": "The whale story I have been citing against LINK since 7 September turns out to be only half of it. The 2.41M LINK (~$26M) sent to Coinbase is real, but whales also **accumulated about 10.36M LINK (~$120M) after the 17% correction** - roughly five times the size, in the opposite direction. That materially weakens my bear case without making a bull one: volatility is still expanding, ATR is 6.0% and today's news tone is -0.50.",
+  "bull_case": "Pattern analyst: setup is a **recovery attempt** - close 11.347, 19.5% below the 252-day high, RSI 45, 63d momentum +36.0%, close > SMA50 > SMA200. Verdict: pattern says wait for a close above 11.86, the position's own high.\n\nThe correction has been bought in size: roughly 10.36M LINK worth about $120M accumulated by whales after a 17% drop from $13.68 to $11.29, which is the opposite pattern to the distribution I flagged. Network usage supports it - cumulative transaction value facilitated through Chainlink has passed **$30 trillion**, and CCIP weekly volumes climbed **260% to $1.3 billion**. Chainlink ETFs have taken cumulative net inflows of $147.49M since launch, and the integration list is unchanged: Bottomline's 600+ bank network, Circle's wrapped bitcoin using Proof of Reserve, Schwab adding LINK.",
+  "bear_case": "Accumulation into a falling price is a thesis, not a floor - the same wallets can be early. Squeeze **1.33** is the highest in the book: volatility is expanding on a name that has already fallen 17%, and ATR of 6.0% puts the stop 14% below spot, so position sizing is poor relative to the risk carried. This name has already cost the book $37.45 once this month. Today's news tone is -0.50, one of only two negative readings in the table. The Fed raised 25bp to 3.75-4.00% on 16 September, 12-0, with 16 of 18 officials expecting another increase and four seeing two more. Own backtest (research/backtests/2026-09-06.md): crypto sleeve -6.4%, Sharpe -0.15, 17% win rate over 75 trades. Desk record (research/outcomes.json): 12 closed trades, 0 wins, -$168.00 realised. The long-memo hit rate has now printed 0.43, 0.86, 0.375 and 0.625 on four consecutive days as past memos are re-judged - four different answers in four days - so it is carrying no signal yet and is steering nothing here. Conviction is set from the evidence in front of me and kept modest because twelve of twelve closed trades have lost money.",
+  "catalysts": [
+    "Whether whale accumulation continues or reverses",
+    "CCIP volume growth after the 260% weekly jump",
+    "Continued CLNK ETF inflows beyond $147.49M cumulative",
+    "The Fed's next meeting"
+  ],
+  "risks": [
+    "Squeeze 1.33, the highest in the book: volatility expanding after a 17% fall",
+    "ATR 6.0% puts the stop 14% below spot",
+    "News tone -0.50",
+    "Cost the book $37.45 earlier this month",
+    "Own backtest: 17% win rate in the crypto sleeve"
+  ],
+  "invalidation": "The pattern analyst's level is **9.72**, the trailing stop carried in the packet, about 14% below spot - itself a reason to size small. A close below it ends this. It flips long on a close above 11.86 with the squeeze back under 1.0, so the move is being wound up rather than shaken out.",
+  "horizon_days": 21,
+  "sources": [
+    "https://cryptobriefing.com/whales-accumulate-10m-link-correction/",
+    "https://parameter.io/chainlink-link-drops-below-12-as-whale-sends-26m-to-exchange/",
+    "https://coinmarketcap.com/cmc-ai/chainlink/latest-updates/",
+    "https://en.cryptonomist.ch/2026/09/11/chainlink-etf-inflows-rise/",
+    "research/backtests/2026-09-06.md",
+    "research/packets/2026-09-17.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-14/LINKUSDT.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.5,
+    "bear": 0.55,
+    "macro": 0.25
+  }
+}

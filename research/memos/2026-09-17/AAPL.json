@@ -1,0 +1,40 @@
+{
+  "symbol": "AAPL",
+  "asset_class": "us_stocks",
+  "date": "2026-09-17",
+  "direction": "flat",
+  "conviction": 0.65,
+  "thesis": "A second bank now confirms the demand signal, and it points the same way. JPMorgan has global at-home delivery averaging seven days for the iPhone 18 Pro against 15 for last year's 17 Pro, and 19 days for the Pro Max against 24 - matching Bank of America's independent tracking. GF Securities calls the preorders lukewarm on limited feature upgrades and higher pricing. Retail availability starts tomorrow with the stock 0.8% below its 52-week high at RSI 69.",
+  "bull_case": "Pattern analyst: setup is a **breakout from base, now at the high** - close 337.00, just **0.8% below the 252-day high**, RSI 69, 63d momentum +14.0%. It misses the formal extended test on two counts by a whisker - RSI 69 rather than above 70, momentum +14.0% rather than above 25% - so the label is technical, not comfortable. Squeeze 0.98, neutral. ATR 2.3%. Derived rs: +14.0% against SPY's +3.2% is a lead of about 11 points. Verdict: pattern says wait for a close above 337.38, the position's own high.\n\nThe cycle is live: devices go on sale 18 September in 65+ markets, the 18 Pro at $1,199 and Pro Max at $1,299, each $100 above last year. A separate rumour holds that Pro models could be short at launch, which would extend delivery times and contradict the preorder read. The position is +1.4%, the score has recovered to +0.49, and today's news tone is +0.50.",
+  "bear_case": "Two banks tracking independently now say the same thing, which is what turns a datapoint into evidence. Bank of America has the Pro at 14 days against 18 a year ago and the Pro Max at 18 against 25; JPMorgan has seven against 15 and 19 against 24. Shorter waits mean a thinner order book, and GF Securities' Jeff Pu attributes it to limited feature upgrades against a $100 price rise - the margin story and the volume story pulling against each other. The foldable iPhone Duo does not help inside this horizon: pre-orders open 16 October, shipping 23 October. Buying 0.8% below the 52-week high on corroborated soft demand is the definition of paying up for someone else's optimism. The Fed raised 25bp to 3.75-4.00% on 16 September, 12-0, with 16 of 18 officials expecting another increase and four seeing two more. Desk record (research/outcomes.json): 12 closed trades, 0 wins, -$168.00 realised. The long-memo hit rate has now printed 0.43, 0.86, 0.375 and 0.625 on four consecutive days as past memos are re-judged - four different answers in four days - so it is carrying no signal yet and is steering nothing here. Conviction is set from the evidence in front of me and kept modest because twelve of twelve closed trades have lost money.",
+  "catalysts": [
+    "Retail availability from 18 Sep 2026 in 65+ markets; first-weekend sales data",
+    "Whether ship times lengthen in the next BofA/JPMorgan trackers",
+    "iPhone Duo pre-orders 16 Oct, shipping 23 Oct - outside this horizon",
+    "September-quarter results in late Oct 2026"
+  ],
+  "risks": [
+    "Two banks independently show ship times shorter than last year",
+    "GF Securities calls preorders lukewarm on limited upgrades and higher pricing",
+    "0.8% below the 52-week high at RSI 69",
+    "Foldable revenue lands outside this horizon",
+    "Dot plot signals another hike"
+  ],
+  "invalidation": "The pattern analyst's level is **313.76**, the trailing stop carried in the packet. A daily close below it ends this. It flips long on a close above 337.38 **with** ship times lengthening in the next tracker - price alone is not enough when two banks say the queue is thinner.",
+  "horizon_days": 30,
+  "sources": [
+    "https://www.thestreet.com/markets/bank-of-america-flags-iphone-18-shorter-wait-times-preorder-trend",
+    "https://time.news/apple-shares-dip-as-early-iphone-18-pro-pre-orders-show-lukewarm-demand/",
+    "https://www.macrumors.com/guide/iphone-18-release-schedule/",
+    "https://www.cnbc.com/2026/09/16/fed-rate-decision-september-2026.html",
+    "research/packets/2026-09-17.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-14/AAPL.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.4,
+    "bear": 0.65,
+    "macro": 0.3
+  }
+}

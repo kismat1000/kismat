@@ -1,0 +1,40 @@
+{
+  "symbol": "CSL.AX",
+  "asset_class": "au_stocks",
+  "date": "2026-09-17",
+  "direction": "long",
+  "conviction": 0.55,
+  "thesis": "**Both legs of the trigger I set have fired.** On 15 September I wrote that CSL flips long on a close above A$175 native *and* at least one broker raising rather than trimming. It closed A$177.56, and RBC Capital Markets upgraded CSL to buy today and lifted its 12-month target from A$148 to A$213. This is the first time a condition this desk wrote in advance has been met on both legs, and the structure behind it is the best in the book.",
+  "bull_case": "Pattern analyst: setup is a **breakout from base** - a fresh 55-day high, close A$177.56 native, **17.4% below the 252-day high** so there is real headroom rather than exhaustion, RSI 65 (under the 70 line, so not extended on any leg of the test), and 63d momentum +59.4%, the highest in the table. Squeeze **0.67**, well under 0.75, so volatility is coiling into the breakout rather than expanding out of it. ATR 2.0% keeps the stop tight and the size real. Score +0.85, top of the book. Verdict: pattern supports entry now.\n\nRBC's reasoning is specific rather than a target bump: growth in the Behring business can offset the weak outlook in Seqirus and Vifor and deliver mid-single-digit EPS growth for three years, with A$1.5B of annual buybacks assumed out to FY31. That directly answers the objection I have carried since 10 September - that FY27 guidance of flat revenue and ~5% profit growth cannot support the move. Someone has now put a mechanism under it. The transformation targets US$500-550M of annual savings by FY28 having already beaten its first milestone at ~US$176M, and today's news tone is +0.67. The position is +3.3%.",
+  "bear_case": "The business record has not changed: four major guidance cuts in two years, FY26 underlying earnings down 2% with US$7.1B of impairments driving a statutory loss, and a stock up 90% from its June low. Broker dispersion is still enormous - targets have run from A$131.49 to A$206.76 and RBC's A$213 now widens that, which means the upgrade adds a voice rather than settling the argument. RBC itself was at A$148 until today; a broker that moves A$65 in one step was badly wrong recently by its own admission. A 20% implied upside from a house that just repriced by 44% is not the same as a stable consensus. The Fed raised 25bp to 3.75-4.00% on 16 September, 12-0, with 16 of 18 officials expecting another increase and four seeing two more. And with cash at zero and the book at its 12-position cap, this long cannot be acted on - it can only stop the engine selling. Desk record (research/outcomes.json): 12 closed trades, 0 wins, -$168.00 realised. The long-memo hit rate has now printed 0.43, 0.86, 0.375 and 0.625 on four consecutive days as past memos are re-judged - four different answers in four days - so it is carrying no signal yet and is steering nothing here. Conviction is set from the evidence in front of me and kept modest because twelve of twelve closed trades have lost money.",
+  "catalysts": [
+    "Whether other brokers follow RBC's upgrade or stay at the low end",
+    "Transformation savings against the US$500-550M FY28 target",
+    "Buyback execution against RBC's A$1.5B per year assumption",
+    "H1 FY27 trading update, outside this horizon"
+  ],
+  "risks": [
+    "Four major guidance cuts in two years",
+    "Up 90% from the June low",
+    "RBC moved its own target A$148 → A$213 in one step: recent large error by the upgrading house",
+    "Target dispersion now A$131 to A$213 - wider, not narrower",
+    "No cash and no slot: the call cannot be acted on"
+  ],
+  "invalidation": "The pattern analyst's level is **A$116.22 native** (US$116.2249 in packet terms), the trailing stop carried in the packet. A daily close below it ends this. The thesis fails earlier on a close back below A$175 native, which would put price under the trigger that produced this call in the first place.",
+  "horizon_days": 30,
+  "sources": [
+    "https://www.fool.com.au/2026/09/17/csl-resmed-and-more-see-which-asx-health-stocks-rbc-capital-markets-has-upgraded/",
+    "https://www.fool.com.au/2026/09/17/6-asx-200-shares-boosted-by-brokers-this-week/",
+    "https://www.fool.com.au/2026/09/10/csl-shares-are-up-90-brokers-cant-agree-what-happens-next/",
+    "https://www.investing.com/equities/csl-limited-consensus-estimates",
+    "research/packets/2026-09-17.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-15/CSL.AX.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.7,
+    "bear": 0.45,
+    "macro": 0.35
+  }
+}
