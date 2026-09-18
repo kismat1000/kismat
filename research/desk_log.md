@@ -839,3 +839,70 @@ Equities took it better — the book gained $153 on the day. macro_conviction lo
 - Cash 0.00 for a fourth day at the 12-position cap. Today's CSL long is the sharpest illustration
   yet: a trigger fired exactly as designed and there is no capital to act on it — the call can only
   discourage the engine from selling, never add.
+
+## 2026-09-18 — council run
+
+Packet: `research/packets/2026-09-18.md`. Friday. **Equity 10,081.57, up $299 (+3.1%) on the day
+and back above 10,000 for the first time since 8 September.** Same 12 positions, cash 0.00.
+
+**The record, in one line, and it is not flattering:** twelve closed trades, twelve losses,
+−$168.00; long memos 4 good of 10 (0.40); and the **skip hit rate has collapsed to 0.083 (1 of 12
+judged)**. Unlike the earlier wild swings I dismissed as noise, that one is real information — the
+desk was flat on its largest sleeve while the sleeve ran.
+
+**The honest accounting: the crypto sleeve rallied and the desk was on the wrong side of all of
+it.** LINKUSDT +8.5%, SOLUSDT +7.7%, ETHUSDT +5.2%, BTCUSDT +3.2%, BNBUSDT +1.3% — and every one
+of those carried a flat memo. Measured from where I wrote them: SOL +16.9% since 15 September,
+ETH +9.5%, LINK +9.3% in a day, BTC +6.1%.
+
+One qualifier that is true and that I will not hide behind: **cash has been 0.00 for five days, so
+every flat call was advisory.** The book held all five positions throughout and captured the whole
+move — the equity gain proves it. A "flat" meant do not add, and there was nothing to add with. The
+foregone return is theoretical. The judgment was still wrong.
+
+**Picks: 5.** Due (memos three days old): **SOLUSDT**, **ETHUSDT**, **XLV**. Re-run on material
+moves against yesterday's calls: **LINKUSDT** and **BTCUSDT**.
+
+| symbol | direction | conviction | note |
+|---|---|---|---|
+| SOLUSDT | **long** | 0.50 | Upgraded from flat 0.60 — three dated catalysts, see below |
+| ETHUSDT | flat | 0.55 | 2,627.62 against the 2,700 trigger, held for a fifth day |
+| LINKUSDT | flat | 0.55 | Price leg met (12.40 > 11.86), squeeze leg not (1.26 > 1.0) |
+| BTCUSDT | flat | 0.55 | Price leg met (81,176 > 79,661), flow leg not — zero inflow days |
+| XLV | flat | 0.55 | RSI leg met (41 > 40), price leg not (168.39 < 170) |
+
+**Deferred** (fresh memo, direction unchanged): MSFT (long 0.45), CSL.AX (long 0.55), AAPL, XLE,
+DBC, XLK, BNBUSDT.
+
+No `avoid` memo on any held position. `validate-memos`: 20 valid.
+
+**SOLUSDT upgraded to long — the reasoning, since I refused four similar-looking setups this week.**
+Three dated catalysts landed today: the **SEC granted Solana a five-year "Innovation Exemption" for
+tokenized securities trading**; the mainnet cut target slot time from 300ms to 250ms at epoch 1037;
+and Nasdaq-listed DeFi Development Corp took its treasury to 2.39M SOL (~$253M) with a $300M ATM
+facility to buy more. Crucially the structure is the *opposite* of what I have been declining: RSI
+63 with 22.9% of headroom below the 52-week high, where XLE was RSI 74 at its high and DBC RSI 87.
+None of the extended tests fire. Conviction is capped at 0.50 because a large part of the day was
+forced short covering — $170–230M of one-hour liquidations — and the crypto sleeve's own backtest
+win rate is 17%.
+
+**Four of today's five memos sit on triggers that are exactly half met**, which is either good
+discipline or an elaborate way of never committing. Stated plainly so it can be judged later: ETH
+is 2.8% below its level, LINK has the price but not the volatility condition, BTC has the price but
+zero inflow days, XLV has the RSI but not the price. Each second leg exists for a reason I wrote
+down in advance, and refusing to lower the ETH trigger was worth ~6% when it fell to 2,401 on
+15 September. But if these legs are still unmet in a week while the positions run, the honest
+conclusion will be that my conditions are drawn too tight, not that the market is wrong.
+
+**Macro (once for the day).** The **CLARITY Act cloture vote failed** and crypto rallied regardless
+— bitcoin reclaimed $80,000 on short liquidations of $170–230M an hour — which says the sector was
+positioned for the bill to fail. This follows the Fed's 25bp hike to 3.75–4.00% with 16 of 18
+officials expecting another. macro_conviction long: 0.35.
+
+**Things that failed or need checking.**
+- Eighth day with no event/news gates section in the packet, though the routine describes one.
+- Eighth day with `rs` empty for all symbols; derived by hand (XLV +11 points over SPY).
+- `us_etfs` still missing from the memo schema enum (open since 8 Sep).
+- Cash 0.00 for a fifth day at the 12-position cap — the reason today's misses cost nothing real,
+  and the reason today's SOL long cannot be acted on either.
+- One source put XLV at $154.57 against our 168.39; I did not use the figure and cannot reconcile it.

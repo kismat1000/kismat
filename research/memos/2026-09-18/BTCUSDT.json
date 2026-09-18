@@ -1,0 +1,38 @@
+{
+  "symbol": "BTCUSDT",
+  "asset_class": "crypto",
+  "date": "2026-09-18",
+  "direction": "flat",
+  "conviction": 0.55,
+  "thesis": "The other half-met trigger. Yesterday I said BTC flips long on a close above 79,661 **with at least one week of positive ETF net flows**; it closed 81,176, clearing the price leg, but this week saw about $746M of outflows and **zero inflow days**. I wrote that the bounce needs buyers rather than an absence of sellers, and a short squeeze is neither.",
+  "bull_case": "Pattern analyst: setup is a **breakout from base** - close 81,176.14, a new position high, 16.3% below the 252-day high, RSI 55 with room, 63d momentum +26.9%. Squeeze 0.87, ATR 2.5%, still the tamest crypto we own. Verdict: pattern supports entry on price; the flow condition is what holds it back.\n\nBitcoin reclaimed $80,000 and did it while shrugging off a failed CLARITY cloture vote and the first Fed hike since July 2023 - absorbing two adverse events and rallying is genuine resilience. RSI 30 two days ago has resolved upward exactly as an oversold pullback in an uptrend should. The structural base is unchanged: US spot ETFs took $3.52B in August with combined net assets of $103.34B, about 6.32% of market cap. Today's news tone is +0.67.",
+  "bear_case": "The move is substantially mechanical: one-hour short liquidations were estimated at $170-230M as bitcoin broke $80,000, and forced covering is not accumulation. The flow condition is unmet and badly - $450.33M out on Tuesday, $295.98M on Wednesday, the largest daily outflow in over two months, with zero inflow days this week. Macro, once for the day: the CLARITY Act cloture vote **failed**, and crypto rallied anyway - bitcoin reclaimed $80,000 with one-hour short liquidations estimated at $170-230M, so a large part of today's move is mechanical rather than fundamental. This follows the Fed's 25bp hike to 3.75-4.00% on 16 September with 16 of 18 officials expecting another. A hiking cycle with more signalled remains the worst backdrop for an asset with no cash flow, and nothing about today changed the rate path. Own backtest (research/backtests/2026-09-06.md): crypto sleeve -6.4%, Sharpe -0.15, 17% win rate over 75 trades. Desk record (research/outcomes.json): 12 closed trades, 0 wins, -$168.00 realised; long memos 4 good of 10 judged (0.40) and the skip hit rate has collapsed to 0.083 as this week's flat calls get re-judged against a crypto sleeve that ran without us. That collapse is real information, not noise like the earlier swings: the desk was on the wrong side of its largest sleeve for three days.",
+  "catalysts": [
+    "Whether ETF flows turn positive after the Fed repricing",
+    "Whether $80,000 holds once the squeeze is done",
+    "The Fed's next meeting"
+  ],
+  "risks": [
+    "$746M of ETF outflows this week with zero inflow days",
+    "One-hour short liquidations of $170-230M: mechanical, not accumulation",
+    "Hiking cycle with more signalled",
+    "Own backtest: 17% win rate in the crypto sleeve"
+  ],
+  "invalidation": "The pattern analyst's level is **73,231.29**, the trailing stop carried in the packet. A close below it ends this. The long trigger is unchanged: a close above 79,661 **with at least one week of positive ETF net flows** - the price leg is met, the flow leg is not.",
+  "horizon_days": 21,
+  "sources": [
+    "https://www.theblock.co/news/markets/2026-09-18-bitcoin-reclaims-80000-solana-hyperliquid-rally-crypto-markets-shrug-off-clarity-setback-415523",
+    "https://www.cryptotimes.io/2026/09/17/spot-bitcoin-etfs-see-746m-outflow-during-clarity-act-and-fomc-pressure/",
+    "https://coingape.com/markets/why-are-crypto-prices-surging-btc-hits-80k/",
+    "research/backtests/2026-09-06.md",
+    "research/packets/2026-09-18.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-17/BTCUSDT.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.55,
+    "bear": 0.55,
+    "macro": 0.3
+  }
+}

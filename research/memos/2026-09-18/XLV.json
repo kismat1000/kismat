@@ -1,0 +1,40 @@
+{
+  "symbol": "XLV",
+  "asset_class": "us_etfs",
+  "date": "2026-09-18",
+  "direction": "flat",
+  "conviction": 0.55,
+  "thesis": "The third half-met trigger today. I said XLV flips long on a close above 170 with RSI back over 40: RSI has recovered 29 → **41**, but price is 168.39, about 1% short. The reason I could not name for the selling now has an answer worth having - the IRA's negotiated prices took effect on 1 January and the worst case was already in the price - which makes this a better setup than the two previous times the engine bought it.",
+  "bull_case": "Pattern analyst: setup is a **recovery attempt, progressing** - close 168.39, only 4.1% below the 252-day high, RSI recovered from 29 to 41, 63d momentum +13.2%, close > SMA50 > SMA200. Squeeze 0.83, ATR 1.3%, the lowest in the book, so it is the cheapest position to carry. Derived rs: +13.2% against SPY's +2.0% is a lead of about 11 points. Verdict: pattern says wait for a close above 170.\n\nThe policy overhang I could not explain has resolved favourably. The first ten negotiated Maximum Fair Prices took effect on 1 January 2026 with cuts of 38-79%, and the reality proved far less dire than feared because the worst case was already priced - leaving room for a relief rally rather than a further de-rating. Sector work now calls healthcare the strongest rotation candidate on valuation, demographics and double-digit forward earnings growth, with obesity drugs, oncology and AI-assisted discovery behind it. If the Fed keeps hiking, defensives are where money hides.",
+  "bear_case": "This exact fund has been bought and stopped out twice this month - 9-10 September for -0.54% and again since - so the engine keeps finding the same setup and the setup keeps failing. XLV is still down about 3% year to date while the index rose, which is a poor showing for a sector whose thesis is defensiveness. The fund is a few megacaps with Eli Lilly and its GLP-1 franchise dominant, so one regulatory or trial headline moves the whole thing, and fifteen more drugs have been selected for 2027 IRA negotiation. Today's packet carries no news tone for XLV at all, so there is nothing fresh driving the recovery. Desk record (research/outcomes.json): 12 closed trades, 0 wins, -$168.00 realised; long memos 4 good of 10 judged (0.40) and the skip hit rate has collapsed to 0.083 as this week's flat calls get re-judged against a crypto sleeve that ran without us. That collapse is real information, not noise like the earlier swings: the desk was on the wrong side of its largest sleeve for three days.",
+  "catalysts": [
+    "CMS announcements on the 2027 IRA negotiation list",
+    "Eli Lilly GLP-1 pricing and trial updates",
+    "Q3 results from the megacap holdings in late October",
+    "The Fed's next meeting - the test of the defensive-rotation thesis"
+  ],
+  "risks": [
+    "Bought and stopped out twice this month on the same setup",
+    "Down ~3% YTD: the defensive premise has underperformed all year",
+    "Concentrated in a few megacaps, Lilly especially",
+    "15 more drugs selected for 2027 IRA negotiation",
+    "No fresh news driving the recovery"
+  ],
+  "invalidation": "The pattern analyst's level is **161.46**, the trailing stop carried in the packet. A close below it ends this. The long trigger is unchanged: a close above **170** with RSI over 40 - the RSI leg is met, the price leg is about 1% away.",
+  "horizon_days": 30,
+  "sources": [
+    "https://markets.financialcontent.com/wral/article/marketminute-2026-2-12-the-great-rotation-healthcare-emerges-as-the-s-and-p-500s-new-crown-jewel-in-2026",
+    "https://seekingalpha.com/article/4857940-healthcare-stocks-in-focus-assessing-outlook-for-2026",
+    "https://convextrade.com/sectors/healthcare",
+    "https://finance.yahoo.com/sectors/healthcare/articles/healthcare-defensive-promise-crumbles-xlv-112330789.html",
+    "research/packets/2026-09-18.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-15/XLV.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.55,
+    "bear": 0.5,
+    "macro": 0.45
+  }
+}

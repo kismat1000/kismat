@@ -1,0 +1,40 @@
+{
+  "symbol": "LINKUSDT",
+  "asset_class": "crypto",
+  "date": "2026-09-18",
+  "direction": "flat",
+  "conviction": 0.55,
+  "thesis": "Half my trigger fired. Yesterday I wrote that LINK flips long on a close above 11.86 **with the squeeze back under 1.0**; it closed 12.401, clearing the price leg by 4.5%, but the squeeze is **1.26** - volatility is still expanding, which was the whole reason I wanted the second condition. The position is +8.5% and the whale accumulation I corrected for yesterday is being paid. Flat, precisely because the condition I named is designed for exactly this.",
+  "bull_case": "Pattern analyst: setup is a **recovery completed** - close 12.401 is the position's own high, **12.1% below the 252-day high** (narrowed from 19.5% yesterday), RSI 56, 63d momentum +49.9%. Verdict: pattern supports entry on price alone; the volatility condition is what holds it back.\n\nThe corrected flow picture is working: whales accumulated roughly 10.36M LINK (~$120M) after the 17% correction, about five times the $26M sent to Coinbase that I over-weighted for a week, and price has since recovered 9.3% in a session. Network usage supports it - cumulative transaction value past $30 trillion and CCIP weekly volumes up 260% to $1.3 billion - alongside $147.49M of cumulative CLNK ETF inflows and the Bottomline 600-bank integration. Today's news tone is +0.67.",
+  "bear_case": "Squeeze 1.26 is the second highest in the book and it has been above 1.2 for four straight sessions: this name moves in violent both-way swings, and 12.401 is where it was on 9 September before falling 17% to 11.29. ATR of 5.7% puts the stop 22% below spot. LINK has already cost the book $37.45 once this month on exactly this pattern - a fast recovery that did not hold. Macro, once for the day: the CLARITY Act cloture vote **failed**, and crypto rallied anyway - bitcoin reclaimed $80,000 with one-hour short liquidations estimated at $170-230M, so a large part of today's move is mechanical rather than fundamental. This follows the Fed's 25bp hike to 3.75-4.00% on 16 September with 16 of 18 officials expecting another. Own backtest (research/backtests/2026-09-06.md): crypto sleeve -6.4%, Sharpe -0.15, 17% win rate over 75 trades. Desk record (research/outcomes.json): 12 closed trades, 0 wins, -$168.00 realised; long memos 4 good of 10 judged (0.40) and the skip hit rate has collapsed to 0.083 as this week's flat calls get re-judged against a crypto sleeve that ran without us. That collapse is real information, not noise like the earlier swings: the desk was on the wrong side of its largest sleeve for three days.",
+  "catalysts": [
+    "Whether the squeeze falls back under 1.0",
+    "Continued whale accumulation",
+    "CCIP volume growth after the 260% weekly jump",
+    "Continued CLNK ETF inflows"
+  ],
+  "risks": [
+    "Squeeze 1.26, above 1.2 for four sessions: volatility expanding",
+    "12.40 is where it stood before a 17% fall on 9 September",
+    "ATR 5.7% puts the stop 22% below spot",
+    "Cost the book $37.45 earlier this month",
+    "Own backtest: 17% win rate in the crypto sleeve"
+  ],
+  "invalidation": "The pattern analyst's level is **9.72**, the trailing stop carried in the packet, about 22% below spot. A close below it ends this. The long trigger is unchanged: a close above 11.86 **with the squeeze back under 1.0** - the price leg is met, the volatility leg is not.",
+  "horizon_days": 21,
+  "sources": [
+    "https://cryptobriefing.com/whales-accumulate-10m-link-correction/",
+    "https://coinmarketcap.com/cmc-ai/chainlink/latest-updates/",
+    "https://www.theblock.co/news/markets/2026-09-18-bitcoin-reclaims-80000-solana-hyperliquid-rally-crypto-markets-shrug-off-clarity-setback-415523",
+    "research/backtests/2026-09-06.md",
+    "research/packets/2026-09-18.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-17/LINKUSDT.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.6,
+    "bear": 0.55,
+    "macro": 0.35
+  }
+}

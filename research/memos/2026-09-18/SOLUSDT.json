@@ -1,0 +1,41 @@
+{
+  "symbol": "SOLUSDT",
+  "asset_class": "crypto",
+  "date": "2026-09-18",
+  "direction": "long",
+  "conviction": 0.5,
+  "thesis": "Upgrading from flat 0.60 to long. On 15 September I said SOL had fallen through its own best catalyst and stayed flat; three new and dated catalysts landed today, and the structure is the cleanest in the book - top score +0.85 on a fresh 55-day high at RSI 63 with 22.9% of headroom below the 52-week high. This is not the extended setup I have been refusing all week; it is the opposite.",
+  "bull_case": "Pattern analyst: setup is a **breakout from base** - fresh 55-day high, close 113.23, **22.9% below the 252-day high** so there is real room, RSI 63 (under the 70 line, so no leg of the extended test fires), 63d momentum +50.9%, joint top score at +0.85. Squeeze 0.93, ATR 4.2%. Verdict: pattern supports entry now.\n\nThree dated catalysts, all today or this week: the **SEC granted Solana a five-year 'Innovation Exemption' for tokenized securities trading**; Solana activated a mainnet change at epoch 1037 cutting target slot time from 300ms to 250ms, a 16.7% reduction; and Nasdaq-listed DeFi Development Corp expanded its treasury to 2.39 million SOL (about $253M) and opened a $300M at-the-market facility explicitly to buy more. SOL rose more than 10% to its highest in seven months, outperforming both bitcoin and ether. Today's news tone is +0.86, the highest in the book. The earlier base is intact: Bitwise's staking ETF past $1B cumulative inflows and Solana leading all chains with $229M of 30-day real-world-asset net inflows.",
+  "bear_case": "A meaningful share of today's move is mechanical. Macro, once for the day: the CLARITY Act cloture vote **failed**, and crypto rallied anyway - bitcoin reclaimed $80,000 with one-hour short liquidations estimated at $170-230M, so a large part of today's move is mechanical rather than fundamental. This follows the Fed's 25bp hike to 3.75-4.00% on 16 September with 16 of 18 officials expecting another. Buying the session after a 10% day driven partly by forced short covering is the chase I have declined four times this week on other names, and the squeeze component can retrace as fast as it arrived. The treasury buyer is a single company funding purchases through an at-the-market equity facility - that is reflexive demand that stops when its share price stops cooperating. ATR of 4.2% puts the stop 20% below spot, so the position carries more risk than its size suggests. Own backtest (research/backtests/2026-09-06.md): crypto sleeve -6.4%, Sharpe -0.15, 17% win rate over 75 trades. That 17% win rate is why this is 0.50 and not higher. Desk record (research/outcomes.json): 12 closed trades, 0 wins, -$168.00 realised; long memos 4 good of 10 judged (0.40) and the skip hit rate has collapsed to 0.083 as this week's flat calls get re-judged against a crypto sleeve that ran without us. That collapse is real information, not noise like the earlier swings: the desk was on the wrong side of its largest sleeve for three days.",
+  "catalysts": [
+    "SEC five-year Innovation Exemption for tokenized securities trading",
+    "Mainnet slot time cut to 250ms at epoch 1037, activated 18 Sep 2026",
+    "DeFi Development Corp's $300M ATM facility funding further SOL purchases",
+    "Whether the short-squeeze component holds or retraces"
+  ],
+  "risks": [
+    "A large part of the move is forced short covering, not new buying",
+    "Treasury buyer's demand is reflexive on its own share price",
+    "ATR 4.2% puts the stop 20% below spot",
+    "CLARITY Act cloture failed - the regulatory path is slower, not faster",
+    "Own backtest: 17% win rate in the crypto sleeve"
+  ],
+  "invalidation": "The pattern analyst's level is **90.92**, the trailing stop carried in the packet. A close below it ends this. The thesis fails earlier on a close back below 103.35 - the level the 7 September memo named and price spent two weeks beneath - which would mark today's move as a squeeze that round-tripped.",
+  "horizon_days": 21,
+  "sources": [
+    "https://coinmarketcap.com/top-stories/6aad6f2418d5f96e3a161d8a/",
+    "https://www.theblock.co/news/markets/2026-09-18-bitcoin-reclaims-80000-solana-hyperliquid-rally-crypto-markets-shrug-off-clarity-setback-415523",
+    "https://www.coindesk.com/tech/2026/09/18/live-updates-hype-leads-altcoin-rally-as-bitcoin-recovers-toward-usd78-000",
+    "https://coinmarketcap.com/cmc-ai/solana/latest-updates/",
+    "research/backtests/2026-09-06.md",
+    "research/packets/2026-09-18.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-15/SOLUSDT.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.7,
+    "bear": 0.5,
+    "macro": 0.35
+  }
+}
