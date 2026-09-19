@@ -906,3 +906,42 @@ officials expecting another. macro_conviction long: 0.35.
 - Cash 0.00 for a fifth day at the 12-position cap — the reason today's misses cost nothing real,
   and the reason today's SOL long cannot be acted on either.
 - One source put XLV at $154.57 against our 168.39; I did not use the figure and cannot reconcile it.
+
+## 2026-09-19 — viability review (owner instruction: earn or shut down)
+
+No council run today. The owner asked directly whether this desk earns enough to justify running,
+and that question is worth more than a fourteenth set of memos. Full working in
+`research/viability.md`.
+
+**A correction I owe, and it is a bad one.** I have written in this log repeatedly — 6, 13 and
+14 September — that research "cannot change a decision" and that every call is "advisory only".
+That was true on 6 September. It has been **wrong since the engine was wired up**:
+`kismat/engine.py:38` sets `RESEARCH_WEIGHT = 0.4`, so memos carry **40%** of the combined score,
+and 263 decisions in the journal show `combined != systematic`. I asserted the limitation once,
+then repeated it for two weeks without re-reading the code. That is the same failure as the AAPL
+base rate on 7 September: stating something load-bearing without checking it.
+
+**What the desk has actually done to the book: nothing measurable.** Having the power did not mean
+using it. No entry was ever pushed below the 0.35 threshold by a memo; all 12 sells were trend
+breaks or trailing stops; no rotation fired on a research score. Measurable P&L impact over 13
+days: **zero**.
+
+**The mechanism I did not know until today: a `flat` memo scores exactly 0.0** — the conviction
+number is discarded (`kismat/research/memos.py:58`). Flat is not neutrality; it is a **40% haircut**
+on the systematic score. Writing *no memo* is the neutral act. About 80% of the 69 memos written
+are flat, so for two weeks I have been applying a 40% penalty and describing it as "no edge here".
+
+**The economics.** Opus 5 at $5/$25 per MTok, ~12 requests a day each re-sending a two-week
+transcript, is roughly **$4/day → $90–240/month**. On a $10,081 account that is **11–29% a year**
+just to run the desk, against a strategy whose own five-year walk-forward shows **+15.8% CAGR**.
+The desk costs about what the strategy is expected to make. Account flat over 13 days: 10,064.06 →
+10,057.26.
+
+**Recommendation: weekly cadence + fresh session per run** (the daily trigger currently re-sends
+this whole transcript on every call), implement the four findings the desk has actually produced —
+exits are the broken half, `n8` over `n12`, populate `rs`, flat-memo penalty — and re-judge in a
+month against a stated bar. If those are not implemented, shut it down: a desk nobody acts on is a
+pure cost regardless of memo quality. Daily Opus only makes sense above roughly $100k of account.
+
+**Not recommended: a live account yet.** Twelve closed trades, zero wins, no demonstrated edge from
+the research layer.
