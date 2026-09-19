@@ -945,3 +945,52 @@ pure cost regardless of memo quality. Daily Opus only makes sense above roughly 
 
 **Not recommended: a live account yet.** Twelve closed trades, zero wins, no demonstrated edge from
 the research layer.
+
+## 2026-09-19 — council run: **no memos written, deliberately**
+
+Packet: `research/packets/2026-09-19.md`. Saturday, equities shut, 12 holdings unchanged, equity
+10,052.33, cash 0.00. Due for a memo: MSFT, XLE, DBC, XLK, BNBUSDT (all three days old).
+
+**I wrote none of them, and that is the finding.** Full working in
+`research/proposals/2026-09-19-conviction-means-two-things.md`.
+
+Yesterday I learned a flat memo scores 0.0 and applies a 40% haircut. Today I checked what my
+memos are actually doing to every holding, and it is worse than that: **not one of the thirteen
+memos in force raises a score. Every single one is a drag**, including the three longs.
+
+| symbol | systematic | research | combined | drag |
+|---|---|---|---|---|
+| ETHUSDT | 0.85 | 0.000 | 0.510 | **−0.340** |
+| LINKUSDT / BNBUSDT | 0.65 | 0.000 | 0.390 | −0.260 |
+| BTCUSDT | 0.60 | 0.000 | 0.360 | −0.240 |
+| XLE / DBC / XLV / AAPL | 0.55–0.48 | 0.000 | 0.33–0.29 | −0.22 to −0.19 |
+| MSFT (long 0.45) | 0.65 | 0.225 | 0.480 | −0.170 |
+| CSL.AX (long 0.55) | 0.65 | 0.367 | 0.537 | −0.113 |
+| SOLUSDT (long 0.50) | 0.65 | 0.417 | 0.557 | −0.093 |
+
+**The root cause is a definition clash.** `prompts/00_desk_rules.md` defines conviction as
+*confidence* — "most honest memos land between 0.3 and 0.7". `kismat/engine.py` uses it as a
+*score on the same scale as the systematic score*: `combined = 0.6·systematic + 0.4·research`. For
+a memo to be neutral, conviction must **equal** the systematic score; to help, it must exceed it.
+Trend scores on trending assets run 0.55–0.85. An honest desk obeying its own rules can only ever
+subtract. That is the structural answer to why two weeks of research has produced no gain.
+
+**What it has cost so far: nothing, by luck.** Rotation is gated on `rotation_margin > 0` and the
+config sets `0.0`, so it is off and there are zero rotation fills — had the margin been any
+positive number, the suppressed holdings would have been the weakest in the book and the two
+un-researched candidates (AVAXUSDT 0.60, AMD 0.59, both carrying full systematic scores) would have
+replaced them. The exit threshold at −0.10 is far below anything. The live exposure is re-entry
+blocking: **XLE, DBC, XLV and AAPL now sit below the 0.35 entry threshold purely because of a flat
+memo.**
+
+**Why no memos today.** Writing five more flat memos would deepen a penalty I have just established
+is structurally wrong, and I cannot honestly write a conviction above the systematic score on any
+of the five to avoid it — that would be inflating a number to game a formula. The neutral act in
+this engine is to write nothing, so I wrote nothing and let the existing memos decay out. Being
+right matters more than being busy, and today the instrument is miscalibrated.
+
+**Deferred:** everything. **`avoid` memos on held positions:** none. **Memos written: 0.**
+
+Proposal filed with three changes: exclude `flat` from scoring (one line, safe under any reading),
+cut `RESEARCH_WEIGHT` from 0.40 until the desk earns it (long memos 4 of 11, skips 2 of 15, 12
+trades and 0 wins), and reconcile the two definitions of conviction.
