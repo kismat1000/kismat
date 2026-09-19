@@ -1,5 +1,5 @@
 {
- "count": 120,
+ "count": 132,
  "tone": {
   "ETHUSDT": {
    "symbol": "ETHUSDT",
@@ -9,10 +9,18 @@
    "headlines": 6,
    "flags": []
   },
+  "BTCUSDT": {
+   "symbol": "BTCUSDT",
+   "score": 0.75,
+   "positive": 3,
+   "negative": 0,
+   "headlines": 6,
+   "flags": []
+  },
   "SOLUSDT": {
    "symbol": "SOLUSDT",
-   "score": 0.0,
-   "positive": 1,
+   "score": 0.4,
+   "positive": 3,
    "negative": 1,
    "headlines": 6,
    "flags": []
@@ -45,14 +53,6 @@
    "symbol": "CSL.AX",
    "score": 0.667,
    "positive": 2,
-   "negative": 0,
-   "headlines": 6,
-   "flags": []
-  },
-  "BTCUSDT": {
-   "symbol": "BTCUSDT",
-   "score": 0.75,
-   "positive": 3,
    "negative": 0,
    "headlines": 6,
    "flags": []
@@ -436,6 +436,90 @@
    "query": ""
   },
   {
+   "source": "fed_press",
+   "title": "Federal Reserve Board announces termination of enforcement action with SNB Bancshares and Bank of Eufaula",
+   "link": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260918b.htm",
+   "published": "Fri, 18 Sep 2026 15:00:00 GMT",
+   "query": ""
+  },
+  {
+   "source": "fed_press",
+   "title": "Federal Reserve Board issues enforcement actions with former employee of Northstar Bank, former employee of American Express Travel Related Services Company, Inc., and former employee of Regions Bank",
+   "link": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260918a.htm",
+   "published": "Fri, 18 Sep 2026 15:00:00 GMT",
+   "query": ""
+  },
+  {
+   "source": "fed_press",
+   "title": "Federal Reserve issues FOMC statement",
+   "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+   "published": "Wed, 16 Sep 2026 18:00:00 GMT",
+   "query": ""
+  },
+  {
+   "source": "fed_press",
+   "title": "Federal Reserve Board and Federal Open Market Committee release economic projections from the September 15-16 FOMC meeting",
+   "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916b.htm",
+   "published": "Wed, 16 Sep 2026 18:00:00 GMT",
+   "query": ""
+  },
+  {
+   "source": "fed_press",
+   "title": "Agencies seek comment on proposed third-party risk management guidance and issue statement on community bank engagement with core service providers",
+   "link": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20260911a.htm",
+   "published": "Fri, 11 Sep 2026 14:00:00 GMT",
+   "query": ""
+  },
+  {
+   "source": "fed_press",
+   "title": "Agencies reduce regulatory burden for community banks, increase eligibility for 18-month exam cycle",
+   "link": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20260910a.htm",
+   "published": "Thu, 10 Sep 2026 20:00:00 GMT",
+   "query": ""
+  },
+  {
+   "source": "fed_press",
+   "title": "Federal Reserve Board announces termination of enforcement actions with United Texas Bank, Quontic Bank Acquisition Corp., and Quontic Bank Holdings Corp.",
+   "link": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260904a.htm",
+   "published": "Fri, 4 Sep 2026 15:00:00 GMT",
+   "query": ""
+  },
+  {
+   "source": "fed_press",
+   "title": "Federal Reserve Board issues enforcement action with former employee of Banco Popular de Puerto Rico",
+   "link": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260827a.htm",
+   "published": "Thu, 27 Aug 2026 15:00:00 GMT",
+   "query": ""
+  },
+  {
+   "source": "fed_press",
+   "title": "Minutes of the Board's discount rate meetings on July 20 and July 29, 2026",
+   "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260825a.htm",
+   "published": "Tue, 25 Aug 2026 18:00:00 GMT",
+   "query": ""
+  },
+  {
+   "source": "fed_press",
+   "title": "Federal Reserve Board announces approval of application by National Westminster Bank Plc",
+   "link": "https://www.federalreserve.gov/newsevents/pressreleases/orders20260820a.htm",
+   "published": "Thu, 20 Aug 2026 20:00:00 GMT",
+   "query": ""
+  },
+  {
+   "source": "fed_press",
+   "title": "Federal Reserve Board issues enforcement actions with former employee of Regions Bank and former employee of United Community Bank",
+   "link": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260820a.htm",
+   "published": "Thu, 20 Aug 2026 15:00:00 GMT",
+   "query": ""
+  },
+  {
+   "source": "fed_press",
+   "title": "Federal Reserve Board issues enforcement action with SouthPoint Bancshares, Inc. and announces termination of enforcement action with Deutsche Bank AG, DB USA Corporation, and Deutsche Bank AG New York Branch",
+   "link": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260820b.htm",
+   "published": "Thu, 20 Aug 2026 15:00:00 GMT",
+   "query": ""
+  },
+  {
    "source": "gnews:ETHUSDT",
    "title": "Why Is Ethereum Up Today? ETH Hits Highest Price Since January as $2,757 Comes Into View - Finance Magnates",
    "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPY29aLXM0N181cVNhNUNjRHpYX2I0OEpVWjlxMU9LWThHMFpjN0JpUXJNWnk4NW51d2NUNXFzc25XTEVFOVE3Qkp1aERDbHpJdV9iRUhzdEZ3Vk5XbGhUTm96YW9ESUt6a2hFZGQyQmpIZF9GV1FBaGlhOEgtOHlFTUNfZzktUWFTNGtqUTZialJ4VzdSRV9kWkFLQUxuLWxlZ2xTeFFYUk12d2R4SlBsV2o0cjlQN3UyOXNPRnVGaVEwZmFyVUE?oc=5",
@@ -478,17 +562,59 @@
    "query": "ethereum"
   },
   {
+   "source": "gnews:BTCUSDT",
+   "title": "Why Is Crypto Up Today? Bitcoin Tops $80,000 as Ethereum, XRP and Dogecoin Rise Up to 7% - Finance Magnates",
+   "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQZ1RRMndWQUptTThQRjBjb1VxUVJwbnJKYkJlVUVHbGNVSEUtbEJ2bVhScUZxVzFBbG1kMHdyeENVS01iclpTUGRxNHcwTkdienJjU1RTUE1WRVFHMThwSHlDd2JfdHVSSmNranJ5UUoycmJ0cGlqZGlhSWlPMGM4eWctaVJQVl9aaTREeGNCY2VkVllVbEFtaThUY2RkMzFrN0htWlhvTHBvWlg4aU1NLWtaU2ZvRTZpc2FMR08xRjgxanc?oc=5",
+   "published": "Fri, 18 Sep 2026 18:26:37 GMT",
+   "query": "bitcoin"
+  },
+  {
+   "source": "gnews:BTCUSDT",
+   "title": "S&P 500, Nasdaq Composite edge higher; oil slips; bitcoin rallies - AFR",
+   "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQNmgyRzhRR0dUTlBEZWZjaFZucjM2aGs5YlZZWWYxdXQyVkt5dDVKbEN0cFhHbFR1RGhWcG1zXzlHaTMzMkVNWl9pVV90am5UbjlXU01hYlRMczYzckQxYjJiay1CU3V0bDFqT19uMjdsdzZoRUsyY2htYTdldmFjMHlNbEY4NnR0eW9WdXYzVEdkdThPR0NNQ1haWVpVeE9wd19DUjBSeHNsMmtHaURoNUhJdTNwTVduX3E5Ql8zQUxhUQ?oc=5",
+   "published": "Fri, 18 Sep 2026 18:55:00 GMT",
+   "query": "bitcoin"
+  },
+  {
+   "source": "gnews:BTCUSDT",
+   "title": "Bitcoin Price Prediction: $75K Support Holds as Volume Rises - Yahoo Finance Australia",
+   "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPSk1RX1NEbm1USHJ4N0ctX1c5aFRaQ29Cd2ZpbUpBczRfa3dnNHk5V3dKeU9tMkJVMDM2VWZYVmFsaDZINWVRWkswSzZiRFZjRlFPcFBmdjRoV281V1VMVlNhYmtNTUg1TjVKR2VMNjZzRDlYbjVDUnE4YUtGUlNVZzg1MGdlOEhvSjR0aDJR?oc=5",
+   "published": "Fri, 18 Sep 2026 15:01:58 GMT",
+   "query": "bitcoin"
+  },
+  {
+   "source": "gnews:BTCUSDT",
+   "title": "This Bitcoin Signal Has Flashed Just 4 Times In History, And The Prior 3 Coincided With Bear-Market Bottoms \u2014 Here\u2019s What To Know - TradingView",
+   "link": "https://news.google.com/rss/articles/CBMilgJBVV95cUxQRndCT0lzcElaRU1aUFRia2xoVGhzSjZjRUFJcXUwTDNIeFR3VDhfUmZVM1N6UXdmWFpVNElLSDB1RFYyeFhjaGZMSDB3MEZEUVBrM0UxT1VTYUpNSjJFUzNUV2IwSkJLSmhKdkcxaU9LVEhiMVBHc21uX05xQjI3UzVKeUtRTXFBNlRybHVWYVRaTkRNNUJscjlabGU5YnpBdHJSNWhXVkZ3blBlVXFjM2xEeWNhX0IyXzRYYi1nbUp4VlBGV0lMMnFPWXh2dzZGYVhjSE91RWNHT2F5dlZIcDQtU3RlQzVWV1lxRFZuWDJsMVBXRG5pMEU3ZUsxQ3hoeVhraDBGc1hIZmpDaWpqYWk4MGFYUQ?oc=5",
+   "published": "Sat, 19 Sep 2026 16:30:11 GMT",
+   "query": "bitcoin"
+  },
+  {
+   "source": "gnews:BTCUSDT",
+   "title": "\u2018I\u2019m Back\u2019\u2014Kevin O\u2019Leary Issues Massive $15 Trillion Bitcoin Prediction As Price Soars - forbes.com",
+   "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOdXR5R3FZX0lzZWdBY0hpcG5BWWlKRS13VG9FVzZYOERyZ3l0RDlYOUxsYk15YXNIT1pLMnFNelMyTTdpbkhKeFE5LTVoTXpHcmNhTlVUR2FnZ1V4bFI2d1ZJTDdpMS03YXd2UE83T1psNjc5RGRIdnRhQzIxZE03TTQ4WWwzYVpNVTBKNDZnaUZTZ2c0YjlyMTI1OWhLckQ2LWRzVE1NZ1JBbmpxcTlpSkg2NUNqQUZrOXdnWUhrYU1ZazUtamRUbTRpTlUtMXZFZUZZ?oc=5",
+   "published": "Fri, 18 Sep 2026 11:48:34 GMT",
+   "query": "bitcoin"
+  },
+  {
+   "source": "gnews:BTCUSDT",
+   "title": "Bitcoin Price Forecast: BTC/USD 42% Rally Puts Major Trend Reversal in Play - FOREX.com",
+   "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQNzJMN2VldVU0MEFSbzgxcWVSZkwzTTc0Zm1TYmFpYVJqNEZpa19FNjVFMkZhakt1SUwwZm5oSjlrWG5mWnFBSmctbmJYUFBlUEhUVnRSZUc0UkQ0NndMd0t2QWt6OG5Ta0lqNTVzMFZaV05vNncyX2JVRFhYMTRjMkhDUzhpdHFfdFRjaHJVX2JNRlZDM2lpbW5ZazhsUy12Vm9RLW5zenp5WW9CQkpOU1ZSdDQ2RDVNN1FoQlpHTHV5VFAyODYzc2duTGdUQQ?oc=5",
+   "published": "Fri, 18 Sep 2026 17:13:28 GMT",
+   "query": "bitcoin"
+  },
+  {
    "source": "gnews:SOLUSDT",
-   "title": "Solana's Heartbeat Quickens: Block Times Fall 17% in Latest Speed Upgrade - Decrypt",
-   "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBXQzBDbURfTGJjTmZMbXJIdE9nN2ZFWF9fVFA3TmVlREJIc3NYUWlWQmdiQWpPWnF5QmZnelFFb3RZT1pnSnh0UDBHemRnaUN5OEZpQlpvLWF6MVRmYmlUTVY1NUZ5LXM0dlZJazlXQWt3NjDSAXtBVV95cUxNQlRIbGJ6Mm5GZjFBX1AybnFLcGRtRjRKNi1SOHRuSEwzeFpmLW1SU0FvNTEzdUxuZFljYkFaMEZ4Q1FiZU5fU3A3YTRHbGJoV1BBWG1WRi1aSEh3dFpWdlpMYTVNLWJLZW5DSVFhQUNuZUJRS2psc2RWMjA?oc=5",
-   "published": "Sat, 19 Sep 2026 13:01:04 GMT",
+   "title": "Solana ETFs Experience 12 Consecutive Weeks of Inflows, While Bitcoin Has Its Quietest Week on Record - Yahoo Finance",
+   "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPOEY4X2hOT29Pb3BzdTFiVFI3dmVrUEhRaXEwVmJ4a2tQcHA4WXNsLUF5NXhueEc2UmRaN1pIVDFqUF9IeG1EclMzVFF1dzJCdXJ0NmRXTUZKbGlwNzV5Rk9tMDB3Y1FoaHZ6blVUMFBERmhzNHkySGJGQlNZV0k2X0luM0xJVFpWN1V1amhkVnlIWWt1S2lZdkd0THRxQXBRbmRuWA?oc=5",
+   "published": "Sat, 19 Sep 2026 23:04:49 GMT",
    "query": "solana"
   },
   {
    "source": "gnews:SOLUSDT",
-   "title": "Solana Price Prediction: SEC\u2019s Support Should Keep SOL Above $100 - Yahoo Finance",
-   "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOVEVZcFpqYWRwU1ZoQmVydTNhdjhZZ2U4MFFDS2h2VmxkRk5aMUlOMExtR25rVTBYWFE3aE92ZHFZZHZ0bkhDdkhvT3RoYTlaU2lNXzBhN25UNHRuWXlCV3BkdURMVEd5SkZhcGZGWTV5TWtpSjJOTExEY0MyZ05PQ3lTTmM1bHdnUk1KSE9CS0Vkei1fODhqYWp6YXVPVEllQXc?oc=5",
-   "published": "Thu, 17 Sep 2026 14:26:22 GMT",
+   "title": "Solana's Heartbeat Quickens: Block Times Fall 17% in Latest Speed Upgrade - Decrypt",
+   "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBXQzBDbURfTGJjTmZMbXJIdE9nN2ZFWF9fVFA3TmVlREJIc3NYUWlWQmdiQWpPWnF5QmZnelFFb3RZT1pnSnh0UDBHemRnaUN5OEZpQlpvLWF6MVRmYmlUTVY1NUZ5LXM0dlZJazlXQWt3NjDSAXtBVV95cUxNQlRIbGJ6Mm5GZjFBX1AybnFLcGRtRjRKNi1SOHRuSEwzeFpmLW1SU0FvNTEzdUxuZFljYkFaMEZ4Q1FiZU5fU3A3YTRHbGJoV1BBWG1WRi1aSEh3dFpWdlpMYTVNLWJLZW5DSVFhQUNuZUJRS2psc2RWMjA?oc=5",
+   "published": "Sat, 19 Sep 2026 13:01:04 GMT",
    "query": "solana"
   },
   {
@@ -507,7 +633,7 @@
   },
   {
    "source": "gnews:SOLUSDT",
-   "title": "Solana Price Holds Above $110 After 10.8% Jump as Transaction V1 Goes Live - TechStock\u00b2",
+   "title": "Solana Price Holds Above $110 After 10.8% Jump as Transaction V1 Goes Live - ts2.tech",
    "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNWTdxR3ZDQ0E4ZmlfRV9ubEc2TnpBeFBvMXE3ZnlzLTVTdFhZVDJRZGctM3ROWUJpVHA0RGw0RmFGcnZMUFVSOE5YaHZKMlBGSG5BcEhNZGtRbVpmM0VSc0FlQWJtc1ZqYmVXTlg0bWhiMnYteXZIbW5lOHJGLTVNak9WMHF3S2RxVlFYQjBlRlFpU0pCVGJ1Xw?oc=5",
    "published": "Sat, 19 Sep 2026 22:25:51 GMT",
    "query": "solana"
@@ -535,7 +661,7 @@
   },
   {
    "source": "gnews:BNBUSDT",
-   "title": "Binance Burns Over One Million BNB, Boosting Price to Two-Week High - tradingkey.com",
+   "title": "Binance Burns Over One Million BNB, Boosting Price to Two-Week High - TradingKey",
    "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPZ3IxVUZDVUZtT2FlY0lrcUJfSWJvMjJDVGJVT1FjMjBITTdqMGk1Qnk3VjVmSkJZdkd3N3NmeUM3NE1LaktNUjNwUzZTMF9EcVF4ZjFGd2pCOXNJQjRfNjdzRkZZQjBaN2pPcGxJWDE0YkhJTUhPczRKa0NVczB5eW4wenFDRVpyWHBzRTdEdjlneGROYkN1RmRLclRscnJxN2JHdFFDbTVLY001TG9UVzhYdTRfRUFmM0dmMzNpaw?oc=5",
    "published": "Sat, 19 Sep 2026 00:15:57 GMT",
    "query": "bnb binance coin"
@@ -549,16 +675,16 @@
   },
   {
    "source": "gnews:BNBUSDT",
-   "title": "Convert 100 HKD (Hong Kong Dollar) to BNB (Binance Coin) - bybit.com",
-   "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1pYlZpY0JEbjZsYWRNOFdWRFVManM5OUR1V3FBcDE0S0NOemFHQXhJcl9VdVhKS2Q0cGt2R1A1SDIxYWZIWEpjSWRGeDBOU3U5VDRhLWluVjhvX2l1?oc=5",
-   "published": "Mon, 14 Sep 2026 00:24:28 GMT",
+   "title": "Crypto Price Analysis Sep-18: ETH, XRP, ADA, BNB, and HYPE - CryptoRank",
+   "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPSEV6aFhPWmhBN2xFeXRaSmJtbUVpZGE3UFl5aVUxcW1sUDJpOHE5X2JHVjZYMHM0MDlWWEh0SUtFQzV0bkVzSkVBUWluaHNONk83dHRlUGxKZnFyTjd4RkpTZUx6ZU03aHFoaTNBcVhTa0owZkNhdzNIU094RWRKb0c2TGIwdndEck5qcWtOZ0pxeGZ2S2c?oc=5",
+   "published": "Fri, 18 Sep 2026 10:52:00 GMT",
    "query": "bnb binance coin"
   },
   {
    "source": "gnews:BNBUSDT",
-   "title": "Crypto Price Analysis Sep-18: ETH, XRP, ADA, BNB, and HYPE - CryptoRank",
-   "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPSEV6aFhPWmhBN2xFeXRaSmJtbUVpZGE3UFl5aVUxcW1sUDJpOHE5X2JHVjZYMHM0MDlWWEh0SUtFQzV0bkVzSkVBUWluaHNONk83dHRlUGxKZnFyTjd4RkpTZUx6ZU03aHFoaTNBcVhTa0owZkNhdzNIU094RWRKb0c2TGIwdndEck5qcWtOZ0pxeGZ2S2c?oc=5",
-   "published": "Fri, 18 Sep 2026 10:52:00 GMT",
+   "title": "Convert 0.01 BNB (Binance Coin) to ILS (Israeli New Shekel) - bybit.com",
+   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE50b1d0Yk4yOTFQWDhNUk9fSlZ0NDBBaEtjUVdwTU9zbHl4MWh1d19fZVVkMkJnc2U3MXN1Mjg4bjlVMkNCd2M5cTc3OUVxenBiSi1KbFItRmhkcVFaMnc?oc=5",
+   "published": "Sat, 12 Sep 2026 00:00:00 GMT",
    "query": "bnb binance coin"
   },
   {
@@ -686,48 +812,6 @@
    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1rRmRzVXhwU1h6VFJzejV3c0VBc0hJeGsyazZUblRnTmJyZ1RhTWQ4UnJlS1dHR1BMYjBrZUlwUUw2enRIME8ycDh1UHpGcmx1N1llcFE1bW5JRnM2cDhKaC16c0hoN0U?oc=5",
    "published": "Thu, 17 Sep 2026 00:15:51 GMT",
    "query": "CSL ASX shares"
-  },
-  {
-   "source": "gnews:BTCUSDT",
-   "title": "S&P 500, Nasdaq Composite edge higher; oil slips; bitcoin rallies - AFR",
-   "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQNmgyRzhRR0dUTlBEZWZjaFZucjM2aGs5YlZZWWYxdXQyVkt5dDVKbEN0cFhHbFR1RGhWcG1zXzlHaTMzMkVNWl9pVV90am5UbjlXU01hYlRMczYzckQxYjJiay1CU3V0bDFqT19uMjdsdzZoRUsyY2htYTdldmFjMHlNbEY4NnR0eW9WdXYzVEdkdThPR0NNQ1haWVpVeE9wd19DUjBSeHNsMmtHaURoNUhJdTNwTVduX3E5Ql8zQUxhUQ?oc=5",
-   "published": "Fri, 18 Sep 2026 18:55:00 GMT",
-   "query": "bitcoin"
-  },
-  {
-   "source": "gnews:BTCUSDT",
-   "title": "Bitcoin Price Prediction: $75K Support Holds as Volume Rises - Yahoo Finance Australia",
-   "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPSk1RX1NEbm1USHJ4N0ctX1c5aFRaQ29Cd2ZpbUpBczRfa3dnNHk5V3dKeU9tMkJVMDM2VWZYVmFsaDZINWVRWkswSzZiRFZjRlFPcFBmdjRoV281V1VMVlNhYmtNTUg1TjVKR2VMNjZzRDlYbjVDUnE4YUtGUlNVZzg1MGdlOEhvSjR0aDJR?oc=5",
-   "published": "Fri, 18 Sep 2026 15:01:58 GMT",
-   "query": "bitcoin"
-  },
-  {
-   "source": "gnews:BTCUSDT",
-   "title": "This Bitcoin Signal Has Flashed Just 4 Times In History, And The Prior 3 Coincided With Bear-Market Bottoms \u2014 Here\u2019s What To Know - TradingView",
-   "link": "https://news.google.com/rss/articles/CBMilgJBVV95cUxQRndCT0lzcElaRU1aUFRia2xoVGhzSjZjRUFJcXUwTDNIeFR3VDhfUmZVM1N6UXdmWFpVNElLSDB1RFYyeFhjaGZMSDB3MEZEUVBrM0UxT1VTYUpNSjJFUzNUV2IwSkJLSmhKdkcxaU9LVEhiMVBHc21uX05xQjI3UzVKeUtRTXFBNlRybHVWYVRaTkRNNUJscjlabGU5YnpBdHJSNWhXVkZ3blBlVXFjM2xEeWNhX0IyXzRYYi1nbUp4VlBGV0lMMnFPWXh2dzZGYVhjSE91RWNHT2F5dlZIcDQtU3RlQzVWV1lxRFZuWDJsMVBXRG5pMEU3ZUsxQ3hoeVhraDBGc1hIZmpDaWpqYWk4MGFYUQ?oc=5",
-   "published": "Sat, 19 Sep 2026 16:30:11 GMT",
-   "query": "bitcoin"
-  },
-  {
-   "source": "gnews:BTCUSDT",
-   "title": "\u2018I\u2019m Back\u2019\u2014Kevin O\u2019Leary Issues Massive $15 Trillion Bitcoin Prediction As Price Soars - forbes.com",
-   "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOdXR5R3FZX0lzZWdBY0hpcG5BWWlKRS13VG9FVzZYOERyZ3l0RDlYOUxsYk15YXNIT1pLMnFNelMyTTdpbkhKeFE5LTVoTXpHcmNhTlVUR2FnZ1V4bFI2d1ZJTDdpMS03YXd2UE83T1psNjc5RGRIdnRhQzIxZE03TTQ4WWwzYVpNVTBKNDZnaUZTZ2c0YjlyMTI1OWhLckQ2LWRzVE1NZ1JBbmpxcTlpSkg2NUNqQUZrOXdnWUhrYU1ZazUtamRUbTRpTlUtMXZFZUZZ?oc=5",
-   "published": "Fri, 18 Sep 2026 11:48:34 GMT",
-   "query": "bitcoin"
-  },
-  {
-   "source": "gnews:BTCUSDT",
-   "title": "Bitcoin Price Forecast: BTC/USD 42% Rally Puts Major Trend Reversal in Play - FOREX.com",
-   "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQNzJMN2VldVU0MEFSbzgxcWVSZkwzTTc0Zm1TYmFpYVJqNEZpa19FNjVFMkZhakt1SUwwZm5oSjlrWG5mWnFBSmctbmJYUFBlUEhUVnRSZUc0UkQ0NndMd0t2QWt6OG5Ta0lqNTVzMFZaV05vNncyX2JVRFhYMTRjMkhDUzhpdHFfdFRjaHJVX2JNRlZDM2lpbW5ZazhsUy12Vm9RLW5zenp5WW9CQkpOU1ZSdDQ2RDVNN1FoQlpHTHV5VFAyODYzc2duTGdUQQ?oc=5",
-   "published": "Fri, 18 Sep 2026 17:13:28 GMT",
-   "query": "bitcoin"
-  },
-  {
-   "source": "gnews:BTCUSDT",
-   "title": "It\u2019s no longer a debate: Hold both gold and Bitcoin as global sovereign debt drives demand for alternatives - 3iQ\u2019s Mancuso - kitco.com",
-   "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxON0pOOXQ1SmozQmpGYnNIM3M0V3ZFWmJxbW1iQlNYaVFFT3JwOXpqUTAyelBqZTlTWWZKSk9wZGxiSlZFV2ZJekdkd1hFaFZVaVMyeUhManc0Skl5NzV4MHV3dVgxM2RYZ2F0S1RsSjcxVlFHXzg0eTFVcmhibTNOVUEtdzlncHZjQWhYbENoMUpfRkFHckFJeElLdlJhTDZzTUtGOWp0SzgzMkdwNG1LRW5ZWTljUQ?oc=5",
-   "published": "Wed, 16 Sep 2026 15:12:00 GMT",
-   "query": "bitcoin"
   },
   {
    "source": "gnews:AVAXUSDT",
@@ -934,9 +1018,9 @@
   },
   {
    "source": "gnews:DBC",
-   "title": "Top 8 Commodity ETFs: What To Buy And Why In 2026 - ebc.com",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5CUFFJaDc4emJGUTZDazgyZkZnQThNSW9VQklJNzlVNWQ1eDdkTVVrS09HMVpPMFdfTDljaEs1VjF5MVQ2VGtRclRweVZ4Q3A1ZUNFY3FJTllsRGxMM281aTBDYW5BS1QzeDd3a0QyREJtaXBFdER0X205Y0pSTDA?oc=5",
-   "published": "Tue, 03 Mar 2026 08:00:00 GMT",
+   "title": "Invesco DB Commodity Index Tracking Fund (DBC) Stock Price Today: $32.93 - Pluang",
+   "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBwazFXdi1PSGZxc3lkc0s4WEg1YTRmOHNjYUd0clZndFl1Z21JSzIxeTV1WnZZaWR0eFp0LVlpMWRSdDZJTWlTaG05TGFUVHV6UjAzb0JuaHA?oc=5",
+   "published": "Mon, 20 Apr 2026 15:16:19 GMT",
    "query": "DBC ETF"
   }
  ]
