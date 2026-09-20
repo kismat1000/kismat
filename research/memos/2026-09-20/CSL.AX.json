@@ -1,0 +1,39 @@
+{
+  "symbol": "CSL.AX",
+  "asset_class": "au_stocks",
+  "date": "2026-09-20",
+  "direction": "long",
+  "conviction": 0.6,
+  "thesis": "Refreshing the long before it expires, conviction 0.55 -> 0.60 on the same rescaling as MSFT. Conviction here answers the engine's question - *what score does this asset deserve on the same 0-1 scale as the systematic score* - not the desk rules' question ('how confident am I'). The two readings are reconciled in research/proposals/2026-09-19-conviction-means-two-things.md. This is not inflation: it is the number the blend actually consumes, stated deliberately. Both legs of the trigger I set on 15 September fired on the 17th - a close above A$175 native and a broker raising - and price has held above that line since, closing A$175.59.",
+  "bull_case": "Pattern analyst: setup is a **breakout holding** - close A$175.59 native, **18.4% below the 252-day high** so there is genuine headroom rather than exhaustion, RSI 62 (under the 70 line, no leg of the extended test fires), 63d momentum +58.8%, the highest in the table. Squeeze **0.69**, under 0.75, so volatility is still coiling rather than blowing off. ATR 2.1%. Verdict: pattern supports entry now.\n\nRBC Capital Markets upgraded CSL to buy on 17 September and lifted its 12-month target from A$148 to A$213, with reasoning rather than a bare number: Behring growth offsetting weak Seqirus and Vifor to deliver mid-single-digit EPS growth for three years, with A$1.5B of annual buybacks assumed to FY31. That answers the objection I carried from 10 September - that flat FY27 revenue and ~5% profit growth cannot support a 59% quarter. The transformation targets US$500-550M of annual savings by FY28 having already beaten its first milestone. Position +2.2%; news tone +0.67.",
+  "bear_case": "The business record has not changed: four major guidance cuts in two years, FY26 underlying earnings down 2% with US$7.1B of impairments driving a statutory loss, and a stock up 90% from its June low. RBC was at A$148 until the morning it wasn't - a house that moves a target A$65 in one step was recently badly wrong by its own admission, and its A$213 widens the broker range to A$131-213 rather than settling it. Price is only 34 cents above the trigger line, so a quiet week undoes it. Nothing is scheduled before the AGM. Macro, once for the day: the Fed raised 25bp to 3.75-4.00% on 16 September, its first increase in three years, and penciled in one more for 2026 - fed funds futures now price roughly **42%** odds of *two* more. Markets took it in stride. The week ahead is thin on data and heavy on interpretation: ten-plus Fed speakers, flash PMIs, a Trump-Xi summit as a risk-sentiment wildcard, and final Michigan sentiment on Friday. Desk record (research/outcomes.json): 12 closed trades, 0 wins, -$168.00 realised; long memos 4 good of 11 judged (0.36); skip decisions 6 of 19 (0.32), recovered from 0.13 two days ago - the judging window re-scores past calls violently, so it steers nothing here.",
+  "catalysts": [
+    "Whether other brokers follow RBC or stay at the low end",
+    "Transformation savings against the US$500-550M FY28 target",
+    "Buyback execution against RBC's A$1.5B per year assumption"
+  ],
+  "risks": [
+    "Four major guidance cuts in two years",
+    "Up 90% from the June low",
+    "RBC moved its own target A$148 -> A$213 in one step",
+    "Target dispersion A$131 to A$213 - wider, not narrower",
+    "Only 34 cents above the trigger that produced this call"
+  ],
+  "invalidation": "The pattern analyst's level is **A$116.22 native** (US$116.225 in packet terms), the trailing stop carried in the packet. A daily close below it ends this. The thesis fails earlier on a close back below **A$175 native**, which would put price under the trigger that produced this call.",
+  "horizon_days": 30,
+  "sources": [
+    "https://www.fool.com.au/2026/09/17/csl-resmed-and-more-see-which-asx-health-stocks-rbc-capital-markets-has-upgraded/",
+    "https://www.fool.com.au/2026/09/10/csl-shares-are-up-90-brokers-cant-agree-what-happens-next/",
+    "https://www.investing.com/equities/csl-limited-consensus-estimates",
+    "https://www.cnbc.com/2026/09/18/stock-market-next-week-outlook-for-sept-21-25-2026.html",
+    "research/packets/2026-09-20.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-17/CSL.AX.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.7,
+    "bear": 0.45,
+    "macro": 0.3
+  }
+}

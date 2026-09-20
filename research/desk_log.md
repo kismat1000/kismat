@@ -994,3 +994,59 @@ right matters more than being busy, and today the instrument is miscalibrated.
 Proposal filed with three changes: exclude `flat` from scoring (one line, safe under any reading),
 cut `RESEARCH_WEIGHT` from 0.40 until the desk earns it (long memos 4 of 11, skips 2 of 15, 12
 trades and 0 wins), and reconcile the two definitions of conviction.
+
+## 2026-09-20 — council run + weekly review
+
+Packet: `research/packets/2026-09-20.md`. Sunday, nothing traded, 12 holdings unchanged, equity
+10,052.72, cash 0.00.
+
+**A correction to yesterday, and it is mine to make.** I wrote that "every memo is a drag, including
+the three longs" and filed a proposal partly on that basis. **That was over-stated.** A long at
+conviction 0.45 against a systematic 0.65 is not a bug — it is the blend doing what a blend does,
+the desk saying "this deserves less than the trend score implies", and shrinking one estimate
+toward another is the design working. **The defect is narrower than I claimed: it is `flat → 0.0`
+specifically**, where "no view" is scored as "this asset rates zero". Recommendation §1 of
+yesterday's proposal (exclude flat from scoring) stands; §2 (cut `RESEARCH_WEIGHT` from 0.40) rests
+on the part I got wrong and should not be actioned on that reasoning.
+
+I also had the conviction scale backwards. The engine asks *what score does this asset deserve*, on
+the same 0–1 scale as the systematic score. I had been answering *how confident am I*, per the desk
+rules. Today's two memos answer the engine's question deliberately — that is a rescaling, not
+inflation, and it is flagged inside both memos.
+
+**Memos written: 2.** MSFT long 0.45 → **0.60** and CSL.AX long 0.55 → **0.60**, both refreshed
+before they expired tomorrow, both on the rescaling above rather than any change of view. MSFT is
+at RSI 39 — the cheapest entry it has offered — with a 0.68 squeeze and a 28-point momentum lead
+over SPY. CSL.AX closed A$175.59, holding above the A$175 trigger that fired on the 17th.
+
+**Deferred:** XLE, DBC, XLK, BNBUSDT (memos four days old and expiring tomorrow), AAPL, BTCUSDT,
+LINKUSDT, ETHUSDT, SOLUSDT, XLV. **I wrote no new flat memos again** — on a day nothing traded there
+was no new evidence, and adding a flat memo is adding a 40% haircut, not an opinion. The existing
+flats will decay out of the five-day window on their own.
+
+**`avoid` memos on held positions:** none.
+
+**The statistic that changed a call today:** none. The skip hit rate moved 0.13 → 0.32 overnight,
+which is the judging window re-scoring old calls as prices move, not information.
+
+**Weekly review** at `research/reviews/2026-09-20-review.md`, citing this week's
+`backtests/2026-09-19.md` and `wf-2026-09-19.md`. The finding worth the week:
+
+**Turn rotation on at margin 0.30 — but fix `flat → 0.0` first, in that order.** The backtest is
+clear that rotation helps: on the whole 50-symbol universe, **+18.1% return and 0.76 Sharpe with
+margin 0.30 against +14.1% and 0.65 with rotation off**, for no extra drawdown. But rotation
+compares the best candidate against the weakest holding *by combined score*, and today the weakest
+holdings are weak only because a flat memo zeroed 40% of their score — XLE 0.330, DBC 0.324,
+XLV 0.288, AAPL 0.288, all below the 0.35 entry threshold for that reason alone, while AVAXUSDT
+(0.60) and AMD (0.59) carry full systematic scores because nobody has written about them. **Enable
+rotation today and the engine would sell the researched names to buy the un-researched ones.**
+Neither half of that is visible from either document alone.
+
+Also from the sweep: live parameters now rank **6 of 97** on robustness (0.83) against 46 of 97 last
+week, verdict **keep**; `n8` beats `n12` for the third straight week (0.27 vs 0.15); and `mom252`
+beats `mom63` (0.37 vs 0.17), which points the same way as the unresolved hold-period mismatch —
+average hold 3.2 days on a 55-day-breakout signal.
+
+**Things that failed or need checking.** Tenth day with no event/news gates section in the packet
+and with `rs` empty for all symbols (derived by hand: MSFT +28 points over SPY). `us_etfs` still
+missing from the memo schema enum, open since 8 September.

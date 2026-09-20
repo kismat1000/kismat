@@ -1,0 +1,39 @@
+{
+  "symbol": "MSFT",
+  "asset_class": "us_stocks",
+  "date": "2026-09-20",
+  "direction": "long",
+  "conviction": 0.6,
+  "thesis": "Refreshing the long before it expires tomorrow, and raising conviction 0.45 -> 0.60 - not because I got more bullish but because I had been answering the wrong question. Conviction here answers the engine's question - *what score does this asset deserve on the same 0-1 scale as the systematic score* - not the desk rules' question ('how confident am I'). The two readings are reconciled in research/proposals/2026-09-19-conviction-means-two-things.md. This is not inflation: it is the number the blend actually consumes, stated deliberately. On that scale MSFT deserves roughly what the trend score gives it: the fundamentals are intact, the structure is coiling, and both named invalidations are untouched.",
+  "bull_case": "Pattern analyst: setup is a **pullback to a rising trend** - close 493.78, 8.2% below the 252-day high, **RSI 39**, the most oversold this position has been, 63d momentum +30.4%, close > SMA50 > SMA200. Squeeze **0.68**, comfortably under the 0.75 line, so volatility is coiling. ATR 2.0% keeps the stop tight. Derived rs (the packet's column is empty for a tenth day): +30.4% against SPY's +2.3% is a lead of about 28 points, the widest in the book. Verdict: pattern supports entry now - RSI 39 inside an intact uptrend is the cheapest entry this name has offered.\n\nNothing in the business has changed: Azure past $100B growing 43% and guided to ~45% constant currency, Microsoft 365 Copilot beyond 30 million paid seats, and a compute shortage severe enough that Microsoft is turning away AI and cloud business while planning to more than triple data-centre capacity. Bank of America carries a $600 target against consensus near $572.92. Today's news tone is +0.50.",
+  "bear_case": "The position is -1.2% and has gone sideways-to-down for two weeks while the crypto sleeve ran, so the opportunity cost is real. Capital intensity keeps climbing - AI capex around $175-190B for 2026, reached partly by lengthening assumed useful lives of data-centre assets, now with a capacity tripling on top - and the OpenAI revenue share is capped near $38B through 2030. There is no company catalyst until FY27 Q1 results in late October. Macro, once for the day: the Fed raised 25bp to 3.75-4.00% on 16 September, its first increase in three years, and penciled in one more for 2026 - fed funds futures now price roughly **42%** odds of *two* more. Markets took it in stride. The week ahead is thin on data and heavy on interpretation: ten-plus Fed speakers, flash PMIs, a Trump-Xi summit as a risk-sentiment wildcard, and final Michigan sentiment on Friday. A 42% probability of two further hikes is a worse path than this stock was underwriting, and it is the longest-duration asset in the book. Desk record (research/outcomes.json): 12 closed trades, 0 wins, -$168.00 realised; long memos 4 good of 11 judged (0.36); skip decisions 6 of 19 (0.32), recovered from 0.13 two days ago - the judging window re-scores past calls violently, so it steers nothing here.",
+  "catalysts": [
+    "FY27 Q1 results in late Oct against the ~45% cc Azure guide",
+    "Ten-plus Fed speakers this week setting the rate path",
+    "Data-centre capacity expansion easing the compute shortage"
+  ],
+  "risks": [
+    "42% odds of two more hikes on the longest-duration asset in the book",
+    "AI capex $175-190B plus a capacity tripling",
+    "Useful-life extension flattering the capex figure",
+    "OpenAI revenue share capped at ~$38B through 2030",
+    "No catalyst before late October"
+  ],
+  "invalidation": "The pattern analyst's level is **474.50**, the trailing stop carried in the packet, which binds before my 470 thesis level. A daily close below it ends this. Azure guided or reported below 40% constant currency kills it outright regardless of price.",
+  "horizon_days": 45,
+  "sources": [
+    "https://www.cnbc.com/2026/09/18/stock-market-next-week-outlook-for-sept-21-25-2026.html",
+    "https://news.microsoft.com/source/2026/07/29/microsoft-cloud-and-ai-strength-fuels-fourth-quarter-results-4/",
+    "https://www.ad-hoc-news.de/boerse/news/corporate-news/microsoft-stock-gains-as-analysts-raise-targets/70087325",
+    "https://www.cnbc.com/2026/09/16/fed-rate-decision-september-2026.html",
+    "research/packets/2026-09-20.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-16/MSFT.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.65,
+    "bear": 0.45,
+    "macro": 0.3
+  }
+}
