@@ -1,0 +1,40 @@
+{
+  "symbol": "ETHUSDT",
+  "asset_class": "crypto",
+  "date": "2026-09-21",
+  "direction": "long",
+  "conviction": 0.65,
+  "thesis": "**The trigger fired.** I set it on 11 September - a daily close above 2,700 - and held it unchanged through 2,548, 2,401, 2,548 and 2,627 across five sessions, twice refusing to lower it toward spot. ETH closed **2,757.38**. The price leg is met by 2.1% and the structure is the joint-best in the book. The flow leg of that condition I cannot confirm, which is why this is 0.65 and not higher. Conviction answers the engine's question - what score this asset deserves on the same 0-1 scale as the systematic score - per research/proposals/2026-09-19-conviction-means-two-things.md.",
+  "bull_case": "Pattern analyst: setup is a **breakout from base** - fresh 55-day high, close 2,757.38, **17.9% below the 252-day high** so there is real headroom, RSI 69, 63d momentum +44.8%, joint top score +0.85. It does not meet the extended test, which needs RSI above 70 **and** momentum above 25% **and** within 2% of the high - it has only the momentum. Squeeze 1.00, neutral. Verdict: pattern supports entry now.\n\nThere is a real structural catalyst underneath the tape: Tagus Capital anchors the rally to the **SEC's 17 September decision granting a temporary five-year innovation exemption** allowing qualifying venues to run secondary trading of tokenised US stocks using automated market makers and blockchain liquidity pools. That is the tokenisation thesis becoming a rule rather than a pitch, and ETH is the settlement layer most exposed to it. Today's news tone is +0.80, the highest in the book, and the position is +10.4%.",
+  "bear_case": "The flow half of my own condition is unmet and I am taking the trade anyway, so it should be stated plainly. Spot **bitcoin** ETFs took only **$6.21M** net in the week to 19 September after $746M of outflows on the 15th and 16th, and reporting notes institutional buyers were **largely absent** from this surge. I have no fresh ETH-specific flow print, so the condition is unconfirmed rather than contradicted - but a rally with institutions absent is a thinner thing than one with them present. The move is also substantially mechanical: Macro, once for the day: **Brent fell to $100.06, down 3.67% and a fourth straight losing session**, because US Central Command says crude and LNG flows through the Strait of Hormuz have reached a **six-month high with the main transit lanes clear of mines**, and satellite imagery shows Saudi Arabia moving **2.8 mb/d through the Strait over six days against 700,000 bpd in August**. Trump says he is probably open to meeting President Pezeshkian at the UN General Assembly this week. Falling oil pushed the 10-year yield back below 5% and lit a risk-on move: about **$648M of short positions were force-closed**. Bitcoin is at an 8-month high, up 44% on the quarter. The Fed raised 25bp to 3.75-4.00% on 16 September with one more penciled for 2026. A squeeze plus a four-day oil slide is a macro gift, not an ETH thesis, and both can reverse. Own backtest (research/backtests/2026-09-19.md): crypto sleeve -3.6%, Sharpe -0.07, 21% win rate over 75 trades. Desk record (research/outcomes.json): 12 closed trades, 0 wins, -$168.00 realised. Long memos 9 good of 13 judged (0.69); skip decisions 1 of 34 (0.03) - the skip number is the desk's flat calls being marked against a crypto sleeve that has run without it, and it is the more honest of the two.",
+  "catalysts": [
+    "Follow-through on the SEC's 17 Sep five-year innovation exemption for tokenised equities",
+    "Weekly spot Ether ETF flow prints - the unconfirmed leg of this call",
+    "Whether oil keeps falling and the 10-year stays below 5%",
+    "Ten-plus Fed speakers this week"
+  ],
+  "risks": [
+    "Flow leg of my own trigger unconfirmed; institutions reported absent from the rally",
+    "~$648M of forced short covering is a large part of the move",
+    "Driven by a four-session oil slide that a Hormuz reversal would undo",
+    "RSI 69, one point under the extended line",
+    "Own backtest: 21% win rate in the crypto sleeve"
+  ],
+  "invalidation": "The pattern analyst's level is **2,259.44**, the trailing stop carried in the packet. A close below it ends this. The thesis fails earlier on a close back below **2,700**, the level that produced this call - a failed breakout there would mark today as a squeeze that round-tripped.",
+  "horizon_days": 21,
+  "sources": [
+    "https://finance.yahoo.com/personal-finance/investing/article/bitcoin-and-ethereum-prices-today-monday-september-21-2026-crypto-prices-hit-highest-levels-in-8-months-143444230.html",
+    "https://finance.yahoo.com/markets/crypto/articles/why-crypto-today-oil-prices-113059049.html",
+    "https://www.coindesk.com/daybook-us/2026/09/21/bitcoin-s-44-gain-in-third-quarter-teases-full-blown-crypto-bull-run",
+    "research/backtests/2026-09-19.md",
+    "research/packets/2026-09-21.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-18/ETHUSDT.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.75,
+    "bear": 0.5,
+    "macro": 0.55
+  }
+}

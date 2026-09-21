@@ -1,0 +1,39 @@
+{
+  "symbol": "BTCUSDT",
+  "asset_class": "crypto",
+  "date": "2026-09-21",
+  "direction": "long",
+  "conviction": 0.6,
+  "thesis": "Upgrading from flat. Bitcoin closed **85,999.90**, an 8-month high, on a fresh 55-day breakout with the joint-top score of +0.85 and 11.4% of headroom below the 52-week high - and it is up **44% on the quarter**, its best since Q4 2024. My 17 September condition was a close above 79,661 *with a week of positive ETF flows*: the price leg cleared by 8%, and flows turned from -$746M to **+$6.21M** - positive, but barely, which is exactly why this is 0.60 against a systematic 0.85. Conviction answers the engine's question - what score this asset deserves on the same 0-1 scale as the systematic score - per research/proposals/2026-09-19-conviction-means-two-things.md.",
+  "bull_case": "Pattern analyst: setup is a **breakout from base** - fresh 55-day high, close 85,999.90, 11.4% below the 252-day high, RSI 69, 63d momentum +31.8%, joint top score. Squeeze 0.95. ATR 2.7%, the tamest crypto we own. Verdict: pattern supports entry now.\n\nBitcoin closed the week above a level it had not held for **45 weeks**, which is the kind of structural reclaim that tends to matter more than a daily print, and ETF flows have stopped bleeding: +$6.21M in the week to 19 September against $746M of outflows the week before. The SEC's 17 September five-year innovation exemption for tokenised equities is a sector-wide regulatory unlock. Falling oil has pushed the 10-year below 5%, easing the rate pressure that has capped this asset all month.",
+  "bear_case": "$6.21M of weekly inflow is a rounding error on a $103B asset base - it is the absence of selling, not the presence of buying, and reporting is explicit that **institutional buyers were largely absent** from the move to $85,000. About **$648M of shorts were force-closed**, so a large part of this is mechanical. Macro, once for the day: **Brent fell to $100.06, down 3.67% and a fourth straight losing session**, because US Central Command says crude and LNG flows through the Strait of Hormuz have reached a **six-month high with the main transit lanes clear of mines**, and satellite imagery shows Saudi Arabia moving **2.8 mb/d through the Strait over six days against 700,000 bpd in August**. Trump says he is probably open to meeting President Pezeshkian at the UN General Assembly this week. Falling oil pushed the 10-year yield back below 5% and lit a risk-on move: about **$648M of short positions were force-closed**. Bitcoin is at an 8-month high, up 44% on the quarter. The Fed raised 25bp to 3.75-4.00% on 16 September with one more penciled for 2026. The rate path has not improved - the Fed hiked on 16 September with one more penciled in and futures at 42% for two. RSI 69 is a point under the extended line. Own backtest (research/backtests/2026-09-19.md): crypto sleeve -3.6%, Sharpe -0.07, 21% win rate over 75 trades. Desk record (research/outcomes.json): 12 closed trades, 0 wins, -$168.00 realised. Long memos 9 good of 13 judged (0.69); skip decisions 1 of 34 (0.03) - the skip number is the desk's flat calls being marked against a crypto sleeve that has run without it, and it is the more honest of the two.",
+  "catalysts": [
+    "Weekly spot bitcoin ETF flows - whether $6.21M becomes a trend",
+    "Follow-through on the SEC's 17 Sep innovation exemption",
+    "Whether the 45-week level holds on a retest",
+    "Ten-plus Fed speakers this week"
+  ],
+  "risks": [
+    "Institutional buyers reported absent; $6.21M is the absence of selling",
+    "~$648M of forced short covering in the move",
+    "Fed hiked with one more penciled, futures 42% for two",
+    "Own backtest: 21% win rate in the crypto sleeve"
+  ],
+  "invalidation": "The pattern analyst's level is **73,231.29**, the trailing stop carried in the packet. A close below it ends this. The thesis fails earlier on a close back below 79,661 - the level my 17 September condition named and the breakout base.",
+  "horizon_days": 21,
+  "sources": [
+    "https://finance.yahoo.com/personal-finance/investing/article/bitcoin-and-ethereum-prices-today-monday-september-21-2026-crypto-prices-hit-highest-levels-in-8-months-143444230.html",
+    "https://www.coindesk.com/daybook-us/2026/09/21/bitcoin-s-44-gain-in-third-quarter-teases-full-blown-crypto-bull-run",
+    "https://finance.yahoo.com/markets/crypto/articles/why-crypto-today-oil-prices-113059049.html",
+    "research/backtests/2026-09-19.md",
+    "research/packets/2026-09-21.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-18/BTCUSDT.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.7,
+    "bear": 0.5,
+    "macro": 0.55
+  }
+}

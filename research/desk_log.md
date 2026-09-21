@@ -1050,3 +1050,62 @@ average hold 3.2 days on a 55-day-breakout signal.
 **Things that failed or need checking.** Tenth day with no event/news gates section in the packet
 and with `rs` empty for all symbols (derived by hand: MSFT +28 points over SPY). `us_etfs` still
 missing from the memo schema enum, open since 8 September.
+
+## 2026-09-21 — council run
+
+Packet: `research/packets/2026-09-21.md`. Monday. **Equity 10,320.12, up $267 (+2.7%) on the day**
+and the best level since the account was funded. 12 holdings, cash 0.00.
+
+**Two of my own named conditions fired today, in opposite directions. That is the run.**
+
+**1. ETHUSDT: the trigger fired.** I set it on 11 September — a daily close above **2,700** — and
+held it unchanged through 2,548, 2,401, 2,548 and 2,627 across five sessions, twice refusing to
+lower it toward spot and once writing that refusing to move it was worth ~6% when ETH fell to 2,401.
+It closed **2,757.38**. Upgraded flat 0.55 → **long 0.65**. The price leg cleared by 2.1%; the flow
+leg of that same condition I could **not** confirm, and the memo says so — which is why it is 0.65
+against a systematic 0.85 rather than higher.
+
+**2. XLE: the invalidation fired, and decisively.** Every XLE memo since 9 September has said a
+confirmed reopening of Hormuz transits voids the thesis *regardless of price*. US Central Command
+now reports flows through the Strait at a **six-month high with the main lanes clear of mines**, and
+satellite imagery has Saudi throughput at **2.8 mb/d over six days against 700,000 bpd in August** —
+a four-fold recovery. Separately the price level fired: XLE closed **62.75, below the 62.85 stop**
+named in every memo. Both halves, same day. The scarcity premium this was bought for is gone.
+DBC carries the same invalidation one step behind (RSI 87 → 65 in six days, still +1.1%).
+
+| symbol | direction | conviction | note |
+|---|---|---|---|
+| XLE | flat | 0.70 | **Invalidation fired** — Hormuz flows at a six-month high; closed below the 62.85 stop |
+| ETHUSDT | **long** | 0.65 | **Trigger fired** at 2,757 after five days held; flow leg unconfirmed |
+| SOLUSDT | long | 0.65 | Fresh 55-day high, +11.7%, all three catalysts intact |
+| DBC | flat | 0.65 | Same Hormuz invalidation, one step behind |
+| BTCUSDT | **long** | 0.60 | 8-month high, +44% on the quarter; flows turned +$6.21M from −$746M |
+| BNBUSDT | **long** | 0.55 | Cleared the 800 trigger by one dollar — hence 0.55, not higher |
+
+**Deferred:** LINKUSDT, XLK, AAPL, XLV, MSFT, CSL.AX (the last two refreshed yesterday).
+
+No `avoid` memo on any held position. `validate-memos`: 20 valid.
+
+**The statistic that changed a call today: none.** Long memos jumped to 9 of 13 (0.69) and skips
+collapsed to 1 of 34 (0.03). The skip number is the honest one — it is the desk's flat calls being
+marked against a crypto sleeve that ran without them — but neither steered anything. Today's calls
+came from levels I had written down in advance.
+
+**Macro (once for the day).** The whole tape is one story: **Brent fell 3.67% to $100.06, a fourth
+straight losing session**, on the Hormuz normalisation above, with Trump saying he is probably open
+to meeting Pezeshkian at UNGA this week. Falling oil pushed the **10-year back below 5%**, which lit
+a risk-on move in which about **$648M of short positions were force-closed**. Bitcoin is at an
+8-month high, +44% on the quarter. Tagus Capital anchors the sector rally to the **SEC's
+17 September decision granting a five-year innovation exemption** for secondary trading of tokenised
+US stocks — a genuine structural unlock rather than a headline. Against that: ETF flows are thin
+(+$6.21M for bitcoin in the week to 19 September) and reporting says institutional buyers were
+**largely absent**. So the move is macro plus mechanics, not accumulation, and every long above is
+sized for that.
+
+**Things that failed or need checking.** Eleventh day with no event/news gates section in the packet
+and `rs` empty for all symbols. `us_etfs` still missing from the memo schema enum, open since
+8 September — four more memos written against it today.
+
+**Still open for the owner:** the desk's cadence, and whether the `config/`/`kismat/` fixes get
+implemented — in the order the 20 September review sets out (fix `flat → 0.0` first, *then* enable
+rotation at margin 0.30, never the reverse).

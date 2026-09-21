@@ -1,0 +1,39 @@
+{
+  "symbol": "DBC",
+  "asset_class": "us_etfs",
+  "date": "2026-09-21",
+  "direction": "flat",
+  "conviction": 0.65,
+  "thesis": "Same invalidation as XLE, one step behind it. Every DBC memo has said a full reopening of Hormuz transits voids the hedge regardless of price; CENTCOM reports flows at a six-month high with lanes clear, and Saudi throughput up 4x. DBC has held better than XLE - still +1.1% against XLE's -4.5%, and well above its 31.25 stop - because a broad commodity basket is not purely an energy bet. But the reason to own it has gone.",
+  "bull_case": "Pattern analyst: setup is a **breakout rolling over** - close 32.64 against a 52-week high made on 15 September, RSI down to 65 from **87** six days ago, 3.1% below the high, 63d momentum +19.1%. Squeeze 0.93. ATR 1.6%, still the cheapest volatility in the book. Verdict: pattern says wait - the RSI-87 blow-off has unwound but the trend has not resumed.\n\nThe hedge did its job while it was needed: +1.1% through a period when the book's equity went nowhere, and August CPI showed gasoline up 3.9%, over a third of the monthly increase. A broad basket holds metals and agriculture as well as energy, so a Hormuz normalisation is not the whole story, and diplomacy can still fail.",
+  "bear_case": "The inflation impulse this was hedging is deflating in real time: Brent down four sessions to $100.06, Hormuz flows at a six-month high, and the 10-year back below 5% as a direct consequence. The RSI 87 print on 15 September was a blow-off and the retreat to 65 is the unwind starting, not finishing. Forecasters remain far below spot - the EIA at about $90/b for 2H26. Macro, once for the day: **Brent fell to $100.06, down 3.67% and a fourth straight losing session**, because US Central Command says crude and LNG flows through the Strait of Hormuz have reached a **six-month high with the main transit lanes clear of mines**, and satellite imagery shows Saudi Arabia moving **2.8 mb/d through the Strait over six days against 700,000 bpd in August**. Trump says he is probably open to meeting President Pezeshkian at the UN General Assembly this week. Falling oil pushed the 10-year yield back below 5% and lit a risk-on move: about **$648M of short positions were force-closed**. Bitcoin is at an 8-month high, up 44% on the quarter. The Fed raised 25bp to 3.75-4.00% on 16 September with one more penciled for 2026. And a Fed with one more hike penciled in is aiming at commodity demand. Desk record (research/outcomes.json): 12 closed trades, 0 wins, -$168.00 realised. Long memos 9 good of 13 judged (0.69); skip decisions 1 of 34 (0.03) - the skip number is the desk's flat calls being marked against a crypto sleeve that has run without it, and it is the more honest of the two.",
+  "catalysts": [
+    "Whether a Trump-Pezeshkian meeting happens at UNGA this week",
+    "Weekly Hormuz transit volumes",
+    "EIA Short-Term Energy Outlook revisions",
+    "The Fed's next meeting"
+  ],
+  "risks": [
+    "Hormuz reopening is the named invalidation and it is happening",
+    "RSI 87 to 65 in six days: the unwind has started",
+    "EIA ~$90/b for 2H26 against ~$100 spot",
+    "A hiking Fed aimed at commodity demand"
+  ],
+  "invalidation": "The pattern analyst's level is **31.25**, the trailing stop carried in the packet, about 4% below spot. A close below it ends this, and a confirmed full reopening of Hormuz transits invalidates the hedge thesis outright regardless of price - which is now largely on the tape.",
+  "horizon_days": 30,
+  "sources": [
+    "https://www.ttnews.com/articles/oil-prices-traffic-hormuz",
+    "https://tradingeconomics.com/commodity/brent-crude-oil",
+    "https://www.eia.gov/outlooks/steo/",
+    "https://www.cnbc.com/2026/09/11/cpi-inflation-breakdown-august-2026.html",
+    "research/packets/2026-09-21.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-16/DBC.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.35,
+    "bear": 0.65,
+    "macro": 0.35
+  }
+}

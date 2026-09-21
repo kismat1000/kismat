@@ -1,0 +1,39 @@
+{
+  "symbol": "SOLUSDT",
+  "asset_class": "crypto",
+  "date": "2026-09-21",
+  "direction": "long",
+  "conviction": 0.65,
+  "thesis": "Holding the long from 18 September and raising it 0.50 -> 0.65 on the rescaling, not on new enthusiasm. SOL closed **117.44** on a fresh 55-day high with the joint-top score of +0.85, RSI 65 and 20.1% of headroom - and it is **+11.7%** for us since the upgrade. The three catalysts I named have all held. Conviction answers the engine's question - what score this asset deserves on the same 0-1 scale as the systematic score - per research/proposals/2026-09-19-conviction-means-two-things.md.",
+  "bull_case": "Pattern analyst: setup is a **breakout from base** - fresh 55-day high, close 117.44, **20.1% below the 252-day high**, RSI 65 (under the line), 63d momentum +51.1%, the highest in the table. Squeeze 1.00. Verdict: pattern supports entry now.\n\nThe catalysts from 18 September are intact and one has grown: the **SEC's five-year innovation exemption**, which reporting now dates to 17 September and credits as the anchor of the entire sector rally, is a tokenised-equities unlock and Solana is the chain most positioned for it; the mainnet slot time cut from 300ms to 250ms activated at epoch 1037; and Nasdaq-listed DeFi Development Corp holds 2.39M SOL with a $300M facility to buy more. News tone +0.67.",
+  "bear_case": "Three sessions of a sector-wide melt-up driven by oil falling and $648M of short covering is not a Solana thesis, and SOL has the highest beta in the book - ATR 4.4% puts the stop 23% below spot. The treasury buyer's demand is reflexive: it funds purchases through an at-the-market equity facility that stops working if its own share price stops cooperating. Macro, once for the day: **Brent fell to $100.06, down 3.67% and a fourth straight losing session**, because US Central Command says crude and LNG flows through the Strait of Hormuz have reached a **six-month high with the main transit lanes clear of mines**, and satellite imagery shows Saudi Arabia moving **2.8 mb/d through the Strait over six days against 700,000 bpd in August**. Trump says he is probably open to meeting President Pezeshkian at the UN General Assembly this week. Falling oil pushed the 10-year yield back below 5% and lit a risk-on move: about **$648M of short positions were force-closed**. Bitcoin is at an 8-month high, up 44% on the quarter. The Fed raised 25bp to 3.75-4.00% on 16 September with one more penciled for 2026. If the Hormuz normalisation reverses, the oil-down/yields-down leg of this rally goes with it. Own backtest (research/backtests/2026-09-19.md): crypto sleeve -3.6%, Sharpe -0.07, 21% win rate over 75 trades. Desk record (research/outcomes.json): 12 closed trades, 0 wins, -$168.00 realised. Long memos 9 good of 13 judged (0.69); skip decisions 1 of 34 (0.03) - the skip number is the desk's flat calls being marked against a crypto sleeve that has run without it, and it is the more honest of the two.",
+  "catalysts": [
+    "Follow-through on the SEC's 17 Sep innovation exemption",
+    "DeFi Development Corp's $300M facility funding further purchases",
+    "Whether the oil-down, yields-below-5% regime holds",
+    "Alpenglow upgrade phases"
+  ],
+  "risks": [
+    "Sector melt-up on oil and short covering, not a SOL-specific bid",
+    "ATR 4.4%: stop 23% below spot",
+    "Treasury buyer's demand is reflexive on its own share price",
+    "Own backtest: 21% win rate in the crypto sleeve"
+  ],
+  "invalidation": "The pattern analyst's level is **90.92**, the trailing stop carried in the packet. A close below it ends this. The thesis fails earlier on a close back below 103.35, the level the 7 September memo named and price spent two weeks beneath.",
+  "horizon_days": 21,
+  "sources": [
+    "https://finance.yahoo.com/markets/crypto/articles/why-crypto-today-oil-prices-113059049.html",
+    "https://coinmarketcap.com/cmc-ai/solana/latest-updates/",
+    "https://www.theblock.co/news/markets/2026-09-18-bitcoin-reclaims-80000-solana-hyperliquid-rally-crypto-markets-shrug-off-clarity-setback-415523",
+    "research/backtests/2026-09-19.md",
+    "research/packets/2026-09-21.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-18/SOLUSDT.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.7,
+    "bear": 0.5,
+    "macro": 0.55
+  }
+}

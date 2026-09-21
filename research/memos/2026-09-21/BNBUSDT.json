@@ -1,0 +1,39 @@
+{
+  "symbol": "BNBUSDT",
+  "asset_class": "crypto",
+  "date": "2026-09-21",
+  "direction": "long",
+  "conviction": 0.55,
+  "thesis": "Upgrading from flat 0.60. BNB closed **801.05** on a fresh 55-day high with the joint-top score of +0.85, and the position has gone from -5.5% on 15 September to **+6.1%** today. My 16 September trigger was a close above 800 ahead of the October burn: it closed 801.05, clearing it by a dollar. That is a thin clearance and the quarterly burn is still three weeks out, which is why this is 0.55 rather than higher. Conviction answers the engine's question - what score this asset deserves on the same 0-1 scale as the systematic score - per research/proposals/2026-09-19-conviction-means-two-things.md.",
+  "bull_case": "Pattern analyst: setup is a **breakout from base** - fresh 55-day high, close 801.05, 15.7% below the 252-day high, RSI 66, 63d momentum +40.4%. Squeeze 1.01, so volatility is no longer expanding the way it was through the drawdown. ATR 3.0%, tame for this sleeve. Verdict: pattern supports entry now.\n\nThe supply mechanism is dated and real: the 37th quarterly burn is due around mid-October, after the 36th on 15 July removed ~1.62M BNB (about $932M) and took supply to ~133.2M. CZ's October 2025 pardon removed the acute legal overhang and VanEck's spot BNB ETF has listed since 28 May. The sector-wide unlock from the SEC's 17 September exemption lifts exchange infrastructure too.",
+  "bear_case": "Clearing a round number by one dollar is not a breakout anyone should lean on, and the burn is outside this horizon. BNB has no independent bid - it moved because bitcoin moved, and bitcoin moved on falling oil and $648M of short covering. The structural objection is unchanged and unhedgeable: BNB's value is a claim on one company's continued regulatory standing in the US and EU, which no chart prices. Macro, once for the day: **Brent fell to $100.06, down 3.67% and a fourth straight losing session**, because US Central Command says crude and LNG flows through the Strait of Hormuz have reached a **six-month high with the main transit lanes clear of mines**, and satellite imagery shows Saudi Arabia moving **2.8 mb/d through the Strait over six days against 700,000 bpd in August**. Trump says he is probably open to meeting President Pezeshkian at the UN General Assembly this week. Falling oil pushed the 10-year yield back below 5% and lit a risk-on move: about **$648M of short positions were force-closed**. Bitcoin is at an 8-month high, up 44% on the quarter. The Fed raised 25bp to 3.75-4.00% on 16 September with one more penciled for 2026. Own backtest (research/backtests/2026-09-19.md): crypto sleeve -3.6%, Sharpe -0.07, 21% win rate over 75 trades. Desk record (research/outcomes.json): 12 closed trades, 0 wins, -$168.00 realised. Long memos 9 good of 13 judged (0.69); skip decisions 1 of 34 (0.03) - the skip number is the desk's flat calls being marked against a crypto sleeve that has run without it, and it is the more honest of the two.",
+  "catalysts": [
+    "37th quarterly BNB burn around mid-October",
+    "VBNB ETF flow accumulation",
+    "Follow-through on the SEC's 17 Sep innovation exemption"
+  ],
+  "risks": [
+    "Cleared the 800 trigger by one dollar",
+    "Burn is outside this horizon",
+    "No independent bid - follows bitcoin, which moved on oil and short covering",
+    "Exchange-token risk concentrated in one company's regulatory standing",
+    "Own backtest: 21% win rate in the crypto sleeve"
+  ],
+  "invalidation": "The pattern analyst's level is **697.41**, the trailing stop carried in the packet. A close below it ends this. The thesis fails earlier on a close back below 800, which would make today's clearance a false break.",
+  "horizon_days": 21,
+  "sources": [
+    "https://finance.yahoo.com/personal-finance/investing/article/bitcoin-and-ethereum-prices-today-monday-september-21-2026-crypto-prices-hit-highest-levels-in-8-months-143444230.html",
+    "https://www.tradingkey.com/analysis/cryptocurrencies/bnb/261790577-crypto-binance-exchange-bnb-burn-bitcoin-btc-tradingkey",
+    "https://finance.yahoo.com/markets/crypto/articles/why-crypto-today-oil-prices-113059049.html",
+    "research/backtests/2026-09-19.md",
+    "research/packets/2026-09-21.md",
+    "research/outcomes.json",
+    "research/memos/2026-09-16/BNBUSDT.json"
+  ],
+  "agent": "council/judge",
+  "council_votes": {
+    "bull": 0.6,
+    "bear": 0.55,
+    "macro": 0.55
+  }
+}
