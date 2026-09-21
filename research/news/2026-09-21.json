@@ -3,8 +3,8 @@
  "tone": {
   "ETHUSDT": {
    "symbol": "ETHUSDT",
-   "score": 0.667,
-   "positive": 2,
+   "score": 0.8,
+   "positive": 4,
    "negative": 0,
    "headlines": 6,
    "flags": []
@@ -27,17 +27,17 @@
   },
   "BTCUSDT": {
    "symbol": "BTCUSDT",
-   "score": 0.667,
+   "score": 0.25,
    "positive": 2,
-   "negative": 0,
+   "negative": 1,
    "headlines": 6,
    "flags": []
   },
   "SOLUSDT": {
    "symbol": "SOLUSDT",
-   "score": 0.0,
+   "score": 0.5,
    "positive": 1,
-   "negative": 1,
+   "negative": 0,
    "headlines": 6,
    "flags": []
   },
@@ -65,18 +65,18 @@
    "headlines": 6,
    "flags": []
   },
-  "AVAXUSDT": {
-   "symbol": "AVAXUSDT",
-   "score": 0.8,
-   "positive": 4,
-   "negative": 0,
-   "headlines": 6,
-   "flags": []
-  },
   "AMD": {
    "symbol": "AMD",
    "score": 0.0,
    "positive": 0,
+   "negative": 0,
+   "headlines": 6,
+   "flags": []
+  },
+  "XLE": {
+   "symbol": "XLE",
+   "score": 0.5,
+   "positive": 1,
    "negative": 0,
    "headlines": 6,
    "flags": []
@@ -99,6 +99,13 @@
   }
  },
  "items": [
+  {
+   "source": "coindesk",
+   "title": "Kalshi faces \u2018fake crypto volume\u2019 allegations as critic flags identical $5,500 trades",
+   "link": "https://www.coindesk.com/markets/2026/09/21/kalshi-s-crypto-chief-responds-to-fake-crypto-volume-allegations-as-critic-flags-identical-usd5-500-trades",
+   "published": "Mon, 21 Sep 2026 06:20:47 +0000",
+   "query": ""
+  },
   {
    "source": "coindesk",
    "title": "Bitcoin rises above $81,000, while NEAR jumps 23% on Zcash swap traffic",
@@ -177,13 +184,6 @@
    "query": ""
   },
   {
-   "source": "coindesk",
-   "title": "CFTC sends crypto rules to White House to review as Congress stalls on Clarity Act",
-   "link": "https://www.coindesk.com/policy/2026/09/18/cftc-sends-crypto-rules-to-white-house-to-review-as-congress-stalls-on-clarity-act",
-   "published": "Fri, 18 Sep 2026 15:16:37 +0000",
-   "query": ""
-  },
-  {
    "source": "cointelegraph",
    "title": "Here\u2019s what happened in crypto today",
    "link": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
@@ -192,7 +192,7 @@
   },
   {
    "source": "cointelegraph",
-   "title": "Bitcoin reclaims 50-week moving average: Is the bear market over?",
+   "title": "Bitcoin reclaims 50-week moving average as analysts eye end of bear market",
    "link": "https://cointelegraph.com/markets/bitcoin-reclaims-50-week-moving-average-is-the-bear-market-over?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
    "published": "Mon, 21 Sep 2026 04:29:59 +0000",
    "query": ""
@@ -353,6 +353,20 @@
   },
   {
    "source": "abc_au_business",
+   "title": "Footy fans filthy as airfares soar ahead of grand final",
+   "link": "https://www.abc.net.au/news/2026-09-21/afl-grand-final-airfares-surge-fans-scramble-for-seats/107177476",
+   "published": "Mon, 21 Sep 2026 06:35:25 +0000",
+   "query": ""
+  },
+  {
+   "source": "abc_au_business",
+   "title": "Another indecent assault charge dropped against Alan Jones, amid trial",
+   "link": "https://www.abc.net.au/news/2026-09-21/another-indecent-assault-charge-dropped-against-alan-jones/107177432",
+   "published": "Mon, 21 Sep 2026 06:03:50 +0000",
+   "query": ""
+  },
+  {
+   "source": "abc_au_business",
    "title": "Statistic in Intergenerational Report spells challenge for Australia as it ages",
    "link": "https://www.abc.net.au/news/2026-09-21/intergenerational-report-igr-deaths-births-aging/107176284",
    "published": "Mon, 21 Sep 2026 05:29:57 +0000",
@@ -419,20 +433,6 @@
    "title": "From fashion forward to failure: What went wrong for Cue?",
    "link": "https://www.abc.net.au/news/2026-09-20/cue-veronika-maine-australian-fashion-success-to-failure/107158266",
    "published": "Sun, 20 Sep 2026 05:05:20 +0000",
-   "query": ""
-  },
-  {
-   "source": "abc_au_business",
-   "title": "Italian-Australian icon Franco Cozzo remembered in retail revival",
-   "link": "https://www.abc.net.au/news/2026-09-20/italian-australian-icon-franco-cozzo-retail-revival/107169840",
-   "published": "Sun, 20 Sep 2026 04:37:07 +0000",
-   "query": ""
-  },
-  {
-   "source": "abc_au_business",
-   "title": "In an outback town, this small venue raised $1 million to save itself",
-   "link": "https://www.abc.net.au/news/2026-09-20/alice-springs-live-music-venue-black-wreath-fundraiser-saved/107168920",
-   "published": "Sat, 19 Sep 2026 22:25:58 +0000",
    "query": ""
   },
   {
@@ -521,6 +521,13 @@
   },
   {
    "source": "gnews:ETHUSDT",
+   "title": "Ethereum Price Prediction: ETH Tops $2,700 in Six-Day Rally, Can It Reclaim $3,000 in September? - TradingKey",
+   "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPdllxOWNGazA2dERtTkpDZ0xmWTZPVm9vMjRaTklqTGxibmdpRWU1LUcwQ3NuTkxKTVJ1b1pLaXFLYzNCUmtxVGI4Y3luRGlKcEplNkRreXVpYk9pcGRMTWhZZUd0SFJpMHkxQ1JfM0RSbW14ODRJcFhlX0xrZWF1ZTRlMG01MXYxWG0wSFJMVlh2Ql95bmZMMS15OUlvMFBnMUxyOUdMRXVHYU1mQXY0bHdR?oc=5",
+   "published": "Mon, 21 Sep 2026 06:34:40 GMT",
+   "query": "ethereum"
+  },
+  {
+   "source": "gnews:ETHUSDT",
    "title": "Top 3 Price Prediction: Bitcoin, Ethereum, Ripple \u2013 BTC extends gains, ETH and XRP advance in uptrend - FXStreet",
    "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPblp0T3BHcXdvWko2dTRSYjdhXzZNdHZDVkNJcjVHVDd0SllKQVl5VzB5MkVZRlgwUXUtcE9WaXkwVWl5OUgxNWs3SzREUG1kZjhJM0s2UkluN253LUJRWld2aksybGtmNDhOTEZrWHZ0R3hmclBmejQxMFRTb1pLbnJybDkwaWxqU0thRXZLNVRiNWc5VjZKc0dnMWZFb05Ua21NTVNFLV9FWkpNVmpBMEE4U0VPTGF5MW81RUJvbVpkQTZlRXBETHNPaHlHRVNabVJsejdsOHRhLXpET3VMLXBVWW1YdkJYci04?oc=5",
    "published": "Mon, 21 Sep 2026 03:18:37 GMT",
@@ -542,28 +549,21 @@
   },
   {
    "source": "gnews:ETHUSDT",
-   "title": "Ethereum (ETHUSD) Is up 1.70% on Sep 21: What Do On-Chain Data and Market Sentiment Show? - TradingKey",
-   "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNWjZRcDhVNThoSEMwWHViWVoxcEE5Vjd2YzJFMkpDdjlIaVR2Mk1sS1V0eWdZWG45VkFOM2ZBWmxhWnl1Y0VKVFBmUWx6T1lOYmtscHBHWVVDUUVUazRWWE12U2c3RTloQWg0Z1FaemVfaGlMeWpzYUZpd1Q1S25MZEJoQmV1a1JEcThuZHVn?oc=5",
-   "published": "Mon, 21 Sep 2026 00:15:16 GMT",
-   "query": "ethereum"
-  },
-  {
-   "source": "gnews:ETHUSDT",
-   "title": "Ethereum leads euro stablecoin market growth wi... - Pluang",
-   "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOdWJvQ01TT1NyU0c3c0VqTjNvYTRRYnVaQ3paeGVZcjJ4Ujc3NlhLUVZ4M052R1Zza0pSelNmVGEzdmZIYnZYZlFEVlV1emtDMEkxbkhNXzdSdTV6UVF1Mnh2cTZpMzBiMFlHUG5LVkVXR2hPTVhiSHp6eldlMzkwRXM4RHZ4VFU1RG56UUNRSGxvLUN3WmZxcG9pUQ?oc=5",
-   "published": "Mon, 21 Sep 2026 01:44:51 GMT",
-   "query": "ethereum"
-  },
-  {
-   "source": "gnews:ETHUSDT",
    "title": "Why Is Ethereum Up Today? ETH Hits Highest Price Since January as $2,757 Comes Into View - Finance Magnates",
    "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPY29aLXM0N181cVNhNUNjRHpYX2I0OEpVWjlxMU9LWThHMFpjN0JpUXJNWnk4NW51d2NUNXFzc25XTEVFOVE3Qkp1aERDbHpJdV9iRUhzdEZ3Vk5XbGhUTm96YW9ESUt6a2hFZGQyQmpIZF9GV1FBaGlhOEgtOHlFTUNfZzktUWFTNGtqUTZialJ4VzdSRV9kWkFLQUxuLWxlZ2xTeFFYUk12d2R4SlBsV2o0cjlQN3UyOXNPRnVGaVEwZmFyVUE?oc=5",
    "published": "Sat, 19 Sep 2026 21:30:11 GMT",
    "query": "ethereum"
   },
   {
+   "source": "gnews:ETHUSDT",
+   "title": "Crypto stocks surge as bitcoin and ethereum rally sharply By Investing.com - Investing.com Australia",
+   "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPNElBanp2NWFqQXhqQTVHTE5KaHJIMVN5Yms4TXBpOGNoYzJVX25xQjRqVTVsZkZxVnIycTlLSmxKbnB1ZmE0ZXBkNTc0aVVjWUZ3dXZnOG1xMDcyRGRqaVI2Zk85Z2dTaS1oYjZ6UFFZdTUwTTBfcGJuWHBqOVpHZ2tFUlRGWHRhVkdObkpOcV9fa0lpclFUdWtIRHRfN0ZmLTJ3b3pxNkcxOU51MTlpbDZzWG1GTFFndkE?oc=5",
+   "published": "Sat, 19 Sep 2026 04:17:06 GMT",
+   "query": "ethereum"
+  },
+  {
    "source": "gnews:BNBUSDT",
-   "title": "BNB Is Back Above $100 Billion: What Is Really Behind Binance Chain's Lead - CryptoTicker",
+   "title": "BNB Is Back Above $100 Billion: What Is Really Behind Binance Chain's Lead - cryptoticker.io",
    "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE11Qm5yN3BSa1JHbjdXeTBJc0tLcnJ3NW96UGZQakVoY1V3eHNYMElhYnRWWkJJVDV6MUdXbEQ0SmVrWWFEdHlZTy1QQVlONlVfNEpxUlFSZTVjQVZyT1BwdjdPZWRFWUFGcWc?oc=5",
    "published": "Sun, 20 Sep 2026 18:10:02 GMT",
    "query": "bnb binance coin"
@@ -612,7 +612,7 @@
   },
   {
    "source": "gnews:CSL.AX",
-   "title": "Why Did CSL Shares Rise as Healthcare Led the ASX 200? - kalkinemedia.com",
+   "title": "Why Did CSL Shares Rise as Healthcare Led the ASX 200? - Kalkine Media",
    "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOY2NpR1JOaDhvOGZ3ejU2M1FYdGt3b0M0c1pScEZzUmlvZEZTdlU4VTh4MHp4OGplMGxiOWFyRFI4OFNGRk94ekc1dTdVWWpacUdzbjVsYnMzVnpvZnFaeU9lU0RNVW56N0M1ZWhiUmwxZzBBZWpvNkljYzZBektGQkl2WXhqZnJJUENpYTVBQnlLeHBWbl9wSkZhLWxYRXZw?oc=5",
    "published": "Sun, 20 Sep 2026 23:58:00 GMT",
    "query": "CSL ASX shares"
@@ -677,14 +677,14 @@
    "source": "gnews:BTCUSDT",
    "title": "Bitcoin reclaims 50-week moving average: Is the bear market over? - TradingView",
    "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQWWw2d2kyZTdfRzllRzV3TDhSeVRsX2pFbXFERU5ObTlzVDNlN2pmRXZHOGlDRXM4eE02Ui1ZcVRSeFVTNUFLeXdkdldhM3BmaWpmRzRZVFhfemF2c0ZmR3VPVnU0RFZyYXBlejA5VnNjS0dDelpvd1JFS3M1N2tKUkV2b0o3NElZS0RXeTJrRXJrOFVDamxrSlEtWllWNDdLOVE5b0VGZHdVLUhzbEVudlhTUE1qV0NPVXBvZm52VUVrLUZYQUE?oc=5",
-   "published": "Mon, 21 Sep 2026 04:29:00 GMT",
+   "published": "Mon, 21 Sep 2026 04:29:59 GMT",
    "query": "bitcoin"
   },
   {
    "source": "gnews:BTCUSDT",
-   "title": "Bitcoin Price Forecast: BTC/USD 42% Rally Puts Major Trend Reversal in Play - FOREX.com",
-   "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQNzJMN2VldVU0MEFSbzgxcWVSZkwzTTc0Zm1TYmFpYVJqNEZpa19FNjVFMkZhakt1SUwwZm5oSjlrWG5mWnFBSmctbmJYUFBlUEhUVnRSZUc0UkQ0NndMd0t2QWt6OG5Ta0lqNTVzMFZaV05vNncyX2JVRFhYMTRjMkhDUzhpdHFfdFRjaHJVX2JNRlZDM2lpbW5ZazhsUy12Vm9RLW5zenp5WW9CQkpOU1ZSdDQ2RDVNN1FoQlpHTHV5VFAyODYzc2duTGdUQQ?oc=5",
-   "published": "Fri, 18 Sep 2026 21:08:00 GMT",
+   "title": "Cathie Wood sends bullish Bitcoin response to 'dead cat' warning - Yahoo Finance Singapore",
+   "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOd1N6OGtfbFlqa1JhUkhlVUVsTk1GajVOclRmUjZqWHNhN3Z5aFZFMnRzTzl4eEkteEdKUzRCcW52bUJrNXdlX1JEQ1JpMnVONU9vcy1UV05rYURHV1VYb0lrV0Y5NHh3b3ZfZWFoWTR4M0luYVh2a244QmVYUG5xQzVzNFZ3dUdwUWc?oc=5",
+   "published": "Sat, 19 Sep 2026 21:13:44 GMT",
    "query": "bitcoin"
   },
   {
@@ -703,7 +703,7 @@
   },
   {
    "source": "gnews:SOLUSDT",
-   "title": "Toly Wants Solana to Win All Trading: Here Is How Far the Numbers Actually Got - memeburn.com",
+   "title": "Toly Wants Solana to Win All Trading: Here Is How Far the Numbers Actually Got - Memeburn",
    "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWXlnTUZCLUJWeW1Yd21xRnFObWliVi1PQVdqWC1aYjFGZy1iVzY2bXhIbkllcV9SZnhpMHhhbnU2RVgtMVl0OGo5MHRhandjYkp6T3NMVklUcGZ0S0twRjVLWUZNTzNWdFJaUmlJcng3dlJCOU1jN0Ytb0pqd3BJQ1l1RVJmc2ZRNk1tdEJFeEZ1ZUJjeVVxSHhZWTg0bnNQ?oc=5",
    "published": "Sun, 20 Sep 2026 19:04:35 GMT",
    "query": "solana"
@@ -717,16 +717,16 @@
   },
   {
    "source": "gnews:SOLUSDT",
-   "title": "Solana Volatility Explained: Macro, ETF, and Risk Factors - CoinMarketCap",
-   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE15Q2dUWnBOZXlXa1RZZE4wQlhPR1VSTWhrSk1BT2pwNk93VFlObW5ad19fNEJncUo2M2tvRmNRaWVDNHpOWGVyYUUyQUszdV9kZWpYaHBPcWo1WVB3clBvYm9obXlPVjl6dnZKMHF5amo?oc=5",
-   "published": "Sun, 20 Sep 2026 23:05:00 GMT",
+   "title": "ZetaChain L1 shutdown vote passes; Solana move needs a second - altcoinbuzz.io",
+   "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOQVpveUtmWTIwbGJJY0xTYWxrRjd2M2J4ck55eERReC12UXRUMnNJV2d5SVVaZ0c3TFZ1RFVPZmUxWnh6M0VRaGwweFBOdkxsYzJHa3YzNkhoeGJCQk5oNmV2eVlnc2JhRnVBRTd1NV9ncjR3TGticlhJcUxWUGM1U1NlNmVIQUVVOEpva1NXN1FESUFFWWc?oc=5",
+   "published": "Mon, 21 Sep 2026 06:00:15 GMT",
    "query": "solana"
   },
   {
    "source": "gnews:SOLUSDT",
-   "title": "Solana Price Prediction: Missed SOL Below $1? AlphaPepe Gives Retail Another Shot at Finding a Crypto Before the Big Money Arrives - TechBullion",
-   "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQQ1lTdmtyWThoLXNIcjNFV0JOeHlfQlZBb3lXUmFrbkFJZXVuVS13NlBjMUhFRWM5ZnQ3Wjk0N1hwb1o4Nmg3OEx6cTl4cDUxNjhJTlVubHRPME10bU5tVWlEOWhaalNHcXFyV3dwT05WU2YwU1pQWHZxenIwTGxHQnFEeVN2YVdRU01GVjFWcTcyNi1Bd2lOWlFpQ3hpc0tvbUhfb0lxaWlEWURZWTEwNC0taC1HRUhTcEtKSHZzdTVYQ3RWbU93MTFZUW9wcU1rUUJpdW5lbDhZOHlSczdzMjNKNWpVTlU?oc=5",
-   "published": "Mon, 21 Sep 2026 00:47:15 GMT",
+   "title": "Solana Volatility Explained: Macro, ETF, and Risk Factors - CoinMarketCap",
+   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE15Q2dUWnBOZXlXa1RZZE4wQlhPR1VSTWhrSk1BT2pwNk93VFlObW5ad19fNEJncUo2M2tvRmNRaWVDNHpOWGVyYUUyQUszdV9kZWpYaHBPcWo1WVB3clBvYm9obXlPVjl6dnZKMHF5amo?oc=5",
+   "published": "Sun, 20 Sep 2026 23:05:00 GMT",
    "query": "solana"
   },
   {
@@ -759,16 +759,16 @@
   },
   {
    "source": "gnews:LINKUSDT",
-   "title": "Chainlink Connects 600+ Banks to Onchain Payments - TradingView",
-   "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOU3Y2U2dKQXY2VXJCOWRRWHhTaTBkMGJFMVh0c0NHTHJ2RkRJV29VcmYyeWZBbFpVMEtIRGRLa0dqSzlfWVdmQjF5Y0dUZkpBbFJVd0FYdnJxTk5RXzJQWWxTY1FSck1hU1dUSFlZZks3aWN2MHVmcnh3WW1BbnFrZG1adjdyMGUwSlJXWnBFbUZQSTZzcUNWWWVVZzlWa0NjNEhBa1ZQclVHcGVS?oc=5",
-   "published": "Thu, 17 Sep 2026 13:47:22 GMT",
+   "title": "Chainlink Jumps 6% to Reclaim $12, Approaches Key Multi-Year Resistance - finance.biggo.com",
+   "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE84M3RwbU01MElOR3B1dHU3T1hjUWxMeEVyVU5SZWQ5aUE0X2tPYkFldlFkdTlmcEZSZU9iMGlIQUFOSlJLZ3A4Q3Vzb0VSQ3FTOUdvTXZ5bkt4U1ZwSXZOcG8tRkRqSjdSM08tOWduM2w0WTVfMXc?oc=5",
+   "published": "Sat, 19 Sep 2026 18:47:16 GMT",
    "query": "chainlink"
   },
   {
    "source": "gnews:LINKUSDT",
-   "title": "Chainlink Jumps 6% to Reclaim $12, Approaches Key Multi-Year Resistance - finance.biggo.com",
-   "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE84M3RwbU01MElOR3B1dHU3T1hjUWxMeEVyVU5SZWQ5aUE0X2tPYkFldlFkdTlmcEZSZU9iMGlIQUFOSlJLZ3A4Q3Vzb0VSQ3FTOUdvTXZ5bkt4U1ZwSXZOcG8tRkRqSjdSM08tOWduM2w0WTVfMXc?oc=5",
-   "published": "Sat, 19 Sep 2026 18:47:16 GMT",
+   "title": "Bitcoin Starts the Week Flat, But Chainlink Is Flying\u2014Here's Why - Decrypt",
+   "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBudWJEXzRZSjEtVHZZVExyaFZNSFNQX1JaamtaZllCZ3Z6aGgtTXdKZmxKOHJyZXRTXzJmLXpwMU5XSWc0anVsTm9pa21ObFEzWDR3QUg0N3Q2eVVGLVU3cVdLdnJ5M2xvSUUzWGVWNlJoSjBkZGJR0gF_QVVfeXFMUDYzYUpLS3YySVh4VkFqUE9CMW5qUmpWSGY4cURvUlh2N1hyUl9NWV82VHBLUG1lMHYydF9ETVlydXBsNlhjUXcteUlDbU9KOEpzYy1RVnFBY1JxSG92MTRJcUZyZFZWd3NfcXNtQUVGYlRaRFQxYlN6bzI4dkxnYw?oc=5",
+   "published": "Mon, 07 Sep 2026 07:00:00 GMT",
    "query": "chainlink"
   },
   {
@@ -808,9 +808,9 @@
   },
   {
    "source": "gnews:MSFT",
-   "title": "10 stocks, including MCD and MSFT, announce div... - Pluang",
-   "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5MMl96ZS1fSDVOTGJoMzVzTTJydjZlV3pTOFB4bnRXUW5yNWw1NGRHOXpiYnNHeWpKS0hEZURGQUVPVjNicTEyVEljRlp3Y3kwekE3ZVhLMHY3dnZ4enB2dDU5OHZfbVZTZG5vT25DS29mcFYybVUyTklXZw?oc=5",
-   "published": "Mon, 21 Sep 2026 01:26:06 GMT",
+   "title": "MSFT 260821 330.00P (MSFT260821P330000) Stock Community & Discussion - Moomoo",
+   "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE95eUc0X3hHOF9rX1ZPc3VQUE91SjlaREk3enNRSGVyY3dPcXY1bEt5cWIzMlppMnRLVlFqM01KMjVMcEJSa0luU1V3U1FzZjU2RlVNcnF0ZThlOEQyaVJmcC10aEVKcC1UX1B6eEVB?oc=5",
+   "published": "Fri, 18 Sep 2026 21:37:00 GMT",
    "query": "MSFT stock"
   },
   {
@@ -822,7 +822,7 @@
   },
   {
    "source": "gnews:ADAUSDT",
-   "title": "Charles Hoskinson says Cardano no longer comes first \u2013 its treasury vote explains why - cryptoslate.com",
+   "title": "Charles Hoskinson says Cardano no longer comes first \u2013 its treasury vote explains why - CryptoSlate",
    "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQU0ZZNE9Ic0x6Zm1uSW9WQ1hGRFNOMEVWNFN6LVREaG1fcGZBOVAtVWdBR1B4WTJ0SjYtT01uMFRaLUpZY0stNm5hMHJmSDlKTzZKMGx5c29GM3l3dFJuMVZqcld6V1R0eU1vT2JFZTVKZEdSWjhjQk9hT3NDTHJrcGpIcUF4VGZpVmFGWktnVDE1cnhyN0dYVlNxRW1PRTdDWUpyRUFESWVzOURF?oc=5",
    "published": "Sun, 20 Sep 2026 21:30:57 GMT",
    "query": "cardano"
@@ -850,52 +850,10 @@
   },
   {
    "source": "gnews:ADAUSDT",
-   "title": "ADA Price Cardano TA ADA Technical Analysis - Altcoin Buzz",
+   "title": "ADA Price Cardano TA ADA Technical Analysis - altcoinbuzz.io",
    "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOMDd1ejdSOHlhUUhnMkNxVXFiQ0JKRk45bFRnLVhiYjhXYnNNUy1vNFZsY0Nud2lIWlZfbGhiN1RKMjQ4c3N6eHdFMzNIWUl1U1JqckxMcE5Cekd2LU4xX0dHNm5vWEllSEhia1JJdk1RaTlQUDZyaFpJQnlJcWV0b1ducHZKa1dmWHlYaE5DZXRpQzR4NEVZd1haYzg?oc=5",
    "published": "Fri, 18 Sep 2026 08:42:26 GMT",
    "query": "cardano"
-  },
-  {
-   "source": "gnews:AVAXUSDT",
-   "title": "AVAX Eyes 90% Price Rally As Wall Street Tests Avalanche for 24/7 Tokenized Trading - Yahoo Finance",
-   "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxObkFKdElXU1BIdF9PaFoxZVZOa05qRk9hQWhRYXpFREJ6ZUNxQ3FadnBVRFM5WktRXzZpT1k1SHlXeC1CcnpBUzQ4V0lmc1BJOHVoRHZ6dVJSeDR5OWF4ZEtab1E3TkdYQ2NOaThSWTR0dVd5SU5VajdNdHFLMGZXSmlWNVlvOUREUFlIcXMxenNCWXM?oc=5",
-   "published": "Sun, 20 Sep 2026 14:04:55 GMT",
-   "query": "avalanche crypto"
-  },
-  {
-   "source": "gnews:AVAXUSDT",
-   "title": "Avalanche Price Prediction: AVAX Surges Toward $12 Mark, Expected to See Another 30% Upside - TradingKey",
-   "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOVjc3aWxpRnFjaWpOMWtDaHkyQzFkN2R3OVA4TW04T2J1SmlmVEVDX0NWenB4SXVoU21yRTZONzl4YnBhY0VWM2Z5UnZRSHZCQi1tcDBTdk9ycV9ZUEVtMnFDYjRmN2lNZWstUEdSY3RIMllfRE9qeTUxT0YzRTc1eTcxRGhzSnhXbUJwaFhRaVotdkMzQWtVSnhYQmNYb3pYSGRnRFNYcy11Mjl3VV9GaWlGRkJLWTFqQ2prUC1nX2EtQQ?oc=5",
-   "published": "Mon, 21 Sep 2026 02:31:36 GMT",
-   "query": "avalanche crypto"
-  },
-  {
-   "source": "gnews:AVAXUSDT",
-   "title": "Avalanche Price Above $11: AVAX, HYB Fund, Helicon - CryptoTicker",
-   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5LQlZVYnRWMDlPRFRNMENObWtpZTV1TGNacW90ZFdhaUVCbnZUMXdtelk4SENxX2J5TXNBNmQ5OXFMUkhuTm1KUzVGN013UkJsLVRCWm91RnBOamM5UEtiWjB2eHF5cmx0dHdubWcySDA?oc=5",
-   "published": "Mon, 21 Sep 2026 00:11:05 GMT",
-   "query": "avalanche crypto"
-  },
-  {
-   "source": "gnews:AVAXUSDT",
-   "title": "Avalanche (AVAX) Surges 17%: Altcoin Rotation, Breakout, RWA - CoinMarketCap",
-   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5QbzFhLWU1U3JlbC1QWlBJUlZLcUhDR0t2YlQzcFpDZU0yWlFxLW9vOTg2aVFPTV9yOWVFSWducUNPcGc4X1IwUzRnM2c5bnVVMDJUMnItMG13Vk05NmVrc2ZGcU1OdmloM01YY004Zjg?oc=5",
-   "published": "Mon, 21 Sep 2026 04:05:00 GMT",
-   "query": "avalanche crypto"
-  },
-  {
-   "source": "gnews:AVAXUSDT",
-   "title": "Avalanche (AVAX) Price Prediction: AVAX Breaks Falling Wedge as Bulls Target $12\u2013$13 - Brave New Coin",
-   "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNcXhFN2NzT1RtZFZ3TFNCS2RpdmRUX3FydW5pTE5qQ2lrTjVHd0RoWE4xT1YyZ3M4NTlwaDJoQWFhQ0FETTIzUHk0QVA0RmlySlg4QjVZRmVVMndsaFV6bGJtT2dRQWJfbGpiblJQUVo3VEZtNEx4Z3VIVWhDcXk5eGRYamFXRVExUHNuMVJzcmJMNWh1OXNmMU8weS1wUm1QZGpDVU1iTFpXamY4Ql9INEJTVQ?oc=5",
-   "published": "Sun, 20 Sep 2026 13:24:48 GMT",
-   "query": "avalanche crypto"
-  },
-  {
-   "source": "gnews:AVAXUSDT",
-   "title": "Avalanche Price Rises 4.65% as Tokenization News Boosts AVAX - Altcoin Buzz",
-   "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFA0VU9WT21McXBaZW9DbmNuQnBIZ0ZfMFlWTGFfQ1dUM0pJaGtXbVpBbnNLcEx2Q3MtLVRUMWFESW1hZDBKSTFETmh5T1B5Nm5KYm01Z2tySU1WcEYtaUtvUG1qdWQ3RmE3c2ZGOUdyVE55Uk1WOElGc1czVQ?oc=5",
-   "published": "Thu, 17 Sep 2026 06:33:12 GMT",
-   "query": "avalanche crypto"
   },
   {
    "source": "gnews:AMD",
@@ -920,16 +878,16 @@
   },
   {
    "source": "gnews:AMD",
-   "title": "Advanced Micro Devices (AMD) Powers GMKtec AI Launch, Is The Valuation Already Too Rich? - simplywall.st",
-   "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQbkZWbjRkTHVxVjZ2VENFWThfajkyTlptLUpXYzRKbEJrdUt4Y2lPVzZ0LTRwLThYZUNlNzlwT0tQaWt0R3lvanNXTFVKQllfWFJCY0stS2tYR2tPYzV2dEJ0dWZnTGt2OGlISGRXamdwXzcxOTYtcjd2V3YyVkNxcnc1eUlzeGhWZXRUV3BHS29aalk5ZUJvT2hsNTMtTGZTc2dTaVZPYmRjRmdtOG5xeG9OcEhNNVFSWFA4ZFdDZ0ZmczM1N3hyMEk2bW1EOWFuR1NXbGFWa1lrMHpaaEdV0gHkAUFVX3lxTFB6dU1XVXl4Z0NCSS1jV25aLWRwUVJ6ZUhsVG1NZmw0RWdYU04zS2NqcVdIaExwVjNlakluSjJZMFNiRkVrTkJxd0FjV0RWZHhYU2h0a2dyaGNTYXM5M2ZONnY4VHRZMHBkZ3FaNGZLTS13dzhHOHZlbU9CbGJWa1FRS0N0VjF0aDlsdTVJQ3JQQ2VwSC16RElERnVpS1ozMlg3UTRpNFpiQkRTNlpKcUlHQnp2a2t1Q29jd3Z1Nk02eUlENUE1S2FsS1pLZGdwbmRpazY2SU5RelM4ejR3bWpTeXQ1dQ?oc=5",
-   "published": "Sun, 20 Sep 2026 14:44:47 GMT",
+   "title": "Why AMD Stock Jumped Today - The Motley Fool",
+   "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1vYXMxcUFJQ2R4WWRSY0xfM2ZtOGFoQjFyblk0OTdSa2oya1V1elNGRng2eVpPcE5jS2hwRW5pbjJDdGR0VDNMV19EanQ4LUxaT2R2MGdvbWVHRE9WRDltc2hScXpNOFphUEZTdmVCVFRlZnRlVUVWUVJmQUE?oc=5",
+   "published": "Fri, 18 Sep 2026 00:15:00 GMT",
    "query": "AMD stock"
   },
   {
    "source": "gnews:AMD",
-   "title": "Better Artificial Intelligence Stock: Advanced Micro Devices vs. SK Hynix - The Motley Fool",
-   "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQdWJxd3JwRE1sUVJ2YU82Nkg1X0FnUHFnQzJ3aE9mR2hVbVg1ZjJ3QUJab2JYendXZ1VSOWFiNjFkcFpDdFpkV2ZVWEJISnhsUTlPN3ZHR2VYaDRGS1QzQUlfMmFXT3l4ZW1DRjA0YkcxVmdRUEN1eVljVlNwYnRfNldWb1J1bVNJX3RXM3ZLZUpFbEZXbW9lM3llam12cEw5VEZWZUtkcXBiekpXMGZDU09GMUtiREFWLXFkejBxamsxQQ?oc=5",
-   "published": "Sun, 20 Sep 2026 20:08:00 GMT",
+   "title": "Advanced Micro Devices (AMD) Powers GMKtec AI Launch, Is The Valuation Already Too Rich? - simplywall.st",
+   "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQbkZWbjRkTHVxVjZ2VENFWThfajkyTlptLUpXYzRKbEJrdUt4Y2lPVzZ0LTRwLThYZUNlNzlwT0tQaWt0R3lvanNXTFVKQllfWFJCY0stS2tYR2tPYzV2dEJ0dWZnTGt2OGlISGRXamdwXzcxOTYtcjd2V3YyVkNxcnc1eUlzeGhWZXRUV3BHS29aalk5ZUJvT2hsNTMtTGZTc2dTaVZPYmRjRmdtOG5xeG9OcEhNNVFSWFA4ZFdDZ0ZmczM1N3hyMEk2bW1EOWFuR1NXbGFWa1lrMHpaaEdV0gHkAUFVX3lxTFB6dU1XVXl4Z0NCSS1jV25aLWRwUVJ6ZUhsVG1NZmw0RWdYU04zS2NqcVdIaExwVjNlakluSjJZMFNiRkVrTkJxd0FjV0RWZHhYU2h0a2dyaGNTYXM5M2ZONnY4VHRZMHBkZ3FaNGZLTS13dzhHOHZlbU9CbGJWa1FRS0N0VjF0aDlsdTVJQ3JQQ2VwSC16RElERnVpS1ozMlg3UTRpNFpiQkRTNlpKcUlHQnp2a2t1Q29jd3Z1Nk02eUlENUE1S2FsS1pLZGdwbmRpazY2SU5RelM4ejR3bWpTeXQ1dQ?oc=5",
+   "published": "Sun, 20 Sep 2026 14:44:47 GMT",
    "query": "AMD stock"
   },
   {
@@ -940,10 +898,52 @@
    "query": "AMD stock"
   },
   {
+   "source": "gnews:XLE",
+   "title": "Copper, XLE and CAC 40 Forecasts: Rising Yields Shape Today\u2019s Watch List - fxempire.com",
+   "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOeUR2bk5oUWFXNnlJUi04cWhRb1lGQjRsVzBTWjRINWdaSWN2alYtdko2SHRUZ1Y3RC0zSEpOcWJobGhPanY3N245Y3VWY2ladERLQlB3T041YmFucUswTmdyRFh6LVlLRXpidng2TlNvb0tYQi1KcHEwaW9GY2pla1l4dEZLUUVCMGNyRUlCazNQSTB2VnZYeUxlM210LWRWSVY5VklPVVI0RGJkeHozbWg3Zm1XWXQ1bl9jZm5YRGowTVpnWXlz?oc=5",
+   "published": "Fri, 18 Sep 2026 13:14:19 GMT",
+   "query": "XLE ETF"
+  },
+  {
+   "source": "gnews:XLE",
+   "title": "This Energy ETF Has Been Outperforming the Nasdaq-100 This Year - TradingView",
+   "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOZjg4cmJkRDhNZEhFOEZsRHpmZEE1THVzamFnYmJ2dkROdTBvdHNaOHhLVEg5aFhBTkNnRFVsek5MenlfanJaSlFQVGxNaWYyUDhWZnZPeDlKdzRmb2tjaTFwM01yVmt4LWlYU2lqZW1nc1pvOEo0Tm9iSjNiemlXWmVRV2J2em8wUi1tM2hOQlZHR0JlVzYwdHFEdkpWWEcyWGgxSlBMV2hhX3FoLXotNVpySWlLelQxZ1dOa1FBSG4?oc=5",
+   "published": "Tue, 15 Sep 2026 15:13:00 GMT",
+   "query": "XLE ETF"
+  },
+  {
+   "source": "gnews:XLE",
+   "title": "Should You Invest in the State Street Energy Select Sector SPDR ETF (XLE)? - Yahoo Finance",
+   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPYTBWMkcyYjNuNExmRy1OTGFrZmZOdDhvckMzZlplN29tUUVkeHFienRBaGdDMU1xQWtYMDE1WHNUQ3YtZW50ZF8tOGpDMGxyREpBYWszOEoyLV9FNjFsUUxURG1Ka1JuODdnZjFwWEh2dDNJQ1FwUGVSYVk1c1k3LXRUdlF5aTNNZ3hnOVlvYnhMUGcy?oc=5",
+   "published": "Tue, 25 Aug 2026 07:00:00 GMT",
+   "query": "XLE ETF"
+  },
+  {
+   "source": "gnews:XLE",
+   "title": "5 Best Oil ETFs for 2026 and How to Invest - The Motley Fool",
+   "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOZkdZWVFtZnd0RkladUdvMVdZZ0RuemstZElXR2FST1E0VHJ3WldQcFpOS1Y1cmJmelpQQ2VCSG4yWThKSVNTOGJPQjhfaVFsLTI0Tktsck9qX3RLak5jZDBpWHVTRXByNkhWek5VNjVLRWJQS0Q4dDlFMS15aGNHWlpJTHpocGY1TVRXU2hwa1pDeXQzUjFF?oc=5",
+   "published": "Mon, 07 Sep 2026 07:00:00 GMT",
+   "query": "XLE ETF"
+  },
+  {
+   "source": "gnews:XLE",
+   "title": "Energy ETFs XLE and XOP seen as strong buys wit... - Pluang",
+   "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQWlc5WExWdng3amE3aFA0c09BM09uRGkzbm5fckFNcjVwVmNER2JmbVlhUW5TMjhVcmV6OWQ0ak9jc1ZVQXBGV08yeVBTZUNzZExEZFg3NEFfUEVOX041WDZGNlJ4NDBGb0lQUkpQVGJ1S3dIMk00YU9DdEZ5SDJSX3RfMldYdzRtdmpMbVV6VzRxbjdQRU5kMng4U054WGUyVFdTQVB1TDJYY2M?oc=5",
+   "published": "Tue, 08 Sep 2026 09:25:38 GMT",
+   "query": "XLE ETF"
+  },
+  {
+   "source": "gnews:XLE",
+   "title": "Boxpy was a term for the KOSPI in the local stock market. However, there was a dark period when the - \ub9e4\uc77c\uacbd\uc81c",
+   "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5yWnl5cFdUeVJYM3pFb1lMT1dpNnIweFdJTWZfOUpiSkNJUjJHRjJLdExIN0c4T0dlZHdBNnJjU0JUSmdSanJZUDhLQkZRcHc?oc=5",
+   "published": "Sun, 20 Sep 2026 07:11:33 GMT",
+   "query": "XLE ETF"
+  },
+  {
    "source": "gnews:AAPL",
    "title": "Apple (AAPL) Stock Could Look 31% Overvalued On New Health Device Launches - simplywall.st",
-   "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPNzl2bjRPYnFzd3ZPUHVlczNoVE56NElPcnBoaDNILTRzbXhtTnFYNVQwT1dIOFpKLXpiM0dIX3F2MnN5LWNXVE9MMlE2RjlLakRWdHAtOXBCOXoyM0V2SThVMjhhT0VRdm5xZjJ1bi0zYmplanhGMXlDZkppREFCWUpzbkUybzZKallvWHFWdEVKTWJ4WXBUTmpaajlKZnNVY096TGw5aWtNVmF2VzFLOENQTkFESEhiT0taM0hjUmtCQdIBwgFBVV95cUxPNzl2bjRPYnFzd3ZPUHVlczNoVE56NElPcnBoaDNILTRzbXhtTnFYNVQwT1dIOFpKLXpiM0dIX3F2MnN5LWNXVE9MMlE2RjlLakRWdHAtOXBCOXoyM0V2SThVMjhhT0VRdm5xZjJ1bi0zYmplanhGMXlDZkppREFCWUpzbkUybzZKallvWHFWdEVKTWJ4WXBUTmpaajlKZnNVY096TGw5aWtNVmF2VzFLOENQTkFESEhiT0taM0hjUmtCQQ?oc=5",
-   "published": "Sun, 20 Sep 2026 23:35:10 GMT",
+   "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQNkx0YlFUTWdTVUZhcGtqOTBYdTM0SG85bFNQOW9qaXNnaTJER1p2dXlCUU1lbmU4TktYMm1fN3NzNWtVOFlDcEhUTk1FZUEwSF94d1VQUFphaGllcHRlNEpzcWk3UGhtc040TkdQTDBUenhPVGFlUW9CWTdUc0lVTTB4Y2Jjc0s5aERrUDVnblBjM20wbnpvcEJDQnZqZEtZZ01BZWJyR0pCaDl5VVprcmx2d0x6Vk9hTmlSSNIBwgFBVV95cUxPNzl2bjRPYnFzd3ZPUHVlczNoVE56NElPcnBoaDNILTRzbXhtTnFYNVQwT1dIOFpKLXpiM0dIX3F2MnN5LWNXVE9MMlE2RjlLakRWdHAtOXBCOXoyM0V2SThVMjhhT0VRdm5xZjJ1bi0zYmplanhGMXlDZkppREFCWUpzbkUybzZKallvWHFWdEVKTWJ4WXBUTmpaajlKZnNVY096TGw5aWtNVmF2VzFLOENQTkFESEhiT0taM0hjUmtCQQ?oc=5",
+   "published": "Sun, 20 Sep 2026 23:35:09 GMT",
    "query": "AAPL stock"
   },
   {
@@ -1011,7 +1011,7 @@
   },
   {
    "source": "gnews:DBC",
-   "title": "This 1 Commodity ETF Is up 42% as It\u2019s the Perfect Inflation Hedge - 24/7 Wall St.",
+   "title": "This 1 Commodity ETF Is up 42% as It\u2019s the Perfect Inflation Hedge - 247wallst.com",
    "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOSUs0R0o1a1RUc1FLOXhmaUgzeURSN3d0U0Z2UlNJengwOG45UVlpU0dSeVJPbUhaVUlLZUkyNU5LcmNnWDhULTBLb1M0TjFGYUpiWVkyNWJVVVo4OEJEZy15TlhRMUo0M2xRWVhqWVEyVkVSS2VHTWZwSTVLWUc2NXlSemh6TDlvQldNei1GM3JoNmhfU0ZXNFRyS05FcGZsRWdfZjFKZDNIMHpV?oc=5",
    "published": "Fri, 17 Apr 2026 07:00:00 GMT",
    "query": "DBC ETF"
