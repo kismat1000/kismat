@@ -1,0 +1,44 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>CVSS scores for CVE-2021-44228</title>
+<style>
+  :root{--ink:#0b0b0b;--ink2:#52514e;--muted:#8a8984;--grid:#e6e5e1;--bar:#2a78d6;--surface:#ffffff}
+  body{margin:0;background:var(--surface);font-family:"Liberation Sans",Arial,sans-serif;color:var(--ink)}
+  .fig{width:1000px;padding:24px 28px 18px}
+  h2{font-size:17px;margin:0 0 2px}
+  .sub{font-size:13px;color:var(--ink2);margin:0 0 10px}
+  text{font-family:"Liberation Sans",Arial,sans-serif}
+</style></head>
+<body><div class="fig">
+<h2>CVE-2021-44228 scored for the power company's assets</h2>
+<p class="sub">Independently determined. Score out of 10; shaded bands mark the CVSS v3.1 qualitative severity ratings.</p>
+<svg id="c" width="944" height="378" role="img" aria-label="Horizontal bar chart of CVSS scores"></svg>
+</div>
+<script>
+const data=[
+ ["CVSS v2.0 base","AV:N/AC:M/Au:N/C:C/I:C/A:C",9.3,"High (v2 scale)"],
+ ["CVSS v3.1 base","AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",10.0,"Critical"],
+ ["CVSS v3.1 temporal","E:H/RL:O/RC:C",9.5,"Critical"],
+ ["Env: SIMATIC Report Mgr (exposed)","CR:M/IR:H/AR:H",9.5,"Critical"],
+ ["Env: Connect X200/X300 gateway","+MAC:H (hardened remote)",8.7,"High"],
+ ["Env: OPC UA stack (deep OT)","+MAV:A/MAC:H (segmented)",8.0,"High"],
+ ["CVSS v4.0 base","AV:N/AC:L/AT:N/PR:N/UI:N/VC:H..SA:H",10.0,"Critical"],
+];
+const svg=document.getElementById('c'),NS="http://www.w3.org/2000/svg";
+const L=250,R=110,T=26,rowH=46,barH=22,W=944-L-R;
+const x=v=>L+v/10*W;
+function el(n,a,txt){const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;svg.appendChild(e);return e}
+const bands=[[0,4,"Low",'#ffffff'],[4,7,"Medium",'#f7f6f3'],[7,9,"High",'#efeeea'],[9,10,"Critical",'#e6e5e1']];
+const H=T+data.length*rowH;
+bands.forEach(([a,b,n,f])=>{el('rect',{x:x(a),y:T,width:x(b)-x(a),height:H-T,fill:f});el('text',{x:(x(a)+x(b))/2,y:T-9,'text-anchor':'middle','font-size':12,fill:'#52514e'},n)});
+[0,2,4,6,8,10].forEach(v=>{el('line',{x1:x(v),x2:x(v),y1:T,y2:H,stroke:'#d9d8d4','stroke-width':1});el('text',{x:x(v),y:H+18,'text-anchor':'middle','font-size':12,fill:'#52514e'},v.toFixed(0))});
+data.forEach(([lab,vec,v,sev],i)=>{
+  const y=T+i*rowH+(rowH-barH)/2;
+  el('text',{x:L-12,y:y+9,'text-anchor':'end','font-size':13.5,'font-weight':700,fill:'#0b0b0b'},lab);
+  el('text',{x:L-12,y:y+25,'text-anchor':'end','font-size':11,fill:'#52514e'},vec);
+  const w=x(v)-x(0);
+  el('path',{d:`M${x(0)} ${y} H${x(0)+w-4} a4 4 0 0 1 4 4 V${y+barH-4} a4 4 0 0 1 -4 4 H${x(0)} Z`,fill:'#2a78d6'});
+  el('text',{x:x(v)+8,y:y+10,'font-size':14,'font-weight':700,fill:'#0b0b0b'},v.toFixed(1));
+  el('text',{x:x(v)+8,y:y+25,'font-size':11,fill:'#52514e'},sev);
+});
+el('line',{x1:x(0),x2:x(0),y1:T,y2:H,stroke:'#52514e','stroke-width':1.5});
+</script></body></html>

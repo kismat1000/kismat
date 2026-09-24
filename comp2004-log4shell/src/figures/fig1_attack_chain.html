@@ -1,0 +1,45 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Log4Shell attack chain</title>
+<style>
+  :root{--ink:#0b0b0b;--ink2:#52514e;--muted:#8a8984;--line:#d9d8d4;--blue:#2a78d6;--blue-bg:#eaf2fc;--orange:#eb6834;--orange-bg:#fdefe8;--surface:#ffffff}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--surface);font-family:"Liberation Sans",Arial,sans-serif;color:var(--ink)}
+  .fig{width:1000px;padding:28px 28px 24px}
+  .row{display:grid;grid-template-columns:repeat(5,1fr);gap:34px;position:relative}
+  .step{border:2px solid var(--line);border-radius:10px;padding:14px 14px 16px;background:#fff;position:relative;min-height:170px}
+  .step.victim{border-color:var(--blue);background:var(--blue-bg)}
+  .step.attacker{border-color:var(--orange);background:var(--orange-bg)}
+  .num{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;font-weight:700;font-size:14px;color:#fff;background:var(--blue);margin-bottom:8px}
+  .attacker .num{background:var(--orange)}
+  h3{margin:0 0 6px;font-size:16px;line-height:1.2}
+  p{margin:0;font-size:13px;line-height:1.35;color:var(--ink2)}
+  code{font-family:"Liberation Mono",monospace;font-size:12px;color:var(--ink)}
+  .arrow{position:absolute;top:72px;right:-30px;width:26px;height:18px}
+  .det-row{display:grid;grid-template-columns:repeat(5,1fr);gap:34px;margin-top:14px}
+  .det{border:1.5px dashed var(--ink2);border-radius:8px;padding:8px 10px;font-size:12px;line-height:1.3;color:var(--ink)}
+  .det b{display:block;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink2);margin-bottom:2px}
+  .empty{border:none}
+  .legend{display:flex;gap:22px;margin-top:18px;font-size:12px;color:var(--ink2);align-items:center}
+  .sw{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:-2px;margin-right:6px}
+</style></head>
+<body><div class="fig">
+  <div class="row">
+    <div class="step attacker"><span class="num">1</span><h3>Crafted input</h3><p>Attacker places a <code>${jndi:…}</code> lookup string in any field the application logs (HTTP header, form field, username, chat message).</p>
+      <svg class="arrow" viewBox="0 0 26 18"><path d="M0 9h20M14 2l8 7-8 7" fill="none" stroke="#52514e" stroke-width="2.5"/></svg></div>
+    <div class="step victim"><span class="num">2</span><h3>Log4j logs it</h3><p>Application logs the input with a vulnerable Log4j 2 version (2.0-beta9 to 2.15.0). Lookup substitution evaluates the embedded expression.</p>
+      <svg class="arrow" viewBox="0 0 26 18"><path d="M0 9h20M14 2l8 7-8 7" fill="none" stroke="#52514e" stroke-width="2.5"/></svg></div>
+    <div class="step victim"><span class="num">3</span><h3>Outbound JNDI lookup</h3><p>The server itself opens an outbound LDAP, RMI or DNS connection to a host named by the attacker.</p>
+      <svg class="arrow" viewBox="0 0 26 18"><path d="M0 9h20M14 2l8 7-8 7" fill="none" stroke="#52514e" stroke-width="2.5"/></svg></div>
+    <div class="step attacker"><span class="num">4</span><h3>Malicious reference</h3><p>Attacker-controlled directory server returns a reference pointing to a remote Java class.</p>
+      <svg class="arrow" viewBox="0 0 26 18"><path d="M0 9h20M14 2l8 7-8 7" fill="none" stroke="#52514e" stroke-width="2.5"/></svg></div>
+    <div class="step victim"><span class="num">5</span><h3>Remote code execution</h3><p>The JVM loads and runs the class with the application's privileges: shells, miners, ransomware, backdoors.</p></div>
+  </div>
+  <div class="det-row">
+    <div class="det"><b>SIEM detection point</b>Web server, WAF and proxy logs: lookup strings in requests, including obfuscated forms</div>
+    <div class="det"><b>SIEM context</b>Vulnerability scanner / SBOM inventory: which assets run vulnerable Log4j</div>
+    <div class="det"><b>SIEM detection point</b>Firewall, proxy and DNS logs: unexpected egress from servers to LDAP/RMI ports</div>
+    <div class="det empty"></div>
+    <div class="det"><b>SIEM detection point</b>EDR / Sysmon / auditd: Java spawning shells, new files, crypto-mining traffic</div>
+  </div>
+  <div class="legend"><span><span class="sw" style="background:#fdefe8;border:2px solid #eb6834"></span>Attacker-controlled step</span><span><span class="sw" style="background:#eaf2fc;border:2px solid #2a78d6"></span>Victim system step</span><span><span class="sw" style="border:1.5px dashed #52514e"></span>Where a SIEM can observe it</span></div>
+</div></body></html>

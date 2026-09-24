@@ -1,0 +1,39 @@
+<section id="chain" data-transition="fade" style="background:#101826; color:#EEF3FA; font-family:'IBM Plex Sans', Arial, sans-serif; padding:112px 128px 160px; display:flex; flex-direction:column; justify-content:center; gap:52px">
+  <div style="display:flex; flex-direction:column; gap:10px">
+    <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#7FA8E6; letter-spacing:2px; text-transform:uppercase">How the attack unfolds</p>
+    <h2 style="font-size:60px; font-weight:600; line-height:1.05; color:#FFFFFF">Five steps &#8212; and the server does most of them itself</h2>
+  </div>
+  <div style="display:flex; gap:20px; align-items:stretch">
+    <div style="flex:1; background:#3A2320; border:1px solid #D14343; border-radius:16px; padding:30px 26px; display:flex; flex-direction:column; gap:14px">
+      <p style="font-family:'JetBrains Mono', monospace; font-size:30px; color:#E88; font-weight:600">1</p>
+      <h3 style="font-size:30px; font-weight:600; line-height:1.1">Crafted input</h3>
+      <p style="font-size:23px; color:#B9C4D4; line-height:1.35">Attacker puts a JNDI lookup in a logged field</p>
+    </div>
+    <div style="flex:1; background:#16233A; border:1px solid #2E6FD6; border-radius:16px; padding:30px 26px; display:flex; flex-direction:column; gap:14px">
+      <p style="font-family:'JetBrains Mono', monospace; font-size:30px; color:#7FA8E6; font-weight:600">2</p>
+      <h3 style="font-size:30px; font-weight:600; line-height:1.1">Log4j logs it</h3>
+      <p style="font-size:23px; color:#B9C4D4; line-height:1.35">Vulnerable version evaluates the expression</p>
+    </div>
+    <div style="flex:1; background:#16233A; border:1px solid #2E6FD6; border-radius:16px; padding:30px 26px; display:flex; flex-direction:column; gap:14px">
+      <p style="font-family:'JetBrains Mono', monospace; font-size:30px; color:#7FA8E6; font-weight:600">3</p>
+      <h3 style="font-size:30px; font-weight:600; line-height:1.1">Outbound lookup</h3>
+      <p style="font-size:23px; color:#B9C4D4; line-height:1.35">Server calls out over LDAP / RMI / DNS</p>
+    </div>
+    <div style="flex:1; background:#3A2320; border:1px solid #D14343; border-radius:16px; padding:30px 26px; display:flex; flex-direction:column; gap:14px">
+      <p style="font-family:'JetBrains Mono', monospace; font-size:30px; color:#E88; font-weight:600">4</p>
+      <h3 style="font-size:30px; font-weight:600; line-height:1.1">Malicious class</h3>
+      <p style="font-size:23px; color:#B9C4D4; line-height:1.35">Attacker's server returns a code reference</p>
+    </div>
+    <div style="flex:1; background:#16233A; border:1px solid #2E6FD6; border-radius:16px; padding:30px 26px; display:flex; flex-direction:column; gap:14px">
+      <p style="font-family:'JetBrains Mono', monospace; font-size:30px; color:#7FA8E6; font-weight:600">5</p>
+      <h3 style="font-size:30px; font-weight:600; line-height:1.1">Code executes</h3>
+      <p style="font-size:23px; color:#B9C4D4; line-height:1.35">JVM runs it &#8212; shells, miners, ransomware</p>
+    </div>
+  </div>
+  <div style="display:flex; gap:24px; align-items:center">
+    <p style="font-size:24px; color:#8A97A8"><b style="color:#E88">Red</b> = attacker-controlled</p>
+    <p style="font-size:24px; color:#8A97A8"><b style="color:#7FA8E6">Blue</b> = the victim server acting on its own</p>
+  </div>
+  <p style="position:absolute; left:128px; bottom:72px; font-size:24px; color:#6E7A8C">Steps 2, 3 and 5 all happen inside your own infrastructure &#8212; which is exactly why a SIEM can see them.</p>
+  <aside>The attack has five steps, and the important thing is who performs them. In red, the attacker only controls two: crafting the input, and standing up the malicious directory server. Everything in blue — logging the string, making the outbound lookup, and executing the code — the victim's own server does. That's what makes it so dangerous: the server attacks itself. But notice the flip side, at the bottom: steps two, three and five all happen inside your infrastructure, which means your logs can see them. Hold that thought for Task two.</aside>
+</section>
