@@ -12,7 +12,7 @@ const pptxgen = require("pptxgenjs");
 
 const DECK = path.join(__dirname, "..", "presentation", "deck", "project", "slides");
 const FIG = path.join(__dirname, "figures");
-const OUT = path.join(__dirname, "..", "presentation", "AStudent_COMP2004_Assignment2_Slides_2026.pptx");
+const OUT = path.join(__dirname, "..", "presentation", "KAcharya_COMP2004_Assignment2_Slides_2026.pptx");
 
 // ---- palette ----------------------------------------------------------
 const NAVY = "101826", NAVY_CARD = "16233A", PAPER = "F6F8FB", CARD = "FFFFFF";
@@ -38,7 +38,7 @@ function notes(id) {
 const pres = new pptxgen();
 pres.defineLayout({ name: "W", width: 13.333, height: 7.5 });
 pres.layout = "W";
-pres.author = "COMP2004 student";
+pres.author = "Kismat Acharya";
 pres.title = "Log4Shell — CVSS & SIEM";
 const W = 13.333, H = 7.5, M = 0.6;
 
@@ -76,8 +76,8 @@ function txt(s, t, o) { s.addText(t, Object.assign({ isTextBox: true, fontFace: 
     { text: "  —  CVE-2021-44228 and its family", options: { color: ONDARK } },
   ], { x: M, y: 4.15, w: 11.8, h: 0.9, fontSize: 22 });
   txt(s, [
-    { text: "Presented by ", options: { color: MUTE } }, { text: "A. Student", options: { color: ONDARKH, bold: true } },
-    { text: "        Security Operations Centre        24 September 2026", options: { color: MUTE } },
+    { text: "Kismat Acharya", options: { color: ONDARKH, bold: true } },
+    { text: "  (ID 24823456)        Security Operations Centre        24 September 2026", options: { color: MUTE } },
   ], { x: M, y: 6.5, w: 12, h: 0.4, fontSize: 14 });
 }
 

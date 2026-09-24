@@ -12,8 +12,8 @@ OPC UA Java Stack, Siemens Connect X200/X300 gateways).
 
 | Path | What it is |
 |------|------------|
-| `report/AStudent_COMP2004_Assignment2_2026.docx` | The written report (Task 1 CVSS + Task 2 SIEM), IEEE references, 3 figures. **Rename** the `FirstInitialLastName` prefix and paste your recording link in §2.10 before submitting. |
-| `presentation/AStudent_COMP2004_Assignment2_Slides_2026.pptx` | **Native, editable PowerPoint** of the 21-slide deck, with speaker notes. Safe Office fonts (Calibri/Consolas). Rename the prefix before submitting. |
+| `report/KAcharya_COMP2004_Assignment2_2026.docx` | The written report (Task 1 CVSS + Task 2 SIEM), IEEE references, 3 figures.Named for Kismat Acharya. Paste your recording link into §2.10 before submitting. |
+| `presentation/KAcharya_COMP2004_Assignment2_Slides_2026.pptx` | **Native, editable PowerPoint** of the 21-slide deck, with speaker notes. Named for Kismat Acharya. Safe Office fonts (Calibri/Consolas). |
 | `presentation/` | The slide deck (21 slides) is also published as a Claude Artifact — see the link in the chat. `SPEAKER_SCRIPT.md` compiles every slide's speaker notes for recording. `deck/` holds the artifact slide source. |
 | `src/build_report.js`, `src/build_pptx.js` | Node scripts that generate the report (`docx-js`) and the PowerPoint (`pptxgenjs`). |
 | `src/figures/` | Figure sources (HTML) + a Playwright renderer (`render.js`) that outputs the PNGs. |

@@ -15,7 +15,7 @@ const {
 } = require("docx");
 
 const FIG = path.join(__dirname, "figures");
-const OUT = path.join(__dirname, "..", "report", "AStudent_COMP2004_Assignment2_2026.docx");
+const OUT = path.join(__dirname, "..", "report", "KAcharya_COMP2004_Assignment2_2026.docx");
 
 // ---- palette ----------------------------------------------------------
 const INK = "1A1A19", ACCENT = "1C5CAB", ACCENT2 = "184F95", LIGHT = "EAF2FC",
@@ -138,7 +138,7 @@ children.push(
 );
 children.push(...figure("fig1_attack_chain.png", 560, 236, "The Log4Shell (CVE-2021-44228) exploitation chain and the points at which a SIEM can observe it."));
 children.push(
-  new Paragraph({ alignment:AlignmentType.CENTER, spacing:{before:400, after:40}, children:[run("Prepared by: A. Student", { size:22 })] }),
+  new Paragraph({ alignment:AlignmentType.CENTER, spacing:{before:400, after:40}, children:[run("Prepared by: Kismat Acharya  (Student ID: 24823456)", { size:22 })] }),
   new Paragraph({ alignment:AlignmentType.CENTER, spacing:{after:40}, children:[run("Role: Security Operations Centre (SOC) Analyst", { size:22 })] }),
   new Paragraph({ alignment:AlignmentType.CENTER, spacing:{after:40}, children:[run("Date: 24 September 2026", { size:22 })] }),
   new Paragraph({ alignment:AlignmentType.CENTER, spacing:{after:40}, children:[run("Referencing style: IEEE", { size:22 })] }),
@@ -464,7 +464,7 @@ function codeBlock(lines) {
 
 // ---- assemble ---------------------------------------------------------
 const doc = new Document({
-  creator: "COMP2004 student",
+  creator: "Kismat Acharya",
   title: "Log4Shell CVSS analysis and SIEM proposal",
   description: "COMP2004 Assessment 2",
   styles: { default: {
