@@ -1,0 +1,79 @@
+{
+  "generated": "2026-09-26T23:57+00:00",
+  "window": 63,
+  "name": "live",
+  "params": {
+    "sma_fast": 50,
+    "sma_slow": 200,
+    "mom_days": 63,
+    "mom_scale": 0.3,
+    "breakout_days": 55,
+    "atr_days": 14,
+    "rsi_days": 14,
+    "rsi_hot": 80,
+    "rsi_cold": 30,
+    "chaos_atr_pct": 0.08,
+    "w_trend": 0.35,
+    "w_misaligned": 0.1,
+    "w_mom": 0.3,
+    "w_breakout": 0.2,
+    "w_hot": 0.2,
+    "w_pullback": 0.1,
+    "high_days": 252,
+    "high_band": 0.1,
+    "squeeze_days": 100,
+    "squeeze_ratio": 0.75,
+    "w_rs": 0.0,
+    "w_high": 0.0,
+    "w_squeeze": 0.0,
+    "benchmarks": {
+      "us_stocks": "SPY",
+      "us_etfs": "SPY",
+      "crypto": "BTCUSDT"
+    }
+  },
+  "overrides": {
+    "stop_atr_multiple": 2.5,
+    "max_positions": 12,
+    "regime_breadth_min": 0.0,
+    "regime_index": null,
+    "earnings_blackout_days": 7
+  },
+  "metrics": {
+    "total_return": 1.0066225503175614,
+    "cagr": 0.1755172122350097,
+    "sharpe": 1.0074684907565132,
+    "max_drawdown": -0.22754148911037386,
+    "trades": 659,
+    "win_rate": 0.3232169954476479,
+    "avg_win": 0.12689531857713127,
+    "avg_loss": -0.03959874693220439,
+    "in_sample_return": 0.4509864580815126,
+    "out_of_sample_return": 0.38293678699848677,
+    "days": 1572
+  },
+  "robustness": 0.4767594163120905,
+  "walk_forward_chain_return": 1.084746350482824,
+  "live_chain_return": 1.1665341010293955,
+  "recommendation": "keep",
+  "reason": "the live parameters are the most robust set in the grid; re-picking parameters each window lost to holding the live set",
+  "candidate": null,
+  "live": {
+    "name": "live",
+    "rank": 1,
+    "robustness": 0.4767594163120905,
+    "metrics": {
+      "total_return": 1.0066225503175614,
+      "cagr": 0.1755172122350097,
+      "sharpe": 1.0074684907565132,
+      "max_drawdown": -0.22754148911037386,
+      "trades": 659,
+      "win_rate": 0.3232169954476479,
+      "avg_win": 0.12689531857713127,
+      "avg_loss": -0.03959874693220439,
+      "in_sample_return": 0.4509864580815126,
+      "out_of_sample_return": 0.38293678699848677,
+      "days": 1572
+    }
+  }
+}
