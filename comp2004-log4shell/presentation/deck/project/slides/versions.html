@@ -1,0 +1,16 @@
+<section id="versions" data-transition="fade" style="background:#F6F8FB; color:#1B2430; font-family:'IBM Plex Sans', Arial, sans-serif; padding:100px 128px; display:flex; flex-direction:column; justify-content:center; gap:34px">
+  <div style="display:flex; flex-direction:column; gap:8px">
+    <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#1C5CAB; letter-spacing:2px; text-transform:uppercase">Putting it together</p>
+    <h2 style="font-size:54px; font-weight:600; line-height:1.05; width:1640px">One flaw, every version and metric group</h2>
+  </div>
+  <div style="display:flex; gap:40px; align-items:center">
+    <img src="/_blob/56d396eb0b01a521df5b779457c6d8d1" alt="Horizontal bar chart of CVSS scores: v2.0 base 9.3, v3.1 base 10.0, temporal 9.5, SIMATIC Report Manager 9.5, Connect gateway 8.7, OPC UA stack 8.0, v4.0 base 10.0" style="width:1120px; height:auto; object-fit:contain; border:1px solid #DDE3EC; border-radius:14px; background:#FFFFFF">
+    <div style="flex:1; display:flex; flex-direction:column; gap:24px">
+      <div><p style="font-size:27px; font-weight:600; color:#1B2430">v2.0 &#8594; 9.3</p><p style="font-size:23px; color:#47515F; line-height:1.35">No Scope metric, so it can't reward the break-out &#8212; lands below 10.</p></div>
+      <div><p style="font-size:27px; font-weight:600; color:#1B2430">v3.1 &#8594; 10.0</p><p style="font-size:23px; color:#47515F; line-height:1.35">Adds Scope; the version I based my analysis on.</p></div>
+      <div><p style="font-size:27px; font-weight:600; color:#1B2430">v4.0 &#8594; 10.0</p><p style="font-size:23px; color:#47515F; line-height:1.35">Splits impact into vulnerable vs. subsequent systems &#8212; still max.</p></div>
+      <div style="background:#EAF2FC; border-radius:10px; padding:16px 20px"><p style="font-size:22px; color:#1B2430; line-height:1.35"><b>Always cite the version</b> &#8212; the same flaw reads 9.3 or 10.0 depending on it.</p></div>
+    </div>
+  </div>
+  <aside>Here's the whole analysis on one chart, and it also shows why the CVSS version matters. Under the old version two, the same flaw scores 9.3 — because version two had no Scope metric, it couldn't capture the break-out, so it can't reach ten. Version 3.1, which I based my analysis on, adds Scope and gives the full ten. Version 4.0 restructures impact into vulnerable-system and subsequent-system metrics and still lands at ten. In the middle you can see our three environmental scores spreading from 9.5 down to 8.0. The takeaway on the right: always cite which version a score came from, because the same flaw reads anywhere from 9.3 to 10 depending on it.</aside>
+</section>
