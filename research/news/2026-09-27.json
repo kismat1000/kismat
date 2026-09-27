@@ -1,14 +1,6 @@
 {
- "count": 132,
+ "count": 131,
  "tone": {
-  "SOLUSDT": {
-   "symbol": "SOLUSDT",
-   "score": 0.5,
-   "positive": 1,
-   "negative": 0,
-   "headlines": 6,
-   "flags": []
-  },
   "MSFT": {
    "symbol": "MSFT",
    "score": 0.0,
@@ -27,6 +19,14 @@
   },
   "ETHUSDT": {
    "symbol": "ETHUSDT",
+   "score": 0.5,
+   "positive": 1,
+   "negative": 0,
+   "headlines": 6,
+   "flags": []
+  },
+  "SOLUSDT": {
+   "symbol": "SOLUSDT",
    "score": 0.667,
    "positive": 2,
    "negative": 0,
@@ -43,10 +43,10 @@
   },
   "XRPUSDT": {
    "symbol": "XRPUSDT",
-   "score": 0.8,
-   "positive": 4,
+   "score": 0.75,
+   "positive": 3,
    "negative": 0,
-   "headlines": 6,
+   "headlines": 5,
    "flags": []
   },
   "LINKUSDT": {
@@ -353,6 +353,20 @@
   },
   {
    "source": "abc_au_business",
+   "title": "Flood victims wait four years for repairs to homes",
+   "link": "https://www.abc.net.au/news/2026-09-28/trade-shortage-river-murray-flood-2022-homes-unfinished-sa/107164072",
+   "published": "Sun, 27 Sep 2026 21:41:50 +0000",
+   "query": ""
+  },
+  {
+   "source": "abc_au_business",
+   "title": "SA's statewide blackout was 10 years ago \u2014 but electricity debate is still live",
+   "link": "https://www.abc.net.au/news/2026-09-28/sa-statewide-electricity-blackout-10-year-anniversary/107191400",
+   "published": "Sun, 27 Sep 2026 20:25:56 +0000",
+   "query": ""
+  },
+  {
+   "source": "abc_au_business",
    "title": "Banks cut rewards programs, free travel insurance amid surcharge ban",
    "link": "https://www.abc.net.au/news/2026-09-28/surcharge-ban-interchange-fees-impacts-businesses-and-customers/106660248",
    "published": "Sun, 27 Sep 2026 18:55:36 +0000",
@@ -367,7 +381,7 @@
   },
   {
    "source": "abc_au_business",
-   "title": "How to maximise your EV's range while spending as little as possible",
+   "title": "What to know about maximising the range of your electric vehicle",
    "link": "https://www.abc.net.au/news/2026-09-28/how-to-maximise-ev-range-and-minimise-cost-of-charging/107175852",
    "published": "Sun, 27 Sep 2026 18:30:00 +0000",
    "query": ""
@@ -388,7 +402,7 @@
   },
   {
    "source": "abc_au_business",
-   "title": "Former vineyard turned into sanctuary for endangered birds",
+   "title": "Former vineyard turned into sanctuary for nationally threatened birds",
    "link": "https://www.abc.net.au/news/2026-09-27/vines-to-vegetation-property-restored-endangered-bird-species/107160854",
    "published": "Sat, 26 Sep 2026 23:11:10 +0000",
    "query": ""
@@ -419,20 +433,6 @@
    "title": "The Gold Coast is done with being 'the Glitter Strip', so what's next?",
    "link": "https://www.abc.net.au/news/2026-09-27/inside-the-gold-coasts-identity-overhaul/107129144",
    "published": "Sat, 26 Sep 2026 20:34:31 +0000",
-   "query": ""
-  },
-  {
-   "source": "abc_au_business",
-   "title": "China, US agree to AI dialogue, $42b in tariff cuts during state visit",
-   "link": "https://www.abc.net.au/news/2026-09-27/president-donald-trump-xi-jinping-washington-summit-tariffs-ai/107200436",
-   "published": "Sat, 26 Sep 2026 20:33:49 +0000",
-   "query": ""
-  },
-  {
-   "source": "abc_au_business",
-   "title": "$5m cash withdrawn from NDIS housing company before it went bust",
-   "link": "https://www.abc.net.au/news/2026-09-27/ndis-housing-provider-fairy-meadow-house-goes-bust/107190992",
-   "published": "Sat, 26 Sep 2026 20:03:39 +0000",
    "query": ""
   },
   {
@@ -520,48 +520,6 @@
    "query": ""
   },
   {
-   "source": "gnews:SOLUSDT",
-   "title": "Solana Price Prediction: Bull Market Begins for SOL With Next Target Set at $149 - Yahoo Finance Australia",
-   "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNdTJPRmhUTW9ZQUktQmR0LTJxSklseEdLRDBZemdyeGVjdl9xaDN6aWw2blo2LVR1bWtncVJFT0J5RW1PU0FNLTh3ajNNXzMteXI0VmowM0xQczZFMnNNU3BiSktIeFZ2a2JVSWlyUllhV2xVMHViQ2hJV0RCblo2NEZFalBCNkN3ZkpkaA?oc=5",
-   "published": "Mon, 21 Sep 2026 12:55:19 GMT",
-   "query": "solana"
-  },
-  {
-   "source": "gnews:SOLUSDT",
-   "title": "Crypto News: Remittix Announces Official Listing Date as Solana Price Prediction Targets $1,000 - markets.businessinsider.com",
-   "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNd1BUMVpKMEVZdTloYTBvOVpTTEY4dEZVNktkMW8ySG5yTDFnYUxUZ3JkMDBZN215U005d2VOdlkxRk5PTlNtQXdZdlpETHZibk40U3FhaXF1V1V6VkhBNjJlQmh3MVhLTGNQQkl5SGVzeDR1VVpvMjVSUjZhRGxFcElRRURvNmxmRUlWQ1d4M1BBU1lrc1ZxVDA2bk1xbWVYd3pLZGNvN2Q1bUFFQjNnSXdTNVliYkVsZHZsUHpqZFp6SV9HazhUWHlVLUdKTE54MjJxS2hRbjY2cGZuQld6QWhRX0Z4NjQ?oc=5",
-   "published": "Sun, 27 Sep 2026 16:08:16 GMT",
-   "query": "solana"
-  },
-  {
-   "source": "gnews:SOLUSDT",
-   "title": "Solana Sees Biggest ETF Week Since Launch - TradingView",
-   "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPVTZNN1h6dHZtQ1ByUlVZQW8yTE1ia2kzZ0poSXFYTUtnd1hjMXdtdlF1REdELXVTVTdsaWhWVXZyX2FBWkFLU3p0TFlBeFlxLTJmeWJiaXRHcVBwR1lFcmd4U1lTMmxXT3pyRkVPOUNNQUxkZmR0VWNFMW5FbWRtWWktMmtEckVLeEFGQVBGU3NBN3VqSjBNdGJJalF5b1Nx?oc=5",
-   "published": "Sun, 27 Sep 2026 14:01:59 GMT",
-   "query": "solana"
-  },
-  {
-   "source": "gnews:SOLUSDT",
-   "title": "Solana ETFs attract $188.21 million in reported inflows - Altcoin Buzz",
-   "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPOE1mVHpRendXY0N2UmwyWHNlZTFvUUo5Q21KZjEwQkNCMFpSSldtX2p2aklqb3RfUWxFVkxrOWQyRUhUVnVmQ090enZiRENmTHFMY0xaT295NVQ2R3VzNnpTNFl1aUFLZTVMRGlNSTJwTlZiSXU1WDVOZHNZUGVOYg?oc=5",
-   "published": "Sun, 27 Sep 2026 19:47:56 GMT",
-   "query": "solana"
-  },
-  {
-   "source": "gnews:SOLUSDT",
-   "title": "Solana Price at $121.93: What to Check on Staking Yield, Unstaking and Tax - CryptoTicker",
-   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5fSWNUQWhIRTdtT3ZpVlpBMkRxNS1tbFc3T3pOd2ExNEttRWZoOTl6QllRZDUwSEpOZGpCd2YxSXhtV3VSZHFpMVo2b204WlExaE1GT3pPVVp2dGFuZFBEUVpMTlJfdGNBY2FXY3BUMUxIQQ?oc=5",
-   "published": "Sun, 27 Sep 2026 18:14:37 GMT",
-   "query": "solana"
-  },
-  {
-   "source": "gnews:SOLUSDT",
-   "title": "Hyperliquid vs Solana: Which Has More Upside by 2030? - 24/7 Wall St.",
-   "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQaTdwOTB4REE1NkZaYnNlVGlPNDU1VnJlcmdoSkRsbUwxUzhIYk1vLW1KYjZ1MG5JQ2VfUG5IVDJNVzVWX3N0d25xZ1FBX0xFWkFTeWplYVRNS2E1NTl5dnMxaUQxdFEzdm9wTzBwVEMtVk9VV1pfQk1uemZtVVNZWnNKYzJPaUdVSmJGRzlqVmQ5Y2phT1FFLW5mNF9BRlV2VGRWR1NmQUFWMURWdVM4?oc=5",
-   "published": "Sun, 27 Sep 2026 16:15:00 GMT",
-   "query": "solana"
-  },
-  {
    "source": "gnews:MSFT",
    "title": "Microsoft Corp Stock (MSFT) Opened Up by 3.21% on Sep 25: What Investors Need To Know - TradingKey",
    "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQNVl3OG9Yb0N3dHlOWVZrbkxnVjNDck1pZnNYSnZ1RTU5cEZQS0ZOVnB6UEZjNTZDUlNOYmlCWDNiTFdVbnVZTTNDVXA2SWN3b3NFRHQ3dmNVVnlmYjdoaVN4Umhja2dfTV93c3pCYzdRdXVlVFluQzNFbEd3TjU4OUNjTUNObVhHaG8w?oc=5",
@@ -570,7 +528,7 @@
   },
   {
    "source": "gnews:MSFT",
-   "title": "Why It\u2019s Time to Load Up on Microsoft Stock - finance.yahoo.com",
+   "title": "Why It\u2019s Time to Load Up on Microsoft Stock - Yahoo Finance",
    "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNRXpUYW5Ia1BXNDd5OHljTVBvNE01NXBPb2FZOElaa1ZOOU00MGJuaEQ4bl9zaTg2bDU1UU9kV3FjQnI1bEx3d1FhTHlEZWJ5MzRFODlfY2otVEhxcFYxWGZfM3lqa1U0MHN3U01YMkh4Z05iaEpWSFhwbno4S2xuRVFPTjF3T2FIeFRqbkNOdFhaU0QzWGltNzd3?oc=5",
    "published": "Fri, 25 Sep 2026 12:36:55 GMT",
    "query": "MSFT stock"
@@ -621,21 +579,14 @@
    "source": "gnews:AAPL",
    "title": "Apple and Nvidia Are the Two Largest Companies in the World. Which is the Better Stock to Buy? - The Motley Fool",
    "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPbjI5VFV4YVpCVjBreUV0OUxoWTlLWmFlOExiWUc2VjgwT0MwR3pRQmNUWDZLc2tFM3JXWVRwRjBOc0ljeFZJd0p0bmNvVWNEOWFWeXRiM1liRjNLWV85V3JJN09JZUdici1QNHV3NWcwZnRIeWlqM0k0c01TTFFiNmhQR1kzU0VteXBGYWxJdw?oc=5",
-   "published": "Sun, 27 Sep 2026 19:47:58 GMT",
+   "published": "Sun, 27 Sep 2026 20:45:00 GMT",
    "query": "AAPL stock"
   },
   {
    "source": "gnews:AAPL",
-   "title": "Apple (AAPL) Stock Could Be 32% Overpriced After Fresh AI Cost Warnings - finance.yahoo.com",
+   "title": "Apple (AAPL) Stock Could Be 32% Overpriced After Fresh AI Cost Warnings - Yahoo Finance",
    "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNZTJYNko0cmVmdm1sRjNOWGZwRzdGUzhqODR6SWd0YXhvcjk3SW1mYzVZMDRCQzllX1R0UFhWaGN4dEhjaFJHZjZlVVpnQnhCdC1aWVZNbGlSZGlQVEFLWEY2TVRnRDJlVlJ6YXBOSVJvVUVrQkY4WU4zdUhHb2Y1UVZqdTMxODdCR0pOYlhQWk5JVEhl?oc=5",
    "published": "Thu, 24 Sep 2026 05:14:00 GMT",
-   "query": "AAPL stock"
-  },
-  {
-   "source": "gnews:AAPL",
-   "title": "AAPL Stock Hits Record Highs \u2014 Apple Reportedly Explores Screenless Health Trackers And Other Wearables Following iPhone Duo Launch - es.tradingview.com",
-   "link": "https://news.google.com/rss/articles/CBMimAJBVV95cUxQaUpPWUlteXIxMG52cS1ERm4tSDlRY1ltTkFQWWhiaFBfS1NnSi1hVE04TDFSY3dRY0REeFg2ZFdsYVllOWxYNndyV0N2dDNYM05nWXFCRmt6UDdUbm1hTTdpWHg4Z0k2T0RTUkQ4OWFGVlFubXhFbkdFbVFIaWhlaWNYaFBid2lSMFJtQ2k3WXRhZUlyR1hmUlRXcUlYWV9aMzBlT3V4QXVsN01EVjFkdkVlVi1WT09GalpoM1F4V1NVV3UtT182TFRuZjFGZEdnOGlsNUdKbmpMcllBRDBfaDJCclFWSzFCNGdLbjdQYVR2UWNOTURiRENzRzhWcmpvTXZGUmUyY3FKbElXRl91dnM0c01iOTgz?oc=5",
-   "published": "Tue, 22 Sep 2026 18:04:19 GMT",
    "query": "AAPL stock"
   },
   {
@@ -646,24 +597,24 @@
    "query": "AAPL stock"
   },
   {
-   "source": "gnews:ETHUSDT",
-   "title": "New Crypto: Remittix Releases RTX Launch Date as Ethereum Price Prediction Targets $18K and Whale Buying Grows - markets.businessinsider.com",
-   "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNNm52X3hZcWpkanBBa0hkenczVUR2blR6U1p1empBLWQzVzNkdXZRLUpZQUFFak5GdGJsMXl6NHppQ1Yza1JzR3JTaWV6OVQwdWJuLW1ZdVlGNFd3eVp0NzZYVVhXR19PeThWbTR0LURfNVZyVUVoYTE1Y3RyczExWDBoV082X0padlc1amMwOVRadm91TVFQU25qX0dvNHpiTi1VSEY0OFVuYXh3VVJFUmxwWUxOR3hqLTZHZmtKdUhnVlNtTDBZaGRQYmlGZFFWS3lPOTI2aUdoWTNfTmYxMS0yWXY5LTZwcVRDUXVtdU5NbzdGcklvaUlqdw?oc=5",
-   "published": "Sun, 27 Sep 2026 18:33:44 GMT",
-   "query": "ethereum"
+   "source": "gnews:AAPL",
+   "title": "AAPL Stock Hits Record Highs \u2014 Apple Reportedly Explores Screenless Health Trackers And Other Wearables Following iPhone Duo Launch - TradingView",
+   "link": "https://news.google.com/rss/articles/CBMimAJBVV95cUxQaUpPWUlteXIxMG52cS1ERm4tSDlRY1ltTkFQWWhiaFBfS1NnSi1hVE04TDFSY3dRY0REeFg2ZFdsYVllOWxYNndyV0N2dDNYM05nWXFCRmt6UDdUbm1hTTdpWHg4Z0k2T0RTUkQ4OWFGVlFubXhFbkdFbVFIaWhlaWNYaFBid2lSMFJtQ2k3WXRhZUlyR1hmUlRXcUlYWV9aMzBlT3V4QXVsN01EVjFkdkVlVi1WT09GalpoM1F4V1NVV3UtT182TFRuZjFGZEdnOGlsNUdKbmpMcllBRDBfaDJCclFWSzFCNGdLbjdQYVR2UWNOTURiRENzRzhWcmpvTXZGUmUyY3FKbElXRl91dnM0c01iOTgz?oc=5",
+   "published": "Tue, 22 Sep 2026 18:04:19 GMT",
+   "query": "AAPL stock"
   },
   {
    "source": "gnews:ETHUSDT",
-   "title": "Bitcoin vs Ethereum: Which Gets Back to Its All-Time High First? - finance.yahoo.com",
-   "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOQUoyZDdvS3JtWE9MSEFCNkE2dncxY3VZaTNfQW14Nmw4c05xbDJlVVJDQTZ6XzU4Mjh3WmptYnNZY2ZIcVc2WWsxN0tTRkxTdFlZMy1XZ3dkbzJKZDdyUWFTSXlnT19ZbFdSTXJOazhQY3hzbWRuSUhac2pyLW1STG1yUmQtSEU2UFp3dHZGaC1iOHN4RjFvRlNR?oc=5",
-   "published": "Sun, 27 Sep 2026 14:57:58 GMT",
-   "query": "ethereum"
-  },
-  {
-   "source": "gnews:ETHUSDT",
-   "title": "ETH news: Ethereum may not be \u2018just a blockchain\u2019 in 2030, Vitalik Buterin says - coindesk.com",
+   "title": "ETH news: Ethereum may not be \u2018just a blockchain\u2019 in 2030, Vitalik Buterin says - CoinDesk",
    "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOYXdsa0haTGJZSGJUN3ZlTlQ0Z2NyUmZVQzhHWUhZMTcyZkI5VVEtZzNlWlJnQV9pdm12TGZKSml5cHlFX28yVmxHZmhoYmpCUVRtSzB4SVhOY1JLTm1RLWJPQmI0QXdBSnU2azJycG1QN1JNbk1aVS1KT3BxWWYxdnZpOGgtM0FwMzBfbjhTdUVEaTRTOWZyNzN3Q2JrQmt3TmNVcXE2WjVfN2VOYkZnUlI3ZjNHR0lUTjEzdi1Yaw?oc=5",
    "published": "Sun, 27 Sep 2026 14:29:13 GMT",
+   "query": "ethereum"
+  },
+  {
+   "source": "gnews:ETHUSDT",
+   "title": "Can Arbitrum Reach $1? What It Would Take, and Why Ethereum Could Decide It - Yahoo Finance",
+   "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNNlotVXlvM2FOV280dG5NLWFCb3BpbmpvOFl0a0dERGNzRXRWamRqWlBVQ2pJakdGSndMSjdkYzJnVlM5blJNWWx0YXc4UFpHaElKQk1BTVkyR2tjUFpwMjlZalQ4dXk3c1NUb2dNb1JleU9TbnJOSzJtSzFORExYVFNKLUFLLUh3TFU2UlRYTDYzeFR0RFFKSk5B?oc=5",
+   "published": "Sun, 27 Sep 2026 20:50:30 GMT",
    "query": "ethereum"
   },
   {
@@ -688,15 +639,71 @@
    "query": "ethereum"
   },
   {
+   "source": "gnews:ETHUSDT",
+   "title": "'It's really not just a blockchain anymore': Vitalik Buterin maps Ethereum's path to 2030 - The Block",
+   "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxObGZrM1VESWdlby1QcXp1enJXbmwyX1l5RG9oT3d6YmVCN3JxVHprS1dOSW9SdVQyWUZvbUp2N2QyLXRqZVF6UFJxZ0R6UjhldFhnSm85bWxXYlJvN0JZcFRBUDkySlBiM3JnU2JRcTQ5MHJBU0xJZ3JFeWMyUTAtclRIR3JLeFNyY3ltQXlIVldpdWtlbG1WR3hNd1JXVTdzOXRnaEx1UkRBS3NRNFN2M2k1TG5yaDNwbmtRV1pYV2djQ192NzdETm5BTEZ1MURSejh3ZjEycWd0dw?oc=5",
+   "published": "Sun, 27 Sep 2026 14:35:53 GMT",
+   "query": "ethereum"
+  },
+  {
+   "source": "gnews:SOLUSDT",
+   "title": "Solana Price Prediction: Bull Market Begins for SOL With Next Target Set at $149 - Yahoo Finance Australia",
+   "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNdTJPRmhUTW9ZQUktQmR0LTJxSklseEdLRDBZemdyeGVjdl9xaDN6aWw2blo2LVR1bWtncVJFT0J5RW1PU0FNLTh3ajNNXzMteXI0VmowM0xQczZFMnNNU3BiSktIeFZ2a2JVSWlyUllhV2xVMHViQ2hJV0RCblo2NEZFalBCNkN3ZkpkaA?oc=5",
+   "published": "Mon, 21 Sep 2026 12:55:19 GMT",
+   "query": "solana"
+  },
+  {
+   "source": "gnews:SOLUSDT",
+   "title": "A New Dawn for XRP and Solana ETFs in the Crypto Sphere - OneSafe",
+   "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5xVWNfLUNwR1ZGMk9HRmF0UElRVVVXSzlmT0RKT3VscWFwMU8tNWxaN0xPMXZrdGxEcUZYdGd2dnd6Q3VCdHZHRDVkbFhGR2J5M2otQWltSGFoUEo4bDRSMkpicFBZX1ZuYVdsTHBsMEZYWHRWcmhXLTlYZC1iUQ?oc=5",
+   "published": "Sun, 27 Sep 2026 20:58:55 GMT",
+   "query": "solana"
+  },
+  {
+   "source": "gnews:SOLUSDT",
+   "title": "Solana ETFs attract $188.21 million in reported inflows - Altcoin Buzz",
+   "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPOE1mVHpRendXY0N2UmwyWHNlZTFvUUo5Q21KZjEwQkNCMFpSSldtX2p2aklqb3RfUWxFVkxrOWQyRUhUVnVmQ090enZiRENmTHFMY0xaT295NVQ2R3VzNnpTNFl1aUFLZTVMRGlNSTJwTlZiSXU1WDVOZHNZUGVOYg?oc=5",
+   "published": "Sun, 27 Sep 2026 19:47:56 GMT",
+   "query": "solana"
+  },
+  {
+   "source": "gnews:SOLUSDT",
+   "title": "Solana Price at $121.93: What to Check on Staking Yield, Unstaking and Tax - CryptoTicker",
+   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5fSWNUQWhIRTdtT3ZpVlpBMkRxNS1tbFc3T3pOd2ExNEttRWZoOTl6QllRZDUwSEpOZGpCd2YxSXhtV3VSZHFpMVo2b204WlExaE1GT3pPVVp2dGFuZFBEUVpMTlJfdGNBY2FXY3BUMUxIQQ?oc=5",
+   "published": "Sun, 27 Sep 2026 18:14:37 GMT",
+   "query": "solana"
+  },
+  {
+   "source": "gnews:SOLUSDT",
+   "title": "Solana Price Outlook Eyes $130 as Alpenglow Upgrade Targets 150ms - coingape.com",
+   "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNZE1kRjh0V1dVNG5OSy1hTF9sMUZHb01QZGZWS2dhUHNkcFNSMEppZm15Q3RvVmlBVjN0RUZueTRvVVBkblNyb2paZmJwUnBfT0QzR2tYUm5CcHZ0VjFwZVZNUXExUklOUnlxX2tqbmlhWV8tdWFtdDNwOWw3NTJqb1F1dzdjZUVrRUVZS19vczFIdTlrWWdCN2ZR?oc=5",
+   "published": "Sat, 26 Sep 2026 13:37:38 GMT",
+   "query": "solana"
+  },
+  {
+   "source": "gnews:SOLUSDT",
+   "title": "Solana Price Today | Live SOL Price, Chart & Market Data - Binance",
+   "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE03bF9ZMzA2UXR1VjdXbnk3SlpSYXZhZnVuTVd1djJMbHVHVEFkcGRsNnh6Z0xiSDJTNW5SenVHczk4NlNvOGZTaEs4V2plYS1pS1lxXw?oc=5",
+   "published": "Fri, 25 Sep 2026 16:08:00 GMT",
+   "query": "solana"
+  },
+  {
    "source": "gnews:BNBUSDT",
-   "title": "Convert 5 BNB (Binance Coin) to AUD (AUD) - Bybit",
+   "title": "Binance Coin Price Prediction: BNB Chain Brings AI Agents Live as Remittix Debuts a Smarter Presale Dashboard - TechBullion",
+   "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPbXFrMlZwancxYmo0dDVqY3JSU1RUaVpsUUFsVHJNZUZGTEd1dEthZ19OcVB3Tl8yWVZ1WWFvUC1UcHRwaUpVcC1qbG1UMHE1NF9Odkp2REExQUZmcnNnRTFhRmVFMTBDNlpHa2JjbUJrQ01fRFc3ek9KdXFuTkxjcFhVQlhOLXdmUEtQOUNMRy14b2RWRGNYY3h4ZDhHV3h2NVNHRmFhNTh2UEFKYnZuV3VUaUFMeU94T1hjaVJ4ZnVRWmZ5WHJpbXl2Z2lNdw?oc=5",
+   "published": "Sun, 27 Sep 2026 22:27:07 GMT",
+   "query": "bnb binance coin"
+  },
+  {
+   "source": "gnews:BNBUSDT",
+   "title": "Convert 5 BNB (Binance Coin) to AUD (AUD) - bybit.com",
    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5NM0Exak1VOXozVlRGSlFJcTVEV0lnUTJGdGhPQmhFa1dYNnhreUZRQUQ2bWU5cEpEOWZrdE9Qb2o0TktXR3dMekJoVnlBcEhoaHZyaUpHMmpxUQ?oc=5",
    "published": "Sat, 26 Sep 2026 00:00:00 GMT",
    "query": "bnb binance coin"
   },
   {
    "source": "gnews:BNBUSDT",
-   "title": "Binance Coin Climbs On Strong Market-Wide Beta - MarketForces Africa",
+   "title": "Binance Coin Climbs On Strong Market-Wide Beta - dmarketforces.com",
    "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9uemlSMGY0VUJEVjh1T18tMjdyRzFOMUduVjVNcllOeEN5NF9ZRExidDN6bUxLUDdrSkxwc3JvZ3RkQU9pd2pwalBIQTg2U2liOHlUcmxEeEY3NUVkZmNHQ0pYT0pQaktWUUtRZHBDMlVibkM3eXZtMFNWYUxLQQ?oc=5",
    "published": "Sun, 27 Sep 2026 08:34:57 GMT",
    "query": "bnb binance coin"
@@ -717,14 +724,7 @@
   },
   {
    "source": "gnews:BNBUSDT",
-   "title": "BNB vs Remittix: Can Binance Coin Clear $800 Before RTX Reaches Its $0.46 Final Presale Stage? - StreetInsider",
-   "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOS0lRb080ZDFZYW11V1daRU5HX19paVlNelV4cnFhdFB1a2gzbWZMaFFwNUVDZHJEanpMY2toUjlJdnZuUS04NEJ5RUV1bEFCUXF5QUcyczNIaVlkcmdPVHJ2MDhPQWVSSDFoQ0FNVE82UTBVcC1uN3NqemVQS1FoVHFLWDVITWhsTVh1bFd6czg2NDlkRU8zeUFLRGhvMU51THRKa0VuamtwS3c4ajlSaFRpXzNLam81WXM4U0JHQUZ6MERtYVM2R216em53TlQyU1RuTjhwQ0hKNU13SU9ObzM0V3ZndzhaOUVLV0hqVC0?oc=5",
-   "published": "Sun, 27 Sep 2026 02:53:04 GMT",
-   "query": "bnb binance coin"
-  },
-  {
-   "source": "gnews:BNBUSDT",
-   "title": "Binance Coin (BNB) May Be the Fourth-Largest Crypto in the World, but Here's Why It's Still a Sell - finance.yahoo.com",
+   "title": "Binance Coin (BNB) May Be the Fourth-Largest Crypto in the World, but Here's Why It's Still a Sell - Yahoo Finance",
    "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOWXg1TkpDVUxnMHdZQzV4Yll1RS1KeGxYWG9HLW9NUnVOYzF6eFdDTFhubnk5bVlSX1RkYlJIc3NLbWVrNzZjcFFObHN3T01oeEg2UnBucV9oQWZWVHhJQTZMTXJvQjMxU1NFbXZnVVFwRk9kWm11Y1JDbU4waVpjVjZXZ3V4TmhlNERyR2M3aVlidE82U0hr?oc=5",
    "published": "Mon, 21 Sep 2026 11:03:00 GMT",
    "query": "bnb binance coin"
@@ -738,7 +738,7 @@
   },
   {
    "source": "gnews:XRPUSDT",
-   "title": "Did XRP Holders Benefit from Ripple\u2019s Buyback? - finance.yahoo.com",
+   "title": "Did XRP Holders Benefit from Ripple\u2019s Buyback? - Yahoo Finance",
    "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPOC1udGhqOFJrZk95d1ZQR0FrYU1GQmR0SjBTcTdZLXE2Vi1seDFPbnphTW9DY1pEMGVhNldWOUN2d3RMLUtXcW5JVDVtSGRjZWpkNXFLSDZEQ1hrUG5sTTVaUElmdTVQZ2ZsS2hzekZidy1hZ2gycm1GeXNQM1YtMXRySzZkVW1mWk5WQlJZMWtCYVZqSmluTmdZUQ?oc=5",
    "published": "Sun, 27 Sep 2026 10:00:55 GMT",
    "query": "xrp ripple"
@@ -765,13 +765,6 @@
    "query": "xrp ripple"
   },
   {
-   "source": "gnews:XRPUSDT",
-   "title": "XRP Price Slides On Capital Rotation, 7-Day Gain Moderates - MarketForces Africa",
-   "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPd1B2ZlhzV1RFQU0tYzgyUndCODdWNFBPa0JtOU9lRGh0eHAtUkRpRGtKZjkwbXFDaWJ5Y3haVFZFWUNzOXlIT29EMEh4MUQ0RXNFcGRjdDNLamtrYnpFSGk0VU5IVklKNjV3WHNQeV9BbGlIMFpVRm1aUVdVMUl6TzRKd1ZiNzRSeUF0Tw?oc=5",
-   "published": "Sun, 27 Sep 2026 13:56:17 GMT",
-   "query": "xrp ripple"
-  },
-  {
    "source": "gnews:LINKUSDT",
    "title": "Chainlink Whales Accumulate 2.5 Million LINK as Token Approaches Key Resistance - finance.biggo.com",
    "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFB1dVg2VDR6bDZFYWJ2dVNHQTlwSWd1RmZWLUNmZGw1aXJVM1c3bGdmY2QyZWNhNHExRGo3NktROEdmZG40V0U5eXZyejRScEdjXzJUOFhEUi1VOEJWX2xCZkZOMHNGekRrbTR5cUZXTzVSUE8zakE?oc=5",
@@ -780,7 +773,7 @@
   },
   {
    "source": "gnews:LINKUSDT",
-   "title": "Standard Chartered Predicts Chainlink at $200 and XRP at $28 by 2030. Which Will Get There First? - finance.yahoo.com",
+   "title": "Standard Chartered Predicts Chainlink at $200 and XRP at $28 by 2030. Which Will Get There First? - Yahoo Finance",
    "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPdkgtUmlhMWNETU1BOS04WFY1dXVwX3dSMm42blg4Qi1lYUY5ZC11NHdla0hvUm1ZeEJWSUhiNjRsem5oRm9Dbzh2SzVxYlYzQkJ4SEhjemJORGRrRzFhZFROejZCNDBzU0Z4T3hkZ2xLaFVNbmRBRDc0NmE2MHA1akNBdURaZ3VLZFFLTlpoeGZ0c290TTAxUmlqUnV4ZVllRzFVekRsbTRJUQ?oc=5",
    "published": "Sun, 27 Sep 2026 11:00:00 GMT",
    "query": "chainlink"
@@ -815,6 +808,13 @@
   },
   {
    "source": "gnews:CSL.AX",
+   "title": "Buy, hold, sell: CBA, BHP, CSL shares - The Motley Fool Australia",
+   "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9qSWZJUmVEVkg5SFl0clhISGtCbzlCMUFzM0xlSm5fakNEODlLMmdTbU9FQThhTW90WVgyVXFrQU9oblRjcW12bFR5M0xEd1NsZmNCLWQwcXVkdDI4aUtqSnZSdktXMXNYc0FGY2lNc3FnOEx3bHFr?oc=5",
+   "published": "Sun, 27 Sep 2026 21:45:00 GMT",
+   "query": "CSL ASX shares"
+  },
+  {
+   "source": "gnews:CSL.AX",
    "title": "WTC and CSL shares: 2 ASX shares to watch - Rask Media",
    "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQZzdzcGJmaV96WFJKMGZlX0hVdDQzdWsxOXB1UjJXc1ZfbjRDZ1d2Y2xVS1dubWpqU3J2QVVkZk1pdWJyVzV0djNsUlVnUGdMeGFmUmx0b3pqMGEyVS1XTWpIbm05N2ViM1p3Um9FdGdlU0JCYTZkUUtQcEQ3MHM1bHQ4LUxqVVFxZHNj?oc=5",
    "published": "Fri, 25 Sep 2026 22:42:53 GMT",
@@ -825,13 +825,6 @@
    "title": "CSL\u2019s latest result suggests the worst may be over - Morningstar Australia",
    "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPUVBaOFNaQ1c3ZlNyTW9KMkJkRjh6clh5X3pmNTgzQm9mcm5Sb0duWVluRDluMXI1cEFWMnJXWlFxd1lGajBhNTI1bENESHdPemUxdzRjdUZMcnUyQU5taFBndExUQ0h1OF9zWW50Zlhiblhfb0E2UWgzNV9zZ2ZLSkZ2d1VqWm1Cb0ow?oc=5",
    "published": "Mon, 31 Aug 2026 07:00:00 GMT",
-   "query": "CSL ASX shares"
-  },
-  {
-   "source": "gnews:CSL.AX",
-   "title": "$10,000 invested in Pro Medicus and CSL shares 3 years ago is now worth\u2026 - The Motley Fool Australia",
-   "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNS21zdk04bjZPRGt5VXdSYzRoYXdnSDhUTTY2Zmx0X0lpS09idnc3TWNxUGphZlBSN1Y1bU90TnNoZ0JPeGNKd3dfY0IzUzNJRTNHTTVCSWdGOVkyb3Y0VDRhTjlnQ2ZkQUxtbWo0OXJwLTM2SVZpUlBpMnJlX2dsTjQ4U2laTXJicjlvMFBBS0xacjZadWhacW13endVNjlIVEdUM3VnYW8?oc=5",
-   "published": "Sat, 26 Sep 2026 00:00:00 GMT",
    "query": "CSL ASX shares"
   },
   {
@@ -892,7 +885,7 @@
   },
   {
    "source": "gnews:BTCUSDT",
-   "title": "Bitcoin holders are cashing out, just not the way they did at prior market tops : Crypto Daily - coindesk.com",
+   "title": "Bitcoin holders are cashing out, just not the way they did at prior market tops : Crypto Daily - CoinDesk",
    "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNSy1vbFlCQl9YY1E0cWthQWxEMW9HM1k5dTFnVG9oN2FrN1RweTJNWEM3Zk5uTzRCMkhJcGlINVhvMHZqLUFNQmw5XzlTbHdOaFZFdzY1RjM1ZDk0S19NS2hSbTRaeGtKUVhONjREbTYxUmFpS3VjQ19MeEtEU3FRNllZX2VFZE10SUpzMXJvd040YlBJczZUOEYzUU45WG02VWRFRnpuNEFodnJwZWk2R0pGN2tZR1huejRneGdGYkJXZDQ?oc=5",
    "published": "Fri, 25 Sep 2026 11:29:04 GMT",
    "query": "bitcoin"
@@ -906,7 +899,7 @@
   },
   {
    "source": "gnews:XLK",
-   "title": "Convert 1 XLK (State Street Technology Select Sector SPDR ETF \u2022 Robinhood Token) to CHF (Swiss Franc) - Bybit",
+   "title": "Convert 1 XLK (State Street Technology Select Sector SPDR ETF \u2022 Robinhood Token) to CHF (Swiss Franc) - bybit.com",
    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE45c3Bqa0tyRlZlWmR5RmxCOEdmd1RiOGtvU0I4NlJGQzVQVW9jN3MydnQyZkxqenFHaEhEWFJwLWlRTGpoSkF5azJ1SkszRzd2Y1NSM25lWQ?oc=5",
    "published": "Thu, 24 Sep 2026 00:00:00 GMT",
    "query": "XLK ETF"
@@ -927,7 +920,7 @@
   },
   {
    "source": "gnews:XLK",
-   "title": "Why XLK\u2019s Next Rebalance Won\u2019t Fix Its Massive Concentration Problem - finance.yahoo.com",
+   "title": "Why XLK\u2019s Next Rebalance Won\u2019t Fix Its Massive Concentration Problem - Yahoo Finance",
    "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOaDQ5eXJhWVFnNERyN1VReHZLbDQ3ejBkSUlxajRWLXdKVjR1VTFMVGxvUXpMTUFRZURjLTJ0cjFWZ3VPT1NtTWVLUnhsQ2FrQUdRZ1pfNXYwWV96SmlMb3JFVzdGRFpLVkdXU0x2aE1TOUpxRHJ3eG04eDFjMFJncFRXRzduWVJkRG1WaUY2NG0xWnRpV1E?oc=5",
    "published": "Fri, 18 Sep 2026 07:00:00 GMT",
    "query": "XLK ETF"
@@ -941,14 +934,14 @@
   },
   {
    "source": "gnews:LTCUSDT",
-   "title": "Convert 1 AUD (AUD) to LTC (Litecoin) - Bybit",
+   "title": "Convert 1 AUD (AUD) to LTC (Litecoin) - bybit.com",
    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9xdVNKNG5yX3J0UTlaNmV1a2RvYVJJVTVCTk1BUjJtOFpMbUJ4Z2dYODRUQ1dxMDBudnJ0WXZTSF8yQnFtelREUmprTDd6VGNzVkNWS1BSRQ?oc=5",
    "published": "Sat, 26 Sep 2026 08:03:30 GMT",
    "query": "litecoin"
   },
   {
    "source": "gnews:LTCUSDT",
-   "title": "Litecoin token has its moment as network activity booms - coindesk.com",
+   "title": "Litecoin token has its moment as network activity booms - CoinDesk",
    "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOMWJKMExoZUtzMHdSZlF1NTFyUmpiYmJsYWxXcWtfaWZENVdLaHlpc1pUaFNrSkxHTmI1MUxIM3J2Y3BHWG0tZTJSeG9FM2thS3AwSUZYX1JJUG5sTjFIbjEtZGh5UGtUSWpudHFHbHc5QV9iaEhJaWJXT3FqcjFZWmlwZlUtOVZPUzEtenhxaEl2UWZwNlZBbEwtOGxaZXk0MkJIcA?oc=5",
    "published": "Thu, 24 Sep 2026 11:32:08 GMT",
    "query": "litecoin"
@@ -962,7 +955,7 @@
   },
   {
    "source": "gnews:LTCUSDT",
-   "title": "Litecoin Soars 47% in a Month: Is Grayscale\u2019s ETF Filing the Driving Force, or Is Litecoin Simply Bouncing Back? - finance.yahoo.com",
+   "title": "Litecoin Soars 47% in a Month: Is Grayscale\u2019s ETF Filing the Driving Force, or Is Litecoin Simply Bouncing Back? - Yahoo Finance",
    "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQTC1ROUxlODRoeWszR2N0ajd2emJsS3ZDLXMtQmV4Y2Y3TXZNQmpxdzFQU0NIUERiSGg5d0hXLWkzdm4yeEpSLU5wM0lsd0pDNW0xVnZXSElkTHp1bUZsdDFDSk9pN0NGUm1XWHhvZUxEN1B1d1hlS29aNU8wYU5xYXZ3Um5xNm16Qlc4RWJPQUtaNUFIUGp0LVI4WmV0S3c?oc=5",
    "published": "Sat, 26 Sep 2026 15:59:12 GMT",
    "query": "litecoin"
@@ -976,9 +969,9 @@
   },
   {
    "source": "gnews:LTCUSDT",
-   "title": "Litecoin Price Prediction: LTC Reclaims $70 as Remittix Activates Its BINANCE500 Rewards Offer - StreetInsider",
-   "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNWTVaWk5mZHJKbThXbkZHZjlFQ3lRdmM1MW1Ec0wwSC1LR1lHSmtlQ1h1d09mdFQyT1dKeW1xRVI4ZzVzNmJQNzVwSFdWQnVOQzRncE8yNGo4b2lvYU1qTlk0NjBXRFc0c29JVk5fYXNEWm1ST0swTUh4WWRwZDdzNEpreWZ4Z3pBTG55WFRSaHVZVWNOSHNNcm5jM01uMnVnd3NjQTl4bXFpVGxDOUNKTWRfenZ6VkthWXNmbUxVNDhpZXhqRUFVZkZFcFY0WFhKOGF1bGNEdnF4TGtHbkdETnBrXzR1V1FkN0ZsMHBzOA?oc=5",
-   "published": "Sun, 27 Sep 2026 16:41:15 GMT",
+   "title": "What Would $1,000 in Bitcoin and Litecoin Be Worth in 2030? - 24/7 Wall St.",
+   "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOemNTZ1BXMnlTcjlveFNKVkc4MVRTQ1BILVFIdDkyUTYxVG05YjUzSFl4RUk5Zjg4aXQ1V0FZWkt5QWhzZVZPWWdzOVFhUjEtcFBIS0NxN2czcnhVT01iY0RFQTNMbF8tR2NQb0szQXg5VVNzakRNY2h4QlItcnFHd182WUNBT21KUHZ2RThQYy1HS09IdFVibjc1Y3ZUTlVvRzNybF8tNnp6WWtiR2VMcFo3U3hHUQ?oc=5",
+   "published": "Thu, 24 Sep 2026 12:16:00 GMT",
    "query": "litecoin"
   },
   {
@@ -997,16 +990,9 @@
   },
   {
    "source": "gnews:XLV",
-   "title": "6 Best Healthcare Funds and ETFs to Buy Now | Investing - US News Money",
+   "title": "6 Best Healthcare Funds and ETFs to Buy Now | Investing - money.usnews.com",
    "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQaUQtYXVkbkVieE56U2Q0bFlqS3JtWW4wd1l5ZEZZZm4wOWZNSEw2eC01Q0hYamFZUGpPVUtSeDRkVzZhTjQtUVZDbUpNNzlfTWUxUVF1SllVR0h4dUxLNjZsRUotTGxzVU9mLWQ1anRsM3VFYzFiQzFLTzZBNkVKZzNB?oc=5",
    "published": "Mon, 14 Sep 2026 07:00:00 GMT",
-   "query": "XLV ETF"
-  },
-  {
-   "source": "gnews:XLV",
-   "title": "Healthcare equipment sector undervalued; global... - Pluang",
-   "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9HeTdURm8yZDZqN0s4S1NlYUd1Tzhablo3QlVIdXZQOXJQRDZXODFZWlpWSmtPdm10WlZBemQ2WWwzaF9acUtHd3dRb3JtQ0lSTktoSVY2MTlwRWkxTU9tbEJUR1YyREdSLU15T1l0MDNpRFBMUzgxYVhMMHI?oc=5",
-   "published": "Thu, 17 Sep 2026 17:25:38 GMT",
    "query": "XLV ETF"
   },
   {
@@ -1018,9 +1004,16 @@
   },
   {
    "source": "gnews:XLV",
-   "title": "2 Healthcare ETFs for Wherever the Market Goes Next - cabotwealth.com",
+   "title": "2 Healthcare ETFs for Wherever the Market Goes Next - Cabot Wealth Network",
    "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNM2VqQlNDQkZLVTNyYXBvWXc1UEIyTDNIQnNDWjhqYkFHS3poWDhqek5zTWNnZ01MZVRxTTNUTHVwUllSOWhpUV9TQThTdFo0Qmk1WkdBOWtpcHJNeGN6RS0tcU9UN2pteXdpcm9aVHQ3QmR2anJaTmhCZ0U0UEpocm96aXVaMnhhUV80aGhqbjRmZw?oc=5",
    "published": "Wed, 16 Sep 2026 07:00:00 GMT",
+   "query": "XLV ETF"
+  },
+  {
+   "source": "gnews:XLV",
+   "title": "Healthcare equipment sector undervalued; global... - Pluang",
+   "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9HeTdURm8yZDZqN0s4S1NlYUd1Tzhablo3QlVIdXZQOXJQRDZXODFZWlpWSmtPdm10WlZBemQ2WWwzaF9acUtHd3dRb3JtQ0lSTktoSVY2MTlwRWkxTU9tbEJUR1YyREdSLU15T1l0MDNpRFBMUzgxYVhMMHI?oc=5",
+   "published": "Thu, 17 Sep 2026 07:00:00 GMT",
    "query": "XLV ETF"
   }
  ]
