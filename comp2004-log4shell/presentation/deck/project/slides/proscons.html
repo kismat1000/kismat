@@ -1,0 +1,27 @@
+<section id="proscons" data-transition="fade" style="background:#101826; color:#EEF3FA; font-family:'IBM Plex Sans', Arial, sans-serif; padding:100px 128px; display:flex; flex-direction:column; justify-content:center; gap:34px">
+  <div style="display:flex; flex-direction:column; gap:8px">
+    <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#7FA8E6; letter-spacing:2px; text-transform:uppercase">Honest appraisal</p>
+    <h2 style="font-size:54px; font-weight:600; line-height:1.05; color:#FFFFFF">What the SIEM gives us &#8212; and its limits</h2>
+  </div>
+  <div style="display:flex; gap:32px">
+    <div style="flex:1; background:#16233A; border-top:6px solid #2E6FD6; border-radius:16px; padding:36px; display:flex; flex-direction:column; gap:16px">
+      <h3 style="font-size:32px; font-weight:600; color:#7FA8E6">Benefits</h3>
+      <ul style="font-size:24px; color:#B9C4D4; line-height:1.5; padding:0 0 0 28px">
+        <li>Cross-source correlation single tools can't do</li>
+        <li>Lower MTTD/MTTR; retrospective threat hunting</li>
+        <li>Threat-intel enrichment (KEV, ProductCERT)</li>
+        <li>Audit trail for NIST 800-61r3 &amp; Essential Eight</li>
+      </ul>
+    </div>
+    <div style="flex:1; background:#16233A; border-top:6px solid #C87A1E; border-radius:16px; padding:36px; display:flex; flex-direction:column; gap:16px">
+      <h3 style="font-size:32px; font-weight:600; color:#E8B368">Limits &#8212; and our mitigations</h3>
+      <ul style="font-size:24px; color:#B9C4D4; line-height:1.5; padding:0 0 0 28px">
+        <li>Sees only what's ingested &#8594; onboarding checklist</li>
+        <li>Signature noise &#8594; risk-based &amp; correlated rules</li>
+        <li>Encryption/evasion &#8594; behavioural detections</li>
+        <li>No agents on OT &#8594; passive sensor feed</li>
+      </ul>
+    </div>
+  </div>
+  <aside>An honest appraisal, because the argument for the SIEM has to acknowledge its limits. The benefits: cross-source correlation that no single tool can do; lower mean time to detect and respond, plus the ability to hunt stored logs retrospectively; threat-intel enrichment from feeds like CISA KEV and Siemens ProductCERT; and an audit trail — which matters, since this whole exercise came out of a security audit. The limits, each with our mitigation: a SIEM only sees what it ingests, so we need an onboarding checklist tied to the asset inventory; signature rules are noisy, so we lean on risk-based and correlated alerting; encryption can hide the payload, so we rely on behavioural detections; and we can't put agents on OT devices, so we feed the SIEM from a passive network sensor. None of these is a reason not to deploy — they're design requirements.</aside>
+</section>

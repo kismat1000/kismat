@@ -1,0 +1,20 @@
+<section id="siem-why" data-section="Task 2 — a SIEM: inputs, insights and actions" data-transition="push" style="background:#101826; color:#EEF3FA; font-family:'IBM Plex Sans', Arial, sans-serif; padding:100px 128px; display:flex; flex-direction:column; justify-content:center; gap:36px">
+  <div style="display:flex; flex-direction:column; gap:10px">
+    <p style="font-family:'JetBrains Mono', monospace; font-size:26px; color:#7FA8E6; letter-spacing:3px; text-transform:uppercase">Task 2</p>
+    <h2 style="font-size:64px; font-weight:700; line-height:1.05; color:#FFFFFF; width:1620px">Why a SIEM &#8212; and which one for us</h2>
+  </div>
+  <div style="background:#16233A; border-radius:16px; padding:34px 40px; display:flex; flex-direction:column; gap:12px">
+    <p style="font-size:30px; color:#EEF3FA; line-height:1.4">No single log proves Log4Shell. A web log shows the payload; a firewall log shows the odd LDAP callout; an OT sensor shows the gateway acting strangely. <b>The SIEM is the one place those line up &#8212; on one asset, within seconds.</b></p>
+  </div>
+  <div style="display:flex; gap:28px">
+    <div style="flex:1; background:#16233A; border:1px solid #2E6FD6; border-radius:16px; padding:32px; display:flex; flex-direction:column; gap:12px">
+      <h3 style="font-size:30px; font-weight:600; color:#7FA8E6">Proposed: Splunk Enterprise Security</h3>
+      <p style="font-size:23px; color:#B9C4D4; line-height:1.4">Risk-based alerting, published Log4Shell detections, ATT&amp;CK mapping, OT add-on. Reproducible free in the demo with <b style="color:#EEF3FA">Wazuh / Elastic</b>.</p>
+    </div>
+    <div style="flex:1; background:#16233A; border:1px solid #34405A; border-radius:16px; padding:32px; display:flex; flex-direction:column; gap:12px">
+      <h3 style="font-size:30px; font-weight:600; color:#7FA8E6">Paired with an OT sensor</h3>
+      <p style="font-size:23px; color:#B9C4D4; line-height:1.4">Passive monitoring (e.g. Nozomi / Claroty) feeds the SIEM, because EDR agents can't be installed on controllers or the Connect gateways.</p>
+    </div>
+  </div>
+  <aside>On to Task two, the SIEM. First, why a SIEM at all? Because no single log proves Log4Shell. The web log shows the payload string, the firewall shows the strange outbound LDAP connection, the OT sensor shows a gateway behaving oddly — individually easy to dismiss. The SIEM is the one place those weak signals line up, on one asset, within seconds. And which SIEM in our context? I'm proposing Splunk Enterprise Security — it has risk-based alerting, published Log4Shell detections and ATT&CK mapping, and an OT add-on — and I'll note the demo reproduces it for free with Wazuh or Elastic. Crucially, I pair it with a passive OT monitoring sensor like Nozomi or Claroty, because you cannot install endpoint agents on controllers or the Siemens gateways — the sensor watches the network and feeds the SIEM.</aside>
+</section>

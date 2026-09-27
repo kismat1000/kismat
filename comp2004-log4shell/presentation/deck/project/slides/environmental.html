@@ -1,0 +1,28 @@
+<section id="environmental" data-transition="fade" style="background:#101826; color:#EEF3FA; font-family:'IBM Plex Sans', Arial, sans-serif; padding:92px 128px; display:flex; flex-direction:column; justify-content:center; gap:30px">
+  <div style="display:flex; flex-direction:column; gap:8px">
+    <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#7FA8E6; letter-spacing:2px; text-transform:uppercase">Environmental &#8212; where context changes the score</p>
+    <h2 style="font-size:52px; font-weight:600; line-height:1.05; color:#FFFFFF; width:1660px">Same flaw, three of our assets, three priorities</h2>
+  </div>
+  <p style="font-size:25px; color:#B9C4D4; line-height:1.4; width:1660px">For all three I set <b style="color:#EEF3FA">IR:High and AR:High</b> &#8212; corrupted control data or lost availability threatens the grid. Segmentation only changes <i>how reachable</i> each one is.</p>
+  <div style="display:flex; gap:22px">
+    <div style="flex:1; background:#16233A; border:1px solid #D14343; border-radius:16px; padding:30px; display:flex; flex-direction:column; gap:12px">
+      <div style="display:flex; justify-content:space-between; align-items:baseline"><h3 style="font-size:27px; font-weight:600; line-height:1.1; width:280px">SIMATIC Report Mgr</h3><p style="font-size:52px; font-weight:700; color:#E88; font-family:'JetBrains Mono', monospace">9.5</p></div>
+      <p style="font-size:22px; color:#B9C4D4; line-height:1.35">Exposed at the IT/OT boundary &#8212; no mitigation. <b style="color:#EEF3FA">Critical. Fix first.</b></p>
+      <p style="font-family:'JetBrains Mono', monospace; font-size:18px; color:#7FA8E6">/CR:M/IR:H/AR:H</p>
+    </div>
+    <div style="flex:1; background:#16233A; border:1px solid #C87A1E; border-radius:16px; padding:30px; display:flex; flex-direction:column; gap:12px">
+      <div style="display:flex; justify-content:space-between; align-items:baseline"><h3 style="font-size:27px; font-weight:600; line-height:1.1; width:280px">Connect X200/X300</h3><p style="font-size:52px; font-weight:700; color:#E8B368; font-family:'JetBrains Mono', monospace">8.7</p></div>
+      <p style="font-size:22px; color:#B9C4D4; line-height:1.35">Remote but hardened telecontrol edge. <b style="color:#EEF3FA">High.</b></p>
+      <p style="font-family:'JetBrains Mono', monospace; font-size:18px; color:#7FA8E6">&#8230;/MAC:H</p>
+    </div>
+    <div style="flex:1; background:#16233A; border:1px solid #C87A1E; border-radius:16px; padding:30px; display:flex; flex-direction:column; gap:12px">
+      <div style="display:flex; justify-content:space-between; align-items:baseline"><h3 style="font-size:27px; font-weight:600; line-height:1.1; width:280px">OPC UA Java stack</h3><p style="font-size:52px; font-weight:700; color:#E8B368; font-family:'JetBrains Mono', monospace">8.0</p></div>
+      <p style="font-size:22px; color:#B9C4D4; line-height:1.35">Deep in segmented OT, adjacent-only. <b style="color:#EEF3FA">High.</b></p>
+      <p style="font-family:'JetBrains Mono', monospace; font-size:18px; color:#7FA8E6">&#8230;/MAV:A/MAC:H</p>
+    </div>
+  </div>
+  <div style="background:#3A2320; border-left:6px solid #D14343; border-radius:10px; padding:20px 30px">
+    <p style="font-size:24px; color:#EEF3FA; line-height:1.4">The lesson: in OT you <b>cannot deprioritise the way you would an IT box</b> &#8212; segmentation lowers exploitability, but High integrity/availability requirements keep every asset at least High.</p>
+  </div>
+  <aside>This is where context earns its keep. Environmental scoring lets me re-score the same flaw for each of our assets, and I made a deliberate choice: for all three I set Integrity Requirement and Availability Requirement to High, because corrupted control data or lost availability threatens the grid itself. What differs is reachability. The SIMATIC Report Manager is exposed at the IT-OT boundary with no mitigation — it stays 9.5, Critical, so it's fixed first. The Connect gateways are remotely reachable but hardened, so I set Modified Attack Complexity High — 8.7. The OPC UA stack is deep in segmented OT, only adjacent-reachable, so Modified Attack Vector Adjacent plus complexity High — 8.0. And the lesson at the bottom is the whole point of doing this in an OT context: you cannot deprioritise an OT asset the way you might a low-value IT box, because the high integrity and availability requirements keep everything at least High.</aside>
+</section>
