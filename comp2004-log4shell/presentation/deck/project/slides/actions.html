@@ -1,0 +1,25 @@
+<section id="actions" data-transition="fade" style="background:#101826; color:#EEF3FA; font-family:'IBM Plex Sans', Arial, sans-serif; padding:92px 128px; display:flex; flex-direction:column; justify-content:center; gap:28px">
+  <div style="display:flex; align-items:baseline; gap:24px">
+    <p style="font-family:'JetBrains Mono', monospace; font-size:30px; color:#7FA8E6; font-weight:600">3</p>
+    <div style="display:flex; flex-direction:column; gap:6px">
+      <p style="font-family:'JetBrains Mono', monospace; font-size:23px; color:#7FA8E6; letter-spacing:2px; text-transform:uppercase">SIEM actions</p>
+      <h2 style="font-size:52px; font-weight:600; line-height:1.05; color:#FFFFFF">What must it do &#8212; and why</h2>
+    </div>
+  </div>
+  <p style="font-size:25px; color:#B9C4D4; line-height:1.4; width:1660px">In OT, automation is <b style="color:#EEF3FA">safety-gated</b>: block at the IT/OT boundary, never auto-isolate a live controller. A human confirms before anything touches the grid.</p>
+  <div style="display:flex; gap:22px">
+    <div style="flex:1; background:#16233A; border:1px solid #34405A; border-radius:16px; padding:30px; display:flex; flex-direction:column; gap:12px">
+      <h3 style="font-size:29px; font-weight:600; color:#7FA8E6">Contain</h3>
+      <ul style="font-size:22px; color:#B9C4D4; line-height:1.4; padding:0 0 0 26px"><li>SOAR blocks the source IP at the boundary</li><li>Deny the outbound LDAP/RMI callback</li><li>Isolate <i>IT</i> hosts; quarantine OT only with operator sign-off</li></ul>
+    </div>
+    <div style="flex:1; background:#16233A; border:1px solid #34405A; border-radius:16px; padding:30px; display:flex; flex-direction:column; gap:12px">
+      <h3 style="font-size:29px; font-weight:600; color:#7FA8E6">Enrich &amp; prioritise</h3>
+      <ul style="font-size:22px; color:#B9C4D4; line-height:1.4; padding:0 0 0 26px"><li>Cross-check the SBOM: is this asset vulnerable?</li><li>Attach CVSS environmental score &amp; Purdue zone</li><li>Auto-raise severity for the exposed SIMATIC box</li></ul>
+    </div>
+    <div style="flex:1; background:#16233A; border:1px solid #34405A; border-radius:16px; padding:30px; display:flex; flex-direction:column; gap:12px">
+      <h3 style="font-size:29px; font-weight:600; color:#7FA8E6">Respond &amp; report</h3>
+      <ul style="font-size:22px; color:#B9C4D4; line-height:1.4; padding:0 0 0 26px"><li>Open an IR ticket, notify on-call &amp; OT engineers</li><li>Retro-hunt stored logs for earlier attempts</li><li>Evidence trail for NIST SP&#160;800-61r3 &amp; audit</li></ul>
+    </div>
+  </div>
+  <aside>Third, the actions — and the OT context changes these more than anything. In OT, automation has to be safety-gated: you block at the IT-OT boundary, but you never automatically isolate a live controller, because pulling a device offline could itself cause an outage. A human confirms before anything touches the grid. So: Contain — SOAR blocks the source IP at the boundary and denies the outbound callback, and it isolates IT hosts automatically but only quarantines OT with operator sign-off. Enrich and prioritise — cross-check the SBOM to confirm the asset is actually vulnerable, attach the CVSS environmental score and Purdue zone, and auto-raise severity for that exposed SIMATIC box. And Respond and report — open an incident ticket, notify both on-call and OT engineers, retrospectively hunt stored logs for earlier attempts, and keep the evidence trail for NIST 800-61 and the audit that prompted this review.</aside>
+</section>

@@ -1,0 +1,32 @@
+<section id="temporal" data-transition="fade" style="background:#F6F8FB; color:#1B2430; font-family:'IBM Plex Sans', Arial, sans-serif; padding:110px 128px; display:flex; flex-direction:column; justify-content:center; gap:40px">
+  <div style="display:flex; justify-content:space-between; align-items:flex-end">
+    <div style="display:flex; flex-direction:column; gap:8px">
+      <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#1C5CAB; letter-spacing:2px; text-transform:uppercase">Temporal metrics</p>
+      <h2 style="font-size:56px; font-weight:600; line-height:1.05; width:1300px">How the threat looked in December 2021</h2>
+    </div>
+    <div style="text-align:right"><p style="font-size:88px; font-weight:700; color:#D14343; line-height:0.9; font-family:'JetBrains Mono', monospace">9.5</p><p style="font-size:24px; color:#D14343; font-weight:600">CRITICAL</p></div>
+  </div>
+  <div style="display:flex; gap:28px">
+    <div style="flex:1; background:#FFFFFF; border:1px solid #DDE3EC; border-radius:16px; padding:34px; display:flex; flex-direction:column; gap:10px">
+      <p style="font-family:'JetBrains Mono', monospace; font-size:26px; color:#2E6FD6; font-weight:600">E: High</p>
+      <h3 style="font-size:28px; font-weight:600">Exploit maturity</h3>
+      <p style="font-size:23px; color:#47515F; line-height:1.35">Weaponised exploits &amp; mass scanning within a day</p>
+    </div>
+    <div style="flex:1; background:#FFFFFF; border:1px solid #DDE3EC; border-radius:16px; padding:34px; display:flex; flex-direction:column; gap:10px">
+      <p style="font-family:'JetBrains Mono', monospace; font-size:26px; color:#2E6FD6; font-weight:600">RL: Official</p>
+      <h3 style="font-size:28px; font-weight:600">Remediation</h3>
+      <p style="font-size:23px; color:#47515F; line-height:1.35">A vendor fix exists &#8212; the only thing pulling the score down</p>
+    </div>
+    <div style="flex:1; background:#FFFFFF; border:1px solid #DDE3EC; border-radius:16px; padding:34px; display:flex; flex-direction:column; gap:10px">
+      <p style="font-family:'JetBrains Mono', monospace; font-size:26px; color:#2E6FD6; font-weight:600">RC: Confirmed</p>
+      <h3 style="font-size:28px; font-weight:600">Report confidence</h3>
+      <p style="font-size:23px; color:#47515F; line-height:1.35">Vendor-confirmed, reproduced worldwide</p>
+    </div>
+  </div>
+  <div style="background:#101826; border-radius:12px; padding:22px 32px; display:flex; align-items:center; gap:20px; flex-wrap:wrap">
+    <p style="font-size:23px; color:#8A97A8">Adds to the string:</p>
+    <p style="font-family:'JetBrains Mono', monospace; font-size:25px; color:#7FD1A8; font-weight:600">&#8230;/E:H/RL:O/RC:C</p>
+    <p style="font-size:23px; color:#B9C4D4">&#8594; before any patch existed, RL:U put this at the full 10.0.</p>
+  </div>
+  <aside>Temporal metrics adjust for how the threat evolved, and I set three. Exploit Code Maturity: High — weaponised exploits and mass scanning appeared within a day. Remediation Level: Official Fix — Apache shipped a patch, and this is the only factor pulling the score down at all. Report Confidence: Confirmed — vendor-confirmed and reproduced everywhere. That gives 9.5, still Critical. And the key point in the string at the bottom: in the first days, before any patch existed, Remediation Level would be Unavailable, and the temporal score would sit at the full ten. The most dangerous window is always before the fix.</aside>
+</section>
