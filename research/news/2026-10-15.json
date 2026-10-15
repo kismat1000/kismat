@@ -3,8 +3,8 @@
  "tone": {
   "CSL.AX": {
    "symbol": "CSL.AX",
-   "score": 0.0,
-   "positive": 0,
+   "score": 0.5,
+   "positive": 1,
    "negative": 0,
    "headlines": 6,
    "flags": []
@@ -33,19 +33,19 @@
    "headlines": 6,
    "flags": []
   },
-  "ANZ.AX": {
-   "symbol": "ANZ.AX",
-   "score": 0.5,
-   "positive": 1,
-   "negative": 0,
-   "headlines": 6,
-   "flags": []
-  },
   "BTCUSDT": {
    "symbol": "BTCUSDT",
    "score": -0.286,
    "positive": 2,
    "negative": 4,
+   "headlines": 6,
+   "flags": []
+  },
+  "ANZ.AX": {
+   "symbol": "ANZ.AX",
+   "score": 0.5,
+   "positive": 1,
+   "negative": 0,
    "headlines": 6,
    "flags": []
   },
@@ -67,25 +67,25 @@
   },
   "SOLUSDT": {
    "symbol": "SOLUSDT",
-   "score": 0.5,
-   "positive": 1,
-   "negative": 0,
-   "headlines": 6,
-   "flags": []
-  },
-  "LINKUSDT": {
-   "symbol": "LINKUSDT",
-   "score": 0.667,
-   "positive": 2,
-   "negative": 0,
-   "headlines": 6,
-   "flags": []
-  },
-  "ADAUSDT": {
-   "symbol": "ADAUSDT",
-   "score": -0.833,
+   "score": -0.5,
    "positive": 0,
-   "negative": 5,
+   "negative": 1,
+   "headlines": 6,
+   "flags": []
+  },
+  "XRPUSDT": {
+   "symbol": "XRPUSDT",
+   "score": 0.0,
+   "positive": 0,
+   "negative": 0,
+   "headlines": 6,
+   "flags": []
+  },
+  "LTCUSDT": {
+   "symbol": "LTCUSDT",
+   "score": 0.0,
+   "positive": 0,
+   "negative": 0,
    "headlines": 6,
    "flags": []
   },
@@ -99,6 +99,34 @@
   }
  },
  "items": [
+  {
+   "source": "coindesk",
+   "title": "Hyperliquid founder wants U.S. oversight of trading platforms, not his blockchain",
+   "link": "https://www.coindesk.com/policy/2026/10/15/hyperliquid-founder-wants-u-s-oversight-of-trading-platforms-not-his-blockchain",
+   "published": "Thu, 15 Oct 2026 10:00:56 +0000",
+   "query": ""
+  },
+  {
+   "source": "coindesk",
+   "title": "Australia\u2019s financial watchdog seeks stiffer rules for crypto exchanges ahead of licensing deadline",
+   "link": "https://www.coindesk.com/policy/2026/10/15/australia-s-financial-watchdog-seeks-stiffer-rules-for-crypto-exchanges-ahead-of-licensing-deadline",
+   "published": "Thu, 15 Oct 2026 09:53:37 +0000",
+   "query": ""
+  },
+  {
+   "source": "coindesk",
+   "title": "Hex founder Richard Heart arrested in Istanbul, Turkish media report",
+   "link": "https://www.coindesk.com/policy/2026/10/15/hex-founder-richard-heart-arrested-in-istanbul-turkish-media-report",
+   "published": "Thu, 15 Oct 2026 09:20:57 +0000",
+   "query": ""
+  },
+  {
+   "source": "coindesk",
+   "title": "BlackRock's Fink names a U.S. recession trigger, sounds alarm over $40 trillion national debt",
+   "link": "https://www.coindesk.com/markets/2026/10/15/blackrock-s-larry-fink-names-a-u-s-recession-trigger-and-its-tied-to-ai",
+   "published": "Thu, 15 Oct 2026 06:17:58 +0000",
+   "query": ""
+  },
   {
    "source": "coindesk",
    "title": "Nearly $1 billion in crypto bets liquidated as bitcoin, ether and XRP slide",
@@ -156,31 +184,45 @@
    "query": ""
   },
   {
-   "source": "coindesk",
-   "title": "Former FTX Europe chief targets U.S. tokenized stock trading with new SEC exemption",
-   "link": "https://www.coindesk.com/business/2026/10/14/former-ftx-europe-chief-targets-u-s-stock-tokenization-with-new-sec-exemption",
-   "published": "Wed, 14 Oct 2026 14:08:43 +0000",
+   "source": "cointelegraph",
+   "title": "Bitcoin dips to $80.1K as KOSPI closes at its lowest since April",
+   "link": "https://cointelegraph.com/markets/bitcoin-dips-korea-kospi-lowest-close-since-april?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+   "published": "Thu, 15 Oct 2026 09:48:07 +0000",
    "query": ""
   },
   {
-   "source": "coindesk",
-   "title": "America's growing digital economy requires power grid updates. Who will foot the bill?",
-   "link": "https://www.coindesk.com/opinion/2026/10/14/the-battle-over-the-ratepayer-protection-act-is-just-getting-started",
-   "published": "Wed, 14 Oct 2026 13:51:12 +0000",
+   "source": "cointelegraph",
+   "title": "Thailand crypto ETFs may see slow start despite new rules: CoinShares",
+   "link": "https://cointelegraph.com/news/thailand-crypto-etfs-slow-start-new-rules-coinshares?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+   "published": "Thu, 15 Oct 2026 09:36:20 +0000",
    "query": ""
   },
   {
-   "source": "coindesk",
-   "title": "Kraken parent Payward to become first crypto firm to buy a EU bank as it expands into deposits, lending",
-   "link": "https://www.coindesk.com/business/2026/10/14/kraken-parent-payward-to-become-first-crypto-firm-to-buy-a-eu-bank-as-it-expands-into-deposits-lending",
-   "published": "Wed, 14 Oct 2026 13:07:45 +0000",
+   "source": "cointelegraph",
+   "title": "Babylon advances native Bitcoin lending proposal on Aave V4",
+   "link": "https://cointelegraph.com/news/babylon-native-bitcoin-collateral-aave-v4-proposal?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+   "published": "Thu, 15 Oct 2026 09:14:28 +0000",
    "query": ""
   },
   {
-   "source": "coindesk",
-   "title": "U.S. September CPI comes in hot, sending bitcoin sharply lower",
-   "link": "https://www.coindesk.com/markets/2026/10/14/u-s-september-cpi-comes-in-hot-sending-bitcoin-sharply-lower",
-   "published": "Wed, 14 Oct 2026 12:33:56 +0000",
+   "source": "cointelegraph",
+   "title": "Bitcoin ETFs shed $261M as XRP funds buck weekly outflow trend",
+   "link": "https://cointelegraph.com/markets/bitcoin-etf-outflow-btc-below-82k?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+   "published": "Thu, 15 Oct 2026 07:23:43 +0000",
+   "query": ""
+  },
+  {
+   "source": "cointelegraph",
+   "title": "South Korea plans cybersecurity overhaul after attacks hit banks, crypto firms",
+   "link": "https://cointelegraph.com/news/south-korea-cybersecurity-overhaul-crypto-exchanges?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+   "published": "Thu, 15 Oct 2026 05:52:21 +0000",
+   "query": ""
+  },
+  {
+   "source": "cointelegraph",
+   "title": "Here\u2019s what happened in crypto today",
+   "link": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+   "published": "Thu, 15 Oct 2026 05:49:17 +0000",
    "query": ""
   },
   {
@@ -220,51 +262,16 @@
   },
   {
    "source": "cointelegraph",
-   "title": "Here\u2019s what happened in crypto today",
-   "link": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-   "published": "Wed, 14 Oct 2026 19:13:24 +0000",
-   "query": ""
-  },
-  {
-   "source": "cointelegraph",
    "title": "EU authority classifies Circle\u2019s USDC as \u2018significant\u2019 under MiCA",
    "link": "https://cointelegraph.com/news/eba-circle-usdc-stablecoin-significant-token-mica?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
    "published": "Wed, 14 Oct 2026 19:03:52 +0000",
    "query": ""
   },
   {
-   "source": "cointelegraph",
-   "title": "US authorities dismantle crypto scam network that stole tens of millions",
-   "link": "https://cointelegraph.com/news/fbi-brooklyn-crypto-scam-112-servers-241-websites?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-   "published": "Wed, 14 Oct 2026 17:56:45 +0000",
-   "query": ""
-  },
-  {
-   "source": "cointelegraph",
-   "title": "OCC report finds debanking efforts tied to crypto activities",
-   "link": "https://cointelegraph.com/news/occ-trump-debanking-crypto-activities?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-   "published": "Wed, 14 Oct 2026 17:03:20 +0000",
-   "query": ""
-  },
-  {
-   "source": "cointelegraph",
-   "title": "Standard Chartered pushes $2T stablecoin forecast to 2030 as transaction volumes grow",
-   "link": "https://cointelegraph.com/news/standard-chartered-stablecoin-forecast-2030-market-growth?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-   "published": "Wed, 14 Oct 2026 16:26:31 +0000",
-   "query": ""
-  },
-  {
-   "source": "cointelegraph",
-   "title": "Bitcoin price dips below $82K as high oil prices spike US CPI inflation",
-   "link": "https://cointelegraph.com/markets/bitcoin-price-dips-yields-surge-as-high-oil-prices-spike-us-cpi-inflation?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-   "published": "Wed, 14 Oct 2026 14:21:15 +0000",
-   "query": ""
-  },
-  {
-   "source": "cointelegraph",
-   "title": "\u2018Bunker mode\u2019 won\u2019t protect your crypto, critics say",
-   "link": "https://cointelegraph.com/magazine/bunker-mode-wont-protect-your-crypto-critics-say?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-   "published": "Wed, 14 Oct 2026 13:30:00 +0000",
+   "source": "cnbc_markets",
+   "title": "China indicates rare earths will keep flowing to EU, regardless of U.S. trade deal expiration",
+   "link": "https://www.cnbc.com/2026/10/15/china-rare-earth-exports-europe.html",
+   "published": "Thu, 15 Oct 2026 09:02:31 GMT",
    "query": ""
   },
   {
@@ -345,10 +352,17 @@
    "query": ""
   },
   {
-   "source": "cnbc_markets",
-   "title": "Inflation likely peaked for 2026 but will remain sticky, according to prediction markets",
-   "link": "https://www.cnbc.com/2026/10/12/inflation-will-remain-sticky-in-2026-according-to-prediction-markets.html",
-   "published": "Mon, 12 Oct 2026 15:37:26 GMT",
+   "source": "abc_au_business",
+   "title": "ACCC takes Kmart to court over nail glue burns and button battery safety",
+   "link": "https://www.abc.net.au/news/2026-10-15/accc-take-action-against-kmart-over-nail-glue/107270918",
+   "published": "Thu, 15 Oct 2026 07:09:51 +0000",
+   "query": ""
+  },
+  {
+   "source": "abc_au_business",
+   "title": "China 'dumped' aluminium windows and doors in Australia, report finds",
+   "link": "https://www.abc.net.au/news/2026-10-15/chinese-aluminium-windows-doors-imports-trade-remedies-report/107264752",
+   "published": "Thu, 15 Oct 2026 06:23:06 +0000",
    "query": ""
   },
   {
@@ -367,7 +381,7 @@
   },
   {
    "source": "abc_au_business",
-   "title": "NT Labor backflips, supports 'hyper-scale' data centre moratorium",
+   "title": "NT Opposition leader calls for moratorium on 'hyper-scale' data centres",
    "link": "https://www.abc.net.au/news/2026-10-15/nt-labor-backflips-to-support-data-centre-moratorium-ai/107269286",
    "published": "Thu, 15 Oct 2026 04:42:36 +0000",
    "query": ""
@@ -416,23 +430,9 @@
   },
   {
    "source": "abc_au_business",
-   "title": "Universities justified job cuts with numbers no-one could check",
-   "link": "https://www.abc.net.au/news/2026-10-15/nsw-university-financial-models-job-cuts-inquiry/107244202",
-   "published": "Wed, 14 Oct 2026 19:32:45 +0000",
-   "query": ""
-  },
-  {
-   "source": "abc_au_business",
-   "title": "Builder chosen for Hobart's Macquarie Point stadium",
-   "link": "https://www.abc.net.au/news/2026-10-15/builder-chosen-for-hobart-macquarie-point-afl-stadium/107264166",
-   "published": "Wed, 14 Oct 2026 18:56:44 +0000",
-   "query": ""
-  },
-  {
-   "source": "abc_au_business",
-   "title": "Investing bonanza as younger Australians lean on AI advice",
-   "link": "https://www.abc.net.au/news/2026-10-15/asx-investing-bonanza-young-australians-lean-on-free-ai-advice/107266282",
-   "published": "Wed, 14 Oct 2026 18:00:00 +0000",
+   "title": "BHP dives as AI stocks fall out of favour \u2014 as it happened",
+   "link": "https://www.abc.net.au/news/2026-10-15/asx-markets-business-news-live-updates-thursday-15-october/107268248",
+   "published": "Wed, 14 Oct 2026 20:34:25 +0000",
    "query": ""
   },
   {
@@ -549,16 +549,16 @@
   },
   {
    "source": "gnews:CSL.AX",
-   "title": "What does CSL (ASX:CSL) want from its new Alentis deal? - Kalkine Media",
-   "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxON20ydVlzMjZTV1RIWU9tN294anU3QjMtT0NVazlnUVo3b1dSVWJDYmdkWU9ORWtBYVl4cm1mYnVZUFpNMDJnbG9uTXlGM2ViaDcxLXgwWEZnUU9SSEdWR3RtV3dBb1diVHo3N1AzUl8tLWZXU1BJeU5sYlJ5TXBRMEhMU2Q5NFBwX1k5NTJTdEY3bUY3SXVYdFJrMzR1dw?oc=5",
-   "published": "Wed, 14 Oct 2026 22:29:00 GMT",
+   "title": "CSL\u2019s latest result suggests the worst may be over - Morningstar Australia",
+   "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPUVBaOFNaQ1c3ZlNyTW9KMkJkRjh6clh5X3pmNTgzQm9mcm5Sb0duWVluRDluMXI1cEFWMnJXWlFxd1lGajBhNTI1bENESHdPemUxdzRjdUZMcnUyQU5taFBndExUQ0h1OF9zWW50Zlhiblhfb0E2UWgzNV9zZ2ZLSkZ2d1VqWm1Cb0ow?oc=5",
+   "published": "Mon, 31 Aug 2026 07:00:00 GMT",
    "query": "CSL ASX shares"
   },
   {
    "source": "gnews:CSL.AX",
-   "title": "CSL\u2019s latest result suggests the worst may be over - Morningstar Australia",
-   "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPUVBaOFNaQ1c3ZlNyTW9KMkJkRjh6clh5X3pmNTgzQm9mcm5Sb0duWVluRDluMXI1cEFWMnJXWlFxd1lGajBhNTI1bENESHdPemUxdzRjdUZMcnUyQU5taFBndExUQ0h1OF9zWW50Zlhiblhfb0E2UWgzNV9zZ2ZLSkZ2d1VqWm1Cb0ow?oc=5",
-   "published": "Mon, 31 Aug 2026 07:00:00 GMT",
+   "title": "How Is ASX 200 Stock CSL (ASX:CSL) Rebuilding Plasma Growth After a Reset? - Kalkine Media",
+   "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQd04tU2g4dTZqS3R0LS0xUGFaWTZCZmt2MzZmRURhNno3d2ZKYi1EU0hCcEdsWkJKU1F0VHZOU29BQ0dXbEE0aXE1VDJxRXdkOXZKZ01JM1kzc3RWX2tCNldOT0d2NDdSbWRjenBTaW84VTgtMkxuWFcwZ1pvcUVYTHRFVjIxRk9hUGFGU2g5SnJPMTg2clJwdDJjejZ1RG15MnBRVUdaZ2EzNkdMQmxYMzU3S0I?oc=5",
+   "published": "Tue, 13 Oct 2026 03:52:00 GMT",
    "query": "CSL ASX shares"
   },
   {
@@ -585,8 +585,8 @@
   {
    "source": "gnews:XLE",
    "title": "State Street Energy Select Sector SPDR ETF - ETF Database",
-   "link": "https://news.google.com/rss/articles/CBMingJBVV95cUxPOVE2T20zOHNWR2VtSGVLbEFJRHRwUzBJTE5iclB5S29iR3JENV9FLTdPWmpUYUE2WTNIT044MFktc2NUc0xhRjFfeFdfNlRSOER1dTNfd1hPbTN0YVNpY2pWNHd1MURpdVhhQk56cmZkWjdfQ1J6MHpMNzUwT3p4Qk5JSHBRNDdTTUhPR2pjNUIteExFS29kdHlsWDZNWTRUZkpiaG54Qy1PdUhUUDBYMDEwUXF0cU1Iay0yRDAwYng2TzFxY1ZBY29nZlhOcnptbG9BRlV4UzlxWnlXOWZDQlpwZmJaT1ZGZDlVckZTc3JBTEh3V000ZFFiN2dvbVhpemRtYWVObjFfcjM3YjY4UnhRNWlnaGVZUEpLOTVR?oc=5",
-   "published": "Thu, 08 Oct 2026 14:42:57 GMT",
+   "link": "https://news.google.com/rss/articles/CBMingJBVV95cUxQdlBOYnpPT3lBWXV3bWFueHZyNjdVSlJ4N2tmdUg1V2ZUbkVueXFoZTIyTW1RVG54Z1I0TVF2LUxGMHRqeWJMeXFmMVozckRHWmVLNDg5X2UwdjNkZW4tR0drMThrZFRvRjh1Z0pLUjQxUHN2T3FSY0IxODhSY2JkWERRakpZb2p3OHlsWFhmR0kxcjNLU2w5UjJGNHJHUVJLaEJXWDVzcjZlYnFBeS11U3dkRVZWa2RYRTNOUjJlNlR1M0hKdU1lZVFHZ3FiVVM1UHBjOEVWeGUwN0VJRndYT19ZOEJJbDVwdWQ1SnAzZzdsdXBvckhORkIzSW5kb0t1Z19CcUhqNEU1TmVDV0t4R19Lc3ZvcnlOWllnSnF3?oc=5",
+   "published": "Sat, 03 Oct 2026 07:00:00 GMT",
    "query": "XLE ETF"
   },
   {
@@ -619,9 +619,9 @@
   },
   {
    "source": "gnews:AVAXUSDT",
-   "title": "Avalanche leads way as most big cryptocurrencies post decreases - MarketWatch",
-   "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNZW1yM09qOVhZTmc1VDRUMW1Yb2VVSDVMM2kyb1RVMHR5ZjllSlhqWC1ub2prTTB2dDhibjNzVC1jaXIzVldkQnprYWxtam5tVjBwaVF4ek9CSV9CSzJDTnhCRkxVSHVWX1FoOWFkWWZ4ck9mNVVUWldfdnh4b25VNzRmcWttNmtWbkl5THdjbU5LV1V1czl2SFhqd1NKZHUyU3Q5SHFrbVpRT3l3OHNxVWlxOXp2dzRYdDdQLS12Mzk?oc=5",
-   "published": "Wed, 14 Oct 2026 14:00:00 GMT",
+   "title": "Cardano, Avalanche and Litecoin Are All Up More Than 20% This Month and Still Far Below Their Highs. XRP Is Much Closer. Which Gets Back First? - Yahoo Finance",
+   "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOQjUyTkxPYnloNTFNWjVCTDcxWDNTeWMwR1pjTkVGUkplWUVhb3RaWHItZy04cDV3RDlZTk5MMmNFUWxNeHhleXRhUnlnZHdqRXBCZkFkOEZBQnNNR1lVd3NfcGFfY2c0ZWNUWmR0bkZ0bVdDNkNQa2syY2MzdEZ5dFdtSS0zYURObW9XT3pTVHI4YVBSeWhUQ3FGTUEydzlo?oc=5",
+   "published": "Mon, 12 Oct 2026 19:00:27 GMT",
    "query": "avalanche crypto"
   },
   {
@@ -640,9 +640,9 @@
   },
   {
    "source": "gnews:AVAXUSDT",
-   "title": "Cardano, Avalanche and Litecoin Are All Up More Than 20% This Month and Still Far Below Their Highs. XRP Is Much Closer. Which Gets Back First? - Yahoo Finance",
-   "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOQjUyTkxPYnloNTFNWjVCTDcxWDNTeWMwR1pjTkVGUkplWUVhb3RaWHItZy04cDV3RDlZTk5MMmNFUWxNeHhleXRhUnlnZHdqRXBCZkFkOEZBQnNNR1lVd3NfcGFfY2c0ZWNUWmR0bkZ0bVdDNkNQa2syY2MzdEZ5dFdtSS0zYURObW9XT3pTVHI4YVBSeWhUQ3FGTUEydzlo?oc=5",
-   "published": "Mon, 12 Oct 2026 19:00:27 GMT",
+   "title": "Avalanche leads way as most big cryptocurrencies post decreases - MarketWatch",
+   "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNZW1yM09qOVhZTmc1VDRUMW1Yb2VVSDVMM2kyb1RVMHR5ZjllSlhqWC1ub2prTTB2dDhibjNzVC1jaXIzVldkQnprYWxtam5tVjBwaVF4ek9CSV9CSzJDTnhCRkxVSHVWX1FoOWFkWWZ4ck9mNVVUWldfdnh4b25VNzRmcWttNmtWbkl5THdjbU5LV1V1czl2SFhqd1NKZHUyU3Q5SHFrbVpRT3l3OHNxVWlxOXp2dzRYdDdQLS12Mzk?oc=5",
+   "published": "Wed, 14 Oct 2026 14:00:00 GMT",
    "query": "avalanche crypto"
   },
   {
@@ -668,13 +668,6 @@
   },
   {
    "source": "gnews:MSFT",
-   "title": "Microsoft EVP, CFO Amy Hood sells $3.98m in MSFT stock - Investing.com",
-   "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOUWFlRmhJSFZ1VHdqeWFxXzF4VHVycE1hTEpPWkxqV05YX1N0b1cyb3RpWGRkNDU1MDFRQk5ESjlQaUQwU0ljTURVQ3lzenFNZzRQdzdsTHVPanlkZ2IzUEUyWnBYYTBUSDQxUFMtM2ExaTM4OVE4dF9vMjlHSV8tYUxZWDdXbzBZZTJjZHBwV0taV2xSd3UyNVFwOS1MU2VRczRKR19JOXZSTnBtXzZLLUxhRk5OMHM?oc=5",
-   "published": "Wed, 14 Oct 2026 22:57:11 GMT",
-   "query": "MSFT stock"
-  },
-  {
-   "source": "gnews:MSFT",
    "title": "U.S. Stock Market Movers | Reports Suggest Microsoft (MSFT.US) to Deploy Self-Developed AI Chips on a Large Scale Next Year; Shares Rise Nearly 1% in Early Trading - Moomoo",
    "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOcjl6bUFyZW5uQlUxMEpTY3VXOFp0VHNhN2cyT2FvNVJGTF9OUVdJaWxJNTVra2RadjdPQTE0LTRKaVR0WEs1Vldydld4WTZCSWRENGh1YjY1M1drRnp4cF9McWgySTUzbjRYbUZoOUhoeGlmVGdxZ1YxN2wyZS05NXcxbTItcXRoLUdHMTRURzI1LUxZbDJ3WjN1UndOQ1M3ZFFzX3MxM3hSUl9LYWc?oc=5",
    "published": "Mon, 12 Oct 2026 15:01:15 GMT",
@@ -688,10 +681,66 @@
    "query": "MSFT stock"
   },
   {
+   "source": "gnews:MSFT",
+   "title": "Microsoft EVP, CFO Amy Hood sells $3.98m in MSFT stock - Investing.com",
+   "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOUWFlRmhJSFZ1VHdqeWFxXzF4VHVycE1hTEpPWkxqV05YX1N0b1cyb3RpWGRkNDU1MDFRQk5ESjlQaUQwU0ljTURVQ3lzenFNZzRQdzdsTHVPanlkZ2IzUEUyWnBYYTBUSDQxUFMtM2ExaTM4OVE4dF9vMjlHSV8tYUxZWDdXbzBZZTJjZHBwV0taV2xSd3UyNVFwOS1MU2VRczRKR19JOXZSTnBtXzZLLUxhRk5OMHM?oc=5",
+   "published": "Wed, 14 Oct 2026 22:57:11 GMT",
+   "query": "MSFT stock"
+  },
+  {
+   "source": "gnews:BTCUSDT",
+   "title": "Bitcoin price falls toward $81,500 after September CPI report - Quartz",
+   "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1oMDctb0Zmc0FwbndwNjVzenVrdTVoaURQWlR2NThRRG1sRTFXeUVCRUFkek5YM2NtLXp5YmVrTU9hd19KcURwUGc0eGFScm1SbHlqcGNKbUZUOFpac282TDhNQWVRVlRJNG5ZVHczNV9EZDA?oc=5",
+   "published": "Wed, 14 Oct 2026 20:15:07 GMT",
+   "query": "bitcoin"
+  },
+  {
+   "source": "gnews:BTCUSDT",
+   "title": "On the Chain: Bitcoin slides towards US$81,000 as hot US inflation sparks fresh crypto sell-off - Yahoo Finance Australia",
+   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQeWZWa0lkbzh1UHdGb3k1dFFJY3gwN1oyOEE4SVF6cmQzY0dIZVNuNUthNEkxQ1BuVElONng3WU80ejJ0T0UycDlwR1FBcnVKYndhV3dGdEV4LVFidG5ma0VvWXJmdldtVzdtNkNiTGFIcXlXVFljbkwwcE02RS1TNEZ5VWdQZjA?oc=5",
+   "published": "Thu, 15 Oct 2026 00:02:00 GMT",
+   "query": "bitcoin"
+  },
+  {
+   "source": "gnews:BTCUSDT",
+   "title": "Bitcoin drops below $81,000 as risk-off sentiment weighs on Asian equities - The Block",
+   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPSllYc2wzZHZzRlMzUzVub1RiRG03a0F4UEJrOWxQOVQ0SmxHQUxLUzFhUXZvNHZFaDhhcWNnS1p0YjNjQUZOM1B3azhGMU9aTE56VS1fMWVOODZKVkdmWkhGV0ZIM2FCMmNfRXBOdmh5UkJkVWRRNGt0WUpXdVctSWtjV3otdmNHZ2tFZWd6dWd0SzZT?oc=5",
+   "published": "Thu, 15 Oct 2026 04:38:00 GMT",
+   "query": "bitcoin"
+  },
+  {
+   "source": "gnews:BTCUSDT",
+   "title": "Gold and bitcoin surge after US bond market selloff; UK economy on \u2018firmer footing\u2019 - as it happened - The Guardian",
+   "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNc2xPRUh6cmJ5VEVwZUtEQ0tMZlZoZHlaU3dld0R5cXBfOFRBYXppdW82Mnk5bnVLYWJLWU1rUlBQWmNPck1hWTBWNG80QWJxS3ZoYTZyMG1hdlhLVnJpczY5N1oyenI2X1dBaTllR3hBSGlRMHJKYm0xM3dRdDJPYmY2RGZ5VURMYVpkN2xaZmpDZnRuX3Q0bkg1Y3A3RDhKTFEtRUxJNUlJYzdPWkdxOWM2RGtNQXR5dUJKR1RJd040VjloWDc0X1JfSktjbU5ncTJLVw?oc=5",
+   "published": "Fri, 21 Aug 2026 07:00:00 GMT",
+   "query": "bitcoin"
+  },
+  {
+   "source": "gnews:BTCUSDT",
+   "title": "Nearly $1 billion in crypto bets liquidated as bitcoin, ether and XRP slide - CoinDesk",
+   "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNblZQX0dpQWN2aUFZRklDRUdNZklJSzR5RDNhdXAyN0RlYk5qOW94TEROU09sdGR0X09tWXVQOEp3b1ZqTTY3X1RiSGMybEtaMTRfUko2X0pWbWhHMzYxRTNKTnQ2QTZYWW4yQWdCVmNmMVFVSGZULWJoekMyUExzQ3J4c0R0SXkwLWFFT01maDVpR2d4RFY4V1NIS0U3aEVielA4NTNTbGk1Ry13ZFlVVkowdWlPdmp3ZGg5ag?oc=5",
+   "published": "Thu, 15 Oct 2026 04:25:15 GMT",
+   "query": "bitcoin"
+  },
+  {
+   "source": "gnews:BTCUSDT",
+   "title": "Bitcoin tipped to surge past key psychological level - The Motley Fool Australia",
+   "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNQmdBcWlGd0pPRVFabHJ3M3pneWJkMC1BZFl6UFdXQmhvd1VmTEZlUHYwbl9aVmJZY2ZhVWZOSDFXX3JrMkdxempOejlLOUxmdUxScU9nQnRNaWZIUGVvbE9DbEJyWUgtRGlzOUE2NDlaWG1aOEYxYmp6WkRlVkY5bkpmMnRmdTNTZEdLS3ZmOFU0QQ?oc=5",
+   "published": "Tue, 13 Oct 2026 22:57:48 GMT",
+   "query": "bitcoin"
+  },
+  {
    "source": "gnews:ANZ.AX",
-   "title": "CITIWARRANTS 44.0521 ANZ MINI SHORT (ASX:ANZKOS) - intelligentinvestor.com.au",
-   "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPQU9LbkkwRG14cUd2VTZyaDhXUk42RTJlMXVDQ2hQdGZXSnpqRkQ1d2tkTDFGd2thRl9GclZxbW8xajNaQ2N5V0pOckJiMHg5d3pyZm0wY2FnZW1Pal9xYXlQTmJrQkZpZWNSSjZ6OUZPWjRLeThjX2VFWi1oa1MwQnYyNllzdjFic1IwdDBUaTcwdk5wNFE?oc=5",
-   "published": "Wed, 14 Oct 2026 13:40:22 GMT",
+   "title": "CITIWARRANTS 57.6344 ANZ MINI SHORT (ASX:ANZKOT) - www.intelligentinvestor.com.au",
+   "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQc3VNVXdTdEdjX0RkTWhjem15Qk03T1V3QlA2UFBCNkRCZnBVWGVsX2w2b2lsNEl4X1JRczVtaURhVk5ZSWJObFNUNDIyU25MbWlTSWdDV0pnbzZ0N051WkxVUGt3TmdId0xCQUNCRF95aUpUaERMaDFXQnR1aXdfY04yWkplcXpRUXhMelZOQ3Q4bG5Vd3c?oc=5",
+   "published": "Wed, 14 Oct 2026 18:20:12 GMT",
+   "query": "ANZ ASX shares"
+  },
+  {
+   "source": "gnews:ANZ.AX",
+   "title": "ANZ Group (ASX:ANZ) Share Price, Forecast & Analysis - Stocks Down Under",
+   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBpNHhJWEZSaHNFamVKT21xXzAxdTBmMmtQQjE1T3pnSTJBNlVJeUh5MkpWOHBYVEZ4U3paVlcxNjI2RTNQSUpaYS1SLU9ZLWRhQlNhQUdNMXc2UQ?oc=5",
+   "published": "Wed, 14 Oct 2026 21:57:21 GMT",
    "query": "ANZ ASX shares"
   },
   {
@@ -717,59 +766,10 @@
   },
   {
    "source": "gnews:ANZ.AX",
-   "title": "ANZ Group Holdings Converts 6,708 ANZAA Options to Ordinary Shares Between 20\u201324 August 2026 - Kalkine",
-   "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOTlVkVl9abUJQb1hsek5nZ1R0blpYNmtVOUxrbEU0akdSc1cyNjdzUDd3S1ZTMTZ6Y3ROSTByalN5bEgtNTNDT01WUmF0bkpEeGVRUG9lblhIWlRablJUek5aTDJiZUVGN0VwdmI1a1NuOEVGcE5iWG15TUUwSVBROVFONW5Ya3RuenJBenNRQW1QQlJRX09sU2NsSDd2R0VCaHJ3ekVXNV9mM2NQVlk5bWUzb1Vzbk02bVlaakRTckNEX3lyRV9JZTh6RUI?oc=5",
-   "published": "Mon, 12 Oct 2026 00:12:22 GMT",
+   "title": "Buy, hold, sell: Resmed, Megaport, ANZ shares - The Motley Fool Australia",
+   "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOTFFvOWRUQTJBRlFpd2stbUtxZFMxYkxyLUdPay04elppUFhiOUFEd0ZaMFVDWlpJVGRsVmp3RkVnMzQzdUNMN01WbmVVMzAwRGd5LTM4WE93VHU2NGk4bS1nZ0FhTGJWbEJNMjVSNk5SZm5DTDdZdkoxZ3VYR2JkZXJ3?oc=5",
+   "published": "Sun, 11 Oct 2026 23:44:45 GMT",
    "query": "ANZ ASX shares"
-  },
-  {
-   "source": "gnews:ANZ.AX",
-   "title": "CITIWARRANTS 21.5984 ANZ 25-OCT-35 INSTAL MINI (ASX:ANZJOC) - www.intelligentinvestor.com.au",
-   "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQVDVRNzRTS0VlYU1HZTdtSC1wMF9RNnVFbzB3cjZ1cUtHdTA5bS1melpna0hiclVSM2szam1iUEM1Vm1ELXA2d052ZGd2YjYyM2hORFZEYTV3eDlqVDQxSkJ4VTlDZmtMeEtLYXh3VndBYVNHWTIydDRsaU01bDhELUJnTFJNWHRKZFBNNGdJdnBvcjg2LUsyQ3Z4VnRSelpMM18yNg?oc=5",
-   "published": "Tue, 13 Oct 2026 19:19:09 GMT",
-   "query": "ANZ ASX shares"
-  },
-  {
-   "source": "gnews:BTCUSDT",
-   "title": "Nearly $1 billion in crypto bets liquidated as bitcoin, ether and XRP slide - CoinDesk",
-   "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNblZQX0dpQWN2aUFZRklDRUdNZklJSzR5RDNhdXAyN0RlYk5qOW94TEROU09sdGR0X09tWXVQOEp3b1ZqTTY3X1RiSGMybEtaMTRfUko2X0pWbWhHMzYxRTNKTnQ2QTZYWW4yQWdCVmNmMVFVSGZULWJoekMyUExzQ3J4c0R0SXkwLWFFT01maDVpR2d4RFY4V1NIS0U3aEVielA4NTNTbGk1Ry13ZFlVVkowdWlPdmp3ZGg5ag?oc=5",
-   "published": "Thu, 15 Oct 2026 04:25:15 GMT",
-   "query": "bitcoin"
-  },
-  {
-   "source": "gnews:BTCUSDT",
-   "title": "Bitcoin price falls toward $81,500 after September CPI report - Quartz",
-   "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1oMDctb0Zmc0FwbndwNjVzenVrdTVoaURQWlR2NThRRG1sRTFXeUVCRUFkek5YM2NtLXp5YmVrTU9hd19KcURwUGc0eGFScm1SbHlqcGNKbUZUOFpac282TDhNQWVRVlRJNG5ZVHczNV9EZDA?oc=5",
-   "published": "Wed, 14 Oct 2026 20:15:07 GMT",
-   "query": "bitcoin"
-  },
-  {
-   "source": "gnews:BTCUSDT",
-   "title": "On the Chain: Bitcoin slides towards US$81,000 as hot US inflation sparks fresh crypto sell-off - Yahoo Finance Australia",
-   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQeWZWa0lkbzh1UHdGb3k1dFFJY3gwN1oyOEE4SVF6cmQzY0dIZVNuNUthNEkxQ1BuVElONng3WU80ejJ0T0UycDlwR1FBcnVKYndhV3dGdEV4LVFidG5ma0VvWXJmdldtVzdtNkNiTGFIcXlXVFljbkwwcE02RS1TNEZ5VWdQZjA?oc=5",
-   "published": "Thu, 15 Oct 2026 00:02:00 GMT",
-   "query": "bitcoin"
-  },
-  {
-   "source": "gnews:BTCUSDT",
-   "title": "Bitcoin Falls To $81K After Hotter-Than-Expected US Inflation Breaks BTC Below Tight Trading Range - TradingView",
-   "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNakkzemF4TnBoS2JRM09RaWNQVTN6WFBrTjNmTGlya1h1WGFnUV9Nb29sdDBUclF0d2RxNklxWHRXdUFNT2c5WDBmUm5zSGNmT1dmM25DY2ozYmdIUXRRY3J0QUg1NVF4cDgyWE1mTzg0Vlg5a0FIdUw4ei1qZFl4SFNmN0h0ZThudXRRUUl6VG1qZTk1Sk02T1VBdUlnUFJEUDFxQUI5eDhGZDkzQTh1WG04SGhWSG9ZWFVxQnhhLW9KMURhMmF0UmZFekQ2eUJ4VlRtakRhT1FiMU00NXd4TG1XeVdJNW1udEF6ZnRPYw?oc=5",
-   "published": "Wed, 14 Oct 2026 17:19:00 GMT",
-   "query": "bitcoin"
-  },
-  {
-   "source": "gnews:BTCUSDT",
-   "title": "Gold and bitcoin surge after US bond market selloff; UK economy on \u2018firmer footing\u2019 - as it happened - The Guardian",
-   "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNc2xPRUh6cmJ5VEVwZUtEQ0tMZlZoZHlaU3dld0R5cXBfOFRBYXppdW82Mnk5bnVLYWJLWU1rUlBQWmNPck1hWTBWNG80QWJxS3ZoYTZyMG1hdlhLVnJpczY5N1oyenI2X1dBaTllR3hBSGlRMHJKYm0xM3dRdDJPYmY2RGZ5VURMYVpkN2xaZmpDZnRuX3Q0bkg1Y3A3RDhKTFEtRUxJNUlJYzdPWkdxOWM2RGtNQXR5dUJKR1RJd040VjloWDc0X1JfSktjbU5ncTJLVw?oc=5",
-   "published": "Fri, 21 Aug 2026 07:00:00 GMT",
-   "query": "bitcoin"
-  },
-  {
-   "source": "gnews:BTCUSDT",
-   "title": "Bitcoin tipped to surge past key psychological level - The Motley Fool Australia",
-   "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNQmdBcWlGd0pPRVFabHJ3M3pneWJkMC1BZFl6UFdXQmhvd1VmTEZlUHYwbl9aVmJZY2ZhVWZOSDFXX3JrMkdxempOejlLOUxmdUxScU9nQnRNaWZIUGVvbE9DbEJyWUgtRGlzOUE2NDlaWG1aOEYxYmp6WkRlVkY5bkpmMnRmdTNTZEdLS3ZmOFU0QQ?oc=5",
-   "published": "Tue, 13 Oct 2026 22:57:48 GMT",
-   "query": "bitcoin"
   },
   {
    "source": "gnews:AAPL",
@@ -780,16 +780,16 @@
   },
   {
    "source": "gnews:AAPL",
-   "title": "AAPL Stock Hits Record High As Apple Unveils HomeView, Revamps Smart Home Lineup - Yahoo Finance",
-   "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNbUhuYnRDMWtpdHo2bHhtTW1yVEloWVVPOHd2ZC1Gend2ZURvQ0c4aFNJcWt3Qzk4RnhZQ2ZOaHRZV0JjLU1rQUtqWnYwQjhkM0YxbUw1ZnhxeDlqOVc0bndMY29qVDI3TkJKWG9NUXVaZno5cXY1ODEzQ09WUnNPdG03RXN0MnFvLUotNU42by1lRWdHRXNB?oc=5",
-   "published": "Tue, 13 Oct 2026 14:18:33 GMT",
+   "title": "JPMorgan resets Apple stock price target amid iPhone panic - TheStreet",
+   "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPWnlzSEtrbTc2b041djFzR2Fud0dYakNxbnM3bk9oNFBzcDVfeEVjbU5tekVDQ0J5NElGR0tDbDUtSG9zYm9jU2M0cWhUbTBxSzY5RHMwNGs4U1RDLTNMTmJyU3BtbjQtRUU0R2xLejhPbU43TVdSZ0o2Z3BmUzVkM3BPaVNrRE03dXpxU09abEhKWmtzRW1DYzRBVTY4Rk44aHZV?oc=5",
+   "published": "Wed, 14 Oct 2026 21:36:00 GMT",
    "query": "AAPL stock"
   },
   {
    "source": "gnews:AAPL",
-   "title": "JPMorgan resets Apple stock price target amid iPhone panic - TheStreet",
-   "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPWnlzSEtrbTc2b041djFzR2Fud0dYakNxbnM3bk9oNFBzcDVfeEVjbU5tekVDQ0J5NElGR0tDbDUtSG9zYm9jU2M0cWhUbTBxSzY5RHMwNGs4U1RDLTNMTmJyU3BtbjQtRUU0R2xLejhPbU43TVdSZ0o2Z3BmUzVkM3BPaVNrRE03dXpxU09abEhKWmtzRW1DYzRBVTY4Rk44aHZV?oc=5",
-   "published": "Wed, 14 Oct 2026 21:36:00 GMT",
+   "title": "AAPL Stock Hits Record High As Apple Unveils HomeView, Revamps Smart Home Lineup - Yahoo Finance",
+   "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNbUhuYnRDMWtpdHo2bHhtTW1yVEloWVVPOHd2ZC1Gend2ZURvQ0c4aFNJcWt3Qzk4RnhZQ2ZOaHRZV0JjLU1rQUtqWnYwQjhkM0YxbUw1ZnhxeDlqOVc0bndMY29qVDI3TkJKWG9NUXVaZno5cXY1ODEzQ09WUnNPdG03RXN0MnFvLUotNU42by1lRWdHRXNB?oc=5",
+   "published": "Tue, 13 Oct 2026 14:18:33 GMT",
    "query": "AAPL stock"
   },
   {
@@ -836,13 +836,6 @@
   },
   {
    "source": "gnews:DBC",
-   "title": "U.S. Dollar to Slip Ahead? ETFs in Focus - TradingView",
-   "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPSWgzdno1RTctQXdKOUhUd0E4WnNRT3pQVllTMUVnV0lpdGJ3b0dwWVhzRV9waThOS0NyVDRBdUpXV2hwa2k2MEczX29xUGQzZHpUcWFpSVhob2s0MDhyMWZFQUZnaTVKUUxsb01GMFQ2NnQtVEhJMTVNd0VPWWpmWGVQeEtlVGJlbkVPczVDQ1ZKOUZGOTk5djZB?oc=5",
-   "published": "Fri, 14 Aug 2026 07:00:00 GMT",
-   "query": "DBC ETF"
-  },
-  {
-   "source": "gnews:DBC",
    "title": "DBC: Why Commodities May Be The Next Big Trade (Rating Upgrade) - Seeking Alpha",
    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNZkJkcGVMZXA3djd2dVNMY3FGZW9mQ2dDTjNpazY4OUFOZ0ExbFJQNjNLN2trR3BYNmJ1T25lV2dIREtyRmdmeUwzeVdTa216dGZDWkFFNjlXdVctMkNlOEdJZHBDb2RQdkJoQUtpMUM2al9hdUViSFpaeFFkTG8xbnh3MkFHOFNOcnRvWTJLb1JrZENmUkNfR1JuTFVfQQ?oc=5",
    "published": "Thu, 13 Nov 2025 08:00:00 GMT",
@@ -850,23 +843,30 @@
   },
   {
    "source": "gnews:DBC",
-   "title": "Invesco DB Commodity Index Tracking Fund (DBC) Stock Price Today: $33.32 - Pluang",
-   "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBwazFXdi1PSGZxc3lkc0s4WEg1YTRmOHNjYUd0clZndFl1Z21JSzIxeTV1WnZZaWR0eFp0LVlpMWRSdDZJTWlTaG05TGFUVHV6UjAzb0JuaHA?oc=5",
-   "published": "Mon, 20 Apr 2026 15:16:19 GMT",
+   "title": "(09/02/26) In a Quagmire Scenario, Here\u2019s How and What to Trade - www.moneyshow.com",
+   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9LSDluaFBJSWZmSW5NYUtCb3FfbjgwcldOYVl0NTVPNlFuTFdET2VOUFlWSUl3S2xFNG1KcHhyTTMtejlrd3B1X1h4ekNpbnBKMDVBR2NUd09sZzZuWGRkcGdpdw?oc=5",
+   "published": "Wed, 02 Sep 2026 07:00:00 GMT",
+   "query": "DBC ETF"
+  },
+  {
+   "source": "gnews:DBC",
+   "title": "This 1 Commodity ETF Is up 42% as It\u2019s the Perfect Inflation Hedge - 24/7 Wall St.",
+   "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOSUs0R0o1a1RUc1FLOXhmaUgzeURSN3d0U0Z2UlNJengwOG45UVlpU0dSeVJPbUhaVUlLZUkyNU5LcmNnWDhULTBLb1M0TjFGYUpiWVkyNWJVVVo4OEJEZy15TlhRMUo0M2xRWVhqWVEyVkVSS2VHTWZwSTVLWUc2NXlSemh6TDlvQldNei1GM3JoNmhfU0ZXNFRyS05FcGZsRWdfZjFKZDNIMHpV?oc=5",
+   "published": "Fri, 17 Apr 2026 07:00:00 GMT",
    "query": "DBC ETF"
   },
   {
    "source": "gnews:SOLUSDT",
-   "title": "Here's Why I'm Buying Solana Right Now - Yahoo Finance",
-   "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOREVxWmtqcS1vbmNKaWdtTW8zMThUWjJpZ3RxSC1xTmQtbkhuOWN2ZUp2c0xtNG9INGh0bF83TDdOR1VyZmtzXzVmbFlwdjFVdXJ2cEVkX2JreURaV1MwWm5DS2k0U2FZX3FjcHlhZUs2aGlGZHBfbjlsbGdPelBpOU1zYnR6SVNYTHhnekxaY1I2RGpHdmc?oc=5",
-   "published": "Thu, 15 Oct 2026 01:31:00 GMT",
+   "title": "Solana Just Did Something in China That Changpeng Zhao Says BNB Chain Couldn\u2019t - Yahoo Finance",
+   "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOZnAzekI1VGlIRk1kMmFNUUlPeF8tbDhSS2FNeHAzMkV0ZldWUllpWkNyb3VaNlhoR0FSM2xYUFNMSnc0OXY5QjRhUHBTNFFCNDZtdFF0ZlRmNHdOVVk5SGVYOXRnbmZmTTJpdWw0Y1hhNFE2SDhweUVTYmlkUXUyUGtCclhHUkE5TXZLNC1TeHV0WjZGdXVGVXRGYmU?oc=5",
+   "published": "Thu, 15 Oct 2026 06:23:02 GMT",
    "query": "solana"
   },
   {
    "source": "gnews:SOLUSDT",
-   "title": "Solana Price Today | Live SOL Price, Chart & Market Data - Binance",
-   "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE03bF9ZMzA2UXR1VjdXbnk3SlpSYXZhZnVuTVd1djJMbHVHVEFkcGRsNnh6Z0xiSDJTNW5SenVHczk4NlNvOGZTaEs4V2plYS1pS1lxXw?oc=5",
-   "published": "Wed, 14 Oct 2026 17:17:00 GMT",
+   "title": "Solana Sets October 21 Date for Alpenglow's 150ms Finality - Altcoin Buzz",
+   "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQLV9rZWNVYzdORHFFMzAzNnlQb1pOYllrTm9DV2FibXRJQTJ0RTNBeWwzZGJwWnM1Smxqenc4RVRrVmQtdGVCN1Z5ZDJxdWhGMlp6RnRreDBzb09ORlo3aElWQTlOU1I3MVJOLW55MUpDOGNDdnMwQ2trVXBSMkVJWEROZWdBSzIyX1pfd2pB?oc=5",
+   "published": "Thu, 15 Oct 2026 05:34:15 GMT",
    "query": "solana"
   },
   {
@@ -878,108 +878,108 @@
   },
   {
    "source": "gnews:SOLUSDT",
-   "title": "Here's Why I'm Buying Solana Right Now - The Motley Fool",
-   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNWUZBalljTTFqVjNVVXlkbXB4QU9OSjk2S2wtZFE1TTE0RnVSNm9FRmlmTl9lYUNsZDFCem95NnRzemk0dEJyMXlreUxIbURrZW5RSllIQ1RVOU1JQ21VMG9NMW5PYVJ2LVN1ajFveXVNNlpVNkhjZnZna2VMc2d0bDVrd3RjUQ?oc=5",
-   "published": "Thu, 15 Oct 2026 01:29:26 GMT",
+   "title": "Solana Price Today | Live SOL Price, Chart & Market Data - Binance",
+   "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE03bF9ZMzA2UXR1VjdXbnk3SlpSYXZhZnVuTVd1djJMbHVHVEFkcGRsNnh6Z0xiSDJTNW5SenVHczk4NlNvOGZTaEs4V2plYS1pS1lxXw?oc=5",
+   "published": "Wed, 14 Oct 2026 17:17:00 GMT",
    "query": "solana"
   },
   {
    "source": "gnews:SOLUSDT",
-   "title": "Solana (SOLUSD) Suddenly Goes down 2.18% on Oct 15: What You Need to Watch - TradingKey",
-   "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPZmNfeHB2VC1xekI2U0R1UEpGQmFiOWZSVER4bFdUbWo5Wkh2SWVSZzJzbHo1WGJkWG91MXotdE56c2JSalpGUWlSY2NReEx1V242YTkwdXd4VlYzOENKLVhpeUNLQ2NLczh4a3Q1c1lZbGF5YVBReE9hYllrWHk3Y2p6bXBnUjVQWmRBSjBR?oc=5",
-   "published": "Thu, 15 Oct 2026 02:30:12 GMT",
+   "title": "Solana Price Forecast: SOL risks $100 breakdown as ETF outflows mount - FXStreet",
+   "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPOXhlMFV4Ykp2d0J1cVpEY2tPeVpYZk5kRXBVUzV4N3dTRzVNX2t2SzdfZzFFOGZ0eVVjLXVTX3FhTnNqWm5URm15a0ZMb20yZjVJT3RVVG56UnBqWjMyZkR1YmhpeS1QQmtYTUgtMDAzM0ZQUkVkS0k2cmgxektPLVpZOG4wWW5HeXNNbWtCZGhtajVxVzVoVGFuM1dGNEg3M0g2dkhwVHdjSU9lY1oySWFsaFpsVEJEaWZOQlJwLU02NHFzNlE?oc=5",
+   "published": "Thu, 15 Oct 2026 06:06:54 GMT",
    "query": "solana"
   },
   {
    "source": "gnews:SOLUSDT",
-   "title": "Solana sets October 21 for massive Alpenglow upgrade that could make transactions 99% faster to finalize - CryptoSlate",
-   "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNNmVHRllRVWpMbWpjUXNrSHRpTnZKNXBqNmpNR180VVc0OGZaaWtJeGYtS1pJYmlRME1WUXpZOHVKbjl3ODFTWTgyYklQaTZLUEU3Mk1kWF84elVVNDk0OG56aVVXZXMxOTkxWGdxV2h4Um4tUjA5RWZTRTJieDlYQ2FFUkNjREJ2TVdkSEx6MUNHMERYLTRENS12S1VadEphSlpFY3FuRldHMUNLRWhMMGxEQjFiSDU3aUgtbWNZTTAtbUdHY3d3?oc=5",
-   "published": "Thu, 15 Oct 2026 00:00:17 GMT",
+   "title": "Solana: Grayscale buys for 20 days, VanEck sells - CryptoTicker",
+   "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9PSlNra0FDMjRFV2d6RkpGekV0SllFWVF2dGprMXZXTml6WVdRZXd4eERRZ1BoUEEtRjJYOUZCYWV5c1VfZlhYYnlHN0VQTXhORzFUeC16SlNJZzJHM29KR2hmcXgxcGRkSWNLcFFMNDBYT3Iw?oc=5",
+   "published": "Thu, 15 Oct 2026 09:32:19 GMT",
    "query": "solana"
   },
   {
-   "source": "gnews:LINKUSDT",
-   "title": "Chainlink Data Feeds and Data Streams Go Live on Stellar - Altcoin Buzz",
-   "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPUjBwT3J4enUtTWgwNW9CbWdhNENvaFdNQ0hMeXNJa2VYQ0N1bkpCakhVQTBWdzJSZXU0YW9OZ011cTFwTEx3eDhsSHF2MEJQV2VRVkd5NEhkQnMtZ01FOHdPaHV5Z1o5eUFCWEgySG1xaFZJeGhIZ1doaWtnUFc5dTlDSFhXSjFIU2VNSGtFNHAwTnRBVTNKNQ?oc=5",
-   "published": "Thu, 15 Oct 2026 01:33:18 GMT",
-   "query": "chainlink"
+   "source": "gnews:XRPUSDT",
+   "title": "Important Ripple News and XRP Price Update: October 15 - CryptoPotato",
+   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNcnF5M1pBcUhtM0pxUDVkOWNDQlBQdFpQQUg4SUh5R2M1UE11MVNhRk95dFE3QVNUMnZiMWtuaGNFQUZlZ2RNRXZaTU9LQk5xZWpPSmlKMkpoYV9GcERfTUlxMnNSYkhqaTkyZFczMFVKWEtoN1lMZVAxLW15M0dSV1gtd1ZjUQ?oc=5",
+   "published": "Thu, 15 Oct 2026 07:30:00 GMT",
+   "query": "xrp ripple"
   },
   {
-   "source": "gnews:LINKUSDT",
-   "title": "Chainlink Is Enabling Financial Institutions to Connect to Swift\u2019s Blockchain Ledger - Chainlink",
-   "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQYnZVNk5rUDlFdnc0dy1WQ05zamdpYncxeDV6RmhtN1haTWpuRzA4M2tncXBrQUpXdlQ3bjRRZTJuSXBsRVI4b2F3bnQ5ZFRMOTB5aGF6QWN1X3MzMlZBU2V1bnlkVlNNb2xlQTZIUS1sYW1oLVE3RGpBRktuWFc0V0VPclBTXzVhZXIyUnAxSUpVM3Y0dTZRRkZTS0w5Mkl1WFdpNkpfcWVUXzRvdTN3b1NPRGVTT2RL?oc=5",
-   "published": "Mon, 28 Sep 2026 07:00:00 GMT",
-   "query": "chainlink"
+   "source": "gnews:XRPUSDT",
+   "title": "Top 3 Price Predictions: Bitcoin, Ethereum, Ripple \u2013 BTC eyes $85,000, ETH holds support, XRP stabilizes - FXStreet",
+   "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPR1RhcGtsbFlUZTdnWkRhTTNtbHAwd0ZxcWpKTTlnbm5UaUt3NS1OS29fczdDcjZsc1IzaG13eHBfRW4xSHliY1l5M1JCU3NhQ2czZm9ZMjZHamNyUTlHM2tPLVZESnBlS2Q1T1laSlo4eV84ZDJQeUZMUllkMDdVM2JWREZrMUhIVUZfemZhdTU0OF9YZUUwamxFTEEyamlMLUEwbHpwcWpObndKRWdVaUdBQjdVeFdiOTRWcENZc3AtT28zTjJjaEtYU3pXaHBJWGU2VFA0VFE4a2tjUzBUQkVva29oTTRYTHdMbA?oc=5",
+   "published": "Wed, 14 Oct 2026 04:15:49 GMT",
+   "query": "xrp ripple"
   },
   {
-   "source": "gnews:LINKUSDT",
-   "title": "Chainlink gains institutional backing but LINK token price lags despite ETF inflows. - Pluang",
-   "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPMlJ0dFJ6MmxvTVdhdlZPMVktdV9vTjVES0d3N1lvMGdQYW9DdE1MTzNvVDhub0o3S2szTFpOdVprdmhzdm1hdFY3YUcxUG9wZzZhUUppMElxUVQxWGJZczNuZW1nYi1CbVk5bGc5SGotZmJYbHQ5ZzQ3WUFKZWJxMmpUZUU4VGc4MjZVVktUdEdsQlZ0amRxMWV6NA?oc=5",
-   "published": "Thu, 15 Oct 2026 03:27:30 GMT",
-   "query": "chainlink"
+   "source": "gnews:XRPUSDT",
+   "title": "DriveWealth to use Ripple's RLUSD for stablecoin settlement, cross-border payments - The Block",
+   "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNNmRZMDc1VHpuTEZ3clNQTGs2bDkzQ1BuQ0NDOGNWQndvM3kzYnJyNmQwbjZMQzJMTkJmeXRFUHJheHN5UDMxOUpQaFFFSTU3ZERtcXNxZ0tSZ0VtMXRLV1V2OUVaOW5SclNSeGtmdjRpRUN4WVhjMGdBN29yQVhub2gyWGRYVkQzajJuLV9ic0N5b1pUUlpVVGV0ekloTHpiQmhsVw?oc=5",
+   "published": "Wed, 14 Oct 2026 13:00:00 GMT",
+   "query": "xrp ripple"
   },
   {
-   "source": "gnews:LINKUSDT",
-   "title": "Where is Chainlink price heading now? - FXStreet",
-   "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNZXF1NnlkZHFqT003OFpwbHRmT2t2YjZDaFVqeVhtUmhyWXZ3M3ltWVBSUTg2ZUlvVHh4blpaMElnTjhtV0x2Ylh0cGpFZ2RzWWk3Z3hNYWpuem5acV9GWWhFYm4wOUJiZ1hEYUtFaUg4bVlfVmlpZjNhZzlIZmxaaHpOaHVBWllMY193TF96Yzh5bHdiZERENHJpWkdDZExJLWlYTDBwa0JHZUNGVjlic0oyc1NmLTQxeHVIR0J6bkk5VlozUmdPLXNrYS04OWs?oc=5",
-   "published": "Mon, 12 Oct 2026 06:07:48 GMT",
-   "query": "chainlink"
+   "source": "gnews:XRPUSDT",
+   "title": "Where Will XRP Be in 2030? - Yahoo Finance",
+   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPcUJaZ08wZC00R0tXTEJjQkUzOEdIQTVGT1FndnB6Ukl2cnNHNjVaZV9DWnMyZ1FFWHktbGViVlZ3eFRaZ0kyYVBDeXM4cHJYSS1nZThnWkVtTmxHdTVIT09FNW93ekRiTEw4NW00bm80N21WcW1rajh4SVdrRGVUcGFzMDZ4dw?oc=5",
+   "published": "Tue, 13 Oct 2026 12:20:00 GMT",
+   "query": "xrp ripple"
   },
   {
-   "source": "gnews:LINKUSDT",
-   "title": "Chainlink Price Prediction: Can LINK Reach $52.86? - Coinpedia",
-   "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPSkoyTzM5NUFyVGk3TVZiNDlPT0FMVW1mWU4tUEdjQmlqSTE5WThiVVFzd1RrcExWbC11VVJRcnFmVE9zVWl4UFdwZVRLNDU3dl94dmxRM056alFrSDE2Uy1DTVdUNUFCNDZ6dTQxNlRDU3dneGxGQmNIS0JqWTRPNNIBhgFBVV95cUxQOVU4ZzVKbGsyTWlGelJTQ0dnbDN4SVRSU3JHbmpGU2V3THNzQWYtdHdBOXBnVHM0T3ZzdmYwOEt5bS1wT0s2dHVNZ3VnN205cWs4bmczTzh0RllmQjJ4aVF5cHBtMEQwR2VMMEw3WGJaaEFZZzk1bExIMGFZLW9aNF9jOWgzZw?oc=5",
-   "published": "Wed, 14 Oct 2026 19:53:18 GMT",
-   "query": "chainlink"
+   "source": "gnews:XRPUSDT",
+   "title": "Why is XRP\u2019s recovery losing momentum? - FXStreet",
+   "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOWHdPenl5Vlo4Y01IOW8zNGJKVnpmTnNHSTQxUW5hOUtIbVBhOWdRWTV3WmhpNTM1ekFjMVp1TjRWb3RUTDBUSzQyU052bzhiSUc4WFhwaER6TU9vdERkTGp0ZUxJLXpTOTIxMFFUZlhyMGJwU0tBWWhxcFJMbkFYSUNCaW5HYkl5enRUWjE5RGxOSnU3TnYyT2FzN1ZWRXBvaWM2Z0lDdDR2STM3bVFBYWduNzZYWUxFa1B6TjEwUmxQdEFmNU5uOTBvbmlUcF8yUVVialBoQ3gteDlUYWhmeHJvVGRyVDA?oc=5",
+   "published": "Wed, 14 Oct 2026 14:00:00 GMT",
+   "query": "xrp ripple"
   },
   {
-   "source": "gnews:LINKUSDT",
-   "title": "Better Cryptocurrency to Buy Now With $1,000: Chainlink vs. XRP - The Motley Fool",
-   "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxORmRSX0JRZWlrOHBZMTc3Z25rOU1OWGxCY2VIbjllQjdUOHJrM3pubTRjWEt0bzFVMWRfRUMtbXFZcjd6djAycHlRM1VTWmVKdjY2aXRhR0c5cU5VeFhVNHMteWdPSFk1VjFJVHpKSF80aE1wT3IxVFBEeGNvZnZhUnB2ZGsyV3lhaU4yT285d2hDODVJMVFhcg?oc=5",
-   "published": "Sun, 11 Oct 2026 11:30:00 GMT",
-   "query": "chainlink"
+   "source": "gnews:XRPUSDT",
+   "title": "Standard Chartered launches custody for Ripple's RLUSD on XRP Ledger - The Block",
+   "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPNmlQbXktUHdCVlhrYkkzX3RhOGFMd1Q4SUhsbTBBWnZBaUcwZ2lDSWo4OWVSOVBReWhVLVNpNGg2MjRHRVByS2U3V2RWRmRzdmp0amZJaVp2dFNKdVhvMmtPV2xGWG9sYTNFVVZSN3ZLOXl2bHMwTkFIY3BSM255M3F3WGZpS2JXbXRFOWFDcE4xemZwTExGZjBtUQ?oc=5",
+   "published": "Mon, 12 Oct 2026 09:35:00 GMT",
+   "query": "xrp ripple"
   },
   {
-   "source": "gnews:ADAUSDT",
-   "title": "Cardano (ADA) Drops 3.21% Amid Macro Shock and Leverage Flush - CoinMarketCap",
-   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5vWmZRUWJkNWZCeTNTYk9wSUdsbV9JV19GN1RXYThNNUE0NGxBeVZZVEpFVGgwdC00ckdNNVcwemkwMG5xTGVMa3BSb3ZEQWhaX3hLTlhoOWYyNGZzaE1sU1FqWlhCdDNxVnBvaGxIOW8?oc=5",
-   "published": "Thu, 15 Oct 2026 04:06:00 GMT",
-   "query": "cardano"
+   "source": "gnews:LTCUSDT",
+   "title": "Convert 1 AUD (AUD) to LTC (Litecoin) - Bybit",
+   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9ERUpQVDJiWnlkeUVLS0xpQUNxMWZ6SVRzQUQ1MDIzcXZmZDhHWF9aZXpWVy1vcGYyRnpCWHBWREtSa2ZNUWl4TTVfMmo5NDRQZm5hbUFYTWh5dw?oc=5",
+   "published": "Tue, 13 Oct 2026 00:00:00 GMT",
+   "query": "litecoin"
   },
   {
-   "source": "gnews:ADAUSDT",
-   "title": "Should You Buy Cardano Under $0.25 or Solana Under $110 After Both Fell 9% This Week? - Yahoo Finance",
-   "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPVlZpdFpLZ2dZQzJYbkZyMUF3QWRac2FHZ0U2Z19RZFpjTVZ3UFNjdVJUdE00MUpvdThnc0UxblVLXzM2ZGdEYnZITEZNRjdTakt0SXo5SndwZXRvQnhnZkxaT3B6dW9NSHJtS2RMSXRfRlRGazFzSXUtekFVcVZUUjh4Y0QtZ25QdG81UkVkLVg?oc=5",
-   "published": "Wed, 14 Oct 2026 19:30:21 GMT",
-   "query": "cardano"
+   "source": "gnews:LTCUSDT",
+   "title": "Litecoin Has Beaten Bitcoin for 30 Days Straight. The Last Three Times It Did, the Lead Ended the Same Way. - Yahoo Finance",
+   "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQVkVfQW5ONldfcnFkUElxZXM5WWJBaFFvVXdFSWxkVUJNc1FtODZUNS1Ldm02VWVLemNTcU1vaktpUlhwMWhiWVk3OUJHc1ZzSURQS0w3OXh2TkNUXzFGNkJjc2JodWVYRm1qQnZvRGZOOENLejlfMXV4cmFtMC1JeGxLNGdheEJTVTdmUUVGNkhzUjJJNXFGZndOVW8?oc=5",
+   "published": "Mon, 12 Oct 2026 19:30:02 GMT",
+   "query": "litecoin"
   },
   {
-   "source": "gnews:ADAUSDT",
-   "title": "Cardano (ADA) drops 4.33% to $0.2187 amid $1.98M long position liquidations - Pluang",
-   "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQeVNoWjdJYlA2VGJYa1dBR3NheUVMUjl1RkZoTXgtaW14QmYwZkFRalZsbzctTTBYOTFWQVNYUkZhZnUtcnlubFA5dTZ0MTZYM2czUnZxcU9NaUN2dXFxV1ZjY0hQdjlRQlFDWXdOMzVWV01udGtiMmVUTGdvZjMyVEQ0Rk1zVGh5cDE0WVB5aGJ2UQ?oc=5",
-   "published": "Thu, 15 Oct 2026 03:07:32 GMT",
-   "query": "cardano"
+   "source": "gnews:LTCUSDT",
+   "title": "Litecoin News: Why is LTC\u2019s price up today? - CoinMarketCap",
+   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1BREhGeWFVVnVjcUJEeF9yX2FmUVYwN29uaFBVT3Z2WFZJQ09pRlB0VGdOaTBGQ04xWThJbThyVGVVTThGNUE5ZVhNVTlWRVJLR1BGOHAtQ1BnN2RpVnRHYVk1S3E4Zk5YWVNPRWYxc2I0QQ?oc=5",
+   "published": "Thu, 15 Oct 2026 04:39:38 GMT",
+   "query": "litecoin"
   },
   {
-   "source": "gnews:ADAUSDT",
-   "title": "Can Cardano defend key support or is another leg lower ahead? - FXStreet",
-   "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPWmRkUXBOdjJoR2V1UTFvV2c4dWdXWjBqWjlpaTY0UXNLZFdUUEVJcjU5bXBQWWV5aTNORl9nQlNTQ1plRUYwZ2JuWUNXVUtIdkttVTBGRUFoV2hXWDBpUmFDcVhjVmhZa2FCUU1uazlBU2tGNS05MHpqLXloazEwMzFzZHlzTHdvUzU0MzNhdHdpVkNtS3ZVZkJLYnJRUWdJSElLTjZZVjlQeGNtaTNydjdyRkVRS2NqczR1cVJNTENHMndiQ2hCS1B0TzZDTUwzQVkzSg?oc=5",
-   "published": "Tue, 13 Oct 2026 05:17:02 GMT",
-   "query": "cardano"
+   "source": "gnews:LTCUSDT",
+   "title": "Litecoin(LTC) Stock Price Today | Quotes & News - Moomoo",
+   "link": "https://news.google.com/rss/articles/CBMingJBVV95cUxQWVk2aGlJWEFtQmJnRFhwMUxTVVV5Z2c3QWVJZTBYekVwOWRLdW5ZVkxiVzUxSm5oX3dYYnRBUkNzTWQzU1pEb1EzZlJoandMbXdmSzUwNm1kQ2RPYjl2VGFvUzl3b0l2ZV8zdzNiQ09HVUlUWTFGcUlJUU13ME0wd2R1SzFMZy13VVl2djBkczcwdjZpU3NSQlNUVUVfbGZZUkdsMVJzYms3Q05VTmZCclVUWURFcnM0S3ZxZU5DdmJ5b0NqUnZkcFozRVZtS3BlRGZkN3dsTFZJLWRyZEJLN3duaG14eW10YTlldXY2cU03WXlMWU9TSm5uZmJuQ05RQktWNTdySTc3eW5hdzhEeFNpM05FTlA0enY2RUJ3?oc=5",
+   "published": "Wed, 14 Oct 2026 21:47:00 GMT",
+   "query": "litecoin"
   },
   {
-   "source": "gnews:ADAUSDT",
-   "title": "Cardano Falls 10.11% In Bearish Trade By Investing.com - Investing.com Australia",
-   "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQQV9GWS14TXQ2TnVuSlNDRURqN0x1bUdienlaLXRibDVadzlwZDhXZEtGREhYUXlmTVVsN1ZTRlc4bGotSGNISXh6dHNXWUpmM0tMWHh1TFp1WmZBb0JESWROMVJzLVY4b3ZhVGVLRDlKRkd1eHBNTXMxbnlKaUZnSU1XeGI0OEJFZ1pUanhJeXp2ZlBkT3A3Rw?oc=5",
-   "published": "Tue, 13 Oct 2026 02:01:36 GMT",
-   "query": "cardano"
+   "source": "gnews:LTCUSDT",
+   "title": "Luxxfolio backs LitecoinVM to expand Litecoin ecosystem - Dealroom",
+   "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQb3pmZWh5WGdBWlJySEJoeFZsamRWWEVoUnczem1JalNpQjRZclBRVnNtLV9WT2pXOGo4b0V4TDh0d09pdGhsNFlHalV4OFc5Q0JJb0dvYkpjRHE5ZmZjcnBQZ2ctX1NIREdzcW5xWWlONk5LM1BueGxWLW9QbUl5Y3VwSjVqMGdEcEFkQXRINlB0UGM?oc=5",
+   "published": "Tue, 13 Oct 2026 21:25:09 GMT",
+   "query": "litecoin"
   },
   {
-   "source": "gnews:ADAUSDT",
-   "title": "Cardano Balances On Support as Derivatives Turn Bearish - TradingPedia",
-   "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOdHpZY2w4TTdtVUx6Q2xaZlI2ckRUQlFqTGRZbENBUkRjNmIxdHFjTnpRUERwODVhQ01Zc1E3blVYUXFlVUVzQk1nYTZzY3dPNmNEVnQtU1ZNMFJfSWZKMXAtbVlJUk5VUTV1YUxiaFducG8wZHl0UjNfT2JyUFhScFJ4YVpVa1lhVngzTWpWZmJEQUkyYUVhZ3M0VUw?oc=5",
-   "published": "Tue, 13 Oct 2026 08:12:38 GMT",
-   "query": "cardano"
+   "source": "gnews:LTCUSDT",
+   "title": "Litecoin Shows How Multi-Rail Business Payments Are Taking Shape - NJBIZ",
+   "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPS0RYU0U5NGVua2Y3N2FvNk1GNW1qUkVVU1VnaGc2TXVpMHBrVEJ6WEhFOFdpU0ZNUTh5RWhhTlVpNzdaSG8zZHBTRkFXZ1g2NVE3S3FBV2xLUUo2VG5LdWg0NV9ySERMQmZrZzJ1b1V1QUJJUlBNMzdYNjVWQkhBRXp1V3BPUGsyVkFR?oc=5",
+   "published": "Wed, 14 Oct 2026 19:41:35 GMT",
+   "query": "litecoin"
   },
   {
    "source": "gnews:META",
@@ -1004,13 +1004,6 @@
   },
   {
    "source": "gnews:META",
-   "title": "Cathie Wood\u2019s ARK sells Personalise, buys Meta stock - Investing.com",
-   "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNMW05OXRYU2J5VURrczBGUFFiTV9UMDdyR1VVZG1VTm9zTTJyUEY3RzVHbWpFVk5LQS01VWxlYXgwUmJPZFlwTU1ic2lCbHJoaUx1MVNBWWFnSlpxd0EwQXd6RDhNNkhzWjd3aXdMc0pkUTRmcUo4T0dDUXJtaGRkSVh2M3BnS0hqbnJqaElsQ2otM3U2UFB0aDllS3dkRUVIZzA1SDhia0xJQWs?oc=5",
-   "published": "Wed, 14 Oct 2026 11:12:32 GMT",
-   "query": "META stock"
-  },
-  {
-   "source": "gnews:META",
    "title": "Meta (NASDAQ:META) Stock Jumps 4% as Zuckerberg Unveils New AI Models to Rival OpenAI - Stocks Down Under",
    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5SQzBZdjZCb2RzLXhNVkptSC1Yam80XzRtbEZXb2VneHQ3Qk5mdHFYWUY5elBpSjZlbFA1UU93TkJVRG1IWElNZWtOWjFjaDU4NzB1SXN4bmpHVkg2SlFDLS1oT01iVElwVHdpR1hvYmQ4OG15OVJtR19CSVk?oc=5",
    "published": "Mon, 12 Oct 2026 18:50:02 GMT",
@@ -1021,6 +1014,13 @@
    "title": "Why Meta (META) Stock Is Up Today - Yahoo Finance",
    "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPRVhseXBwZVkyM0pKdU5rUDRMWkZWcy1BNTYzenNybzVZaDFaX1NrTnNRR1d2LUFDWnNFTHY3YS1mdWRpTEM2aGM0bDRwaGhoQklfR2FNU2pxVVN0ZGdoUW5EdURFSDZMQWhoNWhrU1BVdUVrU3JWWlBrX0VFdXdNR3FSNUQybmZNNG1OTlZadnZpb1F3?oc=5",
    "published": "Tue, 13 Oct 2026 01:19:00 GMT",
+   "query": "META stock"
+  },
+  {
+   "source": "gnews:META",
+   "title": "Meta Platforms, Inc. $META Stock: Triumph Capital Management Reduces Holdings - MarketBeat",
+   "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOSTdMblVtbEo2aW12ajh1QjZhUDRjVUIwbjFxZkhqN1hVNG5uVHVzZ2VucFZFTDF6TnJFM19BTE9NaVRoYjBFZWw5c1NJMmU4ckhKMTc5T00yNUNWLWJGVThKWVJ0N0hJZldid3YtZU5XTi1EcTlEVGlBbWVsc05aOWg5c3JvNjdkd1FlSmlvQWd3NFRBUTgyS25pbmhRR0JVVU1OVkZZSUZZRVJYMmc0eEFLamdtMW05YnR6dl9OSWxDbFNJN2lNbHpGWWJPUWc?oc=5",
+   "published": "Thu, 15 Oct 2026 08:44:42 GMT",
    "query": "META stock"
   }
  ]
