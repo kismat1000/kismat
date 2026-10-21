@@ -1,0 +1,23 @@
+<section id="base" data-transition="fade" style="background:#F6F8FB; color:#1B2430; font-family:'IBM Plex Sans', Arial, sans-serif; padding:100px 128px; display:flex; flex-direction:column; justify-content:center; gap:36px">
+  <div style="display:flex; justify-content:space-between; align-items:flex-end">
+    <div style="display:flex; flex-direction:column; gap:8px">
+      <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#1C5CAB; letter-spacing:2px; text-transform:uppercase">Base metrics &#8212; my determination</p>
+      <h2 style="font-size:56px; font-weight:600; line-height:1.05">Every metric, justified from how it works</h2>
+    </div>
+    <div style="text-align:right"><p style="font-size:96px; font-weight:700; color:#D14343; line-height:0.9; font-family:'JetBrains Mono', monospace">10.0</p><p style="font-size:26px; color:#D14343; font-weight:600; letter-spacing:1px">CRITICAL</p></div>
+  </div>
+  <table style="font-family:'IBM Plex Sans', sans-serif; font-size:25px; color:#1B2430; border-radius:10px">
+    <tr style="background:#101826"><th style="width:26%; color:#EEF3FA; text-align:left; padding:14px 20px; font-size:24px">Metric</th><th style="width:16%; color:#EEF3FA; text-align:left; font-size:24px">Value</th><th style="width:58%; color:#EEF3FA; text-align:left; font-size:24px">Why I chose it</th></tr>
+    <tr style="background:#FFFFFF"><td style="padding:11px 20px">Attack Vector</td><td><b>Network</b></td><td style="color:#47515F">Reachable across the network via any logged input</td></tr>
+    <tr style="background:#F0F3F8"><td style="padding:11px 20px">Attack Complexity</td><td><b>Low</b></td><td style="color:#47515F">One request; reliable public exploits, no special conditions</td></tr>
+    <tr style="background:#FFFFFF"><td style="padding:11px 20px">Privileges Required</td><td><b>None</b></td><td style="color:#47515F">No account or authentication needed</td></tr>
+    <tr style="background:#F0F3F8"><td style="padding:11px 20px">User Interaction</td><td><b>None</b></td><td style="color:#47515F">Logging is automatic &#8212; no victim action</td></tr>
+    <tr style="background:#FFFFFF"><td style="padding:11px 20px">Scope</td><td><b>Changed</b></td><td style="color:#47515F">Breaks out of the library to the host and beyond</td></tr>
+    <tr style="background:#F0F3F8"><td style="padding:11px 20px">C / I / A impact</td><td><b>High / High / High</b></td><td style="color:#47515F">Full code execution &#8212; total data, integrity &amp; uptime loss</td></tr>
+  </table>
+  <div style="background:#101826; border-radius:12px; padding:22px 32px; display:flex; align-items:center; gap:20px">
+    <p style="font-size:24px; color:#8A97A8">Vector string:</p>
+    <p style="font-family:'JetBrains Mono', monospace; font-size:28px; color:#7FD1A8; font-weight:600">AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H</p>
+  </div>
+  <aside>Now the core of Task one — and I want to stress this is my own determination, justified metric by metric, not a copied number. Attack Vector is Network: the payload arrives over the network. Attack Complexity is Low: one request works, reliably. Privileges Required, None — no login. User Interaction, None — logging is automatic. Scope is Changed, and this is the key one: the flaw breaks out of the logging library to compromise the whole host, so it crosses a security boundary. And Confidentiality, Integrity and Availability are all High because arbitrary code execution means total loss on all three. Put together, both halves of the equation max out, and the base score is a perfect ten out of ten — Critical. There's the vector string.</aside>
+</section>

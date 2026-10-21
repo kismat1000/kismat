@@ -1,0 +1,28 @@
+<section id="scenario" data-transition="fade" style="background:#101826; color:#EEF3FA; font-family:'IBM Plex Sans', Arial, sans-serif; padding:110px 128px; display:flex; flex-direction:column; justify-content:center; gap:44px">
+  <div style="display:flex; flex-direction:column; gap:10px">
+    <p style="font-family:'JetBrains Mono', monospace; font-size:24px; color:#7FA8E6; letter-spacing:2px; text-transform:uppercase">Our scenario</p>
+    <h2 style="font-size:60px; font-weight:600; line-height:1.05; color:#FFFFFF; width:1600px">A power company running Java deep in its control systems</h2>
+  </div>
+  <p style="font-size:30px; color:#B9C4D4; line-height:1.4; width:1620px">Four assets in scope use Java or embed Log4j &#8212; and they don't sit on the corporate LAN, they run the grid. That context drives every score and every SIEM decision that follows.</p>
+  <div style="display:flex; gap:24px">
+    <div style="flex:1; background:#16233A; border:1px solid #34405A; border-radius:16px; padding:32px; display:flex; flex-direction:column; gap:12px">
+      <p style="font-family:'JetBrains Mono', monospace; font-size:23px; color:#7FA8E6">IT / OT boundary</p>
+      <h3 style="font-size:31px; font-weight:600; line-height:1.15">SIMATIC IT Report Manager V6.7</h3>
+      <p style="font-size:23px; color:#B9C4D4; line-height:1.35">Java reporting product, network-reachable</p>
+    </div>
+    <div style="flex:1; background:#16233A; border:1px solid #34405A; border-radius:16px; padding:32px; display:flex; flex-direction:column; gap:12px">
+      <p style="font-family:'JetBrains Mono', monospace; font-size:23px; color:#7FA8E6">SCADA / EMS core</p>
+      <h3 style="font-size:31px; font-weight:600; line-height:1.15">OPC UA Java Stack</h3>
+      <p style="font-size:23px; color:#B9C4D4; line-height:1.35">Speaks to controllers; deep, segmented</p>
+    </div>
+    <div style="flex:1; background:#16233A; border:1px solid #34405A; border-radius:16px; padding:32px; display:flex; flex-direction:column; gap:12px">
+      <p style="font-family:'JetBrains Mono', monospace; font-size:23px; color:#7FA8E6">Substation edge</p>
+      <h3 style="font-size:31px; font-weight:600; line-height:1.15">Siemens Connect X200 / X300</h3>
+      <p style="font-size:23px; color:#B9C4D4; line-height:1.35">Telecontrol gateways, remotely reachable</p>
+    </div>
+  </div>
+  <div style="background:#3A2320; border-left:6px solid #D14343; border-radius:10px; padding:24px 32px">
+    <p style="font-size:26px; color:#EEF3FA; line-height:1.4"><b>Why this raises the stakes:</b> a compromise here is not data loss &#8212; it is loss of view and control over physical grid equipment. Integrity and availability carry safety consequences.</p>
+  </div>
+  <aside>Here's our specific scenario, and it's what makes this analysis more than a textbook exercise. We're a power company, and four of our assets use Java or embed Log4j. The SIMATIC IT Report Manager, a Java reporting product that sits on the IT-OT boundary and is network-reachable. The OPC UA Java Stack, buried deep in the SCADA and EMS core that talks to our controllers. And the Siemens Connect X200 and X300 telecontrol gateways out at our substations. The critical point is at the bottom: a compromise of these isn't a data breach, it's loss of view and control over physical grid equipment. Integrity and availability here have safety consequences. That reasoning drives every CVSS environmental score and every SIEM choice I'm about to make.</aside>
+</section>

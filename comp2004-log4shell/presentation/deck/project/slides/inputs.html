@@ -1,0 +1,19 @@
+<section id="inputs" data-transition="fade" style="background:#F6F8FB; color:#1B2430; font-family:'IBM Plex Sans', Arial, sans-serif; padding:92px 128px; display:flex; flex-direction:column; justify-content:center; gap:26px">
+  <div style="display:flex; align-items:baseline; gap:24px">
+    <p style="font-family:'JetBrains Mono', monospace; font-size:30px; color:#2E6FD6; font-weight:600">1</p>
+    <div style="display:flex; flex-direction:column; gap:6px">
+      <p style="font-family:'JetBrains Mono', monospace; font-size:23px; color:#1C5CAB; letter-spacing:2px; text-transform:uppercase">SIEM inputs</p>
+      <h2 style="font-size:52px; font-weight:600; line-height:1.05">What must we ingest &#8212; and why</h2>
+    </div>
+  </div>
+  <table style="font-family:'IBM Plex Sans', sans-serif; font-size:23px; color:#1B2430">
+    <tr style="background:#101826"><th style="width:34%; color:#EEF3FA; text-align:left; padding:13px 18px; font-size:23px">Data input</th><th style="width:66%; color:#EEF3FA; text-align:left; font-size:23px">Why it is critical for this incident</th></tr>
+    <tr style="background:#FFFFFF"><td style="padding:12px 18px"><b>Web / app &amp; WAF logs</b><br><span style="font-size:19px; color:#8A97A8">SIMATIC Report Mgr, Java apps</span></td><td style="color:#47515F">The <span style="font-family:'JetBrains Mono',monospace">${jndi:&#8230;}</span> payload arrives here first &#8212; including headers and obfuscated forms</td></tr>
+    <tr style="background:#F0F3F8"><td style="padding:12px 18px"><b>IT&#8211;OT boundary firewall &amp; proxy</b></td><td style="color:#47515F">Server-initiated egress to LDAP/RMI is the exploitation tell an OT box should never make</td></tr>
+    <tr style="background:#FFFFFF"><td style="padding:12px 18px"><b>DNS query logs</b></td><td style="color:#47515F">JNDI callbacks resolve attacker/canary domains &#8212; visible even when payload is encrypted</td></tr>
+    <tr style="background:#F0F3F8"><td style="padding:12px 18px"><b>OT telemetry</b><br><span style="font-size:19px; color:#8A97A8">Connect X200/X300 syslog, OPC UA, historian</span></td><td style="color:#47515F">Passive sensor data where no agent can run &#8212; unexpected gateway behaviour, new connections</td></tr>
+    <tr style="background:#FFFFFF"><td style="padding:12px 18px"><b>Endpoint / EDR / Sysmon / auditd</b></td><td style="color:#47515F">Java spawning a shell or downloader &#8212; proof an attempt succeeded</td></tr>
+    <tr style="background:#F0F3F8"><td style="padding:12px 18px"><b>Vuln scan / SBOM inventory</b></td><td style="color:#47515F">Which assets actually run vulnerable Log4j &#8212; turns an alert into a prioritised one</td></tr>
+  </table>
+  <aside>The rubric asks me to individually identify the SIEM inputs and justify each in the context of this incident. Six. Web and application logs from the SIMATIC Report Manager and our Java apps — because the JNDI payload lands here first, in URLs, headers, form fields. The IT-OT boundary firewall and proxy — because a server, especially an OT box, making an outbound LDAP or RMI connection is the exploitation tell; it should never do that. DNS logs — because the JNDI callback resolves an attacker or canary domain, and that's visible even if the inbound request was encrypted. OT telemetry — the Connect gateway syslog, OPC UA and the historian, fed by a passive sensor where no agent can run. Endpoint telemetry — Java spawning a shell is proof an attempt worked. And the vulnerability-scan and SBOM inventory — because knowing which assets actually run vulnerable Log4j is what turns a noisy alert into a prioritised one.</aside>
+</section>
