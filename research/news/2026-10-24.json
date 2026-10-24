@@ -3,8 +3,8 @@
  "tone": {
   "XLE": {
    "symbol": "XLE",
-   "score": 0.667,
-   "positive": 2,
+   "score": 0.75,
+   "positive": 3,
    "negative": 0,
    "headlines": 6,
    "flags": []
@@ -20,8 +20,8 @@
   "MSFT": {
    "symbol": "MSFT",
    "score": 0.5,
-   "positive": 4,
-   "negative": 1,
+   "positive": 1,
+   "negative": 0,
    "headlines": 6,
    "flags": []
   },
@@ -35,9 +35,9 @@
   },
   "ANZ.AX": {
    "symbol": "ANZ.AX",
-   "score": 0.25,
-   "positive": 2,
-   "negative": 1,
+   "score": 0.5,
+   "positive": 1,
+   "negative": 0,
    "headlines": 6,
    "flags": []
   },
@@ -49,6 +49,14 @@
    "headlines": 6,
    "flags": []
   },
+  "AAPL": {
+   "symbol": "AAPL",
+   "score": 0.833,
+   "positive": 5,
+   "negative": 0,
+   "headlines": 6,
+   "flags": []
+  },
   "AVAXUSDT": {
    "symbol": "AVAXUSDT",
    "score": -0.8,
@@ -57,40 +65,81 @@
    "headlines": 6,
    "flags": []
   },
-  "AAPL": {
-   "symbol": "AAPL",
-   "score": 0.5,
-   "positive": 4,
-   "negative": 1,
-   "headlines": 6,
-   "flags": []
-  },
   "META": {
    "symbol": "META",
-   "score": 0.0,
+   "score": -0.25,
    "positive": 1,
-   "negative": 1,
+   "negative": 2,
    "headlines": 6,
    "flags": []
   },
-  "LTCUSDT": {
-   "symbol": "LTCUSDT",
-   "score": 0.0,
-   "positive": 0,
+  "NVDA": {
+   "symbol": "NVDA",
+   "score": 0.667,
+   "positive": 2,
    "negative": 0,
    "headlines": 6,
    "flags": []
   },
   "COST": {
    "symbol": "COST",
-   "score": 0.0,
-   "positive": 1,
+   "score": -0.5,
+   "positive": 0,
    "negative": 1,
    "headlines": 6,
    "flags": []
   }
  },
  "items": [
+  {
+   "source": "coindesk",
+   "title": "Strategy, Strive face balancing act between bitcoin buying and preferred stock dividends",
+   "link": "https://www.coindesk.com/business/2026/10/24/strategy-strive-face-balancing-act-between-bitcoin-buying-and-preferred-stock-dividends",
+   "published": "Sat, 24 Oct 2026 16:00:00 +0000",
+   "query": ""
+  },
+  {
+   "source": "coindesk",
+   "title": "Block's new voice AI sounds eerily human, sparking awe and scam fears",
+   "link": "https://www.coindesk.com/tech/2026/10/24/block-s-new-voice-ai-sounds-eerily-human-sparking-awe-and-scam-fears",
+   "published": "Sat, 24 Oct 2026 15:21:06 +0000",
+   "query": ""
+  },
+  {
+   "source": "coindesk",
+   "title": "Crypto under weekend pressure, bitcoin slides below $80,000 on U.S. Middle East evacuations",
+   "link": "https://www.coindesk.com/markets/2026/10/24/crypto-under-weekend-pressure-bitcoin-slides-below-usd80-000-on-u-s-middle-east-evacuations",
+   "published": "Sat, 24 Oct 2026 15:11:24 +0000",
+   "query": ""
+  },
+  {
+   "source": "coindesk",
+   "title": "Why McDonalds, Microsoft and Google saying no to tokenized stocks isn't a dealbreaker",
+   "link": "https://www.coindesk.com/business/2026/10/23/why-mcdonalds-microsoft-and-google-saying-no-to-tokenized-stocks-isn-t-a-dealbreaker",
+   "published": "Sat, 24 Oct 2026 15:00:00 +0000",
+   "query": ""
+  },
+  {
+   "source": "coindesk",
+   "title": "Argentina drops criminal probe into President Milei over crashed memecoin LIBRA",
+   "link": "https://www.coindesk.com/business/2026/10/24/argentina-drops-criminal-probe-into-president-milei-over-crashed-memecoin-libra",
+   "published": "Sat, 24 Oct 2026 14:38:47 +0000",
+   "query": ""
+  },
+  {
+   "source": "coindesk",
+   "title": "Wells Fargo, Cisco, Marvell among latest firms objecting to OKXICE's tokenized stock plan",
+   "link": "https://www.coindesk.com/business/2026/10/24/wells-fargo-cisco-marvell-among-latest-firms-objecting-to-okxice-s-tokenized-stock-plan",
+   "published": "Sat, 24 Oct 2026 14:06:24 +0000",
+   "query": ""
+  },
+  {
+   "source": "coindesk",
+   "title": "Bitcoin\u2019s wealthy holders turning to loans and yield as investment habits mature: Xapo CEO",
+   "link": "https://www.coindesk.com/",
+   "published": "Sat, 24 Oct 2026 14:00:00 +0000",
+   "query": ""
+  },
   {
    "source": "coindesk",
    "title": "U.S. Clarity Act failure gives Asia and Middle East a competitive edge, says Apex Group CEO",
@@ -124,55 +173,6 @@
    "title": "Bitcoin's price is as jumpy as Nvidia's and eight times more turbulent than the euro",
    "link": "https://www.coindesk.com/daybook-us/2026/10/23/bitcoin-s-volatility-is-well-above-euro-dollar-gyrations-though-it-has-calmed-to-rival-nvidia-s",
    "published": "Fri, 23 Oct 2026 11:22:33 +0000",
-   "query": ""
-  },
-  {
-   "source": "coindesk",
-   "title": "Live updates: Bitcoin holds above $81,000 as oil prices hit six-month high",
-   "link": "https://www.coindesk.com/markets/2026/10/23/live-updates-bitcoin-holds-above-usd81-000-as-the-ai-rout-fades-and-oil-climbs",
-   "published": "Fri, 23 Oct 2026 11:13:01 +0000",
-   "query": ""
-  },
-  {
-   "source": "coindesk",
-   "title": "Bitcoin steadies near $81,700 as altcoins rebound, pepe climbs 13%",
-   "link": "https://www.coindesk.com/markets/2026/10/23/bitcoin-steadies-near-usd81-700-as-altcoins-rebound-pepe-climbs-13",
-   "published": "Fri, 23 Oct 2026 10:54:41 +0000",
-   "query": ""
-  },
-  {
-   "source": "coindesk",
-   "title": "Bitcoin appears to have decoupled from midterm cycle bottom history",
-   "link": "https://www.coindesk.com/markets/2026/10/23/bitcoin-approaches-midterms-as-july-low-challenges-historical-cycle-pattern",
-   "published": "Fri, 23 Oct 2026 10:53:09 +0000",
-   "query": ""
-  },
-  {
-   "source": "coindesk",
-   "title": "HSBC rolls out its first stablecoin to over 3 million everyday app users",
-   "link": "https://www.coindesk.com/business/2026/10/23/hsbc-rolls-out-its-first-stablecoin-to-over-3-million-everyday-app-users",
-   "published": "Fri, 23 Oct 2026 10:22:56 +0000",
-   "query": ""
-  },
-  {
-   "source": "coindesk",
-   "title": "Sweden\u2019s central bank revives e-krona debate as stablecoins and digital euro loom",
-   "link": "https://www.coindesk.com/business/2026/10/23/sweden-s-central-bank-revives-e-krona-debate-as-stablecoins-and-digital-euro-loom",
-   "published": "Fri, 23 Oct 2026 08:57:34 +0000",
-   "query": ""
-  },
-  {
-   "source": "coindesk",
-   "title": "India's largest exchange denies hack after sleuths pointed to $16 million in suspicious outflows",
-   "link": "https://www.coindesk.com/markets/2026/10/23/india-s-largest-exchange-denies-hack-after-blockchain-sleuths-pointed-to-usd16-million-in-suspicious-outflows",
-   "published": "Fri, 23 Oct 2026 08:02:35 +0000",
-   "query": ""
-  },
-  {
-   "source": "coindesk",
-   "title": "Polymarket has reportedly fired its marketing chief, also a close friend of the CEO",
-   "link": "https://www.coindesk.com/markets/2026/10/23/polymarket-has-reportedly-fired-its-marketing-chief-also-a-close-friend-of-the-ceo",
-   "published": "Fri, 23 Oct 2026 05:01:19 +0000",
    "query": ""
   },
   {
@@ -527,9 +527,16 @@
   },
   {
    "source": "gnews:XLE",
-   "title": "State Street Energy Select Sector SPDR ETF (XLE) stock price, news, quote and history - Yahoo Finance Singapore",
-   "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBCZDJCNGlyU0tCNXJRUjlJMy1RYjQ5M1hXRXlwckJ3cm5wa0R5NjRpMTVYOGZwU2ZNd2lMTHRKRXg4NjZ2dlp5WHVLQWtZRUdo?oc=5",
-   "published": "Wed, 21 Oct 2026 20:12:57 GMT",
+   "title": "XLE, VDE, IXC ETFs Hit Record Highs as Inflows Jump as Brent Crude Targets $120 - Benzinga",
+   "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPSC1aZ1l1WnBWTUtWUkpQZU1PcDlZMjNBOHV5ODhtVFQwYlg2Q1Yta29qZnlhN3B2aHRscS1lLXZ1ZHA0S3lGRDQxNXdTMFUyc2tFNWJQN2tseS02RE1wTy1ISVRibVZ2RUIxNnRGeG50S0dXV24wZjREb3I0UDB5RGUyQXh0X0sxSHVyNTNHLXkxRnBRMlFtM29UU0l4c3hleDFITlVmNElBZDlvbzAxRUNQeGJDbDBwN1NzdVhzbkpGOTR3M016dWlvNXZNQQ?oc=5",
+   "published": "Sat, 24 Oct 2026 16:30:07 GMT",
+   "query": "XLE ETF"
+  },
+  {
+   "source": "gnews:XLE",
+   "title": "What State Street Energy Select Sector SPDR ETF (XLE) Bought: Exxon Leads on Tuesday - Yahoo Finance",
+   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPVUR1b1VzZ2E2NGxXT1ZvQUlxaUdNYzNrOTE4SUpuT0Z3eDd1S2szZ3ZQWm9ZSldMVmlJN3EyeTNlZHlrYnIxLUxnOGdUdHNtb1hiRE42T2czSEd2SWlLRVBwQ1pxaEt1cDZVQXQyYVVLaVRIOWlkUENINF9BcDVQcXNfd2dNWGYtS3dFblFza1ZtM2Nl?oc=5",
+   "published": "Thu, 22 Oct 2026 11:04:37 GMT",
    "query": "XLE ETF"
   },
   {
@@ -544,13 +551,6 @@
    "title": "State Street Energy Select Sector SPDR ETF - ETF Database",
    "link": "https://news.google.com/rss/articles/CBMingJBVV95cUxOSC12c09jcHBSZjctSVBQUDBkaExUalg0ZU5NeXF4aTRzYUZHWFVBdTdJZkVwT05Ddmx6MkFyM2YzZUNQVkV0NGlUXzJqcHpPS19pYVFSbzZYYlZkNjF6N1JrOFpJSzRzVFJKZDVEek5tNm5GTXlxM29jSFVWTjJIYmRSaHN0YUNZc181cEJtdTMxblBaZHJpbjlNQ1VMckt1SjI3N0JmZjlfVXVlRlZpMF9OT0VTanJQR0JVR0h3M25SVHV2eEFEeUEzRWtRQk9PUk4zRWEteHJqcjJPSmVWUUxPbDZ3LVhxaWVMWW9FRHJqZTBpOXdGdXRCdHBlZ0Q0WW1pZ0lXRHJJVnNaajFIOHpNY0g3bGhPeXdNMEtR?oc=5",
    "published": "Sat, 17 Oct 2026 07:00:00 GMT",
-   "query": "XLE ETF"
-  },
-  {
-   "source": "gnews:XLE",
-   "title": "Oil ETFs to Benefit as Oil Prices Rally Due to Geopolitical Tensions - TradingView",
-   "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOQ3JwbWhCdFh5cTVremRVZ3MwRkpRQzFyUXE5NTE1VE5qd1lEdlNtaUZSREZJZTRPaDE4OU1VSVBneU5yVTljN3otTy0zaDJBd3JzZVAwWUxMNHA4OFFsVlpUWUpuR084YzZodlJ5WHRGNXZLcnNURHFvaHJMUXFfNll0NEt1WERvUHRWbU1vR0g2UGViZEY4VTVWY1dCVzhfLVpwVkZva1hHLWlhOG43MmNkNGZmVXM2YU5vLWpvSExGZw?oc=5",
-   "published": "Thu, 22 Oct 2026 12:59:00 GMT",
    "query": "XLE ETF"
   },
   {
@@ -597,44 +597,44 @@
   },
   {
    "source": "gnews:MSFT",
-   "title": "Microsoft (MSFT) Falls More Steeply Than Broader Market: What Investors Need to Know - Yahoo Finance",
-   "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOYWNjS2pNU3JnRHk1ejRIQkRnTlFGWXQ4OFpscFlZVTBfa0RqRTRxNGpZLVNUSTJfRWRoc1pZVkFkcEVhbEZWZEZLT3ItZnFDNlJhZ1FxYkZ5S29GZ0p6b19GQVdjcHYycFBrWFcwUm92bUVoUE5IcE5zVGU3QTNPTUhlcEFweTh6Q3NnRUNFSVZJSXVaU2d6em9maFlXVnM?oc=5",
-   "published": "Thu, 22 Oct 2026 20:45:03 GMT",
+   "title": "MSFT Stock Quote Price and Forecast - CNN",
+   "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBQX3dUSG5UYjhqVm1nRmNzS2pFY0VvMjFRVlQ0WWk0RzFlM2NQZ1lnR2M0b1JKOUlFRU1KZTllYnJfODBUd0RKQ0FzT2o2SmFJ?oc=5",
+   "published": "Thu, 22 Oct 2026 14:33:10 GMT",
    "query": "MSFT stock"
   },
   {
    "source": "gnews:MSFT",
-   "title": "How much MSFT stock does Microsoft CEO Satya Nadella actually own? - Yahoo Finance",
-   "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQYWNkVXNVNFRfaXJHQUFEbWpsTjRLLWR2SkJxc1ZyZTJ5RVkxS2Y0SDl0aWNrbEZCTkJTYXN3VW5tYm01WU0tSkhjRTNpamRLRFV5dUF6N1NXVmJTU2hmbkExdGx1MVdreG84M18zMGR4VnZtcUVKZkZhaGJWT3djWVhiSERhSHlEYUgyUVotcE5fanRFb1lOQ1RUTQ?oc=5",
-   "published": "Thu, 22 Oct 2026 17:07:02 GMT",
+   "title": "Claude Was Right About Microsoft (MSFT): Can The Stock Keep Rising? - Yahoo Finance",
+   "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQbDBHbEJMRE1McHBRd3VsMGp6RTFWQmdXeGNpWkJVY0UwZ3FiaTdIakd5TWd0RHZoaDljUVRyUVN6ZGJfTGNkTVlOMzgwTmFGRU82aWNkU1NMU0owQm5WVDFKOVg0VVJ6RU1JeGFtSzlKY2c2TWFPSl84NldnTWllZEpSTHUtVm94eGhhMjdRMXlBTi1aOVl4ckNMNXJHZw?oc=5",
+   "published": "Tue, 13 Oct 2026 07:00:00 GMT",
    "query": "MSFT stock"
   },
   {
    "source": "gnews:MSFT",
-   "title": "Strong Azure Growth and Cash Flow Discipline Strengthen Microsoft Corporation (MSFT) - Yahoo Finance",
-   "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOM2g5ODlTNnI5Z0ZKOVlSSUswLWdIa3E4eDZqN05NbWpnU0RjTDRyWEFMUzJDaGdjTVZtMnN0RVFPeGRhVHNnN3M3WXpMM2I2YU1aN0RaTVYzZ1JvcFJ5aVFHZXNvb3JiQkJfSU9oMnh3em5CLW5GamxRUGRRSVl6dGJlRlZVRjF0Q2lrU2tZNjVWSXphRnI3Q0pB?oc=5",
-   "published": "Fri, 23 Oct 2026 17:47:09 GMT",
+   "title": "Microsoft stock may move 4.6% on Oct. 28 earnings report By Investing.com - Investing.com Australia",
+   "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOQmFpVG40YjNBWWkxSnhmQ2FQYmlzLV94WThLdEh4MVpibmRXdEF2ZElMR1p4TjJlbVNTa1dDc3BldUtCRkY1SVFMc2FrNlpVYTlGSUVHNjNKX3d6Tzdoamx1cG92Z2lsdFVFZE5hTHdQRmF5ZElraG9PcE5iVmc1WkxJWlZCTlA0cFFNY1podVhIOE1iVFhFYnZ2aWZfOUJoc3g4TGV6VzdkRE1XLXlpX19PQVo?oc=5",
+   "published": "Wed, 21 Oct 2026 15:59:35 GMT",
    "query": "MSFT stock"
   },
   {
    "source": "gnews:MSFT",
-   "title": "Microsoft (MSFT) Stock May Be 22% Undervalued After Maia 300 Unveiling - Yahoo Finance",
-   "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOaHdDUjJiMUkwT3NkQ05EOWxJX3lpV1AxUWlqNG9PaHRUWm1BNnJtY3pUMHljbVY4M2UwR18zelVVWkVMa0xiemN6T19MQzhvU0FMLXNQOUdCb1prc0lxb2hxWlRhRTJPZE5aa05DNk1UT2pUWFhVX0Z1QlNHTFZReUhNSU1VbGlXZU1oeXZUNlgzNVZoNS1J?oc=5",
-   "published": "Thu, 22 Oct 2026 04:25:00 GMT",
+   "title": "Microsoft Stock Forecast: MSFT Pulls Back From $546.35 as Azure's 45% Guide Faces the AI Spending Test - TradingKey",
+   "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQYTNRenZfUWtLYjhzZjNQOVhQblhZTzRKOXNiU2lqcG9xR3p2VjBlbHUtZU4yd01ycVAxTGR1cW5fVFhzQXpQWFpmemx5SV9XY1JRN04yX0dpYjgyZVF0YWtDNE9pZlJrV28xWmJLUExWSFZjN0tKZlJfd3B0VVl6bjBHTTVWUjRSajBVbzdWVUI3SVRRUUZQWDVWVlhkandTWC00V205d2I3YlAtUWE4bG1NTjUzVllueEJ5RlRMQ3lseHFJSTN2UklyV2dEZ2hEQzFhYXp1VDNOUjVKSmd0eVdOTWI1QUNvQmlj?oc=5",
+   "published": "Sat, 24 Oct 2026 13:03:41 GMT",
    "query": "MSFT stock"
   },
   {
    "source": "gnews:MSFT",
-   "title": "Microsoft Stock Could Be Closer to Its Next Big Breakout Than Investors Think - Yahoo Finance",
-   "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQV0dLdDBXQzBZTkhHc1c5NndxeDVIN0RUSXU3NzZQVExSLWg1OHRaVmtKMU5NUmhVOXlmd0ZEaVluVDR5Qy1LbWkyemlYbnJSMWhyU2ZucnhmWkJaOU9SbkVUYkdOanFDTWJmcUlRcVBDdXU5NVN2bzJpZEV3WEZnUGl6MkVlb2paTTFEVHlSSW05Qmo0Y1gtN2xLNER5em8?oc=5",
-   "published": "Thu, 22 Oct 2026 15:30:56 GMT",
+   "title": "Microsoft Stock Reaches a Record High. How It Suddenly Became an AI Winner. - Barron's",
+   "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQZEFZTmFHRjcwTnFrcnVwYW1kSkRXUkFod1VGc3VNZVpyMVR1Tml5blZFTmduem1ONU9hejBjVlgtdzhXR1R4Z0hzSEhXRjNlU05FOXFidXp3UkY1SjJRdUhXX0pnS2pqcVhyUkR1LXdnNWZ3c000aUVRbnRPMDdnRw?oc=5",
+   "published": "Tue, 13 Oct 2026 07:00:00 GMT",
    "query": "MSFT stock"
   },
   {
    "source": "gnews:MSFT",
-   "title": "Alphabet (GOOGL) vs. MSFT and AMZN: Can AI Investments and Google Cloud Growth Unlock a 26% Upside? - Yahoo Finance",
-   "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOT0FrNG5mMVh6NDc3T1gzZlQ4SUtBcWFkNVFBYUd1ZmllY3RJZGxFaHdaNUZGbW5yc3lkcWZKSTFaeENaemxDSzFmMXBsRkZqeU9NbWZLZTZ5STFsbEtfamo5OUtzWHVycUtVMGZmZVBVWjBRLWxtclpsWHEzcVdXZUdjOU0wd3hoV1NiUzNwTUFYZzNRV2dZ?oc=5",
-   "published": "Thu, 22 Oct 2026 20:26:24 GMT",
+   "title": "Microsoft Q1 Preview: Expecting Strength In Core Business, Shares Reasonably Priced (MSFT) - Seeking Alpha",
+   "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNNnpmSWNsQ0toRkFwMUNxLXVDdTlCNTh6ZU1TU2NRakctVkM4YzFiVWZUbnMwSmxMLS0xbnQtc2VlMFRQVnBUZFU5V0t5cDRSWmJPT2t4QzRhbmNhcm5CSlVzTHFkN2FUaVJkQkw4UnNUTlByOFcwWnF3MmpkQVFUSFJoNjIxT1ZVZDlWNUlraFlrTTkzZTBPdnBkMURULWVZTURWUGl3Zk9CN2x5MDJ6Njd4YWNLZy1SMmhvVW1Udw?oc=5",
+   "published": "Wed, 21 Oct 2026 12:11:31 GMT",
    "query": "MSFT stock"
   },
   {
@@ -660,13 +660,6 @@
   },
   {
    "source": "gnews:CSL.AX",
-   "title": "CSL\u2019s latest result suggests the worst may be over - Morningstar Australia",
-   "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPUVBaOFNaQ1c3ZlNyTW9KMkJkRjh6clh5X3pmNTgzQm9mcm5Sb0duWVluRDluMXI1cEFWMnJXWlFxd1lGajBhNTI1bENESHdPemUxdzRjdUZMcnUyQU5taFBndExUQ0h1OF9zWW50Zlhiblhfb0E2UWgzNV9zZ2ZLSkZ2d1VqWm1Cb0ow?oc=5",
-   "published": "Mon, 31 Aug 2026 07:00:00 GMT",
-   "query": "CSL ASX shares"
-  },
-  {
-   "source": "gnews:CSL.AX",
    "title": "CSL moves to top-held position by fundies after buying spree - AFR",
    "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPeTVNMThTMG4wcHVVdENVckZPMVNMdHZOaVNHaXNINWxMdXBxTjF6eVA3SjRsNWRCck0tYnhCLUUzcm1lTFZ6aWZ1TlB5NS11MFF4dWw3UDRvemhOWHJuV1o1Q0hpU05OWS1sb1pNMlhIRUNMTXR2V1RXcm90b3VKY042ZGU1T0NHQklQUHd6REhYLTh3OXYtbE1fanVkOEJxYjJtYzFhWkQtbDJEWU9RZHFMeTJNc0F4dlVabGU3QndXQQ?oc=5",
    "published": "Mon, 28 Sep 2026 07:00:00 GMT",
@@ -674,9 +667,16 @@
   },
   {
    "source": "gnews:CSL.AX",
-   "title": "Morgan Stanley just upgraded their CSL share price target - The Motley Fool Australia",
-   "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPVkVVTTJ0YnpKUm1EcjQ3ZlJnMFBIU0t5U1ZSRkFSdVc3eFpSTnlKbzZPdUtrM0s1U0txel9wNTVERTE4WUNWcG1vOWZRdFY1SHI0S3NLRllLenNFZHdpd0JMbTQwcEsxWlVyRnVaYWJvbHNnRUxaM0MzcGNHbFUzZnBBdk5xdmg2Mks0NjZJcHRDUUo1VkIzMw?oc=5",
-   "published": "Mon, 19 Oct 2026 19:00:00 GMT",
+   "title": "CSL Ltd (ASX:CSL) Shares Ease 0.80% \u2013 What's Next After the FY26 Reset? - Kalkine",
+   "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOWjlKUnB1eWNydnMxV0huUG1hSnVyNklmNXg0aklXWFRMNVh2c1VLWmNIUndVcmV4SzJyT1RSVlZXUzVnQmlPeFB2UmNmTmRuM2J1X29icDZMTzZhT3BIMWVOUUIwTnRTYlFGSVpRbmRVdWJXbXFsT1M1WEd6elIwdkozcXdXVFN0ZGxSQ3hyY1REV0ZUc0lUeTVTVjFVdw?oc=5",
+   "published": "Fri, 02 Oct 2026 07:00:00 GMT",
+   "query": "CSL ASX shares"
+  },
+  {
+   "source": "gnews:CSL.AX",
+   "title": "Australian Shares Flat; CSL Partners With Alentis Therapeutics to Develop Rare Kidney, Liver Disease Drug - Yahoo Finance Australia",
+   "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPQ1BmckZVQzJJZnVPS2NSaHlDcDJnVVZ0NU9VYVpVVkFlbHM4UUFGT3J6bjgzdndvOUFBVHNXMnBBeGpFUkNwR1hUSmVpcTY1TVFfSUdYYkg3ci1mTGdxa3RabEpNQ0Z2WnBmZ3l0Y3BnQS00SkVKdEtHODdiVGpZTUNIQ1lxNHlqRzlVaQ?oc=5",
+   "published": "Sun, 04 Oct 2026 07:00:00 GMT",
    "query": "CSL ASX shares"
   },
   {
@@ -688,37 +688,37 @@
   },
   {
    "source": "gnews:ANZ.AX",
-   "title": "Nick Scali (ASX:NCK) ANZ Sales Slide 15% but UK Orders Jump 29% - Stocks Down Under",
-   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE13M0hseHZvTml6V3BQOEo2Z1hSTUxvVlAya3BwUDR4Rm5lWWxxRmcwNHBFT1BaUmRvZ2RyVWg1cElQU01oeGI3blVlTEdCRmpXbDNLU0NwZDNwbnlwVWlvV3V6dVJwbHM0SHBna0xUb2o?oc=5",
-   "published": "Wed, 21 Oct 2026 23:14:17 GMT",
+   "title": "CITIWARRANTS 12.6585 ANZ 06-FEB-35 INSTAL MINI (ASX:ANZJOK) - intelligentinvestor.com.au",
+   "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOb0t4SDU1RldLNmdIc2h5V0RTQnlzOVpEbnhFY250clNQMXlPeEZnakt6RjctLXhwYUJZZGpyWUNXZG9ub0xiQ0UySnA5RkFYelp4WFNUQ2RvRnRpLTVXY1c4czNtX2dDckJRbUtnaFNQQ29TbDJmZy1YMlpGVllnNDFqXzFybkowOEtJLXB4SnJkZm9fRmRzSXhodDZpLWROV2tNQQ?oc=5",
+   "published": "Sat, 24 Oct 2026 03:56:31 GMT",
    "query": "ANZ ASX shares"
   },
   {
    "source": "gnews:ANZ.AX",
-   "title": "ANZ Shares Outperforming, Despite Profit Miss: Here\u2019s Why - TheBull.com.au",
-   "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPMmhhQzdyX1E3aV93bjcwZ1dob3FWT0RTVThTNWdpekNIX21OOWZrSktNbWFXR0lGNHNWUk1GeDVFa24yaktLek1tcUUzemdiamduX245UU95RkRDN1NoUEJCMTg1MDhkOWJzVWdKdUJhN2thb3dTZ1pVYmdPZGJiRkRRbUtTeDBNNG04?oc=5",
-   "published": "Thu, 13 Aug 2026 07:00:00 GMT",
+   "title": "ANZ Group (ASX:ANZ) Share Price, Forecast & Analysis - Stocks Down Under",
+   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBpNHhJWEZSaHNFamVKT21xXzAxdTBmMmtQQjE1T3pnSTJBNlVJeUh5MkpWOHBYVEZ4U3paVlcxNjI2RTNQSUpaYS1SLU9ZLWRhQlNhQUdNMXc2UQ?oc=5",
+   "published": "Sat, 24 Oct 2026 09:59:49 GMT",
    "query": "ANZ ASX shares"
   },
   {
    "source": "gnews:ANZ.AX",
-   "title": "ANZ Group Holdings Ltd (ASX:ANZ) Shares Edge Up \u2013 Half-Year Result and Transformation Progress Reviewed - Kalkine",
-   "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPRjdJVmdIc09QbmQybFBFY254MGFUTGRvNEdrRTdfOEp5UnNWcHQyaDhJTm5zMnlTcmZxQmNfNFFvNTIxWVBYSU9kRWlJNENWVEpDcFAtbmxZVUp6UXBNVFpTRGFvc0x3TnZLSG1sWk55dHJ1VFJXQ25nRkhMN2VkeHI4U0RGSjFKY05mNnBLZlR3bkVQbDY0QWpfR1UwWGE2RE85RHVnNFhXQUVtVV9tYWN5VWVMLTVSOVllVlBraDg1N083b0Uxa25ZQWlvcG43dHc?oc=5",
-   "published": "Fri, 02 Oct 2026 07:00:00 GMT",
+   "title": "CITIWARRANTS 17.6148 ANZ 25-NOV-32 INSTAL MINI (ASX:ANZJOD) - intelligentinvestor.com.au",
+   "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOYWxyVURaQlZtem1FOVk0RmpoUVVpcTVQVWQ4elJ4UXF4Q2lTQVlhcXVSVFFoTXpLaUs0cnduM25mLXhRX3k2WUF5dDl0d0d0TUpJTXJMMGpXNkRHZGlTVEYtV2RsMFY3Qng0NmtkczlsUktQSFd5SlNhSkpaOElYUm9ENDJaSHpQbkxVUWU3ampfN3l6dlBWdjE5aWFSOEpFTVk4NQ?oc=5",
+   "published": "Sat, 24 Oct 2026 02:06:29 GMT",
    "query": "ANZ ASX shares"
   },
   {
    "source": "gnews:ANZ.AX",
-   "title": "ASX listed bank overvalued after shares surge - Morningstar Australia",
-   "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxObXZkYWNqcXpVREVYalNra1RXS2ZaZVpOT0FYOEEtamJicEhLZUw1dVVfRDl6VU1GZmtkblRlVWYzaENWdTNkT1VFN3MtX0VJSGdsQjJ6WnNvbVBvU0FCM1FVMjRCUGxvX25HYXZrNWNrUUJMU2ZEWlNkYVVxT0tUdFRQb0hRLW9ycXhF?oc=5",
-   "published": "Mon, 16 Feb 2026 08:00:00 GMT",
+   "title": "Here's the dividend forecast out to 2028 for ANZ shares - The Motley Fool Australia",
+   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNdkdOY0xtaWxUZExLbnVrdDd3WDB1aF9UalkzdVJEc3dESEVsYV9TdFF1VzlsZUtFaEdLUGhpLUlaUXIweVVwaDJoSk9IcDhqNXk5YmdsNHZYV3lzTmlQRDZ1ZV9vXzVrdXFJNWVkVS1zRnFuN01OMVFWeS1OX05UZ0YzRG1zTXZHMFh6UjBYN1c5WG9Y?oc=5",
+   "published": "Wed, 21 Oct 2026 21:00:00 GMT",
    "query": "ANZ ASX shares"
   },
   {
    "source": "gnews:ANZ.AX",
-   "title": "By September 2027, ANZ shares could turn $10,000 into\u2026 - The Motley Fool Australia",
-   "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQWmJzOGhWMzFTTjYzRVpHZVJURG1nUTZFWTkyR2JRSHpaNkF3Mm1LbjJjYWlMLWVyd1pUb3pfaUdKQ3pScWNpdVdMZEN4SG8tR2t4SHBoc20wdmFMNThCVlExZTlwd0dHcE8ydTF0bS1raVdOWWVpY1drTm5sMm9CdXg0MVdra1lacEVTUWZpNA?oc=5",
-   "published": "Mon, 07 Sep 2026 07:00:00 GMT",
+   "title": "CITIWARRANTS 10.2954 ANZ MINI LONG (ASX:ANZKOA) - intelligentinvestor.com.au",
+   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNcHpaMlVPOV85bERleXIwQmxOY0MwUGh0LW5MeXNJMnJqeDlxN1pzNG1SZWVWbDIyRUNvQ2hLNEZJMHQzeG9ublRORnNEWUMxMzdGZ2RyVjdZbFJxT1RYUXVLUzZTQ1NrdkFMM0V0aktvTGpkci04eVRpU0F2Z3lOMy1nb0RneVZJS3Bfem80bFZTeDQ5?oc=5",
+   "published": "Sat, 24 Oct 2026 01:44:32 GMT",
    "query": "ANZ ASX shares"
   },
   {
@@ -744,16 +744,16 @@
   },
   {
    "source": "gnews:XLV",
-   "title": "State Street Health Care Select Sector SPDR ETF (XLV) options chain - Yahoo Finance UK",
-   "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPZFRidnF3bUhySVh4N2RJc1U1SG9KejQwUXZmM0ZvWGlMU2Fpcnc5eFFQRE9XZXlMV3QxNC1acVcyN1NucFRTVXBXQld4NjlUbXJTenFUTG9ZQmVDbFlLTW9qQVN2M19wd1QtQU1nWVhSb3N3VDlKQ0RCeXRMQkZseWlJeDlPT21xbnBuRXZfQ0c?oc=5",
-   "published": "Tue, 20 Oct 2026 14:53:32 GMT",
+   "title": "XLV: Safe Haven, But That Cuts Both Ways (NYSEARCA:XLV) - Seeking Alpha",
+   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQZmcxMF9BMnhLM3c0TzQyMVd3TVlvRXlhV2pfel9fUDVzaEt0TDFkVUpYMG5zUnh3LTlSUFhzT285bnlkb2VBNkYwV3N1bjd4emJzVThkemdwUDRwdDZFRHZXY2VFZzJvVGhJdlBYeThQQlBvRXo3V0VSU3RlQjROZldkcHdVQQ?oc=5",
+   "published": "Mon, 19 Oct 2026 17:28:14 GMT",
    "query": "XLV ETF"
   },
   {
    "source": "gnews:XLV",
-   "title": "XLV: Safe Haven, But That Cuts Both Ways (NYSEARCA:XLV) - Seeking Alpha",
-   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQZmcxMF9BMnhLM3c0TzQyMVd3TVlvRXlhV2pfel9fUDVzaEt0TDFkVUpYMG5zUnh3LTlSUFhzT285bnlkb2VBNkYwV3N1bjd4emJzVThkemdwUDRwdDZFRHZXY2VFZzJvVGhJdlBYeThQQlBvRXo3V0VSU3RlQjROZldkcHdVQQ?oc=5",
-   "published": "Mon, 19 Oct 2026 17:28:14 GMT",
+   "title": "State Street Health Care Select Sector SPDR ETF (XLV) options chain - Yahoo Finance UK",
+   "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPZFRidnF3bUhySVh4N2RJc1U1SG9KejQwUXZmM0ZvWGlMU2Fpcnc5eFFQRE9XZXlMV3QxNC1acVcyN1NucFRTVXBXQld4NjlUbXJTenFUTG9ZQmVDbFlLTW9qQVN2M19wd1QtQU1nWVhSb3N3VDlKQ0RCeXRMQkZseWlJeDlPT21xbnBuRXZfQ0c?oc=5",
+   "published": "Tue, 20 Oct 2026 14:53:32 GMT",
    "query": "XLV ETF"
   },
   {
@@ -762,6 +762,48 @@
    "link": "https://news.google.com/rss/articles/CBMingJBVV95cUxQYVpaZVNscXRmbldkZlliN0RxTUFUd3QtSjlpRXJ6V2tFcUVWazJNUXZTREl3NVFLSTdUNWtFOG9MRGNreFhQN0h5Mzc2YXV2RG1ZYVNyam5RNGpCdG5QTU9oOWxKVXFTT3FmeVc5YVdaSnJ2WkdZMXFmaVA4ZlV0YWxSNmN0bG50R2FaZ3JJSzVyVmVsbkJXQWpjdjVaS002clFqYUpFNFlEMlNLM0ROWWRqNlFQZGladm9xYldEMXRWZ0dHR2F1U28wdVN5SzYxd2JIMWdYT2ZkOW0xa3Y5bVhraGc5MHJHcGZiaWY5WFJDcVI5TXdab2dVa29IMU9fdHNRYm5sTHFuOWtzNzcwQUw2ZDRSalFaR0IxMHhR?oc=5",
    "published": "Fri, 16 Oct 2026 07:00:00 GMT",
    "query": "XLV ETF"
+  },
+  {
+   "source": "gnews:AAPL",
+   "title": "Apple (NASDAQ:AAPL) Stock Hits Record US$351.73 as iPhone Duo Production Target Reportedly Jumps 44% - Stocks Down Under",
+   "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE42YWZvT3p4TXJERy1HVHRZTTROeWlHWURrY3VnV25CTFpFcTJ4dndMSXR3b3owTW9rTy14eXFTLXNFOGtaV2h3MzFKaFYwMkpJWWV4WnpLaG1iTjI0U0ZMYmtnNTRvUEZIZnhfbnZ3Y01aeHBaUmNlSGJn?oc=5",
+   "published": "Fri, 23 Oct 2026 17:39:50 GMT",
+   "query": "AAPL stock"
+  },
+  {
+   "source": "gnews:AAPL",
+   "title": "Apple SVP Jennifer Newstead sells $814,748 in AAPL stock By Investing.com - Investing.com Australia",
+   "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNRnRFS1AwN2xsSDE5MmxGdGVvTS1VR0hTZS1sM1JkVzdlU2pCaFc1NThnSDdEeUJGaEQyaFNuSHNFckU3ZUZrNktueVlkaEhxQm0tZS1nNzhfYXhTMXJ0cDduVkt2cmdCRGR2Rml6dFNDYTZhbXN5eE9FVmJEU2dpSm9IZzlSc2JNOHRmcERfTmFzR3RHbzhXVE1xaWFYeUlHVVhWRU5Lb3YxM1pER2lYNjQ2VjJtUQ?oc=5",
+   "published": "Thu, 22 Oct 2026 23:11:06 GMT",
+   "query": "AAPL stock"
+  },
+  {
+   "source": "gnews:AAPL",
+   "title": "Apple Stock Could Have Another Major Growth Chapter Ahead - Yahoo Finance",
+   "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOcVF1N2VhaVZ5QkExSFUtaHpvTXhjekdWODYtUGFFWm9YcTVyS1lmNjFHaUVaWE9FR0ZrYzJUZ2hwTFduNkxvcDdQVDJiNWNBQVlveGdVVzVSaTgyTGdDdlFZamJ3dWRxLXdlTG00aGtmaXF6eldwRzVZNksyMDRVZmdNYmVYZFkzT1Y4TEloaUZtTDQ3ZGdWcTZWZ3Q?oc=5",
+   "published": "Thu, 22 Oct 2026 14:00:43 GMT",
+   "query": "AAPL stock"
+  },
+  {
+   "source": "gnews:AAPL",
+   "title": "Apple Stock Hits Record High On iPhone Duo Launch - Investor's Business Daily",
+   "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNdUltNURaQjNjcmctdzRVNGdxX3ZWbmE0ejVOc0c3aXFjQVUzVC14VURDMGRKQzViUzFQdlV1Z3hOQy1sZTJNdkVrWDFxOC0zSXlTalJyQW1TbVdhYVRQRFU3UmxCREFPdWlHbzRxOEg3T1BRMTh5cGxPRk00d3VualFvbnhhOEFaYkIwVTRsRUtNRlZobjdz?oc=5",
+   "published": "Fri, 23 Oct 2026 20:05:00 GMT",
+   "query": "AAPL stock"
+  },
+  {
+   "source": "gnews:AAPL",
+   "title": "Apple Stock Price Forecast: AAPL Continues Pullback After Record High, Will It Test $300 Again This Year? - TradingKey",
+   "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQYy16c1hoRlNmSWUyZ2FGNV92azg2ckFMLVp4RXdsRG9OSGE0WGVMdHJXZGlLZjNQcWNWQm9mZm9uRE84b0RpM0I4X2o1X0pTQzR0WnpwcTlSR1JHVmhrRng3d21vX0V0ZkJsYTl3dWtnLXhqaTBlS1hVTnp4TFV2dW1EYWg3OGpwQUROMm5Md3BqOEFhbnBpa0owNDF5QkpmVV9TdDdDa1NpdW5rdWlPNzI5eFJMakVWU0RLV3pqQndpQ1k?oc=5",
+   "published": "Sat, 24 Oct 2026 00:08:23 GMT",
+   "query": "AAPL stock"
+  },
+  {
+   "source": "gnews:AAPL",
+   "title": "Prediction: Apple\u2019s Stock Is Due for a Reality Check on Nov. 2 - The Motley Fool",
+   "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQemJwV2kzQjBUMjh6MGk3Um1lNk1CZlV4a0ZNWnU5c2NfcFo4M01FdTRLb0tSR1BxN054VURsWGZTYVRXZEpfT295YXBJcl9aNGJ5M0NEcWFXajQ2RGQyYTB1Z0FVNXM1dU13OVg2eTBfWG1wM2V4bTlSV0dCNVpTbXhUUVBmaDBnNkFvdGN0QmdTR1VxRUYtOA?oc=5",
+   "published": "Tue, 20 Oct 2026 20:43:00 GMT",
+   "query": "AAPL stock"
   },
   {
    "source": "gnews:AVAXUSDT",
@@ -806,48 +848,6 @@
    "query": "avalanche crypto"
   },
   {
-   "source": "gnews:AAPL",
-   "title": "Apple (NASDAQ:AAPL) Stock Hits Record US$351.73 as iPhone Duo Production Target Reportedly Jumps 44% - Stocks Down Under",
-   "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE42YWZvT3p4TXJERy1HVHRZTTROeWlHWURrY3VnV25CTFpFcTJ4dndMSXR3b3owTW9rTy14eXFTLXNFOGtaV2h3MzFKaFYwMkpJWWV4WnpLaG1iTjI0U0ZMYmtnNTRvUEZIZnhfbnZ3Y01aeHBaUmNlSGJn?oc=5",
-   "published": "Fri, 23 Oct 2026 17:39:50 GMT",
-   "query": "AAPL stock"
-  },
-  {
-   "source": "gnews:AAPL",
-   "title": "Apple SVP Jennifer Newstead sells $814,748 in AAPL stock By Investing.com - Investing.com Australia",
-   "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNRnRFS1AwN2xsSDE5MmxGdGVvTS1VR0hTZS1sM1JkVzdlU2pCaFc1NThnSDdEeUJGaEQyaFNuSHNFckU3ZUZrNktueVlkaEhxQm0tZS1nNzhfYXhTMXJ0cDduVkt2cmdCRGR2Rml6dFNDYTZhbXN5eE9FVmJEU2dpSm9IZzlSc2JNOHRmcERfTmFzR3RHbzhXVE1xaWFYeUlHVVhWRU5Lb3YxM1pER2lYNjQ2VjJtUQ?oc=5",
-   "published": "Thu, 22 Oct 2026 23:11:06 GMT",
-   "query": "AAPL stock"
-  },
-  {
-   "source": "gnews:AAPL",
-   "title": "Apple gets a downgrade from Loop Capital on fears of slow iPhone sales - CNBC",
-   "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPSEZuNENhdUFhQ1FpWWxTLUo4bU13blp1ZUFQQzZJZXR2dmlNM0ZIVC1mbGJxZ3diOUwyRy1jekh5a3l6NUw0RGYxNThlX0xfX3NUa0xFQ0QyX0NQWG9LcFZTSzZkQTZfTklJS0RiZTJ3OEpCc05xUFUtTmNVVUlvdlV1bm0?oc=5",
-   "published": "Tue, 20 Oct 2026 10:47:18 GMT",
-   "query": "AAPL stock"
-  },
-  {
-   "source": "gnews:AAPL",
-   "title": "Apple Stock Could Have Another Major Growth Chapter Ahead - Yahoo Finance",
-   "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOcVF1N2VhaVZ5QkExSFUtaHpvTXhjekdWODYtUGFFWm9YcTVyS1lmNjFHaUVaWE9FR0ZrYzJUZ2hwTFduNkxvcDdQVDJiNWNBQVlveGdVVzVSaTgyTGdDdlFZamJ3dWRxLXdlTG00aGtmaXF6eldwRzVZNksyMDRVZmdNYmVYZFkzT1Y4TEloaUZtTDQ3ZGdWcTZWZ3Q?oc=5",
-   "published": "Thu, 22 Oct 2026 14:00:43 GMT",
-   "query": "AAPL stock"
-  },
-  {
-   "source": "gnews:AAPL",
-   "title": "Apple Stock Looks Ripe For A High-Risk, Short-Term Options Trade - Investor's Business Daily",
-   "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPcDJOdDM5UHM0WG13NmNCZGk4OGI0QXBqX0QtWl9FSWxSV1hSQUl4QkUtaXQ1RW0yQmg1eEZPUGpWMmZVd2o3Qk5oMWVzek1UNVpQZ2hwYUxNOWt3UUxNQVFXbWVtbmliRXpxLVE0amwydWRDQ0RoUkxpQzlkUkdOejJ1bjRUZElxSmtmalFFRDQ3U0dYN1JMUWNNZzB1LUpqc0xPbXR0RFFJZw?oc=5",
-   "published": "Fri, 23 Oct 2026 17:32:00 GMT",
-   "query": "AAPL stock"
-  },
-  {
-   "source": "gnews:AAPL",
-   "title": "Apple Stock Price Forecast: AAPL Continues Pullback After Record High, Will It Test $300 Again This Year? - TradingKey",
-   "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQYy16c1hoRlNmSWUyZ2FGNV92azg2ckFMLVp4RXdsRG9OSGE0WGVMdHJXZGlLZjNQcWNWQm9mZm9uRE84b0RpM0I4X2o1X0pTQzR0WnpwcTlSR1JHVmhrRng3d21vX0V0ZkJsYTl3dWtnLXhqaTBlS1hVTnp4TFV2dW1EYWg3OGpwQUROMm5Md3BqOEFhbnBpa0owNDF5QkpmVV9TdDdDa1NpdW5rdWlPNzI5eFJMakVWU0RLV3pqQndpQ1k?oc=5",
-   "published": "Sat, 24 Oct 2026 00:08:23 GMT",
-   "query": "AAPL stock"
-  },
-  {
    "source": "gnews:META",
    "title": "Meta stock drops more than 7% despite strong Q3 results as AI spending fears return - Yahoo Finance",
    "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNOVBsWC1HZmNiRnJHT3RIbzlmcmZLZVpRVVlibk5sMFhyLUJfSHVtZlhxNzBLWkJ6RkgtWWprZnl2ZUVCeVBzb3NOVzlJQkYwbjBvVzQtaFZDSk9rZGxlYWVjMEJnWFY0LVFiUVM0S2J1T0ExVTJMcFY4QjJ1ZDgwNVVrVEpENFpJMHVrRkpoVXJvSTktOE9fMU94dnpLR1UxWWlSTFVHallWRG1DTDBhNXJobzJpek5UeTk3dUFRZl9QMnJhaGo1OXo3TUhSeEg0LTVQeHZiZ0NuZw?oc=5",
@@ -863,16 +863,23 @@
   },
   {
    "source": "gnews:META",
-   "title": "Meta stock sinks nearly 7% as AI spend pushes free cash flow negative - CNBC",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBFSFFjR3I5aUd1LXZFRmNOcEFlM2RxQjdkX05DTmhvS2Z4SDJ1dDlGVWpZVE9hVXBzMlZFSmhxTUhqSFRvZ210RXdKd3JJd3Q1RjU0bHhwdHV3ZlpuV25fb2dxTW1OVUNJczlJNTBVQTNiVjd5WER0T2NUaTVtbDDSAYQBQVVfeXFMUFE4Qjg4VTlqMHB2R05IejZsT1FjYVVmcnBEaTlZV1B5a3NLaWhTazF2Q0UyREpKZFJrakVTWFFVSDJQellSb08wZmFFdjE3eDNINkVjSUJ5ZWM0Z19na3F4SkRJWk5GbXFtUFB3bzYzeS1Fc1ZpUk8yUFNVblJ3di1lZ1pu?oc=5",
-   "published": "Thu, 22 Oct 2026 15:41:25 GMT",
+   "title": "Meta\u2019s Muse Is a Huge Hit. Its Success Could Hammer the Stock Market. - Barron's",
+   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5zMTEtanl4eUt1NEtWNXUzZS1CN19UbTVrYmZQMUFmRW1SVTBMTTk2c3hzZFFwSFk1Q1F6eUEwMlpsYXM2b3pfZFEybUotNVVjR2VhZWI5ZGtXQTdwU2g0aGRDNlRET1hxREJVSGJ4YW05UQ?oc=5",
+   "published": "Fri, 23 Oct 2026 20:32:51 GMT",
    "query": "META stock"
   },
   {
    "source": "gnews:META",
-   "title": "Meta Will Split Stock, Create New Class to Fund AI Spending - WSJ",
-   "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOY20xcVZmaDh6bkhCTVVoQVJIOFhWZU1McXpENHNVTEdvMVY0YUQyUVdqOFBldFhJU1VXZ3lIY3FOSDN0ZFdBbXJDOXluVlA2WU9mcUJfM3FrVkQ1YXJBcDNSbXM0RlVib19UMFlsTFBBeFIyVGlEdUxVZS0wRDhWWl81ZjVXU0ZlQjJPeFRTaw?oc=5",
-   "published": "Thu, 22 Oct 2026 00:32:00 GMT",
+   "title": "A lesson from poker tells us not to fold on Meta after its earnings sell-off. Here\u2019s why - CNBC",
+   "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPb0pPdWZzQWtaTjhfOUNnQWZ2aXBqWU5tTGNNcjlVd2dQUDdacVo4YjR4TVJaeFU2cVZPMXJ5aEdnSVRMZWRtc2s2dmJOWGhQaW5tbldFU3BUTlR1dWktOHNDNEdPTHZ3VzVCQjZ2b29jTllOZDdKamh0RTlPUEtFUkVZZDdQQXYyYXNQQjdBQ0FaWHVuNDRPNGZtcHBUMGJ6akJXMFMzQzBQU2pTVEFqUzcxaDliUG43M2pZ?oc=5",
+   "published": "Thu, 22 Oct 2026 20:11:24 GMT",
+   "query": "META stock"
+  },
+  {
+   "source": "gnews:META",
+   "title": "Bank of America revamps Meta stock price target once again - TheStreet",
+   "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPZ3Y4UTVnSVh3bGc5c1FkNUwwc1ZibllGZklVLXFrVDd6Q1RUVVRqNk9pb1RKTVFQaDNMeXpPMTYzek56MFpwbi1sVWlEMkR0akVWcFAxcWVKSk5oeVlaVzlXNlNqZGZiNzdteHhQOHRxOURDMkNjWmJ4UzlEUEpyeTR6NWhxdkZENmxVeHVjYVlaejhIdGhKR2hiRjdNNTIyOTk4?oc=5",
+   "published": "Sat, 24 Oct 2026 12:07:00 GMT",
    "query": "META stock"
   },
   {
@@ -883,53 +890,46 @@
    "query": "META stock"
   },
   {
-   "source": "gnews:META",
-   "title": "Meta\u2019s Muse Is a Huge Hit. Its Success Could Hammer the Stock Market. - Barron's",
-   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5zMTEtanl4eUt1NEtWNXUzZS1CN19UbTVrYmZQMUFmRW1SVTBMTTk2c3hzZFFwSFk1Q1F6eUEwMlpsYXM2b3pfZFEybUotNVVjR2VhZWI5ZGtXQTdwU2g0aGRDNlRET1hxREJVSGJ4YW05UQ?oc=5",
-   "published": "Fri, 23 Oct 2026 16:01:13 GMT",
-   "query": "META stock"
+   "source": "gnews:NVDA",
+   "title": "Nvidia Stock\u2019s 2 Critical Flaws and More Reasons an Analyst Says Sell - Barron's",
+   "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5SVktBZjJfVEV6cG1KNTRURUZ5MUNuSmFSeW5aeldtcWg4LWNkZC05TVVmRmhZYzhSWnNtbG81Vkt0ellCTWZ3dGRYMGptZ0xfZGdCTU8xY3lmR2tjNE80NE5MZ0l1R3M5M0xHV0k2THFIYk13QXlRRU5hSFdzZw?oc=5",
+   "published": "Fri, 23 Oct 2026 16:33:00 GMT",
+   "query": "NVDA stock"
   },
   {
-   "source": "gnews:LTCUSDT",
-   "title": "Bitcoin Cash vs Litecoin: Which Payment Coin Has More Upside in 2026? - Yahoo Finance",
-   "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPY09tZnVUcDU3MkFIWEE0OUdoT0Fadld6MDN0dW83UXpHRkYwLXE4b0EzdDk2YzJPM1huX29hYjZsZUNNTWdWYTdReWY5RlVETWp1WEI2eEpNTjY2WDVVRkI5SmtwR3hDYXBLSmhOTTVNTlEwN05jeUFoSmV6eFhfejFjUzNJWEl5ZGVwR2JCamdQM1d3UU53NVlCY3B0dw?oc=5",
-   "published": "Fri, 23 Oct 2026 23:40:25 GMT",
-   "query": "litecoin"
+   "source": "gnews:NVDA",
+   "title": "Nvidia Growth Could Slow to 20% But Its Stock Can Still Double, Expert Says - Benzinga",
+   "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNM2s2VGY2dDN4TTZCRWFXY3o0ZmZRVFJQRGp5UklibTVIbWtWT1Jid24tTnlZMEFHUjNkNnpQcTJOWTdBdGxHVUF6Uk5pSVFXUlRVVnNEZGh6WXc5dTNweEpac19jX1FDRTczZmk2Z1RpMVh2TW44QjgycmRMYjZDVU03bWdhVHZhbWtXX1JpemdkQ0VMWWtBcXdiVnBINTNpa3ZTdkdicnE?oc=5",
+   "published": "Fri, 23 Oct 2026 17:30:08 GMT",
+   "query": "NVDA stock"
   },
   {
-   "source": "gnews:LTCUSDT",
-   "title": "Litecoin Swings 4% on Broad Crypto Weakness, Not LTC-Specific - CoinMarketCap",
-   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9GSHdkM0g3SU40NzQ5a1gwb2RZX0VLcXNKOEgzbkppRVJwYmJJUFNZclhESVRxWmhjVlFsb1laVlAzTTFtMGFMNTFGbGRDX3YtQ2pSc3J3TjBZWENxaUVXeE5DdWg5OVl6cTdYNzRuVFg?oc=5",
-   "published": "Fri, 23 Oct 2026 23:06:00 GMT",
-   "query": "litecoin"
+   "source": "gnews:NVDA",
+   "title": "Why Are Nvidia, AMD and Micron Stocks Crashing Today? AI Spending Fears Hit Chips - Stocks Down Under",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE0zc25iZ1RZenM5U3N2QkJMQ2Q1UVBscjFreDQ5cDZ1LW1EUGdiNVFHU2JIeEJmajJfaThMN3RqNExGNWRnVFlqblEtb0o2OFMwaF9FZmJicloxemtoZzJRNFhtOXhmMXI4YWxtd2ZEcklyRDZOVWNyZ1RMTXhxWTg?oc=5",
+   "published": "Thu, 22 Oct 2026 16:48:10 GMT",
+   "query": "NVDA stock"
   },
   {
-   "source": "gnews:LTCUSDT",
-   "title": "Bitcoin Cash vs Litecoin: Which Payment Coin Has More Upside in 2026? - 24/7 Wall St.",
-   "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNdzRZUnJWci1uZUdPTWJlUy1mYlRLMkpZbDByeXBZZmJhc2psWHJEaGpBcGl0ckJfV2s0T3hDeFJ0X2lDN1FDczFrUkFwVHFBbEZ3Z3ZfbnEyYmg3QVZnVzdSSWJqNGxMWGFKZ1NXeEFFbkpuc1p2WGpLNjZzUHVFSGhyUlVxcmxoY3pXRTFka2J6b2s5UVFXZEVmRy1SOC1sbnBYVXJDM0cwWE15eEFPWDQ3ZVhjNzd0OTA0Uk9kRkhoVnJ6?oc=5",
-   "published": "Fri, 23 Oct 2026 23:40:00 GMT",
-   "query": "litecoin"
+   "source": "gnews:NVDA",
+   "title": "My Nvidia Stock Price Prediction for 2027 Is More Bullish Than You Might Expect - Yahoo Finance",
+   "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQaHpZejlzM29RY1lNNzFIcGxCd2c5blRpM2ZBX3liYzRSaDNJdlh5c0h1NzdETXNxcTZiWlpqd05Kd1Q0ZEh3UWVSNk5MNHlUQjYxb2JOdmtqeTY1aU1OOXBEZ1dtVEVnZUdNeHdIQjd5UlJUTzZTVDFHQ0tERkdPTnMzdVBacGtXRUhuUnlpQ01XcFBlc0FOTGlJRFJsRld2?oc=5",
+   "published": "Fri, 23 Oct 2026 14:30:29 GMT",
+   "query": "NVDA stock"
   },
   {
-   "source": "gnews:LTCUSDT",
-   "title": "Litecoin Price Prediction: LTC Near $59 as ETF Assets Double and Remittix Earn Nears Launch With Up to 22% APY - StreetInsider",
-   "link": "https://news.google.com/rss/articles/CBMihwJBVV95cUxOTFBLUUQyMEhnaVhSR3VQTjVid3dPMFVidFBKU0NLTTRnOVh3eGdtNGZUTU1VTmJMZS1XNDI3NmhUWnMxeXdGbHZlRlZNTUZyWlJDTG5KTXd5QmNGYnFheWRzTVp6aVZZZVByVGI0MEZINHY3VENkZ3A1cGZSdmpnT2tobTJTcVJ3N202OUpXNXNKMXU2YlBDSmJ0cngyeDhzb1BDWHM1VTZyT1hFNmd1WFhNRTZCOVlRTmxubWJqbmZDX2FreXhMZ3d4U1cwR2RDa2Vob0piSU82RlNncjk5d2ttSk5OQ3M0TEVIUGxlcG53WmliVlBzY01RM1hBZkxNTXpFaFFiMA?oc=5",
-   "published": "Sat, 24 Oct 2026 08:46:40 GMT",
-   "query": "litecoin"
+   "source": "gnews:NVDA",
+   "title": "Not Nvidia. Not Micron. This Little-Known Chip Stock Is the AI Boom's Best-Kept Secret. - The Motley Fool",
+   "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOb01Rb0tTV242ZXZIYWZKcldDVEhKNkZGN1VyMXcyMHlsWXJha24wVTJXd2c4WDNSNlRtOFd2MEFNYlZKbDhZN2Y3cGxtNWxfaDNYemc2WWlhTEVISXdSa2cxY0VXclRKaE5ZbHlaVW9zX3h0OWhDYmxJUG4tRy1aaHIyazk2U3RrWkNiMmxGVlZzLTlmUi12Vw?oc=5",
+   "published": "Fri, 23 Oct 2026 14:45:00 GMT",
+   "query": "NVDA stock"
   },
   {
-   "source": "gnews:LTCUSDT",
-   "title": "Convert 50 BRL (BRL) to LTC (Litecoin) - Bybit",
-   "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFB4QjhFTlZodnQ0OUpPOUdTZ1FQcFFPQTFXaV8teGxaNGRTTnBoSU5NUFNUTUQzYmk3LUkzS2EwRkJkYzlmUEZjRkMxeU1yekd2clFOeWhxWjFZWU0?oc=5",
-   "published": "Thu, 22 Oct 2026 20:12:00 GMT",
-   "query": "litecoin"
-  },
-  {
-   "source": "gnews:LTCUSDT",
-   "title": "Litecoin to Participate in AIBC World in Rome on November 4th - TradingView",
-   "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQQ2x1Vm5fRnF6NXktaHNsLVdxNXFRMXlCc1FOUVhTWk5ZUW11TGQ5cjJZanFNVE91cTJXS2loSklYOFl2a3dmS0VRR2c5Y3R0ODJpRTFLSkZyVHdMMEtMSVN0VlB1d2xUNFoyRm9ackYzTVdCblVIS3JZVlB3b0NNc0NUcVFWbFMtZm90MXItNnF4SHZzYTl3TU5oWXpkRGc2U0VvanhLVTZWc3RuVHh1WVhlMVM0YjJkU2hZ?oc=5",
-   "published": "Tue, 20 Oct 2026 15:01:55 GMT",
-   "query": "litecoin"
+   "source": "gnews:NVDA",
+   "title": "CoreWeave (NASDAQ:CRWV) Stock Crashes Nearly 10% as Nvidia CEO Flags AI Funding Crunch - Stocks Down Under",
+   "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1iNkFGRHhSc3YtbFNVbEN1STh3T0Nob0x3ekdBQW5NZzZqcl94UmY1eThBM1dpa04tbzBnYWhiYXNqQ0ZCRDN3Vm5kSy14OGV4U01SU3V4aWdRWmxjdGdGWGJ5d0FSNlp6a3JqNUJjTUhYbkVlSm9FUHdIQXNIZw?oc=5",
+   "published": "Thu, 22 Oct 2026 20:16:23 GMT",
+   "query": "NVDA stock"
   },
   {
    "source": "gnews:COST",
@@ -947,23 +947,9 @@
   },
   {
    "source": "gnews:COST",
-   "title": "Zip targeted by US fraudsters, raising questions over risk controls - AFR",
-   "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQdDdnWC1Ba0VjYU54cE9UdkpHZS1xV1I1NUhxZjJGYURpTjZLSzY3WXQxRklUZUw2ekw1S0llU3duN3FabDNzUmU4cU5ZcTNTTTNMQzY5Nmp5UjExUWo2WFNaS0cxM2E3WWlCRGZLcFVkMGJTWHJGclg3ZVUyOE53LXBYd0NXb2ZCUldyM2hDekM2S1djU2wxSTVIaG1EUTRMM2V3WnlmNTlYdzItMmFSYXNUSE04RWhUcnZ5NGZLaHpMSTBMMlRJcWdwNA?oc=5",
-   "published": "Fri, 23 Oct 2026 02:13:00 GMT",
-   "query": "COST stock"
-  },
-  {
-   "source": "gnews:COST",
    "title": "Waiting for the Perfect Moment to Invest? History Says That Could Cost You. - The Motley Fool",
    "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPTDAxWUxGOGY4ZFlVRm11M2NYNVpSNWFGclNGcERoYnh1OTZiSzd5UkVtTWFTWUdkUU9kR3U3ZTIwOVNrbXNUVFZDa1kxa0JVc1hwV1N0M1pja0FUajljQ1c0RU91Q1F1MEU5a1FzdzBhV1c3eVRnbWVtRi1qREFzRmU0Zm5zMWhOQk43TWkzWQ?oc=5",
-   "published": "Sat, 24 Oct 2026 08:42:37 GMT",
-   "query": "COST stock"
-  },
-  {
-   "source": "gnews:COST",
-   "title": "Morgan Stanley raises East West Bancorp stock price target on deposit cost improvement - Investing.com Australia",
-   "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPZUlseTFfcGotY3QzdzItdW5HUTNTQXhGQmZDWEx1X0E2UXpHNnNFTnRfLWxZa1UxTldjVkQ0R0JUa2tkd19QMzZkZTRsOHBzOWNrQTRhck9SMFFuVVRCbnZmQ2N4eFR3c21mSVdWVTlOeHJuak80NmIxeDY3WTBSZUdhU1F0TkRKVW1yOU9PZmZhcHRWc3lzZ3l0X0JsazBJUWNWbGJSLXVfS0RqcnV4ZkNlNHI0X2hxcFNTRm9sckZ0N0doWDhKT1BhanNaZ0ZkckJZMWJrUGZYREo0WFZVaQ?oc=5",
-   "published": "Wed, 21 Oct 2026 11:26:54 GMT",
+   "published": "Sat, 24 Oct 2026 09:30:00 GMT",
    "query": "COST stock"
   },
   {
@@ -971,6 +957,20 @@
    "title": "Carrefour\u2019s \u20ac2 Billion Stock Plunge Shows Cost of French Unrest - Bloomberg",
    "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPNWZhdnZkNWpsRUZURmVJNWdQVTZlMENpdlZpUFAxRHdOZ3p2YjZPaUk3N2dIcnptZlFGMmlUNkhIQWw5SXBrNFlRaHA1XzQwNmxpeFpjUVB0YTV2OFE0TVhhenNoTDlYWUZJbWJIZGVVSlhWZUlYWHEwM3lGQm5RZ1NaX25IUHBBdTRDOWVONXpHRTNQaW1sSlFlb3BzSkFjSEVUM3J5SDZmdS1USEZ3UGoxWQ?oc=5",
    "published": "Fri, 23 Oct 2026 09:52:15 GMT",
+   "query": "COST stock"
+  },
+  {
+   "source": "gnews:COST",
+   "title": "COST Stock Quote Price and Forecast - CNN",
+   "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE0wdWFzeXRQbjRSWURueDdHMklyTXcyLVNyUnlZX0R0cndYek4xTDY1VHg0QWxibVVOVzRlankxcEc3aWFDLWE2cFZPdng4RkJZ?oc=5",
+   "published": "Thu, 22 Oct 2026 15:20:20 GMT",
+   "query": "COST stock"
+  },
+  {
+   "source": "gnews:COST",
+   "title": "Fortescue Shares Hit Multi-Year Low Following Update: The Latest Look - TheBull.com.au",
+   "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPc0dxZXp4dzk2akxKbldaT19OY1p3VjFHc0Etcm1nNUhsWjZ1dEgxdTV2RHlpMEtXN1gtSXJHRjV5ZjRQV3pQUEJFcHA1NTVoQThxZWRrcUxWYTdybE5Yd0cyUFFlYm1aV2ZVWWVlSkZmV2lRb0Fyc2pOUHU4c0s4WW5NdmFva2RaY1dSNjZrRktTUFU4U1ZtNldhTlU4YWlLSklyVWFELUNySlJma2xzeGlRWWVsQjc0Rmc?oc=5",
+   "published": "Thu, 22 Oct 2026 08:08:52 GMT",
    "query": "COST stock"
   }
  ]
