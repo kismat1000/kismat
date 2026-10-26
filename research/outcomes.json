@@ -1,19 +1,19 @@
 {
- "generated": "2026-10-26T18:54+00:00",
+ "generated": "2026-10-26T22:55+00:00",
  "summary": {
-  "closed_trades": 65,
+  "closed_trades": 66,
   "wins": 7,
-  "losses": 58,
-  "win_rate": 0.1076923076923077,
-  "realized_pnl": -914.514300267573,
+  "losses": 59,
+  "win_rate": 0.10606060606060606,
+  "realized_pnl": -916.8091495615183,
   "avg_win_pct": 0.05826554305092148,
-  "avg_loss_pct": -0.026272544410799757,
-  "expectancy_pct": -0.01716844268415285,
-  "avg_hold_days": 5.892307692307693,
+  "avg_loss_pct": -0.025865895283590675,
+  "expectancy_pct": -0.016942863945081807,
+  "avg_hold_days": 5.803030303030303,
   "by_exit_reason": {
    "trend break": {
-    "n": 45,
-    "pnl": -637.703168885041,
+    "n": 46,
+    "pnl": -639.9980181789863,
     "wins": 0
    },
    "trailing stop hit": {
@@ -29,8 +29,8 @@
     "wins": 4
    },
    "no memo": {
-    "n": 50,
-    "pnl": -954.9891364722299,
+    "n": 51,
+    "pnl": -957.2839857661752,
     "wins": 3
    },
    "long": {
@@ -42,7 +42,7 @@
   "decisions": {
    "buy": {
     "n": 9,
-    "judged": 6,
+    "judged": 8,
     "good": 0,
     "hit_rate": 0.0
    },
@@ -54,9 +54,9 @@
    },
    "sell": {
     "n": 11,
-    "judged": 7,
-    "good": 4,
-    "hit_rate": 0.5714285714285714
+    "judged": 6,
+    "good": 3,
+    "hit_rate": 0.5
    },
    "proposed": {
     "n": 0,
@@ -115,24 +115,6 @@
   }
  },
  "trades": [
-  {
-   "symbol": "XLV",
-   "qty": 5.921389696508174,
-   "entry": 166.6632918319702,
-   "exit": 165.76,
-   "pnl": -6.332946946768465,
-   "pnl_pct": -0.00541986073862577,
-   "entry_ts": "2026-09-09T21:48:01+00:00",
-   "exit_ts": "2026-09-10T14:47:52+00:00",
-   "entry_reason": "uptrend: close > SMA50 > SMA200; 63d momentum +8.2%; pullback in uptrend RSI 28 | alpaca-paper pending: alpaca order accepted; fills at next market open",
-   "exit_reason": "trend break: below fast SMA and underwater | alpaca-paper filled @ 165.76",
-   "hold_days": 0,
-   "memo_direction": "flat",
-   "memo_conviction": 0.55,
-   "verdict": "bad",
-   "lesson": "Trend broke within 0 day(s) of entry (-0.5%): the move reversed right after the entry. Check the RSI and the distance from the 55-day high at entry; a cluster of these in one week usually means the whole market turned, not that each pick was wrong. Research was flat at entry: the systematic score alone carried this one.",
-   "key": "XLV@2026-09-10T14:47:52"
-  },
   {
    "symbol": "SPY",
    "qty": 0.19455831668724968,
@@ -1194,23 +1176,27 @@
    "verdict": "bad",
    "lesson": "Trend broke within 0 day(s) of entry (-0.6%): the move reversed right after the entry. Check the RSI and the distance from the 55-day high at entry; a cluster of these in one week usually means the whole market turned, not that each pick was wrong.",
    "key": "AVAXUSDT@2026-10-26T06:06:42"
+  },
+  {
+   "symbol": "AMD",
+   "qty": 1.314925182,
+   "entry": 532.228,
+   "exit": 531.0143892822266,
+   "pnl": -2.294849293945272,
+   "pnl_pct": -0.002280245905464051,
+   "entry_ts": "2026-10-26T18:54:07+00:00",
+   "exit_ts": "2026-10-26T22:55:41+00:00",
+   "entry_reason": "above SMA200 but SMA50 not aligned; 63d momentum +17.1%; pullback in uptrend RSI 26 | alpaca-paper filled 1.31493 @ 532.228",
+   "exit_reason": "trend break: below fast SMA and underwater | alpaca-paper pending: alpaca order accepted; fills at next market open",
+   "hold_days": 0,
+   "memo_direction": null,
+   "memo_conviction": null,
+   "verdict": "bad",
+   "lesson": "Trend broke within 0 day(s) of entry (-0.2%): the move reversed right after the entry. Check the RSI and the distance from the 55-day high at entry; a cluster of these in one week usually means the whole market turned, not that each pick was wrong.",
+   "key": "AMD@2026-10-26T22:55:41"
   }
  ],
  "decisions": [
-  {
-   "action": "sell",
-   "combined": 0.174,
-   "held": true,
-   "price": 0.2136,
-   "reason": "trend break: below fast SMA and underwater | alpaca-paper-crypto skipped: ADAUSDT not listed at alpaca; ledger-only exit",
-   "research": null,
-   "symbol": "ADAUSDT",
-   "systematic": 0.174,
-   "ts": "2026-10-22T15:29:50+00:00",
-   "since": -0.031132958801498245,
-   "horizon": null,
-   "verdict": "good"
-  },
   {
    "action": "buy",
    "combined": 0.368,
@@ -1221,7 +1207,7 @@
    "symbol": "DIA",
    "systematic": 0.368,
    "ts": "2026-10-22T15:29:52+00:00",
-   "since": -0.006943856606572263,
+   "since": -0.006440487010374252,
    "horizon": null,
    "verdict": "bad"
   },
@@ -1235,7 +1221,7 @@
    "symbol": "XLF",
    "systematic": 0.354,
    "ts": "2026-10-22T15:29:52+00:00",
-   "since": -0.005411644816763261,
+   "since": -0.006032649909614163,
    "horizon": null,
    "verdict": "good"
   },
@@ -1249,7 +1235,7 @@
    "symbol": "SOLUSDT",
    "systematic": 0.282,
    "ts": "2026-10-22T19:22:02+00:00",
-   "since": -0.029442996428226675,
+   "since": -0.03127715030408351,
    "horizon": null,
    "verdict": "good"
   },
@@ -1263,7 +1249,7 @@
    "symbol": "XLF",
    "systematic": 0.357,
    "ts": "2026-10-22T19:22:04+00:00",
-   "since": -0.00796391035188182,
+   "since": -0.008583321850873071,
    "horizon": null,
    "verdict": "bad"
   },
@@ -1277,7 +1263,7 @@
    "symbol": "AVAXUSDT",
    "systematic": 0.362,
    "ts": "2026-10-23T00:50:05+00:00",
-   "since": -0.018414995067411954,
+   "since": -0.025649457415323873,
    "horizon": null,
    "verdict": "good"
   },
@@ -1291,7 +1277,7 @@
    "symbol": "DIA",
    "systematic": 0.105,
    "ts": "2026-10-23T19:12:25+00:00",
-   "since": 0.001293005679918302,
+   "since": 0.0018005504539959638,
    "horizon": null,
    "verdict": "flat"
   },
@@ -1305,7 +1291,7 @@
    "symbol": "XLF",
    "systematic": 0.087,
    "ts": "2026-10-23T19:12:26+00:00",
-   "since": 0.0022349365156080214,
+   "since": 0.0016091570194316507,
    "horizon": null,
    "verdict": "flat"
   },
@@ -1319,7 +1305,7 @@
    "symbol": "AVAXUSDT",
    "systematic": 0.365,
    "ts": "2026-10-23T19:12:27+00:00",
-   "since": -0.021097507651945735,
+   "since": -0.02831219938784435,
    "horizon": null,
    "verdict": "bad"
   },
@@ -1333,7 +1319,7 @@
    "symbol": "AVAXUSDT",
    "systematic": 0.402,
    "ts": "2026-10-24T00:36:54+00:00",
-   "since": -0.008415457867345877,
+   "since": -0.015723618646883097,
    "horizon": null,
    "verdict": "good"
   },
@@ -1347,7 +1333,7 @@
    "symbol": "XRPUSDT",
    "systematic": -0.02,
    "ts": "2026-10-24T00:36:55+00:00",
-   "since": 0.005828411563568503,
+   "since": 0.0035747590923220773,
    "horizon": null,
    "verdict": "bad"
   },
@@ -1361,7 +1347,7 @@
    "symbol": "DIA",
    "systematic": 0.371,
    "ts": "2026-10-24T00:37:02+00:00",
-   "since": -0.009822117135606101,
+   "since": -0.00932020649905485,
    "horizon": null,
    "verdict": "bad"
   },
@@ -1375,7 +1361,7 @@
    "symbol": "XLF",
    "systematic": 0.36,
    "ts": "2026-10-24T00:37:09+00:00",
-   "since": -0.010503110409119998,
+   "since": -0.01112093647212764,
    "horizon": null,
    "verdict": "bad"
   },
@@ -1389,9 +1375,9 @@
    "symbol": "DIA",
    "systematic": 0.104,
    "ts": "2026-10-24T05:00:44+00:00",
-   "since": 0.002560603765385805,
+   "since": 0.003068791071449972,
    "horizon": null,
-   "verdict": "flat"
+   "verdict": "bad"
   },
   {
    "action": "sell",
@@ -1403,7 +1389,7 @@
    "symbol": "XLF",
    "systematic": 0.086,
    "ts": "2026-10-24T05:00:45+00:00",
-   "since": 0.002772786673809202,
+   "since": 0.002146671352579732,
    "horizon": null,
    "verdict": "flat"
   },
@@ -1417,7 +1403,7 @@
    "symbol": "LINKUSDT",
    "systematic": 0.096,
    "ts": "2026-10-24T09:20:24+00:00",
-   "since": -0.011541774332471832,
+   "since": -0.025064599483204053,
    "horizon": null,
    "verdict": "good"
   },
@@ -1431,7 +1417,7 @@
    "symbol": "AVAXUSDT",
    "systematic": 0.383,
    "ts": "2026-10-25T01:29:43+00:00",
-   "since": -0.005883658969804473,
+   "since": -0.013210479573712242,
    "horizon": null,
    "verdict": "bad"
   },
@@ -1445,9 +1431,9 @@
    "symbol": "AVAXUSDT",
    "systematic": 0.366,
    "ts": "2026-10-25T06:33:49+00:00",
-   "since": 0.009241519215597904,
+   "since": 0.0018032232615801114,
    "horizon": null,
-   "verdict": "bad"
+   "verdict": "flat"
   },
   {
    "action": "buy",
@@ -1459,9 +1445,9 @@
    "symbol": "AVAXUSDT",
    "systematic": 0.385,
    "ts": "2026-10-26T01:08:43+00:00",
-   "since": 0.002911860230708996,
+   "since": -0.004479784970321532,
    "horizon": null,
-   "verdict": "flat"
+   "verdict": "bad"
   },
   {
    "action": "sell",
@@ -1473,7 +1459,7 @@
    "symbol": "AVAXUSDT",
    "systematic": 0.369,
    "ts": "2026-10-26T06:06:42+00:00",
-   "since": 0.015997277059224047,
+   "since": 0.008509189925119065,
    "horizon": null,
    "verdict": "bad"
   },
@@ -1487,9 +1473,9 @@
    "symbol": "TSLA",
    "systematic": 0.582,
    "ts": "2026-10-26T18:54:05+00:00",
-   "since": 0.0,
+   "since": -0.006573861457329078,
    "horizon": null,
-   "verdict": "flat"
+   "verdict": "bad"
   },
   {
    "action": "buy",
@@ -1501,6 +1487,20 @@
    "symbol": "AMD",
    "systematic": 0.371,
    "ts": "2026-10-26T18:54:07+00:00",
+   "since": -0.0019724376970302604,
+   "horizon": null,
+   "verdict": "flat"
+  },
+  {
+   "action": "sell",
+   "combined": 0.369,
+   "held": true,
+   "price": 531.280029296875,
+   "reason": "trend break: below fast SMA and underwater | alpaca-paper pending: alpaca order accepted; fills at next market open",
+   "research": null,
+   "symbol": "AMD",
+   "systematic": 0.369,
+   "ts": "2026-10-26T22:55:41+00:00",
    "since": 0.0,
    "horizon": null,
    "verdict": "flat"
@@ -1512,7 +1512,7 @@
    "date": "2026-09-06",
    "direction": "flat",
    "conviction": 0.55,
-   "since": -0.03934088833525207,
+   "since": -0.03643964671338995,
    "horizon": -0.01922562489552415,
    "verdict": "flat"
   },
@@ -1539,7 +1539,7 @@
    "date": "2026-09-06",
    "direction": "long",
    "conviction": 0.55,
-   "since": 0.06526914035948073,
+   "since": 0.06583942880768912,
    "horizon": 0.011426838734421407,
    "verdict": "good"
   },
@@ -1548,7 +1548,7 @@
    "date": "2026-09-06",
    "direction": "long",
    "conviction": 0.62,
-   "since": -0.05928886334806782,
+   "since": -0.061288001411671233,
    "horizon": -0.08319125220101142,
    "verdict": "bad"
   },
@@ -1557,7 +1557,7 @@
    "date": "2026-09-06",
    "direction": "flat",
    "conviction": 0.6,
-   "since": -0.003907675020750734,
+   "since": -0.003790575057739609,
    "horizon": -0.01208798926175858,
    "verdict": "flat"
   },
@@ -1566,7 +1566,7 @@
    "date": "2026-09-07",
    "direction": "flat",
    "conviction": 0.6,
-   "since": 0.07179389699943073,
+   "since": 0.07481952167413763,
    "horizon": 0.04097254524345151,
    "verdict": "flat"
   },
@@ -1593,7 +1593,7 @@
    "date": "2026-09-07",
    "direction": "flat",
    "conviction": 0.6,
-   "since": 0.006853296205679982,
+   "since": 0.003325267981454161,
    "horizon": -0.031076386542126855,
    "verdict": "flat"
   },
@@ -1602,7 +1602,7 @@
    "date": "2026-09-07",
    "direction": "flat",
    "conviction": 0.6,
-   "since": -0.07065274109515363,
+   "since": -0.07115046521149271,
    "horizon": -0.005691716104586408,
    "verdict": "flat"
   },
@@ -1611,7 +1611,7 @@
    "date": "2026-09-07",
    "direction": "flat",
    "conviction": 0.55,
-   "since": -0.09850746268656707,
+   "since": -0.11084053417124895,
    "horizon": -0.118931657501964,
    "verdict": "flat"
   },
@@ -1620,7 +1620,7 @@
    "date": "2026-09-07",
    "direction": "flat",
    "conviction": 0.62,
-   "since": -0.007090654438077326,
+   "since": -0.008370230452005578,
    "horizon": -0.013603005444210559,
    "verdict": "flat"
   },
@@ -1629,7 +1629,7 @@
    "date": "2026-09-07",
    "direction": "flat",
    "conviction": 0.55,
-   "since": -0.03196610822260726,
+   "since": -0.03379549393414216,
    "horizon": -0.044001540535336,
    "verdict": "flat"
   },
@@ -1638,7 +1638,7 @@
    "date": "2026-09-08",
    "direction": "flat",
    "conviction": 0.55,
-   "since": 0.020606370354614878,
+   "since": 0.020391632996001885,
    "horizon": -0.003186503476475422,
    "verdict": "flat"
   },
@@ -1647,7 +1647,7 @@
    "date": "2026-09-08",
    "direction": "flat",
    "conviction": 0.6,
-   "since": 0.04474992894537988,
+   "since": 0.042592505815646886,
    "horizon": 0.023148147057985513,
    "verdict": "flat"
   },
@@ -1656,7 +1656,7 @@
    "date": "2026-09-08",
    "direction": "flat",
    "conviction": 0.55,
-   "since": -0.03999369015408227,
+   "since": -0.04203383306356556,
    "horizon": -0.06438634718255631,
    "verdict": "flat"
   },
@@ -1665,7 +1665,7 @@
    "date": "2026-09-09",
    "direction": "long",
    "conviction": 0.55,
-   "since": 0.08271129675531697,
+   "since": 0.08329092280650996,
    "horizon": 0.011125803495595665,
    "verdict": "good"
   },
@@ -1674,7 +1674,7 @@
    "date": "2026-09-09",
    "direction": "flat",
    "conviction": 0.62,
-   "since": 0.006270113507617525,
+   "since": 0.00638840996479928,
    "horizon": -0.006571392273058363,
    "verdict": "flat"
   },
@@ -1683,7 +1683,7 @@
    "date": "2026-09-09",
    "direction": "long",
    "conviction": 0.55,
-   "since": 0.07279138116015438,
+   "since": 0.07263732221821373,
    "horizon": 0.009493250667177433,
    "verdict": "good"
   },
@@ -1692,7 +1692,7 @@
    "date": "2026-09-09",
    "direction": "flat",
    "conviction": 0.55,
-   "since": 0.07661940541765722,
+   "since": 0.08035859026340719,
    "horizon": 0.006483460555116949,
    "verdict": "flat"
   },
@@ -1701,7 +1701,7 @@
    "date": "2026-09-10",
    "direction": "flat",
    "conviction": 0.55,
-   "since": 0.057049266557043454,
+   "since": 0.054964302736068005,
    "horizon": 0.01767274382172057,
    "verdict": "flat"
   },
@@ -1719,7 +1719,7 @@
    "date": "2026-09-10",
    "direction": "flat",
    "conviction": 0.6,
-   "since": 0.04936462765208072,
+   "since": 0.04568763911977669,
    "horizon": 0.023118537093911096,
    "verdict": "flat"
   },
@@ -1737,7 +1737,7 @@
    "date": "2026-09-10",
    "direction": "flat",
    "conviction": 0.55,
-   "since": -0.05107502643507622,
+   "since": -0.05158323565333578,
    "horizon": -0.009020713624105614,
    "verdict": "flat"
   },
@@ -1746,7 +1746,7 @@
    "date": "2026-09-10",
    "direction": "flat",
    "conviction": 0.6,
-   "since": 0.018848804215646497,
+   "since": 0.01692338873125232,
    "horizon": 0.00010133765707331932,
    "verdict": "flat"
   },
@@ -1755,7 +1755,7 @@
    "date": "2026-09-10",
    "direction": "long",
    "conviction": 0.5,
-   "since": 0.07906983946156454,
+   "since": 0.07891487889731441,
    "horizon": -0.013861051081786702,
    "verdict": "bad"
   },
@@ -1764,7 +1764,7 @@
    "date": "2026-09-10",
    "direction": "flat",
    "conviction": 0.6,
-   "since": 0.00938303981160682,
+   "since": 0.00711282980831518,
    "horizon": -0.006964781599199443,
    "verdict": "flat"
   },
@@ -1773,7 +1773,7 @@
    "date": "2026-09-11",
    "direction": "flat",
    "conviction": 0.6,
-   "since": 0.036686224985428506,
+   "since": 0.03646810439738357,
    "horizon": -0.009696133670099027,
    "verdict": "flat"
   },
@@ -1782,7 +1782,7 @@
    "date": "2026-09-11",
    "direction": "flat",
    "conviction": 0.6,
-   "since": 0.020805170318296096,
+   "since": 0.018697193448061755,
    "horizon": -0.0033172681199559184,
    "verdict": "flat"
   },
@@ -1791,7 +1791,7 @@
    "date": "2026-09-11",
    "direction": "flat",
    "conviction": 0.6,
-   "since": -0.08749996063844001,
+   "since": -0.08873816285429337,
    "horizon": -0.013708619191976856,
    "verdict": "flat"
   },
@@ -1800,7 +1800,7 @@
    "date": "2026-09-11",
    "direction": "flat",
    "conviction": 0.5,
-   "since": -0.08003210502475411,
+   "since": -0.08052480589969557,
    "horizon": -0.027249537099581222,
    "verdict": "flat"
   },
@@ -1809,7 +1809,7 @@
    "date": "2026-09-11",
    "direction": "flat",
    "conviction": 0.6,
-   "since": -0.008383282003526782,
+   "since": -0.010490601294449231,
    "horizon": 0.004810129112888362,
    "verdict": "flat"
   },
@@ -1818,7 +1818,7 @@
    "date": "2026-09-12",
    "direction": "long",
    "conviction": 0.5,
-   "since": 0.07401690211888523,
+   "since": 0.0745918736535458,
    "horizon": -0.003732635404010809,
    "verdict": "bad"
   },
@@ -1827,7 +1827,7 @@
    "date": "2026-09-12",
    "direction": "long",
    "conviction": 0.45,
-   "since": 0.07559104008445283,
+   "since": 0.07543657909557266,
    "horizon": -0.012741853390483504,
    "verdict": "bad"
   },
@@ -1836,7 +1836,7 @@
    "date": "2026-09-13",
    "direction": "flat",
    "conviction": 0.55,
-   "since": 0.0313874645026877,
+   "since": 0.029353116987458128,
    "horizon": 0.19256779049496275,
    "verdict": "flat"
   },
@@ -1845,7 +1845,7 @@
    "date": "2026-09-13",
    "direction": "flat",
    "conviction": 0.6,
-   "since": 0.03914620535714297,
+   "since": 0.0355050223214286,
    "horizon": 0.06455078125000013,
    "verdict": "flat"
   },
@@ -1863,7 +1863,7 @@
    "date": "2026-09-13",
    "direction": "flat",
    "conviction": 0.6,
-   "since": 0.01258938463087933,
+   "since": 0.010675798166985384,
    "horizon": 0.11844093060731176,
    "verdict": "flat"
   },
@@ -1872,7 +1872,7 @@
    "date": "2026-09-13",
    "direction": "flat",
    "conviction": 0.55,
-   "since": 0.07559104008445283,
+   "since": 0.07543657909557266,
    "horizon": -0.03544272925851655,
    "verdict": "flat"
   },
@@ -1881,7 +1881,7 @@
    "date": "2026-09-13",
    "direction": "flat",
    "conviction": 0.6,
-   "since": -0.0037942808209002754,
+   "since": -0.006034853626085246,
    "horizon": 0.03947030498245607,
    "verdict": "flat"
   },
@@ -1890,7 +1890,7 @@
    "date": "2026-09-14",
    "direction": "flat",
    "conviction": 0.6,
-   "since": 0.029608227322432512,
+   "since": 0.03251476379981799,
    "horizon": 0.017713536243290307,
    "verdict": "flat"
   },
@@ -1899,7 +1899,7 @@
    "date": "2026-09-14",
    "direction": "flat",
    "conviction": 0.6,
-   "since": 0.02386893226673803,
+   "since": 0.023653508459414052,
    "horizon": 0.03828863950271377,
    "verdict": "flat"
   },
@@ -1908,7 +1908,7 @@
    "date": "2026-09-14",
    "direction": "flat",
    "conviction": 0.6,
-   "since": 0.021113053812890525,
+   "since": 0.019004441158959162,
    "horizon": -0.017194560138383164,
    "verdict": "flat"
   },
@@ -1917,7 +1917,7 @@
    "date": "2026-09-14",
    "direction": "flat",
    "conviction": 0.65,
-   "since": -0.061918452302293314,
+   "since": -0.06319136693342375,
    "horizon": 0.04303688527385763,
    "verdict": "flat"
   },
@@ -1926,7 +1926,7 @@
    "date": "2026-09-14",
    "direction": "flat",
    "conviction": 0.45,
-   "since": -0.07916495981100624,
+   "since": -0.07965812509694281,
    "horizon": 0.051126127021878354,
    "verdict": "flat"
   },
@@ -1935,7 +1935,7 @@
    "date": "2026-09-14",
    "direction": "flat",
    "conviction": 0.55,
-   "since": -0.0037329629308099355,
+   "since": -0.017362618282837028,
    "horizon": 0.08733396996267029,
    "verdict": "flat"
   },
@@ -1953,7 +1953,7 @@
    "date": "2026-09-15",
    "direction": "flat",
    "conviction": 0.65,
-   "since": 0.005044506688745454,
+   "since": 0.0029690758080465063,
    "horizon": -0.03266028694043843,
    "verdict": "flat"
   },
@@ -1962,7 +1962,7 @@
    "date": "2026-09-15",
    "direction": "flat",
    "conviction": 0.55,
-   "since": -0.03587787531022535,
+   "since": -0.03639422356213673,
    "horizon": 0.15642853573629578,
    "verdict": "flat"
   },
@@ -1971,7 +1971,7 @@
    "date": "2026-09-15",
    "direction": "long",
    "conviction": 0.5,
-   "since": 0.07079781072962499,
+   "since": 0.07137105893394247,
    "horizon": 0.009032004905207058,
    "verdict": "good"
   },
@@ -1980,7 +1980,7 @@
    "date": "2026-09-15",
    "direction": "flat",
    "conviction": 0.6,
-   "since": 0.036922442244224474,
+   "since": 0.03496287128712883,
    "horizon": 0.22689768976897695,
    "verdict": "flat"
   },
@@ -1989,7 +1989,7 @@
    "date": "2026-09-15",
    "direction": "flat",
    "conviction": 0.5,
-   "since": 0.06270287637004301,
+   "since": 0.06255026619475079,
    "horizon": -0.04700044176629692,
    "verdict": "flat"
   },
@@ -1998,7 +1998,7 @@
    "date": "2026-09-15",
    "direction": "flat",
    "conviction": 0.6,
-   "since": 0.06968415042196252,
+   "since": 0.0733992485753765,
    "horizon": 0.01190987472449656,
    "verdict": "flat"
   },
@@ -2007,7 +2007,7 @@
    "date": "2026-09-16",
    "direction": "flat",
    "conviction": 0.6,
-   "since": 0.025653030031808077,
+   "since": 0.022059127273728718,
    "horizon": 0.08555140933313132,
    "verdict": "flat"
   },
@@ -2016,7 +2016,7 @@
    "date": "2026-09-16",
    "direction": "flat",
    "conviction": 0.6,
-   "since": 0.020805170318296096,
+   "since": 0.018697193448061755,
    "horizon": -0.021712944029440795,
    "verdict": "flat"
   },
@@ -2025,7 +2025,7 @@
    "date": "2026-09-16",
    "direction": "long",
    "conviction": 0.45,
-   "since": 0.08569246521413043,
+   "since": 0.08627368722438167,
    "horizon": 0.015704695897897025,
    "verdict": "good"
   },
@@ -2034,7 +2034,7 @@
    "date": "2026-09-16",
    "direction": "flat",
    "conviction": 0.5,
-   "since": 0.0942371160223372,
+   "since": 0.09407997735093576,
    "horizon": -0.02940464879956428,
    "verdict": "flat"
   },
@@ -2043,7 +2043,7 @@
    "date": "2026-09-16",
    "direction": "flat",
    "conviction": 0.6,
-   "since": 0.016462478981493778,
+   "since": 0.014176346565215825,
    "horizon": 0.06833613164800445,
    "verdict": "flat"
   },
@@ -2052,7 +2052,7 @@
    "date": "2026-09-17",
    "direction": "flat",
    "conviction": 0.65,
-   "since": 0.017631734514095054,
+   "since": 0.020504461905369142,
    "horizon": 5.931458062868877e-05,
    "verdict": "flat"
   },
@@ -2061,7 +2061,7 @@
    "date": "2026-09-17",
    "direction": "flat",
    "conviction": 0.6,
-   "since": 0.04683649153811942,
+   "since": 0.04661623531630643,
    "horizon": 0.10408479812222415,
    "verdict": "flat"
   },
@@ -2079,7 +2079,7 @@
    "date": "2026-09-17",
    "direction": "flat",
    "conviction": 0.55,
-   "since": 0.007550482879719045,
+   "since": -0.006233538191395938,
    "horizon": 0.08296751536435476,
    "verdict": "flat"
   },
@@ -2088,7 +2088,7 @@
    "date": "2026-09-18",
    "direction": "flat",
    "conviction": 0.55,
-   "since": -0.010421089359054614,
+   "since": -0.010629298486082184,
    "horizon": 0.043660984107115386,
    "verdict": "flat"
   },
@@ -2097,7 +2097,7 @@
    "date": "2026-09-18",
    "direction": "flat",
    "conviction": 0.55,
-   "since": -0.11374632533072015,
+   "since": -0.11422097011268995,
    "horizon": 0.028784909358157806,
    "verdict": "flat"
   },
@@ -2106,7 +2106,7 @@
    "date": "2026-09-18",
    "direction": "flat",
    "conviction": 0.55,
-   "since": -0.06211180124223603,
+   "since": -0.07494279176201368,
    "horizon": 0.07968290290944746,
    "verdict": "flat"
   },
@@ -2115,7 +2115,7 @@
    "date": "2026-09-18",
    "direction": "long",
    "conviction": 0.5,
-   "since": -0.1069461716112986,
+   "since": -0.10863386036596201,
    "horizon": 0.03979392432048323,
    "verdict": "good"
   },
@@ -2124,7 +2124,7 @@
    "date": "2026-09-18",
    "direction": "flat",
    "conviction": 0.55,
-   "since": 0.06504696897712492,
+   "since": 0.06874596183046888,
    "horizon": 0.012649891531685054,
    "verdict": "flat"
   },
@@ -2142,7 +2142,7 @@
    "date": "2026-09-20",
    "direction": "long",
    "conviction": 0.6,
-   "since": 0.07804083550847363,
+   "since": 0.07861796124308351,
    "horizon": 0.031268991209802754,
    "verdict": "good"
   },
@@ -2151,7 +2151,7 @@
    "date": "2026-09-21",
    "direction": "long",
    "conviction": 0.55,
-   "since": -0.06731612030753042,
+   "since": -0.07058425784478228,
    "horizon": -0.02489294032205558,
    "verdict": "bad"
   },
@@ -2160,7 +2160,7 @@
    "date": "2026-09-21",
    "direction": "long",
    "conviction": 0.6,
-   "since": -0.07605077871032562,
+   "since": -0.07624517923636143,
    "horizon": -0.02485440739700928,
    "verdict": "bad"
   },
@@ -2169,7 +2169,7 @@
    "date": "2026-09-21",
    "direction": "flat",
    "conviction": 0.65,
-   "since": 0.03897782042869791,
+   "since": 0.036832316783308894,
    "horizon": -0.002762435467456137,
    "verdict": "flat"
   },
@@ -2178,7 +2178,7 @@
    "date": "2026-09-21",
    "direction": "long",
    "conviction": 0.65,
-   "since": -0.16629338096026836,
+   "since": -0.16673988347724633,
    "horizon": -0.03183130846842441,
    "verdict": "bad"
   },
@@ -2187,7 +2187,7 @@
    "date": "2026-09-21",
    "direction": "long",
    "conviction": 0.65,
-   "since": -0.15484196368527225,
+   "since": -0.1564391392064559,
    "horizon": 0.025386684599865594,
    "verdict": "good"
   },
@@ -2196,7 +2196,7 @@
    "date": "2026-09-21",
    "direction": "flat",
    "conviction": 0.7,
-   "since": 0.11511371352539235,
+   "since": 0.11495357685589047,
    "horizon": -0.005763698617169188,
    "verdict": "flat"
   }
