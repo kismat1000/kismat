@@ -1109,3 +1109,54 @@ and `rs` empty for all symbols. `us_etfs` still missing from the memo schema enu
 **Still open for the owner:** the desk's cadence, and whether the `config/`/`kismat/` fixes get
 implemented — in the order the 20 September review sets out (fix `flat → 0.0` first, *then* enable
 rotation at margin 0.30, never the reverse).
+
+## 2026-11-10 — restart, and the exit rule
+
+First session since 21 September; the daily routine was paused on that date. No memos today.
+Instead: read the 65 days of journal the automation produced while the desk was off, and found
+the thing the desk had been looking for since 6 September.
+
+**The exit rule is the loss.** Over 80 closed trades the paper book split like this:
+
+| exit reason | trades | realised | winners |
+|---|---|---|---|
+| trend break | 54 | **−779.90** | **0 of 54** |
+| trailing stop | 26 | −502.89 | 8 of 26 |
+
+Fifty-four exits, not one winner: 61% of all realised loss and two thirds of all exits. Book is
+9,005.84 against 10,000.00 paid in (−9.94%), peak 10,383.15, −13.26% off peak. Overall win rate 10%
+against the 35–40% these same parameters backtest at, and the whole gap sits in that one rule.
+`trend_break_days: 1` cuts a 55-day breakout on a single close below SMA50 — noise, not a signal.
+
+This was not a new discovery so much as an unread one. Every weekly backtest since 12 September has
+shown cumulative trend-break P&L negative in every run, and `trend-break off` ahead on Sharpe and
+win rate in all four books (us_stocks: +5.0% / 0.46 against −3.9% / −0.29). Eight reports, never
+written up. The 6 September note that "exits are the broken half" was right and then dropped.
+
+Proposal `research/proposals/2026-11-10-trend-break-exit.md` and a PR setting
+`trend_break_exit: false`. One variable, so the next six weeks attribute cleanly. Drawdown does not
+worsen (−13.0% vs −12.9%), so this gives up no protection.
+
+**Also found.** The 2026-11-08 walk-forward ranks the live parameters **80th of 97** by robustness
+(0.19 against best 1.00), down from 31st of 96 on 7 September. All of the top 13 variants use `n8`.
+That is the 7 September `slots-and-stops` proposal, never implemented, now much better evidenced.
+Left out of the PR deliberately — one change at a time.
+
+**Things that failed or need checking.** Two exits died at the venue on Alpaca
+`403 potential wash trade detected` (DBC, MSFT) and others logged `ledger-only exit`; the ledger and
+the Alpaca account have diverged, so `venue-check`/`venue-sync` should run before anyone reads the
+venue record as real. Yahoo egress is still blocked here, so none of the above could be reproduced
+locally — the numbers are the repo's own committed CI reports. `flat → 0.0` (memos.py:58) is still
+unfixed, and `us_etfs` is still missing from the memo schema enum, open since 8 September.
+
+**Still open for the owner:** the new day-trading repo is not reachable from this session — the
+GitHub credential here is `LeadFlowINTL`, which can see one repo, and it is not a trading one.
+Nothing can be ported until that repo is attached.
+
+**Verified, same session.** The Yahoo egress block above was lifted mid-session, so the claim was
+re-run locally on fresh bars rather than resting on CI. Both legs on identical cached data:
+us_stocks 296d — rule ON **−6.6% / Sharpe −0.56 / DD −16.6% / win 25% / 143 trades** against rule
+OFF **+0.4% / +0.11 / −14.5% / 31% / 93**. Whole universe 531d — ON +9.3% / 0.43 / win 35% / 233
+against OFF **+13.3% / 0.56 / 38% / 176**. The drawdown *improves* in both. So this is not a
+risk-for-return trade: the rule was adding losing trades, and removing it cuts exposure and the
+worst drawdown together. Stronger than the CI reports implied.
