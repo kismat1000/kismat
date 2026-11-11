@@ -1211,3 +1211,20 @@ gate as pass or fail. Two that need the owner regardless: `max_drawdown_pct` is 
 which the config itself says is a paper setting and should be 0.05–0.10 before live; and at this
 account size the desk's own cost eats the strategy's entire edge, so the honest setting below
 ~$127k is engine on, desk off.
+
+**Slots and stops: tested, not adopted — and I corrected myself mid-session.** Ran the 5-year
+walk-forward properly (21 windows, 97 variants) rather than quoting CI. For the live family n8 scores
+robustness 1.20 against n12's 0.92, better out of sample (+13.7% vs +9.7%) and a smaller drawdown
+(−21.9% vs −23.7%) — but **33 points less return over five years** (+51.4% vs +84.6%). I had read the
+per-setting aggregate first (n8 0.81 vs 0.58 at equal return) and set `max_positions: 8` on the
+strength of it; that table averages ~48 variants and hides the return cost for this particular set,
+so I reverted it. Stops are weaker still: 0.72 vs 0.67, top ranks split.
+
+Neither ships, for three reasons: attribution (the trend-break fix must be the only variable in the
+window the go-live gate reads); the two walk-forwards disagree about the live set (CI 80 of 97, local
+28 of 97) because this container cannot reach Yahoo's earnings endpoint, so CI's earnings blackout is
+absent here — I should not have quoted 80-of-97 as settled yesterday; and the report's own chain
+warns against exactly this (+37.0% re-picking vs +96.2% holding).
+
+Final config: trend-break off, n12, stop 2.5. Five years, whole universe: **+84.6% / Sharpe 0.82 /
+max DD −23.7% / win 39%**.
