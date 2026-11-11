@@ -88,3 +88,21 @@ weak names back in. The record does not support that reading — skip decisions 
 but the sample is small and the judging window re-scores past calls violently (the long hit rate
 has printed 0.43, 0.86, 0.375, 0.625, 0.40 and 0.36 on consecutive days). Change (1) is safe under
 either reading. Change (2) is the one that needs a real decision.
+
+---
+
+## Decision 2026-11-11: implemented
+
+`flat` now abstains rather than scoring 0.0. `Memo.research_score()` returns
+`None` for a flat or expired memo and the engine blends only real numbers, so
+`combined_score()` leaves the systematic score alone.
+
+The size of the defect, stated plainly: research is blended at
+`RESEARCH_WEIGHT = 0.4`, so handing it 0.0 was not neutral — it was a **40%
+haircut**. A symbol scoring a systematic 0.58 was dragged to 0.348, under the
+0.35 entry threshold. Writing "no opinion" silently blocked entries the
+systematic rules wanted, which is the opposite of what a flat memo means.
+Expired memos did the same thing.
+
+`Memo.score()` is unchanged as the reporting value. Four tests cover it,
+including the exact 0.58 -> 0.348 case.

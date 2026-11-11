@@ -1160,3 +1160,54 @@ OFF **+0.4% / +0.11 / −14.5% / 31% / 93**. Whole universe 531d — ON +9.3% / 
 against OFF **+13.3% / 0.56 / 38% / 176**. The drawdown *improves* in both. So this is not a
 risk-for-return trade: the rule was adding losing trades, and removing it cuts exposure and the
 worst drawdown together. Stronger than the CI reports implied.
+
+## 2026-11-11 — fixes
+
+Owner: "fix all those and be the best ... i will provide you the real account with real money
+remind me and we have to grow." So: five defects fixed, four proposals closed, one rejected, and a
+written gate for real money. No memos today — the machine came first.
+
+**Fixed.**
+
+1. `trend_break_exit: false`. 54 exits, 0 winners, −779.90, 61% of all realised loss. Verified on
+   fresh 5-year data: whole universe +84.6% / Sharpe 0.82 with the rule off.
+2. **Flat memos abstain.** The real size of this: research blends at `RESEARCH_WEIGHT = 0.4`, so
+   handing it 0.0 was never neutral — it was a **40% haircut**. Systematic 0.58 → 0.348, under the
+   0.35 entry threshold. Writing "no opinion" silently blocked entries the rules wanted. Expired
+   memos did the same. `research_score()` now returns `None` for both.
+3. **Alpaca exits clear stale orders first.** `sell()` cancelled open orders only when the position
+   was *already gone*; when held it closed straight away and Alpaca answered 403 "potential wash
+   trade detected". That is exactly how DBC and MSFT exited in the ledger on 9 November and stayed
+   open at the broker. Retries once if an order lands in between; a second failure still raises.
+4. **`rs` populated after 66 days empty.** Root cause was `if p.w_rs and ...` — the computation was
+   gated on the *weight*, which is 0 by design, so the column the config promises the pattern
+   analyst was never filled. Computing and scoring were conflated. Now AAPL +18.0%, XLV +15.2%,
+   AMZN +4.0%, ETHUSDT −11.1%. Scoring provably unchanged (`score_frame` multiplies by `w_rs`).
+5. **Schema and validator agree.** `us_etfs` legal, and the bigger half: `validate()` never checked
+   `asset_class` at all, so 21 `us_etfs` memos were valid only because nothing looked.
+
+Twelve tests added; the venue and memo ones fail against the old code, which is the point.
+
+**Rejected: memo-gated entries.** Its own "why it might be wrong" was right. The desk has been
+paused since 21 September and **0 of 20 memos are fresh enough to blend**, so requiring a 3-day
+`long` memo before any entry would have frozen the book for seven weeks — a silent dependency on an
+agent process that stops. And entries were never the problem: the loss was all in the exits.
+
+**Corrections to my own earlier work.** Two things I got wrong yesterday and should flag rather than
+quietly drop. First, I reported the walk-forward as missing since 12 September; it was not — `ls -t`
+misled me because every file shares one checkout mtime, and `wf-2026-11-08.md` exists. Second, my
+first local walk-forward produced only 4 windows, not CI's 21, because I had warmed the cache with
+`--days 730`; on 2 years of data it said "keep, rank 36 of 97", which is not comparable to CI's
+5-year "rank 80 of 97". Re-running on a properly warmed 5-year cache.
+
+**Still blocked.** Push access. Git over HTTPS returns 403 and the GitHub app returns "Resource not
+accessible by integration", so none of this can reach `main` from here. Everything is committed
+locally and exported as a patch.
+
+**Real money: not yet.** `research/go-live.md` sets eight gates with numbers, not opinions. The book
+is 8,996.36 against 10,000.00 paid in (−10.0% over 66 days), 80 trades, win rate 10%. The fixes are
+backtest-verified and have **traded zero live bars**. Reminder set for 9 December to report every
+gate as pass or fail. Two that need the owner regardless: `max_drawdown_pct` is still **0.25**,
+which the config itself says is a paper setting and should be 0.05–0.10 before live; and at this
+account size the desk's own cost eats the strategy's entire edge, so the honest setting below
+~$127k is engine on, desk off.

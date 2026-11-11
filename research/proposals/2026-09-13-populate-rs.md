@@ -45,3 +45,23 @@ neither.
 A single ten-variant study is thin evidence for a scoring change, and the study's own verdict is
 **keep** — `+rs 0.15` clears the robustness margin but the report still did not recommend
 switching. None of that argues against *displaying* the number, which is the actual proposal here.
+
+---
+
+## Decision 2026-11-11: implemented
+
+Root cause: `trend_signal()` computed relative strength only `if p.w_rs and
+...`. `w_rs` is 0.0 by design — the feature study has not earned it a weight —
+so the column was never computed, for 66 days, even though
+`config/strategy.yaml` says these pattern features "remain in the packet for
+the desk's pattern analyst to read". Computing and scoring were conflated.
+
+Now computed whenever a benchmark exists. Scoring is untouched: `score_frame`
+multiplies by `w_rs`, so a populated `rs` with `w_rs == 0` moves no decision,
+and a test asserts exactly that. Verified on live data: AAPL +18.0%,
+XLV +15.2%, AMZN +4.0%, ETHUSDT -11.1%. A benchmark no longer reports `rs`
+against itself (BTCUSDT used to read a constant +0.0%).
+
+Still open: `au_stocks` has no benchmark, because the universe contains no ASX
+index symbol. Adding one means adding a symbol the engine could try to trade,
+so it needs care and is left for the owner.
