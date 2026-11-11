@@ -66,6 +66,11 @@ Real money goes in only when every one of these is true. Not most.
   which `config/risk.yaml` itself says is a paper-test setting and should go to
   **0.05-0.10 before live**. A 25% kill switch on real money means losing a
   quarter of it before anything stops.
+  **Do not tighten it today.** The book is already **-13.4%** off its peak, so
+  setting `max_drawdown_pct` to 0.10 right now would trip the kill switch on
+  the next cycle and liquidate every position at once. This is a go-live step,
+  in this order: get the fixes running, let the drawdown recover under them,
+  then tighten, then fund.
 - **G8 — the account is big enough to carry the desk.** `research/viability.md`
   puts this desk at $90-240/month. On a $10k account that is 11-29% a year
   against a strategy that backtests at ~15.8% CAGR: the research desk eats the
