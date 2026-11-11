@@ -8,7 +8,7 @@
                "horizon_days", "sources", "agent"],
   "properties": {
     "symbol": {"type": "string"},
-    "asset_class": {"type": "string", "enum": ["crypto", "us_stocks", "au_stocks"]},
+    "asset_class": {"type": "string", "enum": ["crypto", "us_stocks", "us_etfs", "au_stocks"]},
     "date": {"type": "string", "description": "YYYY-MM-DD (UTC)"},
     "direction": {"type": "string", "enum": ["long", "flat", "avoid"],
                   "description": "long = worth owning now, flat = no edge, avoid = do not touch"},

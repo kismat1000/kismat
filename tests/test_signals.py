@@ -67,3 +67,48 @@ def test_pattern_features_are_off_by_default_and_score_when_weighted():
     assert any("relative strength" in r for r in sig.reasons)
     plain = trend_signal("STRONG", strong, 2.5, off)
     assert plain.ok and plain.features["rs"] != plain.features["rs"]   # NaN without a benchmark
+
+
+def _bars(n=400, start=100.0, step=0.25):
+    import pandas as pd
+    idx = pd.date_range("2024-01-01", periods=n, freq="D", tz="UTC")
+    close = [start + step * i for i in range(n)]
+    return pd.DataFrame({"open": close, "high": [c * 1.01 for c in close],
+                         "low": [c * 0.99 for c in close], "close": close,
+                         "volume": [1e6] * n}, index=idx)
+
+
+def test_rs_is_populated_even_when_its_weight_is_zero():
+    """The packet must show rs for the pattern analyst.
+
+    Regression test: the computation used to be gated on w_rs, so with the
+    feature's weight at 0 (its designed state) the packet's rs column was
+    empty for every symbol.
+    """
+    import math
+    from kismat.strategy.signals import StrategyParams, trend_signal
+    p = StrategyParams(w_rs=0.0)
+    assert p.w_rs == 0.0
+    fast, slow = _bars(step=0.5), _bars(step=0.1)
+    sig = trend_signal("FAST", fast, p=p, benchmark=slow)
+    assert sig.ok, sig.reasons
+    rs = sig.features["rs"]
+    assert not math.isnan(rs), "rs must be computed with w_rs == 0"
+    assert rs > 0, "a faster-rising symbol must out-rank its benchmark"
+
+
+def test_rs_weight_zero_does_not_change_the_score():
+    """Populating rs must not move any decision."""
+    from kismat.strategy.signals import StrategyParams, trend_signal
+    p = StrategyParams(w_rs=0.0)
+    bars, bench = _bars(step=0.5), _bars(step=0.1)
+    with_bench = trend_signal("X", bars, p=p, benchmark=bench)
+    without = trend_signal("X", bars, p=p, benchmark=None)
+    assert with_bench.score == without.score
+
+
+def test_rs_is_nan_without_a_benchmark():
+    import math
+    from kismat.strategy.signals import StrategyParams, trend_signal
+    sig = trend_signal("X", _bars(), p=StrategyParams(w_rs=0.0), benchmark=None)
+    assert math.isnan(sig.features["rs"])

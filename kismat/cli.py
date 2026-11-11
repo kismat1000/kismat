@@ -212,10 +212,20 @@ def cmd_reset_guards(args) -> int:
 
 def cmd_validate_memos(args) -> int:
     from kismat.research.memos import load_memos
+    fresh_days = 5                      # the window the engine actually blends
     memos = load_memos(max_age_days=3650)
+    live = 0
     for sym, m in sorted(memos.items()):
-        print(f"{sym}: {m.direction} {m.conviction:.2f} ({m.data['date']}) score={m.score():+.2f}")
-    print(f"{len(memos)} valid memo(s)")
+        age = m.age_days()
+        if age > fresh_days:
+            shown = f"stale, {age}d old: the engine ignores it"
+        elif m.abstains:
+            shown = "flat: abstains, leaves the systematic score alone"
+        else:
+            shown = f"blends {m.research_score():+.2f}"
+            live += 1
+        print(f"{sym}: {m.direction} {m.conviction:.2f} ({m.data['date']}) -> {shown}")
+    print(f"{len(memos)} valid memo(s); {live} currently blended by the engine")
     return 0
 
 

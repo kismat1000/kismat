@@ -160,12 +160,32 @@ class AlpacaPaper:
             cancelled = self.cancel_open(symbol)
             note = "not held at alpaca; ledger-only exit" + (f"; cancelled {cancelled} queued order(s)" if cancelled else "")
             return VenueFill("skipped", note=note)
+        # An exit must never be blocked by one of our own stale orders. Alpaca
+        # rejects a close with 403 "potential wash trade detected ... opposite
+        # side market/stop order exists" while any order on the symbol is live,
+        # and that is exactly how DBC and MSFT exited in the ledger on
+        # 2026-11-09 but stayed open at the broker. We are leaving the position,
+        # so every queued order on it is stale by definition: clear them first.
+        cancelled = self.cancel_open(symbol)
+        try:
+            order = self._close_or_sell(syms, qty, held)
+        except RuntimeError as exc:
+            if "wash trade" not in str(exc):
+                raise
+            # An order can land between the cancel and the close. Clear again
+            # and retry once; a second failure is real and must surface.
+            cancelled += self.cancel_open(symbol)
+            order = self._close_or_sell(syms, qty, held)
+        fill = self._to_fill(self._wait(order or {}), qty)
+        if cancelled:
+            fill.note = (f"{fill.note}; " if fill.note else "") + f"cancelled {cancelled} stale order(s) first"
+        return fill
+
+    def _close_or_sell(self, syms, qty: float, held: float) -> dict | None:
         if qty >= held * 0.999:
-            order = self._req("DELETE", f"/v2/positions/{syms[1]}")   # close the whole position
-        else:
-            order = self._req("POST", "/v2/orders", json={"symbol": syms[0], "qty": f"{qty:.9f}".rstrip("0").rstrip("."),
-                                                          "side": "sell", "type": "market", "time_in_force": self._tif})
-        return self._to_fill(self._wait(order or {}), qty)
+            return self._req("DELETE", f"/v2/positions/{syms[1]}")   # close the whole position
+        return self._req("POST", "/v2/orders", json={"symbol": syms[0], "qty": f"{qty:.9f}".rstrip("0").rstrip("."),
+                                                     "side": "sell", "type": "market", "time_in_force": self._tif})
 
 
 # ---------------------------------------------------------------------------

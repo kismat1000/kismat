@@ -190,7 +190,14 @@ def trend_signal(symbol: str, df: pd.DataFrame, stop_atr_multiple: float = 2.5,
     if df is None or len(df) < p.min_bars:
         return Signal(symbol=symbol, ok=False, reasons=[f"not enough bars ({0 if df is None else len(df)})"])
     feats = compute_features(df, p)
-    if p.w_rs and benchmark is not None and len(benchmark) >= p.mom_days + 1:
+    # Compute relative strength whenever a benchmark is available, NOT only when
+    # it is being scored. w_rs is 0 by design (the feature study has not earned
+    # it a weight yet) but config/strategy.yaml says these pattern features
+    # "remain in the packet for the desk's pattern analyst to read" -- and
+    # gating the computation on the weight meant the packet's rs column was
+    # empty for every symbol for 66 days. Scoring is unchanged: score_frame
+    # multiplies by w_rs, so a populated rs with w_rs == 0 moves nothing.
+    if benchmark is not None and len(benchmark) >= p.mom_days + 1:
         feats["rs"] = feats["roc_mom"] - ind.rate_of_change(benchmark["close"], p.mom_days).reindex(feats.index)
     row = feats.iloc[-1]
     if row[REQUIRED].isna().any():

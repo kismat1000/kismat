@@ -40,3 +40,61 @@ def test_load_latest_score_decay_and_veto(tmp_path):
 def test_write_memo_rejects_invalid(tmp_path):
     with pytest.raises(ValueError):
         write_memo(memo(direction="nope"), tmp_path)
+
+
+def test_flat_memo_abstains_instead_of_scoring_zero(tmp_path):
+    """A flat memo must not drag the systematic score.
+
+    Regression test for the defect that cost the paper book real entries: the
+    engine blended score()==0.0 for a flat memo, and because combined_score()
+    weights research at RESEARCH_WEIGHT, "no opinion" acted as a 40% haircut.
+    """
+    today = date.today()
+    write_memo(memo("XLE", "flat", 0.7, today), tmp_path)
+    m = load_memos(tmp_path, today=today)["XLE"]
+    assert m.abstains
+    assert m.research_score(today) is None, "flat must abstain, not score 0.0"
+    assert m.score(today) == pytest.approx(0.0)      # reporting value unchanged
+
+
+def test_directional_memos_still_blend(tmp_path):
+    today = date.today()
+    write_memo(memo("BTCUSDT", "long", 0.8, today), tmp_path)
+    write_memo(memo("ETHUSDT", "avoid", 0.9, today), tmp_path)
+    memos = load_memos(tmp_path, today=today)
+    assert memos["BTCUSDT"].research_score(today) == pytest.approx(0.8)
+    assert memos["ETHUSDT"].research_score(today) == pytest.approx(-0.9)
+    assert not memos["BTCUSDT"].abstains
+
+
+def test_expired_memo_abstains(tmp_path):
+    today = date.today()
+    write_memo(memo("BTCUSDT", "long", 0.9, today), tmp_path)
+    m = load_memos(tmp_path, today=today)["BTCUSDT"]
+    assert m.research_score(today + timedelta(days=99)) is None
+    assert m.score(today + timedelta(days=99)) == pytest.approx(0.0)
+
+
+def test_flat_memo_leaves_systematic_score_alone():
+    """The whole point: a flat memo must not move the combined score."""
+    from kismat.engine import combined_score
+    assert combined_score(0.58, None) == pytest.approx(0.58)
+    # what the bug did: 0.58 -> 0.348, under the 0.35 entry threshold
+    assert combined_score(0.58, 0.0) < 0.35
+
+
+def test_validate_checks_asset_class():
+    assert validate(memo()) == []
+    for cls in ("crypto", "us_stocks", "us_etfs", "au_stocks"):
+        assert validate({**memo(), "asset_class": cls}) == []
+    errs = validate({**memo(), "asset_class": "us_etf"})
+    assert any("asset_class" in e for e in errs), errs
+
+
+def test_schema_enum_matches_validator():
+    """The schema the agents write against and the validator must agree."""
+    import json
+    from pathlib import Path
+    from kismat.research.memos import ASSET_CLASSES
+    schema = json.loads(Path("prompts/memo_schema.json").read_text())
+    assert tuple(schema["properties"]["asset_class"]["enum"]) == ASSET_CLASSES
