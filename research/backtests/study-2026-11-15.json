@@ -1,0 +1,79 @@
+{
+  "generated": "2026-11-15T01:22+00:00",
+  "window": 63,
+  "name": "+rs 0.15",
+  "params": {
+    "sma_fast": 50,
+    "sma_slow": 200,
+    "mom_days": 63,
+    "mom_scale": 0.3,
+    "breakout_days": 55,
+    "atr_days": 14,
+    "rsi_days": 14,
+    "rsi_hot": 80,
+    "rsi_cold": 30,
+    "chaos_atr_pct": 0.08,
+    "w_trend": 0.35,
+    "w_misaligned": 0.1,
+    "w_mom": 0.3,
+    "w_breakout": 0.2,
+    "w_hot": 0.2,
+    "w_pullback": 0.1,
+    "high_days": 252,
+    "high_band": 0.1,
+    "squeeze_days": 100,
+    "squeeze_ratio": 0.75,
+    "w_rs": 0.15,
+    "w_high": 0.0,
+    "w_squeeze": 0.0,
+    "benchmarks": {
+      "us_stocks": "SPY",
+      "us_etfs": "SPY",
+      "crypto": "BTCUSDT"
+    }
+  },
+  "overrides": {
+    "stop_atr_multiple": 2.5,
+    "max_positions": 12,
+    "regime_breadth_min": 0.0,
+    "regime_index": null,
+    "earnings_blackout_days": 7
+  },
+  "metrics": {
+    "total_return": 0.6288377424202687,
+    "cagr": 0.11994204872449599,
+    "sharpe": 0.7077372939179869,
+    "max_drawdown": -0.23015191838850646,
+    "trades": 720,
+    "win_rate": 0.3138888888888889,
+    "avg_win": 0.1282252569027808,
+    "avg_loss": -0.041752467185562095,
+    "in_sample_return": 0.40656591681792253,
+    "out_of_sample_return": 0.1580244643672244,
+    "days": 1572
+  },
+  "robustness": 0.6382201393978988,
+  "walk_forward_chain_return": 0.7928801144373006,
+  "live_chain_return": 1.0609524207481602,
+  "recommendation": "keep",
+  "reason": "no set beats the live parameters by 0.25 robustness while also doing better out of sample with no fewer positive windows (top set edge 0.26, out of sample +15.8% vs +19.0%); re-picking parameters each window lost to holding the live set",
+  "candidate": null,
+  "live": {
+    "name": "live",
+    "rank": 6,
+    "robustness": 0.3768821335194305,
+    "metrics": {
+      "total_return": 0.7996591194599925,
+      "cagr": 0.14617831979985763,
+      "sharpe": 0.8567393475621287,
+      "max_drawdown": -0.22754147638531996,
+      "trades": 700,
+      "win_rate": 0.31285714285714283,
+      "avg_win": 0.12556676940001663,
+      "avg_loss": -0.039495261378957654,
+      "in_sample_return": 0.5117825741712336,
+      "out_of_sample_return": 0.1904219232362656,
+      "days": 1572
+    }
+  }
+}
