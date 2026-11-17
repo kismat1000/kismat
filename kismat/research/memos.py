@@ -21,6 +21,8 @@ REQUIRED = ("symbol", "asset_class", "date", "direction", "conviction", "thesis"
             "bull_case", "bear_case", "catalysts", "risks", "invalidation",
             "horizon_days", "sources", "agent")
 DIRECTIONS = ("long", "flat", "avoid")
+# Asset classes the engine knows about; must match config/universe.yaml.
+ASSET_CLASSES = ("crypto", "us_stocks", "us_etfs", "au_stocks")
 
 
 @dataclass
@@ -48,15 +50,44 @@ class Memo:
         today = today or datetime.now(timezone.utc).date()
         return (today - self.date).days
 
+    @property
+    def abstains(self) -> bool:
+        """A "flat" memo says the desk has no directional opinion.
+
+        That is NOT the same as an opinion worth zero. See research_score().
+        """
+        return self.direction == "flat"
+
     def score(self, today: date | None = None, max_age_days: int = 5) -> float:
         """+conviction for long, -conviction for avoid, 0 for flat, decaying
-        linearly to zero at max_age_days."""
+        linearly to zero at max_age_days.
+
+        This is the reporting value. The engine must blend research_score()
+        instead, so that "flat" and "expired" abstain rather than scoring zero.
+        """
         age = self.age_days(today)
         if age < 0 or age > max_age_days:
             return 0.0
         decay = 1 - age / (max_age_days + 1)
         sign = {"long": 1.0, "avoid": -1.0, "flat": 0.0}[self.direction]
         return sign * self.conviction * decay
+
+    def research_score(self, today: date | None = None,
+                       max_age_days: int = 5) -> float | None:
+        """The value the engine blends, or None to abstain.
+
+        None means "the desk has no number here, leave the systematic score
+        alone". Abstaining is the honest reading of a flat or expired memo, and
+        it matters because combined_score() blends a returned number at
+        RESEARCH_WEIGHT: handing it 0.0 is not neutral, it is a 40% haircut on
+        the systematic score. A flat memo on a symbol scoring 0.58 used to drag
+        it to 0.348, under the 0.35 entry threshold -- so writing "no opinion"
+        silently blocked an entry the systematic rules wanted.
+        """
+        age = self.age_days(today)
+        if self.abstains or age < 0 or age > max_age_days:
+            return None
+        return self.score(today, max_age_days)
 
     def vetoes_entry(self, today: date | None = None, max_age_days: int = 5,
                      min_conviction: float = 0.7) -> bool:
@@ -73,6 +104,8 @@ def validate(data: dict) -> list[str]:
         return errors
     if data["direction"] not in DIRECTIONS:
         errors.append(f"direction must be one of {DIRECTIONS}")
+    if data["asset_class"] not in ASSET_CLASSES:
+        errors.append(f"asset_class must be one of {ASSET_CLASSES}")
     try:
         c = float(data["conviction"])
         if not 0 <= c <= 1:

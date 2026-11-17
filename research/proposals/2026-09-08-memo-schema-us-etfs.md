@@ -40,3 +40,14 @@ wrong trade.
 If the enum is deliberately narrow because something downstream keys off exactly three
 values, widening it could surprise that consumer. I did not find such a consumer, but I did
 not audit every reader of `asset_class` either.
+
+---
+
+## Decision 2026-11-11: implemented
+
+`us_etfs` added to the enum in `prompts/memo_schema.json`, which now matches
+`config/universe.yaml`. Found the larger half of the bug while fixing it:
+`validate()` never checked `asset_class` at all, so the 21 `us_etfs` memos
+written against the old enum were accepted only because nothing looked. The
+validator now enforces the enum, and `test_schema_enum_matches_validator`
+fails if schema and code ever drift apart again.

@@ -5,9 +5,26 @@ starting_cash: 10000.0         # paper account size in base currency (USD); test
 base_currency: USD
 
 max_position_pct: 0.10         # max 10% of equity in any single position
-max_positions: 12              # max simultaneous open positions. 2026-09-07 walk-forward: 8 slots are more
-                               # robust on average (0.62 vs 0.20) with a smaller drawdown (-19% vs -21%) but
-                               # return less (+46% vs +51% on average; +66% vs +86% on the live set). Kept at 12.
+max_positions: 12              # max simultaneous open positions. Tested 8 on 2026-11-11 and KEPT 12 --
+                               # the evidence is a genuine trade-off, not a defect, and it is not worth
+                               # spending the attribution on. Same family, 5-year walk-forward, 21 windows:
+                               #   n12 (live): robustness 0.92, return +84.6%, OOS  +9.7%, drawdown -23.7%
+                               #   n8        : robustness 1.20, return +51.4%, OOS +13.7%, drawdown -21.9%
+                               # So n8 is more robust, holds up better out of sample and draws down less,
+                               # but gives up 33 points of return over five years. The per-setting average
+                               # (n8 0.81 vs n12 0.58 robustness at equal return) looks cleaner than this
+                               # because it averages over ~48 variants; for THIS parameter set the return
+                               # cost is real.
+                               # Two walk-forwards also disagree on how bad the live set is: CI's
+                               # wf-2026-11-08 ranks it 80 of 97, this 2026-11-11 local run ranks it 28 of
+                               # 97. The runs are not comparable -- the local container cannot reach Yahoo's
+                               # earnings endpoint ("earnings dates for 0 symbols"), so the earnings
+                               # blackout that CI applies is absent here. Settle it in CI, not here.
+                               # And the same report's own warning: re-picking the best set each window
+                               # returned +37.0% against +96.2% for simply holding the live set.
+                               # Decision: ship the trend-break fix alone, so the next six weeks of live
+                               # trades attribute to one change. Revisit after the next CI walk-forward
+                               # runs with that fix in place.
 max_asset_class_pct:           # max share of equity per asset class
   crypto: 0.60
   us_stocks: 0.60
@@ -15,11 +32,33 @@ max_asset_class_pct:           # max share of equity per asset class
   au_stocks: 0.60
 
 per_trade_risk_pct: 0.01       # risk 1% of equity per trade (entry to stop distance)
-stop_atr_multiple: 2.5         # initial and trailing stop distance in ATR units. 2026-09-07 walk-forward: 4.0 is
-                               # more robust on average (0.58 vs 0.24, drawdown -18% vs -22%) but with 1% risk
-                               # sizing it returns less (+42% vs +55% on average; +74% vs +86% on the live set).
-trend_break_exit: true         # also exit when close < SMA50 while underwater
-trend_break_days: 1            # consecutive closes below SMA50 (while underwater) before the trend-break exit fires
+stop_atr_multiple: 2.5         # initial and trailing stop distance in ATR units. KEPT at 2.5 on 2026-11-11
+                               # after testing 4.0, deliberately NOT changed alongside max_positions above.
+                               # The evidence is real but marginal and it only trades return for drawdown:
+                               # per-setting average robustness 0.72 for stop4.0 against 0.67 for stop2.5,
+                               # return +40.3% vs +50.7%, drawdown -18.9% vs -22.3%. The top ranks are split
+                               # between the two (rank 1 is stop4.0; ranks 2-5 are stop2.5), unlike slots,
+                               # where n8 is near-unanimous. Changing a parameter on a 0.05 robustness edge
+                               # is how a walk-forward gets overfitted -- this run's own chain is the warning:
+                               # re-picking the best set each window returned +37.0% against +96.2% for just
+                               # holding the live set. One change at a time, judged on the live record.
+trend_break_exit: false        # exit when close < SMA50 while underwater. OFF since 2026-11-10.
+                               # Evidence (research/proposals/2026-11-10-trend-break-exit.md):
+                               # Live paper book 2026-09-06 -> 11-09: 54 trend-break exits, ZERO winners,
+                               # -779.90, i.e. 61% of all realised loss and two thirds of all exits, while
+                               # trailing stops won 8 of 26. Overall live win rate 10% against the 35-40%
+                               # the same parameters backtest at; this rule is the gap.
+                               # Backtest 2026-10-31 (whole universe, 530d): off +16.3% / Sharpe 0.69 /
+                               # win 39% against 1d +13.8% / 0.60 / 35%; drawdown unchanged (-13.0% vs
+                               # -12.9%), so no downside protection is given up. us_stocks: off +5.0% /
+                               # 0.46 against 1d -3.9% / -0.29. Off wins on Sharpe and win rate in all
+                               # four books. Same result in every weekly report since 2026-09-12, where
+                               # cumulative trend-break P&L is negative in every single run.
+                               # Economic reason: entries are a 55-day breakout; one close below a 50-day
+                               # average is noise, and cutting there turns winners into losses before the
+                               # trailing stop can work. Re-checked by the weekly backtest.
+trend_break_days: 1            # consecutive closes below SMA50 (while underwater) before the trend-break exit
+                               # fires, when it is enabled. 3 does not rescue the rule (+12.7% vs +16.3% off).
 time_stop_days: 0              # exit a position still underwater after this many days (0 = off)
 regime_breadth_min: 0.0        # new entries only when this share of the asset class is above its SMA200 (0 = off)
 regime_index: {}               # asset class -> index symbol (from the universe) that must close above its SMA200

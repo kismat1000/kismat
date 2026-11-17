@@ -150,7 +150,10 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
             journal.event("error", msg)
             log.warning(msg)
     for symbol, df in bars.items():
-        bench = bars.get(settings.strategy.benchmarks.get(classes[symbol], ""))
+        bench_sym = settings.strategy.benchmarks.get(classes[symbol], "")
+        # A benchmark is not its own relative strength: leave rs blank for it
+        # rather than reporting a constant +0.0% (mirrors add_relative_strength).
+        bench = bars.get(bench_sym) if bench_sym != symbol else None
         signals[symbol] = trend_signal(symbol, df, limits.stop_atr_multiple, settings.strategy, benchmark=bench)
     report.signals = {s: sig.to_dict() for s, sig in signals.items()}
     native_prices: dict[str, float] = {}
@@ -214,7 +217,10 @@ def run_cycle(settings: C.Settings | None = None, *, bars_provider: BarsProvider
 
     # 2. Research memos ----------------------------------------------------------
     memos = memo_store.load_memos(memos_root)
-    research_scores = {s: m.score() for s, m in memos.items()}
+    # None means abstain (flat or expired): combined_score() then leaves the
+    # systematic score untouched. Passing 0.0 would be a RESEARCH_WEIGHT haircut.
+    research_scores = {s: v for s, m in memos.items()
+                       if (v := m.research_score()) is not None}
 
     # 3. Mark to market, kill switch, daily loss --------------------------------
     equity = broker.mark(latest_price)

@@ -165,3 +165,86 @@ def test_alpaca_crypto_symbol_mapping_and_unsupported(monkeypatch):
     assert vf.status == "filled"
     assert calls[0][2]["symbol"] == "BTC/USD" and calls[0][2]["time_in_force"] == "gtc"
     assert a.buy("BNBUSDT", 1.0, 700.0).status == "skipped" and len(calls) == 1
+
+
+def test_alpaca_sell_cancels_stale_orders_before_closing(monkeypatch):
+    """An exit must clear our own queued orders first.
+
+    Regression test for the 2026-11-09 divergence: Alpaca rejected the close of
+    DBC and MSFT with 403 "potential wash trade detected ... opposite side
+    market/stop order exists", the ledger recorded the exit anyway, and the
+    broker kept the position.
+    """
+    calls = []
+
+    def fake_request(method, url, headers=None, timeout=None, **kw):
+        calls.append((method, url))
+        if method == "GET" and url.endswith("/v2/positions/DBC"):
+            return _R(200, {"symbol": "DBC", "qty": "10"})
+        if method == "GET" and url.endswith("/v2/orders"):
+            return _R(200, [{"id": "stale1"}])
+        if method == "DELETE" and "/v2/orders/stale1" in url:
+            return _R(200, {})
+        if method == "DELETE" and url.endswith("/v2/positions/DBC"):
+            return _R(200, {"id": "c1", "status": "filled",
+                            "filled_qty": "10", "filled_avg_price": "27.0"})
+        raise AssertionError(f"{method} {url}")
+
+    monkeypatch.setattr(V.requests, "request", fake_request)
+    monkeypatch.setattr(V.time, "sleep", lambda s: None)
+    a = V.AlpacaPaper("k", "s", poll_seconds=0)
+    vf = a.sell("DBC", 10, 27.0)
+
+    assert vf.status == "filled", vf.note
+    order = [c for c in calls if c[0] == "DELETE"]
+    assert "/v2/orders/stale1" in order[0][1], "stale order must be cancelled first"
+    assert order[1][1].endswith("/v2/positions/DBC"), "close must come after the cancel"
+    assert "cancelled 1 stale order" in vf.note
+
+
+def test_alpaca_sell_retries_once_on_wash_trade(monkeypatch):
+    """If an order lands between the cancel and the close, retry once."""
+    state = {"closes": 0, "cancels": 0}
+
+    def fake_request(method, url, headers=None, timeout=None, **kw):
+        if method == "GET" and url.endswith("/v2/positions/MSFT"):
+            return _R(200, {"symbol": "MSFT", "qty": "2"})
+        if method == "GET" and url.endswith("/v2/orders"):
+            return _R(200, [{"id": f"o{state['cancels']}"}])
+        if method == "DELETE" and "/v2/orders/" in url:
+            state["cancels"] += 1
+            return _R(200, {})
+        if method == "DELETE" and url.endswith("/v2/positions/MSFT"):
+            state["closes"] += 1
+            if state["closes"] == 1:
+                return _R(403, None, '{"message": "potential wash trade detected"}')
+            return _R(200, {"id": "c1", "status": "filled",
+                            "filled_qty": "2", "filled_avg_price": "540.0"})
+        raise AssertionError(f"{method} {url}")
+
+    monkeypatch.setattr(V.requests, "request", fake_request)
+    monkeypatch.setattr(V.time, "sleep", lambda s: None)
+    a = V.AlpacaPaper("k", "s", poll_seconds=0)
+    vf = a.sell("MSFT", 2, 540.0)
+
+    assert vf.status == "filled", vf.note
+    assert state["closes"] == 2, "must retry the close once"
+    assert state["cancels"] == 2, "must clear orders again before the retry"
+
+
+def test_alpaca_sell_surfaces_a_second_wash_trade_failure(monkeypatch):
+    """Two failures in a row is real: it must raise, not be swallowed."""
+    def fake_request(method, url, headers=None, timeout=None, **kw):
+        if method == "GET" and url.endswith("/v2/positions/MSFT"):
+            return _R(200, {"symbol": "MSFT", "qty": "2"})
+        if method == "GET" and url.endswith("/v2/orders"):
+            return _R(200, [])
+        if method == "DELETE" and url.endswith("/v2/positions/MSFT"):
+            return _R(403, None, '{"message": "potential wash trade detected"}')
+        raise AssertionError(f"{method} {url}")
+
+    monkeypatch.setattr(V.requests, "request", fake_request)
+    monkeypatch.setattr(V.time, "sleep", lambda s: None)
+    a = V.AlpacaPaper("k", "s", poll_seconds=0)
+    with pytest.raises(RuntimeError, match="wash trade"):
+        a.sell("MSFT", 2, 540.0)

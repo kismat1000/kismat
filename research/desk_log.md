@@ -1109,3 +1109,122 @@ and `rs` empty for all symbols. `us_etfs` still missing from the memo schema enu
 **Still open for the owner:** the desk's cadence, and whether the `config/`/`kismat/` fixes get
 implemented — in the order the 20 September review sets out (fix `flat → 0.0` first, *then* enable
 rotation at margin 0.30, never the reverse).
+
+## 2026-11-10 — restart, and the exit rule
+
+First session since 21 September; the daily routine was paused on that date. No memos today.
+Instead: read the 65 days of journal the automation produced while the desk was off, and found
+the thing the desk had been looking for since 6 September.
+
+**The exit rule is the loss.** Over 80 closed trades the paper book split like this:
+
+| exit reason | trades | realised | winners |
+|---|---|---|---|
+| trend break | 54 | **−779.90** | **0 of 54** |
+| trailing stop | 26 | −502.89 | 8 of 26 |
+
+Fifty-four exits, not one winner: 61% of all realised loss and two thirds of all exits. Book is
+9,005.84 against 10,000.00 paid in (−9.94%), peak 10,383.15, −13.26% off peak. Overall win rate 10%
+against the 35–40% these same parameters backtest at, and the whole gap sits in that one rule.
+`trend_break_days: 1` cuts a 55-day breakout on a single close below SMA50 — noise, not a signal.
+
+This was not a new discovery so much as an unread one. Every weekly backtest since 12 September has
+shown cumulative trend-break P&L negative in every run, and `trend-break off` ahead on Sharpe and
+win rate in all four books (us_stocks: +5.0% / 0.46 against −3.9% / −0.29). Eight reports, never
+written up. The 6 September note that "exits are the broken half" was right and then dropped.
+
+Proposal `research/proposals/2026-11-10-trend-break-exit.md` and a PR setting
+`trend_break_exit: false`. One variable, so the next six weeks attribute cleanly. Drawdown does not
+worsen (−13.0% vs −12.9%), so this gives up no protection.
+
+**Also found.** The 2026-11-08 walk-forward ranks the live parameters **80th of 97** by robustness
+(0.19 against best 1.00), down from 31st of 96 on 7 September. All of the top 13 variants use `n8`.
+That is the 7 September `slots-and-stops` proposal, never implemented, now much better evidenced.
+Left out of the PR deliberately — one change at a time.
+
+**Things that failed or need checking.** Two exits died at the venue on Alpaca
+`403 potential wash trade detected` (DBC, MSFT) and others logged `ledger-only exit`; the ledger and
+the Alpaca account have diverged, so `venue-check`/`venue-sync` should run before anyone reads the
+venue record as real. Yahoo egress is still blocked here, so none of the above could be reproduced
+locally — the numbers are the repo's own committed CI reports. `flat → 0.0` (memos.py:58) is still
+unfixed, and `us_etfs` is still missing from the memo schema enum, open since 8 September.
+
+**Still open for the owner:** the new day-trading repo is not reachable from this session — the
+GitHub credential here is `LeadFlowINTL`, which can see one repo, and it is not a trading one.
+Nothing can be ported until that repo is attached.
+
+**Verified, same session.** The Yahoo egress block above was lifted mid-session, so the claim was
+re-run locally on fresh bars rather than resting on CI. Both legs on identical cached data:
+us_stocks 296d — rule ON **−6.6% / Sharpe −0.56 / DD −16.6% / win 25% / 143 trades** against rule
+OFF **+0.4% / +0.11 / −14.5% / 31% / 93**. Whole universe 531d — ON +9.3% / 0.43 / win 35% / 233
+against OFF **+13.3% / 0.56 / 38% / 176**. The drawdown *improves* in both. So this is not a
+risk-for-return trade: the rule was adding losing trades, and removing it cuts exposure and the
+worst drawdown together. Stronger than the CI reports implied.
+
+## 2026-11-11 — fixes
+
+Owner: "fix all those and be the best ... i will provide you the real account with real money
+remind me and we have to grow." So: five defects fixed, four proposals closed, one rejected, and a
+written gate for real money. No memos today — the machine came first.
+
+**Fixed.**
+
+1. `trend_break_exit: false`. 54 exits, 0 winners, −779.90, 61% of all realised loss. Verified on
+   fresh 5-year data: whole universe +84.6% / Sharpe 0.82 with the rule off.
+2. **Flat memos abstain.** The real size of this: research blends at `RESEARCH_WEIGHT = 0.4`, so
+   handing it 0.0 was never neutral — it was a **40% haircut**. Systematic 0.58 → 0.348, under the
+   0.35 entry threshold. Writing "no opinion" silently blocked entries the rules wanted. Expired
+   memos did the same. `research_score()` now returns `None` for both.
+3. **Alpaca exits clear stale orders first.** `sell()` cancelled open orders only when the position
+   was *already gone*; when held it closed straight away and Alpaca answered 403 "potential wash
+   trade detected". That is exactly how DBC and MSFT exited in the ledger on 9 November and stayed
+   open at the broker. Retries once if an order lands in between; a second failure still raises.
+4. **`rs` populated after 66 days empty.** Root cause was `if p.w_rs and ...` — the computation was
+   gated on the *weight*, which is 0 by design, so the column the config promises the pattern
+   analyst was never filled. Computing and scoring were conflated. Now AAPL +18.0%, XLV +15.2%,
+   AMZN +4.0%, ETHUSDT −11.1%. Scoring provably unchanged (`score_frame` multiplies by `w_rs`).
+5. **Schema and validator agree.** `us_etfs` legal, and the bigger half: `validate()` never checked
+   `asset_class` at all, so 21 `us_etfs` memos were valid only because nothing looked.
+
+Twelve tests added; the venue and memo ones fail against the old code, which is the point.
+
+**Rejected: memo-gated entries.** Its own "why it might be wrong" was right. The desk has been
+paused since 21 September and **0 of 20 memos are fresh enough to blend**, so requiring a 3-day
+`long` memo before any entry would have frozen the book for seven weeks — a silent dependency on an
+agent process that stops. And entries were never the problem: the loss was all in the exits.
+
+**Corrections to my own earlier work.** Two things I got wrong yesterday and should flag rather than
+quietly drop. First, I reported the walk-forward as missing since 12 September; it was not — `ls -t`
+misled me because every file shares one checkout mtime, and `wf-2026-11-08.md` exists. Second, my
+first local walk-forward produced only 4 windows, not CI's 21, because I had warmed the cache with
+`--days 730`; on 2 years of data it said "keep, rank 36 of 97", which is not comparable to CI's
+5-year "rank 80 of 97". Re-running on a properly warmed 5-year cache.
+
+**Still blocked.** Push access. Git over HTTPS returns 403 and the GitHub app returns "Resource not
+accessible by integration", so none of this can reach `main` from here. Everything is committed
+locally and exported as a patch.
+
+**Real money: not yet.** `research/go-live.md` sets eight gates with numbers, not opinions. The book
+is 8,996.36 against 10,000.00 paid in (−10.0% over 66 days), 80 trades, win rate 10%. The fixes are
+backtest-verified and have **traded zero live bars**. Reminder set for 9 December to report every
+gate as pass or fail. Two that need the owner regardless: `max_drawdown_pct` is still **0.25**,
+which the config itself says is a paper setting and should be 0.05–0.10 before live; and at this
+account size the desk's own cost eats the strategy's entire edge, so the honest setting below
+~$127k is engine on, desk off.
+
+**Slots and stops: tested, not adopted — and I corrected myself mid-session.** Ran the 5-year
+walk-forward properly (21 windows, 97 variants) rather than quoting CI. For the live family n8 scores
+robustness 1.20 against n12's 0.92, better out of sample (+13.7% vs +9.7%) and a smaller drawdown
+(−21.9% vs −23.7%) — but **33 points less return over five years** (+51.4% vs +84.6%). I had read the
+per-setting aggregate first (n8 0.81 vs 0.58 at equal return) and set `max_positions: 8` on the
+strength of it; that table averages ~48 variants and hides the return cost for this particular set,
+so I reverted it. Stops are weaker still: 0.72 vs 0.67, top ranks split.
+
+Neither ships, for three reasons: attribution (the trend-break fix must be the only variable in the
+window the go-live gate reads); the two walk-forwards disagree about the live set (CI 80 of 97, local
+28 of 97) because this container cannot reach Yahoo's earnings endpoint, so CI's earnings blackout is
+absent here — I should not have quoted 80-of-97 as settled yesterday; and the report's own chain
+warns against exactly this (+37.0% re-picking vs +96.2% holding).
+
+Final config: trend-break off, n12, stop 2.5. Five years, whole universe: **+84.6% / Sharpe 0.82 /
+max DD −23.7% / win 39%**.
