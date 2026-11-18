@@ -1,18 +1,26 @@
 {
- "count": 121,
+ "count": 127,
  "tone": {
   "CSL.AX": {
    "symbol": "CSL.AX",
-   "score": 0.667,
-   "positive": 2,
+   "score": 0.5,
+   "positive": 1,
+   "negative": 0,
+   "headlines": 6,
+   "flags": []
+  },
+  "COST": {
+   "symbol": "COST",
+   "score": 0.75,
+   "positive": 3,
    "negative": 0,
    "headlines": 6,
    "flags": []
   },
   "AAPL": {
    "symbol": "AAPL",
-   "score": 0.8,
-   "positive": 4,
+   "score": 0.667,
+   "positive": 2,
    "negative": 0,
    "headlines": 6,
    "flags": []
@@ -35,9 +43,9 @@
   },
   "AMZN": {
    "symbol": "AMZN",
-   "score": 0.0,
+   "score": -0.5,
    "positive": 0,
-   "negative": 0,
+   "negative": 1,
    "headlines": 6,
    "flags": []
   },
@@ -46,31 +54,7 @@
    "score": 0.0,
    "positive": 0,
    "negative": 0,
-   "headlines": 4,
-   "flags": []
-  },
-  "COST": {
-   "symbol": "COST",
-   "score": 0.0,
-   "positive": 3,
-   "negative": 3,
-   "headlines": 6,
-   "flags": []
-  },
-  "WTC.AX": {
-   "symbol": "WTC.AX",
-   "score": -0.5,
-   "positive": 0,
-   "negative": 1,
-   "headlines": 6,
-   "flags": []
-  },
-  "TSLA": {
-   "symbol": "TSLA",
-   "score": -0.5,
-   "positive": 0,
-   "negative": 1,
-   "headlines": 6,
+   "headlines": 5,
    "flags": []
   },
   "WBC.AX": {
@@ -79,6 +63,30 @@
    "positive": 2,
    "negative": 0,
    "headlines": 4,
+   "flags": []
+  },
+  "TSLA": {
+   "symbol": "TSLA",
+   "score": 0.0,
+   "positive": 0,
+   "negative": 0,
+   "headlines": 6,
+   "flags": []
+  },
+  "CBA.AX": {
+   "symbol": "CBA.AX",
+   "score": 0.0,
+   "positive": 1,
+   "negative": 1,
+   "headlines": 5,
+   "flags": []
+  },
+  "WTC.AX": {
+   "symbol": "WTC.AX",
+   "score": -0.5,
+   "positive": 0,
+   "negative": 1,
+   "headlines": 6,
    "flags": []
   },
   "XLE": {
@@ -91,6 +99,13 @@
   }
  },
  "items": [
+  {
+   "source": "coindesk",
+   "title": "Payward, the owner of crypto exchange Kraken, is buying its CEO\u2019s venture capital business, Tribe",
+   "link": "https://www.coindesk.com/business/2026/11/18/payward-the-owner-of-crypto-exchange-kraken-is-buying-its-ceo-s-venture-capital-business-tribe",
+   "published": "Wed, 18 Nov 2026 22:30:00 +0000",
+   "query": ""
+  },
   {
    "source": "coindesk",
    "title": "A $1.5 billion crypto startup is taking on Hyperliquid with a Wall Street playbook",
@@ -169,10 +184,45 @@
    "query": ""
   },
   {
-   "source": "coindesk",
-   "title": "Hyundai tests AI agent commerce on JPMorgan\u2019s Kinexys blockchain",
-   "link": "https://www.coindesk.com/business/2026/11/18/hyundai-tests-ai-agent-commerce-on-jpmorgan-s-kinexys-blockchain",
-   "published": "Wed, 18 Nov 2026 09:14:15 +0000",
+   "source": "cointelegraph",
+   "title": "Here\u2019s what happened in crypto today",
+   "link": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+   "published": "Wed, 18 Nov 2026 22:09:15 +0000",
+   "query": ""
+  },
+  {
+   "source": "cointelegraph",
+   "title": "Tether invokes The Big Short in swipe at S&P over USDT reserve risks",
+   "link": "https://cointelegraph.com/news/tether-usdt-sp-stability-assessment-reserve-risks?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+   "published": "Wed, 18 Nov 2026 21:57:35 +0000",
+   "query": ""
+  },
+  {
+   "source": "cointelegraph",
+   "title": "Ledger warns Berlin customers as hardware wallet tampering investigation expands",
+   "link": "https://cointelegraph.com/news/ledger-warns-berlin-customers-hardware-wallet-investigation?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+   "published": "Wed, 18 Nov 2026 21:13:58 +0000",
+   "query": ""
+  },
+  {
+   "source": "cointelegraph",
+   "title": "Bain Capital Crypto leads $110M Variational round at $1.5B valuation",
+   "link": "https://cointelegraph.com/news/variational-series-b-bain-capital-crypto?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+   "published": "Wed, 18 Nov 2026 20:32:06 +0000",
+   "query": ""
+  },
+  {
+   "source": "cointelegraph",
+   "title": "Binance says it obtained $6.5B worldwide freezing order after hack",
+   "link": "https://cointelegraph.com/news/binance-says-won-65b-worldwide-freezing-order-after-hack?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+   "published": "Wed, 18 Nov 2026 20:20:37 +0000",
+   "query": ""
+  },
+  {
+   "source": "cointelegraph",
+   "title": "MARA prices $185M debt offering after $1.1B Bitcoin sale",
+   "link": "https://cointelegraph.com/markets/mara-long-ridge-debt-offering-bitcoin-sales?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+   "published": "Wed, 18 Nov 2026 18:27:52 +0000",
    "query": ""
   },
   {
@@ -212,58 +262,23 @@
   },
   {
    "source": "cointelegraph",
-   "title": "Here\u2019s what happened in crypto today",
-   "link": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-   "published": "Wed, 18 Nov 2026 13:34:00 +0000",
-   "query": ""
-  },
-  {
-   "source": "cointelegraph",
    "title": "Sanctions fears loom over Russia\u2019s regulated crypto trading launch",
    "link": "https://cointelegraph.com/news/sanctions-fears-russia-crypto-launch?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
    "published": "Wed, 18 Nov 2026 13:32:19 +0000",
    "query": ""
   },
   {
-   "source": "cointelegraph",
-   "title": "How to preserve wealth and access funds during a national emergency",
-   "link": "https://cointelegraph.com/magazine/how-to-preserve-wealth-and-access-it-during-a-national-emergency?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-   "published": "Wed, 18 Nov 2026 13:30:00 +0000",
-   "query": ""
-  },
-  {
-   "source": "cointelegraph",
-   "title": "Tokenized Nvidia market cap surges 159% amid Jensen Huang\u2019s exit",
-   "link": "https://cointelegraph.com/news/tokenized-nvidia-cap-rises-158-stock-loses-750b?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-   "published": "Wed, 18 Nov 2026 12:53:12 +0000",
-   "query": ""
-  },
-  {
-   "source": "cointelegraph",
-   "title": "Bitwise seeks Texas Stock Exchange listing for Zcash ETF",
-   "link": "https://cointelegraph.com/news/bitwise-zcash-etf-texas-stock-exchange-listing?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-   "published": "Wed, 18 Nov 2026 10:33:07 +0000",
-   "query": ""
-  },
-  {
-   "source": "cointelegraph",
-   "title": "Bitcoin steadies after Nvidia\u2019s earnings beat as $60K bids stand out",
-   "link": "https://cointelegraph.com/markets/bitcoin-60k-liquidity-stocks-gain-nvidia-1158b-earnings-beat?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-   "published": "Wed, 18 Nov 2026 10:31:20 +0000",
-   "query": ""
-  },
-  {
-   "source": "cointelegraph",
-   "title": "World Bank partners with Circle, Citi to explore stablecoins for payments",
-   "link": "https://cointelegraph.com/news/world-bank-circle-citi-explore-stablecoins-payments?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-   "published": "Wed, 18 Nov 2026 09:17:18 +0000",
+   "source": "cnbc_markets",
+   "title": "Fed officials expect more rate hikes, worry about AI impact on inflation, minutes show",
+   "link": "https://www.cnbc.com/2026/11/18/fed-minutes-october-2026.html",
+   "published": "Wed, 18 Nov 2026 19:41:59 GMT",
    "query": ""
   },
   {
    "source": "cnbc_markets",
    "title": "I watched Trump, Xi and Putin gather in China. Here are my top takeaways",
    "link": "https://www.cnbc.com/2026/11/18/trump-xi-putin-apec-shenzhen-china.html",
-   "published": "Wed, 18 Nov 2026 16:14:10 GMT",
+   "published": "Wed, 18 Nov 2026 19:47:05 GMT",
    "query": ""
   },
   {
@@ -337,94 +352,94 @@
    "query": ""
   },
   {
-   "source": "cnbc_markets",
-   "title": "China\u2019s slowdown deepens in October as industrial output, retail sales, investment miss estimates",
-   "link": "https://www.cnbc.com/2026/11/16/china-retail-sales-october-industrial-output-investment.html",
-   "published": "Mon, 16 Nov 2026 03:53:59 GMT",
+   "source": "abc_au_business",
+   "title": "Renters on 'moderate incomes' falling victim to homelessness in Darwin",
+   "link": "https://www.abc.net.au/news/2026-11-19/peter-wishart-living-in-car-homeless-darwin-rental-costs/107396050",
+   "published": "Wed, 18 Nov 2026 22:41:27 +0000",
    "query": ""
   },
   {
    "source": "abc_au_business",
-   "title": "Surge in complaints, compensation claims after Telstra outage",
+   "title": "Home owner felt 'physically ill' when she realised she was scammed",
+   "link": "https://www.abc.net.au/news/2026-11-19/wa-roofing-business-clients-tens-thousands-out-pocket/107382446",
+   "published": "Wed, 18 Nov 2026 22:06:24 +0000",
+   "query": ""
+  },
+  {
+   "source": "abc_au_business",
+   "title": "Power surge leaves residents facing thousands in unexpected costs",
+   "link": "https://www.abc.net.au/news/2026-11-19/families-struggle-with-mildura-power-surge-aftermath/107376806",
+   "published": "Wed, 18 Nov 2026 21:00:43 +0000",
+   "query": ""
+  },
+  {
+   "source": "abc_au_business",
+   "title": "Factory-built housing could lift construction productivity, report says",
+   "link": "https://www.abc.net.au/news/2026-11-19/committee-for-sydney-says-more-factory-made-housing-needed/107394616",
+   "published": "Wed, 18 Nov 2026 20:30:41 +0000",
+   "query": ""
+  },
+  {
+   "source": "abc_au_business",
+   "title": "Data centres could ignite a 'climate bomb' in Australia, report finds",
+   "link": "https://www.abc.net.au/news/2026-11-19/climate-council-report-data-centre-millions-tonnes-pollution-/107400036",
+   "published": "Wed, 18 Nov 2026 20:02:01 +0000",
+   "query": ""
+  },
+  {
+   "source": "abc_au_business",
+   "title": "Business owner goes bankrupt after high-risk loan fails",
+   "link": "https://www.abc.net.au/news/2026-11-19/hairdresser-bankrupt-after-vendor-finance-deal/107240256",
+   "published": "Wed, 18 Nov 2026 19:30:13 +0000",
+   "query": ""
+  },
+  {
+   "source": "abc_au_business",
+   "title": "Orange tap water called 'safe to drink' had five times accepted levels of lead",
+   "link": "https://www.abc.net.au/news/2026-11-19/orange-tap-water-taswater-said-safe-to-drink-heavy-metals/107397250",
+   "published": "Wed, 18 Nov 2026 19:02:40 +0000",
+   "query": ""
+  },
+  {
+   "source": "abc_au_business",
+   "title": "Fears housing build costs will soar in response to Chinese timber crackdown",
+   "link": "https://www.abc.net.au/news/2026-11-19/chinese-structural-timber-imports-investigation-sa/107394598",
+   "published": "Wed, 18 Nov 2026 19:01:42 +0000",
+   "query": ""
+  },
+  {
+   "source": "abc_au_business",
+   "title": "Insurance giant Bupa shuts some GP clinics after buying up chains",
+   "link": "https://www.abc.net.au/news/2026-11-19/health-insurer-bupa-shuts-some-gp-clinics-after-buying-up-chains/106982854",
+   "published": "Wed, 18 Nov 2026 19:00:25 +0000",
+   "query": ""
+  },
+  {
+   "source": "abc_au_business",
+   "title": "'Double-edged sword': House price rebound for Sydney after market downturn",
+   "link": "https://www.abc.net.au/news/2026-11-19/nsw-sydney-house-prices-forecast-rebound/107399420",
+   "published": "Wed, 18 Nov 2026 18:59:04 +0000",
+   "query": ""
+  },
+  {
+   "source": "abc_au_business",
+   "title": "Early data suggests transparent auction pricing is working",
+   "link": "https://www.abc.net.au/news/2026-11-19/transparent-auction-pricing-is-working-early-data-suggests/107397792",
+   "published": "Wed, 18 Nov 2026 18:00:00 +0000",
+   "query": ""
+  },
+  {
+   "source": "abc_au_business",
+   "title": "Calls for 'automatic compensation' following telco outages",
    "link": "https://www.abc.net.au/news/2026-11-19/telstra-outage-drives-surge-in-telco-outage-complaints/107400558",
    "published": "Wed, 18 Nov 2026 13:03:53 +0000",
    "query": ""
   },
   {
-   "source": "abc_au_business",
-   "title": "Half of David Jones job cuts are casual staff with no entitlements",
-   "link": "https://www.abc.net.au/news/2026-11-18/david-jones-store-closures-jobs-to-go/107400402",
-   "published": "Wed, 18 Nov 2026 08:11:46 +0000",
-   "query": ""
-  },
-  {
-   "source": "abc_au_business",
-   "title": "Woolworths shoppers call for answers over gift card draining issue",
-   "link": "https://www.abc.net.au/news/2026-11-18/woolworths-refuses-to-explain-gift-card-draining-issue/107394666",
-   "published": "Wed, 18 Nov 2026 03:56:59 +0000",
-   "query": ""
-  },
-  {
-   "source": "abc_au_business",
-   "title": "Kakadu tour operator says waterfall closures led to his 'worst' dry season",
-   "link": "https://www.abc.net.au/news/2026-11-18/nt-kakadu-national-park-visitors-tourism-operator-small-business/107395286",
-   "published": "Wed, 18 Nov 2026 03:52:54 +0000",
-   "query": ""
-  },
-  {
-   "source": "abc_au_business",
-   "title": "One Nation surges, Labor overtakes Liberals in latest Tasmanian poll results",
-   "link": "https://www.abc.net.au/news/2026-11-18/emrs-poll-labor-ahead-one-nation-rockliff-popular-voter-issues/107397812",
-   "published": "Wed, 18 Nov 2026 01:59:08 +0000",
-   "query": ""
-  },
-  {
-   "source": "abc_au_business",
-   "title": "Tasmanian brand Coal River Farm enters voluntary administration",
-   "link": "https://www.abc.net.au/news/2026-11-18/coal-river-farm-cheese-maker-voluntary-administration/107395782",
-   "published": "Wed, 18 Nov 2026 01:08:08 +0000",
-   "query": ""
-  },
-  {
-   "source": "abc_au_business",
-   "title": "Medical practice squeezed as business confidence slumps in SA",
-   "link": "https://www.abc.net.au/news/2026-11-18/business-confidence-takes-hit-in-sa/107394878",
-   "published": "Tue, 17 Nov 2026 21:08:39 +0000",
-   "query": ""
-  },
-  {
-   "source": "abc_au_business",
-   "title": "Wage growth picks up but real wages continue to go backwards \u2014 as it happened",
-   "link": "https://www.abc.net.au/news/2026-11-18/asx-markets-business-live-news-nvidia/107396692",
-   "published": "Tue, 17 Nov 2026 19:56:42 +0000",
-   "query": ""
-  },
-  {
-   "source": "abc_au_business",
-   "title": "Paralympians surprised infrastructure authority has no employees with disability",
-   "link": "https://www.abc.net.au/news/2026-11-18/brisbane-2032-giica-no-employees-with-disability/107378562",
-   "published": "Tue, 17 Nov 2026 19:33:30 +0000",
-   "query": ""
-  },
-  {
-   "source": "abc_au_business",
-   "title": "Food relief takes election back seat but cost of living front of mind for voters",
-   "link": "https://www.abc.net.au/news/2026-11-18/cost-of-living-voting-vic-state-election-food-relief/107382428",
-   "published": "Tue, 17 Nov 2026 19:30:22 +0000",
-   "query": ""
-  },
-  {
-   "source": "abc_au_business",
-   "title": "Nearly $500k of underwater gear in limbo after shipping agent cancelled",
-   "link": "https://www.abc.net.au/news/2026-11-18/customs-delay-hits-small-businesses/107368824",
-   "published": "Tue, 17 Nov 2026 19:01:16 +0000",
-   "query": ""
-  },
-  {
-   "source": "abc_au_business",
-   "title": "US tech billionaire flags interest in Hurricanes, Hobart stadium",
-   "link": "https://www.abc.net.au/news/2026-11-18/cricket-privatisation-stadium-funding-sanjay-govil/107393180",
-   "published": "Tue, 17 Nov 2026 18:30:40 +0000",
+   "source": "fed_press",
+   "title": "Minutes of the Federal Open Market Committee, October 27-28, 2026",
+   "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261118a.htm",
+   "published": "Wed, 18 Nov 2026 19:00:00 GMT",
    "query": ""
   },
   {
@@ -505,13 +520,6 @@
    "query": ""
   },
   {
-   "source": "fed_press",
-   "title": "Federal Reserve Board announces enforcement action against American Express Company to address, among other things, the firm\u2019s failure to sufficiently detect and report certain suspicious activity related to money laundering",
-   "link": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261008a.htm",
-   "published": "Thu, 8 Oct 2026 20:30:00 GMT",
-   "query": ""
-  },
-  {
    "source": "gnews:CSL.AX",
    "title": "At $199, are CSL shares a bargain buy or a risky investment? - The Motley Fool Australia",
    "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPY1NPMjEtT2ZpVnVWeXhweUpOb2xqMU9rcWlyeHlmMW01VnZvZlJpSWlsX2ItVnVLLURyOFlNQTVqVVJOUHRYakVacDVZUTBhMEdkZVlyczY2ZzlLQW55VXozeGpWckVpWnYtaW1pblNtalNFQTB4ZW9ESFFvSEtlY1g3cGxzeW1TaHVQdkdtdFY1dFlSSmF1RA?oc=5",
@@ -534,9 +542,16 @@
   },
   {
    "source": "gnews:CSL.AX",
+   "title": "CSL Limited Buys Back 57,396 Shares on 18 November 2026 Under $1.15 Billion Program - Kalkine",
+   "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOa3hyZ0lRcTI0SzBJaWZXVE03U1F6T0xWQUlBeDAtNFZFQ2hja0stMVJaQnpZcjhWbk1lQkh4V1FvOUt5czhXbF95eXVkM2tadVMyd1dyNUt3SHRILTM1QzNXdUZ3T3U0bU1IMjcyTmpTWlpVNmUyNUp0T2k1UDFKYzNuenlRWHdKQVh0aE5RS21RbGlkWHFCdjY3YzZoX2FIcWNCY25ZYmEyQTVwWmlqVzY0MzllanlFei1WTmdzaw?oc=5",
+   "published": "Wed, 18 Nov 2026 23:15:04 GMT",
+   "query": "CSL ASX shares"
+  },
+  {
+   "source": "gnews:CSL.AX",
    "title": "CSL Limited (CSL.AX) stock price, news, quote and history - Yahoo Finance Australia",
    "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9XbGNsRlFZWTh5NFY1UVRjS0oxaWdXSmVmdnZpek9zdnhEWkt1SldlMzZDUUp5Nk9hSVNkY2NsWm1lM2M2dmNYT3ZCYzc3SmVJOHFmRA?oc=5",
-   "published": "Wed, 18 Nov 2026 11:56:57 GMT",
+   "published": "Tue, 17 Nov 2026 19:47:43 GMT",
    "query": "CSL ASX shares"
   },
   {
@@ -547,17 +562,59 @@
    "query": "CSL ASX shares"
   },
   {
-   "source": "gnews:CSL.AX",
-   "title": "CSL Shares At 52Wk Highs: Can The Rally Stretch To Sixth Months? - TheBull.com.au",
-   "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNdXM3UUpCQzVEN1lBQVhoZFJWMGNSSENTelBpRmljZWNBM2RzSVlWMUg1SlhwYWhDUHl0b0p2OFpSSUQ0U3IxejM1RnVsZ0dmMGIxdnNVMWJzRFFwa1JxemRTSDhCbjZwTk5WcHhpRlRjSGQ5dTZIbnBJbXFDOWl4di02YmhMZmdPRUZuWlZhZzNBczZaWGc?oc=5",
-   "published": "Thu, 12 Nov 2026 18:33:05 GMT",
-   "query": "CSL ASX shares"
+   "source": "gnews:COST",
+   "title": "Anthropic sets share price at $83 for stock market debut, above expected range - The Guardian",
+   "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPeFBzdE04UURGVW9hMHJRNm1JLTI4NS01eGczYnhHRy1Fam5Na2RaajdaS1lwcnRhVHNfTWRZelRWSHNSVFJYM05CbmV5ZTViWG9laHFaNDFZQTlQbmJSNFFvY0M5SWFBQklMWVN1Mi14LWR6QVV2LXE5UEtJYkFicHU3cVUzVmlOSU1TMTF5MFhSRkk?oc=5",
+   "published": "Wed, 18 Nov 2026 22:44:00 GMT",
+   "query": "COST stock"
+  },
+  {
+   "source": "gnews:COST",
+   "title": "Costco (COST) Stock Could Be Above Fair Value Despite Its Record $30 Dividend - Yahoo Finance",
+   "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQbVVVRktRbjFCOXBrT2EtQ0JQbzhVVWdHTzh1eGpEakpTZEVxanEwYmVnc3ROT0Z6eG1SeEhDb25fQlE3RHFfUEhfQ0YtREc5Z1k0RFZJQ3l5M2RIZTN3VjNBdnpDdk15NFJwWW1wZ1lyZ2prbjZJZkdsQkhvXzNVNGhnMnBOR0xyZFl5QktCelZsWmx4NkNoWmJn?oc=5",
+   "published": "Wed, 18 Nov 2026 17:14:02 GMT",
+   "query": "COST stock"
+  },
+  {
+   "source": "gnews:COST",
+   "title": "Disaggregate investments sooner rather than later for cost-base reset - SMSF Adviser",
+   "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPN256RHJyTl96Z2dxblZoTjJDMmlwYmhrQjVDUjdCeTZDQ0FzTi1IWVZDaFI2REsyT0c0bXI2NEhEM0FnM0dMWFgyT1I5M0tpU1RmQXB2VERWak84MFM2T0o1OElFRlpEamxHaWdUUlAwbHRpRENKTWlsQklUT3JTbllXRDNmUzZjS2thZ00yMFRNTGxZckdKNVJGcVJoeTQ?oc=5",
+   "published": "Sun, 15 Nov 2026 18:28:45 GMT",
+   "query": "COST stock"
+  },
+  {
+   "source": "gnews:COST",
+   "title": "Anthropic Sets IPO Price at $83 Per Share in Milestone for the AI Industry - The New York Times",
+   "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1nQ3JieUUxQkdyelMxelhaUUdmaTFlSTFva2pnR2FHY08wbXdmT01JVk56aUVHRGtQRUFhc1J2SFR0cEp4THBGc3M3aGhlalE3MUlEb3dQbElfREZhYlVjemROWDRVRm51QXVIakZKM2pmZi03by1hUi1FN04?oc=5",
+   "published": "Wed, 18 Nov 2026 23:09:26 GMT",
+   "query": "COST stock"
+  },
+  {
+   "source": "gnews:COST",
+   "title": "ANT stock update: Anthropic share price, stock trading time, and more for Claude maker's much-hyped IPO - Fast Company",
+   "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNN3RRcVVxdXkwRTYwSlg4ajFFUGlhaEpZUm5lR0RHYldlbE01ekI5dE9HVjFudHVOUi1zZldMUWRIOTR2ZDk1WFJmSTJ3M2lSamV0MjZHVzdfb2ZBSzE5M3hyY05GdGh4R0Nka2hoWVNseFlDeVNiUHdnN3diRVhXVXEtU3ktd3l5SlZRU2FCUVo4Wk9jVjlodk1hSQ?oc=5",
+   "published": "Wed, 18 Nov 2026 22:42:22 GMT",
+   "query": "COST stock"
+  },
+  {
+   "source": "gnews:COST",
+   "title": "Off-price retailer TJX keeps its promise and the stock soars. We\u2019re satisfied, for now - CNBC",
+   "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQUDdfMC1mcGFLREp6RnlSSGYwZ3JkSXNpT3YtYk5TU0VPUXhDejF3WG1zUUQ3Vy1USy1OZGZvcTJJYU5vcTRfcTVYWko2OVVrX05VVzY3T3ZoY09jT283UTlvbEhjNnd1MzNVblhVbHVGdnVjTGI0ZWQzMFU4b1hyakJFbFkwRnlTNVA1MmpvTXVwa1RPRVRwLXc4QktULWdQT2JwMjAxMTB5S3Badk5VNlBGRWRXSUY4SFBBUDVIU3A2dUFBNE83SW9NU3pQekU?oc=5",
+   "published": "Wed, 18 Nov 2026 18:06:59 GMT",
+   "query": "COST stock"
   },
   {
    "source": "gnews:AAPL",
    "title": "Apple Inc. (AAPL) Stock Price, News, Quote & History - Yahoo! Finance Canada",
    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5TSWlVaERqVVBsb2hTVzZaa3l2bkpRTGZVT0lzaGo2TDNNRzVKMkttcFRXV2U1T1RDLVBLNktsRmxVcTNtbXpmTGFLUHdsT3VmR1E?oc=5",
-   "published": "Tue, 17 Nov 2026 16:22:39 GMT",
+   "published": "Tue, 17 Nov 2026 20:15:17 GMT",
+   "query": "AAPL stock"
+  },
+  {
+   "source": "gnews:AAPL",
+   "title": "AAPL Stock Quote Price and Forecast - CNN",
+   "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE00U3JoRzhkckt5aVFxb1NVNnBndWhrcDM5N0NqUzZGUk8xQk04OF9jVWRULXh2RmlJaGpTS1FJWEREaUlNUnhfSHk2cm53NllX?oc=5",
+   "published": "Mon, 16 Nov 2026 21:15:31 GMT",
    "query": "AAPL stock"
   },
   {
@@ -583,16 +640,9 @@
   },
   {
    "source": "gnews:AAPL",
-   "title": "Apple Stock Polishes Breakout As Nvidia-Led AI Boom Gets Wake-Up Call - Investor's Business Daily",
-   "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQdDZndHkyazEwZDlMRGlkZUZDeHJ2RWZlNWRMUVZsRjZFX0pEclVhNElua3dYUHBMS0FPMkEtY1lLaWlPMGkzZVV3dDBZUnRJUnVEdktLdFBMN09fbkZWZXhnOUNJMjNoeE5QR1FicTVOTnV6ZFhUMnRrbG5KVzZDZ3JhcWdsZmhLRDI1LXdPYVRxbFFlcTdmTEVwUXoxUQ?oc=5",
-   "published": "Wed, 18 Nov 2026 16:07:00 GMT",
-   "query": "AAPL stock"
-  },
-  {
-   "source": "gnews:AAPL",
-   "title": "Apple Stock Near All-Time Highs: Former Chairman Files to Cash Out $32 Million - Benzinga",
-   "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNQW9vQjk5Uy1zcWpFbmtiVENwTU1HLVJaN3Yzd0pucF9qU1IyYVBCV2dGTlYwOGhTcjNMay15djhoT3VSZDlxUFNINnY3NFhTaVphNUNZT1hyZ1VPd2VWMlhoMlVOOGxKUXVldXBCODh2UmFkeE5Vd1FBV1VJR0hobFVMbVVZdm5lOVhZaXNQNU9mYWZTUEE1OWdKcFlrOER4Wjg0cWRleUpPUU5fYl92MUNLSGlLV3BlOE1Vbl9ORHFQSVY4Sk9EOFA3dmNudExTcHBPa0prOWV3VXU3TEE?oc=5",
-   "published": "Wed, 18 Nov 2026 14:23:39 GMT",
+   "title": "Alphabet vs. Apple: Which Warren Buffett Stock Is the Better Buy? - The Motley Fool",
+   "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPS0NHQjFMcmVlMkJwTE53Vm9yLUxWaUx0ZzlHSU1meHpDZVJEYWYwZzlFWHlzeU8zbGNtOGhRTU5aakYySDVudHZXcnhBZEZCRHhCM01yczBxUjhpMEM2LWluWDY4UEZESlE4bFI2MEZGM0F2UkZHVi00V2EyUmxnQ3dOLTZ2UWtzSVhSbkRBVWhwV3FJRWJjWXY2RFRMc0RvaHNDLXU5QUU?oc=5",
+   "published": "Wed, 18 Nov 2026 23:25:02 GMT",
    "query": "AAPL stock"
   },
   {
@@ -607,6 +657,13 @@
    "title": "Should I buy ANZ shares after it reported a $7.6 billion FY26 profit? - The Motley Fool Australia",
    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQNHpIbFlqb29vb1FMRFJKRzB6MlNoRnpfdjJmaGNNRVFVMERud2R1OFNWTVVvRlZqVEZKT01jbzh2dDdiUC1VSUlybTlnZVNaaHF0WGZZTHJ5dnJ1RU1HX0dkSi14QkVjQTY2XzRvNnFGak9LaFlpVjZhSVhxYmpFLVhkalpjNXFwYWJEejZiX3VOaWE1TVlxU1pUWXlLZw?oc=5",
    "published": "Mon, 09 Nov 2026 08:00:00 GMT",
+   "query": "ANZ ASX shares"
+  },
+  {
+   "source": "gnews:ANZ.AX",
+   "title": "Is ANZ Group Holdings (ASX:ANZ) Fully Priced After Its 89% Run? - Simply Wall St",
+   "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPbVRPNlctYk9aOUktY3Vuc1ZiYmVTQ1ItbmRvc2NEV0tVdF9hTUpXcG1wZ0NNSjdRUDVXcEhjb2VSaFd4elZJS29YUm5ZcXJKQUowalIzZlJDbWJ6LU9Hb2tITXE1Ymt6T1pURG9jLXBTR2hzb1QxTVR0THBFYk9LelQ1Yk9KNzFERmpNZk4ydjFPVzc5MGgtM2ZtQW5JckplS0NjOVQxQ2VhdUprckJWMkQxSjFmVWRDVWF0UzVaZHdZWi11ZktGTHVRRzI3VlND0gHWAUFVX3lxTE9YWFJlNTh3M1AxMTNpUmF0WVpTM3FJaW15QWl0UnVHeGFiWmVENlVkVks1MHBJNEhaMHVBUGJMME9QVFZFZTZ3NkFTNkdFUUtNQWZxNW1HMm9WbEdFUEw1Szh0ODRfZW5NOUsxbDJnTkhmUjRBOXhHSjVwRjhUZ3FlekdHY09yb1Rsc09SaXBUQWl4YU9uVTl5VDB3eGRwVXJVbmdwUlNwS3ZTRFYxaTd5QVlPUFJOckNndWF0c1pUeHpFekZ1QmVmRGw5cm5SZGVEYWs0UHc?oc=5",
+   "published": "Wed, 18 Nov 2026 19:12:06 GMT",
    "query": "ANZ ASX shares"
   },
   {
@@ -631,24 +688,17 @@
    "query": "ANZ ASX shares"
   },
   {
-   "source": "gnews:ANZ.AX",
-   "title": "ANZ Group (ASX:ANZ) Shares in Focus: Why Is the ASX 20 Stock on the Radar? - Kalkine Media",
-   "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNRk9QcHhkSmVySlpBTHRKbWN5clFGb01wQk9KeklISEkxcU5Ed1pDR1FWTkVTaElRUnJTcnlwY1FtbG0xQktWN2NZOFBfVTBoN1JiUHVOZTE2SUVMM2pkUlFhU0xoREVwVU1RSUpmby1iNElWWkl5NDR6WDlpaHo2NGpqOXkySldka0tlcmpXczRULWhyaVFvLUViQ2ItTXl4ajEyVzZsTlVZU1V1VmprOTFNczE5d2M?oc=5",
-   "published": "Wed, 18 Nov 2026 00:37:00 GMT",
-   "query": "ANZ ASX shares"
-  },
-  {
    "source": "gnews:XLV",
    "title": "State Street Health Care Select Sector SPDR ETF (XLV) stock price, news, quote and history - Yahoo Finance Australia",
    "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBPcmx4S2RKTFNBVllBN0o5X3ZLMzU3SWVzUkg2SF9neUdmN1lFZWZiREhGTEJfdTE1OTVwQXNPVU03aFpFZVg1S0tGemFieWJD?oc=5",
-   "published": "Tue, 17 Nov 2026 08:02:35 GMT",
+   "published": "Tue, 17 Nov 2026 19:07:47 GMT",
    "query": "XLV ETF"
   },
   {
    "source": "gnews:XLV",
-   "title": "State Street Health Care Select Sector SPDR ETF (XLV) stock price, news, quote and history - Yahoo Finance Singapore",
-   "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFA0bHRJS1V4dzA1R1A0RHhMWENMRmd2TUtKT2V6ZEpLTTRndGk0QzdkM0NXbXFfV3M0cTdGYzctRENVcVZuZzdpMkpENUVYTWVf?oc=5",
-   "published": "Tue, 17 Nov 2026 04:36:45 GMT",
+   "title": "State Street Health Care Select Sector SPDR ETF (XLV) stock price, news, quote and history - Yahoo Finance UK",
+   "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5WOS11VXM2RmF1RE5QRjh4dG5SdF9xc1ZjWWdXWktmRWgwVHlVSlRfVFV0bDRqZHlZbDJ1LW41b2Zyb2tNWHhTUEJiTnB4ajFD?oc=5",
+   "published": "Wed, 18 Nov 2026 13:03:50 GMT",
    "query": "XLV ETF"
   },
   {
@@ -656,6 +706,13 @@
    "title": "Your \"Safe\" Health Care ETF Just Got Hit by UnitedHealth Again - 24/7 Wall St.",
    "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPMUVHeFpJeWpSSm9mMWdhcXUtRURfNzJiVHNOUm5mY1V1ZjIyVUd1TGtzOE1IVmkwQmVDb3hyT1NuZ2pnMm9IZU1VWERrN2FFeXJGdkY0d2E0Tk9YV2Y2cnd0cjFNbE1OTWdMMkxtR0JyNVRHel93Nnk1cUgwbkFPbnRBWmVFczEyLVgteWhaY1g4MTQweHJQR0czMUc0N0Njei1BQW4wZVAwY3Ex?oc=5",
    "published": "Tue, 17 Nov 2026 16:47:00 GMT",
+   "query": "XLV ETF"
+  },
+  {
+   "source": "gnews:XLV",
+   "title": "State Street Health Care Select Sector SPDR ETF (XLV) stock price, news, quote and history - Yahoo Finance Singapore",
+   "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFA0bHRJS1V4dzA1R1A0RHhMWENMRmd2TUtKT2V6ZEpLTTRndGk0QzdkM0NXbXFfV3M0cTdGYzctRENVcVZuZzdpMkpENUVYTWVf?oc=5",
+   "published": "Tue, 17 Nov 2026 04:36:45 GMT",
    "query": "XLV ETF"
   },
   {
@@ -673,59 +730,52 @@
    "query": "XLV ETF"
   },
   {
-   "source": "gnews:XLV",
-   "title": "XLV - State Street Health Care Select Sector SPDR ETF Stock Price and Quote - Finviz",
-   "link": "https://news.google.com/rss/articles/CBMiREFVX3lxTE9RVkRndlZWaFdTZWIxeFVIUW5MUE9OT3JkWGprUTRUa0NCSHdLZnV4b2dIODJhNlVLYVRTRDM1OHR0dTZf?oc=5",
-   "published": "Tue, 26 May 2026 10:27:12 GMT",
-   "query": "XLV ETF"
-  },
-  {
    "source": "gnews:AMZN",
-   "title": "Amazon and Google Could Own $400 Billion of AI Lab Anthropic\u2019s Stock Post-IPO - Barron's",
-   "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQRUdva3ZWLW4yUFMwNnU5R0NMRV9VQm5tLXpGSUxlRWJYNG5sSVVxWWNWUTJESUtGVTNfLUNZQ2UyLTB1UjY4bmpVTjl0VW5rT0c2Z016RlhlakR6WlZPejdZQW93dUc0WFQ4Ny14WGFqdlUwakIwb21OZUR4WThfOA?oc=5",
-   "published": "Tue, 17 Nov 2026 22:27:00 GMT",
+   "title": "AMZN Stock Rebounds Despite UBS Downgrade, as Amazon Anthropic Investment Could Be Worth $150 Billion - FXLeaders",
+   "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNTmhQcEsxU3pxQ0llWWdvenNGWTdTY29QOExSU1c0VDFQOGhpajdJeFo5d0tlUzc4RmdjYzh3aV9uc0xhYXQxejRRVDI5ZmFzczQxVlFiZU0yYXR3emU3WlRfb1U4Wi1sNW9QbUFFR3FiLTRjVDIxY0hCazBGSzRjOVR3OXUwdHN1SEpaZGxEaGU5andpSUN0TXNnME5fS2stVGN6a3JCbnNmc0k3bmtpanMwcmdtUXlTcXlWNE1TY2l2UERhRTc3TkJHemo3b3cwM3AzYTFrOE44Zw?oc=5",
+   "published": "Wed, 18 Nov 2026 22:16:41 GMT",
    "query": "AMZN stock"
   },
   {
    "source": "gnews:AMZN",
-   "title": "Anthropic IPO: Priced For 2031, Or 2036? - Trefis",
-   "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOVk1namxOcFN3YVdnVmZKbFlSSXc1TXlHQkhPeUxDU1A3bkJiZXQ4SE1hazBUbk13RENvTlV4YzdURjJyUVlhb1R6cklrSFJ3VV96Vkt6RlZsTmdGZ3IyRzJkcEFSYlZUdmo1cUZCanNHWkxTS2Q0b1k1VWVnajZteDZwbjVPeWxENEdvTk84UHcyYVhURVdhd25nWlhtN1E?oc=5",
-   "published": "Wed, 18 Nov 2026 08:17:43 GMT",
+   "title": "Why is Amazon stock climbing today? - Investing.com",
+   "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNSEloNGtQUzdpUXJsYXF5Sms0TE5HSUo4czN3QzdEOE9HTlk0Q3JjQjFnNGttZ2JRRWdLam1xNFRlMC1CcXFubVdqYU9jRmwwOUZ6cjI5TXJiaVN1QmRZVlpneXdjanJwSzNkcS1XazYtZ1JpU1liNkh2R2VHMDVnOUhrc3NsV3BMMU9RN0cydE9aeEJDb1JsVkFCdHY?oc=5",
+   "published": "Wed, 18 Nov 2026 15:24:02 GMT",
    "query": "AMZN stock"
   },
   {
    "source": "gnews:AMZN",
-   "title": "Amazon Stock Moves Higher: What's Going On? - Benzinga",
-   "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOMlZzcndHVHcxM3A0VFVKY2NVZUhMejNRLXJJVjZBV1RiR3o1cXk3c28xcnRNbjAtTl8wUmtsUVFxc1RUZGxtNzVza3Y5cmNoZTF5dExRNUNuWnRSV0RFU1BFaFVxeHd2VHljbW5iUTVQMFR2QmR6VDN0Q1VLazNjZXRwVU81b0M2MHVXY3AydVpXb1FXQTBiMnpQLXBrR1MxQTVXZUJn?oc=5",
-   "published": "Wed, 18 Nov 2026 16:16:01 GMT",
+   "title": "Amazon.com, Inc. (AMZN) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE52VmlnWW8wU2RIQTdZRHNkNlhzSXhpMHUwd29BNmZIV0x2R0pUYkN3SjhldXZIeW5xQTh6UkxienZKWHpwMExhaXZwYXZHM3dBUmc?oc=5",
+   "published": "Tue, 17 Nov 2026 21:43:38 GMT",
    "query": "AMZN stock"
   },
   {
    "source": "gnews:AMZN",
-   "title": "Anthropic\u2019s New IPO Filing Shows Amazon, Google Will Own Over A Quarter Of The Claude Maker - Yahoo Finance",
-   "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNWnBIQWE0a2JUME11UzNpeTZUa0lqOEg0aFNMT05BV29YVldtdzNISHM1OWtrdHZsYkRHc2xTZmFjekh4dTltVEpROVRsZlFjcW8xR21QZ2t2aXpNcHNpb2QyU0lkdU5aZXV6bFVkdXNES09NRnh2MHJTeER1R2hud3o1UWdkSmR5ZnZoQmpRQjhvQk5nTlZtVnBMS1FGUDA?oc=5",
-   "published": "Tue, 17 Nov 2026 14:18:38 GMT",
+   "title": "Amazon and Alphabet Will Own Over 28% of Anthropic After Its IPO. Here\u2019s What That Means for Their Stocks. - The Motley Fool",
+   "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOYU1Lcy0yRzhtLVRmZ003M0VQVVJTbUF3ZEFXMVItd3JjdElrZVdYalkzWjNsVXNvaDkzcHYtZHBEWnRVREw5T2YzaHZNUEQtRVJEeVVWUlE0WDUwMF9PXy1zS05FMFlaS0Myc3ZCVHFWVmVsYXd0VXBHQl9qOXhXMFFNQm9iaWUtbjl4VW9ZUFg1Y3VnSWIwZHl6c2dscnNUMWhFRklQZGc?oc=5",
+   "published": "Wed, 18 Nov 2026 17:10:02 GMT",
    "query": "AMZN stock"
   },
   {
    "source": "gnews:AMZN",
-   "title": "Something Is Changing at Amazon, and Investors Should Pay Attention - Yahoo Finance",
-   "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOU0g4UnBzRF9RZEs0NEFqeU5ZWXIzYzhYbWluM1N5MW1BWWsxSWpWXzNiWUZSZFUyQy1fd2tfcmRCOHc1LWZnbjJLeWtlV052Wm1jMTRHRnNkb3ZyY3ZOTTN4WDlscGI2Sm92MlVyMlZsNHQzTUVsUWVKSmppTWFWZ0NjZk1fWHpYbnlYb2xveGdUelh3ekQyQU8xa1lPYnp4RVVFcTNKZw?oc=5",
-   "published": "Mon, 16 Nov 2026 16:03:42 GMT",
+   "title": "Anthropic deal sees Amazon stock rise amid upward price move - Traders Union",
+   "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOemhwa0FYZE5YdkVjSkYza0lNQUFkaXBuQUpmTzAyQl9yN2dxUXNiQVdROEFzMmFzZC1BQ1Brb2JlTU5CME5DbF9TRTF5dGtZa0V5N3JFbkJvQnVsZDNNUXVSanJxNUJvTkFNb0g1NDNHbHcyQVpIczQwQzl6UF9tS1paaUV1WHh6dWpMYlhueWk?oc=5",
+   "published": "Wed, 18 Nov 2026 18:37:28 GMT",
    "query": "AMZN stock"
   },
   {
    "source": "gnews:AMZN",
-   "title": "Alphabet vs. Amazon: Which Is the Better AI Cloud Stock to Own for the Next 5 Years? - The Motley Fool",
-   "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPWk5laFZESWtPeXJBU3hxcmk5R0k5RkJ1TEwwNVNZRTdwWmZjV2ZHdjY4ZzFOcFlzVVVHaDR2clVDQzByMlk4eWNSYlBCaDhzVm1lNkhyanYxWVh2U1JGb1loblBQdThleTM0UHhlVW5KSDlaNGhBUkZoczN0Y0U2a1J1TmxHSnFaeUFYOTdQYnRidw?oc=5",
-   "published": "Tue, 17 Nov 2026 21:00:00 GMT",
+   "title": "Here\u2019s How Much You Would Have Made Owning Amazon.com Stock In The Last 15 Years - Benzinga",
+   "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQYkRkU1NmOXBabHVHaEhGNEg2UFpJWWVabEg3cHVsUi1lSjhBd3VxMmJISENVNHZoX0JEOU1kcEJWaVRfWTlYTDZEeGQzaEVad3VfTU9iTzZhVjFYZFFOQU1fNEttdXV0RXZ3RTVwWi1TZEhIX2hURjNxejc3WlFxb19MUlBlbHR6OURla1RxR2ZMcElyREQyZF96Y0d2YnhyNERoUVplSjVFQ2FWcEFnbnh6MDl5cjRVM2c?oc=5",
+   "published": "Wed, 18 Nov 2026 20:45:41 GMT",
    "query": "AMZN stock"
   },
   {
    "source": "gnews:XLF",
-   "title": "Should You Invest in the State Street Financial Select Sector SPDR ETF (XLF)? - Yahoo Finance",
-   "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQcWdNSVlnY2o2V211X05BYUV1WkctcGx1YzI5RzRxSmlOaFVYVGFFUHZwRTBQNXlJMDB6cUtEcFFLZ2hMUkpscGZtQXNfa09tbXVCazdCRlptQnkwZjU0YllDaDF1Q3BVeW4ycXI4b294ZFl0VVF2OEdheHlPWEpCLXRwTElPMWFGMXNzYTcxdGl4SXNoejdaMWZUdnNJYWhIc19v?oc=5",
-   "published": "Wed, 23 Sep 2026 07:00:00 GMT",
+   "title": "Financial Select Sector SPDR ETF (XLF) stock price, news, quote and history - Yahoo Finance UK",
+   "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9TVkxpZkcyeXptYTBXazNTTDdHUGo5Vlh4U093NFYzLXIyOGJ3a3BYdVhyd1ZVVzh0aUVVUjhydG1qaFFvLURSb0EwSDB6LVpv?oc=5",
+   "published": "Wed, 18 Nov 2026 11:11:57 GMT",
    "query": "XLF ETF"
   },
   {
@@ -733,6 +783,13 @@
    "title": "VFH vs. XLF: Which Financial ETF Is the Better Buy? - The Motley Fool",
    "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOS1lpWjVoaHNyQTh1QUVVTWpMRlc2RWN6c2YtVmh1WlRmcV9ZYXc4OG1zOHBlM2ItMlpYbzU4ZlNwTTNIUGR1eTRPX05oUFlZdUxhbngzdTRWS1dRWDlpQ1dkTmNoaGZjdnptRnBrdjQxWjlNSjBvWUQ1U3ZVX211SW4zOVpWX01hdHhVZ2psN3VQaXJtWHQ4TjdiUQ?oc=5",
    "published": "Mon, 10 Aug 2026 07:00:00 GMT",
+   "query": "XLF ETF"
+  },
+  {
+   "source": "gnews:XLF",
+   "title": "Should You Invest in the State Street Financial Select Sector SPDR ETF (XLF)? - Yahoo Finance",
+   "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQcWdNSVlnY2o2V211X05BYUV1WkctcGx1YzI5RzRxSmlOaFVYVGFFUHZwRTBQNXlJMDB6cUtEcFFLZ2hMUkpscGZtQXNfa09tbXVCazdCRlptQnkwZjU0YllDaDF1Q3BVeW4ycXI4b294ZFl0VVF2OEdheHlPWEpCLXRwTElPMWFGMXNzYTcxdGl4SXNoejdaMWZUdnNJYWhIc19v?oc=5",
+   "published": "Wed, 23 Sep 2026 07:00:00 GMT",
    "query": "XLF ETF"
   },
   {
@@ -750,46 +807,109 @@
    "query": "XLF ETF"
   },
   {
-   "source": "gnews:COST",
-   "title": "Costco (COST) Stock Could Be Above Fair Value Despite Its Record $30 Dividend - Yahoo Finance",
-   "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQbVVVRktRbjFCOXBrT2EtQ0JQbzhVVWdHTzh1eGpEakpTZEVxanEwYmVnc3ROT0Z6eG1SeEhDb25fQlE3RHFfUEhfQ0YtREc5Z1k0RFZJQ3l5M2RIZTN3VjNBdnpDdk15NFJwWW1wZ1lyZ2prbjZJZkdsQkhvXzNVNGhnMnBOR0xyZFl5QktCelZsWmx4NkNoWmJn?oc=5",
-   "published": "Wed, 18 Nov 2026 17:14:02 GMT",
-   "query": "COST stock"
+   "source": "gnews:WBC.AX",
+   "title": "Westpac Banking Corporation (WBC.AX) stock price, news, quote and history - Yahoo Finance Australia",
+   "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1BZndWU0JaLWhvOGNYMi1nYVNlV1hMVXE2LUloNURIWDZTalRWenFEeWR4NEk3d0pZalVuMDNuNGJBWUhlOS1zX0xuMDlpbWU0ZUNTcA?oc=5",
+   "published": "Tue, 17 Nov 2026 19:53:37 GMT",
+   "query": "WBC ASX shares"
   },
   {
-   "source": "gnews:COST",
-   "title": "Disaggregate investments sooner rather than later for cost-base reset - SMSF Adviser",
-   "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPN256RHJyTl96Z2dxblZoTjJDMmlwYmhrQjVDUjdCeTZDQ0FzTi1IWVZDaFI2REsyT0c0bXI2NEhEM0FnM0dMWFgyT1I5M0tpU1RmQXB2VERWak84MFM2T0o1OElFRlpEamxHaWdUUlAwbHRpRENKTWlsQklUT3JTbllXRDNmUzZjS2thZ00yMFRNTGxZckdKNVJGcVJoeTQ?oc=5",
-   "published": "Sun, 15 Nov 2026 18:28:45 GMT",
-   "query": "COST stock"
+   "source": "gnews:WBC.AX",
+   "title": "Westpac (ASX:WBC) Shares Slip 3% in a Year. What Stands Out in FY26 Profit and Dividends? - Kalkine",
+   "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZ1ZLTk9vMFM0eGVtZllVa0hDS0d0MXlQMEt0LWVBZW5UMEJyVVNYcFdlY0hJVmFfeXQwT0ZTREFmVURFOWx5LS1sV3FSbEt6YXdJampKRHBUV1VlSVhhM3ZsaTI5VldnbjNxdmRBdTE1a0lzQ1hZZFlvdDQ5dUhMYWNQMjBFU1FxNzBfYS1Gd21QRF9jNmNHaE8ybllBa01pa3hfWkFFQVpvNW50Q1hSUnRKZko4TVRFb2ZVZGVn?oc=5",
+   "published": "Wed, 18 Nov 2026 12:14:00 GMT",
+   "query": "WBC ASX shares"
   },
   {
-   "source": "gnews:COST",
-   "title": "Battered retailers and tech stocks tipped for 2027 rate cut rally - AFR",
-   "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOWlJuaHZPZDQ1SUFBM3gzM2Zrb05EMGN2S290Sk5MU0hvdVRKOV9JTUx0VHozTDlfd0MtYjM1ZDMxZWt4X1RhNFZNcnBlYjBmNG5Md0Z2aFlrcUt4VlNQSTlCNk14MFJIV3owWU9pOGRYZGpoTUhZSHpJcEtydmxrbVRWQUM2T1JUTlpvaVZVR2F2YVVvdmo3dDAta2hzZFoxaDNTZXAwYkt0WDl5aWdOY1d2TDZFQ3I1bWM1YXY1MTBtZw?oc=5",
-   "published": "Tue, 17 Nov 2026 18:00:00 GMT",
-   "query": "COST stock"
+   "source": "gnews:WBC.AX",
+   "title": "Westpac (ASX:WBC): How Do FY26 Profit and Lending Trends Compare? - Kalkine",
+   "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOX2xNY2ttVDZZOEd1dm5aOTdBNlV1RXUxYmd2TFU5eTdXNDhJUVdaOHZGN01Bd2lHZ1lndXE0QmMwd2Q1Z2VYeTRpQTJpUGtlUjlJRDJZNWZWQ1lVc1BxMUN5bkhUZ0d6OU9qSnBvald0MWJVdmNTUWtRblNzTEhDSFFrWE0xd0FWMm1mR1R2dzZwc3JaUUp0SmdjZkF1YmdsMVRSTHVCQQ?oc=5",
+   "published": "Wed, 18 Nov 2026 08:48:00 GMT",
+   "query": "WBC ASX shares"
   },
   {
-   "source": "gnews:COST",
-   "title": "Stocks slip as investors mull Nvidia earnings; Anthropic IPO to test AI boom - Reuters",
-   "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFB6allzaTc1SU8zUmVIeXRZRkU2dE9reVo1MXBLSllnX0lsb1FmemdwR2RnNzZvQ0tqSzR6cTgzVHI2bGlYWWxxLTJWY3V4OXBrczR5OXF5ZkdNQnBfak1tYUs1NlVOQVVSLTdacXdnaEt0Y2VHVmM4NEN2WQ?oc=5",
-   "published": "Wed, 18 Nov 2026 01:46:00 GMT",
-   "query": "COST stock"
+   "source": "gnews:WBC.AX",
+   "title": "Westpac Banking (ASX:WBC) - Stock Analysis - Simply Wall St",
+   "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1sVG85S2dyWURPVjhxVzl4cVNla2E0RXFPWVM5Vm9meWNPUno2NjVqbjVYVlRXY2pEU3p3OGlDcGZESF82N1RsR0FnQjI0alh4bGVRdjhFcEdqSTlYR1dmamx0aVJST1h0WUV2Wkd3eUVjV0lHU0lV?oc=5",
+   "published": "Sun, 15 Nov 2026 08:00:00 GMT",
+   "query": "WBC ASX shares"
   },
   {
-   "source": "gnews:COST",
-   "title": "Can global cost cuts support British American Tobacco stock? - Traders Union",
-   "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPM0x6NXNvN0pGdEpBUF84NTcyV1hfTVkyc2RjbS14Z19SRUFHTkFZZ0Uwd3QtQmhuQUFZZkFBbU5iX3JGaXgwM2hDaGlZLU9KdjIwT2xYem9rY2RMTk1JRFQ5VmFqSTBmTmhxRGFLS3hZU20xeThmQXJKNFdtbmNod2ljUy1XSEhzQ2VqVjFURG5rQkJla3AyMQ?oc=5",
-   "published": "Wed, 18 Nov 2026 08:42:29 GMT",
-   "query": "COST stock"
+   "source": "gnews:TSLA",
+   "title": "Tesla Energy's New Product A 'Meaningful Positive' For The Company, But Not The Stock - Investor's Business Daily",
+   "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQNkRkU2U0SzlESk9QMnBhbzBkQzlRZjhrYnhGUWw0YWp6U283d3NEeV8yTm9odkozTmJxdzdyU3RyUm9semhiSzNSRzlJVWFWR0tLNG1OSUZuYXY1MmxYSHRNWlk2S1d0SDN3ejdtN1BSaXdSS29Cb2tTWHhHYUFON0pMR1BXNUw5dktwWVV0UDAwQVE4ZnBXZ1hfd0c?oc=5",
+   "published": "Wed, 18 Nov 2026 16:21:00 GMT",
+   "query": "TSLA stock"
   },
   {
-   "source": "gnews:COST",
-   "title": "JD.com, Inc. Class A Stock 12\u2011Month Price Target Cut to CNY 125.48, Implies 40% Upside - TradingView",
-   "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNQW9aNWlIaVVUZ1BaYklkSlF0ZC13Q3NZSmpqSGFqU3dpdGctakhXZ0xMbmNMTlpjdHg2dHFOcmxONEJ4Qzk4U193Rl9wQnF1Y1VsNGE1U29GN2hkWXBQTllUWmhMY0hHaTZPUDNXZjJ4VnZ1YkRUbEN3OFBKT2oxRl96Q1NiUmlINDFoNkhicXAwYkszVmZrU3J4NDc2M29NRDZoeWsxU0hxTFVEM0tKcDBJSTNzbGlJZm54TlFOVGtnQnp2YzJPVnhvTll3R29FTFVwYXJXaUh5c0Mz?oc=5",
-   "published": "Wed, 18 Nov 2026 16:20:00 GMT",
-   "query": "COST stock"
+   "source": "gnews:TSLA",
+   "title": "TSLA, SPCX Diverge Overnight As Retail Traders Split On Merger Winner \u2014 Could SpaceX Get Tesla\u2019s S&P 500 Seat? - Yahoo Finance",
+   "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOdVNkUW9Yblc3blZ0WmxTQnpOMVVjUTZkcXV2c1owRUVLdmV2OE56aGt0MERCMkxIV0hfWmJYUTZFQThoS0RfUC1QOXJfRXZqQTQwUFhmZmdSSFNUa1g3UDROZFJ3SGljN1VyQlRBQ0puM2RZbkNmMUd6UV93VWRLMGJzbWVhQmZqb0tzdDBCM01tVUlXb1FMNW9PR2ZYMWFN?oc=5",
+   "published": "Mon, 16 Nov 2026 08:31:47 GMT",
+   "query": "TSLA stock"
+  },
+  {
+   "source": "gnews:TSLA",
+   "title": "As Tesla Plans to Roll Out the Cybercab for Individual Use, TSLA Stock Is a Tough Nut to Crack - Barchart.com",
+   "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNYmZUZ0xqN1EwRUJac2hWcmVtc2ZGVVJSNzdBMWhyb2o3dnBDRjNHektVOEJrQm9XQ01TUER5T3BKVmlJZ3d0b2pTREJsLTVfT0Y4Z0REQUVsZWk0N1dTcTd5VkJCZVhXWnkzTTZsSS1oLUNMT1luY0hDV2hrREpSOXJ1X2p0a2tXQmp4cHUtMFNVTVg4RU5fbDUxRXNOWXFSemxRZGJMaUd0V3ZxTHZWY3c3Tk9uOEJLQjRJR0VtUC1Yc3JITUpZOFA0Y09majhSZEhn?oc=5",
+   "published": "Wed, 18 Nov 2026 15:55:31 GMT",
+   "query": "TSLA stock"
+  },
+  {
+   "source": "gnews:TSLA",
+   "title": "TSLA 261118 370.00P (TSLA261118P370000) Stock Options Chain | Quotes & News - Moomoo",
+   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE0xaUVTRGxaREw3amxxOGUwZXA5THktbDljWlZ2c3NsdzNqY01kRXc4d09aOU1OZFp6N1M2T2V5dEkwZjVmSHpvT0F0Rm4zVGlDUVFqb01NQWNJNmFqa3c?oc=5",
+   "published": "Wed, 18 Nov 2026 16:25:57 GMT",
+   "query": "TSLA stock"
+  },
+  {
+   "source": "gnews:TSLA",
+   "title": "Fund Manager Lists Three Reasons He Still Won\u2019t Buy Tesla Stock - TradingView",
+   "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPZFRqSWZxWFJBenMyRlRxakdIQUdibE5YSjFVTnlJMWppWTdHSmRGWG5sUFdlZEdsSzRaMm1jY2txS29sQ0cyZktkTzNNZm9xdWYzLWtMUzA4dzBfQkYtWUl6QnRtNWRzOFhveDBJbWE5VlhmOG1GZDVoNFRITG5ZeTc4NGFjQ3pMWjB3S3lmcGNtNWZzWjBPY1pUbnlEd09lM1hoMmlxT2JUY0Ixa29UWFhKemU3WUNac0p1R2VLelFfdw?oc=5",
+   "published": "Tue, 17 Nov 2026 22:03:49 GMT",
+   "query": "TSLA stock"
+  },
+  {
+   "source": "gnews:TSLA",
+   "title": "Microsoft Copilot AI Predicts a Huge TSLA Stock Boom - Tokenist",
+   "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5ScjItcXN6eFUtRzNHWGlKOFMwZzlEVmpnT3ktelR4NzhacHN1M1d1MHNfTjRkT19XUzJLNjJVd3pDS3U5YkZGdHNiUGMyN2NJZXhKVHY3MmtfaFlid3ZoeWlUXy14TW9OSmZtZzFmWQ?oc=5",
+   "published": "Mon, 16 Nov 2026 23:36:19 GMT",
+   "query": "TSLA stock"
+  },
+  {
+   "source": "gnews:CBA.AX",
+   "title": "Commonwealth Bank (ASX:CBA) Shares Rise 12% Over a Year. What\u2019s in the Draft Q1 FY27 Trading Update? - Kalkine",
+   "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOZUx6d1pZVmtSN25PNl90V3BiMmJKUjE3S3lxMnhkdzVZWGZsTVQ5NVJGRGR4dWRmUDRLam44dTlhUUgzRnZONlVrUkxIazVvcUVOWDB1Mjk3emkyMW5uOWlJdFpmbzZGSlNmeUhLdDhlX01xR2VQa0Jwa2k4WDJRUmd4UHVyeWoxN3F1a2VzY1Z2Y3N3cTAySU9vdDdRcjBMa2VYb3Y1ekxITWU5MURCM0M2NDQzYjA5Qy1GUHJnUnRUTXh0VFZtSXpxTjh1RTg?oc=5",
+   "published": "Wed, 18 Nov 2026 12:14:00 GMT",
+   "query": "CBA ASX shares"
+  },
+  {
+   "source": "gnews:CBA.AX",
+   "title": "Why I'm not buying CBA shares but would sell everything to buy one ASX stock - The Motley Fool Australia",
+   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNYXBDS3E3aTdxSzlDWjgxTkVhcVFWUV9xWkNuQ3pRWmIwNUU1RURzYzBqZDRabTlRcTA0X3VSVHRFUlpEV1pNamhvVmlvdHFubzNUN3dHSjlKWXBqSVBDRUZ6ZWMzajAzYjFYNkFSVUY4N3ZrNHdMWE9oMkJrWVRVekM0ZUZlem9CZUlwbWdlYm1sc253RU1nU3huZDBQM3IybzJrUF94RHFRZndIRjFDNA?oc=5",
+   "published": "Wed, 18 Nov 2026 21:02:18 GMT",
+   "query": "CBA ASX shares"
+  },
+  {
+   "source": "gnews:CBA.AX",
+   "title": "Miners drag Aussie shares lower as metals prices slump - CommBank",
+   "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOaHRMcmNDSVdVMXkybk04UEN0dlRvUHVnemx6a2lySWlqdVdpTExFVnFZVjdmUDJkbUhTTF9WS3N0SjRmWUxGSWNlZHZILWN5VzlXdHJldGRpYzBjRjl2NkhpT29HMzdOMVhTMGo4ZUp6VkxaYnJiSVVvMXM4Ul9MU1lCNTJtZ3RwRndvY2NGQ2ZDaGU3SmpjYlRyeUZtYzFlNzhkajlMVnVwUVo5OEpXMlgzMA?oc=5",
+   "published": "Mon, 16 Nov 2026 06:31:53 GMT",
+   "query": "CBA ASX shares"
+  },
+  {
+   "source": "gnews:CBA.AX",
+   "title": "I'd buy these ASX dividend shares over CBA shares for income - The Motley Fool Australia",
+   "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPcE1vYmVfX2NMMFYyRjVwNnBaSWFnRHY5ZjdXcVEzSmYxUkVkLU5TNU1LcjQ5U0dxcEh5RERSWFhYQ2RmcHhnRTVRTVlmTjhxMUg4b3hROFl0b0VORGlLYnZXOVNpdnpYeDRBdXpZSENuWi11SlNHMUg4Rnlrc2xhUS02RmJtYkZvOVh3WGlubUlGVWxwY2psSHRKdHNJdw?oc=5",
+   "published": "Wed, 18 Nov 2026 22:43:55 GMT",
+   "query": "CBA ASX shares"
+  },
+  {
+   "source": "gnews:CBA.AX",
+   "title": "Bank stocks climb back to August levels as retailers slip - CommBank",
+   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPN29ScEJmdHBUYm1QcTBBN2JEd21DVUhycUV5eWs2VHRjeXpBYl9ILUNHcWM3TmxfQXcxRnpZVzItbS1RVkFwdHRBZFJhdGFLZUhTSDNzamtCTktGWGFQSmkyT2JEUTBSMzl1LXBzWUpGcVRWbnIwVmNsS1VFYkRiVG94OV9xYUt5QUFtVUpDd1d0NUdGa0gyTW5ZdXRiNnhEcmx0SnlIYlhtN05QalN4cw?oc=5",
+   "published": "Thu, 29 Oct 2026 07:00:00 GMT",
+   "query": "CBA ASX shares"
   },
   {
    "source": "gnews:WTC.AX",
@@ -828,80 +948,10 @@
   },
   {
    "source": "gnews:WTC.AX",
-   "title": "WiseTech Global (ASX:WTC) Shares in Focus: Why Is the ASX 50 Stock Drawing Attention? - Kalkine Media",
-   "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxONS0yXzd3QVhoZ1J1M2hzYzNzYXNxMXp3dnl1bHV6MEtBUTB5MDFCRWc4TE1rMG5sSllnNndXNTlIUXpoX0dWNk9MZEJ1UXllS2dqOV9mUlVLQnFWTFh3YVJyY2doVUdNZUhrVWs4RFNSMkl4a2llc1VOalF4XzdXcDJ4LUdQSWhhYjRvc2hQRjRHOERfWUZpaUV2X2ZXWTdIaklmeTR5LWFCeXBzUVhaLURvTUYtQVB5dVhWTVRoMVJqeTF1R2Q4?oc=5",
-   "published": "Wed, 18 Nov 2026 01:39:00 GMT",
+   "title": "WTC and CSL shares: 2 ASX shares to watch - Rask Media",
+   "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNc2tQWGxQOFlRZDJEUlNrRHVLVlJieXRpaWtQRFh4QWRpRE8tYzlrTlFrZlplOVNYbnBpZmxXT2RFSzBCNWRuYkdWSmJHaHd1YTZQUUh0dUV1SThhY3BPS3M4bVBhVFBYZkdGOEJQQ2NhZDFxRVBzWnRXUkRzb2h6Y3lodGZlN29vbVVB?oc=5",
+   "published": "Wed, 29 Jul 2026 07:00:00 GMT",
    "query": "WTC ASX shares"
-  },
-  {
-   "source": "gnews:TSLA",
-   "title": "As Tesla Plans to Roll Out the Cybercab for Individual Use, TSLA Stock Is a Tough Nut to Crack - Barchart.com",
-   "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNYmZUZ0xqN1EwRUJac2hWcmVtc2ZGVVJSNzdBMWhyb2o3dnBDRjNHektVOEJrQm9XQ01TUER5T3BKVmlJZ3d0b2pTREJsLTVfT0Y4Z0REQUVsZWk0N1dTcTd5VkJCZVhXWnkzTTZsSS1oLUNMT1luY0hDV2hrREpSOXJ1X2p0a2tXQmp4cHUtMFNVTVg4RU5fbDUxRXNOWXFSemxRZGJMaUd0V3ZxTHZWY3c3Tk9uOEJLQjRJR0VtUC1Yc3JITUpZOFA0Y09majhSZEhn?oc=5",
-   "published": "Wed, 18 Nov 2026 15:55:31 GMT",
-   "query": "TSLA stock"
-  },
-  {
-   "source": "gnews:TSLA",
-   "title": "TSLA, SPCX Diverge Overnight As Retail Traders Split On Merger Winner \u2014 Could SpaceX Get Tesla\u2019s S&P 500 Seat? - Yahoo Finance",
-   "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOdVNkUW9Yblc3blZ0WmxTQnpOMVVjUTZkcXV2c1owRUVLdmV2OE56aGt0MERCMkxIV0hfWmJYUTZFQThoS0RfUC1QOXJfRXZqQTQwUFhmZmdSSFNUa1g3UDROZFJ3SGljN1VyQlRBQ0puM2RZbkNmMUd6UV93VWRLMGJzbWVhQmZqb0tzdDBCM01tVUlXb1FMNW9PR2ZYMWFN?oc=5",
-   "published": "Mon, 16 Nov 2026 08:31:47 GMT",
-   "query": "TSLA stock"
-  },
-  {
-   "source": "gnews:TSLA",
-   "title": "TSLA 261118 370.00P (TSLA261118P370000) Stock Options Chain | Quotes & News - Moomoo",
-   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE0xaUVTRGxaREw3amxxOGUwZXA5THktbDljWlZ2c3NsdzNqY01kRXc4d09aOU1OZFp6N1M2T2V5dEkwZjVmSHpvT0F0Rm4zVGlDUVFqb01NQWNJNmFqa3c?oc=5",
-   "published": "Wed, 18 Nov 2026 16:25:57 GMT",
-   "query": "TSLA stock"
-  },
-  {
-   "source": "gnews:TSLA",
-   "title": "Tesla (TSLA) Stock Trends After Hours As SpaceX Merger Talks Heat Up, Elon Musk Extends Cybertruck Production - TradingView",
-   "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNOFhKazZ2ZlJ1MkxnSzZKZ0g1ZjBiejFKbVFicmkyLV9zQzhwWnBsZ3p0WXlzMTBzdG5tcWtfeTFOS0ZYYVRTSjFTd0ZWUGdobEhtNkpZVEJoQVJwc2F6X2VNWnJicXR5QzF6Z1dZb3pyVEY3UC1JY2hXcjBJZXBKbGJxZXN1Ym91dmRRR0pJU1NfNE5WYmoyLXNiNWN1dzZKWGhlMjd4WGptNmdwVHpCN2lLQ0Via0I3QWtvMERBTGN3YkhxTE5Ya1E1T1dkZEpmX09rNjBycTRTSEtwTnkxRWMxa2h3Nm5FSUxZYjUzdUFNbXNoVnE2Sg?oc=5",
-   "published": "Fri, 13 Nov 2026 04:38:00 GMT",
-   "query": "TSLA stock"
-  },
-  {
-   "source": "gnews:TSLA",
-   "title": "Microsoft Copilot AI Predicts a Huge TSLA Stock Boom - Tokenist",
-   "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5ScjItcXN6eFUtRzNHWGlKOFMwZzlEVmpnT3ktelR4NzhacHN1M1d1MHNfTjRkT19XUzJLNjJVd3pDS3U5YkZGdHNiUGMyN2NJZXhKVHY3MmtfaFlid3ZoeWlUXy14TW9OSmZtZzFmWQ?oc=5",
-   "published": "Mon, 16 Nov 2026 23:36:19 GMT",
-   "query": "TSLA stock"
-  },
-  {
-   "source": "gnews:TSLA",
-   "title": "Tesla Stock (TSLA) Falls 1.8% to $390.22 (Nov 13) - Gotrade",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE8tdTFLb1BYN2Uwd3ZhNmRxUmFHcjJBalpRZXNOTW1zVmZzbEdrNTg5RTF4bGpQNGZzRmdIa0F4LTlkWTZCQy1nNjIyUnNVRTBaeE9RZlNPYWZQRUh1NHNPVENIV1BHR19XTWNETmRZdEhIMkNIb2h5cUk0MURGVGs?oc=5",
-   "published": "Mon, 16 Nov 2026 04:00:00 GMT",
-   "query": "TSLA stock"
-  },
-  {
-   "source": "gnews:WBC.AX",
-   "title": "Westpac Banking Corporation (WBC.AX) stock price, news, quote and history - Yahoo Finance Australia",
-   "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1BZndWU0JaLWhvOGNYMi1nYVNlV1hMVXE2LUloNURIWDZTalRWenFEeWR4NEk3d0pZalVuMDNuNGJBWUhlOS1zX0xuMDlpbWU0ZUNTcA?oc=5",
-   "published": "Tue, 17 Nov 2026 18:51:44 GMT",
-   "query": "WBC ASX shares"
-  },
-  {
-   "source": "gnews:WBC.AX",
-   "title": "Westpac (ASX:WBC) Shares Slip 3% in a Year. What Stands Out in FY26 Profit and Dividends? - Kalkine",
-   "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZ1ZLTk9vMFM0eGVtZllVa0hDS0d0MXlQMEt0LWVBZW5UMEJyVVNYcFdlY0hJVmFfeXQwT0ZTREFmVURFOWx5LS1sV3FSbEt6YXdJampKRHBUV1VlSVhhM3ZsaTI5VldnbjNxdmRBdTE1a0lzQ1hZZFlvdDQ5dUhMYWNQMjBFU1FxNzBfYS1Gd21QRF9jNmNHaE8ybllBa01pa3hfWkFFQVpvNW50Q1hSUnRKZko4TVRFb2ZVZGVn?oc=5",
-   "published": "Wed, 18 Nov 2026 12:14:00 GMT",
-   "query": "WBC ASX shares"
-  },
-  {
-   "source": "gnews:WBC.AX",
-   "title": "Westpac (ASX:WBC): How Do FY26 Profit and Lending Trends Compare? - Kalkine",
-   "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOX2xNY2ttVDZZOEd1dm5aOTdBNlV1RXUxYmd2TFU5eTdXNDhJUVdaOHZGN01Bd2lHZ1lndXE0QmMwd2Q1Z2VYeTRpQTJpUGtlUjlJRDJZNWZWQ1lVc1BxMUN5bkhUZ0d6OU9qSnBvald0MWJVdmNTUWtRblNzTEhDSFFrWE0xd0FWMm1mR1R2dzZwc3JaUUp0SmdjZkF1YmdsMVRSTHVCQQ?oc=5",
-   "published": "Wed, 18 Nov 2026 08:48:00 GMT",
-   "query": "WBC ASX shares"
-  },
-  {
-   "source": "gnews:WBC.AX",
-   "title": "Westpac Banking (ASX:WBC) - Stock Analysis - Simply Wall St",
-   "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1sVG85S2dyWURPVjhxVzl4cVNla2E0RXFPWVM5Vm9meWNPUno2NjVqbjVYVlRXY2pEU3p3OGlDcGZESF82N1RsR0FnQjI0alh4bGVRdjhFcEdqSTlYR1dmamx0aVJST1h0WUV2Wkd3eUVjV0lHU0lV?oc=5",
-   "published": "Sun, 15 Nov 2026 08:00:00 GMT",
-   "query": "WBC ASX shares"
   },
   {
    "source": "gnews:XLE",
