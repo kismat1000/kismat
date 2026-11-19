@@ -210,6 +210,27 @@ def cmd_reset_guards(args) -> int:
     return 0
 
 
+def cmd_attribution(args) -> int:
+    """Per-rule P&L with error bars. The check that was missing."""
+    from kismat.journal.store import Journal
+    from kismat.research.attribution import (closed_trades, losing_rules,
+                                              report, since)
+    j = Journal()
+    fills = j.read("fills")
+    # Match over every fill, THEN scope: a position opened before --since must
+    # keep the buy that gave it a cost basis.
+    trades = since(closed_trades(fills), args.since)
+    if args.since:
+        print(f"Trades closed on or after {args.since}.")
+    print(report(trades, j.read("equity"), fills))
+    bad = losing_rules(trades)
+    if bad and args.fail_on_losing:
+        names = ", ".join(r.rule for r in bad)
+        print(f"\nFAILING: {names} losing money beyond sampling error.", file=sys.stderr)
+        return 1
+    return 0
+
+
 def cmd_validate_memos(args) -> int:
     from kismat.research.memos import load_memos
     fresh_days = 5                      # the window the engine actually blends
@@ -325,6 +346,11 @@ def main(argv=None) -> int:
     s.add_argument("amount", type=float)
     s.set_defaults(fn=cmd_deposit)
     sub.add_parser("reset-guards", help="clear once-per-bar entry guards").set_defaults(fn=cmd_reset_guards)
+    s = sub.add_parser("attribution", help="per-rule P&L with confidence intervals")
+    s.add_argument("--since", help="only trades closed on or after this date (YYYY-MM-DD)")
+    s.add_argument("--fail-on-losing", action="store_true",
+                   help="exit 1 if any rule is losing money beyond sampling error")
+    s.set_defaults(fn=cmd_attribution)
     sub.add_parser("validate-memos", help="check research memos").set_defaults(fn=cmd_validate_memos)
     sub.add_parser("venue-check", help="ping the configured broker venues").set_defaults(fn=cmd_venue_check)
     sub.add_parser("venue-sync", help="place venue orders for ledger positions the venues do not hold").set_defaults(fn=cmd_venue_sync)
